@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../../../docs/content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.spatial_viewpoint.01",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "spatial_viewpoint",
+  "order": 1,
+  "title": { "fr": "Point de vue : retrouver d'où la photo a été prise" },
+  "summary": { "fr": "Se placer mentalement sur le cercle, raisonner gauche/droite et proche/lointain avec deux repères, éliminer la moitié du cercle d'abord." },
+  "file": { "fr": "lessons/spatial_viewpoint/01-point-de-vue.fr.md" },
+  "estimatedReadMin": 7,
+  "difficulty": 2,
+  "tags": ["spatial_viewpoint", "spatial_viewpoint.strategy"],
+  "practiceTags": ["spatial_viewpoint"],
+  "deckIds": ["deck.spatial_viewpoint"],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 K" }
+}
