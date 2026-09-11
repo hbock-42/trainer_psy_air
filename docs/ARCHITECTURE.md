@@ -166,8 +166,8 @@ features/*  ->  core/repositories/  (interfaces + models + providers)  <-  core/
 Features read `contentRepositoryProvider` / `progressRepositoryProvider`
 (`core/repositories/repository_providers.dart`) and only ever see the `ContentRepository` and
 `ProgressRepository` interfaces plus the pure-Dart models next to them (`TrainingSession`,
-`Attempt`, `ItemStat`, `FamilyStats`, `FlashcardReview`, `LessonRead`, `UserProfile`,
-`ContentInfo`) and the US-010 content models. **No file under `lib/features/` may import
+`Attempt`, `ItemStat`, `FamilyStats`, `SessionFamilyStats`, `FlashcardReview`, `LessonRead`,
+`UserProfile`, `ContentInfo`) and the US-010 content models. **No file under `lib/features/` may import
 `package:drift`, `package:sqlite3` or `lib/core/db/`**; `test/architecture/no_drift_in_features_test.dart`
 enforces it. Widget tests override the two providers with `InMemoryContentRepository` /
 `InMemoryProgressRepository` (`core/repositories/in_memory/`), which pass the same contract
@@ -219,8 +219,11 @@ Design decisions:
   so a content contract change (US-015) or a new engine answer shape never needs a migration.
 - **Aggregates in SQL.** `AttemptsDao.familyAggregates` computes count, correct, mean and median
   RT per family with window functions (`ROW_NUMBER`/`COUNT ... OVER`), optionally filtered by
-  date range and session mode. `ItemStatsDao.recordOutcome` increments in the `DO UPDATE`
-  clause, so concurrent writers never lose an update.
+  date range and session mode. `AttemptsDao.sessionFamilyAggregates` does the same partitioned
+  by `(session, family, section_index)` plus an `unanswered` count (`answer IS NULL`, i.e.
+  timeouts), filtered by session start date, mode and family: one row per chart point / exam
+  section, so the stats service (US-075) never loads attempts. `ItemStatsDao.recordOutcome`
+  increments in the `DO UPDATE` clause, so concurrent writers never lose an update.
 - **Background isolate.** The app executor is `NativeDatabase.createInBackground`, so queries
   never block the UI thread; tests use `NativeDatabase.memory()`.
 - **Web is not persisted yet.** `drift/native.dart` needs `dart:ffi`, so `open_database.dart`
@@ -243,6 +246,117 @@ Design decisions:
 
 Content mirrors need no migration: the seeder (US-013) re-seeds them from assets whenever
 `content_meta` does not match the bundled manifest; only the user tables need a real upgrade path.
+
+## Progress / analytics (US-075)
+
+All aggregates the app shows or decides on come from one tested service so the dashboard
+(US-070), charts (US-071), adaptive difficulty (US-053) and recommendations (US-073) agree.
+
+```
+features/progress/
+  domain/
+    stats_config.dart        StatsConfig, ReadinessWeights: every tunable number
+    stats_service.dart       StatsService: pure functions of repository rows, injectable clock
+    progress_analytics.dart  ProgressAnalytics: fetches rows from the repositories, calls the service
+    family_progress.dart     FamilyProgress, Trend, TrendDirection
+    time_series.dart         TrendPoint, TimeSeries (chart data)
+    exam_summary.dart        ExamSummary, SectionScore
+    readiness_score.dart     ReadinessScore
+    weak_area.dart           WeakArea, WeakAreaKind, WeakAreaReason
+    progress_snapshot.dart   ProgressSnapshot: everything the dashboard needs, in one pass
+    progress_domain.dart     barrel
+  presentation/providers/
+    stats_service_provider.dart        statsConfigProvider, statsServiceProvider
+    progress_analytics_provider.dart   progressAnalyticsProvider (over the two repositories)
+    progress_version_provider.dart     progressVersionProvider: cache key, bump() after a session
+    progress_snapshot_provider.dart    progressSnapshotProvider  (FutureProvider, cached)
+    exam_history_provider.dart         examHistoryProvider       (FutureProvider, cached)
+    family_time_series_provider.dart   familyTimeSeriesProvider  (autoDispose family, cached)
+```
+
+`domain/` is pure Dart (enforced by `test/architecture/no_flutter_in_domain_test.dart`: no
+Flutter, Riverpod or Drift under any `features/*/domain/`). The providers live in
+`presentation/providers/` like every other feature's; there is no `application/` layer because
+`ProgressAnalytics` is plain Dart and only needs the repository interfaces.
+
+### Inputs
+
+The service is generic over activities: an attempt is correct or not, took `responseMs`, and
+was answered or not (`answer == null` = timeout, counted as wrong). Engine-specific metrics
+(restarts, rule violations, tracking error) stay in the attempt's `answer` json and are read by
+the engine's own summary screen, not by the stats service. The only rows it consumes are SQL
+aggregates:
+
+| Input | Query | Grain |
+|---|---|---|
+| lifetime per family | `ProgressRepository.familyStats()` | one row per family |
+| series / sections | `ProgressRepository.sessionFamilyStats(from, to, mode, familyId)` | one row per (session, family, section) |
+| exam sessions | `ProgressRepository.sessions(mode: exam)` | one row per session |
+| lesson progress | `lessonsRead().length` / `ContentRepository.lessons().length` | counts |
+| tags | `itemStats()` joined to `ContentRepository.itemsByIds(...).tags` | one row per bank item seen |
+
+`snapshot()` loads the per-session rows once (all time; one row per session and family, so it
+grows with sessions, not attempts) and derives every family from them.
+
+### Formulas
+
+- **Accuracy** = `correct / attempts` over the rows in scope (lifetime for the family card,
+  per session for chart points, per section for exams). Timeouts are wrong answers.
+- **Median response time**: computed in SQL (average of the two middle values). When several
+  rows of one session are merged (an exam with two sections of the same family, or a family
+  card built without the lifetime row), the merged median is the attempt-weighted mean of the
+  row medians (an approximation, documented on `StatsService.timeSeries`).
+- **Level 1..5** from lifetime accuracy: level 1 below the first threshold *or* with fewer than
+  `minAttemptsForLevel` (10) attempts, then one level per threshold reached:
+  `levelThresholds = [0.50, 0.65, 0.80, 0.90]`. `levelFraction = (level - 1) / 4`.
+- **Trend over 7 / 30 days** (`StatsService.shortWindow` / `longWindow`, from the injected
+  clock): over the session points started in the window, `slope` = least-squares slope of
+  session accuracy against time (accuracy points per day), `delta` = last minus first session
+  accuracy. `direction` is `up` when `delta >= trendDeltaThreshold` (0.05) and `slope > 0`,
+  `down` when `delta <= -0.05` and `slope < 0`, `flat` otherwise (including fewer than two
+  sessions).
+- **Items done** = lifetime attempts; **last practised** = start of the latest session with
+  attempts of the family (any mode).
+- **Exam summary**: with the blueprint, one `SectionScore` per blueprint section (0 when never
+  reached) weighted by `ExamSection.weight`; without it, the sections seen, weight 1.
+  `score = sum(weight_i * accuracy_i) / sum(weight_i)` in 0..1 (`percent` rounds to 0..100).
+  `deltaVsPrevious = score - previous.score` where *previous* is the latest earlier **completed**
+  simulation of the same blueprint (abandoned ones get a delta but are never a reference).
+- **Readiness 0..100** = `100 * (w_f * F + w_l * L + w_e * E) / (w_f + w_l + w_e)` with
+  `ReadinessWeights(families: 0.6, lessons: 0.15, exams: 0.25)` and
+  - `F` = weighted mean of `levelFraction` over every content family (plus families only seen
+    in attempts), weights from `StatsConfig.familyWeights` (MVP families of EPIC-03 weigh 2:
+    `memory_nback`, `attention_rules`, `attention_parity`, `logic_dominos`, `arithmetic_grid`,
+    `culture_aero`, `english` / `english_reading`; the others 1; unknown ids
+    `defaultFamilyWeight` = 1). A family never practised is level 1, i.e. contributes 0.
+  - `L` = `min(lessonsRead, lessonsTotal) / lessonsTotal` (0 without lessons).
+  - `E` = mean `score` of the latest `recentExamCount` (3) completed simulations (0 without).
+  Without any exam the score tops out at 75, by design: a simulation is part of being ready.
+- **Weak areas**: a family with `attempts >= minAttemptsForWeakArea` (10) and lifetime accuracy
+  `< weakAccuracyThreshold` (0.6) is flagged `lowAccuracy`; a family whose 30-day trend is
+  `down` is flagged `negativeTrend` (a family can carry both). Item tags (from `ItemStat`s of
+  bank items and the items' `tags`) are flagged `lowAccuracy` with the same thresholds.
+  Families first, then tags, each weakest first.
+
+Every constant lives in `StatsConfig` (`statsConfigProvider`); change it there, not in the
+service, and update this section.
+
+### Caching and invalidation
+
+`progressSnapshotProvider`, `examHistoryProvider` and `familyTimeSeriesProvider` are
+`FutureProvider`s that `watch(progressVersionProvider)`. Results are cached until the version
+is bumped, which recomputes them once:
+
+```dart
+await ref.read(progressRepositoryProvider).finishSession(id, status: SessionStatus.completed);
+ref.read(progressVersionProvider.notifier).bump();
+```
+
+The practice runner (US-051), the exam runner (US-061) and lesson progress (US-044) bump after
+their writes. `familyTimeSeriesProvider` takes a record `(familyId, from, to, mode)` so equal
+chart queries share one result and is `autoDispose` so ranges nobody watches are dropped.
+Tests override `statsServiceProvider` with a fixed clock and the two repository providers with
+the in-memory fakes.
 
 ## State and DI (Riverpod)
 
