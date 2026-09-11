@@ -7,10 +7,11 @@ import 'package:psy_trainer/core/db/open_database.dart';
 
 /// The example bundle in `assets/content/examples/` decoded once, as a
 /// fixture for content DAO/repository tests. Contents (see the JSON files):
-/// module `psy0`, family `mental_arithmetic`, four banks (`english` mcq,
-/// `mental_arithmetic` numeric, `memory` sequence, `logic` generated), one
-/// lesson, one deck with three cards and the `psy0.blueprint.short`
-/// blueprint.
+/// module `psy0`, family `memory_nback`, five banks (`english` and
+/// `culture_aero` mcq, `arithmetic_grid` numeric + one generated recipe,
+/// `memory_nback` sequence and generated), one lesson, one deck with three
+/// cards (both `arithmetic_grid`) and the `psy0.blueprint.example-custom`
+/// blueprint. The `lexical_fields` example has no table yet and is skipped.
 class ExampleContent {
   ExampleContent._({
     required this.manifest,
