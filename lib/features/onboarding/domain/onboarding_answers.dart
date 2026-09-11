@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 import '../../../core/repositories/model/learning.dart';
 import 'target_stage.dart';
 
@@ -9,7 +7,6 @@ import 'target_stage.dart';
 /// the two onboarding flags live in its free-form `settings` map under
 /// [settingsKeyCompleted] and [settingsKeyDisclaimerAcceptedAt] (see
 /// `docs/ARCHITECTURE.md`, "JSON blobs"), so no schema migration is needed.
-@immutable
 class OnboardingAnswers {
   const OnboardingAnswers({
     required this.disclaimerAcceptedAt,
