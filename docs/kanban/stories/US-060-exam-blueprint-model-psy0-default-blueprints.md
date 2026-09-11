@@ -17,6 +17,7 @@ labels: [exam,content]
 **As a** candidate **I want** the simulation to follow the real PSY0 structure **so that** the rehearsal is realistic.
 
 ## Acceptance criteria
+Blueprints drafted in US-015 (`psy0_full.json` / `psy0_short.json` with cadence, scoring policy and per-section confidence, validated by US-014); validate/adjust here.
 - [ ] `assets/content/psy0/blueprints/psy0_full.json` transcribed from spec §3.1 (14 sections, order, item counts, section/per-item time, cadence, scoring policy), every value tagged with its `confidence`
 - [ ] `psy0_short.json` (~20 min) from spec §3.2
 - [ ] Sections for activities not yet implemented are allowed: the exam runner skips them with a "not available yet" briefing (so the sim is usable from the first engines)

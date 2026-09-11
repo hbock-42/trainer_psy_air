@@ -154,7 +154,7 @@ One item = one JSON object inside a bank file's `items` array. Common fields:
   here: a chunking tip).
 - Symbols: `circle square triangle star cross diamond`. Colors:
   `red blue green yellow orange purple`.
-- Digit-span difficulty roughly follows length: 3–4 → 1, 5 → 2, 6 → 3, 7 → 4, 8+ → 5
+- Practice-only at PSY0 (the real memory activity is the N-back, see `generated`). Digit-span difficulty roughly follows length: 3–4 → 1, 5 → 2, 6 → 3, 7 → 4, 8+ → 5
   (backward: one level higher for the same length).
 
 ### `generated` — reproducible recipe
@@ -204,13 +204,13 @@ mix; the validator (US-014) checks it. See `assets/content/examples/lexical_fiel
 Calibrate against the **real test**, not against a beginner. The app's adaptive mode (US-053)
 moves users between levels, so the scale must be consistent across a family.
 
-| Level | Meaning | Mental arithmetic | English | Logic series | Memory (digit span) |
+| Level | Meaning | Arithmetic grid | Culture aéro / English | Dominos | N-back |
 |---|---|---|---|---|---|
-| **1** | Warm-up. Anyone with a bac gets it in a few seconds. Never appears in the full exam blueprint. | `48 + 27`, `6 × 7` | present simple / plural -s, basic vocab (*runway*) | `2 4 6 8 ?` | 3–4 digits forward |
-| **2** | Easy real-test item. Correct > 90 % of the time when not rushed. | `340 × 3`, 10 min at 420 kt | past simple vs present perfect, common prepositions | `3 6 12 24 ?`, letters `A C E ?` | 5 digits forward |
-| **3** | Typical real-test item. Needs the method from the lesson; ~10–20 s. | `5 600 kg ÷ 2 400 kg/h`, 15 % of 240 | past perfect, conditionals 1–2, phrasal verbs, aviation phraseology | alternating two-step series, 3×3 matrix with 2 rules | 6 forward / 5 backward |
-| **4** | Hard real-test item. Two steps or a trap; a good candidate hesitates. | 11 000 ft in m ±2 %, 2 h 50 after 14:35 | inversion, mixed conditionals, inference questions on a passage | Fibonacci-like, matrix with 3 rules, plausible distractors | 7 forward / 6 backward |
-| **5** | Hardest expected; discriminates the top. Rare in the bank (≤ 10 %). | 3-digit × 2-digit, chained conversions | subtle register/collocation, dense passage with inference | matrix with rotation + count + fill, two interleaved series | 8+ forward / 7 backward |
+| **1** | Warm-up. Anyone with a bac gets it in a few seconds. Never appears in the full exam blueprint. | one wrong cell, `48 + 27`, `6 × 7` | "What does ATC stand for?" / present simple, basic vocab (*runway*) | `+1` series | 1-back, 2 colours |
+| **2** | Easy real-test item. Correct > 90 % of the time when not rushed. | 0–2 wrong cells, `340 × 3`, `12²` | BIA basics (four forces, ICAO codes of major hubs) / past simple vs present perfect | `+k` mod 7 on both halves | 2-back, 3 colours, no lures |
+| **3** | Typical real-test item. Needs the method from the lesson; ~10–20 s. | 2–3 wrong cells, priorities `3 + 4 × 5`, simple divisions | PPL-level physics/nav (stall speed vs load factor, 240 kt for 15 min) / inference on a passage | alternating rules top/bottom | 2-back, 3 colours, 10 % lures |
+| **4** | Hard real-test item. Two steps or a trap; a good candidate hesitates. | 3–4 wrong cells with ±1 / sign traps | dated company facts (fleet, leaders, routes) with `validAsOf` / dense passage, chart reading | two interleaved rules, spiral layout | 3-back digits |
+| **5** | Hardest expected; discriminates the top. Rare in the bank (≤ 10 %). | 4 wrong cells, squares + priorities mixed | very specific trivia (a runway count, a quote) / subtle register, collocations | three rules, mirrored halves | 3-back, 4+ stimuli, lures |
 
 Target distribution per family bank: 10 % / 25 % / 35 % / 20 % / 10 %.
 
@@ -231,7 +231,7 @@ tip) and absent for `generated` (the generator writes it).
 ## 6. Media
 
 - Path relative to the module folder, in the family's `media/` folder:
-  `logic/media/matrix-0001.svg`.
+  `spatial_cubes/media/net-0001.svg`.
 - **Vector (SVG) preferred** for figures, diagrams, instruments. PNG/JPEG only for
   photographs, max 1 200 px on the long side, ≤ 200 kB. Audio: `.m4a` (AAC), mono, ≤ 60 s.
 - Every informative image carries `alt` (FR mandatory).
@@ -248,14 +248,20 @@ using them; third-level tags are free.
 
 | Family (`familyId`) | Root | Second level |
 |---|---|---|
-| `english` | `english` | `english.grammar` (`.tenses`, `.modals`, `.conditionals`, `.prepositions`, `.articles`, `.questions`, `.passive`, `.reported_speech`), `english.vocab` (`.general`, `.aviation`, `.phrasal_verbs`, `.collocations`), `english.reading` (`.detail`, `.inference`, `.main_idea`, `.vocab_in_context`), `english.listening` |
-| `mental_arithmetic` | `arith` | `arith.add_sub`, `arith.mul`, `arith.div`, `arith.percent`, `arith.fractions`, `arith.squares_roots`, `arith.rule_of_three`, `arith.time`, `arith.aviation` (`.speed_distance`, `.fuel`, `.conversion`, `.descent`) |
-| `maths_physics` | `math` / `phys` | `math.algebra`, `math.functions`, `math.trigonometry`, `math.geometry`, `math.probabilities`, `math.statistics`, `math.vectors`, `phys.mechanics`, `phys.energy`, `phys.electricity`, `phys.optics`, `phys.waves`, `phys.thermo`, `phys.units` |
-| `logic` | `logic` | `logic.series` (`.arithmetic`, `.geometric`, `.alternating`, `.two_step`, `.fibonacci`, `.letters`), `logic.matrix` (`.shape`, `.count`, `.rotation`, `.fill`, `.position`), `logic.odd_one_out` |
-| `spatial` | `spatial` | `spatial.rotation_2d`, `spatial.mirror`, `spatial.cube_net`, `spatial.cube_rotation`, `spatial.paper_folding` |
-| `memory` | `memory` | `memory.digit_span` (`.forward`, `.backward`), `memory.pattern`, `memory.sequence` (`.symbols`, `.colors`, `.positions`), `memory.n_back` |
-| `verbal` | `verbal` | `verbal.analogy`, `verbal.odd_one_out`, `verbal.syllogism`, `verbal.comprehension`, `verbal.vocab` |
-| `attention` | `attention` | `attention.symbol_count`, `attention.target_detection`, `attention.n_back`, `attention.stroop` |
+| `memory_nback` | `memory` | `memory.n_back` (`.colour`, `.digit`, `.letter`), `memory.span` (`.forward`, `.backward`, practice only), `memory.pattern` (practice only) |
+| `planning_tubes` | `planning` | `planning.tubes` (`.two_colours`, `.three_colours`), `planning.hanoi` |
+| `attention_rules` | `attention` | `attention.rules` (`.shape`, `.colour`, `.fill`, `.two_level`) |
+| `attention_parity` | `attention` | `attention.parity` (`.dense`, `.wide_range`) |
+| `attention_airways` | `attention` | `attention.airways` (`.capacity`, `.colour_rule`) |
+| `spatial_overlay` | `spatial` | `spatial.overlay` (`.v1`, `.v2`, `.black_cells`) |
+| `spatial_viewpoint` | `spatial` | `spatial.viewpoint` (`.azimuth`, `.symmetry`) |
+| `spatial_cubes` | `spatial` | `spatial.cube_net` (`.letters`, `.shapes`, `.flip`), `spatial.cube_rotation` |
+| `logic_dominos` | `logic` | `logic.dominos` (`.linear`, `.alternating`, `.mirror`, `.sum`, `.spiral`), `logic.series` (secondary drill: `.arithmetic`, `.alternating`, `.letters`) |
+| `verbal_boxes` | `verbal` | `verbal.boxes` (`.everyday`, `.aviation`, `.abstract`, `.trap`) |
+| `arithmetic_grid` | `arith` | `arith.grid` (`.priority`, `.squares`, `.division`, `.sign`), `arith.drill` (practice-only free input: `.add_sub`, `.mul`, `.div`, `.percent`, `.squares`, `.time`, `.aviation`) |
+| `culture_aero` | `culture` | the 14 topic areas of spec §4.1: `culture.flight_mechanics`, `culture.meteorology`, `culture.human_factors`, `culture.rules_of_the_air`, `culture.navigation`, `culture.ops_documents`, `culture.history`, `culture.accidents`, `culture.airports_manufacturers`, `culture.network_geography`, `culture.af_fleet_figures`, `culture.subsidiaries_alliances`, `culture.pilot_job_cadet_path`, `culture.institutions` |
+| `multitask_psychomotor` | `multitask` | `multitask.tracking`, `multitask.shapes`, `multitask.calc` |
+| `english` (+ `english_listening`, `english_speaking`) | `english` | `english.reading` (`.detail`, `.inference`, `.main_idea`, `.vocab_in_context`, `.graph`), `english.grammar` (`.tenses`, `.modals`, `.conditionals`, `.prepositions`, `.articles`, `.questions`, `.passive`, `.reported_speech`), `english.vocab` (`.general`, `.aviation`, `.phrasal_verbs`, `.collocations`), `english.listening`, `english.speaking`, `english.strategy` |
 | blueprints | `blueprint` | `blueprint.full`, `blueprint.short`, `blueprint.custom` |
 
 Lessons and decks reuse the same tags so the "Try it" button and weak-area recommendations
@@ -373,10 +379,27 @@ Editor autocompletion still works without the validator: keep the `$schema` line
 
 ## 12. Blueprints
 
-- Sections in the order of the real test; each section names its `familyId`, `durationSec`,
-  `itemCount`, `itemSelection` (`bank` with filters or `generated` with a `generatorId` and a
-  difficulty range), optional `perItemTimeSec` and `breakAfterSec`.
+- Sections in the order of the real test; each section names its `familyId`, `itemCount`
+  (stimuli, series, boards, grids or questions; `1` for the continuous multitask activity)
+  and `itemSelection` (`bank` with filters or `generated` with a `generatorId`, a difficulty
+  range and typed `params`, see §3).
+- **Timing** (v2) is any combination of `sectionTimeSec` (hard limit for the section),
+  `perItemTimeSec` (timeout advances with a null answer) and `cadence`
+  (`{ "stimulusMs", "answerWindowMs" }`, fixed rhythm for `memory_nback` and
+  `attention_rules`); at least one is required. A section `cadence` overrides the generator's
+  `stimulusMs` / `answerWindowMs` params.
+- `scoringPolicy` (`{ "correct", "wrong", "skip" }`, default `{1, 0, 0}`) sets the points;
+  `{3, -1, 0}` reproduces the historical culture marking and is meant for the realism
+  options (US-063), not for `psy0.blueprint.full`.
+- `liveFeedback: true` on the sections whose real activity shows right/wrong live
+  (`attention_rules`, `attention_parity` restart, `attention_airways` crash);
+  `inputRequirement: "keyboard"` on keyboard-native ones (`attention_rules`,
+  `multitask_psychomotor`); `weight: 0` for practice-only sections (`english_speaking`).
+- Optional `title`, `briefing` (instruction screen with the worked example, markdown) and
+  `breakAfterSec`.
 - Every section and the blueprint itself carry `confidence`
   (`confirmed` | `reported` | `assumed`) tied to the research doc (US-080). The exam launcher
   shows "estimated" for anything not `confirmed`.
-- Keep `psy0.blueprint.full` faithful; make separate `short`/custom blueprints for rehearsal.
+- Keep `psy0.blueprint.full` faithful (spec §3.1); `psy0.blueprint.short` (§3.2) and custom
+  blueprints are for rehearsal. `assets/content/examples/blueprint.example.json` shows every
+  field.
