@@ -477,7 +477,9 @@ const Map<String, String> expectedLocation = {
   'module': '<module>/module.json',
   'family': '<module>/<family>/family.json',
   'bank': '<module>/<family>/items/*.json',
-  'lesson': '<module>/lessons/*.json or <module>/<family>/lessons/*.json',
+  'lesson':
+      '<module>/lessons/**.json (module-level, or grouped per family) or '
+      '<module>/<family>/lessons/*.json',
   'deck': '<module>/<family>/decks/*.json',
   'blueprint': '<module>/blueprints/*.json',
 };
@@ -491,7 +493,7 @@ bool _isAtExpectedLocation(ContentFile file) {
       s.length == 3 && file.familyDir != null && s[2] == 'family.json',
     'bank' => s.length == 4 && file.familyDir != null && s[2] == 'items',
     'lesson' =>
-      (s.length == 3 && s[1] == 'lessons') ||
+      (s.length >= 3 && s[1] == 'lessons') ||
           (s.length == 4 && file.familyDir != null && s[2] == 'lessons'),
     'deck' => s.length == 4 && file.familyDir != null && s[2] == 'decks',
     'blueprint' => s.length == 3 && s[1] == 'blueprints',
@@ -738,7 +740,12 @@ void _checkBankRefs(
   IssueSink sink,
   FamilyExists familyExists,
 ) {
-  _checkFamilyId(file, sink, familyExists, mustMatchFolder: true);
+  _checkFamilyId(
+    file,
+    sink,
+    familyExists,
+    mustMatchFolder: file.familyDir != null,
+  );
 }
 
 void _checkLessonRefs(
@@ -748,7 +755,12 @@ void _checkLessonRefs(
   Set<String?> deckIds,
 ) {
   _checkModuleId(file, sink);
-  _checkFamilyId(file, sink, familyExists, mustMatchFolder: true);
+  _checkFamilyId(
+    file,
+    sink,
+    familyExists,
+    mustMatchFolder: file.familyDir != null,
+  );
   if (file.familyDir != null && str(file.json, 'familyId') == null) {
     sink.error(
       file,
@@ -791,7 +803,12 @@ void _checkDeckRefs(
   FamilyExists familyExists,
 ) {
   _checkModuleId(file, sink);
-  _checkFamilyId(file, sink, familyExists, mustMatchFolder: true);
+  _checkFamilyId(
+    file,
+    sink,
+    familyExists,
+    mustMatchFolder: file.familyDir != null,
+  );
 }
 
 void _checkBlueprintRefs(

@@ -15,6 +15,12 @@ String formatReport(ValidationReport report, {bool quiet = false}) {
       '${report.bundles.isEmpty ? '' : ' (${report.bundles.join(', ')})'}, '
       '${report.looseFiles} loose file(s)',
     );
+    if (report.bundles.isEmpty && report.looseFiles > 0) {
+      out.writeln(
+        'note: no manifest.json found, files are validated one by one '
+        '(cross-file references are not checked)',
+      );
+    }
     out.writeln();
     if (report.families.isNotEmpty) {
       out.write(_familyTable(report.families));

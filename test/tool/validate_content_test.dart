@@ -490,6 +490,39 @@ void main() {
       });
     });
 
+    test('family lessons may be grouped under <module>/lessons/<family>/', () {
+      withBundleCopy((root) {
+        final from = p.join(root, 'psy0/english/lessons');
+        final to = p.join(root, 'psy0/lessons/english');
+        Directory(to).createSync(recursive: true);
+        for (final name in [
+          '01-tenses.json',
+          '01-tenses.fr.md',
+          '01-tenses.en.md',
+        ]) {
+          File(p.join(from, name)).renameSync(p.join(to, name));
+        }
+        editJson(p.join(to, '01-tenses.json'), (j) {
+          j['file'] = {
+            'fr': 'lessons/english/01-tenses.fr.md',
+            'en': 'lessons/english/01-tenses.en.md',
+          };
+        });
+        final report = validator.validate([root]);
+        expect(report.errors, isEmpty, reason: report.errors.join('\n'));
+
+        // ...but its familyId must still name an existing family.
+        editJson(p.join(to, '01-tenses.json'), (j) => j['familyId'] = 'verbal');
+        final errors = validator.validate([root]).errors;
+        expect(
+          errors.map((e) => e.message),
+          contains(
+            contains('familyId "verbal" does not reference an existing family'),
+          ),
+        );
+      });
+    });
+
     test('a Dart-only rule is reported as a parser error', () {
       // The schema allows any Id in deckId; only the models check it matches.
       final errors = errorsAfter(

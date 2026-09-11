@@ -20,6 +20,9 @@ assets/content/
     lessons/                        # module-level lessons (selection overview, exam-day tips)
       01-how-the-selection-works.json
       01-how-the-selection-works.fr.md
+      english/                      # family lessons may also be grouped here, one sub-folder per family
+        01-anglais.json
+        01-anglais.fr.md
     blueprints/
       psy0_full.json                # (blueprint.schema.json)
       psy0_short.json
