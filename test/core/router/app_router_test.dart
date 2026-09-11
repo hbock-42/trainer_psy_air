@@ -11,6 +11,8 @@ import 'package:psy_trainer/core/router/app_router.dart';
 import 'package:psy_trainer/core/router/app_routes.dart';
 import 'package:psy_trainer/core/router/app_shell.dart';
 import 'package:psy_trainer/core/router/error_screen.dart';
+import 'package:psy_trainer/features/learn/presentation/family_screen.dart';
+import 'package:psy_trainer/features/learn/presentation/how_it_works_screen.dart';
 import 'package:psy_trainer/features/learn/presentation/learn_screen.dart';
 import 'package:psy_trainer/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:psy_trainer/features/onboarding/presentation/providers/onboarding_completed_provider.dart';
@@ -20,6 +22,7 @@ import 'package:psy_trainer/features/train/presentation/train_screen.dart';
 import 'package:psy_trainer/features/train/presentation/train_session_screen.dart';
 
 import '../../helpers/onboarding_fakes.dart';
+import '../../helpers/psy0_families.dart';
 
 /// Pumps the whole app over an in-memory profile that has (or, with
 /// [onboardingDone] false, has not) completed onboarding. With [settle]
@@ -33,6 +36,7 @@ Future<ProviderContainer> pumpApp(
 }) async {
   final ProviderContainer container = ProviderContainer(
     overrides: [
+      contentRepositoryProvider.overrideWithValue(psy0ContentRepository()),
       progressRepositoryOverride(
         repository: repository,
         completed: onboardingDone,
@@ -130,6 +134,26 @@ void main() {
     expect(container.read(onboardingCompletedProvider), isTrue);
     expect(find.byType(LearnScreen), findsOneWidget);
     expect(find.byType(OnboardingScreen), findsNothing);
+  });
+
+  testWidgets('nested Learn routes push inside the Learn tab', (tester) async {
+    final ProviderContainer container = await pumpApp(tester);
+    final GoRouter router = container.read(appRouterProvider);
+
+    router.go(AppRoutes.learnFamily('memory_nback'));
+    await tester.pumpAndSettle();
+    expect(find.byType(FamilyScreen), findsOneWidget);
+    expect(find.byType(LearnScreen, skipOffstage: false), findsOneWidget);
+    expect(find.byType(AppShell), findsOneWidget);
+
+    router.go(AppRoutes.learnHowItWorks);
+    await tester.pumpAndSettle();
+    expect(find.byType(HowItWorksScreen), findsOneWidget);
+    expect(find.byType(AppShell), findsOneWidget);
+
+    router.pop();
+    await tester.pumpAndSettle();
+    expect(find.byType(LearnScreen), findsOneWidget);
   });
 
   testWidgets('redirects to /onboarding when onboarding is not completed', (
