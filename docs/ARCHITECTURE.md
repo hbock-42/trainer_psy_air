@@ -130,6 +130,9 @@ Commit generated files so a fresh clone builds and analyzes without running the 
 
 ## Quality gates
 
-`make lint` (`flutter analyze`) and `make test` (`flutter test`) must pass before a PR is opened;
-CI (US-004) runs the same commands plus `make coverage` (see `docs/TESTING.md`). Format with
-`dart format .`.
+`make lint` (`flutter analyze` + format check) and `make test` (`flutter test`) must pass before a
+PR is opened. CI (US-004, `.github/workflows/ci.yml`) runs the same commands on every PR and on
+pushes to `main` (`check` job: pub get, codegen, format check, `flutter analyze --fatal-infos`,
+`flutter test --coverage`), and `main` is protected so that `check` must be green to merge. A
+debug APK is built and uploaded as an artifact on pushes to `main` and on PRs labelled `build`.
+Coverage is gated with `make coverage` (see `docs/TESTING.md`). Format with `dart format .`.
