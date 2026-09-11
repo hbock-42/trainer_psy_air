@@ -1,0 +1,907 @@
+{
+  "$schema": "../../../../docs/content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "culture_aero",
+  "items": [
+    {
+      "id": "cult.rules_of_the_air.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 1,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.right_of_way"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Deux avions se rapprochent de face à la même altitude. Que doit faire chacun des pilotes ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Virer à droite"
+          }
+        },
+        {
+          "text": {
+            "fr": "Virer à gauche"
+          }
+        },
+        {
+          "text": {
+            "fr": "Monter immédiatement"
+          }
+        },
+        {
+          "text": {
+            "fr": "Maintenir le cap, le plus rapide dégage"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "En cas de rapprochement de face, **chaque pilote altère son cap vers la droite** afin que les deux aéronefs se croisent bâbord contre bâbord. Réflexe : de face, toujours à droite, comme sur la route."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.right_of_way"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Deux avions ont des routes convergentes à la même altitude. Lequel a la priorité ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Celui qui est le plus lent"
+          }
+        },
+        {
+          "text": {
+            "fr": "Celui qui a l'autre à sa gauche"
+          }
+        },
+        {
+          "text": {
+            "fr": "Celui qui voit l'autre à sa droite"
+          }
+        },
+        {
+          "text": {
+            "fr": "Celui qui est le plus haut"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Routes convergentes : **priorité à droite**. L'aéronef qui voit l'autre à sa droite doit s'écarter ; celui qui a l'autre à sa gauche garde cap et vitesse. Réflexe : « ma droite est prioritaire »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.right_of_way"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion à moteur et un planeur ont des routes convergentes. Qui doit s'écarter ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Le planeur, car il est plus lent"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le planeur, car il est plus manœuvrant"
+          }
+        },
+        {
+          "text": {
+            "fr": "L'avion à moteur, car le planeur a priorité"
+          }
+        },
+        {
+          "text": {
+            "fr": "Celui qui a l'autre à sa droite, sans distinction"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "L'ordre de priorité privilégie les aéronefs les **moins manœuvrants** : ballons > planeurs > dirigeables > avions à moteur. Un motorisé cède donc toujours le passage à un planeur, quelle que soit la géométrie."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.right_of_way"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion en dépasse un autre plus lent, en vol. De quel côté doit-il passer ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Par la gauche, comme en voiture"
+          }
+        },
+        {
+          "text": {
+            "fr": "Par le dessus uniquement"
+          }
+        },
+        {
+          "text": {
+            "fr": "Par le dessous uniquement"
+          }
+        },
+        {
+          "text": {
+            "fr": "Par la droite, en s'en écartant"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Le dépassement s'effectue **par la droite** de l'aéronef dépassé, en s'écartant de sa route ; l'aéronef dépassé conserve la priorité. Réflexe : en l'air, on double à droite."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.right_of_way"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Deux avions sont en finale sur la même piste, à des hauteurs différentes. Lequel a la priorité ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Le plus bas, sauf s'il en profite pour couper la route"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le plus haut, car il a besoin de plus de distance"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le plus rapide"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le plus lourd"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "À l'atterrissage, l'aéronef **le plus bas** en finale est prioritaire, à condition de ne pas utiliser cette règle pour couper la route ou doubler un autre aéronef en approche. Un avion qui atterrit est aussi prioritaire sur ceux au sol ou en vol."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.vfr_ifr"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Que signifie voler en VFR ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Voler de nuit avec un plan de vol"
+          }
+        },
+        {
+          "text": {
+            "fr": "Voler selon les règles de vol à vue, en conditions météo suffisantes"
+          }
+        },
+        {
+          "text": {
+            "fr": "Voler uniquement aux instruments"
+          }
+        },
+        {
+          "text": {
+            "fr": "Voler sans radio"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "VFR (*Visual Flight Rules*) : le pilote assure lui-même l'anticollision et la navigation par **référence visuelle extérieure**, ce qui exige des conditions météo de vol à vue (VMC). L'IFR s'appuie sur les instruments et le contrôle aérien."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.vmc"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "En espace aérien contrôlé, quelle distance verticale minimale un vol VFR doit-il garder par rapport aux nuages ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "1 500 m"
+          }
+        },
+        {
+          "text": {
+            "fr": "1 000 ft"
+          }
+        },
+        {
+          "text": {
+            "fr": "300 m (1 000 ft)"
+          }
+        },
+        {
+          "text": {
+            "fr": "500 ft"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Les minima VMC classiques (au-dessus de 3 000 ft AMSL ou 1 000 ft sol) imposent de rester à **1 500 m horizontalement et 300 m (1 000 ft) verticalement** des nuages, avec une visibilité de 5 km (8 km au-dessus du FL100). Réflexe : 1 500 m / 300 m."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.airspace"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Dans quelle classe d'espace aérien le vol VFR est-il interdit ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Classe D"
+          }
+        },
+        {
+          "text": {
+            "fr": "Classe E"
+          }
+        },
+        {
+          "text": {
+            "fr": "Classe G"
+          }
+        },
+        {
+          "text": {
+            "fr": "Classe A"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "La classe **A** est réservée à l'IFR (en France, par exemple une partie de la région parisienne). Les classes C et D sont contrôlées mais ouvertes au VFR avec clairance, E est contrôlée pour l'IFR seulement, G est non contrôlée."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.airspace"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle affirmation décrit correctement l'espace aérien de classe G ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Non contrôlé : pas de clairance requise, anticollision assurée par le pilote"
+          }
+        },
+        {
+          "text": {
+            "fr": "Contrôlé, clairance obligatoire pour tous"
+          }
+        },
+        {
+          "text": {
+            "fr": "Réservé aux vols militaires"
+          }
+        },
+        {
+          "text": {
+            "fr": "Contrôlé pour l'IFR mais pas pour le VFR"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "La classe **G** est l'espace non contrôlé : aucun service de contrôle, aucune clairance, seulement un service d'information de vol éventuel. Le pilote y applique la règle « voir et éviter ». La description « IFR contrôlé, VFR non » correspond à la classe E."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.aerodrome"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Sauf indication contraire publiée, dans quel sens se font les virages du tour de piste standard ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "À droite, à 500 ft sol"
+          }
+        },
+        {
+          "text": {
+            "fr": "À gauche, à environ 1 000 ft sol"
+          }
+        },
+        {
+          "text": {
+            "fr": "À droite, à environ 1 000 ft sol"
+          }
+        },
+        {
+          "text": {
+            "fr": "Au choix du pilote selon le vent"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Le tour de piste standard se fait **virages à gauche** (« main gauche ») à une hauteur voisine de **1 000 ft au-dessus du sol** ; un tour « main droite » n'existe que s'il est publié sur la carte VAC. Réflexe : gauche et 1 000 ft par défaut."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.light_signals"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Radio en panne, en vol dans le circuit, la tour vous adresse une série d'éclats rouges. Que signifient-ils ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Autorisé à atterrir"
+          }
+        },
+        {
+          "text": {
+            "fr": "Cédez le passage et continuez le circuit"
+          }
+        },
+        {
+          "text": {
+            "fr": "Aérodrome dangereux, n'atterrissez pas"
+          }
+        },
+        {
+          "text": {
+            "fr": "Revenez pour atterrir"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Signaux lumineux en vol : vert fixe = autorisé à atterrir ; rouge fixe = cédez le passage et continuez le circuit ; **éclats rouges = aérodrome dangereux, n'atterrissez pas** ; éclats verts = revenez pour atterrir. Réflexe : rouge qui clignote = danger au sol."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.min_altitude"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Hors décollage et atterrissage, quelle est la hauteur minimale de survol d'une agglomération ou d'un rassemblement de personnes ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "150 m (500 ft) au-dessus de l'obstacle le plus haut"
+          }
+        },
+        {
+          "text": {
+            "fr": "50 m au-dessus des toits"
+          }
+        },
+        {
+          "text": {
+            "fr": "1 500 m (5 000 ft) quelle que soit la zone"
+          }
+        },
+        {
+          "text": {
+            "fr": "300 m (1 000 ft) au-dessus de l'obstacle le plus haut dans un rayon de 600 m"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Au-dessus des zones à forte densité et des rassemblements, la hauteur minimale est de **300 m (1 000 ft)** au-dessus de l'obstacle le plus élevé dans un rayon de 600 m. Ailleurs, la règle générale est de 150 m (500 ft) au-dessus du sol ou de l'eau."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.cruising_levels"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un vol IFR en croisière suit la route magnétique 090°. Lequel de ces niveaux respecte la règle semi-circulaire ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "FL 110"
+          }
+        },
+        {
+          "text": {
+            "fr": "FL 100"
+          }
+        },
+        {
+          "text": {
+            "fr": "FL 80"
+          }
+        },
+        {
+          "text": {
+            "fr": "FL 85"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Règle semi-circulaire IFR : route magnétique de 000° à 179° → niveaux **impairs** (FL 90, 110…) ; de 180° à 359° → niveaux **pairs** (FL 80, 100…). Une route au 090° (vers l'est) prend donc un niveau impair. Les niveaux « +500 ft » (FL 85, 95) sont ceux du VFR."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.transponder"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel code transpondeur un pilote affiche-t-il en cas de panne radio ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "7500"
+          }
+        },
+        {
+          "text": {
+            "fr": "7600"
+          }
+        },
+        {
+          "text": {
+            "fr": "7700"
+          }
+        },
+        {
+          "text": {
+            "fr": "7000"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Codes d'urgence : **7500** = intervention illicite (détournement), **7600** = panne radio, **7700** = détresse générale. Le 7000 est le code VFR par défaut en Europe. Moyen mnémotechnique : 75 « hijack », 76 « no mic », 77 « going to heaven »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.emergency"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle différence entre un message « MAYDAY » et un message « PAN PAN » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "MAYDAY = urgence médicale ; PAN PAN = panne technique"
+          }
+        },
+        {
+          "text": {
+            "fr": "MAYDAY s'emploie en mer, PAN PAN en aviation"
+          }
+        },
+        {
+          "text": {
+            "fr": "MAYDAY = détresse (danger grave et imminent) ; PAN PAN = urgence sans danger immédiat"
+          }
+        },
+        {
+          "text": {
+            "fr": "PAN PAN = détresse ; MAYDAY = simple demande d'assistance"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**MAYDAY** (×3) signale une détresse : danger grave et imminent exigeant une assistance immédiate. **PAN PAN** (×3) signale une urgence qui ne met pas immédiatement en péril l'aéronef. Les deux s'emploient en aviation comme en mer."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 1,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.emergency"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle est la fréquence internationale de détresse en VHF aéronautique ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "123,45 MHz"
+          }
+        },
+        {
+          "text": {
+            "fr": "118,00 MHz"
+          }
+        },
+        {
+          "text": {
+            "fr": "243,00 MHz"
+          }
+        },
+        {
+          "text": {
+            "fr": "121,50 MHz"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**121,5 MHz** est la fréquence VHF de détresse, veillée par les organismes de contrôle et de nombreux avions de ligne. 243 MHz est son équivalent militaire en UHF. Réflexe : « 121 décimal 5 » à connaître par cœur."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.phraseology"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "En phraséologie, que signifie « WILCO » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Message compris, je vais m'y conformer"
+          }
+        },
+        {
+          "text": {
+            "fr": "J'ai reçu votre message"
+          }
+        },
+        {
+          "text": {
+            "fr": "Attendez, je vous rappelle"
+          }
+        },
+        {
+          "text": {
+            "fr": "Répétez votre dernier message"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**WILCO** (*will comply*) = « compris, je vais exécuter ». **ROGER** = « j'ai reçu tout votre message » sans engagement d'exécution ; **STANDBY** = attendez ; **SAY AGAIN** = répétez. Ne jamais dire « roger » à une clairance : on la collationne."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.lights"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "De nuit, vous voyez un feu rouge à droite d'un feu vert. L'avion observé se dirige :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "En s'éloignant de vous"
+          }
+        },
+        {
+          "text": {
+            "fr": "Vers vous"
+          }
+        },
+        {
+          "text": {
+            "fr": "De votre gauche vers votre droite"
+          }
+        },
+        {
+          "text": {
+            "fr": "De votre droite vers votre gauche"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Feux de navigation : **rouge en bout d'aile gauche, vert à droite, blanc à la queue**. Si l'on voit le rouge à droite du vert, on regarde l'avion de face : il vient vers soi. Réflexe : « rouge à droite = danger, il arrive »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0019",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.wake_turbulence"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Pourquoi l'A380 dispose-t-il d'une catégorie de turbulence de sillage spécifique ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Parce qu'il vole plus vite que les autres gros-porteurs"
+          }
+        },
+        {
+          "text": {
+            "fr": "Parce qu'il génère moins de sillage grâce à ses winglets"
+          }
+        },
+        {
+          "text": {
+            "fr": "Parce que son sillage est plus intense que celui des « Heavy », imposant une séparation accrue derrière lui"
+          }
+        },
+        {
+          "text": {
+            "fr": "Parce qu'il est exempté de séparation"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Les catégories de sillage (Light, Medium, Heavy) fixent les espacements à respecter derrière un aéronef ; l'A380 relève d'une catégorie **« Super »** (indicatif « Super » à la radio) car ses tourbillons marginaux, liés à sa masse, exigent des séparations supérieures à celles des Heavy."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.rules_of_the_air.0020",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 5,
+      "tags": [
+        "culture.rules_of_the_air",
+        "culture.rules_of_the_air.licences"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle licence est exigée pour exercer comme commandant de bord d'un avion de ligne en transport commercial ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "PPL(A) avec qualification IR"
+          }
+        },
+        {
+          "text": {
+            "fr": "CPL(A) avec MCC"
+          }
+        },
+        {
+          "text": {
+            "fr": "LAPL(A)"
+          }
+        },
+        {
+          "text": {
+            "fr": "ATPL(A)"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Le **PPL** interdit toute rémunération ; le **CPL** permet d'être payé et d'occuper le siège de copilote (avec ATPL théorique « frozen ») ; seule l'**ATPL(A)**, obtenue après 1 500 h dont des heures en équipage, autorise la fonction de commandant de bord en transport public multipilote."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    }
+  ]
+}
