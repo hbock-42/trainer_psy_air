@@ -11,6 +11,10 @@ lib/
   app.dart                   # root WidgetsApp.router
   core/                      # cross-cutting infrastructure: database, routing,
                              # error/logging, constants, extensions
+    content/                 # US-010 content models (JSON contract), pure Dart
+    db/                      # Drift: AppDatabase, tables/, daos/, repositories/ (local impls)
+    repositories/            # ContentRepository / ProgressRepository interfaces, domain
+                             # models, Riverpod providers, in_memory/ fakes (US-012)
     errors/                  # logError + global error hooks
     router/                  # go_router config, AppPage, AppRoutes, redirect, shell,
                              # error screen (the only UI allowed in core/)
@@ -58,7 +62,7 @@ imports go through a `domain` interface, not into another feature's `presentatio
 | State + DI     | `flutter_riverpod` 3.x          | Providers live next to the feature that owns them; see "State and DI" |
 | Navigation     | `go_router`                     | `WidgetsApp.router` + our own `AppPage`; see "Routing" |
 | Models         | `freezed` + `json_serializable` | Immutable entities, `copyWith`, JSON for content files |
-| Local database | `drift` on `package:sqlite3` 3.x | `sqlite3` bundles the native library through Dart hooks, so `sqlite3_flutter_libs` (now discontinued) is not needed. Schema in EPIC-02 |
+| Local database | `drift` on `package:sqlite3` 3.x | `sqlite3` bundles the native library through Dart hooks, so `sqlite3_flutter_libs` (now discontinued) is not needed. Schema: see "Data layer" |
 | IDs / paths    | `uuid`, `path`, `path_provider` | |
 | Charts         | not decided                     | `fl_chart` was proposed but its widgets build on Material; to be checked in US-07x (either confirm it works without a Material ancestor or draw with `CustomPainter`) |
 | Lints          | `flutter_lints` + stricter rules in `analysis_options.yaml` | `custom_lint` was dropped: its analyzer pin conflicts with `drift_dev` |
@@ -149,6 +153,93 @@ Notes for engine authors (EPIC-03):
 - **Timing is the same everywhere.** Reaction-time and per-item timers live in `domain/` and are
   driven by the engine, not by platform APIs, so results are comparable across targets.
 
+## Data layer (US-011, US-012)
+
+```
+features/*  ->  core/repositories/  (interfaces + models + providers)  <-  core/db/  (Drift)
+```
+
+Features read `contentRepositoryProvider` / `progressRepositoryProvider`
+(`core/repositories/repository_providers.dart`) and only ever see the `ContentRepository` and
+`ProgressRepository` interfaces plus the pure-Dart models next to them (`TrainingSession`,
+`Attempt`, `ItemStat`, `FamilyStats`, `FlashcardReview`, `LessonRead`, `UserProfile`,
+`ContentInfo`) and the US-010 content models. **No file under `lib/features/` may import
+`package:drift`, `package:sqlite3` or `lib/core/db/`**; `test/architecture/no_drift_in_features_test.dart`
+enforces it. Widget tests override the two providers with `InMemoryContentRepository` /
+`InMemoryProgressRepository` (`core/repositories/in_memory/`), which pass the same contract
+tests as the Drift implementations (`test/core/repositories/*_contract.dart`).
+
+The interfaces live in `core/repositories/` rather than a feature's `domain/` because every
+feature (learn, train, exam, progress, settings) reads them; a repository owned by a single
+feature would still go in that feature's `domain/`.
+
+### Database (`core/db/`)
+
+| File | Role |
+|------|------|
+| `app_database.dart` | `AppDatabase` (`@DriftDatabase`), `schemaVersion`, migration strategy |
+| `open_database.dart` | `openAppDatabaseExecutor()`: `NativeDatabase.createInBackground` on a file in the app support dir (via `path_provider`); `openInMemoryExecutor()` for tests. Conditional import: `open_database_native.dart` when `dart:io` exists, `open_database_unsupported.dart` on web (throws on first use, see below) |
+| `app_database_provider.dart` | `appDatabaseProvider` (opens lazily, closes with the container) |
+| `tables/` | `AuditedTable` mixin (id + createdAt/updatedAt), content mirrors, user tables |
+| `daos/` | One DAO per concern, typed queries; the only place SQL is written |
+| `content_rows.dart` | `ContentRows`: US-010 models -> table companions (used by the seeder, US-013) |
+| `repositories/` | `LocalContentRepository`, `LocalProgressRepository` |
+| `converters.dart` | `JsonMapConverter` for `TEXT` JSON blobs |
+
+Schema v1 (every table has `id TEXT PRIMARY KEY`, `created_at`, `updated_at`):
+
+| Table | Key columns | Notes |
+|-------|-------------|-------|
+| `content_meta` | schemaVersion, contentVersion, seededAt | single row (`id = 'content'`) |
+| `modules`, `families`, `items`, `lessons`, `decks`, `flashcards`, `blueprints` | indexed columns + `version` + `json` blob | mirrors of the seeded bundle, keyed by the content id; `items(family_id, difficulty)`, `flashcards(deck_id, difficulty)`, `lessons(module_id, family_id)`, `decks(family_id, sort_order)` indexed. Decks are stored without cards; cards are rows of `flashcards` |
+| `sessions` | mode, familyId?, blueprintId?, startedAt, endedAt?, status, score?, config json | indexes `(started_at)`, `(family_id, started_at)` |
+| `attempts` | sessionId (FK), familyId, itemId? or origin json, answer json?, isCorrect, responseMs, position, sectionIndex?, answeredAt | indexes `(session_id, position)`, `(family_id, answered_at)`, `(item_id)` |
+| `item_stats` | itemId (unique), familyId, seen, correct, totalResponseMs, lastCorrect, lastSeenAt | maintained by `INSERT ... ON CONFLICT DO UPDATE` |
+| `flashcard_reviews` | flashcardId (unique), deckId, box, reviews, lapses, lastReviewedAt?, nextReviewAt | index `(deck_id, next_review_at)` |
+| `lesson_progress` | lessonId (unique), readAt | |
+| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`) |
+
+Design decisions:
+
+- **Ids.** User rows get a uuid v4 from the repository layer (never `AUTOINCREMENT`), content
+  mirrors keep the bundle's content id. Both are strings, so rows can be merged with a remote
+  store later (EPIC-13) and `updated_at` is the sync watermark.
+- **Dates** are stored as ISO-8601 text in UTC with millisecond precision
+  (`DriftDatabaseOptions(storeDateTimeAsText: true)`), not unix seconds: cadence-driven
+  activities (n-back, rules S-R) record several attempts per second. Repositories normalise
+  every input with `toUtc()`; ordering within a session is by `attempts.position`, never by time.
+- **Generated items** are not in `items`. An attempt on one stores `origin = {generatorId, seed,
+  params}` instead of `item_id`, and `attempts.family_id` is denormalised so per-family
+  aggregates never join `items`. Only bank items get `item_stats`.
+- **JSON blobs** carry the full entity (`toJson()`), and free-form `config`/`answer`/`settings`,
+  so a content contract change (US-015) or a new engine answer shape never needs a migration.
+- **Aggregates in SQL.** `AttemptsDao.familyAggregates` computes count, correct, mean and median
+  RT per family with window functions (`ROW_NUMBER`/`COUNT ... OVER`), optionally filtered by
+  date range and session mode. `ItemStatsDao.recordOutcome` increments in the `DO UPDATE`
+  clause, so concurrent writers never lose an update.
+- **Background isolate.** The app executor is `NativeDatabase.createInBackground`, so queries
+  never block the UI thread; tests use `NativeDatabase.memory()`.
+- **Web is not persisted yet.** `drift/native.dart` needs `dart:ffi`, so `open_database.dart`
+  selects a stub on web that keeps `flutter build web` compiling and throws `UnsupportedError`
+  on the first query. Wiring drift's `WasmDatabase` (`sqlite3.wasm` + `drift_worker.js` served
+  from `web/`) is a follow-up card; until then the web target cannot record sessions.
+
+### Schema migrations
+
+`AppDatabase.schemaVersion` is the version of the *database* schema; the content bundle's
+`schemaVersion`/`contentVersion` are separate (recorded in `content_meta`). To change a table:
+
+1. Edit the table class, bump `schemaVersion`.
+2. On the first bump, export the v1 snapshot and enable step-by-step migrations:
+   `dart run drift_dev schema dump lib/core/db/app_database.dart drift_schemas/` then
+   `dart run drift_dev schema steps drift_schemas/ lib/core/db/schema_versions.dart`, and set
+   `onUpgrade: stepByStep(from1To2: ...)` in `AppDatabase.migration`.
+3. Add a migration test with `drift_dev schema generate` fixtures.
+4. Regenerate (`make gen`) and document the change here.
+
+Content mirrors need no migration: the seeder (US-013) re-seeds them from assets whenever
+`content_meta` does not match the bundled manifest; only the user tables need a real upgrade path.
+
 ## State and DI (Riverpod)
 
 - `main.dart` wraps the app in a `ProviderScope`; `PsyTrainerApp` is a `ConsumerWidget`.
@@ -225,9 +316,10 @@ StatefulShellRoute.indexedStack      AppShell; one branch (own Navigator) per ta
 - Riverpod: `xxxProvider` for providers, `XxxNotifier` for notifiers, one provider per file or
   grouped in `<feature>/presentation/providers/`.
 - Domain: entities are `freezed` classes without an `Entity` suffix; repository interfaces are
-  `XxxRepository` in `domain/`, implementations `XxxRepositoryImpl` (or `DriftXxxRepository`) in
-  `data/`.
-- Drift: tables in `core/database/tables/`, DAOs next to the feature's `data/`; generated files
+  `XxxRepository`, implementations `LocalXxxRepository` (Drift) and `InMemoryXxxRepository`
+  (fake). The two cross-cutting repositories live in `core/repositories/` (see "Data layer");
+  a feature-specific one goes in `features/<f>/domain/` with its implementation in `data/`.
+- Drift: everything under `core/db/` (`tables/`, `daos/`, `repositories/`); generated files
   (`*.g.dart`, `*.freezed.dart`, `*.drift.dart`) are committed and excluded from analysis.
 - Tests: `<file>_test.dart` mirroring the `lib/` path; test names are sentences describing the
   behaviour.
