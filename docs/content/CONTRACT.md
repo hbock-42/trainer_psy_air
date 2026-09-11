@@ -6,10 +6,9 @@ Machine-readable rules: [`schema/*.schema.json`](schema/) (JSON Schema draft 202
 Author-facing rules: [AUTHORING.md](AUTHORING.md). Valid samples:
 [`assets/content/examples/`](../../assets/content/examples/).
 
-Status: **part 1 — JSON contract** (this document, the schemas, the examples).
-**Part 2 — Dart models** (freezed + json_serializable, round-trip tests) follows once the
-project scaffold (US-001) is merged. Engine and UI developers can already code against the
-type names in §6.
+Status: **part 1 — JSON contract** (this document, the schemas, the examples) and
+**part 2 — Dart models** (`lib/core/content/`, freezed + json_serializable, round-trip tests
+against the examples) are both in place. §6 lists the types and where they live.
 
 ## 1. Entities
 
@@ -184,11 +183,41 @@ Compatibility policy for the JSON contract:
 - Removing or renaming a field → bump, plus a migration note in the manifest `changelog`.
 - Ids are permanent. Renaming an id is a content deletion + creation.
 
-## 6. Dart types (part 2 — to be generated)
+## 6. Dart types (part 2)
 
-Package location will be `lib/domain/content/` (per US-001 conventions), pure Dart, no
-Flutter import. All classes are `@freezed`, immutable, with `fromJson`/`toJson`; the sealed
-unions use `unionKey`. Names are frozen now so other lanes can code against them.
+Package: `lib/core/content/` (cross-cutting, no UI — see ARCHITECTURE.md), pure Dart, no
+Flutter import. Import the barrel `package:psy_trainer/core/content/content.dart`. All
+classes are `@freezed`, immutable, with `fromJson`/`toJson`; the sealed unions use
+`unionKey`. Names are frozen so other lanes can code against them.
+
+| File | Types |
+|---|---|
+| `lib/core/content/model/common.dart` | `LocalizedText`, `LocalizedPath`, `MediaRef`, `MediaKind`, `ModuleId`, `Confidence`, `ContentLang`, `ContentStatus`, `ContentMeta`, `Difficulty` (+ `difficultyFromJson`), `DateOnlyConverter` |
+| `lib/core/content/model/content_manifest.dart` | `ContentManifest`, `ChangelogEntry` |
+| `lib/core/content/model/module.dart` | `Module` |
+| `lib/core/content/model/test_family.dart` | `TestFamily`, `EngineType`, `AnswerFormat` |
+| `lib/core/content/model/item.dart` | `ItemBank`, `Passage`, `Item` (sealed: `McqItem`, `NumericItem`, `SequenceItem`, `GeneratedItem`), `McqOption`, `Tolerance`, `ToleranceMode`, `InputFormat`, `StimulusKind`, `RecallMode`, `GridSize`, `ItemOrigin` |
+| `lib/core/content/model/lesson.dart` | `Lesson` |
+| `lib/core/content/model/deck.dart` | `Deck`, `Flashcard` |
+| `lib/core/content/model/exam_blueprint.dart` | `ExamBlueprint`, `ExamSection`, `ItemSelection` (sealed: `BankSelection`, `GeneratedSelection`), `DifficultyRange` |
+| `lib/core/content/content_bundle_parser.dart` | `ContentBundleParser` — `parseManifest/Module/Family/Bank/Lesson/Deck/Blueprint(source, file:)`; checks `kind`, ignores `$schema`, throws `ContentParseException(file, entityId, message)` |
+| `lib/core/content/content_parse_exception.dart` | `ContentParseException` |
+
+Generated `*.freezed.dart` / `*.g.dart` are committed and excluded from analysis
+(`make gen` regenerates them). Tests: `test/core/content/` — every file in
+`assets/content/examples/` must parse and re-serialise to the same JSON (key order aside;
+schema defaults such as `status`, `shuffleOptions`, `params` may be filled in).
+
+Implementation notes:
+
+- `Item` is discriminated by `type`; `ItemSelection` by `mode` (as in the schemas).
+- `kind` and `$schema` are file-level keys handled by the parser, not model fields.
+- Date-only strings (`updatedAt`, `changelog[].date`, `meta.reviewedAt`) become UTC-midnight
+  `DateTime`s via `DateOnlyConverter` and serialise back to `YYYY-MM-DD`.
+- `difficulty` is decoded through `difficultyFromJson`, which rejects values outside 1–5 in
+  every build mode; constructors additionally `assert` the range, `correctIndex <
+  options.length`, `gridCells ⇒ grid`, and `Lesson.body xor file`.
+- Unknown JSON keys are ignored (additive fields do not bump `schemaVersion`, §5).
 
 ```dart
 // Value types (common.schema.json)
@@ -199,7 +228,7 @@ enum Confidence     { confirmed, reported, assumed }
 enum ContentLang    { fr, en }
 enum ContentStatus  { draft, published }
 class ContentMeta   { String? author; String? source; String? reviewedBy; DateTime? reviewedAt; String? notes; }
-typedef Difficulty = int; // 1..5, asserted in constructors
+typedef Difficulty = int; // 1..5, checked by difficultyFromJson and asserted in constructors
 
 // Structure
 class ContentManifest { int schemaVersion; int contentVersion; DateTime updatedAt; List<ModuleId> modules; List<ChangelogEntry> changelog; }

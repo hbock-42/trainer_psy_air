@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:psy_trainer/core/theme/app_theme.dart';
 
 import 'pump_app.dart';
 
@@ -23,7 +24,10 @@ void main() {
 
     expect(Directionality.of(captured), TextDirection.ltr);
     expect(MediaQuery.maybeOf(captured), isNotNull);
-    expect(DefaultTextStyle.of(captured).style.color, testForeground);
+    expect(
+      DefaultTextStyle.of(captured).style.color,
+      AppTheme.of(captured).colors.textPrimary,
+    );
     expect(find.text('probe'), findsOneWidget);
   });
 
