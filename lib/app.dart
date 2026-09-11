@@ -1,7 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'core/l10n/strings.dart';
 import 'core/router/app_router.dart';
+import 'core/theme/app_theme.dart';
 
 /// Root of the application.
 ///
@@ -15,27 +17,25 @@ import 'core/router/app_router.dart';
 class PsyTrainerApp extends ConsumerWidget {
   const PsyTrainerApp({super.key});
 
-  static const Color _background = Color(0xFF0B1D3A);
-  static const Color _foreground = Color(0xFFF5F7FA);
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return WidgetsApp.router(
-      title: 'PSY Trainer',
-      color: _background,
+      title: AppStrings.appName,
+      color: AppColors.light.background,
       debugShowCheckedModeBanner: false,
       routerConfig: ref.watch(appRouterProvider),
       builder: (context, child) {
-        // WidgetsApp provides no default text style: without one, Text renders
-        // in the "missing style" yellow/underlined look. Every subtree needs it.
-        return DefaultTextStyle(
-          style: const TextStyle(
-            color: _foreground,
-            fontSize: 16,
-            decoration: TextDecoration.none,
-          ),
+        // WidgetsApp provides no theme nor default text style. AppThemeScope
+        // installs both (tokens + DefaultTextStyle body) for every route and
+        // overlay; the theme follows the platform brightness until a setting
+        // exists (US-091).
+        final theme = AppTheme.forBrightness(
+          MediaQuery.platformBrightnessOf(context),
+        );
+        return AppThemeScope(
+          theme: theme,
           child: ColoredBox(
-            color: _background,
+            color: theme.colors.background,
             child: child ?? const SizedBox.shrink(),
           ),
         );
