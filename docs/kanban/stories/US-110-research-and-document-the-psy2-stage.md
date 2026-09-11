@@ -1,5 +1,6 @@
 ---
 id: US-110
+issue: 72
 title: "Research and document the PSY2 stage"
 type: story
 epic: EPIC-11

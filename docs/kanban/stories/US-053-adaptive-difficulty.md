@@ -1,5 +1,6 @@
 ---
 id: US-053
+issue: 43
 title: "Adaptive difficulty"
 type: story
 epic: EPIC-05

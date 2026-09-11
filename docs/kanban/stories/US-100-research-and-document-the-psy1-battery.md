@@ -1,5 +1,6 @@
 ---
 id: US-100
+issue: 68
 title: "Research and document the PSY1 battery"
 type: story
 epic: EPIC-10

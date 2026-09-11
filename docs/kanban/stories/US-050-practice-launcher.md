@@ -1,5 +1,6 @@
 ---
 id: US-050
+issue: 40
 title: "Practice launcher"
 type: story
 epic: EPIC-05

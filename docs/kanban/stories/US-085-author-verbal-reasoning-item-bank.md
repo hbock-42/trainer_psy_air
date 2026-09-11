@@ -1,5 +1,6 @@
 ---
 id: US-085
+issue: 61
 title: "Author verbal reasoning item bank"
 type: story
 epic: EPIC-08

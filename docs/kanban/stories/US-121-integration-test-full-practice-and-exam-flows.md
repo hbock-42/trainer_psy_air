@@ -1,5 +1,6 @@
 ---
 id: US-121
+issue: 76
 title: "Integration test: full practice and exam flows"
 type: story
 epic: EPIC-12

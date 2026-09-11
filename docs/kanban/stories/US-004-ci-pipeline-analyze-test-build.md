@@ -1,5 +1,6 @@
 ---
 id: US-004
+issue: 17
 title: "CI pipeline (analyze, test, build)"
 type: story
 epic: EPIC-01

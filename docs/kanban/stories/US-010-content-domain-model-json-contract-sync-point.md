@@ -1,5 +1,6 @@
 ---
 id: US-010
+issue: 19
 title: "Content domain model & JSON contract (sync point)"
 type: story
 epic: EPIC-02

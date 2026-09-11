@@ -1,5 +1,6 @@
 ---
 id: US-011
+issue: 20
 title: "Local database schema with Drift"
 type: story
 epic: EPIC-02

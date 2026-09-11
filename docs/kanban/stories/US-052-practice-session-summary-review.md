@@ -1,5 +1,6 @@
 ---
 id: US-052
+issue: 42
 title: "Practice session summary & review"
 type: story
 epic: EPIC-05

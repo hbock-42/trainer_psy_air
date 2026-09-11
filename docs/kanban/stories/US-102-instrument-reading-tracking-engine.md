@@ -1,5 +1,6 @@
 ---
 id: US-102
+issue: 70
 title: "Instrument reading & tracking engine"
 type: story
 epic: EPIC-10

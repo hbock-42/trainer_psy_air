@@ -1,5 +1,6 @@
 ---
 id: US-130
+issue: 79
 title: "ADR: remote sync strategy (future)"
 type: story
 epic: EPIC-13

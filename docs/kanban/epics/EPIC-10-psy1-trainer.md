@@ -1,5 +1,6 @@
 ---
 id: EPIC-10
+issue: 10
 title: "PSY1 trainer"
 type: epic
 status: backlog

@@ -1,5 +1,6 @@
 ---
 id: US-012
+issue: 21
 title: "Repository interfaces with local implementations"
 type: story
 epic: EPIC-02

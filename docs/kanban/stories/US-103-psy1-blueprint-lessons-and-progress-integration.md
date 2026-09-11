@@ -1,5 +1,6 @@
 ---
 id: US-103
+issue: 71
 title: "PSY1 blueprint, lessons and progress integration"
 type: story
 epic: EPIC-10

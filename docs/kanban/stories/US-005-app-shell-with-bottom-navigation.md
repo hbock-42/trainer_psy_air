@@ -1,5 +1,6 @@
 ---
 id: US-005
+issue: 18
 title: "App shell with bottom navigation"
 type: story
 epic: EPIC-01

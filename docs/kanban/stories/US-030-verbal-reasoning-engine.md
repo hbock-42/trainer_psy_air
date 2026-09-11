@@ -1,5 +1,6 @@
 ---
 id: US-030
+issue: 34
 title: "Verbal reasoning engine"
 type: story
 epic: EPIC-03

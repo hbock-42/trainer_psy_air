@@ -1,5 +1,6 @@
 ---
 id: US-029
+issue: 33
 title: "Attention / concentration engine"
 type: story
 epic: EPIC-03

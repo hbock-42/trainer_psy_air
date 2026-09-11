@@ -1,5 +1,6 @@
 ---
 id: US-071
+issue: 51
 title: "Score-over-time charts"
 type: story
 epic: EPIC-07

@@ -1,5 +1,6 @@
 ---
 id: US-063
+issue: 48
 title: "Realism options"
 type: story
 epic: EPIC-06

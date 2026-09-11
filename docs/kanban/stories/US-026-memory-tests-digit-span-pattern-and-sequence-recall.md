@@ -1,5 +1,6 @@
 ---
 id: US-026
+issue: 30
 title: "Memory tests: digit span, pattern and sequence recall"
 type: story
 epic: EPIC-03

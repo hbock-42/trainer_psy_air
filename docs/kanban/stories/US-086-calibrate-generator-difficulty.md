@@ -1,5 +1,6 @@
 ---
 id: US-086
+issue: 62
 title: "Calibrate generator difficulty"
 type: story
 epic: EPIC-08

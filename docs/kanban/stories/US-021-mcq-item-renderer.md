@@ -1,5 +1,6 @@
 ---
 id: US-021
+issue: 25
 title: "MCQ item renderer"
 type: story
 epic: EPIC-03

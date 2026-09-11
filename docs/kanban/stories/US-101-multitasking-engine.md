@@ -1,5 +1,6 @@
 ---
 id: US-101
+issue: 69
 title: "Multitasking engine"
 type: story
 epic: EPIC-10

@@ -1,5 +1,6 @@
 ---
 id: US-074
+issue: 54
 title: "Backup export / import (JSON)"
 type: story
 epic: EPIC-07

@@ -1,5 +1,6 @@
 ---
 id: EPIC-02
+issue: 2
 title: "Content model & local database"
 type: epic
 status: backlog

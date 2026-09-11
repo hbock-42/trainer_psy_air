@@ -1,5 +1,6 @@
 ---
 id: US-090
+issue: 64
 title: "Onboarding: exam date, target stage, disclaimer"
 type: story
 epic: EPIC-09

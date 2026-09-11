@@ -1,5 +1,6 @@
 ---
 id: US-092
+issue: 66
 title: "Local reminders"
 type: story
 epic: EPIC-09

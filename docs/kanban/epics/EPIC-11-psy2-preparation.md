@@ -1,5 +1,6 @@
 ---
 id: EPIC-11
+issue: 11
 title: "PSY2 preparation"
 type: epic
 status: backlog

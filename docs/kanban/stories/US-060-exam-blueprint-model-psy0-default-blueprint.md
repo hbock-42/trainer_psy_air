@@ -1,5 +1,6 @@
 ---
 id: US-060
+issue: 45
 title: "Exam blueprint model & PSY0 default blueprint"
 type: story
 epic: EPIC-06

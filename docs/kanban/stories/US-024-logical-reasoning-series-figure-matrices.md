@@ -1,5 +1,6 @@
 ---
 id: US-024
+issue: 28
 title: "Logical reasoning: series & figure matrices"
 type: story
 epic: EPIC-03

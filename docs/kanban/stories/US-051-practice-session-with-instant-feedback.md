@@ -1,5 +1,6 @@
 ---
 id: US-051
+issue: 41
 title: "Practice session with instant feedback"
 type: story
 epic: EPIC-05

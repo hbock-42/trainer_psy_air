@@ -1,5 +1,6 @@
 ---
 id: US-120
+issue: 75
 title: "Test baseline & coverage gate"
 type: story
 epic: EPIC-12

@@ -1,5 +1,6 @@
 ---
 id: US-025
+issue: 29
 title: "Spatial reasoning: rotations, mirrors, cube folding"
 type: story
 epic: EPIC-03

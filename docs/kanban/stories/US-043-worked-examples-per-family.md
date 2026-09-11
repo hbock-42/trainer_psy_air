@@ -1,5 +1,6 @@
 ---
 id: US-043
+issue: 38
 title: "Worked examples per family"
 type: story
 epic: EPIC-04

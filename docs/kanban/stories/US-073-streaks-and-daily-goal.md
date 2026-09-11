@@ -1,5 +1,6 @@
 ---
 id: US-073
+issue: 53
 title: "Streaks and daily goal"
 type: story
 epic: EPIC-07

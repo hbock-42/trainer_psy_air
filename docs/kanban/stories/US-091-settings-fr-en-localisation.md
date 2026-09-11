@@ -1,5 +1,6 @@
 ---
 id: US-091
+issue: 65
 title: "Settings & FR/EN localisation"
 type: story
 epic: EPIC-09

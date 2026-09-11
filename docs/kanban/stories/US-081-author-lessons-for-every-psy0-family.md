@@ -1,5 +1,6 @@
 ---
 id: US-081
+issue: 57
 title: "Author lessons for every PSY0 family"
 type: story
 epic: EPIC-08

@@ -1,5 +1,6 @@
 ---
 id: US-072
+issue: 52
 title: "Weak-area detection and recommendations"
 type: story
 epic: EPIC-07

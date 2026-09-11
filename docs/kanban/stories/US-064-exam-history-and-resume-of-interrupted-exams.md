@@ -1,5 +1,6 @@
 ---
 id: US-064
+issue: 49
 title: "Exam history and resume of interrupted exams"
 type: story
 epic: EPIC-06

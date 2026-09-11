@@ -1,5 +1,6 @@
 ---
 id: US-001
+issue: 14
 title: "Flutter project scaffold & architecture conventions"
 type: story
 epic: EPIC-01

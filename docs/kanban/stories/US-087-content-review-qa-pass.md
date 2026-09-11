@@ -1,5 +1,6 @@
 ---
 id: US-087
+issue: 63
 title: "Content review & QA pass"
 type: story
 epic: EPIC-08

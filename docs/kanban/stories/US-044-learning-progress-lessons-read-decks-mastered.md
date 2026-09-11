@@ -1,5 +1,6 @@
 ---
 id: US-044
+issue: 39
 title: "Learning progress (lessons read, decks mastered)"
 type: story
 epic: EPIC-04

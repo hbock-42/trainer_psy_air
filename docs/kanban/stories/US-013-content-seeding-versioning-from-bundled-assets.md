@@ -1,5 +1,6 @@
 ---
 id: US-013
+issue: 22
 title: "Content seeding & versioning from bundled assets"
 type: story
 epic: EPIC-02

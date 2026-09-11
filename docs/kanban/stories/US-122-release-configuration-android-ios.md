@@ -1,5 +1,6 @@
 ---
 id: US-122
+issue: 77
 title: "Release configuration (Android / iOS)"
 type: story
 epic: EPIC-12

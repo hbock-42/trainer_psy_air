@@ -1,5 +1,6 @@
 ---
 id: US-093
+issue: 67
 title: "Exam countdown on home"
 type: story
 epic: EPIC-09

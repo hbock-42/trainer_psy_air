@@ -1,5 +1,6 @@
 ---
 id: US-042
+issue: 37
 title: "Flashcards with spaced repetition"
 type: story
 epic: EPIC-04

@@ -1,5 +1,6 @@
 ---
 id: US-054
+issue: 44
 title: "Retry my mistakes"
 type: story
 epic: EPIC-05

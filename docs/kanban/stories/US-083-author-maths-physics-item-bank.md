@@ -1,5 +1,6 @@
 ---
 id: US-083
+issue: 59
 title: "Author maths / physics item bank"
 type: story
 epic: EPIC-08

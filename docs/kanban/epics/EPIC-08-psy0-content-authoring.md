@@ -1,5 +1,6 @@
 ---
 id: EPIC-08
+issue: 8
 title: "PSY0 content authoring"
 type: epic
 status: backlog

@@ -1,5 +1,6 @@
 ---
 id: US-023
+issue: 27
 title: "Mental arithmetic generator"
 type: story
 epic: EPIC-03

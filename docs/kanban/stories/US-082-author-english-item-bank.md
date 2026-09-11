@@ -1,5 +1,6 @@
 ---
 id: US-082
+issue: 58
 title: "Author English item bank"
 type: story
 epic: EPIC-08

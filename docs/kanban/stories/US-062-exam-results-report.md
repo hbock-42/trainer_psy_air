@@ -1,5 +1,6 @@
 ---
 id: US-062
+issue: 47
 title: "Exam results report"
 type: story
 epic: EPIC-06

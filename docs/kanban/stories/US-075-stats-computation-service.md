@@ -1,5 +1,6 @@
 ---
 id: US-075
+issue: 55
 title: "Stats computation service"
 type: story
 epic: EPIC-07

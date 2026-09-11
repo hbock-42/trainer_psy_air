@@ -1,5 +1,6 @@
 ---
 id: EPIC-06
+issue: 6
 title: "Exam simulation (PSY0)"
 type: epic
 status: backlog

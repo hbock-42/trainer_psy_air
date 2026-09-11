@@ -1,5 +1,6 @@
 ---
 id: US-080
+issue: 56
 title: "Research and document the official PSY0 battery"
 type: story
 epic: EPIC-08

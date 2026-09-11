@@ -1,5 +1,6 @@
 ---
 id: US-061
+issue: 46
 title: "Exam runner (strict, timed, silent)"
 type: story
 epic: EPIC-06

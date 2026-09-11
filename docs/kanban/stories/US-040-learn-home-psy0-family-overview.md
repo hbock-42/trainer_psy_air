@@ -1,5 +1,6 @@
 ---
 id: US-040
+issue: 35
 title: "Learn home: PSY0 family overview"
 type: story
 epic: EPIC-04

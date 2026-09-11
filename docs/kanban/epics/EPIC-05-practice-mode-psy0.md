@@ -1,5 +1,6 @@
 ---
 id: EPIC-05
+issue: 5
 title: "Practice mode (PSY0)"
 type: epic
 status: backlog

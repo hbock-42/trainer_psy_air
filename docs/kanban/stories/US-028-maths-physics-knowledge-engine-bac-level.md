@@ -1,5 +1,6 @@
 ---
 id: US-028
+issue: 32
 title: "Maths / physics knowledge engine (bac level)"
 type: story
 epic: EPIC-03

@@ -1,5 +1,6 @@
 ---
 id: US-111
+issue: 73
 title: "Interview preparation: question bank & self-recording"
 type: story
 epic: EPIC-11

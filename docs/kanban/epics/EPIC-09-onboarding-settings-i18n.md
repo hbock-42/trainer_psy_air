@@ -1,5 +1,6 @@
 ---
 id: EPIC-09
+issue: 9
 title: "Onboarding, settings & i18n"
 type: epic
 status: backlog

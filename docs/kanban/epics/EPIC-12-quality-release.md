@@ -1,5 +1,6 @@
 ---
 id: EPIC-12
+issue: 12
 title: "Quality & release"
 type: epic
 status: backlog

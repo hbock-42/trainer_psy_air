@@ -1,5 +1,6 @@
 ---
 id: US-003
+issue: 16
 title: "Design system: theme, typography and shared widgets"
 type: story
 epic: EPIC-01

@@ -1,5 +1,6 @@
 ---
 id: US-084
+issue: 60
 title: "Author logical & spatial reasoning seed items"
 type: story
 epic: EPIC-08

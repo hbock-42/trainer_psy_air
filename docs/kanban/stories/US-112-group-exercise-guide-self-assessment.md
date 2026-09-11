@@ -1,5 +1,6 @@
 ---
 id: US-112
+issue: 74
 title: "Group exercise guide & self-assessment"
 type: story
 epic: EPIC-11

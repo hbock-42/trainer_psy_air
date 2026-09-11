@@ -1,5 +1,6 @@
 ---
 id: US-041
+issue: 36
 title: "Lesson viewer (markdown) with tips and strategies"
 type: story
 epic: EPIC-04

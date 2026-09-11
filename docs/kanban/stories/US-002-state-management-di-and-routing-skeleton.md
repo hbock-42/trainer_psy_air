@@ -1,5 +1,6 @@
 ---
 id: US-002
+issue: 15
 title: "State management, DI and routing skeleton"
 type: story
 epic: EPIC-01

@@ -1,5 +1,6 @@
 ---
 id: US-014
+issue: 23
 title: "Content validator script (used by authors and CI)"
 type: story
 epic: EPIC-02

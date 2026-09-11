@@ -1,5 +1,6 @@
 ---
 id: US-070
+issue: 50
 title: "Progress dashboard"
 type: story
 epic: EPIC-07
