@@ -4,7 +4,7 @@ issue: 15
 title: "State management, DI and routing skeleton"
 type: story
 epic: EPIC-01
-status: review
+status: done
 priority: P0
 size: S
 lane: core
