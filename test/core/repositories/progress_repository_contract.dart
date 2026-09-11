@@ -329,6 +329,101 @@ void runProgressRepositoryContract({
     });
   });
 
+  group('sessionFamilyStats', () {
+    test('one point per session and family, oldest first', () async {
+      final day1 = DateTime.utc(2026, 9, 1, 9);
+      final day2 = DateTime.utc(2026, 9, 2, 9);
+      final day3 = DateTime.utc(2026, 9, 3, 9);
+      final s1 = await repo.startSession(
+        mode: SessionMode.practice,
+        familyId: 'english',
+        startedAt: day1,
+      );
+      final s2 = await repo.startSession(
+        mode: SessionMode.practice,
+        familyId: 'english',
+        startedAt: day2,
+      );
+      final exam = await repo.startSession(
+        mode: SessionMode.exam,
+        startedAt: day3,
+      );
+      final empty = await repo.startSession(
+        mode: SessionMode.practice,
+        familyId: 'logic',
+        startedAt: day3,
+      );
+      NewAttempt at(
+        TrainingSession s,
+        String family,
+        int ms, {
+        required bool ok,
+        bool answered = true,
+      }) => NewAttempt(
+        sessionId: s.id,
+        familyId: family,
+        origin: AttemptOrigin(generatorId: 'g', seed: ms),
+        answer: answered ? const {'index': 0} : null,
+        isCorrect: ok,
+        responseMs: ms,
+        position: ms,
+      );
+      await repo.recordAttempts([
+        at(s1, 'english', 100, ok: true),
+        at(s1, 'english', 300, ok: false, answered: false),
+        at(s1, 'english', 200, ok: true),
+        at(s2, 'english', 1000, ok: true),
+        at(exam, 'english', 5000, ok: false),
+        at(exam, 'logic', 700, ok: true),
+        at(exam, 'logic', 900, ok: true),
+      ]);
+
+      final all = await repo.sessionFamilyStats();
+      expect(all.map((p) => (p.sessionId, p.familyId)), [
+        (s1.id, 'english'),
+        (s2.id, 'english'),
+        (exam.id, 'english'),
+        (exam.id, 'logic'),
+      ]);
+      expect(all.map((p) => p.sessionId), isNot(contains(empty.id)));
+      final first = all.first;
+      expect(first.mode, SessionMode.practice);
+      expect(first.startedAt, day1);
+      expect(first.startedAt.isUtc, isTrue);
+      expect(first.attempts, 3);
+      expect(first.correct, 2);
+      expect(first.unanswered, 1);
+      expect(first.accuracy, closeTo(2 / 3, 1e-9));
+      expect(first.meanResponseMs, 200);
+      expect(first.medianResponseMs, 200);
+      final logic = all.last;
+      expect(logic.mode, SessionMode.exam);
+      expect(logic.medianResponseMs, 800);
+      expect(logic.unanswered, 0);
+
+      expect(
+        (await repo.sessionFamilyStats(
+          familyId: 'english',
+        )).map((p) => p.sessionId),
+        [s1.id, s2.id, exam.id],
+      );
+      expect(
+        (await repo.sessionFamilyStats(
+          mode: SessionMode.exam,
+        )).map((p) => p.familyId),
+        ['english', 'logic'],
+      );
+      expect(
+        (await repo.sessionFamilyStats(
+          from: day2.toLocal(),
+          to: day2,
+        )).map((p) => p.sessionId),
+        [s2.id],
+      );
+      expect(await repo.sessionFamilyStats(from: DateTime.utc(2027)), isEmpty);
+    });
+  });
+
   group('flashcards', () {
     test(
       'saveFlashcardReview upserts and dueFlashcardReviews filters',

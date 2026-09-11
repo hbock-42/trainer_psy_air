@@ -292,4 +292,150 @@ void main() {
       expect(await db.attemptsDao.countBySession('none'), 0);
     });
   });
+
+  group('sessionFamilyAggregates', () {
+    test('groups by session and family, oldest session first', () async {
+      await session('late', startedAt: DateTime.utc(2026, 9, 3));
+      await session('early', startedAt: DateTime.utc(2026, 9, 1));
+      await session(
+        'exam',
+        mode: SessionMode.exam,
+        startedAt: DateTime.utc(2026, 9, 2),
+      );
+      await db.attemptsDao.insertAttempts([
+        // early/english: RTs 100 300 200 (one unanswered) -> median 200
+        attempt(
+          sessionId: 'early',
+          familyId: 'english',
+          correct: true,
+          ms: 100,
+          position: 0,
+        ),
+        attempt(
+          sessionId: 'early',
+          familyId: 'english',
+          correct: false,
+          ms: 300,
+          position: 1,
+        ),
+        attempt(
+          sessionId: 'early',
+          familyId: 'english',
+          correct: true,
+          ms: 200,
+          position: 2,
+        ),
+        // exam: two families in one session
+        attempt(
+          sessionId: 'exam',
+          familyId: 'english',
+          correct: false,
+          ms: 5000,
+          position: 0,
+        ),
+        attempt(
+          sessionId: 'exam',
+          familyId: 'logic',
+          correct: true,
+          ms: 700,
+          position: 1,
+        ),
+        attempt(
+          sessionId: 'exam',
+          familyId: 'logic',
+          correct: true,
+          ms: 900,
+          position: 2,
+        ),
+        // late/english: single attempt
+        attempt(
+          sessionId: 'late',
+          familyId: 'english',
+          correct: true,
+          ms: 1000,
+          position: 0,
+        ),
+      ]);
+
+      final points = await db.attemptsDao.sessionFamilyAggregates();
+      expect(points, [
+        SessionFamilyStats(
+          sessionId: 'early',
+          familyId: 'english',
+          mode: SessionMode.practice,
+          startedAt: DateTime.utc(2026, 9, 1),
+          attempts: 3,
+          correct: 2,
+          unanswered: 1,
+          meanResponseMs: 200,
+          medianResponseMs: 200,
+        ),
+        SessionFamilyStats(
+          sessionId: 'exam',
+          familyId: 'english',
+          mode: SessionMode.exam,
+          startedAt: DateTime.utc(2026, 9, 2),
+          attempts: 1,
+          correct: 0,
+          unanswered: 1,
+          meanResponseMs: 5000,
+          medianResponseMs: 5000,
+        ),
+        SessionFamilyStats(
+          sessionId: 'exam',
+          familyId: 'logic',
+          mode: SessionMode.exam,
+          startedAt: DateTime.utc(2026, 9, 2),
+          attempts: 2,
+          correct: 2,
+          unanswered: 0,
+          meanResponseMs: 800,
+          medianResponseMs: 800,
+        ),
+        SessionFamilyStats(
+          sessionId: 'late',
+          familyId: 'english',
+          mode: SessionMode.practice,
+          startedAt: DateTime.utc(2026, 9, 3),
+          attempts: 1,
+          correct: 1,
+          unanswered: 0,
+          meanResponseMs: 1000,
+          medianResponseMs: 1000,
+        ),
+      ]);
+      expect(points.first.startedAt.isUtc, isTrue);
+
+      expect(
+        (await db.attemptsDao.sessionFamilyAggregates(
+          familyId: 'logic',
+        )).map((p) => p.sessionId),
+        ['exam'],
+      );
+      expect(
+        (await db.attemptsDao.sessionFamilyAggregates(
+          mode: SessionMode.practice,
+        )).map((p) => p.sessionId),
+        ['early', 'late'],
+      );
+      expect(
+        (await db.attemptsDao.sessionFamilyAggregates(
+          from: DateTime.utc(2026, 9, 2),
+          to: DateTime.utc(2026, 9, 2, 23),
+        )).map((p) => p.familyId),
+        ['english', 'logic'],
+      );
+      expect(
+        await db.attemptsDao.sessionFamilyAggregates(
+          from: DateTime.utc(2026, 9, 4),
+        ),
+        isEmpty,
+      );
+    });
+
+    test('is empty without attempts', () async {
+      await session('s');
+      expect(await db.attemptsDao.sessionFamilyAggregates(), isEmpty);
+    });
+  });
 }
