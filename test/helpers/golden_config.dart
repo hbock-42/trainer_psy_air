@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -16,6 +17,11 @@ import 'package:flutter_test/flutter_test.dart';
 //
 // Goldens can still differ across Flutter versions (renderer changes), so the
 // PNGs are tied to the Flutter version CI uses. Bump both together.
+//
+// Text anti-aliasing also differs slightly between macOS (where goldens are
+// usually generated) and the Linux CI runner (~0.3 % of pixels on a phone
+// surface). The comparator below therefore tolerates a small fraction of
+// differing pixels (`goldenPixelTolerance`); anything above it still fails.
 //
 // Updating goldens after an intentional UI change:
 //
@@ -39,6 +45,35 @@ const double goldenDevicePixelRatio = 1.0;
 
 /// Directory holding every golden PNG, relative to the package root.
 const String goldenDirectory = 'test/goldens';
+
+/// Maximum fraction of differing pixels accepted by [expectGolden]
+/// (absorbs cross-platform text rasterisation noise, see header comment).
+const double goldenPixelTolerance = 0.01;
+
+/// A [LocalFileComparator] that accepts up to [tolerance] differing pixels.
+class TolerantGoldenComparator extends LocalFileComparator {
+  TolerantGoldenComparator(
+    super.testFile, {
+    this.tolerance = goldenPixelTolerance,
+  });
+
+  final double tolerance;
+
+  @override
+  Future<bool> compare(Uint8List imageBytes, Uri golden) async {
+    final result = await GoldenFileComparator.compareLists(
+      imageBytes,
+      await getGoldenBytes(golden),
+    );
+    if (result.passed || result.diffPercent <= tolerance) {
+      result.dispose();
+      return true;
+    }
+    final error = await generateFailureOutput(result, golden, basedir);
+    result.dispose();
+    throw FlutterError(error);
+  }
+}
 
 /// Configures the test view for deterministic rendering and pumps [child].
 ///
@@ -82,7 +117,7 @@ void configureGoldenView(
   // comparator rooted at the shared goldens folder so every test, wherever it
   // lives under test/, writes to and reads from the same place.
   final previousComparator = goldenFileComparator;
-  goldenFileComparator = LocalFileComparator(
+  goldenFileComparator = TolerantGoldenComparator(
     Directory.current.uri.resolve('$goldenDirectory/_'),
   );
 
