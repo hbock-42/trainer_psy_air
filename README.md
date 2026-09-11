@@ -1,5 +1,7 @@
 # PSY Trainer
 
+[![CI](https://github.com/hbock-42/trainer_psy_air/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/hbock-42/trainer_psy_air/actions/workflows/ci.yml)
+
 Unofficial mobile app to prepare for the psychometric tests of the Air France cadet pilot
 selection (PSY0 first, then PSY1 and PSY2): lessons, timed drills, mock exams and progress
 tracking, all stored locally on the device.
@@ -34,6 +36,20 @@ Common tasks (see `make help`):
 | `make test`      | `flutter test` |
 | `make run`       | `flutter run` on the connected device |
 | `make board`     | Regenerate the kanban board index |
+
+## CI
+
+GitHub Actions ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs on every pull
+request and on pushes to `main`:
+
+- **`check`**: `flutter pub get`, code generation, `dart format` check, `flutter analyze
+  --fatal-infos`, `flutter test --coverage` (the `coverage/lcov.info` file is uploaded as an
+  artifact). The content validator (`tool/validate_content.dart`, US-014) runs as soon as it
+  exists. This job is required to merge into `main`.
+- **`build-android`**: builds a debug APK and uploads it as an artifact. Runs on pushes to `main`
+  and on pull requests labelled `build`.
+
+Run the same commands locally with `make lint` and `make test` before opening a PR.
 
 ## Conventions
 
