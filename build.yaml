@@ -1,0 +1,14 @@
+# build_runner configuration. Applies to every json_serializable target under lib/.
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          # Nested freezed models are emitted as maps, not object references, so
+          # `toJson()` is directly comparable to the source JSON in tests.
+          explicit_to_json: true
+          # Optional fields that are absent stay absent when re-serialised.
+          include_if_null: false
+          # Wrap decoding errors in CheckedFromJsonException so the parser can
+          # report the class and key that failed.
+          checked: true
