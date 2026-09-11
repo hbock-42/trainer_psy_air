@@ -1,0 +1,16 @@
+{
+  "kind": "family",
+  "id": "english",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 1,
+  "name": { "fr": "Anglais", "en": "English" },
+  "description": { "fr": "Grammaire, vocabulaire et compréhension.", "en": "Grammar, vocabulary and reading." },
+  "engineType": "mcq_bank",
+  "answerFormat": "mcq",
+  "lang": "en",
+  "defaultDurationSec": 600,
+  "defaultItemCount": 30,
+  "confidence": "reported",
+  "tags": ["english"]
+}

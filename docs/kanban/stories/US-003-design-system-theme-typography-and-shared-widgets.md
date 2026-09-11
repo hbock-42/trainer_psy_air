@@ -4,7 +4,7 @@ issue: 16
 title: "Design system: theme, typography and shared widgets"
 type: story
 epic: EPIC-01
-status: review
+status: done
 priority: P0
 size: M
 lane: design

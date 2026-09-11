@@ -1,0 +1,11 @@
+{
+  "kind": "manifest",
+  "schemaVersion": 1,
+  "contentVersion": 2,
+  "updatedAt": "2026-09-11",
+  "modules": ["psy0"],
+  "changelog": [
+    { "contentVersion": 2, "date": "2026-09-11", "summary": "Add memory and logic seeds." },
+    { "contentVersion": 1, "date": "2026-09-01", "summary": "Initial fixture bundle." }
+  ]
+}

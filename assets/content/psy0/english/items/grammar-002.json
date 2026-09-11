@@ -1,0 +1,3337 @@
+{
+  "$schema": "../../../../../docs/content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "english",
+  "items": [
+    {
+      "id": "english.grammar.0081",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The crew briefing starts ___ 6:30 every morning."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "on"
+          }
+        },
+        {
+          "text": {
+            "fr": "in"
+          }
+        },
+        {
+          "text": {
+            "fr": "to"
+          }
+        },
+        {
+          "text": {
+            "fr": "at"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Une **heure précise** se dit avec **at** (*at 6:30, at noon, at midnight*). *In* sert aux mois, années et parties de la journée (*in the morning*), *on* aux jours et dates. Réflexe : heure → *at*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0082",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Our flight to Lisbon leaves ___ Monday morning."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "in"
+          }
+        },
+        {
+          "text": {
+            "fr": "at"
+          }
+        },
+        {
+          "text": {
+            "fr": "on"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Un **jour** (même suivi de *morning/evening*) prend **on** : *on Monday morning*. Le piège est *in the morning* (partie de la journée seule) — dès qu'un jour est nommé, *on* l'emporte. Réflexe : jour ou date → *on*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0083",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Passengers must remain seated while the aircraft is ___ the ground."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "on"
+          }
+        },
+        {
+          "text": {
+            "fr": "in"
+          }
+        },
+        {
+          "text": {
+            "fr": "at"
+          }
+        },
+        {
+          "text": {
+            "fr": "over"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**On the ground** = au sol (contact avec une surface → *on*). *In the ground* signifierait *enterré*, *at* ne s'emploie pas ici. Réflexe : surface → *on*, volume → *in*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0084",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The captain is responsible ___ the safety of everyone on board."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "about"
+          }
+        },
+        {
+          "text": {
+            "fr": "for"
+          }
+        },
+        {
+          "text": {
+            "fr": "with"
+          }
+        },
+        {
+          "text": {
+            "fr": "of"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "*Responsible* se construit avec **for** : calque du français « responsable de » → *of* est le piège classique. Même logique pour *in charge of* mais *responsible for*. Réflexe : *responsible for* + nom ou -ing."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0085",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "We finally arrived ___ Geneva two hours behind schedule."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "to"
+          }
+        },
+        {
+          "text": {
+            "fr": "in"
+          }
+        },
+        {
+          "text": {
+            "fr": "at"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "*Arrive* ne prend **jamais *to*** (calque de « arriver à »). On dit **arrive in** + ville ou pays, **arrive at** + lieu précis (*at the gate, at the airport*). Réflexe : ville → *arrive in*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0086",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Whether we depart on time depends ___ the weather at the destination."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "to"
+          }
+        },
+        {
+          "text": {
+            "fr": "on"
+          }
+        },
+        {
+          "text": {
+            "fr": "from"
+          }
+        },
+        {
+          "text": {
+            "fr": "of"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Depend on** est une préposition fixe ; « dépendre de » pousse les francophones vers *of*, qui est faux. Réflexe : *depend on*, *rely on*, *count on* — toute la famille prend *on*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0087",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Sarah has been in charge ___ crew scheduling since the merger."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "of"
+          }
+        },
+        {
+          "text": {
+            "fr": "about"
+          }
+        },
+        {
+          "text": {
+            "fr": "on"
+          }
+        },
+        {
+          "text": {
+            "fr": "for"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**In charge of** = responsable de. Attention à ne pas confondre avec *responsible **for*** : deux expressions, deux prépositions. Réflexe : *in charge of* / *responsible for*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0088",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "There were 186 passengers ___ board when the diversion was announced."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "in"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "at"
+          }
+        },
+        {
+          "text": {
+            "fr": "on"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**On board** est une expression figée : *on board (the aircraft)*, sans article. *In board* et *at board* n'existent pas, et sans préposition la phrase est incomplète. Réflexe : *on board*, jamais *on the board* (qui désigne un panneau ou un conseil d'administration)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0089",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The engineer explained the fault ___ the crew in less than a minute."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "at"
+          }
+        },
+        {
+          "text": {
+            "fr": "for"
+          }
+        },
+        {
+          "text": {
+            "fr": "to"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "*Explain* se construit avec **to** devant la personne : *explain something to someone*. Le piège français est *explain someone something* (sans préposition, comme *tell*), qui est incorrect. Réflexe : *explain / describe / say* + **to** + personne."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0090",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The new procedure is very different ___ the one we used last winter."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "from"
+          }
+        },
+        {
+          "text": {
+            "fr": "with"
+          }
+        },
+        {
+          "text": {
+            "fr": "of"
+          }
+        },
+        {
+          "text": {
+            "fr": "than"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Different from** est la forme standard (*different to* existe en anglais britannique familier, *different than* en américain oral, mais aucune n'est proposée sans risque ici). *Different of* est un calque de « différent de ». Réflexe : *different from*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0091",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The airline apologised ___ the delay and offered meal vouchers."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "about"
+          }
+        },
+        {
+          "text": {
+            "fr": "for"
+          }
+        },
+        {
+          "text": {
+            "fr": "from"
+          }
+        },
+        {
+          "text": {
+            "fr": "of"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Apologise for** + la faute ou le problème ; *apologise to* + la personne. « S'excuser de » entraîne l'erreur *of*. Réflexe : *apologise to someone for something*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0092",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The report is due ___ the end of the month, not a day later."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "in"
+          }
+        },
+        {
+          "text": {
+            "fr": "until"
+          }
+        },
+        {
+          "text": {
+            "fr": "at"
+          }
+        },
+        {
+          "text": {
+            "fr": "by"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Une **échéance** (au plus tard le…) se dit **by** : *by the end of the month*. *Until* exprime une durée continue jusqu'à un moment (*wait until Friday*) et ne convient pas avec *due*. Réflexe : deadline → *by* ; durée → *until*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0093",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Nobody objected ___ the new rostering system when it was first presented."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "against"
+          }
+        },
+        {
+          "text": {
+            "fr": "to"
+          }
+        },
+        {
+          "text": {
+            "fr": "about"
+          }
+        },
+        {
+          "text": {
+            "fr": "at"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Object to** (+ nom ou -ing) = s'opposer à. *Against* est tentant car on dit *be against something*, mais le verbe *object* impose **to**. Réflexe : *object to*, *be opposed to*, *be against*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0094",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "We arrived ___ home just before midnight, exhausted after the long turnaround."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "at"
+          }
+        },
+        {
+          "text": {
+            "fr": "in"
+          }
+        },
+        {
+          "text": {
+            "fr": "to"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "*Home* se comporte comme un **adverbe** après les verbes de mouvement : *go home, arrive home, get home* — **sans préposition**. *At home* s'emploie avec un verbe statique (*stay at home, work at home*). Réflexe : mouvement + *home* → rien."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0095",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The consultant insisted ___ reviewing every checklist before signing the audit."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "to"
+          }
+        },
+        {
+          "text": {
+            "fr": "for"
+          }
+        },
+        {
+          "text": {
+            "fr": "on"
+          }
+        },
+        {
+          "text": {
+            "fr": "in"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Insist on** + -ing (« insister pour ») : *to* est le piège car on pense « insister pour faire ». Après une préposition, le verbe est toujours en -ing. Réflexe : *insist on doing*, *succeed in doing*, *apologise for doing*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0096",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.prepositions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The maintenance team was blamed ___ the delay, although the part had arrived late from the supplier."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "for"
+          }
+        },
+        {
+          "text": {
+            "fr": "about"
+          }
+        },
+        {
+          "text": {
+            "fr": "of"
+          }
+        },
+        {
+          "text": {
+            "fr": "on"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Blame someone for something** (et *blame something on someone*). Au passif, *be blamed for* est la seule forme correcte ; *of* vient de « accusé de » (*accused of* — bonne préposition, mais mauvais verbe). Réflexe : *blame for / accuse of*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0097",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "She works as ___ flight attendant for a regional carrier."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "an"
+          }
+        },
+        {
+          "text": {
+            "fr": "a"
+          }
+        },
+        {
+          "text": {
+            "fr": "the"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Une **profession** au singulier prend l'article indéfini **a/an** en anglais (« elle est hôtesse » → *she is a flight attendant*). *Flight* commence par une consonne → **a**. Réflexe : métier → *a/an*, jamais ∅."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0098",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The tower cleared us for take-off after ___ hour of holding."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "the"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "a"
+          }
+        },
+        {
+          "text": {
+            "fr": "an"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "On choisit *a* ou *an* selon le **son** initial, pas la lettre : *hour* commence par un *h* muet → son de voyelle → **an hour**. Réflexe : *an hour, an honest man* mais *a hotel, a university*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0099",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The dispatcher gave us ___ useful information about the alternate airport."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "an"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "a"
+          }
+        },
+        {
+          "text": {
+            "fr": "the"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Information** est **indénombrable** en anglais : pas de *an information*, pas de pluriel. On dit *some information* ou *a piece of information*. Même famille : *advice, equipment, luggage, news*. Réflexe : indénombrable → pas d'article indéfini."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0100",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "___ pilots need at least eight hours of rest between two duty periods."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "The"
+          }
+        },
+        {
+          "text": {
+            "fr": "A"
+          }
+        },
+        {
+          "text": {
+            "fr": "Some"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Une **généralité** avec un nom pluriel se dit **sans article** : *Pilots need rest* = les pilotes en général. *The pilots* renverrait à un groupe précis déjà identifié. Réflexe : « les X en général » → ∅ + pluriel."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0101",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "That was ___ longest delay I have ever experienced at this airport."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "the"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "an"
+          }
+        },
+        {
+          "text": {
+            "fr": "a"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Un **superlatif** (*longest, best, worst*) est toujours précédé de **the** : il désigne un élément unique dans un ensemble. *A longest* est impossible. Réflexe : superlatif → *the*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0102",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The crew usually has lunch ___ noon during a long turnaround."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "on"
+          }
+        },
+        {
+          "text": {
+            "fr": "at the"
+          }
+        },
+        {
+          "text": {
+            "fr": "at"
+          }
+        },
+        {
+          "text": {
+            "fr": "in the"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "*Noon, midnight, night* s'emploient **sans article** : *at noon, at midnight, at night*. Le piège est *in the morning/afternoon* qui, lui, prend *the*. Réflexe : *at noon / at night* sans article."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0103",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "After the hard landing, one passenger was taken to ___ hospital for a check-up."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "a"
+          }
+        },
+        {
+          "text": {
+            "fr": "an"
+          }
+        },
+        {
+          "text": {
+            "fr": "the"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "En anglais britannique, *go to hospital / school / prison / church* **sans article** signifie y aller pour la fonction du lieu (être soigné, étudier…). *Go to the hospital* = aller au bâtiment (rendre visite, livrer). Ici, le passager y va pour être examiné → ∅. Réflexe : fonction → ∅, bâtiment → *the*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0104",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The cargo was flown from Manchester to ___ Netherlands overnight."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "some"
+          }
+        },
+        {
+          "text": {
+            "fr": "the"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "a"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "La plupart des pays s'écrivent sans article (*France, Spain*), **sauf** les noms pluriels ou contenant un nom commun : **the Netherlands, the United States, the United Kingdom, the Philippines**. Réflexe : pluriel ou *Republic/Kingdom/States* → *the*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0105",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "___ equipment stored in the overhead bins must be secured before departure."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Every"
+          }
+        },
+        {
+          "text": {
+            "fr": "The"
+          }
+        },
+        {
+          "text": {
+            "fr": "An"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Equipment** est indénombrable et employé ici en **général** → pas d'article ; *An equipment* est impossible. *The* serait acceptable seulement si un matériel précis avait déjà été mentionné, ce qui n'est pas le cas. Réflexe : *equipment, luggage, furniture* → jamais *a/an*, pluriel impossible."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0106",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The first officer plays ___ guitar in a band on his days off."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "the"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "some"
+          }
+        },
+        {
+          "text": {
+            "fr": "a"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Avec **play + instrument de musique**, l'anglais britannique met **the** : *play the guitar, play the piano*. Avec un sport, en revanche, aucun article : *play football*. Réflexe : instrument → *the*, sport → ∅."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0107",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "___ Captain Reyes will address the passengers once we reach cruising altitude."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A"
+          }
+        },
+        {
+          "text": {
+            "fr": "The"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "Mr"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Un **titre suivi d'un nom propre** (*Captain Reyes, Doctor Lee, President Novak*) s'emploie **sans article**. *The captain* seul (sans nom) prend l'article. Réflexe : titre + nom → ∅ ; titre seul → *the*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0108",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "___ unemployed often struggle to afford last-minute fares."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "The"
+          }
+        },
+        {
+          "text": {
+            "fr": "Some of"
+          }
+        },
+        {
+          "text": {
+            "fr": "An"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**The + adjectif** désigne un groupe de personnes en général : *the unemployed, the rich, the elderly, the injured*. Sans article, *unemployed* resterait un simple adjectif sans nom. Réflexe : *the* + adjectif = « les gens qui sont… »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0109",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "We were told to expect ___ turbulence over the Alps, so the service was suspended."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "the"
+          }
+        },
+        {
+          "text": {
+            "fr": "some"
+          }
+        },
+        {
+          "text": {
+            "fr": "an"
+          }
+        },
+        {
+          "text": {
+            "fr": "a"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Turbulence** est indénombrable : *a turbulence* est un calque de « une turbulence ». Pour quantifier on dit **some turbulence** ou *a lot of turbulence*. *The* supposerait une turbulence déjà mentionnée. Réflexe : *turbulence, weather, traffic* → indénombrables."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0110",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.articles"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Our base is in Lyon, but I spend most of ___ year flying out of Nice."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "this"
+          }
+        },
+        {
+          "text": {
+            "fr": "the"
+          }
+        },
+        {
+          "text": {
+            "fr": "a"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "*Most of* + nom exige un **déterminant** : *most of **the** year, most of my colleagues*. En revanche, *most* seul est suivi directement du nom : *most pilots*. Le piège est de mélanger les deux (*most of year*). Réflexe : *most + nom* / *most of the + nom*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0111",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The aircraft ___ off at 09:12, twelve minutes behind schedule."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "took"
+          }
+        },
+        {
+          "text": {
+            "fr": "went"
+          }
+        },
+        {
+          "text": {
+            "fr": "got"
+          }
+        },
+        {
+          "text": {
+            "fr": "made"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Take off** = décoller (et *takeoff* = le décollage). *Go off* signifie exploser ou se déclencher (une alarme), *get off* = descendre d'un véhicule. Réflexe : *take off* ↔ *land / touch down*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0112",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Please ___ in this form before you reach the passport control desk."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "make"
+          }
+        },
+        {
+          "text": {
+            "fr": "put"
+          }
+        },
+        {
+          "text": {
+            "fr": "write"
+          }
+        },
+        {
+          "text": {
+            "fr": "fill"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Fill in** (ou *fill out*) a form = remplir un formulaire. *Write* et *put* ne forment pas de verbe à particule avec *in* dans ce sens. Réflexe : formulaire → *fill in/out*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0113",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The management decided to ___ off the training session until the new simulator is installed."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "set"
+          }
+        },
+        {
+          "text": {
+            "fr": "put"
+          }
+        },
+        {
+          "text": {
+            "fr": "take"
+          }
+        },
+        {
+          "text": {
+            "fr": "call"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Put off** = reporter, remettre à plus tard (indice : *until*). *Call off* = annuler (définitif), *set off* = partir, *take off* = décoller. Réflexe : *put off* = postpone ; *call off* = cancel."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0114",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "We ___ down smoothly despite the crosswind reported by the tower."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "got"
+          }
+        },
+        {
+          "text": {
+            "fr": "came"
+          }
+        },
+        {
+          "text": {
+            "fr": "went"
+          }
+        },
+        {
+          "text": {
+            "fr": "touched"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Touch down** = atterrir (le moment où les roues touchent la piste). *Go down* = descendre ou tomber en panne, *come down* = descendre. Réflexe : *touch down* = *land*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0115",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Mechanics ___ out a full inspection of the landing gear every 600 flight hours."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "make"
+          }
+        },
+        {
+          "text": {
+            "fr": "bring"
+          }
+        },
+        {
+          "text": {
+            "fr": "carry"
+          }
+        },
+        {
+          "text": {
+            "fr": "do"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Carry out** = effectuer, réaliser (une inspection, une tâche, un ordre). *Make out* = distinguer, *bring out* = faire ressortir. *Do* n'a pas de particule *out* ici. Réflexe : *carry out an inspection / a check / a procedure*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0116",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The airline ___ up a new base in Porto to serve the summer routes."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "set"
+          }
+        },
+        {
+          "text": {
+            "fr": "made"
+          }
+        },
+        {
+          "text": {
+            "fr": "got"
+          }
+        },
+        {
+          "text": {
+            "fr": "put"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Set up** = créer, établir, installer (une base, une entreprise, un système). *Put up* = héberger ou afficher, *make up* = inventer ou constituer. Réflexe : *set up a company / a base / a meeting*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0117",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "By the second hour of holding, the crew was afraid they would ___ out of fuel reserves."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "fall"
+          }
+        },
+        {
+          "text": {
+            "fr": "go"
+          }
+        },
+        {
+          "text": {
+            "fr": "get"
+          }
+        },
+        {
+          "text": {
+            "fr": "run"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Run out of** = ne plus avoir de, épuiser (*fuel, time, ideas*). *Go out* = sortir, *get out* = sortir/descendre, *fall out* = se disputer. Réflexe : « être à court de » → *run out of*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0118",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Safety investigators will ___ into the incident before any conclusion is published."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "look"
+          }
+        },
+        {
+          "text": {
+            "fr": "see"
+          }
+        },
+        {
+          "text": {
+            "fr": "watch"
+          }
+        },
+        {
+          "text": {
+            "fr": "check"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Look into** = enquêter sur, examiner (indice : *investigators*). *See into* et *watch into* n'existent pas ; *check* s'emploie sans *into*. Réflexe : *look into* = *investigate*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0119",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Bad weather forced the operator to ___ off all evening departures."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "take"
+          }
+        },
+        {
+          "text": {
+            "fr": "put"
+          }
+        },
+        {
+          "text": {
+            "fr": "call"
+          }
+        },
+        {
+          "text": {
+            "fr": "turn"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Call off** = annuler (*cancel*). *Put off* = reporter — la nuance compte : ici les départs sont annulés, pas reportés. *Turn off* = éteindre. Réflexe : *call off* = cancel ; *put off* = postpone."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0120",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Always ___ up the flight plan on the second tablet in case the first one fails."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "save"
+          }
+        },
+        {
+          "text": {
+            "fr": "back"
+          }
+        },
+        {
+          "text": {
+            "fr": "keep"
+          }
+        },
+        {
+          "text": {
+            "fr": "put"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Back up** = sauvegarder, faire une copie de secours (indice : *in case the first one fails*). *Save* s'emploie seul, sans *up* ; *keep up* = maintenir, suivre le rythme. Réflexe : *back up* = *make a backup copy*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0121",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The captain ___ down the ground handler's request to board late passengers."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "let"
+          }
+        },
+        {
+          "text": {
+            "fr": "got"
+          }
+        },
+        {
+          "text": {
+            "fr": "turned"
+          }
+        },
+        {
+          "text": {
+            "fr": "put"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Turn down** = refuser (une demande, une offre, un candidat). *Put down* = poser ou humilier, *let down* = décevoir, *get down* = descendre. Réflexe : *turn down* = *reject / refuse*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0122",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Before the simulator session, we ___ through the emergency descent procedure twice."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "went"
+          }
+        },
+        {
+          "text": {
+            "fr": "passed"
+          }
+        },
+        {
+          "text": {
+            "fr": "read"
+          }
+        },
+        {
+          "text": {
+            "fr": "looked"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Go through** = passer en revue, répéter point par point (une procédure, un document). *Look through* = parcourir rapidement, *pass through* = traverser un lieu. Réflexe : *go through a procedure* = la revoir en détail."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0123",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The shuttle will ___ up the crew at the hotel at 04:45 sharp."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "bring"
+          }
+        },
+        {
+          "text": {
+            "fr": "pick"
+          }
+        },
+        {
+          "text": {
+            "fr": "catch"
+          }
+        },
+        {
+          "text": {
+            "fr": "take"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Pick up** = passer prendre, aller chercher quelqu'un (*pick up the crew / the kids / a parcel*). *Take up* = commencer une activité ou occuper de la place, *bring up* = élever ou aborder un sujet, *catch up* = rattraper. Réflexe : transport de personnes → *pick up* / *drop off*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0124",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.phrasal_verbs"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "___ on a second, the tower is calling us back with a revised clearance."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Keep"
+          }
+        },
+        {
+          "text": {
+            "fr": "Stay"
+          }
+        },
+        {
+          "text": {
+            "fr": "Wait"
+          }
+        },
+        {
+          "text": {
+            "fr": "Hold"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Hold on** = patienter, attendre un instant (à l'oral : *hold on a second/minute*). *Wait* s'emploie sans *on* (*wait a second*), *keep on* = continuer, *stay on* = rester en ligne ou en poste. Réflexe : *hold on* = *wait a moment*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0125",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.relative_clauses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The engineer ___ signed the release is on leave this week."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "who"
+          }
+        },
+        {
+          "text": {
+            "fr": "which"
+          }
+        },
+        {
+          "text": {
+            "fr": "whose"
+          }
+        },
+        {
+          "text": {
+            "fr": "whom"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Pour une **personne sujet** de la relative, on emploie **who** (ou *that*). *Which* est réservé aux choses, *whose* marque la possession, *whom* le complément. Réflexe : personne + verbe juste après → *who*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0126",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.relative_clauses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The airport ___ we diverted to had only one runway open."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "where"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "in which"
+          }
+        },
+        {
+          "text": {
+            "fr": "whose"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Le pronom relatif **complément** d'une relative définissante peut être **omis** : *the airport (that/which) we diverted to*. *Where* est impossible ici car la préposition *to* est déjà en fin de relative (on dirait *the airport where we landed*, sans préposition). Réflexe : préposition en fin de relative → *that/which/∅*, jamais *where*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0127",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.relative_clauses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "This is the hangar ___ the new aircraft will be stored."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "that"
+          }
+        },
+        {
+          "text": {
+            "fr": "which"
+          }
+        },
+        {
+          "text": {
+            "fr": "where"
+          }
+        },
+        {
+          "text": {
+            "fr": "what"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Where** remplace un complément de **lieu** (*in the hangar*). *Which/that* auraient besoin d'une préposition (*in which the aircraft will be stored*). *What* n'est jamais relatif après un nom. Réflexe : lieu sans préposition → *where*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0128",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.relative_clauses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The passenger ___ bag was left at the gate has already boarded."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "which"
+          }
+        },
+        {
+          "text": {
+            "fr": "who"
+          }
+        },
+        {
+          "text": {
+            "fr": "that"
+          }
+        },
+        {
+          "text": {
+            "fr": "whose"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Whose** exprime la **possession** (*le passager dont le sac…*) et fonctionne pour les personnes comme pour les choses. *Who's* (= who is) est l'homophone piège. Réflexe : « dont le/la » → *whose* + nom."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0129",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.relative_clauses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Our chief pilot, ___ joined the company in 2008, is retiring next spring."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "that"
+          }
+        },
+        {
+          "text": {
+            "fr": "which"
+          }
+        },
+        {
+          "text": {
+            "fr": "who"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Entre **virgules**, la relative est **non définissante** (elle ajoute une précision) : *that* et l'omission y sont **interdits**, seul **who** (personne) ou *which* (chose) convient. Réflexe : virgules → jamais *that*, jamais ∅."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0130",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.relative_clauses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The airline cancelled the route, ___ surprised nobody in the industry."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "what"
+          }
+        },
+        {
+          "text": {
+            "fr": "which"
+          }
+        },
+        {
+          "text": {
+            "fr": "that"
+          }
+        },
+        {
+          "text": {
+            "fr": "who"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Which** après une virgule peut renvoyer à **toute la proposition précédente** (« ce qui n'a surpris personne »). *What* ne s'emploie jamais ainsi en anglais (calque de « ce qui »), *that* est exclu dans une relative non définissante. Réflexe : « , ce qui… » → *, which…*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0131",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.relative_clauses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The colleague ___ I shared the cockpit with last month has just been promoted."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "where"
+          }
+        },
+        {
+          "text": {
+            "fr": "which"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "whose"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "*The colleague (whom/that) I shared the cockpit with* : relative définissante, pronom **complément** → il peut être **omis**. *Which* ne convient pas à une personne, *whose* marquerait la possession. Réflexe : nom + sujet + verbe immédiatement → pronom omissible."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0132",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.relative_clauses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The aircraft ___ on stand 12 belongs to a leasing company."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "parked"
+          }
+        },
+        {
+          "text": {
+            "fr": "parking"
+          }
+        },
+        {
+          "text": {
+            "fr": "that is parking"
+          }
+        },
+        {
+          "text": {
+            "fr": "which parked"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Relative réduite** au participe **passé** : *the aircraft (which is) parked on stand 12* → sens passif (il a été garé). *Parking* (participe présent) donnerait un sens actif en cours, *which parked* signifierait qu'il s'est garé lui-même. Réflexe : *which is + participe passé* → on garde le participe seul."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0133",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.relative_clauses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The manual describes the conditions ___ a go-around becomes mandatory."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "which"
+          }
+        },
+        {
+          "text": {
+            "fr": "that"
+          }
+        },
+        {
+          "text": {
+            "fr": "under which"
+          }
+        },
+        {
+          "text": {
+            "fr": "where"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "*Under the conditions* → la préposition remonte devant le relatif dans un registre formel : **under which**. *Which/that* seuls laisseraient la relative sans préposition (*the conditions which a go-around becomes*, incorrect). *Where* ne s'emploie pas pour *conditions*. Réflexe : nom abstrait + préposition → *in/under/by which*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0134",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.relative_clauses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The first officer, ___ the captain trusted completely, took the controls."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "whom"
+          }
+        },
+        {
+          "text": {
+            "fr": "that"
+          }
+        },
+        {
+          "text": {
+            "fr": "whose"
+          }
+        },
+        {
+          "text": {
+            "fr": "which"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Relative **non définissante** (virgules) où le pronom est **complément** de *trusted* et désigne une personne : **whom** (*who* serait aussi accepté à l'oral). *That* est exclu entre virgules, *which* ne s'applique pas à une personne, *whose* exprimerait une possession. Réflexe : sujet déjà présent après le pronom → *whom*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0135",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.relative_clauses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The airline operates a fleet ___ average age is under six years."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "that its"
+          }
+        },
+        {
+          "text": {
+            "fr": "whose"
+          }
+        },
+        {
+          "text": {
+            "fr": "which its"
+          }
+        },
+        {
+          "text": {
+            "fr": "of which the"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Whose** s'emploie aussi pour les **choses** (*a fleet whose average age*). *Of which* est possible mais l'ordre serait *the average age of which*, pas *of which the average age* dans cette position. *Which its / that its* sont des calques incorrects. Réflexe : possession, personne ou chose → *whose*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0136",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.relative_clauses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Anyone ___ to swap a duty must notify crew control 48 hours in advance."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "who wishing"
+          }
+        },
+        {
+          "text": {
+            "fr": "wishes"
+          }
+        },
+        {
+          "text": {
+            "fr": "which wishes"
+          }
+        },
+        {
+          "text": {
+            "fr": "wishing"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Relative réduite** au participe **présent** : *anyone (who is) wishing to swap* → sens actif. *Wishes* seul créerait deux verbes conjugués sans pronom, *who wishing* mélange les deux formes, *which* ne convient pas à une personne. Réflexe : *who + verbe actif* → participe en -ing seul."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0137",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.reported_speech"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The purser ___ us that the meal service would start after take-off."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "explained to"
+          }
+        },
+        {
+          "text": {
+            "fr": "spoke"
+          }
+        },
+        {
+          "text": {
+            "fr": "told"
+          }
+        },
+        {
+          "text": {
+            "fr": "said"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Tell + personne** (*told us*), **say** sans complément de personne ou avec *to* (*said to us*). *Explained to us that* serait correct mais le trou n'a qu'un mot. Réflexe : *tell someone / say to someone*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0138",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.reported_speech"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The captain said that the weather ___ fine at the destination."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "was"
+          }
+        },
+        {
+          "text": {
+            "fr": "has been"
+          }
+        },
+        {
+          "text": {
+            "fr": "will be"
+          }
+        },
+        {
+          "text": {
+            "fr": "is"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Après un verbe introducteur au **passé** (*said*), on applique le **backshift** : présent → prétérit (*is* → **was**). Le présent *is* n'est admis que si le fait est encore vrai et que l'on veut l'insister, ce qui n'est pas l'intention ici. Réflexe : *said that* + un temps en arrière."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0139",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.reported_speech"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "She asked me ___ I had checked the fuel figures."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "did"
+          }
+        },
+        {
+          "text": {
+            "fr": "that"
+          }
+        },
+        {
+          "text": {
+            "fr": "what"
+          }
+        },
+        {
+          "text": {
+            "fr": "whether"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Une **question fermée** (oui/non) rapportée s'introduit par **whether** ou *if*, et l'ordre redevient celui d'une affirmation (*I had checked*, pas *had I checked*). *That* sert aux affirmations, *did* trahit un ordre interrogatif direct. Réflexe : question oui/non → *asked whether/if* + sujet + verbe."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0140",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.reported_speech"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Ground control ___ that the stand was still occupied."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "told"
+          }
+        },
+        {
+          "text": {
+            "fr": "said"
+          }
+        },
+        {
+          "text": {
+            "fr": "explained us"
+          }
+        },
+        {
+          "text": {
+            "fr": "asked"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Say** s'emploie **sans complément de personne** devant *that* ; *told* exigerait un objet (*told us that*). *Asked that* introduirait une demande, pas une information. Réflexe : pas de personne → *said*, personne → *told*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0141",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.reported_speech"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The instructor suggested ___ the approach briefing before starting the engines."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "to do"
+          }
+        },
+        {
+          "text": {
+            "fr": "that we did"
+          }
+        },
+        {
+          "text": {
+            "fr": "doing"
+          }
+        },
+        {
+          "text": {
+            "fr": "us to do"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Suggest** n'est **jamais** suivi d'un infinitif (*suggest to do* est un calque de « suggérer de faire ») : on dit *suggest **doing*** ou *suggest that we (should) do*. *Suggest us to do* est également impossible. Réflexe : *suggest / recommend + -ing*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0142",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.reported_speech"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The dispatcher wanted to know ___ the crew would need extra fuel."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "how much"
+          }
+        },
+        {
+          "text": {
+            "fr": "if how much"
+          }
+        },
+        {
+          "text": {
+            "fr": "that how much"
+          }
+        },
+        {
+          "text": {
+            "fr": "how much would"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question **ouverte** rapportée : on garde le mot interrogatif (*how much*) mais l'ordre est **affirmatif** (*the crew would need*), sans inversion ni auxiliaire. *How much would the crew need* reproduit la question directe. Réflexe : mot interrogatif + sujet + verbe, pas d'inversion."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0143",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.reported_speech"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Yesterday the captain said he would sign the paperwork ___."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "next day"
+          }
+        },
+        {
+          "text": {
+            "fr": "tomorrow"
+          }
+        },
+        {
+          "text": {
+            "fr": "this day"
+          }
+        },
+        {
+          "text": {
+            "fr": "the following day"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Au discours rapporté, les **repères de temps se décalent** : *tomorrow* → **the following day / the next day**, *yesterday* → *the day before*, *now* → *then*. *Tomorrow* ne fonctionnerait que si le rapport était fait le jour même. Réflexe : *said + décalage des adverbes de temps*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0144",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.reported_speech"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The engineer told us that he ___ the part two days earlier."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "ordered"
+          }
+        },
+        {
+          "text": {
+            "fr": "had ordered"
+          }
+        },
+        {
+          "text": {
+            "fr": "has ordered"
+          }
+        },
+        {
+          "text": {
+            "fr": "was ordering"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Un **prétérit** en discours direct (*I ordered it two days ago*) devient **past perfect** au rapporté (*had ordered*), et *ago* devient *earlier/before*. *Has ordered* est impossible après *told* au passé. Réflexe : *ago* → *before/earlier* + past perfect."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0145",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.reported_speech"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The tower asked us ___ the runway as soon as possible."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "that we vacate"
+          }
+        },
+        {
+          "text": {
+            "fr": "vacating"
+          }
+        },
+        {
+          "text": {
+            "fr": "to vacate"
+          }
+        },
+        {
+          "text": {
+            "fr": "if we vacate"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Un **ordre ou une demande** rapportés se construisent avec **ask/tell + personne + to + infinitif** (*asked us to vacate*). *That we vacate* est possible en anglais très formel mais pas avec *asked us* ; *-ing* est impossible. Réflexe : impératif direct → *told/asked someone to do*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0146",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.reported_speech"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The manager admitted ___ the roster without consulting the union."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "having changed"
+          }
+        },
+        {
+          "text": {
+            "fr": "us to change"
+          }
+        },
+        {
+          "text": {
+            "fr": "to change"
+          }
+        },
+        {
+          "text": {
+            "fr": "that changed"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Admit** est suivi de **-ing** (ou de *that* + proposition complète) : *admitted having changed* (forme parfaite pour marquer l'antériorité) ou *admitted changing*. *Admit to change* est un calque de « admettre avoir changé ». Réflexe : *admit / deny / mention + -ing*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0147",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.reported_speech"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The chief pilot asked whether we ___ operate the flight with the autothrottle inoperative."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "may we"
+          }
+        },
+        {
+          "text": {
+            "fr": "will be able"
+          }
+        },
+        {
+          "text": {
+            "fr": "can"
+          }
+        },
+        {
+          "text": {
+            "fr": "could"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Le modal **can** devient **could** au discours rapporté après *asked* (backshift), sans inversion (*may we* trahit une question directe). *Will be able* n'est pas décalé (il faudrait *would be able*). Réflexe : *can → could, will → would, may → might*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0148",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.reported_speech"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The examiner warned the trainee ___ the checklist again during the test."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "that not skip"
+          }
+        },
+        {
+          "text": {
+            "fr": "not to skip"
+          }
+        },
+        {
+          "text": {
+            "fr": "to not skipping"
+          }
+        },
+        {
+          "text": {
+            "fr": "don't skip"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Un **ordre négatif** rapporté se construit avec **warn/tell + personne + not to + infinitif** : *warned him not to skip*. *Don't skip* est le discours direct, *to not skipping* mélange infinitif et -ing. Réflexe : *Don't do it!* → *told him **not to** do it*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0149",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.comparatives_quantifiers"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "How ___ luggage can each passenger check in for free?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "lot of"
+          }
+        },
+        {
+          "text": {
+            "fr": "few"
+          }
+        },
+        {
+          "text": {
+            "fr": "many"
+          }
+        },
+        {
+          "text": {
+            "fr": "much"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Luggage** est **indénombrable** → *how **much*** (quantité), tandis que *how many* accompagne un pluriel dénombrable (*how many bags*). Réflexe : indénombrable → *much / little*, dénombrable → *many / few*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0150",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.comparatives_quantifiers"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The new fleet burns ___ fuel per seat than the aircraft it replaces."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "fewer"
+          }
+        },
+        {
+          "text": {
+            "fr": "less"
+          }
+        },
+        {
+          "text": {
+            "fr": "least"
+          }
+        },
+        {
+          "text": {
+            "fr": "lesser"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Fuel** est indénombrable → comparatif **less** (*less fuel*). *Fewer* s'emploie avec un pluriel dénombrable (*fewer seats*). *Least* est le superlatif, *lesser* signifie « moindre » (registre littéraire). Réflexe : *less + indénombrable / fewer + pluriel*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0151",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.comparatives_quantifiers"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The earlier we push back, ___ chance we have of avoiding the afternoon storms."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "the better"
+          }
+        },
+        {
+          "text": {
+            "fr": "a better"
+          }
+        },
+        {
+          "text": {
+            "fr": "better"
+          }
+        },
+        {
+          "text": {
+            "fr": "the best"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Structure **the + comparatif …, the + comparatif …** (« plus…, plus… ») : *the earlier…, **the better** chance*. Le second *the* est obligatoire ; *the best* est un superlatif. Réflexe : « plus… plus… » → *the more… the more…*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0152",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.comparatives_quantifiers"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "There were ___ passengers on the return leg than expected, so boarding was quick."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "little"
+          }
+        },
+        {
+          "text": {
+            "fr": "less"
+          }
+        },
+        {
+          "text": {
+            "fr": "fewer"
+          }
+        },
+        {
+          "text": {
+            "fr": "least"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Passengers** est un pluriel **dénombrable** → **fewer** (indice : *than*, comparatif). *Less passengers* s'entend à l'oral mais est jugé fautif à l'écrit. Réflexe : dénombrable → *fewer*, indénombrable → *less*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0153",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.comparatives_quantifiers"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The morning rotation is not ___ demanding as the night one, but it starts earlier."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "so much"
+          }
+        },
+        {
+          "text": {
+            "fr": "such"
+          }
+        },
+        {
+          "text": {
+            "fr": "as"
+          }
+        },
+        {
+          "text": {
+            "fr": "more"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Comparaison d'égalité (ici niée) : **as/so … as** → *not **as** demanding **as***. *More… as* mélange comparatif et égalité ; *such* introduit un nom, pas un adjectif. Réflexe : *as + adjectif + as* ; forme négative : *not as/so… as*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0154",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.comparatives_quantifiers"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Crosswind landings are ___ more demanding than the simulator suggests."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "far"
+          }
+        },
+        {
+          "text": {
+            "fr": "much more"
+          }
+        },
+        {
+          "text": {
+            "fr": "very"
+          }
+        },
+        {
+          "text": {
+            "fr": "too"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Pour **intensifier un comparatif**, on utilise **far / much / a lot** (*far more demanding*), jamais *very* (réservé à l'adjectif simple : *very demanding*). *Much more* doublerait le *more* déjà présent dans la phrase. Réflexe : *very + adjectif*, *far/much + comparatif*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    }
+  ]
+}

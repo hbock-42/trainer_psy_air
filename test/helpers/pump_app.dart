@@ -1,5 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_trainer/core/theme/app_theme.dart';
 
@@ -60,4 +62,24 @@ extension PumpApp on WidgetTester {
     await pumpAndSettle();
     return gesture;
   }
+}
+
+/// Function-style variant of [PumpApp.pumpApp] that also installs a
+/// `ProviderScope` (with optional Riverpod [overrides]) so screens that read
+/// providers can be pumped. Its signature matches the `pump` parameter of
+/// `pumpGolden` in `golden_config.dart`.
+Future<void> pumpApp(
+  WidgetTester tester,
+  Widget child, {
+  List<Override> overrides = const [],
+  AppTheme? theme,
+  double textScale = 1.0,
+  bool align = false,
+}) {
+  return tester.pumpApp(
+    ProviderScope(overrides: overrides, child: child),
+    theme: theme,
+    textScale: textScale,
+    align: align,
+  );
 }

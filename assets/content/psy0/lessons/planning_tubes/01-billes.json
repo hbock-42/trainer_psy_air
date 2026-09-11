@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../../../docs/content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.planning_tubes.01",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "planning_tubes",
+  "order": 1,
+  "title": { "fr": "Billes et éprouvettes : compter les coups sans bouger les billes" },
+  "summary": { "fr": "Planification type tour de Hanoï : lire la cible par le bas, utiliser le tube tampon, borner puis compter le nombre minimal de déplacements." },
+  "file": { "fr": "lessons/planning_tubes/01-billes.fr.md" },
+  "estimatedReadMin": 8,
+  "difficulty": 3,
+  "tags": ["planning_tubes", "planning_tubes.strategy"],
+  "practiceTags": ["planning_tubes"],
+  "deckIds": ["deck.planning_tubes"],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 B" }
+}

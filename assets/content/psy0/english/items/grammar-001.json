@@ -1,0 +1,3607 @@
+{
+  "$schema": "../../../../../docs/content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "english",
+  "items": [
+    {
+      "id": "english.grammar.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Our morning flight to Lisbon ___ at 06:45 every day."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "has departed"
+          }
+        },
+        {
+          "text": {
+            "fr": "departs"
+          }
+        },
+        {
+          "text": {
+            "fr": "is departing"
+          }
+        },
+        {
+          "text": {
+            "fr": "departed"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "« *every day* » indique une **habitude / un horaire fixe** : **present simple**. *Is departing* décrirait une action en cours à l'instant, pas une répétition. Réflexe : fréquence (*every*, *always*, *usually*) → present simple."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Look, the ground crew ___ the baggage right now."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "loaded"
+          }
+        },
+        {
+          "text": {
+            "fr": "have loaded"
+          }
+        },
+        {
+          "text": {
+            "fr": "load"
+          }
+        },
+        {
+          "text": {
+            "fr": "are loading"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "« *right now* » + « *Look* » : action en train de se dérouler → **present continuous** (*be* + -ing). *Load* au present simple décrirait une routine, pas ce qui se passe sous nos yeux. Réflexe : *now / at the moment / look!* → be + -ing."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The first officer ___ for Nordwind Air since 2019."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "worked"
+          }
+        },
+        {
+          "text": {
+            "fr": "works"
+          }
+        },
+        {
+          "text": {
+            "fr": "has worked"
+          }
+        },
+        {
+          "text": {
+            "fr": "is working"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "« *since* + date » marque une action commencée dans le passé et **toujours vraie** : **present perfect**. Le français dit « travaille depuis » au présent, d'où le piège *works*. Réflexe : *since / for* + durée non terminée → present perfect."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The captain ___ the weather briefing twenty minutes ago."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "received"
+          }
+        },
+        {
+          "text": {
+            "fr": "has received"
+          }
+        },
+        {
+          "text": {
+            "fr": "receives"
+          }
+        },
+        {
+          "text": {
+            "fr": "had received"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« *twenty minutes ago* » date précisément l'action dans un passé **révolu** : **past simple**. Le present perfect est incompatible avec *ago* ou toute date passée. Réflexe : *ago / yesterday / in 2020 / last week* → past simple."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "I'm sorry, Ms Okafor is not available: she ___ to a customer at the moment."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "talks"
+          }
+        },
+        {
+          "text": {
+            "fr": "talked"
+          }
+        },
+        {
+          "text": {
+            "fr": "is talking"
+          }
+        },
+        {
+          "text": {
+            "fr": "has talked"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "« *at the moment* » = maintenant, action en cours → **present continuous**. *Talks* exprimerait une généralité (elle parle aux clients en général). Réflexe : *at the moment / currently* → be + -ing."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Don't worry, I ___ the dispatcher as soon as we land."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "will call"
+          }
+        },
+        {
+          "text": {
+            "fr": "call"
+          }
+        },
+        {
+          "text": {
+            "fr": "called"
+          }
+        },
+        {
+          "text": {
+            "fr": "am going to calling"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Décision prise **sur le moment** (« *Don't worry* ») → **will** + base verbale. *Am going to calling* est grammaticalement impossible (*going to* + base verbale). Réflexe : promesse ou décision spontanée → *will*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "By the time the fuel truck arrived, the crew ___ the walk-around."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "were finishing"
+          }
+        },
+        {
+          "text": {
+            "fr": "finished"
+          }
+        },
+        {
+          "text": {
+            "fr": "have finished"
+          }
+        },
+        {
+          "text": {
+            "fr": "had finished"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Deux actions passées, l'une **avant** l'autre : « *arrived* » (past simple) est la plus récente, donc l'action antérieure prend le **past perfect**. Réflexe : *by the time* + past simple appelle presque toujours un past perfect."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "We ___ for de-icing for over an hour and there is still no sign of the truck."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "have waited"
+          }
+        },
+        {
+          "text": {
+            "fr": "have been waiting"
+          }
+        },
+        {
+          "text": {
+            "fr": "are waiting"
+          }
+        },
+        {
+          "text": {
+            "fr": "waited"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Action commencée dans le passé, **toujours en cours**, dont on souligne la **durée** (« *for over an hour* ») → **present perfect continuous**. *Have waited* est possible mais n'insiste pas sur le déroulement ; *are waiting* ignore la durée. Réflexe : *for/since* + action en cours → have been + -ing."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "While the engineers ___ the hydraulic leak, the passengers were kept in the lounge."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "repaired"
+          }
+        },
+        {
+          "text": {
+            "fr": "were repairing"
+          }
+        },
+        {
+          "text": {
+            "fr": "had repaired"
+          }
+        },
+        {
+          "text": {
+            "fr": "have repaired"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "« *While* » introduit une action **en cours** qui sert de cadre à une autre → **past continuous**. *Repaired* (past simple) présenterait la réparation comme achevée et ponctuelle. Réflexe : *while* + action longue → was/were + -ing."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Please be quiet, the cabin manager ___ the safety demonstration."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "is starting"
+          }
+        },
+        {
+          "text": {
+            "fr": "starts"
+          }
+        },
+        {
+          "text": {
+            "fr": "started"
+          }
+        },
+        {
+          "text": {
+            "fr": "has been starting"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« *Please be quiet* » situe l'action **maintenant** → **present continuous**. *Starts* au present simple conviendrait à un horaire (« *the demo starts at 9* »), pas à une action immédiate. Réflexe : consigne liée à l'instant présent → be + -ing."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "This is the third time the printer ___ this week."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "breaks down"
+          }
+        },
+        {
+          "text": {
+            "fr": "broke down"
+          }
+        },
+        {
+          "text": {
+            "fr": "has broken down"
+          }
+        },
+        {
+          "text": {
+            "fr": "is breaking down"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "« *This is the third time* » + période **non terminée** (« *this week* ») → **present perfect**. Le past simple (*broke down*) irait avec une période close (*last week*). Réflexe : *it's the first/second time…* → present perfect."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The crew ___ arrived at the hotel late last night."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "has"
+          }
+        },
+        {
+          "text": {
+            "fr": "have"
+          }
+        },
+        {
+          "text": {
+            "fr": "was"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "« *last night* » = passé daté → **past simple** : *arrived* suffit, **aucun auxiliaire**. *Have/has arrived* (present perfect) est exclu par le repère passé, *was arrived* n'existe pas (*arrive* n'a pas de passif). Réflexe : date passée → prétérit seul, sans *have*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "I ___ the new roster tomorrow, so I can't confirm my days off yet."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "got"
+          }
+        },
+        {
+          "text": {
+            "fr": "get"
+          }
+        },
+        {
+          "text": {
+            "fr": "have got"
+          }
+        },
+        {
+          "text": {
+            "fr": "am getting"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Arrangement futur **déjà planifié** avec un repère (« *tomorrow* ») → **present continuous** à valeur de futur. *Get* au present simple conviendrait à un horaire officiel (un train, un vol), pas à un événement personnel. Réflexe : *tomorrow / next week* + événement organisé → be + -ing."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Sorry, I ___ what you mean by \"ramp hold\"."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "don't understand"
+          }
+        },
+        {
+          "text": {
+            "fr": "am not understanding"
+          }
+        },
+        {
+          "text": {
+            "fr": "didn't understand"
+          }
+        },
+        {
+          "text": {
+            "fr": "haven't understood"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "*Understand* est un **verbe d'état** (comme *know, believe, want, seem*) : pas de forme continue. La conversation est au présent → **present simple**. Réflexe : verbes de pensée / perception / possession → jamais en be + -ing (sauf sens particulier)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The aircraft ___ at gate B12 when the tow-bar snapped."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "was pushed back"
+          }
+        },
+        {
+          "text": {
+            "fr": "is pushed back"
+          }
+        },
+        {
+          "text": {
+            "fr": "was being pushed back"
+          }
+        },
+        {
+          "text": {
+            "fr": "had been pushed back"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Action **en cours** interrompue par un événement ponctuel (« *when the tow-bar snapped* ») → **past continuous**, ici au passif (*was being* + participe). *Was pushed back* décrirait un repoussage terminé, incompatible avec l'interruption. Réflexe : *when* + fait soudain → l'action de fond est en was/were + -ing."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "By the end of next month, the maintenance team ___ all twelve engines."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "has inspected"
+          }
+        },
+        {
+          "text": {
+            "fr": "will have inspected"
+          }
+        },
+        {
+          "text": {
+            "fr": "will inspect"
+          }
+        },
+        {
+          "text": {
+            "fr": "will be inspecting"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "« *By the end of next month* » = échéance dans le futur avant laquelle l'action sera **achevée** → **future perfect** (*will have* + participe passé). *Will be inspecting* décrirait une action en cours à ce moment-là, pas terminée. Réflexe : *by* + moment futur → will have + participe."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "She looked exhausted: she ___ the night shift for two weeks."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "worked"
+          }
+        },
+        {
+          "text": {
+            "fr": "was working"
+          }
+        },
+        {
+          "text": {
+            "fr": "has been working"
+          }
+        },
+        {
+          "text": {
+            "fr": "had been working"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Le récit est au passé (« *looked* ») et l'on explique un état par une action **antérieure et prolongée** (« *for two weeks* ») → **past perfect continuous**. *Has been working* ramènerait au présent, incompatible avec *looked*. Réflexe : cause d'un état passé + durée → had been + -ing."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Don't call the crew hotel at 8: they ___ their pre-flight briefing."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "are doing"
+          }
+        },
+        {
+          "text": {
+            "fr": "will have done"
+          }
+        },
+        {
+          "text": {
+            "fr": "will be doing"
+          }
+        },
+        {
+          "text": {
+            "fr": "will do"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Action qui sera **en cours à un moment précis du futur** (« *at 8* ») → **future continuous** (*will be* + -ing). *Will have done* signifierait que le briefing sera déjà terminé, ce qui n'expliquerait pas pourquoi il ne faut pas appeler. Réflexe : *at + heure future* + action en cours → will be + -ing."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0019",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "I ___ to call the handling agent, but I didn't have his number."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "was going"
+          }
+        },
+        {
+          "text": {
+            "fr": "would go"
+          }
+        },
+        {
+          "text": {
+            "fr": "had gone"
+          }
+        },
+        {
+          "text": {
+            "fr": "went"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« *was going to* » exprime une **intention passée non réalisée** (le *but* le confirme). *Went* affirmerait que l'appel a eu lieu. Réflexe : intention avortée → *was/were going to* + base verbale."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0020",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The airline ___ its fleet renewal well before the fuel crisis hit."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "announced"
+          }
+        },
+        {
+          "text": {
+            "fr": "had announced"
+          }
+        },
+        {
+          "text": {
+            "fr": "was announcing"
+          }
+        },
+        {
+          "text": {
+            "fr": "has announced"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "« *well before* + past simple » (« *hit* ») marque une antériorité nette entre deux faits passés → **past perfect**. *Announced* seul est possible en anglais courant, mais *well before* invite à marquer l'antériorité ; *has announced* est exclu par le repère passé. Réflexe : *before / after* avec insistance sur l'ordre → past perfect."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0021",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The company ___ three new routes this year, and a fourth is under discussion."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "had opened"
+          }
+        },
+        {
+          "text": {
+            "fr": "opened"
+          }
+        },
+        {
+          "text": {
+            "fr": "has opened"
+          }
+        },
+        {
+          "text": {
+            "fr": "is opening"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "« *this year* » désigne une période **encore ouverte**, et la suite (« *a fourth is under discussion* ») confirme le bilan en cours → **present perfect**. Avec *last year*, on aurait *opened*. Réflexe : période non achevée (*today, this week, this year*) → present perfect."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0022",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.tenses"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "I ___ you were on standby this weekend; otherwise I would have swapped with you."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "haven't known"
+          }
+        },
+        {
+          "text": {
+            "fr": "didn't know"
+          }
+        },
+        {
+          "text": {
+            "fr": "wasn't knowing"
+          }
+        },
+        {
+          "text": {
+            "fr": "don't know"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Le regret porte sur un moment **passé** (« *would have swapped* ») → **past simple** ; *know* est un verbe d'état, donc pas de forme continue. *Don't know* rendrait la seconde partie incohérente. Réflexe : *know* → jamais en -ing, et on cale le temps sur le contexte."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0023",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "You ___ to report for duty at 05:30 tomorrow."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "must"
+          }
+        },
+        {
+          "text": {
+            "fr": "should"
+          }
+        },
+        {
+          "text": {
+            "fr": "have"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Devant **to + verbe**, seul **have** fonctionne : *have to* = obligation. *Must* et *should* sont des modaux suivis directement de la base verbale, jamais de *to*. Sans rien, « *You to report* » n'a pas de verbe conjugué. Réflexe : *to* après le trou → *have to / need to*, pas un modal."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0024",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "You ___ bring a printed boarding pass; the mobile version is accepted."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "don't have to"
+          }
+        },
+        {
+          "text": {
+            "fr": "can't"
+          }
+        },
+        {
+          "text": {
+            "fr": "shouldn't"
+          }
+        },
+        {
+          "text": {
+            "fr": "mustn't"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Absence d'obligation** (« *the mobile version is accepted* ») → **don't have to**. *Mustn't* = interdiction, ce qui contredirait la seconde partie. Réflexe : *mustn't* interdit, *don't have to* dispense — ne pas confondre avec le français « ne doit pas »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0025",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Crew members ___ use their phones in the cockpit below 10,000 feet."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "don't have to"
+          }
+        },
+        {
+          "text": {
+            "fr": "couldn't"
+          }
+        },
+        {
+          "text": {
+            "fr": "needn't"
+          }
+        },
+        {
+          "text": {
+            "fr": "mustn't"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Il s'agit d'une **interdiction** (téléphone en phase critique) → **mustn't**. *Don't have to* et *needn't* signifieraient « ce n'est pas obligatoire ». Réflexe : règle de sécurité = interdiction → *mustn't / are not allowed to*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0026",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "___ I leave the desk for five minutes? My relief is here."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Must"
+          }
+        },
+        {
+          "text": {
+            "fr": "Should"
+          }
+        },
+        {
+          "text": {
+            "fr": "May"
+          }
+        },
+        {
+          "text": {
+            "fr": "Would"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Demande de **permission** polie → **May I…?** (ou *Can I*). *Must I* demanderait si c'est obligatoire, *Should I* si c'est conseillé. Réflexe : demander une autorisation → *may / can / could I*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0027",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The lights are off and the hangar door is locked: the mechanics ___ home."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "should have gone"
+          }
+        },
+        {
+          "text": {
+            "fr": "must have gone"
+          }
+        },
+        {
+          "text": {
+            "fr": "must go"
+          }
+        },
+        {
+          "text": {
+            "fr": "can have gone"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Déduction logique** sur un fait passé (indices : lumières éteintes, porte fermée) → **must have** + participe passé. *Should have gone* exprimerait un reproche, et *can have* n'existe pas à l'affirmatif pour la déduction. Réflexe : certitude quasi totale sur le passé → *must have*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0028",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "You ___ the tower before crossing the runway; that was a serious mistake."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "should have called"
+          }
+        },
+        {
+          "text": {
+            "fr": "must have called"
+          }
+        },
+        {
+          "text": {
+            "fr": "could call"
+          }
+        },
+        {
+          "text": {
+            "fr": "had to call"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Reproche** sur une action passée non faite → **should have** + participe passé. *Must have called* serait une déduction (« tu as sûrement appelé »), à l'opposé du sens voulu. Réflexe : « tu aurais dû » → *should have*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0029",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "That ___ be the inbound aircraft: it isn't due for another hour."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "mustn't"
+          }
+        },
+        {
+          "text": {
+            "fr": "shouldn't"
+          }
+        },
+        {
+          "text": {
+            "fr": "may not"
+          }
+        },
+        {
+          "text": {
+            "fr": "can't"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Déduction négative** (« c'est impossible que ce soit… ») → **can't**. *Mustn't* n'exprime jamais une déduction, seulement une interdiction. Réflexe : *must* = « sûrement », son contraire est *can't*, pas *mustn't*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0030",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "When I was a trainee, we ___ log every simulator session by hand."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "must"
+          }
+        },
+        {
+          "text": {
+            "fr": "may"
+          }
+        },
+        {
+          "text": {
+            "fr": "had to"
+          }
+        },
+        {
+          "text": {
+            "fr": "should"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Obligation dans le **passé** : *must* n'a pas de prétérit, on utilise **had to**. *Must* renverrait au présent. Réflexe : obligation passée → *had to*, obligation future → *will have to*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0031",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The delay ___ be due to the strike, but nobody has confirmed it yet."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "might"
+          }
+        },
+        {
+          "text": {
+            "fr": "has to"
+          }
+        },
+        {
+          "text": {
+            "fr": "can't"
+          }
+        },
+        {
+          "text": {
+            "fr": "must"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Possibilité incertaine** (« *nobody has confirmed* ») → **might** (ou *may / could*). *Must* et *has to* exprimeraient une quasi-certitude, contredite par la seconde partie. Réflexe : hypothèse ouverte → *might / may*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0032",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "We ___ so early: the check-in desk didn't open until seven."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "mustn't have arrived"
+          }
+        },
+        {
+          "text": {
+            "fr": "needn't have arrived"
+          }
+        },
+        {
+          "text": {
+            "fr": "didn't need to arrive"
+          }
+        },
+        {
+          "text": {
+            "fr": "shouldn't arrive"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Needn't have + participe** = on l'a fait, et c'était inutile (ici, on est bien arrivé trop tôt). *Didn't need to arrive* suggère plutôt qu'on n'a pas eu besoin de le faire (et souvent qu'on ne l'a pas fait). Réflexe : action accomplie mais superflue → *needn't have*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0033",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Luckily we ___ divert: the fog lifted just before our approach."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "couldn't"
+          }
+        },
+        {
+          "text": {
+            "fr": "needn't have"
+          }
+        },
+        {
+          "text": {
+            "fr": "mustn't"
+          }
+        },
+        {
+          "text": {
+            "fr": "didn't need to"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Didn't need to** = ce n'était pas nécessaire et on ne l'a **pas fait** (le brouillard s'est levé, donc pas de déroutement). *Needn't have diverted* impliquerait qu'on s'est dérouté pour rien. Réflexe : action non réalisée car inutile → *didn't need to*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0034",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The engineer ___ the fault earlier if he had had the right test kit."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "can have found"
+          }
+        },
+        {
+          "text": {
+            "fr": "could have found"
+          }
+        },
+        {
+          "text": {
+            "fr": "must have found"
+          }
+        },
+        {
+          "text": {
+            "fr": "could find"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Capacité non exploitée dans le passé** (conditionnel de type 3 : « *if he had had* ») → **could have** + participe passé. *Could find* renverrait au présent/futur ; *must have* exprimerait une certitude. Réflexe : « il aurait pu » → *could have*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0035",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "You ___ the customer like that; I'm afraid a formal complaint is now inevitable."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "ought not to have spoken to"
+          }
+        },
+        {
+          "text": {
+            "fr": "shouldn't speak to"
+          }
+        },
+        {
+          "text": {
+            "fr": "needn't speak to"
+          }
+        },
+        {
+          "text": {
+            "fr": "must not have spoken to"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Reproche sur une action **passée** → **ought not to have** + participe (équivalent soutenu de *shouldn't have*). *Must not have spoken* n'est pas un reproche mais une déduction (« tu ne lui as sûrement pas parlé »). Réflexe : *ought to* garde son *to*, même à la forme négative."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0036",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.modals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "According to the log, the auxiliary power unit ___ running when the fire warning sounded."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "shouldn't have"
+          }
+        },
+        {
+          "text": {
+            "fr": "mustn't have been"
+          }
+        },
+        {
+          "text": {
+            "fr": "can't have been"
+          }
+        },
+        {
+          "text": {
+            "fr": "couldn't be"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Déduction négative sur une action passée en cours** → **can't have been** + -ing. *Mustn't have been* est impossible pour une déduction ; *couldn't be* ne renvoie pas au passé accompli. Réflexe : *must have* ↔ *can't have* pour les déductions passées."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0037",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "If it ___ rains tomorrow, the air show will be cancelled."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "is"
+          }
+        },
+        {
+          "text": {
+            "fr": "will"
+          }
+        },
+        {
+          "text": {
+            "fr": "would"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Conditionnel de type 1** : dans la proposition en *if*, le verbe reste au **present simple** (*rains*), jamais *will* ni *would*, même si le sens est futur. *Is rains* est impossible. Réflexe : *if* + présent ; *will* seulement dans l'autre proposition."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0038",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "If the visibility drops below 550 metres, the airport ___ low-visibility procedures."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "activated"
+          }
+        },
+        {
+          "text": {
+            "fr": "will activate"
+          }
+        },
+        {
+          "text": {
+            "fr": "activates"
+          }
+        },
+        {
+          "text": {
+            "fr": "would activate"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Conditionnel de type 1** : condition réelle au présent, conséquence future → *if* + present simple, **will** + base verbale. *Activates* donnerait un conditionnel zéro (règle générale), possible mais moins attendu avec une conséquence ponctuelle. Réflexe : *if* + présent → *will* dans la principale."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0039",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "If I ___ the captain, I would refuse this fuel figure."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "was being"
+          }
+        },
+        {
+          "text": {
+            "fr": "would be"
+          }
+        },
+        {
+          "text": {
+            "fr": "were"
+          }
+        },
+        {
+          "text": {
+            "fr": "am"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Conditionnel de type 2** (situation irréelle au présent) : *if* + prétérit, *would* + base verbale. Avec *be*, la forme **were** est de rigueur à toutes les personnes en registre soigné. Réflexe : « si j'étais » → *if I were*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0040",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "We will board on time ___ the catering truck arrives in the next ten minutes."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "in case"
+          }
+        },
+        {
+          "text": {
+            "fr": "even if"
+          }
+        },
+        {
+          "text": {
+            "fr": "unless"
+          }
+        },
+        {
+          "text": {
+            "fr": "if"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "La condition est **positive** (le camion doit arriver pour embarquer) → **if**. *Unless* (= *if not*) inverserait le sens. Réflexe : traduire mentalement *unless* par « sauf si » avant de choisir."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0041",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "___ the fog clears, all departures will remain on hold."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Provided that"
+          }
+        },
+        {
+          "text": {
+            "fr": "Unless"
+          }
+        },
+        {
+          "text": {
+            "fr": "As long as"
+          }
+        },
+        {
+          "text": {
+            "fr": "If"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "« Les départs restent bloqués **sauf si** le brouillard se lève » → **unless**. *If* et *provided that* donneraient le sens inverse (« si le brouillard se lève, les départs restent bloqués »). Réflexe : *unless* = *if… not*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0042",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "If the crew ___ the checklist properly, the flap warning would not have gone off."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "had completed"
+          }
+        },
+        {
+          "text": {
+            "fr": "has completed"
+          }
+        },
+        {
+          "text": {
+            "fr": "would have completed"
+          }
+        },
+        {
+          "text": {
+            "fr": "completed"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Conditionnel de type 3** (passé irréel) : *if* + **past perfect**, *would have* + participe passé. *Completed* donnerait un type 2 (présent irréel), incompatible avec *would not have gone off*. Réflexe : *would have* dans la principale → *had* + participe dans la *if-clause*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0043",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "You may leave the aircraft ___ you keep your boarding pass with you."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "otherwise"
+          }
+        },
+        {
+          "text": {
+            "fr": "in case"
+          }
+        },
+        {
+          "text": {
+            "fr": "provided that"
+          }
+        },
+        {
+          "text": {
+            "fr": "unless"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Provided that** = « à condition que » : la permission dépend d'une condition positive. *Unless* inverserait le sens, *otherwise* n'introduit pas de subordonnée. Réflexe : *provided (that) / as long as* = *if* renforcé."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0044",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Take a spare battery ___ the headset dies during the flight."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "provided"
+          }
+        },
+        {
+          "text": {
+            "fr": "unless"
+          }
+        },
+        {
+          "text": {
+            "fr": "if"
+          }
+        },
+        {
+          "text": {
+            "fr": "in case"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**In case** = « au cas où » : on prend une précaution **avant** un problème possible. *If* signifierait qu'on prend la batterie seulement une fois le casque en panne. Réflexe : précaution anticipée → *in case* + present simple."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0045",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "If the airline ___ its cabin crew properly, it wouldn't be short of staff today."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "paid"
+          }
+        },
+        {
+          "text": {
+            "fr": "had paid"
+          }
+        },
+        {
+          "text": {
+            "fr": "has paid"
+          }
+        },
+        {
+          "text": {
+            "fr": "would pay"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Conditionnel mixte** : cause passée (*if* + **past perfect**) → conséquence présente (*would* + base verbale, « *today* »). *Paid* ferait porter la condition sur le présent, or le sous-effectif résulte d'une politique passée. Réflexe : *would* + *today/now* avec une cause passée → *if* + had + participe."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0046",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "If she ___ so shy, she would have applied for the training captain post last year."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "hadn't been"
+          }
+        },
+        {
+          "text": {
+            "fr": "wouldn't be"
+          }
+        },
+        {
+          "text": {
+            "fr": "weren't"
+          }
+        },
+        {
+          "text": {
+            "fr": "isn't"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Conditionnel mixte inversé** : trait de caractère **permanent** (*if* + prétérit) → conséquence passée (*would have* + participe). *Hadn't been* limiterait la timidité au passé. Réflexe : caractéristique toujours vraie → prétérit dans la *if-clause*, même avec *would have*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0047",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "___ the delay, we would have missed our connection in Doha anyway."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Even without"
+          }
+        },
+        {
+          "text": {
+            "fr": "Provided"
+          }
+        },
+        {
+          "text": {
+            "fr": "If not"
+          }
+        },
+        {
+          "text": {
+            "fr": "Unless"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« *Even without the delay* » = « même sans le retard » : concession + conditionnel irréel. *Unless* et *provided* attendent un verbe, *if not* n'est pas suivi directement d'un nom. Réflexe : *even if / even without* introduit une condition qui **ne change pas** le résultat."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0048",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "___ the forecast, we would never have loaded so little fuel."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Would we have seen"
+          }
+        },
+        {
+          "text": {
+            "fr": "Have we seen"
+          }
+        },
+        {
+          "text": {
+            "fr": "If we would have seen"
+          }
+        },
+        {
+          "text": {
+            "fr": "Had we seen"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Inversion formelle** du conditionnel de type 3 : *Had* + sujet + participe passé remplace *If we had seen*. *If we would have seen* est une faute classique (jamais *would* dans la *if-clause*). Réflexe : *Had I known… / Were I you… / Should you need…* en registre soutenu."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0049",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "___ you require further assistance, please contact our operations desk."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "Had"
+          }
+        },
+        {
+          "text": {
+            "fr": "Would"
+          }
+        },
+        {
+          "text": {
+            "fr": "Should"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Should** + sujet + base verbale = inversion formelle de *If you require* (registre écrit, courriers). *Would* et *might* ne s'emploient pas ainsi ; *Had* appellerait un participe passé. Réflexe : *Should you…* = « si jamais vous… »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0050",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.conditionals"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "I wish the roster ___ published earlier; we can never plan anything."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "were"
+          }
+        },
+        {
+          "text": {
+            "fr": "would have been"
+          }
+        },
+        {
+          "text": {
+            "fr": "is"
+          }
+        },
+        {
+          "text": {
+            "fr": "was being"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**I wish + prétérit** exprime un regret sur une situation **présente** (« *we can never plan* »). *Were* (subjonctif) est la forme attendue au passif : *were published*. *Would have been* renverrait à un regret passé ponctuel. Réflexe : *wish* + présent irréel → prétérit ; *wish* + passé → past perfect."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0051",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.passive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Boarding passes ___ at the gate before departure."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "checked"
+          }
+        },
+        {
+          "text": {
+            "fr": "are checked"
+          }
+        },
+        {
+          "text": {
+            "fr": "check"
+          }
+        },
+        {
+          "text": {
+            "fr": "are checking"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Le sujet (« *boarding passes* ») **subit** l'action → **passif** : *be* + participe passé, ici au présent (procédure). *Are checking* (actif continu) signifierait que les cartes vérifient. Réflexe : sujet inanimé qui ne fait pas l'action → passif."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0052",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.passive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The damaged tyre ___ yesterday afternoon."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "has been replaced"
+          }
+        },
+        {
+          "text": {
+            "fr": "is replaced"
+          }
+        },
+        {
+          "text": {
+            "fr": "was replaced"
+          }
+        },
+        {
+          "text": {
+            "fr": "replaced"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Passif au past simple** : *was* + participe passé, avec repère passé daté (« *yesterday* »). *Has been replaced* est exclu par *yesterday* ; *replaced* seul ferait du pneu l'agent de l'action. Réflexe : *yesterday* → past simple, sujet passif → *was/were* + participe."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0053",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.passive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Flight NW 210 ___ because of a technical problem."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "has cancelled"
+          }
+        },
+        {
+          "text": {
+            "fr": "is cancelling"
+          }
+        },
+        {
+          "text": {
+            "fr": "has been cancelled"
+          }
+        },
+        {
+          "text": {
+            "fr": "cancelled"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Le vol ne peut pas annuler lui-même : **passif au present perfect** (*has been* + participe), pour un fait récent au résultat présent. *Has cancelled* est actif. Réflexe : *cancel, delay, divert* avec un vol comme sujet → presque toujours au passif."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0054",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.passive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The new terminal ___ at the moment, so expect longer walking distances."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "has been renovating"
+          }
+        },
+        {
+          "text": {
+            "fr": "is renovated"
+          }
+        },
+        {
+          "text": {
+            "fr": "is renovating"
+          }
+        },
+        {
+          "text": {
+            "fr": "is being renovated"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Action **en cours** (« *at the moment* ») subie par le sujet → **passif au present continuous** : *is being* + participe passé. *Is renovated* décrirait un état général ; *is renovating* est actif. Réflexe : passif progressif = *be* + *being* + participe."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0055",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.passive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "All cabin crew ___ a new uniform by the end of the year."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "will be issued"
+          }
+        },
+        {
+          "text": {
+            "fr": "will have issued"
+          }
+        },
+        {
+          "text": {
+            "fr": "will issue"
+          }
+        },
+        {
+          "text": {
+            "fr": "are issuing"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Les équipages **reçoivent** l'uniforme (ils ne l'émettent pas) → **passif au futur** : *will be* + participe passé. Le verbe *issue* garde son complément (*issue sb sth*), d'où la construction *be issued a uniform*. Réflexe : identifier qui agit réellement avant de choisir actif/passif."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0056",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.passive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "We ___ the cockpit windows cleaned before every long-haul rotation."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "let"
+          }
+        },
+        {
+          "text": {
+            "fr": "have"
+          }
+        },
+        {
+          "text": {
+            "fr": "are having"
+          }
+        },
+        {
+          "text": {
+            "fr": "make"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Causatif** *have something done* = faire faire quelque chose par quelqu'un. Avec « *before every rotation* » (habitude) → present simple *have*. *Make* et *let* ne se construisent pas avec un participe passé. Réflexe : *have/get + objet + participe passé*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0057",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.passive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The airline ___ to be negotiating a merger with a regional carrier."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "says"
+          }
+        },
+        {
+          "text": {
+            "fr": "is saying"
+          }
+        },
+        {
+          "text": {
+            "fr": "has said"
+          }
+        },
+        {
+          "text": {
+            "fr": "is said"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Passif impersonnel** *is said / is believed / is thought* + *to* + infinitif = « on dit que ». La compagnie est l'objet des rumeurs, pas leur auteur. Réflexe : *It is said that X…* ↔ *X is said to…*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0058",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.passive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Two passengers ___ injured when the aircraft hit severe turbulence over the Alps."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "got"
+          }
+        },
+        {
+          "text": {
+            "fr": "were getting"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "have got"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Get + participe passé** = passif d'événement, courant pour *injured, hurt, lost, fired*. Le repère passé (« *when… hit* ») impose le past simple *got* ; sans auxiliaire, « *two passengers injured* » n'est qu'un titre de presse, pas une phrase complète. Réflexe : accident subi → *get injured / get hurt*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0059",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.passive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "By the time the audit team arrived, every maintenance record ___ digitised."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "had"
+          }
+        },
+        {
+          "text": {
+            "fr": "has been"
+          }
+        },
+        {
+          "text": {
+            "fr": "had been"
+          }
+        },
+        {
+          "text": {
+            "fr": "was"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Passif au past perfect** : antériorité par rapport à un fait passé (« *by the time… arrived* ») → *had been* + participe passé. *Was digitised* ne marque pas l'antériorité ; *had digitised* serait actif. Réflexe : *by the time* + passé → *had been* + participe pour un sujet passif."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0060",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.passive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Passengers must not be ___ to board until the cabin has been secured."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "authorised of"
+          }
+        },
+        {
+          "text": {
+            "fr": "allowed"
+          }
+        },
+        {
+          "text": {
+            "fr": "permitted for"
+          }
+        },
+        {
+          "text": {
+            "fr": "let"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Be allowed to** est le seul passif possible ici : *let* n'a **pas de forme passive** (« *be let to* » n'existe pas), et *permitted for* / *authorised of* sont des calques fautifs. Réflexe : permission au passif → *be allowed / be permitted to*, jamais *be let*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0061",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.questions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "___ time does the crew bus leave the hotel?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "When"
+          }
+        },
+        {
+          "text": {
+            "fr": "What"
+          }
+        },
+        {
+          "text": {
+            "fr": "How"
+          }
+        },
+        {
+          "text": {
+            "fr": "Which"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "« À **quelle** heure » → **What time**. *When* seul se construit sans le nom *time* (*When does the bus leave?*). *How* interrogerait sur la manière. Réflexe : *what time* = *at what hour*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0062",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.questions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Who ___ signed the technical log this morning?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "did"
+          }
+        },
+        {
+          "text": {
+            "fr": "does"
+          }
+        },
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "was"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Question sur le sujet** : *Who* est lui-même le sujet de *signed*, donc **aucun auxiliaire** *do/did*. « *Who did signed* » est une faute classique (double marque du passé) ; *was signed* changerait le sens (passif). Réflexe : si la réponse est « X signed », pas de *did* dans la question."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0063",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.questions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The passengers haven't been briefed yet, ___?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "did they"
+          }
+        },
+        {
+          "text": {
+            "fr": "haven't they"
+          }
+        },
+        {
+          "text": {
+            "fr": "isn't it"
+          }
+        },
+        {
+          "text": {
+            "fr": "have they"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Question tag** : phrase négative → tag **positif**, avec le même auxiliaire (*have*) et le même sujet (*they*). *Isn't it* est un calque du français « n'est-ce pas » qui ne fonctionne pas en anglais. Réflexe : négatif → tag positif, même auxiliaire."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0064",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.questions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Could you tell me ___ the lost-luggage office is?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "where"
+          }
+        },
+        {
+          "text": {
+            "fr": "where is"
+          }
+        },
+        {
+          "text": {
+            "fr": "that where"
+          }
+        },
+        {
+          "text": {
+            "fr": "where does"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Question indirecte** : après *Could you tell me*, on garde l'ordre **sujet + verbe** (*where the office is*), sans inversion ni auxiliaire. *Where is the office* serait la question directe. Réflexe : *I wonder / Do you know / Could you tell me* + ordre affirmatif."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0065",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.questions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Let's file the flight plan now, ___?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "will we"
+          }
+        },
+        {
+          "text": {
+            "fr": "shall we"
+          }
+        },
+        {
+          "text": {
+            "fr": "don't we"
+          }
+        },
+        {
+          "text": {
+            "fr": "let we"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Après **Let's**, le tag est toujours **shall we?**. *Will we* et *don't we* ne s'emploient pas après une suggestion. Réflexe : *Let's… , shall we?* — expression figée."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0066",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.questions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "___ have you been flying the A320 family?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "How long time"
+          }
+        },
+        {
+          "text": {
+            "fr": "Since when"
+          }
+        },
+        {
+          "text": {
+            "fr": "How much time"
+          }
+        },
+        {
+          "text": {
+            "fr": "How long"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**How long** interroge sur la **durée** avec un present perfect continuous. *How long time* est un calque fautif ; *since when* existe mais reste rare et souvent ironique. Réflexe : durée → *how long* ; point de départ → *since when* (peu naturel en question)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0067",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.questions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Not only ___ the flight late, but the crew also exceeded their duty limits."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "did"
+          }
+        },
+        {
+          "text": {
+            "fr": "the flight was"
+          }
+        },
+        {
+          "text": {
+            "fr": "was"
+          }
+        },
+        {
+          "text": {
+            "fr": "has"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Inversion après une expression négative en tête de phrase** (*Not only*) : l'auxiliaire ou le verbe *be* passe **avant** le sujet. *The flight was* garderait l'ordre affirmatif, incorrect ici. Réflexe : *Not only / Never / Rarely / Seldom* + inversion."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0068",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.questions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Rarely ___ such a smooth landing in a crosswind of 30 knots."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "have I seen"
+          }
+        },
+        {
+          "text": {
+            "fr": "I saw"
+          }
+        },
+        {
+          "text": {
+            "fr": "I have seen"
+          }
+        },
+        {
+          "text": {
+            "fr": "did I have seen"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Inversion après *Rarely*** en tête de phrase : auxiliaire *have* + sujet + participe. *I have seen* sans inversion est fautif après un adverbe restrictif initial ; *did I have seen* cumule deux auxiliaires. Réflexe : *Rarely / Seldom / Hardly ever* en tête → inversion."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0069",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.questions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "I'd like to know ___ the de-icing fluid was applied before or after the walk-around."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "that"
+          }
+        },
+        {
+          "text": {
+            "fr": "whether"
+          }
+        },
+        {
+          "text": {
+            "fr": "if or not"
+          }
+        },
+        {
+          "text": {
+            "fr": "what"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Question indirecte fermée** (oui/non) → **whether** (ou *if*). *Whether* est préféré devant une alternative (« *before or after* ») ; *if or not* n'existe pas (*whether or not* si). Réflexe : alternative explicite → *whether… or…*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0070",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.questions"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Under no circumstances ___ the cargo door be opened while the engines are running."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "should have"
+          }
+        },
+        {
+          "text": {
+            "fr": "the cargo door must"
+          }
+        },
+        {
+          "text": {
+            "fr": "it must"
+          }
+        },
+        {
+          "text": {
+            "fr": "must"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Inversion après une locution négative** placée en tête (*Under no circumstances*) : le modal **must** précède le sujet *the cargo door*. Sans inversion, la phrase est incorrecte ; *should have* + *be opened* est incohérent (règle présente). Réflexe : *Under no circumstances / On no account* + modal + sujet."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0071",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 1,
+      "tags": [
+        "english.grammar",
+        "english.grammar.gerund_infinitive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The chief purser enjoys ___ new crew members."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "to training"
+          }
+        },
+        {
+          "text": {
+            "fr": "train"
+          }
+        },
+        {
+          "text": {
+            "fr": "training"
+          }
+        },
+        {
+          "text": {
+            "fr": "to train"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Enjoy** est toujours suivi d'un verbe en **-ing** (comme *avoid, mind, finish, suggest*). *To train* est le piège du français « aime former ». Réflexe : *enjoy / avoid / mind / finish / suggest* + -ing."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0072",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.gerund_infinitive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The instructor let me ___ fly the whole approach myself."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "∅ (no word needed)"
+          }
+        },
+        {
+          "text": {
+            "fr": "of"
+          }
+        },
+        {
+          "text": {
+            "fr": "for"
+          }
+        },
+        {
+          "text": {
+            "fr": "to"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Let + complément + base verbale**, sans *to* (comme *make*, et *help* en anglais courant). *Let me to fly* est le calque de « m'a laissé voler » ; *for / of* n'ont aucun rôle ici. Réflexe : *let / make + sb + verbe nu* — mais *allow sb to*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0073",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.grammar",
+        "english.grammar.gerund_infinitive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "___ a slot on time is essential during the summer peak."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Got"
+          }
+        },
+        {
+          "text": {
+            "fr": "Get"
+          }
+        },
+        {
+          "text": {
+            "fr": "To getting"
+          }
+        },
+        {
+          "text": {
+            "fr": "Getting"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Un verbe en position de **sujet** prend la forme **-ing** (gérondif nominal). *To get* est aussi possible mais plus formel ; *get* et *got* ne peuvent pas être sujets. Réflexe : « le fait de + verbe » en début de phrase → -ing."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0074",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.gerund_infinitive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "Remember ___ the cabin lights before the approach; it's on the checklist."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "to dim"
+          }
+        },
+        {
+          "text": {
+            "fr": "dim"
+          }
+        },
+        {
+          "text": {
+            "fr": "to dimming"
+          }
+        },
+        {
+          "text": {
+            "fr": "dimming"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Remember to do** = penser à faire (obligation future, « *it's on the checklist* »). *Remember doing* = se souvenir d'avoir fait (souvenir du passé). Réflexe : *remember / forget + to* → tâche à faire ; *+ -ing* → souvenir."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0075",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.gerund_infinitive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "I clearly remember ___ the parking brake before I left the cockpit."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "to set"
+          }
+        },
+        {
+          "text": {
+            "fr": "setting"
+          }
+        },
+        {
+          "text": {
+            "fr": "set"
+          }
+        },
+        {
+          "text": {
+            "fr": "to have set"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Remember + -ing** = se **souvenir d'avoir fait** quelque chose (le fait est passé, « *before I left* »). *Remember to set* signifierait « penser à mettre » (action à venir). Réflexe : souvenir → -ing ; chose à faire → *to*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0076",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.gerund_infinitive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "We stopped ___ at Shannon because the headwind was stronger than forecast."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "refuelling"
+          }
+        },
+        {
+          "text": {
+            "fr": "for refuelling"
+          }
+        },
+        {
+          "text": {
+            "fr": "to refuel"
+          }
+        },
+        {
+          "text": {
+            "fr": "refuel"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Stop to do** = s'arrêter **pour** faire quelque chose (but). *Stop doing* = cesser une activité, ce qui donnerait « nous avons arrêté de ravitailler », absurde ici. Réflexe : *stop + to* = but ; *stop + -ing* = arrêt de l'action."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0077",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.grammar",
+        "english.grammar.gerund_infinitive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "She ___ fly turboprops before she moved to the long-haul fleet."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "used to"
+          }
+        },
+        {
+          "text": {
+            "fr": "was used to"
+          }
+        },
+        {
+          "text": {
+            "fr": "is used to"
+          }
+        },
+        {
+          "text": {
+            "fr": "used"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Used to + base verbale** = habitude **passée** qui n'existe plus (« *before she moved* »). *Be used to* + -ing signifierait « être habitué à », et se construirait avec *flying*. Réflexe : *used to + infinitif* = « avant, je… » ; *be/get used to + -ing* = « être habitué à »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0078",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.gerund_infinitive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "After six months on the night roster, I'm finally used ___ at 3 a.m."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "to wake up"
+          }
+        },
+        {
+          "text": {
+            "fr": "to waking up"
+          }
+        },
+        {
+          "text": {
+            "fr": "waking up"
+          }
+        },
+        {
+          "text": {
+            "fr": "wake up"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Be used to + -ing** = être habitué à. Ici *to* est une **préposition**, d'où le -ing qui suit. *Used to wake up* décrirait une habitude passée révolue, incompatible avec « *finally* ». Réflexe : après *be/get used to*, toujours -ing (ou un nom)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0079",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.grammar",
+        "english.grammar.gerund_infinitive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The captain suggested ___ the descent early to avoid the icing layer."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "to start"
+          }
+        },
+        {
+          "text": {
+            "fr": "us to start"
+          }
+        },
+        {
+          "text": {
+            "fr": "that start"
+          }
+        },
+        {
+          "text": {
+            "fr": "starting"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Suggest** est suivi de **-ing** (ou de *that* + sujet + base verbale), jamais de *to* + infinitif ni de *suggest someone to do*. *Us to start* est le calque de « nous a suggéré de ». Réflexe : *suggest / recommend + -ing* ou *+ that-clause*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.grammar.0080",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.grammar",
+        "english.grammar.gerund_infinitive"
+      ],
+      "lang": "en",
+      "stem": {
+        "fr": "The engineer regrets ___ the engine parameters more closely during the test run."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "not to monitor"
+          }
+        },
+        {
+          "text": {
+            "fr": "not monitoring to"
+          }
+        },
+        {
+          "text": {
+            "fr": "not having monitored"
+          }
+        },
+        {
+          "text": {
+            "fr": "to not monitor"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Regret + -ing** (ici au gérondif passé *having monitored*) = regretter d'avoir (ou de ne pas avoir) fait. *Regret to + infinitif* n'existe que dans les formules d'annonce (*we regret to inform you*). La négation se place **devant** le gérondif : *not having*. Réflexe : regret sur le passé → *regret (not) having done*."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    }
+  ]
+}

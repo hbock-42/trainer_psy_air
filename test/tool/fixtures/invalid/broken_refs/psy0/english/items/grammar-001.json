@@ -1,0 +1,67 @@
+{
+  "kind": "bank",
+  "familyId": "english",
+  "passages": [
+    {
+      "id": "english.reading.p001",
+      "lang": "en",
+      "body": { "fr": "Before every departure the crew gathers for a short briefing. Cabin crew are told whether turbulence is forecast." }
+    }
+  ],
+  "items": [
+    {
+      "id": "english.grammar.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": ["english.grammar", "english.grammar.tenses"],
+      "lang": "en",
+      "stem": { "fr": "By the time we reached the gate, the aircraft ___ already." },
+      "options": [
+        { "text": { "fr": "left" } },
+        { "text": { "fr": "has left" } },
+        { "text": { "fr": "had left" } },
+        { "text": { "fr": "was leaving" } }
+      ],
+      "correctIndex": 2,
+      "explanation": { "fr": "Deux actions passées, l'une avant l'autre : past perfect." }
+    },
+    {
+      "id": "english.vocab.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": ["english.vocab", "english.vocab.aviation"],
+      "lang": "en",
+      "stem": { "fr": "Which sign marks the runway holding position?" },
+      "media": { "kind": "image", "path": "english/media/runway-signs.svg", "alt": { "fr": "Panneaux de piste" } },
+      "options": [
+        { "media": { "kind": "image", "path": "english/media/runway-signs.svg" } },
+        { "text": { "fr": "A blue sign" } },
+        { "text": { "fr": "A green sign" } }
+      ],
+      "correctIndex": 0,
+      "shuffleOptions": false,
+      "explanation": { "fr": "Le panneau rouge à lettres blanches marque le point d'attente." }
+    },
+    {
+      "id": "english.reading.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": ["english.reading", "english.reading.detail"],
+      "lang": "en",
+      "passageId": "english.reading.p001",
+      "stem": { "fr": "Who is told about turbulence?" },
+      "options": [
+        { "text": { "fr": "The passengers" } },
+        { "text": { "fr": "The cabin crew" } }
+      ],
+      "correctIndex": 1,
+      "explanation": { "fr": "Repérer le mot-clé « turbulence » : « Cabin crew are told ». " }
+    }
+  ]
+}

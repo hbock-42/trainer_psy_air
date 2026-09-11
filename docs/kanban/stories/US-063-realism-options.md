@@ -14,6 +14,7 @@ labels: [exam]
 
 # US-063 — Realism options
 
-- [ ] Hide remaining time (show only at 1 min left), full-screen immersive mode, orientation lock
-- [ ] Sound cues (section start/end) toggle
-- [ ] "Real conditions" preset in the exam launcher
+From spec §4.2-10:
+- [ ] Negative marking + "Je ne sais pas" on culture (+3/−1/0), hide timer in English, randomise shapes/colours/keys of rule-based activities, allow/deny pause between sections
+- [ ] Hide remaining time (show only at 1 min left), full-screen immersive, orientation lock, sound cues toggle
+- [ ] "Real conditions" preset in the exam launcher; "desktop only" warning for keyboard activities on touch devices
