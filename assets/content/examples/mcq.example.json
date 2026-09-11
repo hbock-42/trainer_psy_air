@@ -1,0 +1,102 @@
+{
+  "$schema": "../../../docs/content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "english",
+  "passages": [
+    {
+      "id": "english.reading.p001",
+      "title": { "fr": "Pre-flight briefing" },
+      "lang": "en",
+      "body": {
+        "fr": "Before every departure the crew gathers for a short briefing. The captain reviews the weather along the route, the expected fuel burn and any airport restrictions. Cabin crew are told how long the flight will be and whether turbulence is forecast. Although the briefing rarely lasts more than ten minutes, it is considered one of the most important safety steps of the day: a problem spotted on the ground costs far less than one discovered in the air."
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "english.grammar.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": ["english.grammar", "english.grammar.tenses"],
+      "lang": "en",
+      "stem": { "fr": "By the time we reached the gate, the aircraft ___ already." },
+      "options": [
+        { "text": { "fr": "left" } },
+        { "text": { "fr": "has left" } },
+        { "text": { "fr": "had left" } },
+        { "text": { "fr": "was leaving" } }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Deux actions passées, l'une **avant** l'autre : « reached » (prétérit) est la plus récente, donc le départ, antérieur, prend le **past perfect** (*had* + participe passé). Repère : « by the time » + prétérit appelle presque toujours un past perfect.",
+        "en": "Two past actions, one **before** the other: \"reached\" (past simple) is the later one, so the earlier departure takes the **past perfect** (*had* + past participle). Clue: \"by the time\" + past simple almost always calls for a past perfect."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "english.vocab.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": ["english.vocab", "english.vocab.aviation"],
+      "lang": "en",
+      "stem": { "fr": "The tower asked us to **hold short** of runway 27. This means we must:" },
+      "options": [
+        { "text": { "fr": "stop before the runway and wait" } },
+        { "text": { "fr": "cross the runway quickly" } },
+        { "text": { "fr": "line up on the runway" } },
+        { "text": { "fr": "reduce speed on the runway" } }
+      ],
+      "correctIndex": 0,
+      "shuffleOptions": true,
+      "explanation": {
+        "fr": "« Hold short of » = s'arrêter **avant** la ligne d'attente et ne pas entrer sur la piste. « Line up » = s'aligner, « cross » = traverser. Méthode : sur les phrases radio, cherchez le verbe de mouvement (hold / cross / line up / vacate) — il porte tout le sens."
+      }
+    },
+    {
+      "id": "english.reading.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": ["english.reading", "english.reading.detail"],
+      "lang": "en",
+      "passageId": "english.reading.p001",
+      "stem": { "fr": "According to the text, who is informed about possible turbulence?" },
+      "options": [
+        { "text": { "fr": "The passengers" } },
+        { "text": { "fr": "The cabin crew" } },
+        { "text": { "fr": "The airport" } },
+        { "text": { "fr": "The captain only" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : on cherche le mot-clé « turbulence » dans le texte. Phrase 3 : « *Cabin crew* are told … whether turbulence is forecast ». Méthode : repérer le mot-clé, lire la phrase entière, vérifier le sujet de la phrase."
+      }
+    },
+    {
+      "id": "english.reading.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": ["english.reading", "english.reading.inference"],
+      "lang": "en",
+      "passageId": "english.reading.p001",
+      "stem": { "fr": "What is the main idea of the last sentence?" },
+      "options": [
+        { "text": { "fr": "Briefings are too short to be useful." } },
+        { "text": { "fr": "Problems are cheaper to fix before take-off than in flight." } },
+        { "text": { "fr": "Briefings usually last more than ten minutes." } },
+        { "text": { "fr": "The captain decides the flight duration." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question d'**inférence** : « a problem spotted on the ground costs far less than one discovered in the air » = mieux vaut détecter un problème au sol. Les options A et C contredisent le texte (« rarely lasts more than ten minutes »), D n'est pas mentionnée. Méthode : éliminer d'abord ce qui contredit le texte."
+      }
+    }
+  ]
+}

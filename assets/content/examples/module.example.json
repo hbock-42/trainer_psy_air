@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../docs/content/schema/family.schema.json#/$defs/Module",
+  "kind": "module",
+  "id": "psy0",
+  "version": 1,
+  "order": 0,
+  "name": { "fr": "PSY0 — tests en ligne", "en": "PSY0 — online tests" },
+  "description": {
+    "fr": "Première étape de sélection : batterie de tests psychotechniques et de connaissances passée en ligne.",
+    "en": "First selection stage: online battery of psychometric and knowledge tests."
+  },
+  "familyIds": ["english", "mental_arithmetic", "maths_physics", "logic", "spatial", "memory", "verbal", "attention"],
+  "defaultBlueprintId": "psy0.blueprint.full"
+}
