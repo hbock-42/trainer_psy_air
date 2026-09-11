@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trainer-psy-air.local/schema/bank.schema.json",
+  "title": "ItemBank file",
+  "description": "One JSON file under assets/content/<module>/<family>/items/. Holds at most 100 items of a single family, plus the reading passages they reference.",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string", "description": "Optional editor hint, e.g. ../../../../docs/content/schema/bank.schema.json." },
+    "kind": { "const": "bank" },
+    "familyId": { "$ref": "common.schema.json#/$defs/Id", "description": "Every item in the file must carry the same familyId (checked by the validator)." },
+    "passages": {
+      "type": "array",
+      "items": { "$ref": "item.schema.json#/$defs/Passage" },
+      "default": []
+    },
+    "items": {
+      "type": "array",
+      "items": { "$ref": "item.schema.json" },
+      "minItems": 1,
+      "maxItems": 100
+    }
+  },
+  "required": ["kind", "familyId", "items"],
+  "additionalProperties": false
+}

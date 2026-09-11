@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trainer-psy-air.local/schema/deck.schema.json",
+  "title": "Deck",
+  "description": "A flashcard deck and its cards. File: assets/content/<module>/<family>/decks/<slug>.json. At most 200 cards per deck; split by theme beyond that.",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "kind": { "const": "deck" },
+    "id": { "$ref": "common.schema.json#/$defs/Id", "description": "<family>.deck.<slug>" },
+    "version": { "$ref": "common.schema.json#/$defs/Version" },
+    "moduleId": { "$ref": "common.schema.json#/$defs/ModuleId" },
+    "familyId": { "$ref": "common.schema.json#/$defs/Id" },
+    "order": { "type": "integer", "minimum": 0 },
+    "name": { "$ref": "common.schema.json#/$defs/LocalizedText" },
+    "description": { "$ref": "common.schema.json#/$defs/LocalizedText" },
+    "tags": { "$ref": "common.schema.json#/$defs/Tags" },
+    "cards": {
+      "type": "array",
+      "items": { "$ref": "flashcard.schema.json" },
+      "minItems": 1,
+      "maxItems": 200
+    },
+    "status": { "$ref": "common.schema.json#/$defs/Status" },
+    "meta": { "$ref": "common.schema.json#/$defs/Meta" }
+  },
+  "required": ["kind", "id", "version", "moduleId", "familyId", "order", "name", "tags", "cards"],
+  "additionalProperties": false
+}

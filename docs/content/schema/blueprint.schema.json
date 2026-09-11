@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trainer-psy-air.local/schema/blueprint.schema.json",
+  "title": "ExamBlueprint",
+  "description": "Structure of a timed exam simulation: ordered sections, each bound to one family. File: assets/content/<module>/blueprints/<slug>.json.",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "kind": { "const": "blueprint" },
+    "id": { "$ref": "common.schema.json#/$defs/Id", "description": "<module>.blueprint.<slug>, e.g. psy0.blueprint.full" },
+    "version": { "$ref": "common.schema.json#/$defs/Version" },
+    "moduleId": { "$ref": "common.schema.json#/$defs/ModuleId" },
+    "name": { "$ref": "common.schema.json#/$defs/LocalizedText" },
+    "description": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "Shown on the exam launcher: what to expect, total duration, source of the structure." },
+    "confidence": { "$ref": "common.schema.json#/$defs/Confidence", "description": "Overall confidence that this structure mirrors the real stage; each section carries its own." },
+    "tags": { "$ref": "common.schema.json#/$defs/Tags" },
+    "briefingSec": { "type": "integer", "minimum": 0, "default": 0, "description": "Optional countdown on the general briefing screen before section 1 (0 = wait for the user)." },
+    "sections": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ExamSection" },
+      "minItems": 1,
+      "maxItems": 30
+    },
+    "status": { "$ref": "common.schema.json#/$defs/Status" },
+    "meta": { "$ref": "common.schema.json#/$defs/Meta" }
+  },
+  "required": ["kind", "id", "version", "moduleId", "name", "description", "confidence", "tags", "sections"],
+  "additionalProperties": false,
+  "$defs": {
+    "ExamSection": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/Id", "description": "Unique within the blueprint, e.g. s01-arith." },
+        "familyId": { "$ref": "common.schema.json#/$defs/Id" },
+        "title": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "Defaults to the family name." },
+        "instructions": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "Briefing text shown before the section (markdown)." },
+        "durationSec": { "type": "integer", "minimum": 10, "maximum": 7200, "description": "Hard limit for the whole section; auto-advance when it elapses." },
+        "itemCount": { "type": "integer", "minimum": 1, "maximum": 500 },
+        "perItemTimeSec": { "type": "integer", "minimum": 1, "description": "Optional per-item limit; timeout records answer = null and advances." },
+        "itemSelection": { "$ref": "#/$defs/ItemSelection" },
+        "breakAfterSec": { "type": "integer", "minimum": 0, "default": 0, "description": "Break offered after this section (0 = none). Ignored on the last section." },
+        "confidence": { "$ref": "common.schema.json#/$defs/Confidence" },
+        "weight": { "type": "number", "minimum": 0, "default": 1, "description": "Relative weight of the section in the overall exam score." }
+      },
+      "required": ["id", "familyId", "durationSec", "itemCount", "itemSelection", "confidence"],
+      "additionalProperties": false
+    },
+    "ItemSelection": {
+      "description": "Where the section's items come from. Dart: sealed ItemSelection { BankSelection, GeneratedSelection }.",
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "Sample `itemCount` published items of the family from the bank.",
+          "properties": {
+            "mode": { "const": "bank" },
+            "difficulty": { "$ref": "#/$defs/DifficultyRange" },
+            "tags": { "$ref": "common.schema.json#/$defs/Tags", "description": "Only items having ALL these tags. Omit for the whole family." },
+            "anyTags": { "$ref": "common.schema.json#/$defs/Tags", "description": "Only items having AT LEAST ONE of these tags (e.g. balance sub-skills)." },
+            "balanceByTagPrefix": { "type": "string", "description": "Sample evenly across the second-level tags under this prefix, e.g. 'english' => english.grammar / english.vocab / english.reading." },
+            "avoidRecentSessions": { "type": "integer", "minimum": 0, "default": 3, "description": "Skip items seen in the last N sessions when the bank allows." }
+          },
+          "required": ["mode"],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "description": "Generate `itemCount` items from `generatorId`. The runtime derives one seed per item from the session seed, making the whole exam reproducible.",
+          "properties": {
+            "mode": { "const": "generated" },
+            "generatorId": { "$ref": "item.schema.json#/$defs/GeneratorId" },
+            "difficulty": { "$ref": "#/$defs/DifficultyRange" },
+            "params": { "type": "object", "default": {}, "description": "Generator-specific parameters (see each engine story)." }
+          },
+          "required": ["mode", "generatorId", "difficulty"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "DifficultyRange": {
+      "type": "object",
+      "description": "Inclusive range; min == max for a fixed level. Omit in bank mode to allow every level.",
+      "properties": {
+        "min": { "$ref": "common.schema.json#/$defs/Difficulty" },
+        "max": { "$ref": "common.schema.json#/$defs/Difficulty" }
+      },
+      "required": ["min", "max"],
+      "additionalProperties": false
+    }
+  }
+}
