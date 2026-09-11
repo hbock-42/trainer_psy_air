@@ -72,8 +72,9 @@ What this implies in practice:
   `DefaultTextStyle` and a background `ColoredBox`. Any new route or overlay you push must sit
   under that builder (it does when you use the app's navigator). Selection and cursor colors are
   set the same way with `DefaultSelectionStyle` when we add text fields.
-- **Theme.** There is no `Theme.of(context)`. The design system (US-003) exposes its own
-  `InheritedWidget` (e.g. `AppTheme.of(context)`) carrying colors, text styles, spacing and radii.
+- **Theme.** There is no `Theme.of(context)`. The design system exposes its own
+  `InheritedWidget` (`AppThemeScope`, read with `AppTheme.of(context)`) carrying colors, text
+  styles, spacing, radii and durations (`lib/core/theme/`).
 - **Chrome.** No `Scaffold`, `AppBar`, `BottomNavigationBar`, `ElevatedButton`, `Icon`s from the
   Material font, `Dialog`, `SnackBar`. `shared/` provides our own equivalents built from
   `Container`, `Row`/`Column`, `GestureDetector`, `Listener`, `FocusableActionDetector`,
@@ -91,8 +92,9 @@ What this implies in practice:
 - **Localization.** `WidgetsApp` already installs `DefaultWidgetsLocalizations`; add
   `flutter_localizations` delegates for our ARB strings only (not the Material/Cupertino ones).
 - **Tests.** `tester.pumpWidget` must wrap the widget under test in the same root context the app
-  uses (a `WidgetsApp` or at least `Directionality` + `DefaultTextStyle`); a `pumpApp` helper will
-  live in `test/helpers/` once the design system exists.
+  uses (a `WidgetsApp` or at least `Directionality` + `DefaultTextStyle`); use the `pumpApp`
+  helper in `test/helpers/pump_app.dart`.
+- **Design system.** Tokens, widget catalogue and conventions are in `docs/DESIGN_SYSTEM.md`.
 
 ## Naming conventions
 

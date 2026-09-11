@@ -4,7 +4,7 @@ issue: 16
 title: "Design system: theme, typography and shared widgets"
 type: story
 epic: EPIC-01
-status: backlog
+status: review
 priority: P0
 size: M
 lane: design
@@ -24,10 +24,18 @@ in `lib/` (enforced by a lint/architecture test). Third-party packages that requ
 ancestor are out; prefer widget-layer-only packages or write it ourselves.
 
 ## Acceptance criteria
-- [ ] Own `AppTheme` (InheritedWidget) with light + dark palettes — no `ThemeData`, color tokens, spacing scale, text styles
-- [ ] Shared widgets in `lib/shared/widgets`: `CountdownTimerBar`, `ProgressDots`, `AnswerOptionTile` (idle/selected/correct/wrong states), `ScoreCard`, `PrimaryButton`, `SectionHeader`
-- [ ] Widget tests + a hand-made gallery screen (debug only) to preview them
-- [ ] Minimum touch target 48dp, respects system text scaling up to 1.3
+- [x] Own `AppTheme` (InheritedWidget) with light + dark palettes — no `ThemeData`, color tokens, spacing scale, text styles
+- [x] Shared widgets in `lib/shared/widgets`: `CountdownTimerBar`, `ProgressDots`, `AnswerOptionTile` (idle/selected/correct/wrong states), `ScoreCard`, `PrimaryButton`, `SectionHeader`
+- [x] Widget tests + a hand-made gallery screen (debug only) to preview them
+- [x] Minimum touch target 48dp, respects system text scaling up to 1.3
 
 ## Parallel
 Can start right after US-001, independently from US-002.
+
+## Notes
+- Tokens in `lib/core/theme/`, widgets in `lib/shared/widgets/`, gallery in `lib/shared/gallery/`.
+  Reference: `docs/DESIGN_SYSTEM.md`.
+- Also delivered: `SecondaryButton`, `AppCard`, `AppScaffold`/`AppTopBar`, `AppIconButton`,
+  `AppKeypadButton` (for US-022), `AppIcon` (vector glyphs, no icon font), `AppPressable` primitive.
+- The gallery route is not registered: US-002 owns the router. Plug `WidgetGalleryScreen` under
+  `widgetGalleryRoutePath` when `kWidgetGalleryEnabled` (see DESIGN_SYSTEM.md).
