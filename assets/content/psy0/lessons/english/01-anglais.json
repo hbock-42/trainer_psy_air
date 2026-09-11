@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../../../docs/content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.english.01",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "english",
+  "order": 1,
+  "title": { "fr": "Anglais renforcé : compréhension écrite, écoute et expression orale" },
+  "summary": { "fr": "Ce qui est connu et inconnu du format 2026, stratégies de lecture type TOEIC, conseils d'écoute et d'expression orale enregistrée." },
+  "file": { "fr": "lessons/english/01-anglais.fr.md" },
+  "estimatedReadMin": 10,
+  "difficulty": 3,
+  "tags": ["english", "english.strategy", "english.reading"],
+  "practiceTags": ["english"],
+  "deckIds": ["deck.english"],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md sections 2.3, 2.4 O, 3.1 and 5 (open question 1)" }
+}

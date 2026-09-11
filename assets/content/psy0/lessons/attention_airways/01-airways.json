@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../../../docs/content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.attention_airways.01",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "attention_airways",
+  "order": 1,
+  "title": { "fr": "Airways : gérer le flux sans surcharger les zones" },
+  "summary": { "fr": "Compter avant d'agir, anticiper les entrées, protéger la contrainte bleue et dérouter le moins possible." },
+  "file": { "fr": "lessons/attention_airways/01-airways.fr.md" },
+  "estimatedReadMin": 8,
+  "difficulty": 3,
+  "tags": ["attention_airways", "attention_airways.strategy"],
+  "practiceTags": ["attention_airways"],
+  "deckIds": ["deck.attention_airways"],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 H" }
+}
