@@ -62,6 +62,11 @@ jobs:
       - name: Coverage gate
         run: dart run tool/coverage_gate.dart --min 70
 
+      - name: Build web
+        # Web is an exam-mode target (US-006); a release build is fast enough to
+        # run on every PR. Desktop builds are not run in CI.
+        run: flutter build web --release
+
       - name: Upload coverage
         uses: actions/upload-artifact@v4
         with:
