@@ -2,6 +2,7 @@
 
 Flutter app to prepare the Air France cadet selection tests (PSY0 first, then PSY1, PSY2).
 Local database only for now; remote sync is a placeholder epic.
+**UI is built on the Flutter `widgets` layer only — no Material, no Cupertino** (see EPIC-01).
 
 - **[BOARD.md](BOARD.md)** — index of every card (regenerate with `./gen_board.sh`)
 - **[ROADMAP.md](ROADMAP.md)** — milestones, parallel lanes, dependency graph

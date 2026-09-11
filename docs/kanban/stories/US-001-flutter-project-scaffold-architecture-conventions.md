@@ -16,10 +16,18 @@ labels: [setup]
 
 **As a** developer **I want** a Flutter project with an agreed structure and toolchain **so that** several people can work in parallel without stepping on each other.
 
+## UI constraint (project-wide)
+**No Material, no Cupertino.** The app uses `WidgetsApp` (not `MaterialApp`/`CupertinoApp`) and
+builds its own widgets on top of the `widgets` layer only (`package:flutter/widgets.dart`).
+`package:flutter/material.dart` and `package:flutter/cupertino.dart` must not be imported anywhere
+in `lib/` (enforced by a lint/architecture test). Third-party packages that require a Material
+ancestor are out; prefer widget-layer-only packages or write it ourselves.
+
 ## Acceptance criteria
 - [ ] `flutter create` done with org id, app name `psy_trainer` (working title), Android + iOS targets (web optional)
 - [ ] Feature-first layout documented in `docs/ARCHITECTURE.md`: `lib/core`, `lib/features/<feature>/{data,domain,presentation}`, `lib/shared`
 - [ ] Stack decisions recorded (Riverpod, go_router, freezed, Drift, fl_chart) — or alternatives chosen and justified
+- [ ] Root is a `WidgetsApp`; a test fails if `material.dart` or `cupertino.dart` is imported under `lib/`
 - [ ] `analysis_options.yaml` with `flutter_lints` + stricter rules (`prefer_const`, `always_declare_return_types`, …)
 - [ ] `build_runner` configured, `make gen` / script for codegen
 - [ ] README with setup steps; `flutter run` works on a fresh clone

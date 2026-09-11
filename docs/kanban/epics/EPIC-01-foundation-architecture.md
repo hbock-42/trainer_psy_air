@@ -24,6 +24,13 @@ folder structure, theming, state management and routing wired, CI green on every
 - fl_chart for progress charts
 - flutter_localizations + ARB for FR/EN
 
+## UI constraint (project-wide)
+**No Material, no Cupertino.** The app uses `WidgetsApp` (not `MaterialApp`/`CupertinoApp`) and
+builds its own widgets on top of the `widgets` layer only (`package:flutter/widgets.dart`).
+`package:flutter/material.dart` and `package:flutter/cupertino.dart` must not be imported anywhere
+in `lib/` (enforced by a lint/architecture test). Third-party packages that require a Material
+ancestor are out; prefer widget-layer-only packages or write it ourselves.
+
 ## Stories
 US-001, US-002, US-003, US-004, US-005
 
