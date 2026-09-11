@@ -2,9 +2,11 @@
 
 [![CI](https://github.com/hbock-42/trainer_psy_air/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/hbock-42/trainer_psy_air/actions/workflows/ci.yml)
 
-Unofficial mobile app to prepare for the psychometric tests of the Air France cadet pilot
-selection (PSY0 first, then PSY1 and PSY2): lessons, timed drills, mock exams and progress
-tracking, all stored locally on the device.
+Unofficial app to prepare for the psychometric tests of the Air France cadet pilot selection
+(PSY0 first, then PSY1 and PSY2): lessons, timed drills, mock exams and progress tracking, all
+stored locally on the device. Phone builds are for learning and practice; desktop and web builds
+rehearse the keyboard-native activities the way the real desktop test runs (see
+[Platforms](docs/ARCHITECTURE.md#platforms)).
 
 This project is a personal training tool. It is **not affiliated with, endorsed by, or connected
 to Air France** or any of its selection partners. Test formats are reconstructed from public
@@ -17,8 +19,9 @@ and first exercise engines are tracked on the [kanban board](docs/kanban/README.
 
 ## Setup
 
-Requirements: Flutter 3.41.x (stable) with the Android and/or iOS toolchains
-(`flutter doctor` must be green for the platform you target), and `make`.
+Requirements: Flutter 3.41.x (stable) with the toolchain of the platform you target (Android,
+iOS, macOS via Xcode, Windows via Visual Studio, or Chrome for web; `flutter doctor` must be green
+for it), and `make`.
 
 ```sh
 git clone <this repo>
@@ -35,6 +38,10 @@ Common tasks (see `make help`):
 | `make lint`      | `flutter analyze` + format check |
 | `make test`      | `flutter test` |
 | `make run`       | `flutter run` on the connected device |
+| `make run-macos` | `flutter run -d macos` (desktop, exam mode) |
+| `make run-web`   | `flutter run -d chrome` |
+| `make build-macos` | `flutter build macos --debug` (headless check of the desktop target) |
+| `make build-web` | `flutter build web --release` (same as CI) |
 | `make board`     | Regenerate the kanban board index |
 
 ## CI
@@ -44,8 +51,9 @@ request and on pushes to `main`:
 
 - **`check`**: `flutter pub get`, code generation, `dart format` check, `flutter analyze
   --fatal-infos`, `flutter test --coverage` (the `coverage/lcov.info` file is uploaded as an
-  artifact). The content validator (`tool/validate_content.dart`, US-014) runs as soon as it
-  exists. This job is required to merge into `main`.
+  artifact), then `flutter build web --release`. The content validator
+  (`tool/validate_content.dart`, US-014) runs as soon as it exists. This job is required to merge
+  into `main`. Desktop builds (macOS, Windows) are not run in CI.
 - **`build-android`**: builds a debug APK and uploads it as an artifact. Runs on pushes to `main`
   and on pull requests labelled `build`.
 
