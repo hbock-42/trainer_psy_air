@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../../../docs/content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.culture_aero.01",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "culture_aero",
+  "order": 1,
+  "title": { "fr": "Culture aéronautique : 48 questions, 18 secondes, 14 domaines" },
+  "summary": { "fr": "Format QCM rapporté, stratégie de réponse sans retour arrière, les 14 domaines à couvrir, liste de lecture et plan de révision." },
+  "file": { "fr": "lessons/culture_aero/01-culture-aeronautique.fr.md" },
+  "estimatedReadMin": 12,
+  "difficulty": 3,
+  "tags": ["culture_aero", "culture_aero.strategy"],
+  "practiceTags": ["culture_aero"],
+  "deckIds": ["deck.culture_aero"],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md sections 2.4 N, 2.5, 4.1 and 6" }
+}

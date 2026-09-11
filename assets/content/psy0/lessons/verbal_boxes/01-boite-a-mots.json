@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../../../docs/content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.verbal_boxes.01",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "verbal_boxes",
+  "order": 1,
+  "title": { "fr": "Boîte à mots : classer par champ lexical en une seconde" },
+  "summary": { "fr": "Nommer chaque boîte dès le premier mot, choisir le champ le plus spécifique, déjouer la polysémie." },
+  "file": { "fr": "lessons/verbal_boxes/01-boite-a-mots.fr.md" },
+  "estimatedReadMin": 8,
+  "difficulty": 2,
+  "tags": ["verbal_boxes", "verbal_boxes.strategy", "verbal.vocab"],
+  "practiceTags": ["verbal_boxes"],
+  "deckIds": ["deck.verbal_boxes"],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 I" }
+}
