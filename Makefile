@@ -1,8 +1,7 @@
 FLUTTER ?= flutter
 DART    ?= dart
 
-.PHONY: help deps gen gen-watch lint format test run run-macos run-web build-macos build-web clean board
-.PHONY: help deps gen gen-watch lint format test test-watch coverage run clean board
+.PHONY: help deps gen gen-watch lint format test test-watch coverage content-check run run-macos run-web build-macos build-web clean board
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-12s %s\n", $$1, $$2}'
@@ -38,6 +37,9 @@ test-watch: deps ## Re-run tests whenever a Dart file changes (needs fswatch or 
 coverage: deps ## Run tests with coverage and enforce the 70 % gate on domain/data/core
 	$(FLUTTER) test --coverage
 	$(DART) run tool/coverage_gate.dart --min 70
+
+content-check: deps ## Validate the content bundle (PATHS=<files or dirs>, default assets/content)
+	$(DART) run --verbosity=error tool/validate_content.dart $(PATHS)
 
 run: deps ## Run the app on the connected device (DEVICE=<id> to pick one)
 	$(FLUTTER) run $(if $(DEVICE),-d $(DEVICE),)
