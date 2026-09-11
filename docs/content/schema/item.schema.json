@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trainer-psy-air.local/schema/item.schema.json",
+  "title": "Item",
+  "description": "One question/stimulus. Discriminated by `type` into mcq | numeric | sequence | generated (Dart: sealed class Item with McqItem, NumericItem, SequenceItem, GeneratedItem).",
+  "oneOf": [
+    { "$ref": "#/$defs/McqItem" },
+    { "$ref": "#/$defs/NumericItem" },
+    { "$ref": "#/$defs/SequenceItem" },
+    { "$ref": "#/$defs/GeneratedItem" }
+  ],
+  "$defs": {
+    "ItemBase": {
+      "type": "object",
+      "description": "Fields every item carries, whatever its type.",
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/Id" },
+        "type": { "type": "string", "enum": ["mcq", "numeric", "sequence", "generated"] },
+        "version": { "$ref": "common.schema.json#/$defs/Version" },
+        "familyId": { "$ref": "common.schema.json#/$defs/Id", "description": "TestFamily this item belongs to." },
+        "difficulty": { "$ref": "common.schema.json#/$defs/Difficulty" },
+        "tags": { "$ref": "common.schema.json#/$defs/Tags" },
+        "lang": { "$ref": "common.schema.json#/$defs/Lang", "description": "Language of the stimulus. Defaults to the family's `lang` (fr for most families, en for the English test)." },
+        "status": { "$ref": "common.schema.json#/$defs/Status" },
+        "origin": { "$ref": "#/$defs/Origin" },
+        "meta": { "$ref": "common.schema.json#/$defs/Meta" }
+      },
+      "required": ["id", "type", "version", "familyId", "difficulty", "tags"]
+    },
+    "Origin": {
+      "type": "object",
+      "description": "Present only on items materialised at runtime by a generator (never in bank files). Lets an Attempt be replayed: same generatorId + seed => same item.",
+      "properties": {
+        "generatorId": { "$ref": "#/$defs/GeneratorId" },
+        "seed": { "type": "integer", "minimum": 0 }
+      },
+      "required": ["generatorId", "seed"],
+      "additionalProperties": false
+    },
+    "GeneratorId": {
+      "type": "string",
+      "description": "Key of an ItemGenerator in the engine registry (US-020). Snake_case.",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "maxLength": 40
+    },
+    "Explanation": {
+      "$ref": "common.schema.json#/$defs/LocalizedText",
+      "description": "Shown in practice mode after the answer. Must teach the METHOD, not only restate the answer. FR mandatory, EN optional. Markdown allowed (inline formulas with $...$)."
+    },
+    "Stem": {
+      "$ref": "common.schema.json#/$defs/LocalizedText",
+      "description": "The question text. Markdown allowed (bold, inline code, $formula$). Keep it short: the real test is speeded."
+    },
+    "Option": {
+      "type": "object",
+      "description": "One MCQ choice: text and/or media (figure options for logic/spatial items).",
+      "properties": {
+        "text": { "$ref": "common.schema.json#/$defs/LocalizedText" },
+        "media": { "$ref": "common.schema.json#/$defs/MediaRef" }
+      },
+      "anyOf": [{ "required": ["text"] }, { "required": ["media"] }],
+      "additionalProperties": false
+    },
+    "McqItem": {
+      "allOf": [{ "$ref": "#/$defs/ItemBase" }],
+      "type": "object",
+      "properties": {
+        "type": { "const": "mcq" },
+        "stem": { "$ref": "#/$defs/Stem" },
+        "media": { "$ref": "common.schema.json#/$defs/MediaRef", "description": "Optional figure/audio displayed with the stem." },
+        "passageId": {
+          "$ref": "common.schema.json#/$defs/Id",
+          "description": "Reading comprehension: id of a Passage declared in the same bank file. Items sharing a passageId are presented together, in file order."
+        },
+        "options": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Option" },
+          "minItems": 2,
+          "maxItems": 6
+        },
+        "correctIndex": { "type": "integer", "minimum": 0, "maximum": 5, "description": "0-based index into `options`. The validator checks it is < options.length." },
+        "shuffleOptions": { "type": "boolean", "default": true, "description": "Set false when option order matters ('none of the above', ordered values)." },
+        "explanation": { "$ref": "#/$defs/Explanation" }
+      },
+      "required": ["stem", "options", "correctIndex", "explanation"],
+      "unevaluatedProperties": false
+    },
+    "NumericItem": {
+      "allOf": [{ "$ref": "#/$defs/ItemBase" }],
+      "type": "object",
+      "properties": {
+        "type": { "const": "numeric" },
+        "stem": { "$ref": "#/$defs/Stem" },
+        "media": { "$ref": "common.schema.json#/$defs/MediaRef" },
+        "expected": { "type": "number", "description": "The correct value. For inputFormat `time` it is a number of minutes." },
+        "tolerance": {
+          "type": "object",
+          "description": "Accepted deviation. Omitted => exact match (after rounding to `decimals`).",
+          "properties": {
+            "mode": { "type": "string", "enum": ["absolute", "relative"] },
+            "value": { "type": "number", "minimum": 0, "description": "absolute: same unit as `expected`; relative: fraction (0.02 = 2 %)." }
+          },
+          "required": ["mode", "value"],
+          "additionalProperties": false
+        },
+        "unit": { "type": "string", "maxLength": 12, "description": "Displayed after the input field: kt, NM, ft, km/h, L, min... Not localised (aviation units are universal)." },
+        "inputFormat": {
+          "type": "string",
+          "enum": ["integer", "decimal", "time"],
+          "default": "decimal",
+          "description": "Drives the keypad (US-022): integer hides '.', time shows hh:mm entry."
+        },
+        "decimals": { "type": "integer", "minimum": 0, "maximum": 4, "default": 2, "description": "User input is rounded to this many decimals before comparison." },
+        "explanation": { "$ref": "#/$defs/Explanation" }
+      },
+      "required": ["stem", "expected", "explanation"],
+      "unevaluatedProperties": false
+    },
+    "SequenceItem": {
+      "allOf": [{ "$ref": "#/$defs/ItemBase" }],
+      "type": "object",
+      "description": "Memory stimulus: elements shown one at a time (or as a grid pattern), then recalled.",
+      "properties": {
+        "type": { "const": "sequence" },
+        "instructions": {
+          "$ref": "common.schema.json#/$defs/LocalizedText",
+          "description": "Shown before the sequence starts. Optional: the engine has a default per recallMode."
+        },
+        "stimulusKind": {
+          "type": "string",
+          "enum": ["digits", "letters", "symbols", "colors", "gridCells"],
+          "description": "digits/letters: single characters. symbols: keys of the engine's symbol set (circle, square, triangle, star, cross, diamond). colors: red|blue|green|yellow|orange|purple. gridCells: 'row,col' zero-based, requires `grid`."
+        },
+        "stimulus": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 8 },
+          "minItems": 1,
+          "maxItems": 20
+        },
+        "grid": {
+          "type": "object",
+          "properties": {
+            "rows": { "type": "integer", "minimum": 2, "maximum": 8 },
+            "cols": { "type": "integer", "minimum": 2, "maximum": 8 }
+          },
+          "required": ["rows", "cols"],
+          "additionalProperties": false
+        },
+        "presentationMs": { "type": "integer", "minimum": 100, "maximum": 10000, "default": 1000, "description": "Display time of each element (or of the whole pattern for gridCells)." },
+        "gapMs": { "type": "integer", "minimum": 0, "maximum": 5000, "default": 250, "description": "Blank interval between two elements." },
+        "recallMode": {
+          "type": "string",
+          "enum": ["forward", "backward", "anyOrder"],
+          "description": "forward: repeat in order. backward: reverse order. anyOrder: set equality (used for grid patterns)."
+        },
+        "explanation": { "$ref": "#/$defs/Explanation", "description": "Optional for sequences: a chunking/rehearsal tip." }
+      },
+      "required": ["stimulusKind", "stimulus", "recallMode"],
+      "if": { "properties": { "stimulusKind": { "const": "gridCells" } } },
+      "then": { "required": ["grid"] },
+      "unevaluatedProperties": false
+    },
+    "GeneratedItem": {
+      "allOf": [{ "$ref": "#/$defs/ItemBase" }],
+      "type": "object",
+      "description": "A reproducible recipe: the engine calls generator `generatorId` with `seed` and `params` and obtains a concrete mcq/numeric/sequence item (carrying `origin`). Used for hand-picked seeds in banks and for worked examples; blueprints use ExamSection.itemSelection instead.",
+      "properties": {
+        "type": { "const": "generated" },
+        "generatorId": { "$ref": "#/$defs/GeneratorId" },
+        "seed": { "type": "integer", "minimum": 0, "maximum": 4294967295 },
+        "params": {
+          "type": "object",
+          "description": "Generator-specific parameters, documented by each engine story (US-023..029). Unknown keys are ignored by the generator. Never carry the answer here.",
+          "default": {}
+        }
+      },
+      "required": ["generatorId", "seed"],
+      "unevaluatedProperties": false
+    },
+    "Passage": {
+      "type": "object",
+      "description": "Shared reading text for a group of MCQ items (English reading, verbal comprehension).",
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/Id" },
+        "title": { "$ref": "common.schema.json#/$defs/LocalizedText" },
+        "body": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "Markdown. 80-250 words for PSY0 English reading." },
+        "media": { "$ref": "common.schema.json#/$defs/MediaRef", "description": "Audio version for listening items (P2)." },
+        "lang": { "$ref": "common.schema.json#/$defs/Lang" }
+      },
+      "required": ["id", "body"],
+      "additionalProperties": false
+    }
+  }
+}

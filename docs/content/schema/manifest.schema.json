@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trainer-psy-air.local/schema/manifest.schema.json",
+  "title": "ContentManifest",
+  "description": "assets/content/manifest.json — the single place where the bundled content is versioned. The app re-seeds its local database when `contentVersion` is greater than the stored one (US-013).",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "kind": { "const": "manifest" },
+    "schemaVersion": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Version of the JSON contract (this folder of schemas). Bumped only when the Dart models change incompatibly; the app refuses a bundle whose schemaVersion it does not know."
+    },
+    "contentVersion": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Monotonic counter of the content bundle. Bump on EVERY change under assets/content/ that must reach users (new items, corrected answers, new lessons). See AUTHORING.md."
+    },
+    "updatedAt": { "type": "string", "format": "date", "description": "Date of the last contentVersion bump (YYYY-MM-DD)." },
+    "modules": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/ModuleId" },
+      "uniqueItems": true,
+      "minItems": 1,
+      "description": "Module folders present in the bundle, in display order."
+    },
+    "changelog": {
+      "type": "array",
+      "description": "Newest first. Keeps authors honest about what a bump contains.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "contentVersion": { "type": "integer", "minimum": 1 },
+          "date": { "type": "string", "format": "date" },
+          "summary": { "type": "string", "minLength": 1 }
+        },
+        "required": ["contentVersion", "date", "summary"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["kind", "schemaVersion", "contentVersion", "updatedAt", "modules"],
+  "additionalProperties": false
+}

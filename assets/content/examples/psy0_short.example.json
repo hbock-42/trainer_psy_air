@@ -1,0 +1,75 @@
+{
+  "$schema": "../../../docs/content/schema/blueprint.schema.json",
+  "kind": "blueprint",
+  "id": "psy0.blueprint.short",
+  "version": 1,
+  "moduleId": "psy0",
+  "name": { "fr": "PSY0 — simulation courte (20 min)", "en": "PSY0 — short rehearsal (20 min)" },
+  "description": {
+    "fr": "Quatre sections raccourcies dans l'ordre supposé du vrai test. Durées et nombres d'items **estimés** en attendant la confirmation du document de recherche (US-080).",
+    "en": "Four shortened sections in the assumed order of the real test. Durations and item counts are **estimated** pending the research doc (US-080)."
+  },
+  "confidence": "assumed",
+  "tags": ["blueprint.short"],
+  "briefingSec": 0,
+  "sections": [
+    {
+      "id": "s01-arith",
+      "familyId": "mental_arithmetic",
+      "instructions": { "fr": "20 calculs, 15 s par calcul. Pas de calculatrice, pas de retour en arrière.", "en": "20 calculations, 15 s each. No calculator, no going back." },
+      "durationSec": 300,
+      "itemCount": 20,
+      "perItemTimeSec": 15,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "mental_arithmetic",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "mix": ["add_sub", "mul", "aviation"] }
+      },
+      "breakAfterSec": 30,
+      "confidence": "assumed"
+    },
+    {
+      "id": "s02-logic",
+      "familyId": "logic",
+      "durationSec": 300,
+      "itemCount": 10,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "logic_series",
+        "difficulty": { "min": 2, "max": 4 }
+      },
+      "breakAfterSec": 0,
+      "confidence": "assumed"
+    },
+    {
+      "id": "s03-english",
+      "familyId": "english",
+      "durationSec": 360,
+      "itemCount": 15,
+      "itemSelection": {
+        "mode": "bank",
+        "difficulty": { "min": 2, "max": 4 },
+        "balanceByTagPrefix": "english",
+        "avoidRecentSessions": 3
+      },
+      "breakAfterSec": 30,
+      "confidence": "reported"
+    },
+    {
+      "id": "s04-memory",
+      "familyId": "memory",
+      "durationSec": 240,
+      "itemCount": 8,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "memory_digit_span",
+        "difficulty": { "min": 2, "max": 5 },
+        "params": { "startLength": 5, "adaptive": true }
+      },
+      "confidence": "assumed",
+      "weight": 0.5
+    }
+  ],
+  "meta": { "source": "docs/content/psy0-spec.md (pending)", "notes": "Total ~20 min including breaks." }
+}

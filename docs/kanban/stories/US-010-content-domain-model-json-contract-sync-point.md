@@ -4,7 +4,7 @@ issue: 19
 title: "Content domain model & JSON contract (sync point)"
 type: story
 epic: EPIC-02
-status: backlog
+status: in-progress
 priority: P0
 size: M
 lane: core
@@ -28,7 +28,11 @@ This is the **synchronisation point** of the project: get it reviewed by everyon
 
 ## Acceptance criteria
 - [ ] Dart models with freezed + json_serializable, round-trip tests
-- [ ] `docs/content/schema/*.schema.json` (JSON Schema) for items, lessons, flashcards, blueprints
-- [ ] `docs/content/AUTHORING.md`: how to write an item, naming, difficulty scale, explanation rules
-- [ ] Example content file per item type in `assets/content/examples/`
+- [x] `docs/content/schema/*.schema.json` (JSON Schema) for items, lessons, flashcards, blueprints
+- [x] `docs/content/AUTHORING.md`: how to write an item, naming, difficulty scale, explanation rules
+- [x] Example content file per item type in `assets/content/examples/`
 - [ ] Reviewed and approved by whoever takes EPIC-03, EPIC-04 and EPIC-08
+
+## Progress
+- Part 1 (JSON contract): `docs/content/CONTRACT.md`, `docs/content/schema/`, `docs/content/AUTHORING.md`, `assets/content/examples/` — examples validated with ajv (draft 2020-12).
+- Dart models: follow-up after US-001 merges (second PR on #19).
