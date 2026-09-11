@@ -281,6 +281,8 @@ Route table:
 /onboarding                          root navigator, outside the shell
 StatefulShellRoute.indexedStack      AppShell; one branch (own Navigator) per tab, state kept
   /learn                             branch 0  (initial location)
+    family/:familyId                 nested -> /learn/family/:familyId (US-040 family page)
+    how-it-works                     nested -> /learn/how-it-works (selection stages)
   /train                             branch 1
     session/:sessionId               nested -> /train/session/:sessionId (pushed inside the tab)
   /exam                              branch 2

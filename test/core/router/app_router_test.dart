@@ -3,11 +3,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:psy_trainer/app.dart';
+import 'package:psy_trainer/core/repositories/repository_providers.dart';
 import 'package:psy_trainer/core/router/app_page.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
 import 'package:psy_trainer/core/router/app_routes.dart';
 import 'package:psy_trainer/core/router/app_shell.dart';
 import 'package:psy_trainer/core/router/error_screen.dart';
+import 'package:psy_trainer/features/learn/presentation/family_screen.dart';
+import 'package:psy_trainer/features/learn/presentation/how_it_works_screen.dart';
 import 'package:psy_trainer/features/learn/presentation/learn_screen.dart';
 import 'package:psy_trainer/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:psy_trainer/features/onboarding/presentation/providers/onboarding_completed_provider.dart';
@@ -15,12 +18,15 @@ import 'package:psy_trainer/features/settings/presentation/settings_screen.dart'
 import 'package:psy_trainer/features/train/presentation/train_screen.dart';
 import 'package:psy_trainer/features/train/presentation/train_session_screen.dart';
 
+import '../../helpers/psy0_families.dart';
+
 Future<ProviderContainer> pumpApp(
   WidgetTester tester, {
   bool onboardingDone = true,
 }) async {
   final ProviderContainer container = ProviderContainer(
     overrides: [
+      contentRepositoryProvider.overrideWithValue(psy0ContentRepository()),
       if (!onboardingDone)
         onboardingCompletedProvider.overrideWith(_NotCompletedOnboarding.new),
     ],
@@ -92,6 +98,26 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(TrainScreen), findsOneWidget);
     expect(find.byType(TrainSessionScreen), findsNothing);
+  });
+
+  testWidgets('nested Learn routes push inside the Learn tab', (tester) async {
+    final ProviderContainer container = await pumpApp(tester);
+    final GoRouter router = container.read(appRouterProvider);
+
+    router.go(AppRoutes.learnFamily('memory_nback'));
+    await tester.pumpAndSettle();
+    expect(find.byType(FamilyScreen), findsOneWidget);
+    expect(find.byType(LearnScreen, skipOffstage: false), findsOneWidget);
+    expect(find.byType(AppShell), findsOneWidget);
+
+    router.go(AppRoutes.learnHowItWorks);
+    await tester.pumpAndSettle();
+    expect(find.byType(HowItWorksScreen), findsOneWidget);
+    expect(find.byType(AppShell), findsOneWidget);
+
+    router.pop();
+    await tester.pumpAndSettle();
+    expect(find.byType(LearnScreen), findsOneWidget);
   });
 
   testWidgets('redirects to /onboarding when onboarding is not completed', (
