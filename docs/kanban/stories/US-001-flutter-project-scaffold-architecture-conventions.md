@@ -4,7 +4,7 @@ issue: 14
 title: "Flutter project scaffold & architecture conventions"
 type: story
 epic: EPIC-01
-status: review
+status: done
 priority: P0
 size: S
 lane: core
