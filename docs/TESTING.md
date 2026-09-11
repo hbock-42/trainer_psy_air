@@ -128,6 +128,10 @@ await expectGolden(tester, 'practice_summary');
 
 `flutter test` renders with the bundled Ahem font (solid boxes for every glyph) and the
 software rasteriser, so goldens are stable across machines on the same Flutter version.
+Glyph-edge anti-aliasing still differs between macOS and the Linux CI runner; the comparator
+tolerates 1 % of differing pixels by default, and a text-dense screen can pass a larger budget
+with `expectGolden(tester, name, tolerance: 0.05)` (a layout change diffs far more than that).
+CI uploads a `golden-failures` artifact (master / test / diff PNGs) when a golden test fails.
 They can change when Flutter is upgraded: regenerate them in the same PR as the Flutter bump
 and review the diffs. Regenerate with `flutter test --update-goldens <file>`; never update a
 golden without looking at the new image.
