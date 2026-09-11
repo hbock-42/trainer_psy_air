@@ -24,6 +24,9 @@ assets/content/
     lessons/                        # module-level lessons (selection overview, exam-day tips)
       01-how-the-selection-works.json
       01-how-the-selection-works.fr.md
+      english/                      # family lessons may also be grouped here, one sub-folder per family
+        01-anglais.json
+        01-anglais.fr.md
     blueprints/
       psy0_full.json                # (blueprint.schema.json) — spec §3.1
       psy0_short.json               # spec §3.2
@@ -277,22 +280,73 @@ Lessons and decks reuse the same tags so the "Try it" button and weak-area recom
 
 ## 9. Validating
 
-Until the Dart validator exists, validate with any JSON Schema draft 2020-12 tool, e.g.
-from the repo root with Node installed:
+Run the validator from the repo root (Flutter SDK installed, no Node needed):
 
 ```sh
-npx --yes ajv-cli@5 validate --spec=draft2020 -c ajv-formats --strict-required=false \
-  -r docs/content/schema/common.schema.json -r docs/content/schema/item.schema.json \
-  -s docs/content/schema/bank.schema.json -d "assets/content/psy0/english/items/*.json"
+dart run tool/validate_content.dart            # whole bundle: assets/content/
+dart run tool/validate_content.dart assets/content/psy0/english   # one folder or file
+make content-check                             # same, via the Makefile (PATHS=... to narrow)
 ```
 
-(`-r` lists the referenced schemas; add `flashcard.schema.json` for decks.)
+It runs three layers on every `*.json` file and exits with code 1 on any error (CI runs
+it on every PR, see `.github/workflows/ci.yml`):
 
-**Forthcoming (US-014):** `dart run tool/validate_content.dart` will run the schemas *and*
-the semantic checks — unique ids across the bundle, `correctIndex < options.length`,
-`familyId` matches the folder, `passageId` resolves in the same file, referenced media and
-lesson files exist, FR present everywhere, `difficulty` 1–5, ≤ 100 items per file — and
-print a per-family count by difficulty. CI runs it on every PR.
+1. **JSON Schema** — the file is matched to its schema by its `kind` and checked against
+   [`schema/`](schema/) (draft 2020-12, including `oneOf` / `unevaluatedProperties`).
+2. **Dart models** — `ContentBundleParser` must accept the file, so the app's models and
+   the schemas cannot drift apart.
+3. **Semantic rules** — what schemas cannot say: ids unique across the whole bundle,
+   `correctIndex < options.length`, explanation present and non-blank for `mcq` / `numeric`
+   (and absent for `generated`), `fr` present and non-blank in every localized text,
+   `difficulty` 1–5, `passageId` declared in the same file, grid cells inside the grid,
+   `familyId` = folder = an existing `family.json`, `moduleId` = module folder, media and
+   lesson `.md` files present under the module folder, `deckIds` resolving, blueprint
+   sections naming existing families, `module.json` listing every family folder, the
+   manifest listing every module folder, changelog newest-first and matching
+   `contentVersion`, each kind of file in its expected folder (§1).
+
+A *bundle* is a folder holding a `manifest.json` (`assets/content/`); the cross-file rules
+apply inside it. Files outside a bundle — and everything under a folder named `examples/`
+— are validated on their own (layers 1–3 minus the cross-file references).
+
+Options: `--quiet` (errors and verdict only), `--json` (machine-readable report with the
+same errors, warnings and family summary), `--schema-dir <dir>`, `--help`. When piping
+`--json` into another tool, add `--verbosity=error` to `dart run` so its own
+"Running build hooks..." banner does not precede the JSON:
+`dart run --verbosity=error tool/validate_content.dart --json`.
+
+Sample output on a valid bundle:
+
+```
+Content validation: assets/content
+14 JSON file(s), 1 bundle(s) (assets/content), 0 loose file(s)
+
+family             module  items  d1  d2  d3  d4  d5  generated  mcq  numeric  sequence  passages  lessons  decks  cards
+-----------------  ------  -----  --  --  --  --  --  ---------  ---  -------  --------  --------  -------  -----  -----
+english            psy0        3   0   2   1   0   0          0    3        0         0         1        1      1      2
+logic              psy0        1   0   1   0   0   0          1    0        0         0         0        0      0      0
+memory             psy0        2   0   1   1   0   0          0    0        0         2         0        0      0      0
+mental_arithmetic  psy0        2   0   1   0   1   0          0    0        2         0         0        0      0      0
+
+OK: 0 error(s), 0 warning(s) in 14 file(s)
+```
+
+And when something is wrong (each line: file, `[entity id]`, JSON pointer, message, layer):
+
+```
+ERRORS (4)
+  assets/content/psy0/english/items/grammar-001.json [english.vocab.0001] /items/1/difficulty: maximum exceeded (7 > 5)  (schema)
+  assets/content/psy0/english/items/grammar-001.json [english.reading.0001] /items/2: missing required property "explanation"  (schema)
+  assets/content/psy0/english/items/grammar-001.json [english.grammar.0001] /items/0/correctIndex: correctIndex 4 is out of range: the item has 4 options (indexes 0-3)  (rule)
+  assets/content/psy0/logic/items/series-gen-001.json [english.grammar.0001] /items/0: duplicate id: this item id is already used in assets/content/psy0/english/items/grammar-001.json  (rule)
+
+FAILED: 4 error(s), 0 warning(s) in 14 file(s)
+```
+
+Warnings (an unreferenced passage, an item without tags, a section whose
+`perItemTimeSec × itemCount` exceeds `durationSec`) are printed but do not fail the run.
+
+Editor autocompletion still works without the validator: keep the `$schema` line (§1).
 
 ## 10. Lessons
 

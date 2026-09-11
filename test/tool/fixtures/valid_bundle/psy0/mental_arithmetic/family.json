@@ -1,0 +1,16 @@
+{
+  "kind": "family",
+  "id": "mental_arithmetic",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 2,
+  "name": { "fr": "Calcul mental", "en": "Mental arithmetic" },
+  "description": { "fr": "Opérations rapides sans calculatrice.", "en": "Fast operations without a calculator." },
+  "engineType": "mental_arithmetic",
+  "answerFormat": "numeric",
+  "defaultDurationSec": 600,
+  "defaultItemCount": 40,
+  "defaultPerItemTimeSec": 20,
+  "confidence": "assumed",
+  "tags": ["arith"]
+}
