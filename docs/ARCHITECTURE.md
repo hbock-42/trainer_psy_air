@@ -100,6 +100,47 @@ What this implies in practice:
   uses (a `WidgetsApp` or at least `Directionality` + `DefaultTextStyle`); a `pumpApp` helper will
   live in `test/helpers/` once the design system exists.
 
+## Platforms
+
+The real PSY0 session runs on a desktop app with keyboard and mouse, and several activities are
+keyboard-native (Formes et couleurs keys, multitask arrows/space/F; see `docs/content/psy0-spec.md`
+§4.4). A phone cannot rehearse those faithfully, so the app targets every Flutter platform with a
+deliberate split by role (US-006):
+
+| Target | Folder | Role |
+|--------|--------|------|
+| Android, iOS (phone) | `android/`, `ios/` | **Learn and practice**: lessons, flashcards, drills, progress. Touch-first layouts. |
+| macOS, Windows | `macos/`, `windows/` | **Exam mode** for keyboard-native activities; the window opens at 1280×800 and cannot shrink below 1024×700 logical pixels (`macos/Runner/MainFlutterWindow.swift`, `windows/runner/win32_window.cpp`). |
+| Web (Chrome) | `web/` | Same as desktop for people without a build; also the cheapest platform to build in CI (`flutter build web --release` in the `check` job). |
+| Tablet + physical keyboard | `android/`, `ios/` | Treated as desktop when a hardware keyboard is present. |
+
+One codebase, one `WidgetsApp`: nothing in `lib/app.dart` or the router is platform-specific.
+Screens adapt to the viewport and to the input available, not to `Platform.isX`. Windows is
+configured and committed but only built on demand (`flutter build windows` on a Windows machine);
+macOS is run locally with `make run-macos`, web with `make run-web` / `make build-web`.
+
+**Verification is headless** — use `flutter build <target>` (`make build-macos`, `make build-web`)
+and `flutter test`; never `flutter run` in automation (CI, scripts, agents). `make run-*` targets
+are for a person at the keyboard.
+
+Notes for engine authors (EPIC-03):
+
+- **Keyboard input comes from the widgets layer.** Wrap the activity in a `Focus` (or
+  `FocusableActionDetector`) node that requests focus when the item appears, and read keys with
+  `KeyboardListener` (`onKeyEvent`, `KeyDownEvent` / `LogicalKeyboardKey`) or declare
+  `Shortcuts` + `Actions` for the activity's key map. Never use `RawKeyboardListener` (deprecated)
+  and never depend on a `TextField`/`EditableText` just to receive key presses. Keep the key map in
+  the engine's `domain/` as data (e.g. `{LogicalKeyboardKey.arrowLeft: Answer.left}`) so the
+  same engine is testable with `tester.sendKeyEvent` and reusable by the practice and exam
+  runners.
+- **Touch fallbacks are labelled "non-representative".** A keyboard-native activity may offer
+  on-screen buttons so it stays usable on a phone, but the practice UI must label that mode as
+  non-representative of the real test, and the exam runner (US-061) must not count a touch run of
+  such an activity as a representative rehearsal. Detect the mode by whether a hardware key event
+  has been received (or by the platform being desktop/web), not by screen size alone.
+- **Timing is the same everywhere.** Reaction-time and per-item timers live in `domain/` and are
+  driven by the engine, not by platform APIs, so results are comparable across targets.
+
 ## State and DI (Riverpod)
 
 - `main.dart` wraps the app in a `ProviderScope`; `PsyTrainerApp` is a `ConsumerWidget`.
