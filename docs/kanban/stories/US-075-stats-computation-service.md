@@ -4,7 +4,7 @@ issue: 55
 title: "Stats computation service"
 type: story
 epic: EPIC-07
-status: backlog
+status: review
 priority: P0
 size: M
 lane: analytics
@@ -23,9 +23,18 @@ labels: [analytics,domain]
 - Weak areas: families/tags with accuracy below threshold or negative trend
 
 ## Acceptance criteria
-- [ ] Pure Dart, unit tests with fixture sessions covering edge cases (no data, single session, timeouts)
-- [ ] Efficient SQL aggregates in DAOs (no loading all attempts in memory) for time series
-- [ ] Exposed via providers with caching invalidated when a session finishes
+- [x] Pure Dart, unit tests with fixture sessions covering edge cases (no data, single session, timeouts)
+- [x] Efficient SQL aggregates in DAOs (no loading all attempts in memory) for time series
+- [x] Exposed via providers with caching invalidated when a session finishes
+
+## Implementation notes
+- `lib/features/progress/domain/` (`StatsService`, `ProgressAnalytics`, value objects,
+  `StatsConfig`), providers in `presentation/providers/`; formulas and weights documented in
+  `docs/ARCHITECTURE.md`, "Progress / analytics".
+- New SQL aggregate `ProgressRepository.sessionFamilyStats` (one row per session/family/section,
+  with an unanswered count) feeds the charts (US-071) and exam summaries.
+- Consumers invalidate with `ref.read(progressVersionProvider.notifier).bump()` after finishing
+  a session (US-051, US-061) or marking a lesson read (US-044).
 
 ## Parallel
 Can be built right after US-011, before any engine exists.

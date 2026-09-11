@@ -172,9 +172,11 @@ Test the DAO's public queries (insert then read back, ordering, filtering) and m
 
 - `no_material_cupertino_test.dart`: fails if anything under `lib/` imports Material or
   Cupertino.
+- `no_drift_in_features_test.dart`: `lib/features/` never imports Drift, sqlite3 or `core/db/`.
+- `no_flutter_in_domain_test.dart`: `lib/features/*/domain/` never imports Flutter, Riverpod,
+  Drift or a `presentation/` folder.
 - Add tests here for other rules from `docs/ARCHITECTURE.md` as they become checkable
-  (`domain/` must not import Flutter widgets or Drift; `core/` and `shared/` never import
-  `features/`).
+  (`core/` and `shared/` never import `features/`).
 
 They are cheap, run with the unit suite, and turn a documented convention into a failing test
 instead of a review comment.

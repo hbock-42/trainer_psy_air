@@ -178,20 +178,72 @@ class InMemoryProgressRepository implements ProgressRepository {
       for (final familyId in families)
         () {
           final rows = byFamily[familyId]!;
-          final times = rows.map((a) => a.responseMs).toList()..sort();
-          final n = times.length;
-          final median = n.isOdd
-              ? times[n ~/ 2].toDouble()
-              : (times[n ~/ 2 - 1] + times[n ~/ 2]) / 2;
           return FamilyStats(
             familyId: familyId,
-            attempts: n,
+            attempts: rows.length,
             correct: rows.where((a) => a.isCorrect).length,
-            meanResponseMs: times.fold<int>(0, (s, t) => s + t) / n,
-            medianResponseMs: median,
+            meanResponseMs: _mean(rows),
+            medianResponseMs: _median(rows),
           );
         }(),
     ];
+  }
+
+  @override
+  Future<List<SessionFamilyStats>> sessionFamilyStats({
+    DateTime? from,
+    DateTime? to,
+    SessionMode? mode,
+    String? familyId,
+  }) async {
+    final byKey = <(String, int?, String), List<Attempt>>{};
+    for (final a in attempts) {
+      final session = sessionsById[a.sessionId];
+      if (session == null) continue;
+      if (from != null && session.startedAt.isBefore(from.toUtc())) continue;
+      if (to != null && session.startedAt.isAfter(to.toUtc())) continue;
+      if (mode != null && session.mode != mode) continue;
+      if (familyId != null && a.familyId != familyId) continue;
+      byKey
+          .putIfAbsent((a.sessionId, a.sectionIndex, a.familyId), () => [])
+          .add(a);
+    }
+    final rows = [
+      for (final MapEntry(key: (sessionId, section, family), value: group)
+          in byKey.entries)
+        SessionFamilyStats(
+          sessionId: sessionId,
+          familyId: family,
+          sectionIndex: section,
+          mode: sessionsById[sessionId]!.mode,
+          startedAt: sessionsById[sessionId]!.startedAt,
+          attempts: group.length,
+          correct: group.where((a) => a.isCorrect).length,
+          unanswered: group.where((a) => a.answer == null).length,
+          meanResponseMs: _mean(group),
+          medianResponseMs: _median(group),
+        ),
+    ];
+    return rows..sort((a, b) {
+      final byDate = a.startedAt.compareTo(b.startedAt);
+      if (byDate != 0) return byDate;
+      final bySession = a.sessionId.compareTo(b.sessionId);
+      if (bySession != 0) return bySession;
+      final bySection = (a.sectionIndex ?? -1).compareTo(b.sectionIndex ?? -1);
+      if (bySection != 0) return bySection;
+      return a.familyId.compareTo(b.familyId);
+    });
+  }
+
+  static double _mean(List<Attempt> rows) =>
+      rows.fold<int>(0, (s, a) => s + a.responseMs) / rows.length;
+
+  static double _median(List<Attempt> rows) {
+    final times = rows.map((a) => a.responseMs).toList()..sort();
+    final n = times.length;
+    return n.isOdd
+        ? times[n ~/ 2].toDouble()
+        : (times[n ~/ 2 - 1] + times[n ~/ 2]) / 2;
   }
 
   @override

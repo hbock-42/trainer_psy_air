@@ -191,6 +191,19 @@ class LocalProgressRepository implements ProgressRepository {
   }) => _db.attemptsDao.familyAggregates(from: from, to: to, mode: mode);
 
   @override
+  Future<List<SessionFamilyStats>> sessionFamilyStats({
+    DateTime? from,
+    DateTime? to,
+    SessionMode? mode,
+    String? familyId,
+  }) => _db.attemptsDao.sessionFamilyAggregates(
+    from: from,
+    to: to,
+    mode: mode,
+    familyId: familyId,
+  );
+
+  @override
   Future<ItemStat?> itemStat(String itemId) async {
     final row = await _db.itemStatsDao.byItem(itemId);
     return row == null ? null : _itemStat(row);
