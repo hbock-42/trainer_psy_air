@@ -4,7 +4,7 @@ issue: 17
 title: "CI pipeline (analyze, test, build)"
 type: story
 epic: EPIC-01
-status: review
+status: done
 priority: P1
 size: S
 lane: core
