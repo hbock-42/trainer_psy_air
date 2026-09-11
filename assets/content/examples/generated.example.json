@@ -1,0 +1,41 @@
+{
+  "$schema": "../../../docs/content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "logic",
+  "items": [
+    {
+      "id": "logic.series.gen.0001",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic",
+      "difficulty": 2,
+      "tags": ["logic.series", "logic.series.arithmetic"],
+      "generatorId": "logic_series",
+      "seed": 1842,
+      "params": { "kind": "arithmetic", "length": 5, "answerFormat": "mcq" },
+      "meta": { "notes": "Hand-picked seed used as worked example in lesson logic.lesson.01-series." }
+    },
+    {
+      "id": "logic.series.gen.0002",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic",
+      "difficulty": 4,
+      "tags": ["logic.series", "logic.series.two_step"],
+      "generatorId": "logic_series",
+      "seed": 90211,
+      "params": { "kind": "two_step", "length": 6, "answerFormat": "numeric" }
+    },
+    {
+      "id": "logic.matrix.gen.0001",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic",
+      "difficulty": 3,
+      "tags": ["logic.matrix", "logic.matrix.rotation"],
+      "generatorId": "figure_matrix",
+      "seed": 7,
+      "params": { "rules": ["rotation", "count"], "size": 3 }
+    }
+  ]
+}

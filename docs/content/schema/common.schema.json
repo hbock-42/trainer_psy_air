@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trainer-psy-air.local/schema/common.schema.json",
+  "title": "Common definitions",
+  "description": "Shared building blocks reused by every content schema (US-010). Content contract schemaVersion 1.",
+  "$defs": {
+    "Id": {
+      "type": "string",
+      "description": "Stable, globally unique, URL-safe identifier. Dotted hierarchy by convention: <family>.<kind>.<slug>. See AUTHORING.md.",
+      "pattern": "^[a-z0-9_.-]+$",
+      "minLength": 3,
+      "maxLength": 120
+    },
+    "ModuleId": {
+      "type": "string",
+      "description": "Selection stage the content belongs to.",
+      "enum": ["psy0", "psy1", "psy2"]
+    },
+    "Version": {
+      "type": "integer",
+      "description": "Entity version. Starts at 1, bumped by the author whenever the entity's meaning changes (correct answer, wording that changes the answer, removed option...). Cosmetic fixes do not bump it.",
+      "minimum": 1
+    },
+    "Difficulty": {
+      "type": "integer",
+      "description": "1 = trivial warm-up ... 5 = hardest expected at the real test. Scale defined in AUTHORING.md.",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "Tag": {
+      "type": "string",
+      "description": "Dotted lowercase tag, e.g. english.grammar.tenses. Vocabulary per family in AUTHORING.md.",
+      "pattern": "^[a-z0-9_]+(\\.[a-z0-9_]+)*$",
+      "maxLength": 60
+    },
+    "Tags": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/Tag" },
+      "uniqueItems": true,
+      "default": []
+    },
+    "LocalizedText": {
+      "type": "object",
+      "description": "Text shown to the user, keyed by UI locale. `fr` is mandatory and is the fallback for every other locale. For English-language stimuli (English test) put the English sentence under `fr` too: `fr` means 'what a French-UI user sees', not 'French text'.",
+      "properties": {
+        "fr": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      },
+      "required": ["fr"],
+      "additionalProperties": false
+    },
+    "LocalizedPath": {
+      "type": "object",
+      "description": "Same shape as LocalizedText but each value is a path to a file relative to the module folder (used by lessons).",
+      "properties": {
+        "fr": { "$ref": "#/$defs/AssetPath" },
+        "en": { "$ref": "#/$defs/AssetPath" }
+      },
+      "required": ["fr"],
+      "additionalProperties": false
+    },
+    "AssetPath": {
+      "type": "string",
+      "description": "Path relative to assets/content/<module>/ (no leading slash, no '..').",
+      "pattern": "^(?!\\.\\.)(?!/)[A-Za-z0-9_./-]+$",
+      "minLength": 1
+    },
+    "MediaRef": {
+      "type": "object",
+      "description": "Reference to a bundled media file. Vector (SVG) preferred for figures; PNG/JPEG only for photos; audio for listening items.",
+      "properties": {
+        "kind": { "type": "string", "enum": ["image", "audio"] },
+        "path": { "$ref": "#/$defs/AssetPath" },
+        "alt": {
+          "$ref": "#/$defs/LocalizedText",
+          "description": "Accessibility text; mandatory for images that carry information."
+        },
+        "width": { "type": "integer", "minimum": 1, "description": "Intrinsic width in px (raster) or viewBox units (svg); optional layout hint." },
+        "height": { "type": "integer", "minimum": 1 },
+        "durationMs": { "type": "integer", "minimum": 1, "description": "Audio only." }
+      },
+      "required": ["kind", "path"],
+      "additionalProperties": false
+    },
+    "Confidence": {
+      "type": "string",
+      "description": "How sure we are that a value mirrors the real test (from the US-080 research doc).",
+      "enum": ["confirmed", "reported", "assumed"]
+    },
+    "Lang": {
+      "type": "string",
+      "description": "Language of the stimulus itself (not of the UI). Used for text direction, hyphenation, TTS and sampling.",
+      "enum": ["fr", "en"]
+    },
+    "Meta": {
+      "type": "object",
+      "description": "Authoring metadata, never shown to the user.",
+      "properties": {
+        "author": { "type": "string" },
+        "source": { "type": "string", "description": "Where the item/lesson comes from (book, own creation, research doc section). Never copy copyrighted test material." },
+        "reviewedBy": { "type": "string" },
+        "reviewedAt": { "type": "string", "format": "date" },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "Status": {
+      "type": "string",
+      "description": "draft entities pass validation but are not seeded into the app.",
+      "enum": ["draft", "published"],
+      "default": "published"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trainer-psy-air.local/schema/family.schema.json",
+  "title": "TestFamily",
+  "description": "One test family of a module (e.g. PSY0 > English). File: assets/content/<module>/<family>/family.json. Also defines Module (assets/content/<module>/module.json) under $defs.",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "kind": { "const": "family" },
+    "id": { "$ref": "common.schema.json#/$defs/Id", "description": "Short slug, no dots: english, maths_physics, mental_arithmetic, logic, spatial, memory, verbal, attention." },
+    "moduleId": { "$ref": "common.schema.json#/$defs/ModuleId" },
+    "version": { "$ref": "common.schema.json#/$defs/Version" },
+    "order": { "type": "integer", "minimum": 0, "description": "Display order in the Learn home and default order in blueprints." },
+    "name": { "$ref": "common.schema.json#/$defs/LocalizedText" },
+    "shortName": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "<= 14 chars, for chips and charts." },
+    "description": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "What is evaluated and how (markdown, 2-4 sentences). Shown on the family card (US-040)." },
+    "engineType": {
+      "type": "string",
+      "description": "Key of the engine that runs this family (US-020 registry). Bank engines read items from files; the others generate.",
+      "enum": [
+        "mcq_bank",
+        "numeric_bank",
+        "mental_arithmetic",
+        "logic_series",
+        "figure_matrix",
+        "spatial_rotation",
+        "cube_folding",
+        "memory_digit_span",
+        "memory_pattern",
+        "memory_sequence",
+        "attention_symbols",
+        "attention_stream",
+        "multitasking",
+        "instrument_reading"
+      ]
+    },
+    "answerFormat": {
+      "type": "string",
+      "description": "Primary answer widget. mcq: options; numeric: keypad; sequence: keypad/symbol recall; grid: tap cells; tap: tap-on-stimulus.",
+      "enum": ["mcq", "numeric", "sequence", "grid", "tap"]
+    },
+    "lang": { "$ref": "common.schema.json#/$defs/Lang", "default": "fr", "description": "Default stimulus language of the family's items." },
+    "defaultDurationSec": { "type": "integer", "minimum": 30, "maximum": 7200, "description": "Section duration used by the practice launcher and by blueprints that do not override it." },
+    "defaultItemCount": { "type": "integer", "minimum": 1, "maximum": 500 },
+    "defaultPerItemTimeSec": { "type": "integer", "minimum": 1, "description": "Optional per-item limit (speeded families)." },
+    "confidence": { "$ref": "common.schema.json#/$defs/Confidence", "description": "Confidence in duration/itemCount versus the real test. Mark `assumed` until US-080 confirms." },
+    "tags": { "$ref": "common.schema.json#/$defs/Tags", "description": "Root of the tag vocabulary for this family, e.g. ['english']." },
+    "status": { "$ref": "common.schema.json#/$defs/Status" },
+    "meta": { "$ref": "common.schema.json#/$defs/Meta" }
+  },
+  "required": ["kind", "id", "moduleId", "version", "order", "name", "description", "engineType", "answerFormat", "defaultDurationSec", "defaultItemCount", "confidence"],
+  "additionalProperties": false,
+  "$defs": {
+    "Module": {
+      "type": "object",
+      "description": "A selection stage. File: assets/content/<module>/module.json.",
+      "properties": {
+        "$schema": { "type": "string" },
+        "kind": { "const": "module" },
+        "id": { "$ref": "common.schema.json#/$defs/ModuleId" },
+        "version": { "$ref": "common.schema.json#/$defs/Version" },
+        "order": { "type": "integer", "minimum": 0 },
+        "name": { "$ref": "common.schema.json#/$defs/LocalizedText" },
+        "description": { "$ref": "common.schema.json#/$defs/LocalizedText" },
+        "familyIds": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/Id" },
+          "uniqueItems": true,
+          "description": "Ordered list of family folders under this module."
+        },
+        "defaultBlueprintId": { "$ref": "common.schema.json#/$defs/Id" },
+        "status": { "$ref": "common.schema.json#/$defs/Status" }
+      },
+      "required": ["kind", "id", "version", "order", "name", "description", "familyIds"],
+      "additionalProperties": false
+    }
+  }
+}

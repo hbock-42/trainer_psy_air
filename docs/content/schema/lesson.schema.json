@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trainer-psy-air.local/schema/lesson.schema.json",
+  "title": "Lesson",
+  "description": "A markdown lesson. File: assets/content/<module>/<family>/lessons/<nn>-<slug>.json (family lesson) or assets/content/<module>/lessons/<nn>-<slug>.json (module-level lesson such as 'How the selection works'). The body is either inline or a reference to sibling .md files. Callouts: GitHub-style blockquotes `> [!TIP]`, `> [!TRAP]`, `> [!EXAMPLE]`, `> [!METHOD]`; a `> [!EXAMPLE]` whose content is a numbered list is a worked example revealed step by step (US-043).",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "kind": { "const": "lesson" },
+    "id": { "$ref": "common.schema.json#/$defs/Id" },
+    "version": { "$ref": "common.schema.json#/$defs/Version" },
+    "moduleId": { "$ref": "common.schema.json#/$defs/ModuleId" },
+    "familyId": {
+      "$ref": "common.schema.json#/$defs/Id",
+      "description": "Omit for module-level lessons (selection overview, exam-day tips)."
+    },
+    "order": { "type": "integer", "minimum": 0, "description": "Position in the family's table of contents." },
+    "title": { "$ref": "common.schema.json#/$defs/LocalizedText" },
+    "summary": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "One sentence for the lesson list." },
+    "body": {
+      "$ref": "common.schema.json#/$defs/LocalizedText",
+      "description": "Inline markdown. Use for short lessons (< ~40 lines); otherwise use `file`."
+    },
+    "file": {
+      "$ref": "common.schema.json#/$defs/LocalizedPath",
+      "description": "Markdown files relative to the module folder, e.g. english/lessons/01-tenses.fr.md."
+    },
+    "estimatedReadMin": { "type": "integer", "minimum": 1, "maximum": 60 },
+    "difficulty": { "$ref": "common.schema.json#/$defs/Difficulty", "description": "Optional: level of the material (1 = basics, 5 = advanced tricks)." },
+    "tags": { "$ref": "common.schema.json#/$defs/Tags" },
+    "practiceTags": {
+      "$ref": "common.schema.json#/$defs/Tags",
+      "description": "Tags used by the 'Try it' button to pick items related to this lesson (US-041)."
+    },
+    "deckIds": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/Id" },
+      "uniqueItems": true,
+      "description": "Flashcard decks linked from the end of the lesson."
+    },
+    "status": { "$ref": "common.schema.json#/$defs/Status" },
+    "meta": { "$ref": "common.schema.json#/$defs/Meta" }
+  },
+  "required": ["kind", "id", "version", "moduleId", "order", "title", "tags"],
+  "oneOf": [{ "required": ["body"] }, { "required": ["file"] }],
+  "additionalProperties": false
+}

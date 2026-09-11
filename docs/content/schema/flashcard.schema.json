@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trainer-psy-air.local/schema/flashcard.schema.json",
+  "title": "Flashcard",
+  "description": "One two-sided card. Always authored inside a Deck file (deck.schema.json); never a standalone file.",
+  "type": "object",
+  "properties": {
+    "id": { "$ref": "common.schema.json#/$defs/Id", "description": "<deckId>.<nnnn>" },
+    "version": { "$ref": "common.schema.json#/$defs/Version" },
+    "deckId": { "$ref": "common.schema.json#/$defs/Id" },
+    "front": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "Prompt side. Markdown, inline $formula$ allowed. Keep to one line when possible." },
+    "back": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "Answer side. May include a one-line memory hook." },
+    "media": { "$ref": "common.schema.json#/$defs/MediaRef", "description": "Optional figure shown on the front." },
+    "difficulty": { "$ref": "common.schema.json#/$defs/Difficulty" },
+    "tags": { "$ref": "common.schema.json#/$defs/Tags" },
+    "status": { "$ref": "common.schema.json#/$defs/Status" },
+    "meta": { "$ref": "common.schema.json#/$defs/Meta" }
+  },
+  "required": ["id", "version", "deckId", "front", "back", "difficulty", "tags"],
+  "additionalProperties": false
+}
