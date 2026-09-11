@@ -114,12 +114,13 @@ class AttemptsDao extends DatabaseAccessor<AppDatabase>
     ];
   }
 
-  /// One row per (session, family) for the sessions started within
-  /// `[from, to]` (inclusive, optional), oldest session first, optionally
-  /// restricted to one [mode] and/or [familyId]: the score-over-time series
-  /// (US-071). Same window-function median as [familyAggregates], partitioned
-  /// by session and family; `unanswered` counts attempts without an answer
-  /// payload (timeouts). Uses the `sessions_started_at` index.
+  /// One row per (session, family, section) for the sessions started within
+  /// `[from, to]` (inclusive, optional), oldest session first (NULL section
+  /// first, then family), optionally restricted to one [mode] and/or
+  /// [familyId]: the score-over-time series (US-071) and exam section scores.
+  /// Same window-function median as [familyAggregates], partitioned by
+  /// session, family and section; `unanswered` counts attempts without an
+  /// answer payload (timeouts). Uses the `sessions_started_at` index.
   Future<List<SessionFamilyStats>> sessionFamilyAggregates({
     DateTime? from,
     DateTime? to,
@@ -149,7 +150,8 @@ class AttemptsDao extends DatabaseAccessor<AppDatabase>
     final rows = await customSelect(
       '''
       WITH filtered AS (
-        SELECT a.session_id, a.family_id, a.is_correct, a.response_ms,
+        SELECT a.session_id, a.family_id, a.section_index,
+               a.is_correct, a.response_ms,
                (a.answer IS NULL) AS unanswered,
                s.mode, s.started_at
         FROM attempts a
@@ -157,34 +159,41 @@ class AttemptsDao extends DatabaseAccessor<AppDatabase>
         $filter
       ),
       ranked AS (
-        SELECT session_id, family_id, response_ms,
+        SELECT session_id, family_id, section_index, response_ms,
                ROW_NUMBER() OVER (
-                 PARTITION BY session_id, family_id ORDER BY response_ms
+                 PARTITION BY session_id, family_id, section_index
+                 ORDER BY response_ms
                ) AS rn,
-               COUNT(*) OVER (PARTITION BY session_id, family_id) AS cnt
+               COUNT(*) OVER (
+                 PARTITION BY session_id, family_id, section_index
+               ) AS cnt
         FROM filtered
       ),
       medians AS (
-        SELECT session_id, family_id, AVG(response_ms) AS median_ms
+        SELECT session_id, family_id, section_index,
+               AVG(response_ms) AS median_ms
         FROM ranked
         WHERE rn IN ((cnt + 1) / 2, (cnt + 2) / 2)
-        GROUP BY session_id, family_id
+        GROUP BY session_id, family_id, section_index
       ),
       totals AS (
-        SELECT session_id, family_id, mode, started_at,
+        SELECT session_id, family_id, section_index, mode, started_at,
                COUNT(*) AS attempts,
                SUM(is_correct) AS correct,
                SUM(unanswered) AS unanswered,
                AVG(response_ms) AS mean_ms
         FROM filtered
-        GROUP BY session_id, family_id
+        GROUP BY session_id, family_id, section_index
       )
-      SELECT t.session_id, t.family_id, t.mode, t.started_at, t.attempts,
-             t.correct, t.unanswered, t.mean_ms, m.median_ms
+      SELECT t.session_id, t.family_id, t.section_index, t.mode,
+             t.started_at, t.attempts, t.correct, t.unanswered, t.mean_ms,
+             m.median_ms
       FROM totals t
       JOIN medians m
-        ON m.session_id = t.session_id AND m.family_id = t.family_id
-      ORDER BY t.started_at, t.session_id, t.family_id
+        ON m.session_id = t.session_id
+       AND m.family_id = t.family_id
+       AND m.section_index IS t.section_index
+      ORDER BY t.started_at, t.session_id, t.section_index, t.family_id
       ''',
       variables: variables,
       readsFrom: {attempts, sessions},
@@ -195,6 +204,7 @@ class AttemptsDao extends DatabaseAccessor<AppDatabase>
         SessionFamilyStats(
           sessionId: row.read<String>('session_id'),
           familyId: row.read<String>('family_id'),
+          sectionIndex: row.readNullable<int>('section_index'),
           mode: SessionMode.values.byName(row.read<String>('mode')),
           startedAt: row.read<DateTime>('started_at'),
           attempts: row.read<int>('attempts'),

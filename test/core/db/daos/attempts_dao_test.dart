@@ -44,6 +44,7 @@ void main() {
     String? itemId,
     Map<String, Object?>? origin,
     DateTime? at,
+    int? section,
   }) {
     final answeredAt = at ?? DateTime.utc(2026, 9, 1, 10);
     return AttemptsCompanion.insert(
@@ -56,6 +57,7 @@ void main() {
       isCorrect: correct,
       responseMs: ms,
       position: position,
+      sectionIndex: Value(section),
       answeredAt: answeredAt,
       createdAt: answeredAt,
       updatedAt: answeredAt,
@@ -294,9 +296,9 @@ void main() {
   });
 
   group('sessionFamilyAggregates', () {
-    test('groups by session and family, oldest session first', () async {
+    test('groups by session, section and family, oldest first', () async {
       await session('late', startedAt: DateTime.utc(2026, 9, 3));
-      await session('early', startedAt: DateTime.utc(2026, 9, 1));
+      await session('early', startedAt: DateTime.utc(2026, 8, 31));
       await session(
         'exam',
         mode: SessionMode.exam,
@@ -325,27 +327,30 @@ void main() {
           ms: 200,
           position: 2,
         ),
-        // exam: two families in one session
-        attempt(
-          sessionId: 'exam',
-          familyId: 'english',
-          correct: false,
-          ms: 5000,
-          position: 0,
-        ),
+        // exam: two sections, one family each
         attempt(
           sessionId: 'exam',
           familyId: 'logic',
           correct: true,
           ms: 700,
-          position: 1,
+          position: 0,
+          section: 0,
         ),
         attempt(
           sessionId: 'exam',
           familyId: 'logic',
           correct: true,
           ms: 900,
+          position: 1,
+          section: 0,
+        ),
+        attempt(
+          sessionId: 'exam',
+          familyId: 'english',
+          correct: false,
+          ms: 5000,
           position: 2,
+          section: 1,
         ),
         // late/english: single attempt
         attempt(
@@ -363,7 +368,7 @@ void main() {
           sessionId: 'early',
           familyId: 'english',
           mode: SessionMode.practice,
-          startedAt: DateTime.utc(2026, 9, 1),
+          startedAt: DateTime.utc(2026, 8, 31),
           attempts: 3,
           correct: 2,
           unanswered: 1,
@@ -372,18 +377,8 @@ void main() {
         ),
         SessionFamilyStats(
           sessionId: 'exam',
-          familyId: 'english',
-          mode: SessionMode.exam,
-          startedAt: DateTime.utc(2026, 9, 2),
-          attempts: 1,
-          correct: 0,
-          unanswered: 1,
-          meanResponseMs: 5000,
-          medianResponseMs: 5000,
-        ),
-        SessionFamilyStats(
-          sessionId: 'exam',
           familyId: 'logic',
+          sectionIndex: 0,
           mode: SessionMode.exam,
           startedAt: DateTime.utc(2026, 9, 2),
           attempts: 2,
@@ -391,6 +386,18 @@ void main() {
           unanswered: 0,
           meanResponseMs: 800,
           medianResponseMs: 800,
+        ),
+        SessionFamilyStats(
+          sessionId: 'exam',
+          familyId: 'english',
+          sectionIndex: 1,
+          mode: SessionMode.exam,
+          startedAt: DateTime.utc(2026, 9, 2),
+          attempts: 1,
+          correct: 0,
+          unanswered: 1,
+          meanResponseMs: 5000,
+          medianResponseMs: 5000,
         ),
         SessionFamilyStats(
           sessionId: 'late',
@@ -423,7 +430,7 @@ void main() {
           from: DateTime.utc(2026, 9, 2),
           to: DateTime.utc(2026, 9, 2, 23),
         )).map((p) => p.familyId),
-        ['english', 'logic'],
+        ['logic', 'english'],
       );
       expect(
         await db.attemptsDao.sessionFamilyAggregates(

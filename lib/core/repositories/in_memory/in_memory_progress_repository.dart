@@ -196,7 +196,7 @@ class InMemoryProgressRepository implements ProgressRepository {
     SessionMode? mode,
     String? familyId,
   }) async {
-    final byKey = <(String, String), List<Attempt>>{};
+    final byKey = <(String, int?, String), List<Attempt>>{};
     for (final a in attempts) {
       final session = sessionsById[a.sessionId];
       if (session == null) continue;
@@ -204,14 +204,17 @@ class InMemoryProgressRepository implements ProgressRepository {
       if (to != null && session.startedAt.isAfter(to.toUtc())) continue;
       if (mode != null && session.mode != mode) continue;
       if (familyId != null && a.familyId != familyId) continue;
-      byKey.putIfAbsent((a.sessionId, a.familyId), () => []).add(a);
+      byKey
+          .putIfAbsent((a.sessionId, a.sectionIndex, a.familyId), () => [])
+          .add(a);
     }
     final rows = [
-      for (final MapEntry(key: (sessionId, family), value: group)
+      for (final MapEntry(key: (sessionId, section, family), value: group)
           in byKey.entries)
         SessionFamilyStats(
           sessionId: sessionId,
           familyId: family,
+          sectionIndex: section,
           mode: sessionsById[sessionId]!.mode,
           startedAt: sessionsById[sessionId]!.startedAt,
           attempts: group.length,
@@ -226,6 +229,8 @@ class InMemoryProgressRepository implements ProgressRepository {
       if (byDate != 0) return byDate;
       final bySession = a.sessionId.compareTo(b.sessionId);
       if (bySession != 0) return bySession;
+      final bySection = (a.sectionIndex ?? -1).compareTo(b.sectionIndex ?? -1);
+      if (bySection != 0) return bySection;
       return a.familyId.compareTo(b.familyId);
     });
   }

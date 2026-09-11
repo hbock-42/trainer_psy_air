@@ -42,12 +42,14 @@ abstract class FamilyStats with _$FamilyStats {
   double get accuracy => attempts == 0 ? 0 : correct / attempts;
 }
 
-/// Accuracy and response-time aggregates of one family within one session:
-/// one point of a score-over-time series (US-071), computed in SQL so a
-/// chart never loads the attempts themselves.
+/// Accuracy and response-time aggregates of one family within one session
+/// (and, for exams, one blueprint section): one point of a score-over-time
+/// series (US-071) or one section of an exam summary, computed in SQL so
+/// neither ever loads the attempts themselves.
 ///
 /// [unanswered] counts attempts stored without an answer payload (timeouts
 /// and skips); they are included in [attempts] and count as wrong.
+/// [sectionIndex] is null for practice sessions.
 @freezed
 abstract class SessionFamilyStats with _$SessionFamilyStats {
   const factory SessionFamilyStats({
@@ -60,6 +62,7 @@ abstract class SessionFamilyStats with _$SessionFamilyStats {
     required int unanswered,
     required double meanResponseMs,
     required double medianResponseMs,
+    int? sectionIndex,
   }) = _SessionFamilyStats;
 
   const SessionFamilyStats._();

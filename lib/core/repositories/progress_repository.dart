@@ -67,9 +67,10 @@ abstract interface class ProgressRepository {
     SessionMode? mode,
   });
 
-  /// One row per (session, family) over the sessions started within
-  /// `[from, to]` (optional), oldest session first: the score-over-time
-  /// series of US-071. Optionally restricted to one mode and/or one family.
+  /// One row per (session, family, section) over the sessions started
+  /// within `[from, to]` (optional), oldest session first (then section,
+  /// then family): the score-over-time series of US-071 and the per-section
+  /// scores of an exam. Optionally restricted to one mode and/or one family.
   /// Sessions without attempts are absent. Computed in SQL.
   Future<List<SessionFamilyStats>> sessionFamilyStats({
     DateTime? from,

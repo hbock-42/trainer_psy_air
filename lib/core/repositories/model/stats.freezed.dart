@@ -558,7 +558,7 @@ as double,
 /// @nodoc
 mixin _$SessionFamilyStats {
 
- String get sessionId; String get familyId; SessionMode get mode; DateTime get startedAt; int get attempts; int get correct; int get unanswered; double get meanResponseMs; double get medianResponseMs;
+ String get sessionId; String get familyId; SessionMode get mode; DateTime get startedAt; int get attempts; int get correct; int get unanswered; double get meanResponseMs; double get medianResponseMs; int? get sectionIndex;
 /// Create a copy of SessionFamilyStats
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -569,16 +569,16 @@ $SessionFamilyStatsCopyWith<SessionFamilyStats> get copyWith => _$SessionFamilyS
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SessionFamilyStats&&(identical(other.sessionId, sessionId) || other.sessionId == sessionId)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.mode, mode) || other.mode == mode)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.attempts, attempts) || other.attempts == attempts)&&(identical(other.correct, correct) || other.correct == correct)&&(identical(other.unanswered, unanswered) || other.unanswered == unanswered)&&(identical(other.meanResponseMs, meanResponseMs) || other.meanResponseMs == meanResponseMs)&&(identical(other.medianResponseMs, medianResponseMs) || other.medianResponseMs == medianResponseMs));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SessionFamilyStats&&(identical(other.sessionId, sessionId) || other.sessionId == sessionId)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.mode, mode) || other.mode == mode)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.attempts, attempts) || other.attempts == attempts)&&(identical(other.correct, correct) || other.correct == correct)&&(identical(other.unanswered, unanswered) || other.unanswered == unanswered)&&(identical(other.meanResponseMs, meanResponseMs) || other.meanResponseMs == meanResponseMs)&&(identical(other.medianResponseMs, medianResponseMs) || other.medianResponseMs == medianResponseMs)&&(identical(other.sectionIndex, sectionIndex) || other.sectionIndex == sectionIndex));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,sessionId,familyId,mode,startedAt,attempts,correct,unanswered,meanResponseMs,medianResponseMs);
+int get hashCode => Object.hash(runtimeType,sessionId,familyId,mode,startedAt,attempts,correct,unanswered,meanResponseMs,medianResponseMs,sectionIndex);
 
 @override
 String toString() {
-  return 'SessionFamilyStats(sessionId: $sessionId, familyId: $familyId, mode: $mode, startedAt: $startedAt, attempts: $attempts, correct: $correct, unanswered: $unanswered, meanResponseMs: $meanResponseMs, medianResponseMs: $medianResponseMs)';
+  return 'SessionFamilyStats(sessionId: $sessionId, familyId: $familyId, mode: $mode, startedAt: $startedAt, attempts: $attempts, correct: $correct, unanswered: $unanswered, meanResponseMs: $meanResponseMs, medianResponseMs: $medianResponseMs, sectionIndex: $sectionIndex)';
 }
 
 
@@ -589,7 +589,7 @@ abstract mixin class $SessionFamilyStatsCopyWith<$Res>  {
   factory $SessionFamilyStatsCopyWith(SessionFamilyStats value, $Res Function(SessionFamilyStats) _then) = _$SessionFamilyStatsCopyWithImpl;
 @useResult
 $Res call({
- String sessionId, String familyId, SessionMode mode, DateTime startedAt, int attempts, int correct, int unanswered, double meanResponseMs, double medianResponseMs
+ String sessionId, String familyId, SessionMode mode, DateTime startedAt, int attempts, int correct, int unanswered, double meanResponseMs, double medianResponseMs, int? sectionIndex
 });
 
 
@@ -606,7 +606,7 @@ class _$SessionFamilyStatsCopyWithImpl<$Res>
 
 /// Create a copy of SessionFamilyStats
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? sessionId = null,Object? familyId = null,Object? mode = null,Object? startedAt = null,Object? attempts = null,Object? correct = null,Object? unanswered = null,Object? meanResponseMs = null,Object? medianResponseMs = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? sessionId = null,Object? familyId = null,Object? mode = null,Object? startedAt = null,Object? attempts = null,Object? correct = null,Object? unanswered = null,Object? meanResponseMs = null,Object? medianResponseMs = null,Object? sectionIndex = freezed,}) {
   return _then(_self.copyWith(
 sessionId: null == sessionId ? _self.sessionId : sessionId // ignore: cast_nullable_to_non_nullable
 as String,familyId: null == familyId ? _self.familyId : familyId // ignore: cast_nullable_to_non_nullable
@@ -617,7 +617,8 @@ as int,correct: null == correct ? _self.correct : correct // ignore: cast_nullab
 as int,unanswered: null == unanswered ? _self.unanswered : unanswered // ignore: cast_nullable_to_non_nullable
 as int,meanResponseMs: null == meanResponseMs ? _self.meanResponseMs : meanResponseMs // ignore: cast_nullable_to_non_nullable
 as double,medianResponseMs: null == medianResponseMs ? _self.medianResponseMs : medianResponseMs // ignore: cast_nullable_to_non_nullable
-as double,
+as double,sectionIndex: freezed == sectionIndex ? _self.sectionIndex : sectionIndex // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 
@@ -702,10 +703,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String sessionId,  String familyId,  SessionMode mode,  DateTime startedAt,  int attempts,  int correct,  int unanswered,  double meanResponseMs,  double medianResponseMs)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String sessionId,  String familyId,  SessionMode mode,  DateTime startedAt,  int attempts,  int correct,  int unanswered,  double meanResponseMs,  double medianResponseMs,  int? sectionIndex)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SessionFamilyStats() when $default != null:
-return $default(_that.sessionId,_that.familyId,_that.mode,_that.startedAt,_that.attempts,_that.correct,_that.unanswered,_that.meanResponseMs,_that.medianResponseMs);case _:
+return $default(_that.sessionId,_that.familyId,_that.mode,_that.startedAt,_that.attempts,_that.correct,_that.unanswered,_that.meanResponseMs,_that.medianResponseMs,_that.sectionIndex);case _:
   return orElse();
 
 }
@@ -723,10 +724,10 @@ return $default(_that.sessionId,_that.familyId,_that.mode,_that.startedAt,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String sessionId,  String familyId,  SessionMode mode,  DateTime startedAt,  int attempts,  int correct,  int unanswered,  double meanResponseMs,  double medianResponseMs)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String sessionId,  String familyId,  SessionMode mode,  DateTime startedAt,  int attempts,  int correct,  int unanswered,  double meanResponseMs,  double medianResponseMs,  int? sectionIndex)  $default,) {final _that = this;
 switch (_that) {
 case _SessionFamilyStats():
-return $default(_that.sessionId,_that.familyId,_that.mode,_that.startedAt,_that.attempts,_that.correct,_that.unanswered,_that.meanResponseMs,_that.medianResponseMs);case _:
+return $default(_that.sessionId,_that.familyId,_that.mode,_that.startedAt,_that.attempts,_that.correct,_that.unanswered,_that.meanResponseMs,_that.medianResponseMs,_that.sectionIndex);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -743,10 +744,10 @@ return $default(_that.sessionId,_that.familyId,_that.mode,_that.startedAt,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String sessionId,  String familyId,  SessionMode mode,  DateTime startedAt,  int attempts,  int correct,  int unanswered,  double meanResponseMs,  double medianResponseMs)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String sessionId,  String familyId,  SessionMode mode,  DateTime startedAt,  int attempts,  int correct,  int unanswered,  double meanResponseMs,  double medianResponseMs,  int? sectionIndex)?  $default,) {final _that = this;
 switch (_that) {
 case _SessionFamilyStats() when $default != null:
-return $default(_that.sessionId,_that.familyId,_that.mode,_that.startedAt,_that.attempts,_that.correct,_that.unanswered,_that.meanResponseMs,_that.medianResponseMs);case _:
+return $default(_that.sessionId,_that.familyId,_that.mode,_that.startedAt,_that.attempts,_that.correct,_that.unanswered,_that.meanResponseMs,_that.medianResponseMs,_that.sectionIndex);case _:
   return null;
 
 }
@@ -758,7 +759,7 @@ return $default(_that.sessionId,_that.familyId,_that.mode,_that.startedAt,_that.
 
 
 class _SessionFamilyStats extends SessionFamilyStats {
-  const _SessionFamilyStats({required this.sessionId, required this.familyId, required this.mode, required this.startedAt, required this.attempts, required this.correct, required this.unanswered, required this.meanResponseMs, required this.medianResponseMs}): super._();
+  const _SessionFamilyStats({required this.sessionId, required this.familyId, required this.mode, required this.startedAt, required this.attempts, required this.correct, required this.unanswered, required this.meanResponseMs, required this.medianResponseMs, this.sectionIndex}): super._();
   
 
 @override final  String sessionId;
@@ -770,6 +771,7 @@ class _SessionFamilyStats extends SessionFamilyStats {
 @override final  int unanswered;
 @override final  double meanResponseMs;
 @override final  double medianResponseMs;
+@override final  int? sectionIndex;
 
 /// Create a copy of SessionFamilyStats
 /// with the given fields replaced by the non-null parameter values.
@@ -781,16 +783,16 @@ _$SessionFamilyStatsCopyWith<_SessionFamilyStats> get copyWith => __$SessionFami
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SessionFamilyStats&&(identical(other.sessionId, sessionId) || other.sessionId == sessionId)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.mode, mode) || other.mode == mode)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.attempts, attempts) || other.attempts == attempts)&&(identical(other.correct, correct) || other.correct == correct)&&(identical(other.unanswered, unanswered) || other.unanswered == unanswered)&&(identical(other.meanResponseMs, meanResponseMs) || other.meanResponseMs == meanResponseMs)&&(identical(other.medianResponseMs, medianResponseMs) || other.medianResponseMs == medianResponseMs));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SessionFamilyStats&&(identical(other.sessionId, sessionId) || other.sessionId == sessionId)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.mode, mode) || other.mode == mode)&&(identical(other.startedAt, startedAt) || other.startedAt == startedAt)&&(identical(other.attempts, attempts) || other.attempts == attempts)&&(identical(other.correct, correct) || other.correct == correct)&&(identical(other.unanswered, unanswered) || other.unanswered == unanswered)&&(identical(other.meanResponseMs, meanResponseMs) || other.meanResponseMs == meanResponseMs)&&(identical(other.medianResponseMs, medianResponseMs) || other.medianResponseMs == medianResponseMs)&&(identical(other.sectionIndex, sectionIndex) || other.sectionIndex == sectionIndex));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,sessionId,familyId,mode,startedAt,attempts,correct,unanswered,meanResponseMs,medianResponseMs);
+int get hashCode => Object.hash(runtimeType,sessionId,familyId,mode,startedAt,attempts,correct,unanswered,meanResponseMs,medianResponseMs,sectionIndex);
 
 @override
 String toString() {
-  return 'SessionFamilyStats(sessionId: $sessionId, familyId: $familyId, mode: $mode, startedAt: $startedAt, attempts: $attempts, correct: $correct, unanswered: $unanswered, meanResponseMs: $meanResponseMs, medianResponseMs: $medianResponseMs)';
+  return 'SessionFamilyStats(sessionId: $sessionId, familyId: $familyId, mode: $mode, startedAt: $startedAt, attempts: $attempts, correct: $correct, unanswered: $unanswered, meanResponseMs: $meanResponseMs, medianResponseMs: $medianResponseMs, sectionIndex: $sectionIndex)';
 }
 
 
@@ -801,7 +803,7 @@ abstract mixin class _$SessionFamilyStatsCopyWith<$Res> implements $SessionFamil
   factory _$SessionFamilyStatsCopyWith(_SessionFamilyStats value, $Res Function(_SessionFamilyStats) _then) = __$SessionFamilyStatsCopyWithImpl;
 @override @useResult
 $Res call({
- String sessionId, String familyId, SessionMode mode, DateTime startedAt, int attempts, int correct, int unanswered, double meanResponseMs, double medianResponseMs
+ String sessionId, String familyId, SessionMode mode, DateTime startedAt, int attempts, int correct, int unanswered, double meanResponseMs, double medianResponseMs, int? sectionIndex
 });
 
 
@@ -818,7 +820,7 @@ class __$SessionFamilyStatsCopyWithImpl<$Res>
 
 /// Create a copy of SessionFamilyStats
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? sessionId = null,Object? familyId = null,Object? mode = null,Object? startedAt = null,Object? attempts = null,Object? correct = null,Object? unanswered = null,Object? meanResponseMs = null,Object? medianResponseMs = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? sessionId = null,Object? familyId = null,Object? mode = null,Object? startedAt = null,Object? attempts = null,Object? correct = null,Object? unanswered = null,Object? meanResponseMs = null,Object? medianResponseMs = null,Object? sectionIndex = freezed,}) {
   return _then(_SessionFamilyStats(
 sessionId: null == sessionId ? _self.sessionId : sessionId // ignore: cast_nullable_to_non_nullable
 as String,familyId: null == familyId ? _self.familyId : familyId // ignore: cast_nullable_to_non_nullable
@@ -829,7 +831,8 @@ as int,correct: null == correct ? _self.correct : correct // ignore: cast_nullab
 as int,unanswered: null == unanswered ? _self.unanswered : unanswered // ignore: cast_nullable_to_non_nullable
 as int,meanResponseMs: null == meanResponseMs ? _self.meanResponseMs : meanResponseMs // ignore: cast_nullable_to_non_nullable
 as double,medianResponseMs: null == medianResponseMs ? _self.medianResponseMs : medianResponseMs // ignore: cast_nullable_to_non_nullable
-as double,
+as double,sectionIndex: freezed == sectionIndex ? _self.sectionIndex : sectionIndex // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 
