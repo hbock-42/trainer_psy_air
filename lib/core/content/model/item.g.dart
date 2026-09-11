@@ -118,24 +118,13 @@ const _$ToleranceModeEnumMap = {
   ToleranceMode.relative: 'relative',
 };
 
-_GridSize _$GridSizeFromJson(Map<String, dynamic> json) =>
-    $checkedCreate('_GridSize', json, ($checkedConvert) {
-      final val = _GridSize(
-        rows: $checkedConvert('rows', (v) => (v as num).toInt()),
-        cols: $checkedConvert('cols', (v) => (v as num).toInt()),
-      );
-      return val;
-    });
-
-Map<String, dynamic> _$GridSizeToJson(_GridSize instance) => <String, dynamic>{
-  'rows': instance.rows,
-  'cols': instance.cols,
-};
-
 _ItemOrigin _$ItemOriginFromJson(Map<String, dynamic> json) =>
     $checkedCreate('_ItemOrigin', json, ($checkedConvert) {
       final val = _ItemOrigin(
-        generatorId: $checkedConvert('generatorId', (v) => v as String),
+        generatorId: $checkedConvert(
+          'generatorId',
+          (v) => $enumDecode(_$GeneratorIdEnumMap, v),
+        ),
         seed: $checkedConvert('seed', (v) => (v as num).toInt()),
       );
       return val;
@@ -143,9 +132,24 @@ _ItemOrigin _$ItemOriginFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ItemOriginToJson(_ItemOrigin instance) =>
     <String, dynamic>{
-      'generatorId': instance.generatorId,
+      'generatorId': _$GeneratorIdEnumMap[instance.generatorId]!,
       'seed': instance.seed,
     };
+
+const _$GeneratorIdEnumMap = {
+  GeneratorId.nback: 'nback',
+  GeneratorId.tubes: 'tubes',
+  GeneratorId.stimulusResponse: 'stimulus_response',
+  GeneratorId.paritySequence: 'parity_sequence',
+  GeneratorId.overlayGrid: 'overlay_grid',
+  GeneratorId.dominos: 'dominos',
+  GeneratorId.airways: 'airways',
+  GeneratorId.wordBoxes: 'word_boxes',
+  GeneratorId.arithmeticGrid: 'arithmetic_grid',
+  GeneratorId.viewpoint: 'viewpoint',
+  GeneratorId.cubeNet: 'cube_net',
+  GeneratorId.multitask: 'multitask',
+};
 
 McqItem _$McqItemFromJson(Map<String, dynamic> json) => $checkedCreate(
   'McqItem',
@@ -204,6 +208,14 @@ McqItem _$McqItemFromJson(Map<String, dynamic> json) => $checkedCreate(
         'shuffleOptions',
         (v) => v as bool? ?? true,
       ),
+      allowSkip: $checkedConvert('allowSkip', (v) => v as bool? ?? false),
+      validAsOf: $checkedConvert(
+        'validAsOf',
+        (v) => _$JsonConverterFromJson<String, DateTime>(
+          v,
+          const DateOnlyConverter().fromJson,
+        ),
+      ),
       $type: $checkedConvert('type', (v) => v as String?),
     );
     return val;
@@ -228,6 +240,11 @@ Map<String, dynamic> _$McqItemToJson(McqItem instance) => <String, dynamic>{
   'media': ?instance.media?.toJson(),
   'passageId': ?instance.passageId,
   'shuffleOptions': instance.shuffleOptions,
+  'allowSkip': instance.allowSkip,
+  'validAsOf': ?_$JsonConverterToJson<String, DateTime>(
+    instance.validAsOf,
+    const DateOnlyConverter().toJson,
+  ),
   'type': instance.$type,
 };
 
@@ -235,6 +252,16 @@ const _$ContentStatusEnumMap = {
   ContentStatus.draft: 'draft',
   ContentStatus.published: 'published',
 };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) => json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) => value == null ? null : toJson(value);
 
 NumericItem _$NumericItemFromJson(Map<String, dynamic> json) => $checkedCreate(
   'NumericItem',
@@ -441,8 +468,16 @@ GeneratedItem _$GeneratedItemFromJson(Map<String, dynamic> json) =>
           'tags',
           (v) => (v as List<dynamic>).map((e) => e as String).toList(),
         ),
-        generatorId: $checkedConvert('generatorId', (v) => v as String),
+        generatorId: $checkedConvert(
+          'generatorId',
+          (v) => $enumDecode(_$GeneratorIdEnumMap, v),
+        ),
         seed: $checkedConvert('seed', (v) => (v as num).toInt()),
+        params: $checkedConvert(
+          'params',
+          (v) => GeneratorParams.fromJson(v as Map<String, dynamic>),
+          readValue: readGeneratorParams,
+        ),
         lang: $checkedConvert(
           'lang',
           (v) => $enumDecodeNullable(_$ContentLangEnumMap, v),
@@ -464,10 +499,6 @@ GeneratedItem _$GeneratedItemFromJson(Map<String, dynamic> json) =>
               ? null
               : ContentMeta.fromJson(v as Map<String, dynamic>),
         ),
-        params: $checkedConvert(
-          'params',
-          (v) => v as Map<String, dynamic>? ?? const <String, Object?>{},
-        ),
         $type: $checkedConvert('type', (v) => v as String?),
       );
       return val;
@@ -480,12 +511,12 @@ Map<String, dynamic> _$GeneratedItemToJson(GeneratedItem instance) =>
       'familyId': instance.familyId,
       'difficulty': instance.difficulty,
       'tags': instance.tags,
-      'generatorId': instance.generatorId,
+      'generatorId': _$GeneratorIdEnumMap[instance.generatorId]!,
       'seed': instance.seed,
+      'params': generatorParamsToJson(instance.params),
       'lang': ?_$ContentLangEnumMap[instance.lang],
       'status': _$ContentStatusEnumMap[instance.status]!,
       'origin': ?instance.origin?.toJson(),
       'meta': ?instance.meta?.toJson(),
-      'params': instance.params,
       'type': instance.$type,
     };

@@ -6,29 +6,39 @@ import 'package:flutter_test/flutter_test.dart';
 const Map<String, Object?> schemaDefaults = <String, Object?>{
   'status': 'published',
   'shuffleOptions': true,
+  'allowSkip': false,
   'inputFormat': 'decimal',
   'decimals': 2,
   'presentationMs': 1000,
   'gapMs': 250,
-  'params': <String, Object?>{},
   'passages': <Object?>[],
   'changelog': <Object?>[],
   'tags': <Object?>[],
   'practiceTags': <Object?>[],
   'deckIds': <Object?>[],
+  'traps': <Object?>[],
+  'incompatibleWith': <Object?>[],
   'lang': 'fr',
   'briefingSec': 0,
   'breakAfterSec': 0,
   'weight': 1,
   'avoidRecentSessions': 3,
+  'liveFeedback': false,
+  'inputRequirement': 'touch',
+  'scoringPolicy': <String, Object?>{'correct': 1, 'wrong': 0, 'skip': 0},
 };
 
 /// Keys a content file may carry that the models deliberately do not.
 const Set<String> fileOnlyKeys = <String>{r'$schema', 'kind'};
 
+/// Generator `params` are typed: the models fill every omitted key with the
+/// generator's real-test default, so extra keys under a `params` object (or
+/// a whole `params` object the source omitted) are expected.
+bool _isParams(String path) => path.endsWith('/params');
+
 /// Asserts that [actual] is the same JSON document as [expected], ignoring key
-/// order, the file-only keys, and keys that [actual] fills with the schema's
-/// default value.
+/// order, the file-only keys, keys that [actual] fills with the schema's
+/// default value, and generator params filled with their defaults.
 void expectJsonRoundTrip(Object? expected, Object? actual, [String path = '']) {
   if (expected is Map<String, Object?>) {
     expect(actual, isA<Map<String, Object?>>(), reason: '$path: object');
@@ -46,6 +56,11 @@ void expectJsonRoundTrip(Object? expected, Object? actual, [String path = '']) {
     for (final entry in actualMap.entries) {
       if (expected.containsKey(entry.key)) continue;
       final childPath = '$path/${entry.key}';
+      if (_isParams(path)) continue; // a typed default inside params
+      if (_isParams(childPath)) {
+        expect(entry.value, isA<Map<String, Object?>>(), reason: childPath);
+        continue;
+      }
       expect(
         schemaDefaults.containsKey(entry.key),
         isTrue,

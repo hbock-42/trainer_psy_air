@@ -380,7 +380,7 @@ $ContentMetaCopyWith<$Res>? get meta {
 /// @nodoc
 mixin _$ExamSection {
 
- String get id; String get familyId; int get durationSec; int get itemCount; ItemSelection get itemSelection; Confidence get confidence; LocalizedText? get title; LocalizedText? get instructions; int? get perItemTimeSec; int get breakAfterSec; double get weight;
+ String get id; String get familyId; int get itemCount; ItemSelection get itemSelection; Confidence get confidence; LocalizedText? get title; LocalizedText? get briefing; int? get sectionTimeSec; int? get perItemTimeSec; Cadence? get cadence; ScoringPolicy get scoringPolicy; bool get liveFeedback; InputRequirement get inputRequirement; int get breakAfterSec; double get weight;
 /// Create a copy of ExamSection
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -393,16 +393,16 @@ $ExamSectionCopyWith<ExamSection> get copyWith => _$ExamSectionCopyWithImpl<Exam
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExamSection&&(identical(other.id, id) || other.id == id)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.durationSec, durationSec) || other.durationSec == durationSec)&&(identical(other.itemCount, itemCount) || other.itemCount == itemCount)&&(identical(other.itemSelection, itemSelection) || other.itemSelection == itemSelection)&&(identical(other.confidence, confidence) || other.confidence == confidence)&&(identical(other.title, title) || other.title == title)&&(identical(other.instructions, instructions) || other.instructions == instructions)&&(identical(other.perItemTimeSec, perItemTimeSec) || other.perItemTimeSec == perItemTimeSec)&&(identical(other.breakAfterSec, breakAfterSec) || other.breakAfterSec == breakAfterSec)&&(identical(other.weight, weight) || other.weight == weight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExamSection&&(identical(other.id, id) || other.id == id)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.itemCount, itemCount) || other.itemCount == itemCount)&&(identical(other.itemSelection, itemSelection) || other.itemSelection == itemSelection)&&(identical(other.confidence, confidence) || other.confidence == confidence)&&(identical(other.title, title) || other.title == title)&&(identical(other.briefing, briefing) || other.briefing == briefing)&&(identical(other.sectionTimeSec, sectionTimeSec) || other.sectionTimeSec == sectionTimeSec)&&(identical(other.perItemTimeSec, perItemTimeSec) || other.perItemTimeSec == perItemTimeSec)&&(identical(other.cadence, cadence) || other.cadence == cadence)&&(identical(other.scoringPolicy, scoringPolicy) || other.scoringPolicy == scoringPolicy)&&(identical(other.liveFeedback, liveFeedback) || other.liveFeedback == liveFeedback)&&(identical(other.inputRequirement, inputRequirement) || other.inputRequirement == inputRequirement)&&(identical(other.breakAfterSec, breakAfterSec) || other.breakAfterSec == breakAfterSec)&&(identical(other.weight, weight) || other.weight == weight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,familyId,durationSec,itemCount,itemSelection,confidence,title,instructions,perItemTimeSec,breakAfterSec,weight);
+int get hashCode => Object.hash(runtimeType,id,familyId,itemCount,itemSelection,confidence,title,briefing,sectionTimeSec,perItemTimeSec,cadence,scoringPolicy,liveFeedback,inputRequirement,breakAfterSec,weight);
 
 @override
 String toString() {
-  return 'ExamSection(id: $id, familyId: $familyId, durationSec: $durationSec, itemCount: $itemCount, itemSelection: $itemSelection, confidence: $confidence, title: $title, instructions: $instructions, perItemTimeSec: $perItemTimeSec, breakAfterSec: $breakAfterSec, weight: $weight)';
+  return 'ExamSection(id: $id, familyId: $familyId, itemCount: $itemCount, itemSelection: $itemSelection, confidence: $confidence, title: $title, briefing: $briefing, sectionTimeSec: $sectionTimeSec, perItemTimeSec: $perItemTimeSec, cadence: $cadence, scoringPolicy: $scoringPolicy, liveFeedback: $liveFeedback, inputRequirement: $inputRequirement, breakAfterSec: $breakAfterSec, weight: $weight)';
 }
 
 
@@ -413,11 +413,11 @@ abstract mixin class $ExamSectionCopyWith<$Res>  {
   factory $ExamSectionCopyWith(ExamSection value, $Res Function(ExamSection) _then) = _$ExamSectionCopyWithImpl;
 @useResult
 $Res call({
- String id, String familyId, int durationSec, int itemCount, ItemSelection itemSelection, Confidence confidence, LocalizedText? title, LocalizedText? instructions, int? perItemTimeSec, int breakAfterSec, double weight
+ String id, String familyId, int itemCount, ItemSelection itemSelection, Confidence confidence, LocalizedText? title, LocalizedText? briefing, int? sectionTimeSec, int? perItemTimeSec, Cadence? cadence, ScoringPolicy scoringPolicy, bool liveFeedback, InputRequirement inputRequirement, int breakAfterSec, double weight
 });
 
 
-$ItemSelectionCopyWith<$Res> get itemSelection;$LocalizedTextCopyWith<$Res>? get title;$LocalizedTextCopyWith<$Res>? get instructions;
+$ItemSelectionCopyWith<$Res> get itemSelection;$LocalizedTextCopyWith<$Res>? get title;$LocalizedTextCopyWith<$Res>? get briefing;$CadenceCopyWith<$Res>? get cadence;$ScoringPolicyCopyWith<$Res> get scoringPolicy;
 
 }
 /// @nodoc
@@ -430,18 +430,22 @@ class _$ExamSectionCopyWithImpl<$Res>
 
 /// Create a copy of ExamSection
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? familyId = null,Object? durationSec = null,Object? itemCount = null,Object? itemSelection = null,Object? confidence = null,Object? title = freezed,Object? instructions = freezed,Object? perItemTimeSec = freezed,Object? breakAfterSec = null,Object? weight = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? familyId = null,Object? itemCount = null,Object? itemSelection = null,Object? confidence = null,Object? title = freezed,Object? briefing = freezed,Object? sectionTimeSec = freezed,Object? perItemTimeSec = freezed,Object? cadence = freezed,Object? scoringPolicy = null,Object? liveFeedback = null,Object? inputRequirement = null,Object? breakAfterSec = null,Object? weight = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,familyId: null == familyId ? _self.familyId : familyId // ignore: cast_nullable_to_non_nullable
-as String,durationSec: null == durationSec ? _self.durationSec : durationSec // ignore: cast_nullable_to_non_nullable
-as int,itemCount: null == itemCount ? _self.itemCount : itemCount // ignore: cast_nullable_to_non_nullable
+as String,itemCount: null == itemCount ? _self.itemCount : itemCount // ignore: cast_nullable_to_non_nullable
 as int,itemSelection: null == itemSelection ? _self.itemSelection : itemSelection // ignore: cast_nullable_to_non_nullable
 as ItemSelection,confidence: null == confidence ? _self.confidence : confidence // ignore: cast_nullable_to_non_nullable
 as Confidence,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as LocalizedText?,instructions: freezed == instructions ? _self.instructions : instructions // ignore: cast_nullable_to_non_nullable
-as LocalizedText?,perItemTimeSec: freezed == perItemTimeSec ? _self.perItemTimeSec : perItemTimeSec // ignore: cast_nullable_to_non_nullable
-as int?,breakAfterSec: null == breakAfterSec ? _self.breakAfterSec : breakAfterSec // ignore: cast_nullable_to_non_nullable
+as LocalizedText?,briefing: freezed == briefing ? _self.briefing : briefing // ignore: cast_nullable_to_non_nullable
+as LocalizedText?,sectionTimeSec: freezed == sectionTimeSec ? _self.sectionTimeSec : sectionTimeSec // ignore: cast_nullable_to_non_nullable
+as int?,perItemTimeSec: freezed == perItemTimeSec ? _self.perItemTimeSec : perItemTimeSec // ignore: cast_nullable_to_non_nullable
+as int?,cadence: freezed == cadence ? _self.cadence : cadence // ignore: cast_nullable_to_non_nullable
+as Cadence?,scoringPolicy: null == scoringPolicy ? _self.scoringPolicy : scoringPolicy // ignore: cast_nullable_to_non_nullable
+as ScoringPolicy,liveFeedback: null == liveFeedback ? _self.liveFeedback : liveFeedback // ignore: cast_nullable_to_non_nullable
+as bool,inputRequirement: null == inputRequirement ? _self.inputRequirement : inputRequirement // ignore: cast_nullable_to_non_nullable
+as InputRequirement,breakAfterSec: null == breakAfterSec ? _self.breakAfterSec : breakAfterSec // ignore: cast_nullable_to_non_nullable
 as int,weight: null == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
 as double,
   ));
@@ -471,13 +475,34 @@ $LocalizedTextCopyWith<$Res>? get title {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$LocalizedTextCopyWith<$Res>? get instructions {
-    if (_self.instructions == null) {
+$LocalizedTextCopyWith<$Res>? get briefing {
+    if (_self.briefing == null) {
     return null;
   }
 
-  return $LocalizedTextCopyWith<$Res>(_self.instructions!, (value) {
-    return _then(_self.copyWith(instructions: value));
+  return $LocalizedTextCopyWith<$Res>(_self.briefing!, (value) {
+    return _then(_self.copyWith(briefing: value));
+  });
+}/// Create a copy of ExamSection
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CadenceCopyWith<$Res>? get cadence {
+    if (_self.cadence == null) {
+    return null;
+  }
+
+  return $CadenceCopyWith<$Res>(_self.cadence!, (value) {
+    return _then(_self.copyWith(cadence: value));
+  });
+}/// Create a copy of ExamSection
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ScoringPolicyCopyWith<$Res> get scoringPolicy {
+  
+  return $ScoringPolicyCopyWith<$Res>(_self.scoringPolicy, (value) {
+    return _then(_self.copyWith(scoringPolicy: value));
   });
 }
 }
@@ -561,10 +586,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String familyId,  int durationSec,  int itemCount,  ItemSelection itemSelection,  Confidence confidence,  LocalizedText? title,  LocalizedText? instructions,  int? perItemTimeSec,  int breakAfterSec,  double weight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String familyId,  int itemCount,  ItemSelection itemSelection,  Confidence confidence,  LocalizedText? title,  LocalizedText? briefing,  int? sectionTimeSec,  int? perItemTimeSec,  Cadence? cadence,  ScoringPolicy scoringPolicy,  bool liveFeedback,  InputRequirement inputRequirement,  int breakAfterSec,  double weight)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ExamSection() when $default != null:
-return $default(_that.id,_that.familyId,_that.durationSec,_that.itemCount,_that.itemSelection,_that.confidence,_that.title,_that.instructions,_that.perItemTimeSec,_that.breakAfterSec,_that.weight);case _:
+return $default(_that.id,_that.familyId,_that.itemCount,_that.itemSelection,_that.confidence,_that.title,_that.briefing,_that.sectionTimeSec,_that.perItemTimeSec,_that.cadence,_that.scoringPolicy,_that.liveFeedback,_that.inputRequirement,_that.breakAfterSec,_that.weight);case _:
   return orElse();
 
 }
@@ -582,10 +607,10 @@ return $default(_that.id,_that.familyId,_that.durationSec,_that.itemCount,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String familyId,  int durationSec,  int itemCount,  ItemSelection itemSelection,  Confidence confidence,  LocalizedText? title,  LocalizedText? instructions,  int? perItemTimeSec,  int breakAfterSec,  double weight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String familyId,  int itemCount,  ItemSelection itemSelection,  Confidence confidence,  LocalizedText? title,  LocalizedText? briefing,  int? sectionTimeSec,  int? perItemTimeSec,  Cadence? cadence,  ScoringPolicy scoringPolicy,  bool liveFeedback,  InputRequirement inputRequirement,  int breakAfterSec,  double weight)  $default,) {final _that = this;
 switch (_that) {
 case _ExamSection():
-return $default(_that.id,_that.familyId,_that.durationSec,_that.itemCount,_that.itemSelection,_that.confidence,_that.title,_that.instructions,_that.perItemTimeSec,_that.breakAfterSec,_that.weight);case _:
+return $default(_that.id,_that.familyId,_that.itemCount,_that.itemSelection,_that.confidence,_that.title,_that.briefing,_that.sectionTimeSec,_that.perItemTimeSec,_that.cadence,_that.scoringPolicy,_that.liveFeedback,_that.inputRequirement,_that.breakAfterSec,_that.weight);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -602,10 +627,10 @@ return $default(_that.id,_that.familyId,_that.durationSec,_that.itemCount,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String familyId,  int durationSec,  int itemCount,  ItemSelection itemSelection,  Confidence confidence,  LocalizedText? title,  LocalizedText? instructions,  int? perItemTimeSec,  int breakAfterSec,  double weight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String familyId,  int itemCount,  ItemSelection itemSelection,  Confidence confidence,  LocalizedText? title,  LocalizedText? briefing,  int? sectionTimeSec,  int? perItemTimeSec,  Cadence? cadence,  ScoringPolicy scoringPolicy,  bool liveFeedback,  InputRequirement inputRequirement,  int breakAfterSec,  double weight)?  $default,) {final _that = this;
 switch (_that) {
 case _ExamSection() when $default != null:
-return $default(_that.id,_that.familyId,_that.durationSec,_that.itemCount,_that.itemSelection,_that.confidence,_that.title,_that.instructions,_that.perItemTimeSec,_that.breakAfterSec,_that.weight);case _:
+return $default(_that.id,_that.familyId,_that.itemCount,_that.itemSelection,_that.confidence,_that.title,_that.briefing,_that.sectionTimeSec,_that.perItemTimeSec,_that.cadence,_that.scoringPolicy,_that.liveFeedback,_that.inputRequirement,_that.breakAfterSec,_that.weight);case _:
   return null;
 
 }
@@ -616,19 +641,23 @@ return $default(_that.id,_that.familyId,_that.durationSec,_that.itemCount,_that.
 /// @nodoc
 @JsonSerializable()
 
-class _ExamSection implements ExamSection {
-  const _ExamSection({required this.id, required this.familyId, required this.durationSec, required this.itemCount, required this.itemSelection, required this.confidence, this.title, this.instructions, this.perItemTimeSec, this.breakAfterSec = 0, this.weight = 1.0});
+class _ExamSection extends ExamSection {
+  const _ExamSection({required this.id, required this.familyId, required this.itemCount, required this.itemSelection, required this.confidence, this.title, this.briefing, this.sectionTimeSec, this.perItemTimeSec, this.cadence, this.scoringPolicy = const ScoringPolicy(), this.liveFeedback = false, this.inputRequirement = InputRequirement.touch, this.breakAfterSec = 0, this.weight = 1.0}): super._();
   factory _ExamSection.fromJson(Map<String, dynamic> json) => _$ExamSectionFromJson(json);
 
 @override final  String id;
 @override final  String familyId;
-@override final  int durationSec;
 @override final  int itemCount;
 @override final  ItemSelection itemSelection;
 @override final  Confidence confidence;
 @override final  LocalizedText? title;
-@override final  LocalizedText? instructions;
+@override final  LocalizedText? briefing;
+@override final  int? sectionTimeSec;
 @override final  int? perItemTimeSec;
+@override final  Cadence? cadence;
+@override@JsonKey() final  ScoringPolicy scoringPolicy;
+@override@JsonKey() final  bool liveFeedback;
+@override@JsonKey() final  InputRequirement inputRequirement;
 @override@JsonKey() final  int breakAfterSec;
 @override@JsonKey() final  double weight;
 
@@ -645,16 +674,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExamSection&&(identical(other.id, id) || other.id == id)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.durationSec, durationSec) || other.durationSec == durationSec)&&(identical(other.itemCount, itemCount) || other.itemCount == itemCount)&&(identical(other.itemSelection, itemSelection) || other.itemSelection == itemSelection)&&(identical(other.confidence, confidence) || other.confidence == confidence)&&(identical(other.title, title) || other.title == title)&&(identical(other.instructions, instructions) || other.instructions == instructions)&&(identical(other.perItemTimeSec, perItemTimeSec) || other.perItemTimeSec == perItemTimeSec)&&(identical(other.breakAfterSec, breakAfterSec) || other.breakAfterSec == breakAfterSec)&&(identical(other.weight, weight) || other.weight == weight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExamSection&&(identical(other.id, id) || other.id == id)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.itemCount, itemCount) || other.itemCount == itemCount)&&(identical(other.itemSelection, itemSelection) || other.itemSelection == itemSelection)&&(identical(other.confidence, confidence) || other.confidence == confidence)&&(identical(other.title, title) || other.title == title)&&(identical(other.briefing, briefing) || other.briefing == briefing)&&(identical(other.sectionTimeSec, sectionTimeSec) || other.sectionTimeSec == sectionTimeSec)&&(identical(other.perItemTimeSec, perItemTimeSec) || other.perItemTimeSec == perItemTimeSec)&&(identical(other.cadence, cadence) || other.cadence == cadence)&&(identical(other.scoringPolicy, scoringPolicy) || other.scoringPolicy == scoringPolicy)&&(identical(other.liveFeedback, liveFeedback) || other.liveFeedback == liveFeedback)&&(identical(other.inputRequirement, inputRequirement) || other.inputRequirement == inputRequirement)&&(identical(other.breakAfterSec, breakAfterSec) || other.breakAfterSec == breakAfterSec)&&(identical(other.weight, weight) || other.weight == weight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,familyId,durationSec,itemCount,itemSelection,confidence,title,instructions,perItemTimeSec,breakAfterSec,weight);
+int get hashCode => Object.hash(runtimeType,id,familyId,itemCount,itemSelection,confidence,title,briefing,sectionTimeSec,perItemTimeSec,cadence,scoringPolicy,liveFeedback,inputRequirement,breakAfterSec,weight);
 
 @override
 String toString() {
-  return 'ExamSection(id: $id, familyId: $familyId, durationSec: $durationSec, itemCount: $itemCount, itemSelection: $itemSelection, confidence: $confidence, title: $title, instructions: $instructions, perItemTimeSec: $perItemTimeSec, breakAfterSec: $breakAfterSec, weight: $weight)';
+  return 'ExamSection(id: $id, familyId: $familyId, itemCount: $itemCount, itemSelection: $itemSelection, confidence: $confidence, title: $title, briefing: $briefing, sectionTimeSec: $sectionTimeSec, perItemTimeSec: $perItemTimeSec, cadence: $cadence, scoringPolicy: $scoringPolicy, liveFeedback: $liveFeedback, inputRequirement: $inputRequirement, breakAfterSec: $breakAfterSec, weight: $weight)';
 }
 
 
@@ -665,11 +694,11 @@ abstract mixin class _$ExamSectionCopyWith<$Res> implements $ExamSectionCopyWith
   factory _$ExamSectionCopyWith(_ExamSection value, $Res Function(_ExamSection) _then) = __$ExamSectionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String familyId, int durationSec, int itemCount, ItemSelection itemSelection, Confidence confidence, LocalizedText? title, LocalizedText? instructions, int? perItemTimeSec, int breakAfterSec, double weight
+ String id, String familyId, int itemCount, ItemSelection itemSelection, Confidence confidence, LocalizedText? title, LocalizedText? briefing, int? sectionTimeSec, int? perItemTimeSec, Cadence? cadence, ScoringPolicy scoringPolicy, bool liveFeedback, InputRequirement inputRequirement, int breakAfterSec, double weight
 });
 
 
-@override $ItemSelectionCopyWith<$Res> get itemSelection;@override $LocalizedTextCopyWith<$Res>? get title;@override $LocalizedTextCopyWith<$Res>? get instructions;
+@override $ItemSelectionCopyWith<$Res> get itemSelection;@override $LocalizedTextCopyWith<$Res>? get title;@override $LocalizedTextCopyWith<$Res>? get briefing;@override $CadenceCopyWith<$Res>? get cadence;@override $ScoringPolicyCopyWith<$Res> get scoringPolicy;
 
 }
 /// @nodoc
@@ -682,18 +711,22 @@ class __$ExamSectionCopyWithImpl<$Res>
 
 /// Create a copy of ExamSection
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? familyId = null,Object? durationSec = null,Object? itemCount = null,Object? itemSelection = null,Object? confidence = null,Object? title = freezed,Object? instructions = freezed,Object? perItemTimeSec = freezed,Object? breakAfterSec = null,Object? weight = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? familyId = null,Object? itemCount = null,Object? itemSelection = null,Object? confidence = null,Object? title = freezed,Object? briefing = freezed,Object? sectionTimeSec = freezed,Object? perItemTimeSec = freezed,Object? cadence = freezed,Object? scoringPolicy = null,Object? liveFeedback = null,Object? inputRequirement = null,Object? breakAfterSec = null,Object? weight = null,}) {
   return _then(_ExamSection(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,familyId: null == familyId ? _self.familyId : familyId // ignore: cast_nullable_to_non_nullable
-as String,durationSec: null == durationSec ? _self.durationSec : durationSec // ignore: cast_nullable_to_non_nullable
-as int,itemCount: null == itemCount ? _self.itemCount : itemCount // ignore: cast_nullable_to_non_nullable
+as String,itemCount: null == itemCount ? _self.itemCount : itemCount // ignore: cast_nullable_to_non_nullable
 as int,itemSelection: null == itemSelection ? _self.itemSelection : itemSelection // ignore: cast_nullable_to_non_nullable
 as ItemSelection,confidence: null == confidence ? _self.confidence : confidence // ignore: cast_nullable_to_non_nullable
 as Confidence,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as LocalizedText?,instructions: freezed == instructions ? _self.instructions : instructions // ignore: cast_nullable_to_non_nullable
-as LocalizedText?,perItemTimeSec: freezed == perItemTimeSec ? _self.perItemTimeSec : perItemTimeSec // ignore: cast_nullable_to_non_nullable
-as int?,breakAfterSec: null == breakAfterSec ? _self.breakAfterSec : breakAfterSec // ignore: cast_nullable_to_non_nullable
+as LocalizedText?,briefing: freezed == briefing ? _self.briefing : briefing // ignore: cast_nullable_to_non_nullable
+as LocalizedText?,sectionTimeSec: freezed == sectionTimeSec ? _self.sectionTimeSec : sectionTimeSec // ignore: cast_nullable_to_non_nullable
+as int?,perItemTimeSec: freezed == perItemTimeSec ? _self.perItemTimeSec : perItemTimeSec // ignore: cast_nullable_to_non_nullable
+as int?,cadence: freezed == cadence ? _self.cadence : cadence // ignore: cast_nullable_to_non_nullable
+as Cadence?,scoringPolicy: null == scoringPolicy ? _self.scoringPolicy : scoringPolicy // ignore: cast_nullable_to_non_nullable
+as ScoringPolicy,liveFeedback: null == liveFeedback ? _self.liveFeedback : liveFeedback // ignore: cast_nullable_to_non_nullable
+as bool,inputRequirement: null == inputRequirement ? _self.inputRequirement : inputRequirement // ignore: cast_nullable_to_non_nullable
+as InputRequirement,breakAfterSec: null == breakAfterSec ? _self.breakAfterSec : breakAfterSec // ignore: cast_nullable_to_non_nullable
 as int,weight: null == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
 as double,
   ));
@@ -724,13 +757,34 @@ $LocalizedTextCopyWith<$Res>? get title {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$LocalizedTextCopyWith<$Res>? get instructions {
-    if (_self.instructions == null) {
+$LocalizedTextCopyWith<$Res>? get briefing {
+    if (_self.briefing == null) {
     return null;
   }
 
-  return $LocalizedTextCopyWith<$Res>(_self.instructions!, (value) {
-    return _then(_self.copyWith(instructions: value));
+  return $LocalizedTextCopyWith<$Res>(_self.briefing!, (value) {
+    return _then(_self.copyWith(briefing: value));
+  });
+}/// Create a copy of ExamSection
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CadenceCopyWith<$Res>? get cadence {
+    if (_self.cadence == null) {
+    return null;
+  }
+
+  return $CadenceCopyWith<$Res>(_self.cadence!, (value) {
+    return _then(_self.copyWith(cadence: value));
+  });
+}/// Create a copy of ExamSection
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ScoringPolicyCopyWith<$Res> get scoringPolicy {
+  
+  return $ScoringPolicyCopyWith<$Res>(_self.scoringPolicy, (value) {
+    return _then(_self.copyWith(scoringPolicy: value));
   });
 }
 }
@@ -912,7 +966,7 @@ return generated(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( DifficultyRange? difficulty,  List<String>? tags,  List<String>? anyTags,  String? balanceByTagPrefix,  int avoidRecentSessions)?  bank,TResult Function( String generatorId,  DifficultyRange difficulty,  Map<String, Object?> params)?  generated,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( DifficultyRange? difficulty,  List<String>? tags,  List<String>? anyTags,  String? balanceByTagPrefix,  int avoidRecentSessions)?  bank,TResult Function( GeneratorId generatorId,  DifficultyRange difficulty, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)  GeneratorParams params)?  generated,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case BankSelection() when bank != null:
 return bank(_that.difficulty,_that.tags,_that.anyTags,_that.balanceByTagPrefix,_that.avoidRecentSessions);case GeneratedSelection() when generated != null:
@@ -934,7 +988,7 @@ return generated(_that.generatorId,_that.difficulty,_that.params);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( DifficultyRange? difficulty,  List<String>? tags,  List<String>? anyTags,  String? balanceByTagPrefix,  int avoidRecentSessions)  bank,required TResult Function( String generatorId,  DifficultyRange difficulty,  Map<String, Object?> params)  generated,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( DifficultyRange? difficulty,  List<String>? tags,  List<String>? anyTags,  String? balanceByTagPrefix,  int avoidRecentSessions)  bank,required TResult Function( GeneratorId generatorId,  DifficultyRange difficulty, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)  GeneratorParams params)  generated,}) {final _that = this;
 switch (_that) {
 case BankSelection():
 return bank(_that.difficulty,_that.tags,_that.anyTags,_that.balanceByTagPrefix,_that.avoidRecentSessions);case GeneratedSelection():
@@ -952,7 +1006,7 @@ return generated(_that.generatorId,_that.difficulty,_that.params);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( DifficultyRange? difficulty,  List<String>? tags,  List<String>? anyTags,  String? balanceByTagPrefix,  int avoidRecentSessions)?  bank,TResult? Function( String generatorId,  DifficultyRange difficulty,  Map<String, Object?> params)?  generated,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( DifficultyRange? difficulty,  List<String>? tags,  List<String>? anyTags,  String? balanceByTagPrefix,  int avoidRecentSessions)?  bank,TResult? Function( GeneratorId generatorId,  DifficultyRange difficulty, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)  GeneratorParams params)?  generated,}) {final _that = this;
 switch (_that) {
 case BankSelection() when bank != null:
 return bank(_that.difficulty,_that.tags,_that.anyTags,_that.balanceByTagPrefix,_that.avoidRecentSessions);case GeneratedSelection() when generated != null:
@@ -1077,18 +1131,12 @@ $DifficultyRangeCopyWith<$Res>? get difficulty {
 @JsonSerializable()
 
 class GeneratedSelection implements ItemSelection {
-  const GeneratedSelection({required this.generatorId, required this.difficulty, final  Map<String, Object?> params = const <String, Object?>{}, final  String? $type}): _params = params,$type = $type ?? 'generated';
+  const GeneratedSelection({required this.generatorId, required this.difficulty, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson) required this.params, final  String? $type}): $type = $type ?? 'generated';
   factory GeneratedSelection.fromJson(Map<String, dynamic> json) => _$GeneratedSelectionFromJson(json);
 
- final  String generatorId;
+ final  GeneratorId generatorId;
 @override final  DifficultyRange difficulty;
- final  Map<String, Object?> _params;
-@JsonKey() Map<String, Object?> get params {
-  if (_params is EqualUnmodifiableMapView) return _params;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_params);
-}
-
+@JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson) final  GeneratorParams params;
 
 @JsonKey(name: 'mode')
 final String $type;
@@ -1107,12 +1155,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GeneratedSelection&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&const DeepCollectionEquality().equals(other._params, _params));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GeneratedSelection&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.params, params) || other.params == params));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,generatorId,difficulty,const DeepCollectionEquality().hash(_params));
+int get hashCode => Object.hash(runtimeType,generatorId,difficulty,params);
 
 @override
 String toString() {
@@ -1127,11 +1175,11 @@ abstract mixin class $GeneratedSelectionCopyWith<$Res> implements $ItemSelection
   factory $GeneratedSelectionCopyWith(GeneratedSelection value, $Res Function(GeneratedSelection) _then) = _$GeneratedSelectionCopyWithImpl;
 @override @useResult
 $Res call({
- String generatorId, DifficultyRange difficulty, Map<String, Object?> params
+ GeneratorId generatorId, DifficultyRange difficulty,@JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson) GeneratorParams params
 });
 
 
-@override $DifficultyRangeCopyWith<$Res> get difficulty;
+@override $DifficultyRangeCopyWith<$Res> get difficulty;$GeneratorParamsCopyWith<$Res> get params;
 
 }
 /// @nodoc
@@ -1147,9 +1195,9 @@ class _$GeneratedSelectionCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? generatorId = null,Object? difficulty = null,Object? params = null,}) {
   return _then(GeneratedSelection(
 generatorId: null == generatorId ? _self.generatorId : generatorId // ignore: cast_nullable_to_non_nullable
-as String,difficulty: null == difficulty ? _self.difficulty : difficulty // ignore: cast_nullable_to_non_nullable
-as DifficultyRange,params: null == params ? _self._params : params // ignore: cast_nullable_to_non_nullable
-as Map<String, Object?>,
+as GeneratorId,difficulty: null == difficulty ? _self.difficulty : difficulty // ignore: cast_nullable_to_non_nullable
+as DifficultyRange,params: null == params ? _self.params : params // ignore: cast_nullable_to_non_nullable
+as GeneratorParams,
   ));
 }
 
@@ -1161,6 +1209,15 @@ $DifficultyRangeCopyWith<$Res> get difficulty {
   
   return $DifficultyRangeCopyWith<$Res>(_self.difficulty, (value) {
     return _then(_self.copyWith(difficulty: value));
+  });
+}/// Create a copy of ItemSelection
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$GeneratorParamsCopyWith<$Res> get params {
+  
+  return $GeneratorParamsCopyWith<$Res>(_self.params, (value) {
+    return _then(_self.copyWith(params: value));
   });
 }
 }

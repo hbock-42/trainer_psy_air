@@ -113,6 +113,16 @@ enum MediaKind {
   audio,
 }
 
+/// Input device an activity needs to be representative of the real test
+/// (contract v2). `keyboard` activities get a touch adaptation labelled
+/// "non-representative".
+enum InputRequirement {
+  @JsonValue('touch')
+  touch,
+  @JsonValue('keyboard')
+  keyboard,
+}
+
 /// Language code (`fr`, `en`) extracted from a UI locale such as `en_US` or
 /// `fr-CA`.
 String _languageOf(String locale) =>
@@ -173,6 +183,7 @@ abstract class ContentMeta with _$ContentMeta {
   const factory ContentMeta({
     String? author,
     String? source,
+    List<ContentSource>? sources,
     String? reviewedBy,
     @DateOnlyConverter() DateTime? reviewedAt,
     String? notes,
@@ -180,4 +191,55 @@ abstract class ContentMeta with _$ContentMeta {
 
   factory ContentMeta.fromJson(Map<String, Object?> json) =>
       _$ContentMetaFromJson(json);
+}
+
+/// One dated reference in [ContentMeta.sources] (contract v2).
+@freezed
+abstract class ContentSource with _$ContentSource {
+  const factory ContentSource({
+    required String title,
+    String? url,
+    @DateOnlyConverter() DateTime? accessedOn,
+  }) = _ContentSource;
+
+  factory ContentSource.fromJson(Map<String, Object?> json) =>
+      _$ContentSourceFromJson(json);
+}
+
+/// Rows x columns of a grid (memory patterns, overlay boards, arithmetic
+/// grids).
+@freezed
+abstract class GridSize with _$GridSize {
+  const factory GridSize({required int rows, required int cols}) = _GridSize;
+
+  factory GridSize.fromJson(Map<String, Object?> json) =>
+      _$GridSizeFromJson(json);
+}
+
+/// Fixed inter-stimulus rhythm (contract v2): each stimulus is shown for
+/// [stimulusMs], then an answer is accepted for [answerWindowMs]; no answer
+/// counts as an error. Used by `memory_nback` and `attention_rules`.
+@freezed
+abstract class Cadence with _$Cadence {
+  const factory Cadence({
+    required int stimulusMs,
+    required int answerWindowMs,
+  }) = _Cadence;
+
+  factory Cadence.fromJson(Map<String, Object?> json) =>
+      _$CadenceFromJson(json);
+}
+
+/// Points per item outcome (contract v2). Defaults to `{1, 0, 0}`; the
+/// historical culture test used `{3, -1, 0}` with a "je ne sais pas" skip.
+@freezed
+abstract class ScoringPolicy with _$ScoringPolicy {
+  const factory ScoringPolicy({
+    @Default(1) num correct,
+    @Default(0) num wrong,
+    @Default(0) num skip,
+  }) = _ScoringPolicy;
+
+  factory ScoringPolicy.fromJson(Map<String, Object?> json) =>
+      _$ScoringPolicyFromJson(json);
 }

@@ -1,0 +1,35 @@
+{
+  "$schema": "../../../docs/content/schema/family.schema.json",
+  "kind": "family",
+  "id": "english_listening",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 15,
+  "name": {
+    "fr": "Anglais — compréhension orale",
+    "en": "English — listening"
+  },
+  "shortName": {
+    "fr": "Anglais écoute",
+    "en": "EN listening"
+  },
+  "description": {
+    "fr": "QCM avec un extrait audio (écouté une seule fois pour le réalisme). Partie « anglais renforcé » introduite en 2026 ; format exact **non public** — structure estimée.",
+    "en": "MCQ with an audio extract (played once for realism). Part of the 'anglais renforcé' test introduced in 2026; exact format **not public** — estimated structure."
+  },
+  "engineType": "english_listening",
+  "answerFormat": "mcq",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "en",
+  "defaultDurationSec": 900,
+  "defaultItemCount": 20,
+  "defaultPerItemTimeSec": 45,
+  "confidence": "assumed",
+  "tags": [
+    "english"
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §2.4-O, §3.1 row 14b, open question 1 (2026 scope confirmed, format unknown)"
+  }
+}

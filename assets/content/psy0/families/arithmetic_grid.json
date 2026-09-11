@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../docs/content/schema/family.schema.json",
+  "kind": "family",
+  "id": "arithmetic_grid",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 9,
+  "name": {
+    "fr": "Grilles de calcul",
+    "en": "Arithmetic grids"
+  },
+  "shortName": {
+    "fr": "Grilles",
+    "en": "Grids"
+  },
+  "description": {
+    "fr": "Une grille 3 × 3 de neuf égalités dont 0 à 4 sont fausses (priorités, carrés, divisions, pièges de signe). Cliquez les égalités **fausses** puis validez. Les calculs réels sont rapportés plus simples que sur les entraîneurs.",
+    "en": "A 3 × 3 grid of nine equalities, 0 to 4 of which are wrong (priorities, squares, divisions, sign traps). Click the **wrong** ones then validate. Real calculations are reported simpler than on trainers."
+  },
+  "engineType": "arithmetic_grid",
+  "generatorId": "arithmetic_grid",
+  "answerFormat": "multi_select",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 360,
+  "defaultItemCount": 8,
+  "defaultPerItemTimeSec": 45,
+  "confidence": "reported",
+  "tags": [
+    "arith"
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §2.4-J, §3.1 row 9 (8-10 grids, ~45 s reported)"
+  }
+}

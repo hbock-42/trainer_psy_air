@@ -15,7 +15,12 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$TestFamily {
 
- String get id; ModuleId get moduleId; int get version; int get order; LocalizedText get name; LocalizedText get description; EngineType get engineType; AnswerFormat get answerFormat; int get defaultDurationSec; int get defaultItemCount; Confidence get confidence; LocalizedText? get shortName; ContentLang get lang; int? get defaultPerItemTimeSec; List<String> get tags; ContentStatus get status; ContentMeta? get meta;
+ String get id; ModuleId get moduleId; int get version; int get order; LocalizedText get name; LocalizedText get description; EngineType get engineType; AnswerFormat get answerFormat; int get defaultDurationSec; int get defaultItemCount; Confidence get confidence; LocalizedText? get shortName;/// v2: generator the practice launcher uses (null for bank-driven
+/// families).
+ GeneratorId? get generatorId; InputRequirement get inputRequirement;/// v2: the real activity shows right/wrong feedback live; engines keep it
+/// in exam mode.
+ bool get liveFeedback; ContentLang get lang; int? get defaultPerItemTimeSec;/// v2: fixed-rhythm families (memory_nback, attention_rules).
+ Cadence? get defaultCadence; List<String> get tags; ContentStatus get status; ContentMeta? get meta;
 /// Create a copy of TestFamily
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +33,16 @@ $TestFamilyCopyWith<TestFamily> get copyWith => _$TestFamilyCopyWithImpl<TestFam
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TestFamily&&(identical(other.id, id) || other.id == id)&&(identical(other.moduleId, moduleId) || other.moduleId == moduleId)&&(identical(other.version, version) || other.version == version)&&(identical(other.order, order) || other.order == order)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.engineType, engineType) || other.engineType == engineType)&&(identical(other.answerFormat, answerFormat) || other.answerFormat == answerFormat)&&(identical(other.defaultDurationSec, defaultDurationSec) || other.defaultDurationSec == defaultDurationSec)&&(identical(other.defaultItemCount, defaultItemCount) || other.defaultItemCount == defaultItemCount)&&(identical(other.confidence, confidence) || other.confidence == confidence)&&(identical(other.shortName, shortName) || other.shortName == shortName)&&(identical(other.lang, lang) || other.lang == lang)&&(identical(other.defaultPerItemTimeSec, defaultPerItemTimeSec) || other.defaultPerItemTimeSec == defaultPerItemTimeSec)&&const DeepCollectionEquality().equals(other.tags, tags)&&(identical(other.status, status) || other.status == status)&&(identical(other.meta, meta) || other.meta == meta));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TestFamily&&(identical(other.id, id) || other.id == id)&&(identical(other.moduleId, moduleId) || other.moduleId == moduleId)&&(identical(other.version, version) || other.version == version)&&(identical(other.order, order) || other.order == order)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.engineType, engineType) || other.engineType == engineType)&&(identical(other.answerFormat, answerFormat) || other.answerFormat == answerFormat)&&(identical(other.defaultDurationSec, defaultDurationSec) || other.defaultDurationSec == defaultDurationSec)&&(identical(other.defaultItemCount, defaultItemCount) || other.defaultItemCount == defaultItemCount)&&(identical(other.confidence, confidence) || other.confidence == confidence)&&(identical(other.shortName, shortName) || other.shortName == shortName)&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.inputRequirement, inputRequirement) || other.inputRequirement == inputRequirement)&&(identical(other.liveFeedback, liveFeedback) || other.liveFeedback == liveFeedback)&&(identical(other.lang, lang) || other.lang == lang)&&(identical(other.defaultPerItemTimeSec, defaultPerItemTimeSec) || other.defaultPerItemTimeSec == defaultPerItemTimeSec)&&(identical(other.defaultCadence, defaultCadence) || other.defaultCadence == defaultCadence)&&const DeepCollectionEquality().equals(other.tags, tags)&&(identical(other.status, status) || other.status == status)&&(identical(other.meta, meta) || other.meta == meta));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,moduleId,version,order,name,description,engineType,answerFormat,defaultDurationSec,defaultItemCount,confidence,shortName,lang,defaultPerItemTimeSec,const DeepCollectionEquality().hash(tags),status,meta);
+int get hashCode => Object.hashAll([runtimeType,id,moduleId,version,order,name,description,engineType,answerFormat,defaultDurationSec,defaultItemCount,confidence,shortName,generatorId,inputRequirement,liveFeedback,lang,defaultPerItemTimeSec,defaultCadence,const DeepCollectionEquality().hash(tags),status,meta]);
 
 @override
 String toString() {
-  return 'TestFamily(id: $id, moduleId: $moduleId, version: $version, order: $order, name: $name, description: $description, engineType: $engineType, answerFormat: $answerFormat, defaultDurationSec: $defaultDurationSec, defaultItemCount: $defaultItemCount, confidence: $confidence, shortName: $shortName, lang: $lang, defaultPerItemTimeSec: $defaultPerItemTimeSec, tags: $tags, status: $status, meta: $meta)';
+  return 'TestFamily(id: $id, moduleId: $moduleId, version: $version, order: $order, name: $name, description: $description, engineType: $engineType, answerFormat: $answerFormat, defaultDurationSec: $defaultDurationSec, defaultItemCount: $defaultItemCount, confidence: $confidence, shortName: $shortName, generatorId: $generatorId, inputRequirement: $inputRequirement, liveFeedback: $liveFeedback, lang: $lang, defaultPerItemTimeSec: $defaultPerItemTimeSec, defaultCadence: $defaultCadence, tags: $tags, status: $status, meta: $meta)';
 }
 
 
@@ -48,11 +53,11 @@ abstract mixin class $TestFamilyCopyWith<$Res>  {
   factory $TestFamilyCopyWith(TestFamily value, $Res Function(TestFamily) _then) = _$TestFamilyCopyWithImpl;
 @useResult
 $Res call({
- String id, ModuleId moduleId, int version, int order, LocalizedText name, LocalizedText description, EngineType engineType, AnswerFormat answerFormat, int defaultDurationSec, int defaultItemCount, Confidence confidence, LocalizedText? shortName, ContentLang lang, int? defaultPerItemTimeSec, List<String> tags, ContentStatus status, ContentMeta? meta
+ String id, ModuleId moduleId, int version, int order, LocalizedText name, LocalizedText description, EngineType engineType, AnswerFormat answerFormat, int defaultDurationSec, int defaultItemCount, Confidence confidence, LocalizedText? shortName, GeneratorId? generatorId, InputRequirement inputRequirement, bool liveFeedback, ContentLang lang, int? defaultPerItemTimeSec, Cadence? defaultCadence, List<String> tags, ContentStatus status, ContentMeta? meta
 });
 
 
-$LocalizedTextCopyWith<$Res> get name;$LocalizedTextCopyWith<$Res> get description;$LocalizedTextCopyWith<$Res>? get shortName;$ContentMetaCopyWith<$Res>? get meta;
+$LocalizedTextCopyWith<$Res> get name;$LocalizedTextCopyWith<$Res> get description;$LocalizedTextCopyWith<$Res>? get shortName;$CadenceCopyWith<$Res>? get defaultCadence;$ContentMetaCopyWith<$Res>? get meta;
 
 }
 /// @nodoc
@@ -65,7 +70,7 @@ class _$TestFamilyCopyWithImpl<$Res>
 
 /// Create a copy of TestFamily
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? moduleId = null,Object? version = null,Object? order = null,Object? name = null,Object? description = null,Object? engineType = null,Object? answerFormat = null,Object? defaultDurationSec = null,Object? defaultItemCount = null,Object? confidence = null,Object? shortName = freezed,Object? lang = null,Object? defaultPerItemTimeSec = freezed,Object? tags = null,Object? status = null,Object? meta = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? moduleId = null,Object? version = null,Object? order = null,Object? name = null,Object? description = null,Object? engineType = null,Object? answerFormat = null,Object? defaultDurationSec = null,Object? defaultItemCount = null,Object? confidence = null,Object? shortName = freezed,Object? generatorId = freezed,Object? inputRequirement = null,Object? liveFeedback = null,Object? lang = null,Object? defaultPerItemTimeSec = freezed,Object? defaultCadence = freezed,Object? tags = null,Object? status = null,Object? meta = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,moduleId: null == moduleId ? _self.moduleId : moduleId // ignore: cast_nullable_to_non_nullable
@@ -79,9 +84,13 @@ as AnswerFormat,defaultDurationSec: null == defaultDurationSec ? _self.defaultDu
 as int,defaultItemCount: null == defaultItemCount ? _self.defaultItemCount : defaultItemCount // ignore: cast_nullable_to_non_nullable
 as int,confidence: null == confidence ? _self.confidence : confidence // ignore: cast_nullable_to_non_nullable
 as Confidence,shortName: freezed == shortName ? _self.shortName : shortName // ignore: cast_nullable_to_non_nullable
-as LocalizedText?,lang: null == lang ? _self.lang : lang // ignore: cast_nullable_to_non_nullable
+as LocalizedText?,generatorId: freezed == generatorId ? _self.generatorId : generatorId // ignore: cast_nullable_to_non_nullable
+as GeneratorId?,inputRequirement: null == inputRequirement ? _self.inputRequirement : inputRequirement // ignore: cast_nullable_to_non_nullable
+as InputRequirement,liveFeedback: null == liveFeedback ? _self.liveFeedback : liveFeedback // ignore: cast_nullable_to_non_nullable
+as bool,lang: null == lang ? _self.lang : lang // ignore: cast_nullable_to_non_nullable
 as ContentLang,defaultPerItemTimeSec: freezed == defaultPerItemTimeSec ? _self.defaultPerItemTimeSec : defaultPerItemTimeSec // ignore: cast_nullable_to_non_nullable
-as int?,tags: null == tags ? _self.tags : tags // ignore: cast_nullable_to_non_nullable
+as int?,defaultCadence: freezed == defaultCadence ? _self.defaultCadence : defaultCadence // ignore: cast_nullable_to_non_nullable
+as Cadence?,tags: null == tags ? _self.tags : tags // ignore: cast_nullable_to_non_nullable
 as List<String>,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as ContentStatus,meta: freezed == meta ? _self.meta : meta // ignore: cast_nullable_to_non_nullable
 as ContentMeta?,
@@ -116,6 +125,18 @@ $LocalizedTextCopyWith<$Res>? get shortName {
 
   return $LocalizedTextCopyWith<$Res>(_self.shortName!, (value) {
     return _then(_self.copyWith(shortName: value));
+  });
+}/// Create a copy of TestFamily
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CadenceCopyWith<$Res>? get defaultCadence {
+    if (_self.defaultCadence == null) {
+    return null;
+  }
+
+  return $CadenceCopyWith<$Res>(_self.defaultCadence!, (value) {
+    return _then(_self.copyWith(defaultCadence: value));
   });
 }/// Create a copy of TestFamily
 /// with the given fields replaced by the non-null parameter values.
@@ -211,10 +232,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  ModuleId moduleId,  int version,  int order,  LocalizedText name,  LocalizedText description,  EngineType engineType,  AnswerFormat answerFormat,  int defaultDurationSec,  int defaultItemCount,  Confidence confidence,  LocalizedText? shortName,  ContentLang lang,  int? defaultPerItemTimeSec,  List<String> tags,  ContentStatus status,  ContentMeta? meta)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  ModuleId moduleId,  int version,  int order,  LocalizedText name,  LocalizedText description,  EngineType engineType,  AnswerFormat answerFormat,  int defaultDurationSec,  int defaultItemCount,  Confidence confidence,  LocalizedText? shortName,  GeneratorId? generatorId,  InputRequirement inputRequirement,  bool liveFeedback,  ContentLang lang,  int? defaultPerItemTimeSec,  Cadence? defaultCadence,  List<String> tags,  ContentStatus status,  ContentMeta? meta)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TestFamily() when $default != null:
-return $default(_that.id,_that.moduleId,_that.version,_that.order,_that.name,_that.description,_that.engineType,_that.answerFormat,_that.defaultDurationSec,_that.defaultItemCount,_that.confidence,_that.shortName,_that.lang,_that.defaultPerItemTimeSec,_that.tags,_that.status,_that.meta);case _:
+return $default(_that.id,_that.moduleId,_that.version,_that.order,_that.name,_that.description,_that.engineType,_that.answerFormat,_that.defaultDurationSec,_that.defaultItemCount,_that.confidence,_that.shortName,_that.generatorId,_that.inputRequirement,_that.liveFeedback,_that.lang,_that.defaultPerItemTimeSec,_that.defaultCadence,_that.tags,_that.status,_that.meta);case _:
   return orElse();
 
 }
@@ -232,10 +253,10 @@ return $default(_that.id,_that.moduleId,_that.version,_that.order,_that.name,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  ModuleId moduleId,  int version,  int order,  LocalizedText name,  LocalizedText description,  EngineType engineType,  AnswerFormat answerFormat,  int defaultDurationSec,  int defaultItemCount,  Confidence confidence,  LocalizedText? shortName,  ContentLang lang,  int? defaultPerItemTimeSec,  List<String> tags,  ContentStatus status,  ContentMeta? meta)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  ModuleId moduleId,  int version,  int order,  LocalizedText name,  LocalizedText description,  EngineType engineType,  AnswerFormat answerFormat,  int defaultDurationSec,  int defaultItemCount,  Confidence confidence,  LocalizedText? shortName,  GeneratorId? generatorId,  InputRequirement inputRequirement,  bool liveFeedback,  ContentLang lang,  int? defaultPerItemTimeSec,  Cadence? defaultCadence,  List<String> tags,  ContentStatus status,  ContentMeta? meta)  $default,) {final _that = this;
 switch (_that) {
 case _TestFamily():
-return $default(_that.id,_that.moduleId,_that.version,_that.order,_that.name,_that.description,_that.engineType,_that.answerFormat,_that.defaultDurationSec,_that.defaultItemCount,_that.confidence,_that.shortName,_that.lang,_that.defaultPerItemTimeSec,_that.tags,_that.status,_that.meta);case _:
+return $default(_that.id,_that.moduleId,_that.version,_that.order,_that.name,_that.description,_that.engineType,_that.answerFormat,_that.defaultDurationSec,_that.defaultItemCount,_that.confidence,_that.shortName,_that.generatorId,_that.inputRequirement,_that.liveFeedback,_that.lang,_that.defaultPerItemTimeSec,_that.defaultCadence,_that.tags,_that.status,_that.meta);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -252,10 +273,10 @@ return $default(_that.id,_that.moduleId,_that.version,_that.order,_that.name,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  ModuleId moduleId,  int version,  int order,  LocalizedText name,  LocalizedText description,  EngineType engineType,  AnswerFormat answerFormat,  int defaultDurationSec,  int defaultItemCount,  Confidence confidence,  LocalizedText? shortName,  ContentLang lang,  int? defaultPerItemTimeSec,  List<String> tags,  ContentStatus status,  ContentMeta? meta)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  ModuleId moduleId,  int version,  int order,  LocalizedText name,  LocalizedText description,  EngineType engineType,  AnswerFormat answerFormat,  int defaultDurationSec,  int defaultItemCount,  Confidence confidence,  LocalizedText? shortName,  GeneratorId? generatorId,  InputRequirement inputRequirement,  bool liveFeedback,  ContentLang lang,  int? defaultPerItemTimeSec,  Cadence? defaultCadence,  List<String> tags,  ContentStatus status,  ContentMeta? meta)?  $default,) {final _that = this;
 switch (_that) {
 case _TestFamily() when $default != null:
-return $default(_that.id,_that.moduleId,_that.version,_that.order,_that.name,_that.description,_that.engineType,_that.answerFormat,_that.defaultDurationSec,_that.defaultItemCount,_that.confidence,_that.shortName,_that.lang,_that.defaultPerItemTimeSec,_that.tags,_that.status,_that.meta);case _:
+return $default(_that.id,_that.moduleId,_that.version,_that.order,_that.name,_that.description,_that.engineType,_that.answerFormat,_that.defaultDurationSec,_that.defaultItemCount,_that.confidence,_that.shortName,_that.generatorId,_that.inputRequirement,_that.liveFeedback,_that.lang,_that.defaultPerItemTimeSec,_that.defaultCadence,_that.tags,_that.status,_that.meta);case _:
   return null;
 
 }
@@ -267,7 +288,7 @@ return $default(_that.id,_that.moduleId,_that.version,_that.order,_that.name,_th
 @JsonSerializable()
 
 class _TestFamily implements TestFamily {
-  const _TestFamily({required this.id, required this.moduleId, required this.version, required this.order, required this.name, required this.description, required this.engineType, required this.answerFormat, required this.defaultDurationSec, required this.defaultItemCount, required this.confidence, this.shortName, this.lang = ContentLang.fr, this.defaultPerItemTimeSec, final  List<String> tags = const <String>[], this.status = ContentStatus.published, this.meta}): _tags = tags;
+  const _TestFamily({required this.id, required this.moduleId, required this.version, required this.order, required this.name, required this.description, required this.engineType, required this.answerFormat, required this.defaultDurationSec, required this.defaultItemCount, required this.confidence, this.shortName, this.generatorId, this.inputRequirement = InputRequirement.touch, this.liveFeedback = false, this.lang = ContentLang.fr, this.defaultPerItemTimeSec, this.defaultCadence, final  List<String> tags = const <String>[], this.status = ContentStatus.published, this.meta}): _tags = tags;
   factory _TestFamily.fromJson(Map<String, dynamic> json) => _$TestFamilyFromJson(json);
 
 @override final  String id;
@@ -282,8 +303,17 @@ class _TestFamily implements TestFamily {
 @override final  int defaultItemCount;
 @override final  Confidence confidence;
 @override final  LocalizedText? shortName;
+/// v2: generator the practice launcher uses (null for bank-driven
+/// families).
+@override final  GeneratorId? generatorId;
+@override@JsonKey() final  InputRequirement inputRequirement;
+/// v2: the real activity shows right/wrong feedback live; engines keep it
+/// in exam mode.
+@override@JsonKey() final  bool liveFeedback;
 @override@JsonKey() final  ContentLang lang;
 @override final  int? defaultPerItemTimeSec;
+/// v2: fixed-rhythm families (memory_nback, attention_rules).
+@override final  Cadence? defaultCadence;
  final  List<String> _tags;
 @override@JsonKey() List<String> get tags {
   if (_tags is EqualUnmodifiableListView) return _tags;
@@ -307,16 +337,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TestFamily&&(identical(other.id, id) || other.id == id)&&(identical(other.moduleId, moduleId) || other.moduleId == moduleId)&&(identical(other.version, version) || other.version == version)&&(identical(other.order, order) || other.order == order)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.engineType, engineType) || other.engineType == engineType)&&(identical(other.answerFormat, answerFormat) || other.answerFormat == answerFormat)&&(identical(other.defaultDurationSec, defaultDurationSec) || other.defaultDurationSec == defaultDurationSec)&&(identical(other.defaultItemCount, defaultItemCount) || other.defaultItemCount == defaultItemCount)&&(identical(other.confidence, confidence) || other.confidence == confidence)&&(identical(other.shortName, shortName) || other.shortName == shortName)&&(identical(other.lang, lang) || other.lang == lang)&&(identical(other.defaultPerItemTimeSec, defaultPerItemTimeSec) || other.defaultPerItemTimeSec == defaultPerItemTimeSec)&&const DeepCollectionEquality().equals(other._tags, _tags)&&(identical(other.status, status) || other.status == status)&&(identical(other.meta, meta) || other.meta == meta));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TestFamily&&(identical(other.id, id) || other.id == id)&&(identical(other.moduleId, moduleId) || other.moduleId == moduleId)&&(identical(other.version, version) || other.version == version)&&(identical(other.order, order) || other.order == order)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.engineType, engineType) || other.engineType == engineType)&&(identical(other.answerFormat, answerFormat) || other.answerFormat == answerFormat)&&(identical(other.defaultDurationSec, defaultDurationSec) || other.defaultDurationSec == defaultDurationSec)&&(identical(other.defaultItemCount, defaultItemCount) || other.defaultItemCount == defaultItemCount)&&(identical(other.confidence, confidence) || other.confidence == confidence)&&(identical(other.shortName, shortName) || other.shortName == shortName)&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.inputRequirement, inputRequirement) || other.inputRequirement == inputRequirement)&&(identical(other.liveFeedback, liveFeedback) || other.liveFeedback == liveFeedback)&&(identical(other.lang, lang) || other.lang == lang)&&(identical(other.defaultPerItemTimeSec, defaultPerItemTimeSec) || other.defaultPerItemTimeSec == defaultPerItemTimeSec)&&(identical(other.defaultCadence, defaultCadence) || other.defaultCadence == defaultCadence)&&const DeepCollectionEquality().equals(other._tags, _tags)&&(identical(other.status, status) || other.status == status)&&(identical(other.meta, meta) || other.meta == meta));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,moduleId,version,order,name,description,engineType,answerFormat,defaultDurationSec,defaultItemCount,confidence,shortName,lang,defaultPerItemTimeSec,const DeepCollectionEquality().hash(_tags),status,meta);
+int get hashCode => Object.hashAll([runtimeType,id,moduleId,version,order,name,description,engineType,answerFormat,defaultDurationSec,defaultItemCount,confidence,shortName,generatorId,inputRequirement,liveFeedback,lang,defaultPerItemTimeSec,defaultCadence,const DeepCollectionEquality().hash(_tags),status,meta]);
 
 @override
 String toString() {
-  return 'TestFamily(id: $id, moduleId: $moduleId, version: $version, order: $order, name: $name, description: $description, engineType: $engineType, answerFormat: $answerFormat, defaultDurationSec: $defaultDurationSec, defaultItemCount: $defaultItemCount, confidence: $confidence, shortName: $shortName, lang: $lang, defaultPerItemTimeSec: $defaultPerItemTimeSec, tags: $tags, status: $status, meta: $meta)';
+  return 'TestFamily(id: $id, moduleId: $moduleId, version: $version, order: $order, name: $name, description: $description, engineType: $engineType, answerFormat: $answerFormat, defaultDurationSec: $defaultDurationSec, defaultItemCount: $defaultItemCount, confidence: $confidence, shortName: $shortName, generatorId: $generatorId, inputRequirement: $inputRequirement, liveFeedback: $liveFeedback, lang: $lang, defaultPerItemTimeSec: $defaultPerItemTimeSec, defaultCadence: $defaultCadence, tags: $tags, status: $status, meta: $meta)';
 }
 
 
@@ -327,11 +357,11 @@ abstract mixin class _$TestFamilyCopyWith<$Res> implements $TestFamilyCopyWith<$
   factory _$TestFamilyCopyWith(_TestFamily value, $Res Function(_TestFamily) _then) = __$TestFamilyCopyWithImpl;
 @override @useResult
 $Res call({
- String id, ModuleId moduleId, int version, int order, LocalizedText name, LocalizedText description, EngineType engineType, AnswerFormat answerFormat, int defaultDurationSec, int defaultItemCount, Confidence confidence, LocalizedText? shortName, ContentLang lang, int? defaultPerItemTimeSec, List<String> tags, ContentStatus status, ContentMeta? meta
+ String id, ModuleId moduleId, int version, int order, LocalizedText name, LocalizedText description, EngineType engineType, AnswerFormat answerFormat, int defaultDurationSec, int defaultItemCount, Confidence confidence, LocalizedText? shortName, GeneratorId? generatorId, InputRequirement inputRequirement, bool liveFeedback, ContentLang lang, int? defaultPerItemTimeSec, Cadence? defaultCadence, List<String> tags, ContentStatus status, ContentMeta? meta
 });
 
 
-@override $LocalizedTextCopyWith<$Res> get name;@override $LocalizedTextCopyWith<$Res> get description;@override $LocalizedTextCopyWith<$Res>? get shortName;@override $ContentMetaCopyWith<$Res>? get meta;
+@override $LocalizedTextCopyWith<$Res> get name;@override $LocalizedTextCopyWith<$Res> get description;@override $LocalizedTextCopyWith<$Res>? get shortName;@override $CadenceCopyWith<$Res>? get defaultCadence;@override $ContentMetaCopyWith<$Res>? get meta;
 
 }
 /// @nodoc
@@ -344,7 +374,7 @@ class __$TestFamilyCopyWithImpl<$Res>
 
 /// Create a copy of TestFamily
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? moduleId = null,Object? version = null,Object? order = null,Object? name = null,Object? description = null,Object? engineType = null,Object? answerFormat = null,Object? defaultDurationSec = null,Object? defaultItemCount = null,Object? confidence = null,Object? shortName = freezed,Object? lang = null,Object? defaultPerItemTimeSec = freezed,Object? tags = null,Object? status = null,Object? meta = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? moduleId = null,Object? version = null,Object? order = null,Object? name = null,Object? description = null,Object? engineType = null,Object? answerFormat = null,Object? defaultDurationSec = null,Object? defaultItemCount = null,Object? confidence = null,Object? shortName = freezed,Object? generatorId = freezed,Object? inputRequirement = null,Object? liveFeedback = null,Object? lang = null,Object? defaultPerItemTimeSec = freezed,Object? defaultCadence = freezed,Object? tags = null,Object? status = null,Object? meta = freezed,}) {
   return _then(_TestFamily(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,moduleId: null == moduleId ? _self.moduleId : moduleId // ignore: cast_nullable_to_non_nullable
@@ -358,9 +388,13 @@ as AnswerFormat,defaultDurationSec: null == defaultDurationSec ? _self.defaultDu
 as int,defaultItemCount: null == defaultItemCount ? _self.defaultItemCount : defaultItemCount // ignore: cast_nullable_to_non_nullable
 as int,confidence: null == confidence ? _self.confidence : confidence // ignore: cast_nullable_to_non_nullable
 as Confidence,shortName: freezed == shortName ? _self.shortName : shortName // ignore: cast_nullable_to_non_nullable
-as LocalizedText?,lang: null == lang ? _self.lang : lang // ignore: cast_nullable_to_non_nullable
+as LocalizedText?,generatorId: freezed == generatorId ? _self.generatorId : generatorId // ignore: cast_nullable_to_non_nullable
+as GeneratorId?,inputRequirement: null == inputRequirement ? _self.inputRequirement : inputRequirement // ignore: cast_nullable_to_non_nullable
+as InputRequirement,liveFeedback: null == liveFeedback ? _self.liveFeedback : liveFeedback // ignore: cast_nullable_to_non_nullable
+as bool,lang: null == lang ? _self.lang : lang // ignore: cast_nullable_to_non_nullable
 as ContentLang,defaultPerItemTimeSec: freezed == defaultPerItemTimeSec ? _self.defaultPerItemTimeSec : defaultPerItemTimeSec // ignore: cast_nullable_to_non_nullable
-as int?,tags: null == tags ? _self._tags : tags // ignore: cast_nullable_to_non_nullable
+as int?,defaultCadence: freezed == defaultCadence ? _self.defaultCadence : defaultCadence // ignore: cast_nullable_to_non_nullable
+as Cadence?,tags: null == tags ? _self._tags : tags // ignore: cast_nullable_to_non_nullable
 as List<String>,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as ContentStatus,meta: freezed == meta ? _self.meta : meta // ignore: cast_nullable_to_non_nullable
 as ContentMeta?,
@@ -396,6 +430,18 @@ $LocalizedTextCopyWith<$Res>? get shortName {
 
   return $LocalizedTextCopyWith<$Res>(_self.shortName!, (value) {
     return _then(_self.copyWith(shortName: value));
+  });
+}/// Create a copy of TestFamily
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CadenceCopyWith<$Res>? get defaultCadence {
+    if (_self.defaultCadence == null) {
+    return null;
+  }
+
+  return $CadenceCopyWith<$Res>(_self.defaultCadence!, (value) {
+    return _then(_self.copyWith(defaultCadence: value));
   });
 }/// Create a copy of TestFamily
 /// with the given fields replaced by the non-null parameter values.

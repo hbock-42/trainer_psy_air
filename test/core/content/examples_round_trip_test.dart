@@ -6,26 +6,34 @@ import 'package:psy_trainer/core/content/content.dart';
 
 import 'json_matchers.dart';
 
-/// Every example file in `assets/content/examples/` must decode into the Dart
-/// models and re-serialise to the same JSON (key order aside). This is the
+/// Every example file in `assets/content/examples/` and every real content
+/// file shipped under `assets/content/psy0/` must decode into the Dart models
+/// and re-serialise to the same JSON (key order aside). This is the
 /// executable proof that the Dart types match the JSON schemas.
 void main() {
   const parser = ContentBundleParser();
-  final examplesDir = Directory('assets/content/examples');
-  final examples =
-      examplesDir
+
+  List<File> jsonFiles(String dir) =>
+      Directory(dir)
           .listSync()
           .whereType<File>()
           .where((f) => f.path.endsWith('.json'))
           .toList()
         ..sort((a, b) => a.path.compareTo(b.path));
 
-  test('the examples folder is where we expect it', () {
+  final examples = jsonFiles('assets/content/examples');
+  final realFiles = [
+    ...jsonFiles('assets/content/psy0/families'),
+    ...jsonFiles('assets/content/psy0/blueprints'),
+  ];
+
+  test('the content folders are where we expect them', () {
     expect(examples, isNotEmpty, reason: 'run tests from the package root');
+    expect(realFiles, isNotEmpty);
   });
 
-  for (final file in examples) {
-    final name = file.uri.pathSegments.last;
+  for (final file in [...examples, ...realFiles]) {
+    final name = file.path.split('assets/content/').last;
     test('$name round-trips through the Dart models', () {
       final source = file.readAsStringSync();
       final sourceJson = jsonDecode(source) as Map<String, Object?>;
@@ -71,6 +79,11 @@ void main() {
           final json = m.toJson();
           return (m, json, ExamBlueprint.fromJson(json));
         }(),
+        'lexical_fields' => () {
+          final m = parser.parseLexicalFields(source, file: name);
+          final json = m.toJson();
+          return (m, json, LexicalFieldBank.fromJson(json));
+        }(),
         _ => throw StateError('$name: unknown kind $kind'),
       };
 
@@ -82,85 +95,147 @@ void main() {
     });
   }
 
+  ItemBank bank(String file) => parser.parseBank(
+    File('assets/content/examples/$file').readAsStringSync(),
+    file: file,
+  );
+
   group('example content is decoded into the expected union cases', () {
     test('mcq.example.json items are McqItems and share the passage', () {
-      final bank = parser.parseBank(
-        File('assets/content/examples/mcq.example.json').readAsStringSync(),
-        file: 'mcq.example.json',
-      );
-      expect(bank.items, everyElement(isA<McqItem>()));
-      expect(bank.passages.single.id, 'english.reading.p001');
-      final reading = bank.items.whereType<McqItem>().where(
+      final b = bank('mcq.example.json');
+      expect(b.items, everyElement(isA<McqItem>()));
+      expect(b.passages.single.id, 'english_reading.reading.p001');
+      final reading = b.items.whereType<McqItem>().where(
         (i) => i.passageId != null,
       );
       expect(
         reading.map((i) => i.passageId),
-        everyElement('english.reading.p001'),
+        everyElement('english_reading.reading.p001'),
       );
-      // Default applied when the file omits shuffleOptions.
-      expect(bank.items.whereType<McqItem>().first.shuffleOptions, isTrue);
+      // Defaults applied when the file omits shuffleOptions / allowSkip.
+      final first = b.items.whereType<McqItem>().first;
+      expect(first.shuffleOptions, isTrue);
+      expect(first.allowSkip, isFalse);
+      expect(first.validAsOf, isNull);
     });
 
-    test('numeric.example.json decodes tolerance and input format', () {
-      final bank = parser.parseBank(
-        File('assets/content/examples/numeric.example.json').readAsStringSync(),
-        file: 'numeric.example.json',
-      );
-      final items = bank.items.whereType<NumericItem>().toList();
-      expect(items, hasLength(4));
-      expect(
-        items[2].tolerance,
-        const Tolerance(mode: ToleranceMode.relative, value: 0.02),
-      );
-      expect(items[3].inputFormat, InputFormat.time);
-      expect(items[0].decimals, 2);
+    test('culture.example.json decodes validAsOf, allowSkip and sources', () {
+      final items = bank('culture.example.json').items.cast<McqItem>();
+      expect(items, everyElement(isA<McqItem>()));
+      expect(items[0].allowSkip, isTrue);
+      expect(items[0].validAsOf, isNull);
+      expect(items[1].validAsOf, DateTime.utc(2026, 9, 11));
+      final source = items[1].meta!.sources!.single;
+      expect(source.url, startsWith('https://corporate.airfrance.com/'));
+      expect(source.accessedOn, DateTime.utc(2026, 9, 11));
+      expect(items[0].meta!.sources!.single.url, isNull);
     });
+
+    test(
+      'numeric.example.json decodes tolerance, input format and a recipe',
+      () {
+        final items = bank('numeric.example.json').items;
+        final numeric = items.whereType<NumericItem>().toList();
+        expect(numeric, hasLength(4));
+        expect(
+          numeric[2].tolerance,
+          const Tolerance(mode: ToleranceMode.absolute, value: 0.5),
+        );
+        expect(numeric[3].inputFormat, InputFormat.time);
+        expect(numeric[0].decimals, 2);
+        final recipe = items.last as GeneratedItem;
+        expect(recipe.generatorId, GeneratorId.arithmeticGrid);
+        expect(
+          recipe.params,
+          const GeneratorParams.arithmeticGrid(
+            wrongMin: 1,
+            wrongMax: 3,
+            operations: [
+              ArithmeticOperation.add,
+              ArithmeticOperation.sub,
+              ArithmeticOperation.mul,
+              ArithmeticOperation.priority,
+            ],
+            maxOperand: 50,
+          ),
+        );
+      },
+    );
 
     test('sequence.example.json decodes the grid pattern', () {
-      final bank = parser.parseBank(
-        File(
-          'assets/content/examples/sequence.example.json',
-        ).readAsStringSync(),
-        file: 'sequence.example.json',
-      );
-      final pattern = bank.items.last as SequenceItem;
+      final pattern = bank('sequence.example.json').items.last as SequenceItem;
       expect(pattern.stimulusKind, StimulusKind.gridCells);
       expect(pattern.grid, const GridSize(rows: 4, cols: 4));
       expect(pattern.recallMode, RecallMode.anyOrder);
     });
 
-    test('generated.example.json keeps generator params verbatim', () {
-      final bank = parser.parseBank(
-        File(
-          'assets/content/examples/generated.example.json',
-        ).readAsStringSync(),
-        file: 'generated.example.json',
-      );
-      final first = bank.items.first as GeneratedItem;
-      expect(first.generatorId, 'logic_series');
-      expect(first.seed, 1842);
-      expect(first.params, {
-        'kind': 'arithmetic',
-        'length': 5,
-        'answerFormat': 'mcq',
-      });
+    test('generated.example.json types params and fills defaults', () {
+      final items = bank('generated.example.json').items.cast<GeneratedItem>();
+      expect(items.map((i) => i.generatorId), everyElement(GeneratorId.nback));
+      expect(items[0].seed, 1842);
+      // Fully spelled-out params equal the real-test defaults.
+      expect(items[0].params, const GeneratorParams.nback());
+      // Partial params: the rest is defaulted.
+      final digits = items[1].params as NbackParams;
+      expect(digits.n, 3);
+      expect(digits.stimulusKind, NbackStimulusKind.digit);
+      expect(digits.paletteSize, 10);
+      expect(digits.count, 42);
+      // No params at all.
+      expect(items[2].params, GeneratorParams.defaultsFor(GeneratorId.nback));
+      // Serialised params carry no discriminator.
+      final json = items[2].toJson()['params']! as Map<String, Object?>;
+      expect(json.containsKey('generatorId'), isFalse);
+      expect(json['n'], 2);
     });
 
-    test('psy0_short.example.json mixes bank and generated selections', () {
+    test('blueprint.example.json exercises every v2 section field', () {
       final blueprint = parser.parseBlueprint(
         File(
-          'assets/content/examples/psy0_short.example.json',
+          'assets/content/examples/blueprint.example.json',
         ).readAsStringSync(),
-        file: 'psy0_short.example.json',
+        file: 'blueprint.example.json',
       );
-      final selections = blueprint.sections
-          .map((s) => s.itemSelection)
-          .toList();
-      expect(selections[0], isA<GeneratedSelection>());
-      expect(selections[2], isA<BankSelection>());
-      expect((selections[2] as BankSelection).balanceByTagPrefix, 'english');
-      expect(blueprint.sections.last.weight, 0.5);
-      expect(blueprint.sections.first.breakAfterSec, 30);
+      final s = blueprint.sections;
+      expect(
+        s[0].cadence,
+        const Cadence(stimulusMs: 1000, answerWindowMs: 1500),
+      );
+      expect(s[0].sectionTimeSec, isNull);
+      expect(s[0].briefing!.fr, contains('2,5 s'));
+      expect(s[0].itemSelection, isA<GeneratedSelection>());
+      final nback = (s[0].itemSelection as GeneratedSelection).params;
+      expect(nback, isA<NbackParams>());
+      expect((nback as NbackParams).paletteSize, 3);
+      expect(s[1].liveFeedback, isTrue);
+      expect(s[1].inputRequirement, InputRequirement.keyboard);
+      expect(s[2].perItemTimeSec, 60);
+      expect(s[2].breakAfterSec, 30);
+      expect(s[2].scoringPolicy, const ScoringPolicy());
+      expect(s[3].scoringPolicy, const ScoringPolicy(correct: 3, wrong: -1));
+      expect(s[3].weight, 2);
+      expect(
+        (s[3].itemSelection as BankSelection).balanceByTagPrefix,
+        'culture',
+      );
+      expect(s[4].weight, 0);
+    });
+
+    test('lexical_fields.example.json decodes fields and traps', () {
+      final lexical = parser.parseLexicalFields(
+        File(
+          'assets/content/examples/lexical_fields.example.json',
+        ).readAsStringSync(),
+        file: 'lexical_fields.example.json',
+      );
+      expect(lexical.familyId, 'verbal_boxes');
+      expect(lexical.fields, hasLength(3));
+      final cuisine = lexical.fields.first;
+      expect(cuisine.words, hasLength(15));
+      expect(cuisine.traps.single.trapFor, 'verbal_boxes.field.aeronef');
+      expect(cuisine.incompatibleWith, ['verbal_boxes.field.restaurant']);
+      expect(cuisine.lang, ContentLang.fr);
+      expect(lexical.fields.last.traps, isEmpty);
     });
 
     test(
@@ -172,10 +247,15 @@ void main() {
           ).readAsStringSync(),
           file: 'family.example.json',
         );
-        expect(family.engineType, EngineType.mentalArithmetic);
-        expect(family.answerFormat, AnswerFormat.numeric);
-        expect(family.confidence, Confidence.assumed);
+        expect(family.engineType, EngineType.memoryNback);
+        expect(family.generatorId, GeneratorId.nback);
+        expect(family.answerFormat, AnswerFormat.keyPress);
+        expect(family.confidence, Confidence.reported);
         expect(family.status, ContentStatus.published);
+        expect(
+          family.defaultCadence,
+          const Cadence(stimulusMs: 1000, answerWindowMs: 1500),
+        );
       },
     );
 
@@ -186,9 +266,123 @@ void main() {
         ).readAsStringSync(),
         file: 'manifest.example.json',
       );
+      expect(manifest.schemaVersion, 2);
       expect(manifest.updatedAt, DateTime.utc(2026, 9, 11));
       expect(manifest.modules, [ModuleId.psy0]);
-      expect(manifest.changelog.first.contentVersion, 3);
+      expect(manifest.changelog.first.contentVersion, 4);
+    });
+  });
+
+  group('real PSY0 content', () {
+    final families = jsonFiles('assets/content/psy0/families')
+        .map((f) => parser.parseFamily(f.readAsStringSync(), file: f.path))
+        .toList();
+    final module = parser.parseModule(
+      File('assets/content/examples/module.example.json').readAsStringSync(),
+      file: 'module.example.json',
+    );
+
+    test('one family file per family of the psy0 module, ids aligned', () {
+      expect(families.map((f) => f.id).toSet(), module.familyIds.toSet());
+      for (final family in families) {
+        expect(family.id, family.toJson()['engineType'], reason: family.id);
+        expect(family.moduleId, ModuleId.psy0);
+      }
+      final orders = families.map((f) => f.order).toList()..sort();
+      expect(orders, List.generate(families.length, (i) => i + 1));
+    });
+
+    test('generator-driven families name their generator', () {
+      final generated = families.where((f) => f.generatorId != null);
+      expect(generated.map((f) => f.generatorId!), hasLength(12));
+      expect(
+        generated.map((f) => f.generatorId!).toSet(),
+        GeneratorId.values.toSet(),
+      );
+      final bankDriven = families.where((f) => f.generatorId == null);
+      expect(
+        bankDriven.map((f) => f.id),
+        unorderedEquals([
+          'culture_aero',
+          'english_reading',
+          'english_listening',
+          'english_speaking',
+        ]),
+      );
+    });
+
+    test('keyboard-native families are flagged', () {
+      final keyboard = families
+          .where((f) => f.inputRequirement == InputRequirement.keyboard)
+          .map((f) => f.id);
+      expect(
+        keyboard,
+        unorderedEquals(['attention_rules', 'multitask_psychomotor']),
+      );
+    });
+
+    for (final name in ['psy0_full', 'psy0_short']) {
+      test('$name.json references known families and generators', () {
+        final blueprint = parser.parseBlueprint(
+          File('assets/content/psy0/blueprints/$name.json').readAsStringSync(),
+          file: '$name.json',
+        );
+        final familyIds = families.map((f) => f.id).toSet();
+        for (final section in blueprint.sections) {
+          expect(familyIds, contains(section.familyId), reason: section.id);
+          expect(section.hasTiming, isTrue, reason: section.id);
+          final family = families.firstWhere((f) => f.id == section.familyId);
+          switch (section.itemSelection) {
+            case GeneratedSelection(:final generatorId):
+              expect(generatorId, family.generatorId, reason: section.id);
+            case BankSelection():
+              expect(family.generatorId, isNull, reason: section.id);
+          }
+        }
+      });
+    }
+
+    test('psy0_full.json follows the reported order of the real test', () {
+      final blueprint = parser.parseBlueprint(
+        File(
+          'assets/content/psy0/blueprints/psy0_full.json',
+        ).readAsStringSync(),
+        file: 'psy0_full.json',
+      );
+      expect(blueprint.sections.map((s) => s.familyId), [
+        'memory_nback',
+        'planning_tubes',
+        'attention_rules',
+        'attention_parity',
+        'spatial_overlay',
+        'logic_dominos',
+        'attention_airways',
+        'verbal_boxes',
+        'arithmetic_grid',
+        'spatial_viewpoint',
+        'spatial_cubes',
+        'culture_aero',
+        'multitask_psychomotor',
+        'english_reading',
+        'english_listening',
+        'english_speaking',
+      ]);
+      final culture = blueprint.sections[11];
+      expect(culture.itemCount, 48);
+      expect(culture.perItemTimeSec, 18);
+      expect(culture.scoringPolicy, const ScoringPolicy());
+      expect(blueprint.sections.last.weight, 0);
+      final live = blueprint.sections
+          .where((s) => s.liveFeedback)
+          .map((s) => s.familyId);
+      expect(
+        live,
+        unorderedEquals([
+          'attention_rules',
+          'attention_parity',
+          'attention_airways',
+        ]),
+      );
     });
   });
 }

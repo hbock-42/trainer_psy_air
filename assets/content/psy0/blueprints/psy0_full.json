@@ -1,0 +1,247 @@
+{
+  "$schema": "../../../docs/content/schema/blueprint.schema.json",
+  "kind": "blueprint",
+  "id": "psy0.blueprint.full",
+  "version": 1,
+  "moduleId": "psy0",
+  "name": { "fr": "PSY0 — simulation complète (~2 h 30)", "en": "PSY0 — full rehearsal (~2 h 30)" },
+  "description": {
+    "fr": "Les 14 activités dans l'ordre rapporté du vrai test (session 2023, culture en 12e position en 2026), avec les volumes et durées rapportés par les candidats. Chaque section porte son niveau de confiance ; tout ce qui n'est pas **confirmed** est **estimé** — la batterie réelle change chaque année. Application non officielle, aucun sujet réel reproduit.",
+    "en": "The 14 activities in the reported order of the real test (2023 session, culture as activity 12 in 2026), with the volumes and timings candidates report. Every section carries its confidence; anything not **confirmed** is **estimated** — the real battery changes every year. Unofficial app, no real item reproduced."
+  },
+  "confidence": "reported",
+  "tags": ["blueprint.full"],
+  "briefingSec": 0,
+  "sections": [
+    {
+      "id": "s01-nback",
+      "familyId": "memory_nback",
+      "itemCount": 42,
+      "sectionTimeSec": 105,
+      "cadence": { "stimulusMs": 1000, "answerWindowMs": 1500 },
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "nback",
+        "difficulty": { "min": 3, "max": 3 },
+        "params": { "n": 2, "stimulusKind": "colour", "paletteSize": 3, "count": 42, "primers": 2, "targetRatio": 0.3 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s02-tubes",
+      "familyId": "planning_tubes",
+      "itemCount": 10,
+      "sectionTimeSec": 420,
+      "perItemTimeSec": 40,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "tubes",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "capacities": [3, 2, 3] }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s03-rules",
+      "familyId": "attention_rules",
+      "itemCount": 36,
+      "sectionTimeSec": 120,
+      "cadence": { "stimulusMs": 500, "answerWindowMs": 3000 },
+      "liveFeedback": true,
+      "inputRequirement": "keyboard",
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "stimulus_response",
+        "difficulty": { "min": 3, "max": 3 },
+        "params": { "count": 36, "ruleDepth": 2 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s04-parity",
+      "familyId": "attention_parity",
+      "itemCount": 5,
+      "sectionTimeSec": 300,
+      "perItemTimeSec": 60,
+      "liveFeedback": true,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "parity_sequence",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "numberCount": 16, "restartOnError": true, "labelEnds": true }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s05-overlay",
+      "familyId": "spatial_overlay",
+      "itemCount": 5,
+      "sectionTimeSec": 360,
+      "perItemTimeSec": 75,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "overlay_grid",
+        "difficulty": { "min": 3, "max": 5 },
+        "params": { "tileCount": 3, "overlapping": true, "blackCells": true }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s06-dominos",
+      "familyId": "logic_dominos",
+      "itemCount": 16,
+      "sectionTimeSec": 480,
+      "perItemTimeSec": 30,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "dominos",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "answerMode": "pick" }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s07-airways",
+      "familyId": "attention_airways",
+      "itemCount": 10,
+      "sectionTimeSec": 300,
+      "perItemTimeSec": 30,
+      "liveFeedback": true,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "airways",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "capacity": 4, "blueCapacity": 2, "durationSec": 30 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s08-boxes",
+      "familyId": "verbal_boxes",
+      "itemCount": 4,
+      "sectionTimeSec": 300,
+      "perItemTimeSec": 75,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "word_boxes",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "boxCount": 5, "wordCount": 20, "wordTimeMs": 3000 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s09-grids",
+      "familyId": "arithmetic_grid",
+      "itemCount": 8,
+      "sectionTimeSec": 360,
+      "perItemTimeSec": 45,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "arithmetic_grid",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "grid": { "rows": 3, "cols": 3 }, "wrongMin": 0, "wrongMax": 4 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s10-viewpoint",
+      "familyId": "spatial_viewpoint",
+      "itemCount": 10,
+      "sectionTimeSec": 150,
+      "perItemTimeSec": 15,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "viewpoint",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "viewpointCount": 8 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s11-cubes",
+      "familyId": "spatial_cubes",
+      "itemCount": 6,
+      "sectionTimeSec": 360,
+      "perItemTimeSec": 60,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "cube_net",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "flippable": true }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s12-culture",
+      "familyId": "culture_aero",
+      "itemCount": 48,
+      "sectionTimeSec": 900,
+      "perItemTimeSec": 18,
+      "scoringPolicy": { "correct": 1, "wrong": 0, "skip": 0 },
+      "itemSelection": {
+        "mode": "bank",
+        "difficulty": { "min": 2, "max": 5 },
+        "balanceByTagPrefix": "culture",
+        "avoidRecentSessions": 3
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s13-multitask",
+      "familyId": "multitask_psychomotor",
+      "itemCount": 1,
+      "sectionTimeSec": 300,
+      "inputRequirement": "keyboard",
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "multitask",
+        "difficulty": { "min": 3, "max": 3 },
+        "params": { "durationSec": 300 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s14-english-reading",
+      "familyId": "english_reading",
+      "itemCount": 45,
+      "sectionTimeSec": 1800,
+      "itemSelection": {
+        "mode": "bank",
+        "difficulty": { "min": 2, "max": 5 },
+        "balanceByTagPrefix": "english.reading",
+        "avoidRecentSessions": 3
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s15-english-listening",
+      "familyId": "english_listening",
+      "itemCount": 20,
+      "sectionTimeSec": 900,
+      "itemSelection": {
+        "mode": "bank",
+        "tags": ["english.listening"],
+        "avoidRecentSessions": 3
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s16-english-speaking",
+      "familyId": "english_speaking",
+      "itemCount": 3,
+      "sectionTimeSec": 480,
+      "perItemTimeSec": 105,
+      "itemSelection": {
+        "mode": "bank",
+        "tags": ["english.speaking"],
+        "avoidRecentSessions": 3
+      },
+      "confidence": "assumed",
+      "weight": 0
+    }
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §3.1 (US-080); transcribed in US-015, to validate/adjust in US-060",
+    "notes": "≈ 2 h 08 min through english_reading, ≈ 2 h 31 min with listening and speaking, plus ~1 min of briefing per section ≈ 2 h 45 min (official 'environ 3 h'). No enforced break: the real app chains activities behind a Start button (realism option 'pause between sections' in US-063)."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "../../../docs/content/schema/family.schema.json",
+  "kind": "family",
+  "id": "culture_aero",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 12,
+  "name": {
+    "fr": "Culture générale aéronautique",
+    "en": "Aeronautical general culture"
+  },
+  "shortName": {
+    "fr": "Culture aéro",
+    "en": "Aero culture"
+  },
+  "description": {
+    "fr": "QCM à réponse unique (4 options), une question par écran, sans retour en arrière, environ 18 s par question. Théorie BIA / PPL (mécanique du vol, météo, navigation, règles de l'air, instruments), histoire et figures de l'aviation, aéroports et codes, réseau et fuseaux horaires, flotte et actualité Air France – Transavia, la filière cadet elle-même. Faits datés (`validAsOf`).",
+    "en": "Single-answer MCQ (4 options), one question per screen, no going back, about 18 s per question. BIA / PPL theory (flight mechanics, meteorology, navigation, rules of the air, instruments), aviation history and figures, airports and codes, network and time zones, Air France – Transavia fleet and news, the cadet path itself. Dated facts (`validAsOf`)."
+  },
+  "engineType": "culture_aero",
+  "answerFormat": "mcq",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 900,
+  "defaultItemCount": 48,
+  "defaultPerItemTimeSec": 18,
+  "confidence": "reported",
+  "tags": [
+    "culture"
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §2.4-N, §3.1 row 12 (48 questions, ~18 s, Sept 2026; items authored in US-083)"
+  }
+}

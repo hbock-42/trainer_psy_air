@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trainer-psy-air.local/schema/generators.schema.json",
+  "title": "Generators",
+  "description": "The closed list of activity generators (contract v2) and the typed `params` object each one accepts. A generated item is fully reproducible from (generatorId, seed, params); every param has a default taken from the real-test values reported in docs/content/psy0-spec.md §2.4, so `params: {}` is always valid. Dart: enum GeneratorId + sealed GeneratorParams (lib/core/content/model/generator.dart).",
+  "$defs": {
+    "GeneratorId": {
+      "type": "string",
+      "description": "Key of an ItemGenerator in the engine registry (US-020). One per interactive PSY0 activity (EPIC-03).",
+      "enum": [
+        "nback",
+        "tubes",
+        "stimulus_response",
+        "parity_sequence",
+        "overlay_grid",
+        "dominos",
+        "airways",
+        "word_boxes",
+        "arithmetic_grid",
+        "viewpoint",
+        "cube_net",
+        "multitask"
+      ]
+    },
+    "GeneratedRecipe": {
+      "type": "object",
+      "description": "The (generatorId, params) pair shared by GeneratedItem and the blueprint's generated ItemSelection. Binds `params` to the $def of the named generator.",
+      "properties": {
+        "generatorId": { "$ref": "#/$defs/GeneratorId" },
+        "params": {
+          "type": "object",
+          "default": {},
+          "description": "Typed per generator (see the *Params definitions). Omitted keys take the real-test defaults. Never carry the answer here."
+        }
+      },
+      "required": ["generatorId"],
+      "allOf": [
+        { "if": { "properties": { "generatorId": { "const": "nback" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/NbackParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "tubes" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/TubesParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "stimulus_response" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/StimulusResponseParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "parity_sequence" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/ParitySequenceParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "overlay_grid" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/OverlayGridParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "dominos" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/DominosParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "airways" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/AirwaysParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "word_boxes" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/WordBoxesParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "arithmetic_grid" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/ArithmeticGridParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "viewpoint" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/ViewpointParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "cube_net" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/CubeNetParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "multitask" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/MultitaskParams" } } } }
+      ]
+    },
+
+    "NbackParams": {
+      "type": "object",
+      "description": "memory_nback (spec §2.4-A, US-026). Yes/No at a fixed cadence: does the stimulus equal the one shown n steps earlier? Defaults [reported]: 2-back, 3 colours, 42 stimuli incl. 2 primers, 1 s show + 1.5 s answer window.",
+      "properties": {
+        "n": { "type": "integer", "minimum": 1, "maximum": 4, "default": 2, "description": "How many steps back to compare (2 in 2024-2026, 3 with digits in 2023)." },
+        "stimulusKind": { "type": "string", "enum": ["colour", "digit", "letter"], "default": "colour" },
+        "paletteSize": { "type": "integer", "minimum": 2, "maximum": 10, "default": 3, "description": "Distinct stimuli drawn from the engine palette (7 colours, digits 0-9, letters). Real test: 3 colours." },
+        "count": { "type": "integer", "minimum": 5, "maximum": 200, "default": 42, "description": "Total stimuli shown, primers included." },
+        "primers": { "type": "integer", "minimum": 0, "maximum": 4, "default": 2, "description": "Leading stimuli without a question (the first n)." },
+        "stimulusMs": { "type": "integer", "minimum": 200, "maximum": 5000, "default": 1000, "description": "Display time of each stimulus. ExamSection.cadence overrides it when present." },
+        "answerWindowMs": { "type": "integer", "minimum": 200, "maximum": 10000, "default": 1500, "description": "Time to answer after the stimulus; no answer = error. ExamSection.cadence overrides it when present." },
+        "targetRatio": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.3, "description": "Share of stimuli that are n-back matches." },
+        "lureRatio": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.1, "description": "Share of stimuli matching n±1 steps back (lures). [assumed]" }
+      },
+      "additionalProperties": false
+    },
+    "TubesParams": {
+      "type": "object",
+      "description": "planning_tubes (spec §2.4-B, US-035). Minimum number of ball moves between two tube configurations, free numeric answer. Defaults: capacities 3/2/3 [reported]; the rest [assumed].",
+      "properties": {
+        "capacities": { "type": "array", "items": { "type": "integer", "minimum": 1, "maximum": 6 }, "minItems": 2, "maxItems": 5, "default": [3, 2, 3], "description": "Capacity of each U-tube, left to right." },
+        "colourCount": { "type": "integer", "minimum": 2, "maximum": 6, "default": 3 },
+        "ballCount": { "type": "integer", "minimum": 2, "maximum": 12, "default": 5, "description": "Must be < sum of capacities." },
+        "minMoves": { "type": "integer", "minimum": 1, "maximum": 30, "default": 2, "description": "Lowest optimal distance the generator may pick (difficulty = distance)." },
+        "maxMoves": { "type": "integer", "minimum": 1, "maximum": 30, "default": 8 }
+      },
+      "additionalProperties": false
+    },
+    "StimulusResponseParams": {
+      "type": "object",
+      "description": "attention_rules (spec §2.4-C, US-029). Conditional key rules, a shape flashes 0.5 s every 3 s, live right/wrong feedback. Defaults [reported].",
+      "properties": {
+        "count": { "type": "integer", "minimum": 5, "maximum": 200, "default": 36 },
+        "stimulusMs": { "type": "integer", "minimum": 100, "maximum": 5000, "default": 500, "description": "Flash duration. ExamSection.cadence overrides." },
+        "answerWindowMs": { "type": "integer", "minimum": 200, "maximum": 10000, "default": 3000, "description": "Inter-stimulus interval = time to answer. ExamSection.cadence overrides." },
+        "keys": { "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 1 }, "minItems": 2, "maxItems": 2, "default": ["n", "x"], "description": "The two response keys (physical keyboard); the seed picks which outcome each key gets." },
+        "shapes": { "type": "array", "items": { "type": "string", "enum": ["square", "triangle", "circle", "diamond", "star"] }, "minItems": 2, "maxItems": 4, "default": ["square", "triangle"] },
+        "colours": { "type": "array", "items": { "type": "string", "enum": ["blue", "orange", "green", "pink", "red", "yellow"] }, "minItems": 2, "maxItems": 4, "default": ["blue", "orange"] },
+        "ruleDepth": { "type": "integer", "minimum": 1, "maximum": 3, "default": 2, "description": "Conditional levels: 1 = key by one attribute; 2 = 'if filled -> by shape, if empty -> by colour' (real test)." }
+      },
+      "additionalProperties": false
+    },
+    "ParitySequenceParams": {
+      "type": "object",
+      "description": "attention_parity (spec §2.4-D, US-031). One item = one series: click alternately even/odd numbers in ascending order from START to END, restart on error. numberCount [reported]; range [assumed].",
+      "properties": {
+        "numberCount": { "type": "integer", "minimum": 6, "maximum": 40, "default": 16 },
+        "numberMin": { "type": "integer", "minimum": 0, "default": 1 },
+        "numberMax": { "type": "integer", "minimum": 1, "maximum": 999, "default": 99 },
+        "restartOnError": { "type": "boolean", "default": true, "description": "Real-test behaviour; false only for practice." },
+        "labelEnds": { "type": "boolean", "default": true, "description": "Show START / END labels on the first and last numbers." }
+      },
+      "additionalProperties": false
+    },
+    "OverlayGridParams": {
+      "type": "object",
+      "description": "spatial_overlay (spec §2.4-E, US-033). Drag tiles onto a grid so the overlay algebra (navy+navy=navy, navy+grey=grey, grey+grey=navy) reproduces the target. Version II (2024->) overlaps tiles and adds black cells. Grid size [assumed].",
+      "properties": {
+        "grid": { "$ref": "common.schema.json#/$defs/GridSize", "default": { "rows": 5, "cols": 5 } },
+        "tileCount": { "type": "integer", "minimum": 2, "maximum": 6, "default": 3 },
+        "overlapping": { "type": "boolean", "default": true, "description": "Version II: tiles may overlap." },
+        "blackCells": { "type": "boolean", "default": true, "description": "Version II: some target cells are black (blocked)." }
+      },
+      "additionalProperties": false
+    },
+    "DominosParams": {
+      "type": "object",
+      "description": "logic_dominos (spec §2.4-G, US-024). Find the missing domino (two halves 0-6) in a series/arrangement built on modulo-7 rules. All defaults [assumed].",
+      "properties": {
+        "length": { "type": "integer", "minimum": 3, "maximum": 12, "default": 6, "description": "Dominoes shown, the missing one included." },
+        "layout": { "type": "string", "enum": ["row", "grid", "spiral"], "default": "row" },
+        "ruleCount": { "type": "integer", "minimum": 1, "maximum": 3, "default": 1, "description": "Interleaved rules (top/bottom halves, alternation...)." },
+        "answerMode": { "type": "string", "enum": ["pick", "mcq"], "default": "pick", "description": "pick: two 0-6 selectors (real test); mcq: 6 candidate dominoes." }
+      },
+      "additionalProperties": false
+    },
+    "AirwaysParams": {
+      "type": "object",
+      "description": "attention_airways (spec §2.4-H, US-032). One item = one series of the flow simulation: keep <= capacity aircraft and <= blueCapacity blue aircraft in each grey zone while re-routing as few as possible. capacity/blueCapacity [reported]; the rest [assumed].",
+      "properties": {
+        "capacity": { "type": "integer", "minimum": 1, "maximum": 10, "default": 4, "description": "Max aircraft per grey zone." },
+        "blueCapacity": { "type": "integer", "minimum": 0, "maximum": 10, "default": 2, "description": "Max blue aircraft per grey zone." },
+        "zoneCount": { "type": "integer", "minimum": 1, "maximum": 6, "default": 2 },
+        "routeCount": { "type": "integer", "minimum": 2, "maximum": 8, "default": 3 },
+        "spawnIntervalMs": { "type": "integer", "minimum": 200, "maximum": 20000, "default": 2500 },
+        "durationSec": { "type": "integer", "minimum": 5, "maximum": 600, "default": 30, "description": "Length of the series." }
+      },
+      "additionalProperties": false
+    },
+    "WordBoxesParams": {
+      "type": "object",
+      "description": "verbal_boxes (spec §2.4-I, US-030). One item = one series: words appear one at a time, click the box of their lexical field. Fields come from the lexical_fields bank (US-085). boxCount/wordCount [reported]; timing [assumed].",
+      "properties": {
+        "boxCount": { "type": "integer", "minimum": 2, "maximum": 8, "default": 5, "description": "Lexical fields (boxes) in the series." },
+        "wordCount": { "type": "integer", "minimum": 5, "maximum": 60, "default": 20 },
+        "fieldIds": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/Id" }, "uniqueItems": true, "description": "Pin the lexical fields to use (exactly boxCount ids). Omit to let the seed sample compatible fields from the bank." },
+        "trapRatio": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.1, "description": "Share of words drawn from the fields' `traps` lists." },
+        "wordTimeMs": { "type": "integer", "minimum": 500, "maximum": 20000, "default": 3000, "description": "Time to classify each word." }
+      },
+      "additionalProperties": false
+    },
+    "ArithmeticGridParams": {
+      "type": "object",
+      "description": "arithmetic_grid (spec §2.4-J, US-023). A grid of equalities, some wrong; select the wrong ones and validate. 3x3 and 0-4 wrong [reported]; operand size [assumed] ('simpler than Pilotest').",
+      "properties": {
+        "grid": { "$ref": "common.schema.json#/$defs/GridSize", "default": { "rows": 3, "cols": 3 } },
+        "wrongMin": { "type": "integer", "minimum": 0, "maximum": 9, "default": 0 },
+        "wrongMax": { "type": "integer", "minimum": 0, "maximum": 9, "default": 4 },
+        "operations": { "type": "array", "items": { "type": "string", "enum": ["add", "sub", "mul", "div", "square", "percent", "priority"] }, "uniqueItems": true, "minItems": 1, "default": ["add", "sub", "mul", "div", "square", "priority"] },
+        "maxOperand": { "type": "integer", "minimum": 10, "maximum": 10000, "default": 100 }
+      },
+      "additionalProperties": false
+    },
+    "ViewpointParams": {
+      "type": "object",
+      "description": "spatial_viewpoint (spec §2.4-K, US-034). A 3-D scene and numbered viewpoints on a circle; pick the one the picture was taken from. 8 viewpoints [reported]; scene composition [assumed].",
+      "properties": {
+        "viewpointCount": { "type": "integer", "minimum": 4, "maximum": 12, "default": 8 },
+        "objectCount": { "type": "integer", "minimum": 2, "maximum": 8, "default": 4 },
+        "objectKinds": { "type": "array", "items": { "type": "string", "enum": ["cube", "cylinder", "cone", "sphere", "pyramid"] }, "uniqueItems": true, "minItems": 1, "default": ["cube", "cylinder", "cone"] },
+        "allowSymmetric": { "type": "boolean", "default": false, "description": "Allow arrangements that look identical from two viewpoints (never for exam)." }
+      },
+      "additionalProperties": false
+    },
+    "CubeNetParams": {
+      "type": "object",
+      "description": "spatial_cubes (spec §2.4-L, US-025). Reference net on the left, target net with missing faces; drag (and flip) the given faces to rebuild the same cube. Defaults [assumed].",
+      "properties": {
+        "missingFaces": { "type": "integer", "minimum": 1, "maximum": 5, "default": 2 },
+        "distractorFaces": { "type": "integer", "minimum": 0, "maximum": 6, "default": 2, "description": "Extra faces offered (mirrored / rotated symbols)." },
+        "symbolKind": { "type": "string", "enum": ["letters", "shapes", "mixed"], "default": "letters" },
+        "flippable": { "type": "boolean", "default": true, "description": "Faces can be flipped by tapping (real test)." }
+      },
+      "additionalProperties": false
+    },
+    "MultitaskParams": {
+      "type": "object",
+      "description": "multitask_psychomotor (spec §2.4-M, US-036). Continuous keyboard task: track a circle with the arrow keys, press shapeKey when the inner shape matches the reference, press calcKey when the framed calculation is wrong. 5 min [reported]; rates [assumed].",
+      "properties": {
+        "durationSec": { "type": "integer", "minimum": 30, "maximum": 1200, "default": 300 },
+        "trackingSpeed": { "type": "number", "minimum": 0.1, "maximum": 5, "default": 1, "description": "Multiplier on the target speed." },
+        "trackingNoise": { "type": "number", "minimum": 0, "maximum": 5, "default": 1, "description": "Multiplier on the trajectory erraticness (real test reported 'plus erratique')." },
+        "shapeIntervalMs": { "type": "integer", "minimum": 200, "maximum": 20000, "default": 2000 },
+        "calcIntervalMs": { "type": "integer", "minimum": 200, "maximum": 20000, "default": 4000 },
+        "shapeTargetRatio": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.3 },
+        "calcWrongRatio": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.4 },
+        "shapeKey": { "type": "string", "minLength": 1, "maxLength": 12, "default": "space" },
+        "calcKey": { "type": "string", "minLength": 1, "maxLength": 12, "default": "f" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

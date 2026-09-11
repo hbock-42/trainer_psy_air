@@ -29,20 +29,30 @@
   "$defs": {
     "ExamSection": {
       "type": "object",
+      "description": "One activity of the exam (v2). Timing = any combination of sectionTimeSec (hard limit), perItemTimeSec (per-item limit) and cadence (fixed rhythm); at least one is required. Dart: ExamSection.",
       "properties": {
-        "id": { "$ref": "common.schema.json#/$defs/Id", "description": "Unique within the blueprint, e.g. s01-arith." },
+        "id": { "$ref": "common.schema.json#/$defs/Id", "description": "Unique within the blueprint, e.g. s01-nback." },
         "familyId": { "$ref": "common.schema.json#/$defs/Id" },
         "title": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "Defaults to the family name." },
-        "instructions": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "Briefing text shown before the section (markdown)." },
-        "durationSec": { "type": "integer", "minimum": 10, "maximum": 7200, "description": "Hard limit for the whole section; auto-advance when it elapses." },
-        "itemCount": { "type": "integer", "minimum": 1, "maximum": 500 },
-        "perItemTimeSec": { "type": "integer", "minimum": 1, "description": "Optional per-item limit; timeout records answer = null and advances." },
+        "briefing": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "Instruction screen shown before the section (markdown), with the worked example. Defaults to the engine's own briefing." },
+        "itemCount": { "type": "integer", "minimum": 1, "maximum": 500, "description": "Items (stimuli, series, boards, grids, questions) in the section. For continuous activities (multitask) use 1." },
+        "sectionTimeSec": { "type": "integer", "minimum": 10, "maximum": 7200, "description": "Hard limit for the whole section; auto-advance when it elapses." },
+        "perItemTimeSec": { "type": "integer", "minimum": 1, "maximum": 3600, "description": "Per-item limit; timeout records answer = null and advances." },
+        "cadence": { "$ref": "common.schema.json#/$defs/Cadence", "description": "Fixed stimulus rhythm (memory_nback, attention_rules). Overrides the generator params' stimulusMs/answerWindowMs." },
+        "scoringPolicy": { "$ref": "common.schema.json#/$defs/ScoringPolicy", "description": "Defaults to {1, 0, 0}. {3, -1, 0} reproduces the historical culture marking." },
+        "liveFeedback": { "type": "boolean", "default": false, "description": "Show right/wrong feedback during the section even in exam mode, because the real activity does (attention_rules, attention_parity restart, attention_airways crash)." },
+        "inputRequirement": { "$ref": "common.schema.json#/$defs/InputRequirement" },
         "itemSelection": { "$ref": "#/$defs/ItemSelection" },
         "breakAfterSec": { "type": "integer", "minimum": 0, "default": 0, "description": "Break offered after this section (0 = none). Ignored on the last section." },
-        "confidence": { "$ref": "common.schema.json#/$defs/Confidence" },
-        "weight": { "type": "number", "minimum": 0, "default": 1, "description": "Relative weight of the section in the overall exam score." }
+        "confidence": { "$ref": "common.schema.json#/$defs/Confidence", "description": "Confidence that count/timing mirror the real activity (spec §3.1 tags)." },
+        "weight": { "type": "number", "minimum": 0, "default": 1, "description": "Relative weight of the section in the overall exam score (0 = practice-only, e.g. english_speaking)." }
       },
-      "required": ["id", "familyId", "durationSec", "itemCount", "itemSelection", "confidence"],
+      "required": ["id", "familyId", "itemCount", "itemSelection", "confidence"],
+      "anyOf": [
+        { "required": ["sectionTimeSec"] },
+        { "required": ["perItemTimeSec"] },
+        { "required": ["cadence"] }
+      ],
       "additionalProperties": false
     },
     "ItemSelection": {
@@ -65,14 +75,15 @@
         {
           "type": "object",
           "description": "Generate `itemCount` items from `generatorId`. The runtime derives one seed per item from the session seed, making the whole exam reproducible.",
+          "allOf": [{ "$ref": "generators.schema.json#/$defs/GeneratedRecipe" }],
           "properties": {
             "mode": { "const": "generated" },
-            "generatorId": { "$ref": "item.schema.json#/$defs/GeneratorId" },
+            "generatorId": { "$ref": "generators.schema.json#/$defs/GeneratorId" },
             "difficulty": { "$ref": "#/$defs/DifficultyRange" },
-            "params": { "type": "object", "default": {}, "description": "Generator-specific parameters (see each engine story)." }
+            "params": { "type": "object", "default": {}, "description": "Typed per generatorId (generators.schema.json)." }
           },
           "required": ["mode", "generatorId", "difficulty"],
-          "additionalProperties": false
+          "unevaluatedProperties": false
         }
       ]
     },

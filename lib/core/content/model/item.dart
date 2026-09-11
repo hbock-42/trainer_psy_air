@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'common.dart';
+import 'generator.dart';
 
 part 'item.freezed.dart';
 part 'item.g.dart';
@@ -96,21 +97,14 @@ abstract class Tolerance with _$Tolerance {
       _$ToleranceFromJson(json);
 }
 
-/// Grid dimensions for `gridCells` sequences.
-@freezed
-abstract class GridSize with _$GridSize {
-  const factory GridSize({required int rows, required int cols}) = _GridSize;
-
-  factory GridSize.fromJson(Map<String, Object?> json) =>
-      _$GridSizeFromJson(json);
-}
-
 /// Present only on items materialised at runtime by a generator. Same
 /// `generatorId` + `seed` => same item, so an attempt can be replayed.
 @freezed
 abstract class ItemOrigin with _$ItemOrigin {
-  const factory ItemOrigin({required String generatorId, required int seed}) =
-      _ItemOrigin;
+  const factory ItemOrigin({
+    required GeneratorId generatorId,
+    required int seed,
+  }) = _ItemOrigin;
 
   factory ItemOrigin.fromJson(Map<String, Object?> json) =>
       _$ItemOriginFromJson(json);
@@ -150,6 +144,14 @@ sealed class Item with _$Item {
     MediaRef? media,
     String? passageId,
     @Default(true) bool shuffleOptions,
+
+    /// v2: offer an explicit "je ne sais pas" answer, scored with
+    /// `ScoringPolicy.skip`.
+    @Default(false) bool allowSkip,
+
+    /// v2: date at which the correct answer was last checked (perishable
+    /// culture facts).
+    @DateOnlyConverter() DateTime? validAsOf,
   }) = McqItem;
 
   /// Free numeric answer compared to [NumericItem.expected].
@@ -210,7 +212,13 @@ sealed class Item with _$Item {
   }) = SequenceItem;
 
   /// A reproducible recipe: generator `generatorId` called with `seed` and
-  /// `params` yields a concrete mcq/numeric/sequence item.
+  /// the typed `params` yields a concrete item (contract v2).
+  ///
+  /// In JSON `params` is a plain object typed by the sibling `generatorId`;
+  /// [readGeneratorParams] / [generatorParamsToJson] bridge that to the
+  /// [GeneratorParams] union, so a decoded item always satisfies
+  /// `params.generatorId == generatorId`. Omitted keys take the real-test
+  /// defaults.
   @FreezedUnionValue('generated')
   @Assert(
     'difficulty >= minDifficulty && difficulty <= maxDifficulty',
@@ -222,13 +230,14 @@ sealed class Item with _$Item {
     required String familyId,
     @JsonKey(fromJson: difficultyFromJson) required Difficulty difficulty,
     required List<String> tags,
-    required String generatorId,
+    required GeneratorId generatorId,
     required int seed,
+    @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)
+    required GeneratorParams params,
     ContentLang? lang,
     @Default(ContentStatus.published) ContentStatus status,
     ItemOrigin? origin,
     ContentMeta? meta,
-    @Default(<String, Object?>{}) Map<String, Object?> params,
   }) = GeneratedItem;
 
   factory Item.fromJson(Map<String, Object?> json) => _$ItemFromJson(json);
