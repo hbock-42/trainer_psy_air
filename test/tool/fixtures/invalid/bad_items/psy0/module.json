@@ -1,0 +1,10 @@
+{
+  "kind": "module",
+  "id": "psy0",
+  "version": 1,
+  "order": 0,
+  "name": { "fr": "PSY0 — tests en ligne", "en": "PSY0 — online tests" },
+  "description": { "fr": "Première étape de sélection.", "en": "First selection stage." },
+  "familyIds": ["english", "mental_arithmetic", "logic", "memory"],
+  "defaultBlueprintId": "psy0.blueprint.short"
+}

@@ -1,0 +1,15 @@
+{
+  "kind": "family",
+  "id": "logic",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 3,
+  "name": { "fr": "Logique", "en": "Logic" },
+  "description": { "fr": "Suites et matrices.", "en": "Series and matrices." },
+  "engineType": "logic_series",
+  "answerFormat": "mcq",
+  "defaultDurationSec": 600,
+  "defaultItemCount": 20,
+  "confidence": "assumed",
+  "tags": ["logic"]
+}

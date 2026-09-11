@@ -1,0 +1,31 @@
+{
+  "kind": "lesson",
+  "id": "english.lesson.01-tenses",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "english",
+  "order": 1,
+  "title": {
+    "fr": "Les temps du passé",
+    "en": "Past tenses"
+  },
+  "summary": {
+    "fr": "Prétérit, present perfect, past perfect."
+  },
+  "file": {
+    "fr": "english/lessons/01-tenses.fr.md",
+    "en": "english/lessons/01-tenses.en.md"
+  },
+  "estimatedReadMin": 3,
+  "difficulty": 2,
+  "tags": [
+    "english.grammar",
+    "english.grammar.tenses"
+  ],
+  "practiceTags": [
+    "english.grammar.tenses"
+  ],
+  "deckIds": [
+    "english.deck.missing"
+  ]
+}

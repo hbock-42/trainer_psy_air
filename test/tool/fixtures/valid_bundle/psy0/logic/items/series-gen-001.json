@@ -1,0 +1,17 @@
+{
+  "kind": "bank",
+  "familyId": "logic",
+  "items": [
+    {
+      "id": "logic.series.gen.0001",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic",
+      "difficulty": 2,
+      "tags": ["logic.series", "logic.series.arithmetic"],
+      "generatorId": "logic_series",
+      "seed": 1842,
+      "params": { "kind": "arithmetic", "length": 5 }
+    }
+  ]
+}

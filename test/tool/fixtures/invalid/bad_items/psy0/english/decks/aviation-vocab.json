@@ -1,0 +1,51 @@
+{
+  "kind": "deck",
+  "id": "english.deck.aviation-vocab",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "english",
+  "order": 1,
+  "name": {
+    "fr": "Vocabulaire aéronautique",
+    "en": "Aviation vocabulary"
+  },
+  "tags": [
+    "english.vocab.aviation"
+  ],
+  "cards": [
+    {
+      "id": "english.deck.aviation-vocab.0001",
+      "version": 1,
+      "deckId": "english.deck.aviation-vocab",
+      "front": {
+        "fr": "hold short"
+      },
+      "back": {
+        "fr": "s'arrêter avant la piste"
+      },
+      "difficulty": 1,
+      "tags": [
+        "english.vocab.aviation"
+      ]
+    },
+    {
+      "id": "english.deck.aviation-vocab.0002",
+      "version": 1,
+      "deckId": "english.deck.other",
+      "front": {
+        "fr": "runway"
+      },
+      "back": {
+        "fr": "piste"
+      },
+      "media": {
+        "kind": "image",
+        "path": "english/media/runway-signs.svg"
+      },
+      "difficulty": 1,
+      "tags": [
+        "english.vocab.aviation"
+      ]
+    }
+  ]
+}
