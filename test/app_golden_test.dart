@@ -4,6 +4,7 @@ import 'package:psy_trainer/app.dart';
 import 'package:psy_trainer/features/learn/presentation/learn_screen.dart';
 
 import 'helpers/golden_config.dart';
+import 'helpers/onboarding_fakes.dart';
 import 'helpers/pump_app.dart';
 
 // Proves the golden setup works end to end. Update with
@@ -18,7 +19,13 @@ const double _textDenseTolerance = 0.05;
 
 void main() {
   testWidgets('root app renders the learn screen (golden)', (tester) async {
-    await pumpGolden(tester, const ProviderScope(child: PsyTrainerApp()));
+    await pumpGolden(
+      tester,
+      ProviderScope(
+        overrides: [progressRepositoryOverride()],
+        child: const PsyTrainerApp(),
+      ),
+    );
     await expectGolden(tester, 'learn_screen', tolerance: _textDenseTolerance);
   });
 

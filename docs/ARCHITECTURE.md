@@ -201,7 +201,7 @@ Schema v1 (every table has `id TEXT PRIMARY KEY`, `created_at`, `updated_at`):
 | `item_stats` | itemId (unique), familyId, seen, correct, totalResponseMs, lastCorrect, lastSeenAt | maintained by `INSERT ... ON CONFLICT DO UPDATE` |
 | `flashcard_reviews` | flashcardId (unique), deckId, box, reviews, lapses, lastReviewedAt?, nextReviewAt | index `(deck_id, next_review_at)` |
 | `lesson_progress` | lessonId (unique), readAt | |
-| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`) |
+| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`). Onboarding (US-090) keeps its two flags in `settings`: `onboardingCompleted` (bool) and `disclaimerAcceptedAt` (ISO-8601 UTC); the mapping lives in `features/onboarding/domain/onboarding_answers.dart` |
 
 Design decisions:
 
@@ -286,6 +286,7 @@ StatefulShellRoute.indexedStack      AppShell; one branch (own Navigator) per ta
   /exam                              branch 2
   /progress                          branch 3
   /settings                          branch 4
+    profile                          nested -> /settings/profile (edit the onboarding answers)
 ```
 
 - **Adding a tab route:** add the constant to `AppRoutes` (and `AppRoutes.tabs`, whose order is
@@ -303,7 +304,12 @@ StatefulShellRoute.indexedStack      AppShell; one branch (own Navigator) per ta
   tested without widgets; `appRouterProvider` listens to the providers a guard reads and calls
   `router.refresh()` when they change, so the router itself is created once and navigation state
   survives. Today's only rule: onboarding not completed -> `/onboarding` (and `/onboarding` ->
-  `/learn` once completed). `onboardingCompletedProvider` defaults to `true` until US-090.
+  `/learn` once completed). `onboardingCompletedProvider` (US-090) is hydrated from the profile
+  at startup: its state is `null` until the first read, and the router's `redirect` awaits
+  `OnboardingCompletedNotifier.whenHydrated()` (a `FutureOr<bool>`, synchronous once known)
+  before resolving the first location, so go_router renders nothing rather than flashing the
+  onboarding to a returning user. Tests that pump the whole app must override
+  `progressRepositoryProvider` (see `test/helpers/onboarding_fakes.dart`).
 - **Errors:** unknown locations and route-time exceptions render `ErrorScreen`. Uncaught errors go
   to `core/errors/error_logger.dart`: `installGlobalErrorHandlers()` hooks `FlutterError.onError`
   (chaining the default so debug builds keep the red box) and `PlatformDispatcher.onError`;

@@ -15,6 +15,8 @@ import 'package:psy_trainer/features/train/presentation/train_screen.dart';
 import 'package:psy_trainer/features/train/presentation/train_session_screen.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
 
+import '../../helpers/onboarding_fakes.dart';
+
 const Size _phone = Size(390, 844);
 const Size _desktop = Size(1280, 800);
 
@@ -26,7 +28,9 @@ Future<ProviderContainer> pumpShell(
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.reset);
 
-  final ProviderContainer container = ProviderContainer();
+  final ProviderContainer container = ProviderContainer(
+    overrides: [progressRepositoryOverride()],
+  );
   addTearDown(container.dispose);
   await tester.pumpWidget(
     UncontrolledProviderScope(

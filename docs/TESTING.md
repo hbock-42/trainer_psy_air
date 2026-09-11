@@ -109,8 +109,10 @@ testWidgets('shows the score', (tester) async {
 
 `pumpApp` wraps the child in `ProviderScope` (with your overrides), `MediaQuery` from the
 test view, `Directionality`, the app's `DefaultTextStyle` and a background `ColoredBox`. It
-does not install a `Navigator`; tests that need routing pump `PsyTrainerApp` (or the
-go_router config once US-002 lands) directly.
+does not install a `Navigator`; tests that need routing pump `PsyTrainerApp` directly, with
+`progressRepositoryOverride()` from `test/helpers/onboarding_fakes.dart` in the overrides: the
+router's onboarding guard reads the profile at startup, and without the in-memory fake it would
+open the real database (`onboardingDone: false` / `completed: false` gives a fresh install).
 
 Some `flutter_test` finders assume Material: `find.byTooltip` works only with `Tooltip`
 (Material), `tester.tap` on a Material button expects ink. Use `find.text`, `find.byKey`,
