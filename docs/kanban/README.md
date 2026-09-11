@@ -1,0 +1,50 @@
+# Kanban — PSY Trainer (Air France cadet selection)
+
+Flutter app to prepare the Air France cadet selection tests (PSY0 first, then PSY1, PSY2).
+Local database only for now; remote sync is a placeholder epic.
+
+- **[BOARD.md](BOARD.md)** — index of every card (regenerate with `./gen_board.sh`)
+- **[ROADMAP.md](ROADMAP.md)** — milestones, parallel lanes, dependency graph
+- `epics/` — one file per epic (`EPIC-xx-*.md`)
+- `stories/` — one file per user story (`US-xxx-*.md`)
+
+## Columns
+
+`backlog` → `ready` → `in-progress` → `review` → `done`
+
+The column is the `status:` field in the card's frontmatter. `ready` means every card in
+`depends_on` is `done` (or the dependency is only on a merged interface) and the card is
+groomed enough to start.
+
+## Card format
+
+```yaml
+---
+id: US-023
+title: "Mental arithmetic generator"
+type: story            # epic | story
+epic: EPIC-03
+status: backlog
+priority: P0           # P0 = PSY0 MVP, P1 = PSY0 complete, P2 = later stages/nice-to-have, P3 = future
+size: M                # S ≈ ≤1 day, M ≈ 2–3 days, L ≈ a week
+lane: engines          # who can work on it in parallel — see ROADMAP.md
+depends_on: [US-020,US-022]
+labels: [engine,generator]
+---
+```
+
+Frontmatter is deliberately machine-readable so that a script can create GitHub issues,
+labels, milestones and a Project board from these files (planned once the repo is on GitHub).
+
+## Numbering
+
+- `US-00x` foundation · `US-01x` data · `US-02x/03x` engines · `US-04x` learn · `US-05x` practice
+- `US-06x` exam · `US-07x` analytics · `US-08x` content · `US-09x` settings
+- `US-10x` PSY1 · `US-11x` PSY2 · `US-12x` quality · `US-13x` remote
+
+## Rules of thumb
+
+1. **US-080 (research) and US-010 (content contract) first.** They unblock every lane.
+2. One PR per story, branch `us-023-mental-arithmetic`, PR title `US-023: Mental arithmetic generator`.
+3. A story is `done` when its acceptance checklist is ticked, tests pass in CI and the PR is merged.
+4. Content (JSON/markdown) never requires a Flutter change; if it does, the contract (US-010) is versioned.
