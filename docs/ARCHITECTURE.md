@@ -21,12 +21,18 @@ lib/
       domain/                # entities/value objects (freezed), repository interfaces,
                              # pure logic (test generators, scoring)
       presentation/          # screens, widgets, Riverpod providers/notifiers, routes
-test/
+test/                        # see docs/TESTING.md
   architecture/              # rules about the codebase itself (e.g. no Material)
   features/<feature>/...     # mirrors lib/features; unit + widget tests
+  helpers/                   # pumpApp, golden config, shared fakes
+  goldens/                   # committed golden PNGs
+  tool/                      # tests for scripts under tool/
   app_test.dart              # smoke test of the root widget
+tool/
+  coverage_gate.dart         # lcov parser + 70 % gate on domain/data/core (make coverage)
 docs/
   ARCHITECTURE.md            # this file
+  TESTING.md                 # test pyramid, conventions, coverage gate
   kanban/                    # epics, stories, board (see docs/kanban/README.md)
 ```
 
@@ -91,8 +97,8 @@ What this implies in practice:
 - **Localization.** `WidgetsApp` already installs `DefaultWidgetsLocalizations`; add
   `flutter_localizations` delegates for our ARB strings only (not the Material/Cupertino ones).
 - **Tests.** `tester.pumpWidget` must wrap the widget under test in the same root context the app
-  uses (a `WidgetsApp` or at least `Directionality` + `DefaultTextStyle`); a `pumpApp` helper will
-  live in `test/helpers/` once the design system exists.
+  uses (a `WidgetsApp` or at least `Directionality` + `DefaultTextStyle`); use the `pumpApp`
+  helper in `test/helpers/pump_app.dart` (see `docs/TESTING.md`).
 
 ## Naming conventions
 
@@ -125,4 +131,5 @@ Commit generated files so a fresh clone builds and analyzes without running the 
 ## Quality gates
 
 `make lint` (`flutter analyze`) and `make test` (`flutter test`) must pass before a PR is opened;
-CI (US-005) runs the same commands. Format with `dart format .`.
+CI (US-004) runs the same commands plus `make coverage` (see `docs/TESTING.md`). Format with
+`dart format .`.
