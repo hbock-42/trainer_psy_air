@@ -33,8 +33,9 @@ labels: [engine,generator]
 ---
 ```
 
-Frontmatter is deliberately machine-readable so that a script can create GitHub issues,
-labels, milestones and a Project board from these files (planned once the repo is on GitHub).
+Each card carries `issue: N`, the number of its GitHub issue. Stories are sub-issues of their
+epic and `depends_on` is mirrored as "blocked by" on GitHub. The board lives at
+<https://github.com/users/hbock-42/projects/3> (fields: Status, Priority, Size, Lane, Epic).
 
 ## Numbering
 
