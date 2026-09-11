@@ -35,4 +35,69 @@ abstract final class AppStrings {
       'estimatifs et ne reproduisent aucun sujet réel. Le contenu de la '
       'sélection réelle évolue chaque année. Aucun résultat obtenu ici ne '
       'préjuge de votre réussite à la sélection.';
+
+  // Progress dashboard (US-070).
+  static const String progressTitle = 'Progrès';
+  static const String progressLoading = 'Calcul en cours…';
+  static const String progressError = 'Impossible de charger tes statistiques.';
+  static const String progressEmptyTitle = 'Aucun entraînement pour l\'instant';
+  static const String progressEmptyBody =
+      'Lance un premier exercice : ton score de préparation, tes niveaux par '
+      'famille et ton activité apparaîtront ici.';
+  static const String progressEmptyAction = 'Commencer un exercice';
+  static const String readinessTitle = 'Préparation';
+  static const String readinessSemanticsLabel = 'Score de préparation';
+
+  /// `sur 100`, shown under the readiness figure.
+  static const String readinessOutOf = 'sur 100';
+  static const String readinessTrendUp = 'En progression';
+  static const String readinessTrendFlat = 'Stable';
+  static const String readinessTrendDown = 'En baisse';
+  static const String readinessHint =
+      'Familles pratiquées, leçons lues et simulations comptent.';
+  static String readinessFamilies(int practised, int total) =>
+      '$practised/$total familles pratiquées';
+  static String readinessLessons(int read, int total) =>
+      '$read/$total leçons lues';
+  static String readinessExams(int count) => switch (count) {
+    0 => 'Aucune simulation',
+    1 => '1 simulation',
+    _ => '$count simulations',
+  };
+  static const String examDateSemanticsLabel = 'Examen';
+  static String examDaysLeft(int days) => switch (days) {
+    0 => 'Jour J',
+    1 => 'J-1',
+    _ => 'J-$days',
+  };
+  static String examDaysLeftLong(int days) => switch (days) {
+    0 => 'L\'examen est aujourd\'hui',
+    1 => 'Examen dans 1 jour',
+    _ => 'Examen dans $days jours',
+  };
+  static const String examDatePassed = 'Examen passé';
+  static const String familyLevelsTitle = 'Niveaux par famille';
+  static const String familyLevelsSubtitle = 'Dans l\'ordre du test réel';
+  static const String familyLevelsSemanticsLabel = 'Niveaux par famille';
+  static const String familyLevelsNone = 'Aucune famille pratiquée.';
+  static String familyLevel(int level) => 'niveau $level sur 5';
+  static const String familyNotPractised = 'non pratiquée';
+  static const String weakAreasTitle = 'À travailler';
+  static const String weakAreasSubtitle = 'Tes points faibles du moment';
+  static const String weakAreasNone =
+      'Rien à signaler : continue à t\'entraîner régulièrement.';
+  static const String weakAreaTrain = 'S\'entraîner';
+  static const String weakReasonLowAccuracy = 'précision faible';
+  static const String weakReasonNegativeTrend = 'en baisse';
+  static String weakAreaDetail(int accuracyPercent, int attempts) =>
+      '$accuracyPercent % de réussite sur $attempts réponses';
+  static const String recentActivityTitle = 'Activité récente';
+  static const String recentActivitySubtitle = 'Exercices et simulations';
+  static const String recentActivityNone = 'Aucune session terminée.';
+  static const String activityPractice = 'Exercice';
+  static const String activityExam = 'Simulation';
+  static const String activityAbandoned = 'abandonnée';
+  static const String activityInProgress = 'en cours';
+  static String scorePercent(int percent) => '$percent %';
+  static const String scoreUnknown = '—';
 }
