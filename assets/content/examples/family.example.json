@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../docs/content/schema/family.schema.json",
+  "kind": "family",
+  "id": "mental_arithmetic",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 2,
+  "name": { "fr": "Calcul mental", "en": "Mental arithmetic" },
+  "shortName": { "fr": "Calcul", "en": "Arithmetic" },
+  "description": {
+    "fr": "Opérations rapides sans calculatrice : additions, multiplications, pourcentages, conversions d'unités et calculs de navigation (vitesse × temps, carburant). Évalue la vitesse **et** la précision sous contrainte de temps.",
+    "en": "Fast operations without a calculator: additions, multiplications, percentages, unit conversions and navigation maths (speed × time, fuel). Assesses speed **and** accuracy under time pressure."
+  },
+  "engineType": "mental_arithmetic",
+  "answerFormat": "numeric",
+  "lang": "fr",
+  "defaultDurationSec": 600,
+  "defaultItemCount": 40,
+  "defaultPerItemTimeSec": 20,
+  "confidence": "assumed",
+  "tags": ["arith"],
+  "meta": { "source": "docs/content/psy0-spec.md#mental-arithmetic (US-080), durations to confirm" }
+}

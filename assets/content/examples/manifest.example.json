@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../docs/content/schema/manifest.schema.json",
+  "kind": "manifest",
+  "schemaVersion": 1,
+  "contentVersion": 3,
+  "updatedAt": "2026-09-11",
+  "modules": ["psy0"],
+  "changelog": [
+    { "contentVersion": 3, "date": "2026-09-11", "summary": "Fix correct answer of english.grammar.0042 (version 2); add lesson mental_arithmetic.lesson.03." },
+    { "contentVersion": 2, "date": "2026-09-04", "summary": "English bank: +120 grammar items." },
+    { "contentVersion": 1, "date": "2026-08-28", "summary": "Initial PSY0 bundle." }
+  ]
+}
