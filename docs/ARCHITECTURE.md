@@ -7,10 +7,13 @@ decision changes (and say why in the PR).
 
 ```
 lib/
-  main.dart                  # entry point: runApp(PsyTrainerApp())
-  app.dart                   # root WidgetsApp
-  core/                      # cross-cutting infrastructure, no UI: database, routing
-                             # setup, DI wiring, error/logging, constants, extensions
+  main.dart                  # entry point: error hooks + ProviderScope + runApp
+  app.dart                   # root WidgetsApp.router
+  core/                      # cross-cutting infrastructure: database, routing,
+                             # error/logging, constants, extensions
+    errors/                  # logError + global error hooks
+    router/                  # go_router config, AppPage, AppRoutes, redirect, shell,
+                             # error screen (the only UI allowed in core/)
   shared/                    # reusable UI + small helpers used by several features:
                              # design system (theme, buttons, text styles, scaffold),
                              # generic widgets, formatters
@@ -30,22 +33,24 @@ docs/
   kanban/                    # epics, stories, board (see docs/kanban/README.md)
 ```
 
-Initial features: `learn`, `train`, `exam`, `progress`, `settings`. Add a feature by creating
+Initial features: `learn`, `train`, `exam`, `progress`, `settings`, `onboarding`. Add a feature by creating
 `lib/features/<name>/{data,domain,presentation}`; do not add new top-level folders without a
 kanban card.
 
 Dependency direction: `presentation -> domain <- data`. `domain` never imports Flutter widgets,
 Drift, or anything from `presentation`. Features may depend on `core` and `shared`; `core` and
-`shared` never import from `features`. Cross-feature imports go through a `domain` interface, not
-into another feature's `presentation` or `data`.
+`shared` never import from `features`, with one deliberate exception: `core/router/app_router.dart`
+is the composition root that maps paths to feature screens (and reads the providers its guards
+need), so it imports from `features/*/presentation`. Nothing else in `core` may. Cross-feature
+imports go through a `domain` interface, not into another feature's `presentation` or `data`.
 
 ## Stack
 
 | Concern        | Choice                          | Notes |
 |----------------|---------------------------------|-------|
 | UI toolkit     | `package:flutter/widgets.dart` only | **No Material, no Cupertino** (see below) |
-| State + DI     | `flutter_riverpod`              | Providers live next to the feature that owns them; wired in US-002 |
-| Navigation     | `go_router`                     | Works with `WidgetsApp.router`; wired in US-002 |
+| State + DI     | `flutter_riverpod` 3.x          | Providers live next to the feature that owns them; see "State and DI" |
+| Navigation     | `go_router`                     | `WidgetsApp.router` + our own `AppPage`; see "Routing" |
 | Models         | `freezed` + `json_serializable` | Immutable entities, `copyWith`, JSON for content files |
 | Local database | `drift` on `package:sqlite3` 3.x | `sqlite3` bundles the native library through Dart hooks, so `sqlite3_flutter_libs` (now discontinued) is not needed. Schema in EPIC-02 |
 | IDs / paths    | `uuid`, `path`, `path_provider` | |
@@ -85,14 +90,82 @@ What this implies in practice:
 - **Scrolling and gestures.** `ListView`, `GridView`, `CustomScrollView`, `PageView`,
   `Draggable`, `InteractiveViewer` and friends are widget-layer and fine. Scroll physics come from
   `ScrollConfiguration`, which `WidgetsApp` already installs.
-- **Navigation.** `WidgetsApp` needs a `pageRouteBuilder` (or a router config); we provide a plain
-  `PageRouteBuilder` today and will move to `WidgetsApp.router` + `go_router` in US-002 with our
-  own page transitions.
+- **Navigation.** The root is `WidgetsApp.router` with go_router. There is no `MaterialPage`, so
+  every route is wrapped in `core/router/app_page.dart` (`AppPage`), a `Page` whose route is a
+  small `PageRoute` subclass with a fade + slide transition. Never use `GoRoute.builder` (go_router
+  would pick a platform page type); always `pageBuilder` returning an `AppPage`.
 - **Localization.** `WidgetsApp` already installs `DefaultWidgetsLocalizations`; add
   `flutter_localizations` delegates for our ARB strings only (not the Material/Cupertino ones).
 - **Tests.** `tester.pumpWidget` must wrap the widget under test in the same root context the app
   uses (a `WidgetsApp` or at least `Directionality` + `DefaultTextStyle`); a `pumpApp` helper will
   live in `test/helpers/` once the design system exists.
+
+## State and DI (Riverpod)
+
+- `main.dart` wraps the app in a `ProviderScope`; `PsyTrainerApp` is a `ConsumerWidget`.
+- Riverpod 3 idioms only: `Provider`, `NotifierProvider`/`Notifier`, `AsyncNotifierProvider`,
+  `FutureProvider`, `StreamProvider`. `StateProvider`, `StateNotifierProvider` and
+  `ChangeNotifierProvider` are legacy in 3.x (`flutter_riverpod/legacy.dart`) and are not used.
+- Providers live in the feature that owns the state (`features/<f>/presentation/providers/`), one
+  file per provider. Reference example: `onboardingCompletedProvider`
+  (`features/onboarding/presentation/providers/onboarding_completed_provider.dart`).
+- Services and repositories are exposed as providers too; `data/` implementations are bound to
+  `domain/` interfaces by a provider in the feature, overridden in tests.
+- Tests: `ProviderContainer.test(overrides: [...])` for pure provider tests (auto-disposed); for
+  widget tests, create a `ProviderContainer` and pump `UncontrolledProviderScope(container: ...)`
+  so the test can both override and read providers. Override a notifier with
+  `xxxProvider.overrideWith(FakeNotifier.new)`. See
+  `test/features/onboarding/presentation/providers/onboarding_completed_provider_test.dart` and
+  `test/core/router/app_router_test.dart`.
+
+## Routing (go_router)
+
+Everything lives in `lib/core/router/`:
+
+| File | Role |
+|------|------|
+| `app_routes.dart` | `AppRoutes`: path constants and location helpers. No string paths anywhere else. |
+| `app_router.dart` | `appRouterProvider` (a `Provider<GoRouter>`) and `createAppRouter(...)` building the route table. |
+| `app_page.dart` | `AppPage`, the page type used by every route. |
+| `app_redirect.dart` | `computeRedirect(...)`: the top-level guard as a pure function. |
+| `app_shell.dart` | `AppShell`: wraps the `StatefulNavigationShell` (bottom bar arrives in US-005). |
+| `error_screen.dart` | `ErrorScreen`: go_router `errorBuilder` target (unknown route, route error). |
+
+Route table:
+
+```
+/onboarding                          root navigator, outside the shell
+StatefulShellRoute.indexedStack      AppShell; one branch (own Navigator) per tab, state kept
+  /learn                             branch 0  (initial location)
+  /train                             branch 1
+    session/:sessionId               nested -> /train/session/:sessionId (pushed inside the tab)
+  /exam                              branch 2
+  /progress                          branch 3
+  /settings                          branch 4
+```
+
+- **Adding a tab route:** add the constant to `AppRoutes` (and `AppRoutes.tabs`, whose order is
+  the branch/bottom-bar order), a `StatefulShellBranch` in `createAppRouter`, and a screen in
+  `features/<f>/presentation/<f>_screen.dart`.
+- **Adding a nested route** (a screen pushed on top of a tab, tab stays selected): declare a
+  `GoRoute` with a *relative* path (`'session/:sessionId'`) in the parent `GoRoute.routes`, add a
+  helper in `AppRoutes` returning the full location (`AppRoutes.trainSession(id)`), and read path
+  parameters with `state.pathParameters[AppRoutes.sessionIdParam]`. Navigate with
+  `context.go(...)` (replace stack) or `context.push(...)` (stack on top). A screen that must cover
+  the shell (no tab bar, e.g. the exam runner) sets `parentNavigatorKey` to the root navigator
+  key instead of living in a branch.
+- **Guards:** the router calls `computeRedirect(onboardingDone:, location:)` on every navigation
+  with `state.matchedLocation`. Keep guards pure functions of provider values so they are unit
+  tested without widgets; `appRouterProvider` listens to the providers a guard reads and calls
+  `router.refresh()` when they change, so the router itself is created once and navigation state
+  survives. Today's only rule: onboarding not completed -> `/onboarding` (and `/onboarding` ->
+  `/learn` once completed). `onboardingCompletedProvider` defaults to `true` until US-090.
+- **Errors:** unknown locations and route-time exceptions render `ErrorScreen`. Uncaught errors go
+  to `core/errors/error_logger.dart`: `installGlobalErrorHandlers()` hooks `FlutterError.onError`
+  (chaining the default so debug builds keep the red box) and `PlatformDispatcher.onError`;
+  `main.dart` runs everything under `runZonedGuarded`. All three call `logError`, which uses
+  `dart:developer` `log` (structured, visible in DevTools, no `print`). Swap the backend there when
+  crash reporting is added.
 
 ## Naming conventions
 
