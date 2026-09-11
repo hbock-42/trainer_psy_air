@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/exam/presentation/exam_screen.dart';
+import '../../features/learn/presentation/family_screen.dart';
+import '../../features/learn/presentation/how_it_works_screen.dart';
 import '../../features/learn/presentation/learn_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/onboarding/presentation/providers/onboarding_completed_provider.dart';
@@ -38,6 +40,8 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
 /// /onboarding                       (outside the shell, root navigator)
 /// StatefulShellRoute.indexedStack   (AppShell; one branch per tab)
 ///   /learn
+///     family/:familyId             (nested: /learn/family/:familyId)
+///     how-it-works                 (nested: /learn/how-it-works)
 ///   /train
 ///     session/:sessionId            (nested: /train/session/:sessionId)
 ///   /exam
@@ -75,6 +79,23 @@ GoRouter createAppRouter({
                 path: AppRoutes.learn,
                 pageBuilder: (context, state) =>
                     _page(state, const LearnScreen()),
+                routes: [
+                  GoRoute(
+                    path: AppRoutes.learnFamilySegment,
+                    pageBuilder: (context, state) => _page(
+                      state,
+                      FamilyScreen(
+                        familyId:
+                            state.pathParameters[AppRoutes.familyIdParam]!,
+                      ),
+                    ),
+                  ),
+                  GoRoute(
+                    path: AppRoutes.learnHowItWorksSegment,
+                    pageBuilder: (context, state) =>
+                        _page(state, const HowItWorksScreen()),
+                  ),
+                ],
               ),
             ],
           ),

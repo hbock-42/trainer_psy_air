@@ -32,6 +32,22 @@ abstract final class AppRoutes {
   /// Full location of a training session screen.
   static String trainSession(String sessionId) => '$train/session/$sessionId';
 
+  /// Path parameter name for a test family id (US-040).
+  static const String familyIdParam = 'familyId';
+
+  /// Relative path of the family page (nested under [learn]).
+  static const String learnFamilySegment = 'family/:$familyIdParam';
+
+  /// Full location of a family page (lessons + quick actions).
+  static String learnFamily(String familyId) => '$learn/family/$familyId';
+
+  /// Relative path of the "how the selection works" page (nested under
+  /// [learn]).
+  static const String learnHowItWorksSegment = 'how-it-works';
+
+  /// Full location of the "how the selection works" page.
+  static const String learnHowItWorks = '$learn/$learnHowItWorksSegment';
+
   /// The tab routes, in bottom-navigation order. The index in this list is the
   /// `StatefulShellRoute` branch index.
   static const List<String> tabs = [learn, train, exam, progress, settings];
