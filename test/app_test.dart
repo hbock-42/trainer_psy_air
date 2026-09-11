@@ -7,6 +7,7 @@ import 'package:psy_trainer/core/repositories/repository_providers.dart';
 import 'package:psy_trainer/core/theme/app_theme.dart';
 import 'package:psy_trainer/features/learn/presentation/learn_screen.dart';
 
+import 'helpers/onboarding_fakes.dart';
 import 'helpers/psy0_families.dart';
 
 void main() {
@@ -17,6 +18,7 @@ void main() {
       ProviderScope(
         overrides: [
           contentRepositoryProvider.overrideWithValue(psy0ContentRepository()),
+          progressRepositoryOverride(),
         ],
         child: const PsyTrainerApp(),
       ),

@@ -1,9 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:psy_trainer/app.dart';
-import 'package:psy_trainer/core/repositories/repository_providers.dart';
+import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/core/router/app_page.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
 import 'package:psy_trainer/core/router/app_routes.dart';
@@ -14,21 +16,31 @@ import 'package:psy_trainer/features/learn/presentation/how_it_works_screen.dart
 import 'package:psy_trainer/features/learn/presentation/learn_screen.dart';
 import 'package:psy_trainer/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:psy_trainer/features/onboarding/presentation/providers/onboarding_completed_provider.dart';
+import 'package:psy_trainer/features/settings/presentation/edit_profile_screen.dart';
 import 'package:psy_trainer/features/settings/presentation/settings_screen.dart';
 import 'package:psy_trainer/features/train/presentation/train_screen.dart';
 import 'package:psy_trainer/features/train/presentation/train_session_screen.dart';
 
+import '../../helpers/onboarding_fakes.dart';
 import '../../helpers/psy0_families.dart';
 
+/// Pumps the whole app over an in-memory profile that has (or, with
+/// [onboardingDone] false, has not) completed onboarding. With [settle]
+/// false the first frame is left as is, before the guard has read the
+/// profile.
 Future<ProviderContainer> pumpApp(
   WidgetTester tester, {
   bool onboardingDone = true,
+  bool settle = true,
+  ProgressRepository? repository,
 }) async {
   final ProviderContainer container = ProviderContainer(
     overrides: [
       contentRepositoryProvider.overrideWithValue(psy0ContentRepository()),
-      if (!onboardingDone)
-        onboardingCompletedProvider.overrideWith(_NotCompletedOnboarding.new),
+      progressRepositoryOverride(
+        repository: repository,
+        completed: onboardingDone,
+      ),
     ],
   );
   addTearDown(container.dispose);
@@ -38,7 +50,7 @@ Future<ProviderContainer> pumpApp(
       child: const PsyTrainerApp(),
     ),
   );
-  await tester.pumpAndSettle();
+  if (settle) await tester.pumpAndSettle();
   return container;
 }
 
@@ -100,6 +112,30 @@ void main() {
     expect(find.byType(TrainSessionScreen), findsNothing);
   });
 
+  testWidgets('renders nothing until the guard has read the profile', (
+    tester,
+  ) async {
+    final repository = _SlowProgressRepository();
+    final ProviderContainer container = await pumpApp(
+      tester,
+      settle: false,
+      repository: repository,
+    );
+    await tester.pump();
+
+    // While the flag is being read no route is shown at all: in particular
+    // a returning user never sees the onboarding flash.
+    expect(container.read(onboardingCompletedProvider), isNull);
+    expect(find.byType(OnboardingScreen), findsNothing);
+    expect(find.byType(AppShell), findsNothing);
+
+    repository.release();
+    await tester.pumpAndSettle();
+    expect(container.read(onboardingCompletedProvider), isTrue);
+    expect(find.byType(LearnScreen), findsOneWidget);
+    expect(find.byType(OnboardingScreen), findsNothing);
+  });
+
   testWidgets('nested Learn routes push inside the Learn tab', (tester) async {
     final ProviderContainer container = await pumpApp(tester);
     final GoRouter router = container.read(appRouterProvider);
@@ -133,11 +169,45 @@ void main() {
 
     // Completing onboarding refreshes the router and leaves the onboarding
     // route.
-    container.read(onboardingCompletedProvider.notifier).complete();
+    await container
+        .read(onboardingCompletedProvider.notifier)
+        .complete(completedAnswers);
     await tester.pumpAndSettle();
 
     expect(find.byType(OnboardingScreen), findsNothing);
     expect(find.byType(LearnScreen), findsOneWidget);
+  });
+
+  testWidgets('a hydrated guard redirects synchronously on later navigation', (
+    tester,
+  ) async {
+    final ProviderContainer container = await pumpApp(tester);
+    final GoRouter router = container.read(appRouterProvider);
+
+    // Resetting the flag sends the current tab to onboarding on refresh.
+    container.read(onboardingCompletedProvider.notifier).reset();
+    await tester.pumpAndSettle();
+    expect(find.byType(OnboardingScreen), findsOneWidget);
+
+    // And a deliberate navigation to a tab is bounced back synchronously.
+    router.go(AppRoutes.train);
+    await tester.pump();
+    expect(find.byType(OnboardingScreen), findsOneWidget);
+    expect(find.byType(TrainScreen), findsNothing);
+  });
+
+  testWidgets('nested route /settings/profile opens the profile editor', (
+    tester,
+  ) async {
+    final ProviderContainer container = await pumpApp(tester);
+    final GoRouter router = container.read(appRouterProvider);
+
+    router.go(AppRoutes.settingsProfile);
+    await tester.pumpAndSettle();
+
+    expect(find.byType(EditProfileScreen), findsOneWidget);
+    expect(find.byType(SettingsScreen, skipOffstage: false), findsOneWidget);
+    expect(find.byType(AppShell), findsOneWidget);
   });
 
   testWidgets('unknown location shows the ErrorScreen', (tester) async {
@@ -155,7 +225,19 @@ void main() {
   });
 }
 
-class _NotCompletedOnboarding extends OnboardingCompletedNotifier {
+/// A completed profile whose first read only answers after [release].
+class _SlowProgressRepository extends InMemoryProgressRepository {
+  _SlowProgressRepository() {
+    storedProfile = completedAnswers.applyTo(null);
+  }
+
+  final Completer<void> _gate = Completer<void>();
+
+  void release() => _gate.complete();
+
   @override
-  bool build() => false;
+  Future<UserProfile?> profile() async {
+    await _gate.future;
+    return super.profile();
+  }
 }

@@ -1,10 +1,7 @@
-import 'package:flutter/foundation.dart';
-
 import '../../../core/content/content.dart';
 
 /// One stage of the Air France cadet selection (spec §1), shown on the
 /// "how the selection works" page.
-@immutable
 class SelectionStage {
   const SelectionStage({
     required this.title,
@@ -34,7 +31,6 @@ class SelectionStage {
 }
 
 /// A short fact about a stage with its confidence tag.
-@immutable
 class StageFact {
   const StageFact(this.text, this.confidence);
 

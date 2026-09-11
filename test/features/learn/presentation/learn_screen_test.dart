@@ -15,6 +15,7 @@ import 'package:psy_trainer/features/learn/presentation/widgets/family_card.dart
 import 'package:psy_trainer/features/train/presentation/train_screen.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
 
+import '../../../helpers/onboarding_fakes.dart';
 import '../../../helpers/psy0_families.dart';
 import '../../../helpers/pump_app.dart';
 
@@ -45,6 +46,7 @@ Future<ProviderContainer> pumpFullApp(WidgetTester tester) async {
   final ProviderContainer container = ProviderContainer(
     overrides: [
       contentRepositoryProvider.overrideWithValue(psy0ContentRepository()),
+      progressRepositoryOverride(),
     ],
   );
   addTearDown(container.dispose);
