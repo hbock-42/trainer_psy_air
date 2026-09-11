@@ -9,6 +9,7 @@ export 'app_icon_button.dart';
 export 'app_keypad_button.dart';
 export 'app_pressable.dart';
 export 'app_scaffold.dart';
+export 'app_tab_bar.dart';
 export 'app_top_bar.dart';
 export 'countdown_timer_bar.dart';
 export 'primary_button.dart';

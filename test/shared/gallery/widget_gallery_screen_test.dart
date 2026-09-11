@@ -47,6 +47,7 @@ void main() {
     await tester.fling(find.byType(ListView), const Offset(0, -6000), 4000);
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
+    expect(find.byType(AppTabBar), findsWidgets);
   });
 
   test('gallery is enabled in debug builds and has a route path', () {

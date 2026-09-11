@@ -16,6 +16,7 @@ lib/
     repositories/            # ContentRepository / ProgressRepository interfaces, domain
                              # models, Riverpod providers, in_memory/ fakes (US-012)
     errors/                  # logError + global error hooks
+    l10n/                    # AppStrings (FR constants until ARB i18n, US-091)
     router/                  # go_router config, AppPage, AppRoutes, redirect, shell,
                              # error screen (the only UI allowed in core/)
   shared/                    # reusable UI + small helpers used by several features:
@@ -83,9 +84,10 @@ or write the widget ourselves.
 What this implies in practice:
 
 - **Text styling.** `WidgetsApp` provides no `DefaultTextStyle`; text without one renders with the
-  yellow "missing style" underline. The root `builder` in `lib/app.dart` installs a
-  `DefaultTextStyle` and a background `ColoredBox`. Any new route or overlay you push must sit
-  under that builder (it does when you use the app's navigator). Selection and cursor colors are
+  yellow "missing style" underline. The root `builder` in `lib/app.dart` installs an
+  `AppThemeScope` (which carries the `DefaultTextStyle`) and a background `ColoredBox`. Any new
+  route or overlay you push must sit under that builder (it does when you use the app's
+  navigator). Selection and cursor colors are
   set the same way with `DefaultSelectionStyle` when we add text fields.
 - **Theme.** There is no `Theme.of(context)`. The design system exposes its own
   `InheritedWidget` (`AppThemeScope`, read with `AppTheme.of(context)`) carrying colors, text
@@ -107,6 +109,8 @@ What this implies in practice:
   would pick a platform page type); always `pageBuilder` returning an `AppPage`.
 - **Localization.** `WidgetsApp` already installs `DefaultWidgetsLocalizations`; add
   `flutter_localizations` delegates for our ARB strings only (not the Material/Cupertino ones).
+  Until US-091, user-facing copy is French constants in `core/l10n/strings.dart` (`AppStrings`);
+  no literal strings in screens or widgets.
 - **Tests.** `tester.pumpWidget` must wrap the widget under test in the same root context the app
   uses (a `WidgetsApp` or at least `Directionality` + `DefaultTextStyle`); use the `pumpApp`
   helper in `test/helpers/pump_app.dart` (see `docs/TESTING.md`).
@@ -382,7 +386,7 @@ Everything lives in `lib/core/router/`:
 | `app_router.dart` | `appRouterProvider` (a `Provider<GoRouter>`) and `createAppRouter(...)` building the route table. |
 | `app_page.dart` | `AppPage`, the page type used by every route. |
 | `app_redirect.dart` | `computeRedirect(...)`: the top-level guard as a pure function. |
-| `app_shell.dart` | `AppShell`: wraps the `StatefulNavigationShell` (bottom bar arrives in US-005). |
+| `app_shell.dart` | `AppShell`: `AppScaffold` + `AppTabBar` around the `StatefulNavigationShell`; bottom bar under 900 dp, left rail above; re-tapping the active tab resets it to its root. Tab labels/glyphs live in `AppShell.tabs`, in `AppRoutes.tabs` order. |
 | `error_screen.dart` | `ErrorScreen`: go_router `errorBuilder` target (unknown route, route error). |
 
 Route table:
@@ -399,8 +403,8 @@ StatefulShellRoute.indexedStack      AppShell; one branch (own Navigator) per ta
 ```
 
 - **Adding a tab route:** add the constant to `AppRoutes` (and `AppRoutes.tabs`, whose order is
-  the branch/bottom-bar order), a `StatefulShellBranch` in `createAppRouter`, and a screen in
-  `features/<f>/presentation/<f>_screen.dart`.
+  the branch/bottom-bar order), a `StatefulShellBranch` in `createAppRouter`, an `AppTabItem` in
+  `AppShell.tabs`, and a screen in `features/<f>/presentation/<f>_screen.dart`.
 - **Adding a nested route** (a screen pushed on top of a tab, tab stays selected): declare a
   `GoRoute` with a *relative* path (`'session/:sessionId'`) in the parent `GoRoute.routes`, add a
   helper in `AppRoutes` returning the full location (`AppRoutes.trainSession(id)`), and read path

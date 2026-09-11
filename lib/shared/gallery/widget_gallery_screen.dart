@@ -37,6 +37,15 @@ class _WidgetGalleryScreenState extends State<WidgetGalleryScreen> {
   int _selectedOption = 2;
   Duration _remaining = const Duration(seconds: 42);
   int _step = 3;
+  int _selectedTab = 0;
+
+  static const List<AppTabItem> _tabs = [
+    AppTabItem(label: 'Learn', glyph: AppIconGlyph.book),
+    AppTabItem(label: 'Train', glyph: AppIconGlyph.target),
+    AppTabItem(label: 'Exam', glyph: AppIconGlyph.clock),
+    AppTabItem(label: 'Progress', glyph: AppIconGlyph.chart),
+    AppTabItem(label: 'Settings', glyph: AppIconGlyph.settings),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -400,6 +409,31 @@ class _WidgetGalleryScreenState extends State<WidgetGalleryScreen> {
                     children: [
                       Expanded(child: AppKeypadButton(label: 'Disabled')),
                     ],
+                  ),
+                ],
+              ),
+              _Section(
+                title: 'Tab bar',
+                children: [
+                  AppTabBar(
+                    items: _tabs,
+                    selectedIndex: _selectedTab,
+                    onSelected: (i) => setState(() => _selectedTab = i),
+                  ),
+                  SizedBox(height: theme.spacing.md),
+                  SizedBox(
+                    height: 360,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        AppTabBar(
+                          items: _tabs,
+                          selectedIndex: _selectedTab,
+                          layout: AppTabBarLayout.rail,
+                          onSelected: (i) => setState(() => _selectedTab = i),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
