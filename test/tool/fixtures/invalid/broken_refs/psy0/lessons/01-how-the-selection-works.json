@@ -1,0 +1,10 @@
+{
+  "kind": "lesson",
+  "id": "psy0.lesson.01-how-the-selection-works",
+  "version": 1,
+  "moduleId": "psy0",
+  "order": 1,
+  "title": { "fr": "Comment se déroule la sélection", "en": "How the selection works" },
+  "tags": [],
+  "body": { "fr": "# La sélection\n\nTrois étapes : PSY0, PSY1, PSY2." }
+}

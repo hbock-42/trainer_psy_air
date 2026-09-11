@@ -1,0 +1,51 @@
+{
+  "kind": "bank",
+  "familyId": "memory",
+  "items": [
+    {
+      "id": "memory.digit_span.0001",
+      "type": "sequence",
+      "version": 1,
+      "familyId": "memory",
+      "difficulty": 2,
+      "tags": [
+        "memory.digit_span",
+        "memory.digit_span.forward"
+      ],
+      "stimulusKind": "digits",
+      "stimulus": [
+        "7",
+        "2",
+        "9",
+        "4",
+        "1"
+      ],
+      "recallMode": "forward",
+      "explanation": {
+        "fr": "Groupez par deux : 72 · 94 · 1."
+      }
+    },
+    {
+      "id": "memory.pattern.0001",
+      "type": "sequence",
+      "version": 1,
+      "familyId": "memory",
+      "difficulty": 3,
+      "tags": [
+        "memory.pattern"
+      ],
+      "stimulusKind": "gridCells",
+      "grid": {
+        "rows": 3,
+        "cols": 3
+      },
+      "stimulus": [
+        "0,0",
+        "5,5"
+      ],
+      "presentationMs": 2000,
+      "gapMs": 0,
+      "recallMode": "anyOrder"
+    }
+  ]
+}

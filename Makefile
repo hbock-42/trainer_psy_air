@@ -1,7 +1,7 @@
 FLUTTER ?= flutter
 DART    ?= dart
 
-.PHONY: help deps gen gen-watch lint format test run clean board
+.PHONY: help deps gen gen-watch lint format test content-check run clean board
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-12s %s\n", $$1, $$2}'
@@ -17,13 +17,16 @@ gen-watch: deps ## Run code generation in watch mode
 
 lint: deps ## Static analysis and formatting check
 	$(FLUTTER) analyze
-	$(DART) format --output=none --set-exit-if-changed lib test
+	$(DART) format --output=none --set-exit-if-changed lib test tool
 
 format: ## Format Dart sources
-	$(DART) format lib test
+	$(DART) format lib test tool
 
 test: deps ## Run all tests
 	$(FLUTTER) test
+
+content-check: deps ## Validate the content bundle (PATHS=<files or dirs>, default assets/content)
+	$(DART) run --verbosity=error tool/validate_content.dart $(PATHS)
 
 run: deps ## Run the app on the connected device (DEVICE=<id> to pick one)
 	$(FLUTTER) run $(if $(DEVICE),-d $(DEVICE),)
