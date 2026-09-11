@@ -24,12 +24,18 @@ lib/
       domain/                # entities/value objects (freezed), repository interfaces,
                              # pure logic (test generators, scoring)
       presentation/          # screens, widgets, Riverpod providers/notifiers, routes
-test/
+test/                        # see docs/TESTING.md
   architecture/              # rules about the codebase itself (e.g. no Material)
   features/<feature>/...     # mirrors lib/features; unit + widget tests
+  helpers/                   # pumpApp, golden config, shared fakes
+  goldens/                   # committed golden PNGs
+  tool/                      # tests for scripts under tool/
   app_test.dart              # smoke test of the root widget
+tool/
+  coverage_gate.dart         # lcov parser + 70 % gate on domain/data/core (make coverage)
 docs/
   ARCHITECTURE.md            # this file
+  TESTING.md                 # test pyramid, conventions, coverage gate
   kanban/                    # epics, stories, board (see docs/kanban/README.md)
 ```
 
@@ -77,8 +83,9 @@ What this implies in practice:
   `DefaultTextStyle` and a background `ColoredBox`. Any new route or overlay you push must sit
   under that builder (it does when you use the app's navigator). Selection and cursor colors are
   set the same way with `DefaultSelectionStyle` when we add text fields.
-- **Theme.** There is no `Theme.of(context)`. The design system (US-003) exposes its own
-  `InheritedWidget` (e.g. `AppTheme.of(context)`) carrying colors, text styles, spacing and radii.
+- **Theme.** There is no `Theme.of(context)`. The design system exposes its own
+  `InheritedWidget` (`AppThemeScope`, read with `AppTheme.of(context)`) carrying colors, text
+  styles, spacing, radii and durations (`lib/core/theme/`).
 - **Chrome.** No `Scaffold`, `AppBar`, `BottomNavigationBar`, `ElevatedButton`, `Icon`s from the
   Material font, `Dialog`, `SnackBar`. `shared/` provides our own equivalents built from
   `Container`, `Row`/`Column`, `GestureDetector`, `Listener`, `FocusableActionDetector`,
@@ -97,8 +104,9 @@ What this implies in practice:
 - **Localization.** `WidgetsApp` already installs `DefaultWidgetsLocalizations`; add
   `flutter_localizations` delegates for our ARB strings only (not the Material/Cupertino ones).
 - **Tests.** `tester.pumpWidget` must wrap the widget under test in the same root context the app
-  uses (a `WidgetsApp` or at least `Directionality` + `DefaultTextStyle`); a `pumpApp` helper will
-  live in `test/helpers/` once the design system exists.
+  uses (a `WidgetsApp` or at least `Directionality` + `DefaultTextStyle`); use the `pumpApp`
+  helper in `test/helpers/pump_app.dart` (see `docs/TESTING.md`).
+- **Design system.** Tokens, widget catalogue and conventions are in `docs/DESIGN_SYSTEM.md`.
 
 ## State and DI (Riverpod)
 
@@ -202,4 +210,4 @@ PR is opened. CI (US-004, `.github/workflows/ci.yml`) runs the same commands on 
 pushes to `main` (`check` job: pub get, codegen, format check, `flutter analyze --fatal-infos`,
 `flutter test --coverage`), and `main` is protected so that `check` must be green to merge. A
 debug APK is built and uploaded as an artifact on pushes to `main` and on PRs labelled `build`.
-Format with `dart format .`.
+Coverage is gated with `make coverage` (see `docs/TESTING.md`). Format with `dart format .`.

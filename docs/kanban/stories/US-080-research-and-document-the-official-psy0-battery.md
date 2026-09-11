@@ -4,7 +4,7 @@ issue: 56
 title: "Research and document the official PSY0 battery"
 type: story
 epic: EPIC-08
-status: review
+status: done
 priority: P0
 size: S
 lane: content
