@@ -4,7 +4,7 @@ issue: 19
 title: "Content domain model & JSON contract (sync point)"
 type: story
 epic: EPIC-02
-status: in-progress
+status: review
 priority: P0
 size: M
 lane: core
@@ -27,7 +27,7 @@ This is the **synchronisation point** of the project: get it reviewed by everyon
 - `Locale`-aware text fields (`{ "fr": …, "en": … }`), FR mandatory
 
 ## Acceptance criteria
-- [ ] Dart models with freezed + json_serializable, round-trip tests
+- [x] Dart models with freezed + json_serializable, round-trip tests
 - [x] `docs/content/schema/*.schema.json` (JSON Schema) for items, lessons, flashcards, blueprints
 - [x] `docs/content/AUTHORING.md`: how to write an item, naming, difficulty scale, explanation rules
 - [x] Example content file per item type in `assets/content/examples/`
@@ -35,4 +35,4 @@ This is the **synchronisation point** of the project: get it reviewed by everyon
 
 ## Progress
 - Part 1 (JSON contract): `docs/content/CONTRACT.md`, `docs/content/schema/`, `docs/content/AUTHORING.md`, `assets/content/examples/` — examples validated with ajv (draft 2020-12).
-- Dart models: follow-up after US-001 merges (second PR on #19).
+- Part 2 (Dart models): `lib/core/content/` (freezed + json_serializable models, `ContentBundleParser`), `test/core/content/` round-trip tests over every example file plus negative cases — second PR on #19.
