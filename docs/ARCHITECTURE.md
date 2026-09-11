@@ -178,7 +178,7 @@ feature would still go in that feature's `domain/`.
 | File | Role |
 |------|------|
 | `app_database.dart` | `AppDatabase` (`@DriftDatabase`), `schemaVersion`, migration strategy |
-| `open_database.dart` | `openAppDatabaseExecutor()`: `NativeDatabase.createInBackground` on a file in the app support dir (via `path_provider`); `openInMemoryExecutor()` for tests |
+| `open_database.dart` | `openAppDatabaseExecutor()`: `NativeDatabase.createInBackground` on a file in the app support dir (via `path_provider`); `openInMemoryExecutor()` for tests. Conditional import: `open_database_native.dart` when `dart:io` exists, `open_database_unsupported.dart` on web (throws on first use, see below) |
 | `app_database_provider.dart` | `appDatabaseProvider` (opens lazily, closes with the container) |
 | `tables/` | `AuditedTable` mixin (id + createdAt/updatedAt), content mirrors, user tables |
 | `daos/` | One DAO per concern, typed queries; the only place SQL is written |
@@ -219,6 +219,10 @@ Design decisions:
   clause, so concurrent writers never lose an update.
 - **Background isolate.** The app executor is `NativeDatabase.createInBackground`, so queries
   never block the UI thread; tests use `NativeDatabase.memory()`.
+- **Web is not persisted yet.** `drift/native.dart` needs `dart:ffi`, so `open_database.dart`
+  selects a stub on web that keeps `flutter build web` compiling and throws `UnsupportedError`
+  on the first query. Wiring drift's `WasmDatabase` (`sqlite3.wasm` + `drift_worker.js` served
+  from `web/`) is a follow-up card; until then the web target cannot record sessions.
 
 ### Schema migrations
 

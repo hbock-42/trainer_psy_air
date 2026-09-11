@@ -8,7 +8,7 @@ enforces. Established in US-120; amend when the policy changes.
 | Level | What | Where | Tooling |
 |---|---|---|---|
 | **Unit** | `domain/` state machines, test generators, scoring, blueprints, repository interfaces; pure Dart, no Flutter | `test/features/<feature>/domain/` | `flutter_test` (`test()`), `fake_async` for time |
-| **DAO / data** | Drift DAOs and repository implementations against an **in-memory** database; JSON loaders and mappers against fixture files | `test/features/<feature>/data/`, `test/core/database/` | `NativeDatabase.memory()` from `drift/native.dart` |
+| **DAO / data** | Drift DAOs and repository implementations against an **in-memory** database; JSON loaders and mappers against fixture files | `test/features/<feature>/data/`, `test/core/db/` | `NativeDatabase.memory()` from `drift/native.dart` |
 | **Widget** | `presentation/` screens and `shared/` widgets: rendering, interaction, provider wiring, goldens for key screens | `test/features/<feature>/presentation/`, `test/shared/` | `testWidgets` + `pumpApp` helper, goldens via `golden_config.dart` |
 | **Integration** | End-to-end flows on a device/emulator: run a practice session, sit an exam, see the summary | `integration_test/` (US-121) | `integration_test` package |
 | **Architecture** | Rules about the codebase itself (no Material/Cupertino, layer dependencies) | `test/architecture/` | plain `test()` scanning `lib/` |

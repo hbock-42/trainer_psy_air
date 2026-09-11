@@ -1,24 +1,21 @@
-import 'dart:io';
-
 import 'package:drift/drift.dart';
-import 'package:drift/native.dart';
-import 'package:path/path.dart' as p;
-import 'package:path_provider/path_provider.dart';
+
+import 'open_database_unsupported.dart'
+    if (dart.library.io) 'open_database_native.dart'
+    as impl;
 
 /// File name of the app database inside the application support directory.
 const String appDatabaseFileName = 'psy_trainer.sqlite';
 
-/// Executor for the real app: a SQLite file in the application support
-/// directory, opened lazily on first query and driven from a background
-/// isolate so queries never block the UI thread. `package:sqlite3` supplies
-/// the native library through Dart build hooks (no `sqlite3_flutter_libs`).
-QueryExecutor openAppDatabaseExecutor() {
-  return LazyDatabase(() async {
-    final directory = await getApplicationSupportDirectory();
-    final file = File(p.join(directory.path, appDatabaseFileName));
-    return NativeDatabase.createInBackground(file);
-  });
-}
+/// Executor for the real app.
+///
+/// On native platforms: a SQLite file in the application support directory,
+/// opened lazily on first query and driven from a background isolate
+/// (`NativeDatabase.createInBackground`) so queries never block the UI
+/// thread. `package:sqlite3` supplies the native library through Dart build
+/// hooks (no `sqlite3_flutter_libs`). On web the executor throws on first
+/// use (see `open_database_unsupported.dart`).
+QueryExecutor openAppDatabaseExecutor() => impl.openAppDatabaseExecutor();
 
 /// Executor for tests: a fresh, private in-memory database.
-QueryExecutor openInMemoryExecutor() => NativeDatabase.memory();
+QueryExecutor openInMemoryExecutor() => impl.openInMemoryExecutor();
