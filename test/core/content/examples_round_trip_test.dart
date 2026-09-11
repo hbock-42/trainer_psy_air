@@ -21,9 +21,21 @@ void main() {
           .toList()
         ..sort((a, b) => a.path.compareTo(b.path));
 
+  /// `<module>/<family>/family.json` for every family folder of the module.
+  List<File> familyFiles(String module) =>
+      Directory(module)
+          .listSync()
+          .whereType<Directory>()
+          .map((d) => File('${d.path}/family.json'))
+          .where((f) => f.existsSync())
+          .toList()
+        ..sort((a, b) => a.path.compareTo(b.path));
+
   final examples = jsonFiles('assets/content/examples');
   final realFiles = [
-    ...jsonFiles('assets/content/psy0/families'),
+    File('assets/content/manifest.json'),
+    File('assets/content/psy0/module.json'),
+    ...familyFiles('assets/content/psy0'),
     ...jsonFiles('assets/content/psy0/blueprints'),
   ];
 
@@ -104,13 +116,13 @@ void main() {
     test('mcq.example.json items are McqItems and share the passage', () {
       final b = bank('mcq.example.json');
       expect(b.items, everyElement(isA<McqItem>()));
-      expect(b.passages.single.id, 'english_reading.reading.p001');
+      expect(b.passages.single.id, 'english.reading.p001');
       final reading = b.items.whereType<McqItem>().where(
         (i) => i.passageId != null,
       );
       expect(
         reading.map((i) => i.passageId),
-        everyElement('english_reading.reading.p001'),
+        everyElement('english.reading.p001'),
       );
       // Defaults applied when the file omits shuffleOptions / allowSkip.
       final first = b.items.whereType<McqItem>().first;
@@ -274,18 +286,27 @@ void main() {
   });
 
   group('real PSY0 content', () {
-    final families = jsonFiles('assets/content/psy0/families')
+    final families = familyFiles('assets/content/psy0')
         .map((f) => parser.parseFamily(f.readAsStringSync(), file: f.path))
         .toList();
     final module = parser.parseModule(
-      File('assets/content/examples/module.example.json').readAsStringSync(),
-      file: 'module.example.json',
+      File('assets/content/psy0/module.json').readAsStringSync(),
+      file: 'psy0/module.json',
     );
 
     test('one family file per family of the psy0 module, ids aligned', () {
       expect(families.map((f) => f.id).toSet(), module.familyIds.toSet());
       for (final family in families) {
-        expect(family.id, family.toJson()['engineType'], reason: family.id);
+        // engineType == family id, except the English bank which keeps the
+        // `english` folder of US-082 and runs on the reading engine.
+        final expectedEngine = family.id == 'english'
+            ? 'english_reading'
+            : family.id;
+        expect(
+          family.toJson()['engineType'],
+          expectedEngine,
+          reason: family.id,
+        );
         expect(family.moduleId, ModuleId.psy0);
       }
       final orders = families.map((f) => f.order).toList()..sort();
@@ -304,7 +325,7 @@ void main() {
         bankDriven.map((f) => f.id),
         unorderedEquals([
           'culture_aero',
-          'english_reading',
+          'english',
           'english_listening',
           'english_speaking',
         ]),
@@ -363,7 +384,7 @@ void main() {
         'spatial_cubes',
         'culture_aero',
         'multitask_psychomotor',
-        'english_reading',
+        'english',
         'english_listening',
         'english_speaking',
       ]);

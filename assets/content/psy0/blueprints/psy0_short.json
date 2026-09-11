@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../docs/content/schema/blueprint.schema.json",
+  "$schema": "../../../../docs/content/schema/blueprint.schema.json",
   "kind": "blueprint",
   "id": "psy0.blueprint.short",
   "version": 1,
@@ -126,7 +126,7 @@
     },
     {
       "id": "s09-english-reading",
-      "familyId": "english_reading",
+      "familyId": "english",
       "itemCount": 6,
       "sectionTimeSec": 240,
       "itemSelection": {

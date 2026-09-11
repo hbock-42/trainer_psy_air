@@ -1,10 +1,10 @@
 {
   "$schema": "../../../docs/content/schema/bank.schema.json",
   "kind": "bank",
-  "familyId": "english_reading",
+  "familyId": "english",
   "passages": [
     {
-      "id": "english_reading.reading.p001",
+      "id": "english.reading.p001",
       "title": { "fr": "Pre-flight briefing" },
       "lang": "en",
       "body": {
@@ -14,10 +14,10 @@
   ],
   "items": [
     {
-      "id": "english_reading.grammar.0001",
+      "id": "english.grammar.0001",
       "type": "mcq",
       "version": 1,
-      "familyId": "english_reading",
+      "familyId": "english",
       "difficulty": 2,
       "tags": ["english.grammar", "english.grammar.tenses"],
       "lang": "en",
@@ -36,10 +36,10 @@
       "meta": { "author": "hbock", "source": "own" }
     },
     {
-      "id": "english_reading.vocab.0001",
+      "id": "english.vocab.0001",
       "type": "mcq",
       "version": 1,
-      "familyId": "english_reading",
+      "familyId": "english",
       "difficulty": 3,
       "tags": ["english.vocab", "english.vocab.aviation"],
       "lang": "en",
@@ -57,14 +57,14 @@
       }
     },
     {
-      "id": "english_reading.detail.0001",
+      "id": "english.reading.0001",
       "type": "mcq",
       "version": 1,
-      "familyId": "english_reading",
+      "familyId": "english",
       "difficulty": 2,
       "tags": ["english.reading", "english.reading.detail"],
       "lang": "en",
-      "passageId": "english_reading.reading.p001",
+      "passageId": "english.reading.p001",
       "stem": { "fr": "According to the text, who is informed about possible turbulence?" },
       "options": [
         { "text": { "fr": "The passengers" } },
@@ -78,14 +78,14 @@
       }
     },
     {
-      "id": "english_reading.inference.0001",
+      "id": "english.reading.0002",
       "type": "mcq",
       "version": 1,
-      "familyId": "english_reading",
+      "familyId": "english",
       "difficulty": 3,
       "tags": ["english.reading", "english.reading.inference"],
       "lang": "en",
-      "passageId": "english_reading.reading.p001",
+      "passageId": "english.reading.p001",
       "stem": { "fr": "What is the main idea of the last sentence?" },
       "options": [
         { "text": { "fr": "Briefings are too short to be useful." } },

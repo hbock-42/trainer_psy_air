@@ -13,7 +13,6 @@
   "difficulty": 3,
   "tags": ["english", "english.strategy", "english.reading"],
   "practiceTags": ["english"],
-  "deckIds": ["deck.english"],
   "status": "published",
   "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md sections 2.3, 2.4 O, 3.1 and 5 (open question 1)" }
 }

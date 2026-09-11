@@ -86,7 +86,7 @@ enum AnswerFormat {
 }
 
 /// One activity family of a module (e.g. PSY0 > memory_nback). File:
-/// `assets/content/<module>/families/<family>.json` (`family.schema.json`).
+/// `assets/content/<module>/<family>/family.json` (`family.schema.json`).
 @freezed
 abstract class TestFamily with _$TestFamily {
   const factory TestFamily({

@@ -16,53 +16,54 @@ spirit; note your source in `meta.source`.
 assets/content/
   manifest.json                     # contentVersion, schemaVersion (2)  (manifest.schema.json)
   psy0/
-    module.json                     # the stage                      (family.schema.json#/$defs/Module)
-    families/                       # one file per activity family   (family.schema.json)
-      memory_nback.json             # the 14 PSY0 activities + english_listening / english_speaking
-      attention_rules.json
-      …
-    lessons/                        # module-level lessons (selection overview, exam-day tips)
-      01-how-the-selection-works.json
-      01-how-the-selection-works.fr.md
-      english/                      # family lessons may also be grouped here, one sub-folder per family
-        01-anglais.json
-        01-anglais.fr.md
+    module.json                     # the stage, ordered familyIds   (family.schema.json#/$defs/Module)
+    lessons/                        # lessons grouped by family or theme (US-081 layout)
+      selection_process/
+        01-comment-fonctionne-la-selection.json
+        01-comment-fonctionne-la-selection.fr.md
+      memory_nback/
+        01-n-back.json              # familyId memory_nback, id lesson.memory_nback.01
+        01-n-back.fr.md
     blueprints/
       psy0_full.json                # (blueprint.schema.json) — spec §3.1
       psy0_short.json               # spec §3.2
-    english_reading/                # one folder per family, folder name == family id
+    english/                        # one folder per family, folder name == family id
+      family.json                   # (family.schema.json) — engineType english_reading
       items/
         reading-001.json            # ≤ 100 items per file           (bank.schema.json)
         reading-002.json            # bank files may hold passages
-      lessons/
-        01-skimming.json            # (lesson.schema.json)
-        01-skimming.fr.md           # body referenced by the json
-        01-skimming.en.md           # optional
+        grammar-001.json
       decks/
         aviation-vocab.json         # deck + its cards               (deck.schema.json)
       media/
         runway-signs.svg
     culture_aero/
+      family.json
       items/
         flight_mechanics-001.json
         …
     verbal_boxes/
+      family.json
       lexical_fields/
         everyday-001.json           # French lexical fields          (lexical_fields.schema.json)
     memory_nback/
+      family.json
       items/
         worked-examples.json        # generated recipes pinned by seed
-      lessons/ …
+    attention_rules/ … spatial_cubes/ … multitask_psychomotor/ …   # one folder per family (16 in PSY0)
   psy1/ …
 ```
 
 Rules:
 
-- Family definitions live in `<module>/families/<id>.json` (v2) so the seeder has every
-  family before any bank exists; everything else about a family (items, lexical fields,
-  lessons, decks, media) lives in the folder named after the family id, and that id is the
-  `familyId` inside every file of the folder.
-- Media paths in JSON are **relative to the module folder**: `english_reading/media/runway-signs.svg`.
+- Folder name = family `id` = `familyId` inside every file of the folder; `family.json` is
+  mandatory in every family folder listed in `module.json` (the validator checks both
+  directions). PSY0 families: the 14 activities of EPIC-03 — with the English test as one
+  `english` family (engineType `english_reading`; grammar/vocab drills live in the same bank)
+  — plus `english_listening` and `english_speaking` (2026 format, still empty).
+- Lessons may live inside their family folder (`<family>/lessons/`) or under the module's
+  `lessons/<family>/` folder; in both cases they carry `familyId`.
+- Media paths in JSON are **relative to the module folder**: `english/media/runway-signs.svg`.
 - Bank files: at most **100 items**, all of the same family. Name them
   `<subtag>-<nnn>.json` and start a new file when one is full. Files are seeded in
   alphabetical order, which only matters for items sharing a `passageId` (kept in file order).
@@ -78,10 +79,10 @@ Ids are permanent: renaming an id orphans user statistics (`item_stats`, `attemp
 | Entity | Convention | Example |
 |---|---|---|
 | Module | fixed | `psy0`, `psy1`, `psy2` |
-| Family | the activity id of EPIC-03, `_` allowed, no dot | `memory_nback`, `planning_tubes`, `attention_rules`, `attention_parity`, `spatial_overlay`, `logic_dominos`, `attention_airways`, `verbal_boxes`, `arithmetic_grid`, `spatial_viewpoint`, `spatial_cubes`, `culture_aero`, `multitask_psychomotor`, `english_reading`, `english_listening`, `english_speaking` |
+| Family | the activity id of EPIC-03, `_` allowed, no dot | `memory_nback`, `planning_tubes`, `attention_rules`, `attention_parity`, `spatial_overlay`, `logic_dominos`, `attention_airways`, `verbal_boxes`, `arithmetic_grid`, `spatial_viewpoint`, `spatial_cubes`, `culture_aero`, `multitask_psychomotor`, `english`, `english_listening`, `english_speaking` |
 | Item (bank) | `<family>.<subskill>.<nnnn>` (4-digit, zero-padded, never reused) | `culture_aero.meteorology.0042` |
 | Item (generated recipe) | `<family>.<subskill>.gen.<nnnn>` | `memory_nback.colour.gen.0001` |
-| Passage | `<family>.reading.p<nnn>` | `english_reading.reading.p001` |
+| Passage | `<family>.reading.p<nnn>` | `english.reading.p001` |
 | Lexical field | `verbal_boxes.field.<slug>` | `verbal_boxes.field.cuisine` |
 | Lesson | `<family>.lesson.<nn>-<slug>` (module-level: `<module>.lesson.<nn>-<slug>`) | `arithmetic_grid.lesson.03-speed-time-distance` |
 | Deck | `<family>.deck.<slug>` | `arithmetic_grid.deck.aviation-conversions` |
@@ -98,10 +99,10 @@ One item = one JSON object inside a bank file's `items` array. Common fields:
 
 ```jsonc
 {
-  "id": "english_reading.grammar.0001",
+  "id": "english.grammar.0001",
   "type": "mcq",                 // mcq | numeric | sequence | generated
   "version": 1,                  // bump when the meaning changes (see §8)
-  "familyId": "english_reading",
+  "familyId": "english",
   "difficulty": 2,               // 1–5, see §4
   "tags": ["english.grammar", "english.grammar.tenses"],   // see §7
   "lang": "en",                  // language of the stimulus, optional (defaults to the family's)

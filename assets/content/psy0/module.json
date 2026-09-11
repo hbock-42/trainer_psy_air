@@ -2,7 +2,7 @@
   "$schema": "../../../docs/content/schema/family.schema.json#/$defs/Module",
   "kind": "module",
   "id": "psy0",
-  "version": 2,
+  "version": 1,
   "order": 0,
   "name": { "fr": "PSY0 — présélection en ligne", "en": "PSY0 — online pre-selection" },
   "description": {

@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../docs/content/schema/family.schema.json",
+  "$schema": "../../../../docs/content/schema/family.schema.json",
   "kind": "family",
   "id": "multitask_psychomotor",
   "moduleId": "psy0",

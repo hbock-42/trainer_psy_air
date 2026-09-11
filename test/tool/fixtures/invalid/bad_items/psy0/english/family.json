@@ -6,7 +6,7 @@
   "order": 1,
   "name": { "fr": "Anglais", "en": "English" },
   "description": { "fr": "Grammaire, vocabulaire et compréhension.", "en": "Grammar, vocabulary and reading." },
-  "engineType": "mcq_bank",
+  "engineType": "english_reading",
   "answerFormat": "mcq",
   "lang": "en",
   "defaultDurationSec": 600,

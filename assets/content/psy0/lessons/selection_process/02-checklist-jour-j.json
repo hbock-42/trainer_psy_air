@@ -12,7 +12,6 @@
   "difficulty": 1,
   "tags": ["selection_process", "selection_process.exam_day"],
   "practiceTags": [],
-  "deckIds": ["deck.selection_process"],
   "status": "published",
   "meta": { "author": "hbock", "source": "own text; facts from docs/content/psy0-spec.md sections 2.1, 2.2, 2.4, 4.4" }
 }

@@ -13,7 +13,6 @@
   "difficulty": 4,
   "tags": ["spatial_overlay", "spatial_overlay.strategy"],
   "practiceTags": ["spatial_overlay"],
-  "deckIds": ["deck.spatial_overlay"],
   "status": "published",
   "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 E" }
 }

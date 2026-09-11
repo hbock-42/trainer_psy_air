@@ -6,7 +6,7 @@
   "order": 2,
   "name": { "fr": "Calcul mental", "en": "Mental arithmetic" },
   "description": { "fr": "Opérations rapides sans calculatrice.", "en": "Fast operations without a calculator." },
-  "engineType": "mental_arithmetic",
+  "engineType": "arithmetic_grid",
   "answerFormat": "numeric",
   "defaultDurationSec": 600,
   "defaultItemCount": 40,

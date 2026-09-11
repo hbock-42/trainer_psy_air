@@ -13,7 +13,6 @@
   "difficulty": 3,
   "tags": ["culture_aero", "culture_aero.strategy"],
   "practiceTags": ["culture_aero"],
-  "deckIds": ["deck.culture_aero"],
   "status": "published",
   "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md sections 2.4 N, 2.5, 4.1 and 6" }
 }

@@ -41,7 +41,7 @@ erDiagram
 |---|---|---|---|
 | `ContentManifest` | `assets/content/manifest.json` | `manifest.schema.json` | `schemaVersion` (**2**), `contentVersion`, `modules`, `changelog` |
 | `Module` | `<module>/module.json` | `family.schema.json#/$defs/Module` | `psy0` / `psy1` / `psy2`; ordered `familyIds` (the 14 PSY0 activities + English sub-tests), `defaultBlueprintId` |
-| `TestFamily` | `<module>/families/<family>.json` | `family.schema.json` | `engineType` = the family id, `generatorId?`, `answerFormat`, `inputRequirement`, `liveFeedback`, `default*` (duration, item count, per-item time, cadence), `confidence` |
+| `TestFamily` | `<module>/<family>/family.json` | `family.schema.json` | `engineType` = the family id (`english_reading` for the `english` family), `generatorId?`, `answerFormat`, `inputRequirement`, `liveFeedback`, `default*` (duration, item count, per-item time, cadence), `confidence` |
 | `ItemBank` (file) | `<module>/<family>/items/*.json` | `bank.schema.json` | `familyId`, `passages[]`, `items[]` (1–100) |
 | `Item` (sealed) | inside a bank | `item.schema.json` | discriminator `type` |
 | `Passage` | inside a bank | `item.schema.json#/$defs/Passage` | shared reading text (or audio for listening) |
@@ -173,7 +173,7 @@ generator named by `TestFamily.generatorId`, which is also the `generatorId` of
 | `spatial_cubes` | Cubes / dés | `cube_net` | `CubeNetParams`: missingFaces 2, distractorFaces 2, symbolKind letters, flippable | US-025 |
 | `culture_aero` | Culture générale aéronautique | — (bank) | — | US-028 / US-083 |
 | `multitask_psychomotor` | Multitâche | `multitask` | `MultitaskParams`: durationSec 300, trackingSpeed 1, trackingNoise 1, shapeIntervalMs 2000, calcIntervalMs 4000, shapeTargetRatio 0.3, calcWrongRatio 0.4, shapeKey space, calcKey f | US-036 |
-| `english_reading` | Anglais — reading | — (bank) | — | US-027 / US-082 |
+| `english_reading` (family `english`) | Anglais — reading (+ grammar/vocab drills in the same bank) | — (bank) | — | US-027 / US-082 |
 | `english_grammar` | Anglais — gap-fill (secondary drill) | — (bank) | — | US-027 |
 | `english_listening` | Anglais — listening (2026, format open) | — (bank, audio `MediaRef`) | — | US-027 |
 | `english_speaking` | Anglais — speaking (practice only, weight 0) | — (bank of prompts) | — | US-027 |
@@ -241,7 +241,7 @@ classes are `@freezed`, immutable, with `fromJson`/`toJson`; the sealed unions u
 
 Generated `*.freezed.dart` / `*.g.dart` are committed and excluded from analysis
 (`make gen` regenerates them). Tests: `test/core/content/` — every file in
-`assets/content/examples/` **and** every real file under `assets/content/psy0/families/` and
+`assets/content/examples/` **and** every real file under `assets/content/psy0/*/family.json` and
 `assets/content/psy0/blueprints/` must parse and re-serialise to the same JSON (key order
 aside; schema defaults such as `status`, `shuffleOptions`, `allowSkip`, `scoringPolicy`,
 `liveFeedback`, `inputRequirement` and typed generator `params` may be filled in).
@@ -383,9 +383,8 @@ Breaking (hence `schemaVersion: 2`):
 
 | Area | v1 | v2 |
 |---|---|---|
-| `TestFamily.engineType` | 14 abstract engines (`mcq_bank`, `mental_arithmetic`, `logic_series`, `memory_digit_span`…) | the 14 PSY0 activity family ids of EPIC-03 + `english_grammar`/`english_listening`/`english_speaking`; `engineType == family.id` |
-| `Module psy0.familyIds` | `english, mental_arithmetic, maths_physics, logic, spatial, memory, verbal, attention` | `memory_nback, planning_tubes, attention_rules, attention_parity, spatial_overlay, logic_dominos, attention_airways, verbal_boxes, arithmetic_grid, spatial_viewpoint, spatial_cubes, culture_aero, multitask_psychomotor, english_reading, english_listening, english_speaking` |
-| Family file location | `<module>/<family>/family.json` | `<module>/families/<family>.json` (item banks, lessons, decks stay under `<module>/<family>/`) |
+| `TestFamily.engineType` | 14 abstract engines (`mcq_bank`, `mental_arithmetic`, `logic_series`, `memory_digit_span`…) | the 14 PSY0 activity family ids of EPIC-03 + `english_grammar`/`english_listening`/`english_speaking`; `engineType == family.id` except the `english` family (engineType `english_reading`) |
+| `Module psy0.familyIds` | `english, mental_arithmetic, maths_physics, logic, spatial, memory, verbal, attention` | `memory_nback, planning_tubes, attention_rules, attention_parity, spatial_overlay, logic_dominos, attention_airways, verbal_boxes, arithmetic_grid, spatial_viewpoint, spatial_cubes, culture_aero, multitask_psychomotor, english, english_listening, english_speaking` |
 | `generatorId` | free snake_case string | closed enum of 12 (`generators.schema.json`) |
 | `GeneratedItem.params` / generated `ItemSelection.params` | untyped object | typed per generator (`$defs/<Name>Params`, Dart `GeneratorParams` union), every key defaulted to the real-test value |
 | `ExamSection.durationSec` (required) | hard section limit | renamed `sectionTimeSec`, optional; at least one of `sectionTimeSec` / `perItemTimeSec` / `cadence` required |
@@ -407,6 +406,6 @@ Additive (backward compatible for `mcq`/`numeric`/`sequence` items, passages, le
 | `common.GridSize`, `Cadence`, `ScoringPolicy`, `InputRequirement`, `Source` | value types | — | shared definitions |
 | `lexical_fields` file kind, `LexicalField`, `LexicalTrap` | new entity | — | US-085 bank for *Boîte à mots* |
 
-Real content added: `assets/content/psy0/families/*.json` (16 files) and
+Real content added: `assets/content/manifest.json`, `assets/content/psy0/module.json`, `assets/content/psy0/<family>/family.json` (16 families) and
 `assets/content/psy0/blueprints/psy0_full.json` / `psy0_short.json` transcribed from
 `psy0-spec.md` §3.1 / §3.2 (to be validated/adjusted in US-060).
