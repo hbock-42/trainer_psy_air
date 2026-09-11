@@ -24,12 +24,18 @@ lib/
       domain/                # entities/value objects (freezed), repository interfaces,
                              # pure logic (test generators, scoring)
       presentation/          # screens, widgets, Riverpod providers/notifiers, routes
-test/
+test/                        # see docs/TESTING.md
   architecture/              # rules about the codebase itself (e.g. no Material)
   features/<feature>/...     # mirrors lib/features; unit + widget tests
+  helpers/                   # pumpApp, golden config, shared fakes
+  goldens/                   # committed golden PNGs
+  tool/                      # tests for scripts under tool/
   app_test.dart              # smoke test of the root widget
+tool/
+  coverage_gate.dart         # lcov parser + 70 % gate on domain/data/core (make coverage)
 docs/
   ARCHITECTURE.md            # this file
+  TESTING.md                 # test pyramid, conventions, coverage gate
   kanban/                    # epics, stories, board (see docs/kanban/README.md)
 ```
 
@@ -99,7 +105,7 @@ What this implies in practice:
   `flutter_localizations` delegates for our ARB strings only (not the Material/Cupertino ones).
 - **Tests.** `tester.pumpWidget` must wrap the widget under test in the same root context the app
   uses (a `WidgetsApp` or at least `Directionality` + `DefaultTextStyle`); use the `pumpApp`
-  helper in `test/helpers/pump_app.dart`.
+  helper in `test/helpers/pump_app.dart` (see `docs/TESTING.md`).
 - **Design system.** Tokens, widget catalogue and conventions are in `docs/DESIGN_SYSTEM.md`.
 
 ## State and DI (Riverpod)
@@ -204,4 +210,4 @@ PR is opened. CI (US-004, `.github/workflows/ci.yml`) runs the same commands on 
 pushes to `main` (`check` job: pub get, codegen, format check, `flutter analyze --fatal-infos`,
 `flutter test --coverage`), and `main` is protected so that `check` must be green to merge. A
 debug APK is built and uploaded as an artifact on pushes to `main` and on PRs labelled `build`.
-Format with `dart format .`.
+Coverage is gated with `make coverage` (see `docs/TESTING.md`). Format with `dart format .`.
