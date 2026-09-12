@@ -107,8 +107,19 @@ void main() {
         child: const PsyTrainerApp(),
       ),
     );
-    // Real seeding (file reads + a database transaction): let it settle
-    // rather than pump a fixed number of frames.
+    // Real seeding (file reads + a database transaction) runs on real
+    // async I/O that `pumpAndSettle` does not wait for: poll in real time
+    // until the onboarding appears (slow CI runners need a few seconds).
+    await tester.runAsync(() async {
+      final deadline = DateTime.now().add(const Duration(seconds: 60));
+      while (DateTime.now().isBefore(deadline)) {
+        await tester.pump(const Duration(milliseconds: 100));
+        if (find.text(l10nFr.onboardingWelcomeHeadline).evaluate().isNotEmpty) {
+          return;
+        }
+        await Future<void>.delayed(const Duration(milliseconds: 100));
+      }
+    });
     await tester.pumpAndSettle();
 
     // ---- Onboarding: accept, skip the exam date, keep PSY0 -------------
