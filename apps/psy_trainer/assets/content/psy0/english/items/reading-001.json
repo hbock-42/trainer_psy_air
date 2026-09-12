@@ -175,7 +175,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Question de **détail** : première phrase, « moved from gate B12 to gate C4 *because of a jet bridge fault* that maintenance cannot repair ». Repérer le connecteur de cause (*because of*) donne directement la réponse ; le retard de l'avion et la proximité de la sécurité ne sont jamais évoqués."
+        "fr": "Question de **détail** : première phrase, « moved from gate B12 to gate C4 *because of a jet bridge fault* that maintenance cannot repair ». Repérer le connecteur de cause (*because of*) donne directement la réponse ; le retard de l'avion et la proximité de la sécurité ne sont jamais évoqués."
       },
       "meta": {
         "author": "hbock",
@@ -222,7 +222,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Paragraphe 2 : « we need *two agents at B12* from 18:30 onwards to redirect anyone who turns up there ». Le SMS est envoyé automatiquement par la compagnie, pas par les agents ; l'extension 2210 sert aux questions du personnel, pas aux passagers."
+        "fr": "Paragraphe 2 : « we need *two agents at B12* from 18:30 onwards to redirect anyone who turns up there ». Le SMS est envoyé automatiquement par la compagnie, pas par les agents ; l'extension 2210 sert aux questions du personnel, pas aux passagers."
       },
       "meta": {
         "author": "hbock",
@@ -269,7 +269,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Question d'**inférence** : l'embarquement commence dix minutes plus tard et le commandant accepte une escale plus courte à destination « to recover the delay » — un retard au départ est donc attendu. Rien dans le texte n'évoque une annulation ni un changement d'appareil."
+        "fr": "Question d'**inférence** : l'embarquement commence dix minutes plus tard et le commandant accepte une escale plus courte à destination « to recover the delay » — un retard au départ est donc attendu. Rien dans le texte n'évoque une annulation ni un changement d'appareil."
       },
       "meta": {
         "author": "hbock",
@@ -316,7 +316,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Vocabulaire en contexte** : « a slightly shorter *turnaround* at the destination to recover the delay » — c'est en raccourcissant l'escale au sol (déchargement, nettoyage, réembarquement) que l'on rattrape le retard. Le sens « demi-tour » existe mais ne s'applique pas ici ; méthode : remplacer le mot par chaque option et vérifier que la phrase reste logique."
+        "fr": "**Vocabulaire en contexte** : « a slightly shorter *turnaround* at the destination to recover the delay » — c'est en raccourcissant l'escale au sol (déchargement, nettoyage, réembarquement) que l'on rattrape le retard. Le sens « demi-tour » existe mais ne s'applique pas ici ; méthode : remplacer le mot par chaque option et vérifier que la phrase reste logique."
       },
       "meta": {
         "author": "hbock",
@@ -363,7 +363,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Point 1 : la nuit, tout le trafic utilise la piste 15/33, « *600 metres shorter*; operators of heavy aircraft should check their performance figures ». Le carburant (point 5) et le localiser (point 3) concernent d'autres situations : ne pas mélanger les rubriques."
+        "fr": "Point 1 : la nuit, tout le trafic utilise la piste 15/33, « *600 metres shorter* ; operators of heavy aircraft should check their performance figures ». Le carburant (point 5) et le localiser (point 3) concernent d'autres situations : ne pas mélanger les rubriques."
       },
       "meta": {
         "author": "hbock",
@@ -410,7 +410,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Point 3 : « between 10:00 and 12:00 on 10 and 11 September ». Repérer le mot-clé *glideslope* puis lire la phrase entière, car les horaires nocturnes du point 1 sont un piège classique pour qui lit trop vite."
+        "fr": "Point 3 : « between 10:00 and 12:00 on 10 and 11 September ». Repérer le mot-clé *glideslope* puis lire la phrase entière, car les horaires nocturnes du point 1 sont un piège classique pour qui lit trop vite."
       },
       "meta": {
         "author": "hbock",
@@ -457,7 +457,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Inférence** : le détour par E « adds approximately four minutes of taxi time » — c'est donc un itinéraire plus long que la voie D habituelle. C'est D, et non E, qui est fermée : éliminer d'abord ce qui contredit le texte."
+        "fr": "**Inférence** : le détour par E « adds approximately four minutes of taxi time » — c'est donc un itinéraire plus long que la voie D habituelle. C'est D, et non E, qui est fermée : éliminer d'abord ce qui contredit le texte."
       },
       "meta": {
         "author": "hbock",
@@ -504,7 +504,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Point 4 donne la hauteur (42 m), la distance (1,2 km du seuil de la 33) et l'éclairage nocturne. Aucune date de démontage n'apparaît. Méthode « NOT mentioned » : cocher chaque option trouvée dans le texte, la réponse est celle qui reste."
+        "fr": "Point 4 donne la hauteur (42 m), la distance (1,2 km du seuil de la 33) et l'éclairage nocturne. Aucune date de démontage n'apparaît. Méthode « NOT mentioned » : cocher chaque option trouvée dans le texte, la réponse est celle qui reste."
       },
       "meta": {
         "author": "hbock",
@@ -551,7 +551,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Rubrique *Exits* : « This aircraft has *four* exits » — deux portes à l'avant, une à l'arrière gauche, une trappe sur chaque aile. Vérification rapide : deux portes avant + « one overwing hatch on *each* side » = deux trappes, soit quatre au total. Piège : compter *one* hatch au lieu de deux."
+        "fr": "Rubrique *Exits* : « This aircraft has *four* exits » — deux portes à l'avant, une à l'arrière gauche, une trappe sur chaque aile. Vérification rapide : deux portes avant + « one overwing hatch on *each* side » = deux trappes, soit quatre au total. Piège : compter *one* hatch au lieu de deux."
       },
       "meta": {
         "author": "hbock",
@@ -598,7 +598,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Rubrique *Life jackets*, dernière phrase : « Inflate it *only once you are outside* the aircraft ». Le mot restrictif *only* est le signal : les autres options décrivent des moments antérieurs, donc interdits."
+        "fr": "Rubrique *Life jackets*, dernière phrase : « Inflate it *only once you are outside* the aircraft ». Le mot restrictif *only* est le signal : les autres options décrivent des moments antérieurs, donc interdits."
       },
       "meta": {
         "author": "hbock",
@@ -645,7 +645,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Inférence** : « in smoke you may have to find it by touch » — compter les rangées sert à se repérer sans voir, donc en cas de fumée. Le texte ne dit ni que les issues ne sont pas signalées ni que l'équipage sera absent : ne pas ajouter d'informations au texte."
+        "fr": "**Inférence** : « in smoke you may have to find it by touch » — compter les rangées sert à se repérer sans voir, donc en cas de fumée. Le texte ne dit ni que les issues ne sont pas signalées ni que l'équipage sera absent : ne pas ajouter d'informations au texte."
       },
       "meta": {
         "author": "hbock",
@@ -692,7 +692,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Vocabulaire en contexte** : « larger devices must be *stowed* for take-off and landing » — *to stow* = ranger (dans le compartiment ou sous le siège). Le sens « éteindre » est le piège : un appareil rangé n'est pas forcément éteint, et la carte ne parle pas d'extinction."
+        "fr": "**Vocabulaire en contexte** : « larger devices must be *stowed* for take-off and landing » — *to stow* = ranger (dans le compartiment ou sous le siège). Le sens « éteindre » est le piège : un appareil rangé n'est pas forcément éteint, et la carte ne parle pas d'extinction."
       },
       "meta": {
         "author": "hbock",
@@ -739,7 +739,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Lire les deux colonnes horaires et soustraire : 16:45 → 17:10 = 25 minutes, contre 20 minutes pour tous les autres (deux arrêts intermédiaires). Sur un tableau, la réponse se calcule : ne pas se fier à l'ordre des lignes."
+        "fr": "Lire les deux colonnes horaires et soustraire : 16:45 → 17:10 = 25 minutes, contre 20 minutes pour tous les autres (deux arrêts intermédiaires). Sur un tableau, la réponse se calcule : ne pas se fier à l'ordre des lignes."
       },
       "meta": {
         "author": "hbock",
@@ -786,7 +786,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Le service de 23:55 ne circule que « Fri–Sun » ; un mercredi, la dernière navette est celle de 21:30, déjà partie. Le texte précise : « Between 00:15 and 05:15, crews should use the hotel taxi voucher scheme » — en pratique, sans navette avant 05:15, c'est la solution prévue. Piège : la colonne *Days* est facile à oublier."
+        "fr": "Le service de 23:55 ne circule que « Fri–Sun » ; un mercredi, la dernière navette est celle de 21:30, déjà partie. Le texte précise : « Between 00:15 and 05:15, crews should use the hotel taxi voucher scheme » — en pratique, sans navette avant 05:15, c'est la solution prévue. Piège : la colonne *Days* est facile à oublier."
       },
       "meta": {
         "author": "hbock",
@@ -833,7 +833,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "« when the shuttle is full, the driver will *radio for a second vehicle* ». Les réservations sont explicitement impossibles (« Seats cannot be reserved ») : éliminer d'abord ce qui contredit le texte."
+        "fr": "« when the shuttle is full, the driver will *radio for a second vehicle* ». Les réservations sont explicitement impossibles (« Seats cannot be reserved ») : éliminer d'abord ce qui contredit le texte."
       },
       "meta": {
         "author": "hbock",
@@ -880,7 +880,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Inférence** : « Crews of other operators pay 6 euros per journey to the driver, *cash only* » — il faut donc avoir des espèces. La carte d'identité équipage ne sert qu'aux deux compagnies exemptées ; aucun tarif réduit n'est mentionné."
+        "fr": "**Inférence** : « Crews of other operators pay 6 euros per journey to the driver, *cash only* » — il faut donc avoir des espèces. La carte d'identité équipage ne sert qu'aux deux compagnies exemptées ; aucun tarif réduit n'est mentionné."
       },
       "meta": {
         "author": "hbock",
@@ -927,7 +927,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Lecture directe du tableau : avril = 88 %, valeur maximale de la période. Le texte le confirme (« reached its best level of the period » en avril). Sur un graphique, toujours vérifier le chiffre plutôt que de deviner à partir de la tendance."
+        "fr": "Lecture directe du tableau : avril = 88 %, valeur maximale de la période. Le texte le confirme (« reached its best level of the period » en avril). Sur un graphique, toujours vérifier le chiffre plutôt que de deviner à partir de la tendance."
       },
       "meta": {
         "author": "hbock",
@@ -974,7 +974,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Petit calcul : juin = 74 %, « four points above the same month last year » → 74 − 4 = 70 %. Le piège classique est de répondre 78 % en additionnant au lieu de soustraire : *above* signifie que cette année est **au-dessus** de l'an dernier."
+        "fr": "Petit calcul : juin = 74 %, « four points above the same month last year » → 74 − 4 = 70 %. Le piège classique est de répondre 78 % en additionnant au lieu de soustraire : *above* signifie que cette année est **au-dessus** de l'an dernier."
       },
       "meta": {
         "author": "hbock",
@@ -1021,7 +1021,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Inférence** : les retards de mai-juin viennent de « staff shortages at two major control centres » — des organismes de contrôle aérien extérieurs à la compagnie. La météo « played almost no role after March » : éliminer cette option. Rien n'est dit sur la durée moyenne des retards."
+        "fr": "**Inférence** : les retards de mai-juin viennent de « staff shortages at two major control centres » — des organismes de contrôle aérien extérieurs à la compagnie. La météo « played almost no role after March » : éliminer cette option. Rien n'est dit sur la durée moyenne des retards."
       },
       "meta": {
         "author": "hbock",
@@ -1068,7 +1068,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Idée principale** : le dernier paragraphe commente la tendance (amélioration puis retournement), en donne les causes, puis annonce une attente pour l'été (« expects … to bring performance back above 80 % »). La définition de la ponctualité se trouve dans l'introduction, pas ici ; aucun concurrent n'est cité."
+        "fr": "**Idée principale** : le dernier paragraphe commente la tendance (amélioration puis retournement), en donne les causes, puis annonce une attente pour l'été (« expects … to bring performance back above 80 % »). La définition de la ponctualité se trouve dans l'introduction, pas ici ; aucun concurrent n'est cité."
       },
       "meta": {
         "author": "hbock",
@@ -1115,7 +1115,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Premier paragraphe : « paper fatigue report forms will no longer be accepted … must submit a report through the *Safety* tab of the CrewPortal app ». La confidentialité est au contraire garantie (« never forwarded … with the reporter's name »)."
+        "fr": "Premier paragraphe : « paper fatigue report forms will no longer be accepted … must submit a report through the *Safety* tab of the CrewPortal app ». La confidentialité est au contraire garantie (« never forwarded … with the reporter's name »)."
       },
       "meta": {
         "author": "hbock",
@@ -1162,7 +1162,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Inférence** à partir du 3e paragraphe : « submitting a fatigue report does not by itself remove you from a duty » — sans appel à Crew Control, le pilote reste programmé sur le vol. Le rapport n'est pas rejeté pour autant, et le manager n'est jamais informé nominativement."
+        "fr": "**Inférence** à partir du 3e paragraphe : « submitting a fatigue report does not by itself remove you from a duty » — sans appel à Crew Control, le pilote reste programmé sur le vol. Le rapport n'est pas rejeté pour autant, et le manager n'est jamais informé nominativement."
       },
       "meta": {
         "author": "hbock",
@@ -1209,7 +1209,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Paragraphe 2 : « They are read by the Fatigue Risk Management group ». Ce qui est publié sur l'intranet, ce sont des **statistiques** trimestrielles, pas les rapports individuels — distinguer le document et sa synthèse."
+        "fr": "Paragraphe 2 : « They are read by the Fatigue Risk Management group ». Ce qui est publié sur l'intranet, ce sont des **statistiques** trimestrielles, pas les rapports individuels — distinguer le document et sa synthèse."
       },
       "meta": {
         "author": "hbock",
@@ -1256,7 +1256,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Le texte cite l'application, l'appel téléphonique au Safety Office et la saisie « on their behalf ». Aucun e-mail n'est prévu. Méthode : cocher chaque option repérée dans le texte ; celle qui reste est la réponse."
+        "fr": "Le texte cite l'application, l'appel téléphonique au Safety Office et la saisie « on their behalf ». Aucun e-mail n'est prévu. Méthode : cocher chaque option repérée dans le texte ; celle qui reste est la réponse."
       },
       "meta": {
         "author": "hbock",
@@ -1303,7 +1303,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Idée principale** : le mémo constate une hausse de la consommation, identifie « three habits that have crept back » et demande à chacun de revenir aux bonnes pratiques. Il respecte explicitement le droit du commandant d'emporter du carburant supplémentaire, ce qui écarte l'option de la critique."
+        "fr": "**Idée principale** : le mémo constate une hausse de la consommation, identifie « three habits that have crept back » et demande à chacun de revenir aux bonnes pratiques. Il respecte explicitement le droit du commandant d'emporter du carburant supplémentaire, ce qui écarte l'option de la critique."
       },
       "meta": {
         "author": "hbock",
@@ -1350,7 +1350,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Troisième paragraphe : « On a typical sector this alone costs around *25 kg* of fuel ». Les autres chiffres appartiennent à d'autres constats (320 kg = carburant discrétionnaire, 41 % = roulage monomoteur) : associer chaque chiffre à son sujet."
+        "fr": "Troisième paragraphe : « On a typical sector this alone costs around *25 kg* of fuel ». Les autres chiffres appartiennent à d'autres constats (320 kg = carburant discrétionnaire, 41 % = roulage monomoteur) : associer chaque chiffre à son sujet."
       },
       "meta": {
         "author": "hbock",
@@ -1397,7 +1397,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Vocabulaire en contexte** : *to creep back* = revenir lentement, discrètement, à l'insu de tous. Le contexte (des habitudes qui reviennent depuis l'été, sans décision de la direction) exclut l'idée d'une réintroduction officielle. Méthode : chercher l'image derrière le verbe (*creep* = ramper, se glisser)."
+        "fr": "**Vocabulaire en contexte** : *to creep back* = revenir lentement, discrètement, à l'insu de tous. Le contexte (des habitudes qui reviennent depuis l'été, sans décision de la direction) exclut l'idée d'une réintroduction officielle. Méthode : chercher l'image derrière le verbe (*creep* = ramper, se glisser)."
       },
       "meta": {
         "author": "hbock",
@@ -1444,7 +1444,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Inférence** : « so that we can improve the planning figures if they are unrealistic » — l'objectif est d'ajuster la planification, non de sanctionner. La phrase « We fully respect the captain's right » élimine toute idée de pénalité."
+        "fr": "**Inférence** : « so that we can improve the planning figures if they are unrealistic » — l'objectif est d'ajuster la planification, non de sanctionner. La phrase « We fully respect the captain's right » élimine toute idée de pénalité."
       },
       "meta": {
         "author": "hbock",
@@ -1491,7 +1491,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Idée principale** : le texte présente la nouvelle exigence de 25 heures, puis les deux débats qu'elle soulève (vie privée, rétrofit). Les syndicats **acceptent** l'enregistrement plus long : l'option sur leur opposition contredit le texte."
+        "fr": "**Idée principale** : le texte présente la nouvelle exigence de 25 heures, puis les deux débats qu'elle soulève (vie privée, rétrofit). Les syndicats **acceptent** l'enregistrement plus long : l'option sur leur opposition contredit le texte."
       },
       "meta": {
         "author": "hbock",
@@ -1538,7 +1538,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Paragraphe 1 : « the relevant conversation may already have been *erased* by the time anyone thinks of pulling the recorder ». La mémoire solid-state est au contraire présentée comme rendant l'extension facile."
+        "fr": "Paragraphe 1 : « the relevant conversation may already have been *erased* by the time anyone thinks of pulling the recorder ». La mémoire solid-state est au contraire présentée comme rendant l'extension facile."
       },
       "meta": {
         "author": "hbock",
@@ -1585,7 +1585,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Inférence** (difficile) : « incidents do not wait for aircraft to be replaced » est un argument contre l'attente — les groupes de sécurité jugent qu'attendre le renouvellement de la flotte laisse la majorité des avions mal équipés pendant dix ans. Ils *répondent* aux régulateurs, donc ne partagent pas leur avis sur les coûts."
+        "fr": "**Inférence** (difficile) : « incidents do not wait for aircraft to be replaced » est un argument contre l'attente — les groupes de sécurité jugent qu'attendre le renouvellement de la flotte laisse la majorité des avions mal équipés pendant dix ans. Ils *répondent* aux régulateurs, donc ne partagent pas leur avis sur les coûts."
       },
       "meta": {
         "author": "hbock",
@@ -1632,7 +1632,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Vocabulaire en contexte** : « the change is technically *trivial* — … the extra capacity costs a few hundred dollars » : le tiret introduit une explication qui montre que c'est facile et peu coûteux. *Trivial* = sans difficulté, insignifiant, à ne pas confondre avec le sens français « vulgaire »."
+        "fr": "**Vocabulaire en contexte** : « the change is technically *trivial* — … the extra capacity costs a few hundred dollars » : le tiret introduit une explication qui montre que c'est facile et peu coûteux. *Trivial* = sans difficulté, insignifiant, à ne pas confondre avec le sens français « vulgaire »."
       },
       "meta": {
         "author": "hbock",
@@ -1679,7 +1679,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Section A : « each must complete a *separate* form ». Section C interdit de nommer d'autres personnes : les options qui reviennent à lister des noms contredisent le texte."
+        "fr": "Section A : « each must complete a *separate* form ». Section C interdit de nommer d'autres personnes : les options qui reviennent à lister des noms contredisent le texte."
       },
       "meta": {
         "author": "hbock",
@@ -1726,7 +1726,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Section D : « the aircraft cannot depart until an engineer has inspected it » — le signalement déclenche l'inspection obligatoire. Aucune compensation ni sanction n'est mentionnée : ne pas extrapoler."
+        "fr": "Section D : « the aircraft cannot depart until an engineer has inspected it » — le signalement déclenche l'inspection obligatoire. Aucune compensation ni sanction n'est mentionnée : ne pas extrapoler."
       },
       "meta": {
         "author": "hbock",
@@ -1773,7 +1773,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Dernière phrase : « Forms submitted late are still accepted but are flagged in the monthly safety review ». Le connecteur *but* oppose l'acceptation et le signalement : les deux sont vrais."
+        "fr": "Dernière phrase : « Forms submitted late are still accepted but are flagged in the monthly safety review ». Le connecteur *but* oppose l'acceptation et le signalement : les deux sont vrais."
       },
       "meta": {
         "author": "hbock",
@@ -1820,7 +1820,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Vocabulaire en contexte** : « Do not *speculate* about causes » — dans un rapport factuel, on demande de ne pas **supposer** les causes. *Speculate* = faire des hypothèses, deviner. Méthode : le contraste avec « describe the facts » juste avant oriente vers l'idée de conjecture."
+        "fr": "**Vocabulaire en contexte** : « Do not *speculate* about causes » — dans un rapport factuel, on demande de ne pas **supposer** les causes. *Speculate* = faire des hypothèses, deviner. Méthode : le contraste avec « describe the facts » juste avant oriente vers l'idée de conjecture."
       },
       "meta": {
         "author": "hbock",
@@ -1867,7 +1867,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Rubrique *Who pays* : « remain with the airline for *six years* after qualifying ». Les autres durées existent dans le texte mais concernent la réinscription (12 / 24 mois) et l'expatriation (14 mois) : lier chaque chiffre à sa question."
+        "fr": "Rubrique *Who pays* : « remain with the airline for *six years* after qualifying ». Les autres durées existent dans le texte mais concernent la réinscription (12 / 24 mois) et l'expatriation (14 mois) : lier chaque chiffre à sa question."
       },
       "meta": {
         "author": "hbock",
@@ -1914,7 +1914,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Première rubrique : « they receive *no credit* for prior hours ». La question demande un avantage ; le texte dit qu'il n'y en a pas. Piège : lire trop vite « may apply » comme un privilège."
+        "fr": "Première rubrique : « they receive *no credit* for prior hours ». La question demande un avantage ; le texte dit qu'il n'y en a pas. Piège : lire trop vite « may apply » comme un privilège."
       },
       "meta": {
         "author": "hbock",
@@ -1961,7 +1961,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Inférence** : « a small number of applicants each year discover a disqualifying condition at this point » — mieux vaut le savoir avant d'investir dans la sélection. Le certificat est « at the candidate's own expense » : pas de remboursement."
+        "fr": "**Inférence** : « a small number of applicants each year discover a disqualifying condition at this point » — mieux vaut le savoir avant d'investir dans la sélection. Le certificat est « at the candidate's own expense » : pas de remboursement."
       },
       "meta": {
         "author": "hbock",
@@ -2008,7 +2008,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Le texte donne la durée de l'expatriation (14 mois), le remboursement dégressif en cas de départ anticipé et la raison du choix de l'étranger (météo). Aucun âge minimum n'apparaît. Méthode « NOT mentioned » : chercher chaque option ; la seule introuvable est la bonne."
+        "fr": "Le texte donne la durée de l'expatriation (14 mois), le remboursement dégressif en cas de départ anticipé et la raison du choix de l'étranger (météo). Aucun âge minimum n'apparaît. Méthode « NOT mentioned » : chercher chaque option ; la seule introuvable est la bonne."
       },
       "meta": {
         "author": "hbock",
@@ -2055,7 +2055,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Ligne *De-icing procedures card* : « Required (Nov–Mar) » pour la flotte monocouloir. Repérer la seule cellule contenant une période. Le supplément de navigation long-courrier n'est pas requis du tout sur ces avions."
+        "fr": "Ligne *De-icing procedures card* : « Required (Nov–Mar) » pour la flotte monocouloir. Repérer la seule cellule contenant une période. Le supplément de navigation long-courrier n'est pas requis du tout sur ces avions."
       },
       "meta": {
         "author": "hbock",
@@ -2102,7 +2102,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "La MEL est au format *digital*. Dernière phrase : « the flight may proceed provided the other pilot's tablet displays it correctly and the defect is entered in the technical log ». Il faut d'abord identifier le format du document dans le tableau, puis appliquer la règle correspondante."
+        "fr": "La MEL est au format *digital*. Dernière phrase : « the flight may proceed provided the other pilot's tablet displays it correctly and the defect is entered in the technical log ». Il faut d'abord identifier le format du document dans le tableau, puis appliquer la règle correspondante."
       },
       "meta": {
         "author": "hbock",
@@ -2149,7 +2149,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Inférence** en combinant deux règles : la licence radio est un document *papier* et « If a paper document is missing, the aircraft must not depart until Engineering has delivered a replacement ». La tolérance du carnet technique ne s'applique qu'aux documents numériques ; les photocopies sont explicitement refusées."
+        "fr": "**Inférence** en combinant deux règles : la licence radio est un document *papier* et « If a paper document is missing, the aircraft must not depart until Engineering has delivered a replacement ». La tolérance du carnet technique ne s'applique qu'aux documents numériques ; les photocopies sont explicitement refusées."
       },
       "meta": {
         "author": "hbock",
@@ -2196,7 +2196,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Premier paragraphe : « Following the delivery of *four additional aircraft* next spring, we are expanding our line maintenance team ». Le connecteur *following* introduit la cause. Aucune nouvelle base ni aucun départ n'est mentionné."
+        "fr": "Premier paragraphe : « Following the delivery of *four additional aircraft* next spring, we are expanding our line maintenance team ». Le connecteur *following* introduit la cause. Aucune nouvelle base ni aucun départ n'est mentionné."
       },
       "meta": {
         "author": "hbock",
@@ -2243,7 +2243,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Inférence** : les exigences acceptent « a comparable regional jet », et la rubrique *We offer* promet « full type training for licensed technicians without an ARJ-90 rating ». Les deux passages combinés montrent qu'une candidature sans qualification ARJ-90 est possible."
+        "fr": "**Inférence** : les exigences acceptent « a comparable regional jet », et la rubrique *We offer* promet « full type training for licensed technicians without an ARJ-90 rating ». Les deux passages combinés montrent qu'une candidature sans qualification ARJ-90 est possible."
       },
       "meta": {
         "author": "hbock",
@@ -2290,7 +2290,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "« a driving licence, *as* the base is not served by public transport at night » — *as* = puisque. La raison est donnée dans la même phrase ; les autres options sont des suppositions plausibles mais absentes du texte."
+        "fr": "« a driving licence, *as* the base is not served by public transport at night » — *as* = puisque. La raison est donnée dans la même phrase ; les autres options sont des suppositions plausibles mais absentes du texte."
       },
       "meta": {
         "author": "hbock",
@@ -2337,7 +2337,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Dernière phrase : « expected to start in February, *so that* they are fully trained before the new aircraft arrive » — la finalité est explicite (*so that*). Les nouveaux avions arrivent « next spring », d'où le calendrier."
+        "fr": "Dernière phrase : « expected to start in February, *so that* they are fully trained before the new aircraft arrive » — la finalité est explicite (*so that*). Les nouveaux avions arrivent « next spring », d'où le calendrier."
       },
       "meta": {
         "author": "hbock",
@@ -2384,7 +2384,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Paragraphe 2 : « left Halden 52 minutes late *because a wheel change was required after a tyre inspection* ». Le connecteur *because* signale la cause ; aucune des autres explications n'apparaît."
+        "fr": "Paragraphe 2 : « left Halden 52 minutes late *because a wheel change was required after a tyre inspection* ». Le connecteur *because* signale la cause ; aucune des autres explications n'apparaît."
       },
       "meta": {
         "author": "hbock",
@@ -2431,7 +2431,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Inférence** : « a delay caused by a technical problem … is *not* regarded as an extraordinary circumstance. You are *therefore* entitled to a fixed compensation » — la compensation est due parce que le retard n'est pas exceptionnel. Le geste commercial (les miles) est distinct et vient en plus."
+        "fr": "**Inférence** : « a delay caused by a technical problem … is *not* regarded as an extraordinary circumstance. You are *therefore* entitled to a fixed compensation » — la compensation est due parce que le retard n'est pas exceptionnel. Le geste commercial (les miles) est distinct et vient en plus."
       },
       "meta": {
         "author": "hbock",
@@ -2478,7 +2478,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "« Please send us your bank details using the secure link below, and the payment will be made within ten working days ». Les frais de repas et d'hôtel ont déjà été réclamés (*already claimed*) : ce n'est pas une condition."
+        "fr": "« Please send us your bank details using the secure link below, and the payment will be made within ten working days ». Les frais de repas et d'hôtel ont déjà été réclamés (*already claimed*) : ce n'est pas une condition."
       },
       "meta": {
         "author": "hbock",
@@ -2525,7 +2525,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Vocabulaire en contexte** : *to look into* = examiner, enquêter sur. La phrase suivante détaille les faits découverts, ce qui confirme l'idée d'investigation. Verbe à particule très fréquent dans les courriers professionnels."
+        "fr": "**Vocabulaire en contexte** : *to look into* = examiner, enquêter sur. La phrase suivante détaille les faits découverts, ce qui confirme l'idée d'investigation. Verbe à particule très fréquent dans les courriers professionnels."
       },
       "meta": {
         "author": "hbock",

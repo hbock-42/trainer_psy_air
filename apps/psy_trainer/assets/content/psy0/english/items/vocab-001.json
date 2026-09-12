@@ -41,7 +41,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "La **boarding pass** est la carte d'embarquement, contrôlée à la porte (*gate*). La *landing card* est un formulaire d'immigration, le *luggage tag* l'étiquette du bagage. Réflexe : *gate + boarding* → *boarding pass*."
+        "fr": "La **boarding pass** est la carte d'embarquement, contrôlée à la porte (*gate*). La *landing card* est un formulaire d'immigration, le *luggage tag* l'étiquette du bagage. Réflexe : *gate + boarding* → *boarding pass*."
       },
       "meta": {
         "author": "hbock",
@@ -86,7 +86,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "L'**overhead bin** (ou *overhead locker*) est le coffre à bagages au-dessus des sièges (*above your seat*). Le *cargo hold* est la soute, le *galley* l'office de bord. Réflexe : *overhead* = au-dessus de la tête."
+        "fr": "L'**overhead bin** (ou *overhead locker*) est le coffre à bagages au-dessus des sièges (*above your seat*). Le *cargo hold* est la soute, le *galley* l'office de bord. Réflexe : *overhead* = au-dessus de la tête."
       },
       "meta": {
         "author": "hbock",
@@ -131,7 +131,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Delayed** = retardé (indice : *by forty minutes*, une durée). *Cancelled* = annulé (plus de vol du tout), *diverted* = dérouté vers un autre aéroport, *grounded* = interdit de vol. Réflexe : durée de retard → *delayed by*."
+        "fr": "**Delayed** = retardé (indice : *by forty minutes*, une durée). *Cancelled* = annulé (plus de vol du tout), *diverted* = dérouté vers un autre aéroport, *grounded* = interdit de vol. Réflexe : durée de retard → *delayed by*."
       },
       "meta": {
         "author": "hbock",
@@ -176,7 +176,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Divert** = dérouter vers un autre aéroport (indice : *to a nearby airport*). *Delayed* concerne le temps, *postponed* un report, *returned* un retour au point de départ (*returned to Paris*). Réflexe : *divert to* + aéroport de dégagement."
+        "fr": "**Divert** = dérouter vers un autre aéroport (indice : *to a nearby airport*). *Delayed* concerne le temps, *postponed* un report, *returned* un retour au point de départ (*returned to Paris*). Réflexe : *divert to* + aéroport de dégagement."
       },
       "meta": {
         "author": "hbock",
@@ -221,7 +221,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Taxi** = rouler au sol entre le parking et la piste. *Drive* s'applique aux voitures, *cruise* au vol en croisière, *roll* seul est vague (*takeoff roll* désigne la course au décollage). Réflexe : mouvement au sol d'un avion → *taxi*."
+        "fr": "**Taxi** = rouler au sol entre le parking et la piste. *Drive* s'applique aux voitures, *cruise* au vol en croisière, *roll* seul est vague (*takeoff roll* désigne la course au décollage). Réflexe : mouvement au sol d'un avion → *taxi*."
       },
       "meta": {
         "author": "hbock",
@@ -266,7 +266,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Le **layover** est le temps de repos de l'**équipage** entre deux vols (indice : *crew*, douze heures). Le *turnaround* est l'escale courte de l'avion, le *stopover* désigne plutôt l'escale d'un passager, *transit* un passage en correspondance. Réflexe : équipage + repos → *layover*."
+        "fr": "Le **layover** est le temps de repos de l'**équipage** entre deux vols (indice : *crew*, douze heures). Le *turnaround* est l'escale courte de l'avion, le *stopover* désigne plutôt l'escale d'un passager, *transit* un passage en correspondance. Réflexe : équipage + repos → *layover*."
       },
       "meta": {
         "author": "hbock",
@@ -311,7 +311,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Le **holding pattern** est le circuit d'attente en hippodrome imposé par le contrôle. *Waiting pattern* et *standing pattern* n'existent pas ; *circling* désigne une manœuvre à vue en approche. Réflexe : attente en vol → *hold / holding pattern*."
+        "fr": "Le **holding pattern** est le circuit d'attente en hippodrome imposé par le contrôle. *Waiting pattern* et *standing pattern* n'existent pas ; *circling* désigne une manœuvre à vue en approche. Réflexe : attente en vol → *hold / holding pattern*."
       },
       "meta": {
         "author": "hbock",
@@ -356,7 +356,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Turbulence** = secousses dues à l'air agité, d'où la consigne d'attacher les ceintures (*fasten seat belts*). *Pressure* et *altitude* ne se qualifient pas de *moderate* dans ce contexte, *visibility* concerne la vue. Réflexe : *fasten seat belts* ↔ *turbulence*."
+        "fr": "**Turbulence** = secousses dues à l'air agité, d'où la consigne d'attacher les ceintures (*fasten seat belts*). *Pressure* et *altitude* ne se qualifient pas de *moderate* dans ce contexte, *visibility* concerne la vue. Réflexe : *fasten seat belts* ↔ *turbulence*."
       },
       "meta": {
         "author": "hbock",
@@ -401,7 +401,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "En aviation, l'autorisation donnée par le contrôle s'appelle une **clearance** (*descent clearance, take-off clearance*). *Allowance* = une indemnité ou une tolérance, *licence* = le brevet du pilote. Réflexe : ATC + autorisation → *clearance*."
+        "fr": "En aviation, l'autorisation donnée par le contrôle s'appelle une **clearance** (*descent clearance, take-off clearance*). *Allowance* = une indemnité ou une tolérance, *licence* = le brevet du pilote. Réflexe : ATC + autorisation → *clearance*."
       },
       "meta": {
         "author": "hbock",
@@ -446,7 +446,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Cancelled** = annulé (indice : *passengers were rebooked* — on ne réserve un autre vol que si le premier n'a plus lieu). *Delayed* impliquerait un départ tardif, *diverted* un changement de destination ; *suspended* s'applique à une liaison ou un service, pas à des vols individuels. Réflexe : *rebooked* ↔ *cancelled*."
+        "fr": "**Cancelled** = annulé (indice : *passengers were rebooked* — on ne réserve un autre vol que si le premier n'a plus lieu). *Delayed* impliquerait un départ tardif, *diverted* un changement de destination ; *suspended* s'applique à une liaison ou un service, pas à des vols individuels. Réflexe : *rebooked* ↔ *cancelled*."
       },
       "meta": {
         "author": "hbock",

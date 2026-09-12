@@ -1851,4 +1851,30 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get aboutSourceAirFranceNews =>
       'Air France Corporate — actualités du recrutement Cadets';
+
+  @override
+  String get multitaskTouchFallback =>
+      'Touches non représentatives : le jour J, utilisez le clavier.';
+
+  @override
+  String get multitaskExamKeyboardRequired =>
+      'Cette activité nécessite un clavier physique. Aucun clavier n\'a été détecté : cette épreuve ne peut pas être passée de façon représentative sur cet appareil.';
+
+  @override
+  String get multitaskShapeButtonLabel => 'Espace';
+
+  @override
+  String get multitaskCalcButtonLabel => 'F';
+
+  @override
+  String get multitaskExampleTracking =>
+      'Maintenez la flèche du clavier dans la direction où se déplace le cercle.';
+
+  @override
+  String get multitaskExampleShape =>
+      'Appuyez sur Espace quand la forme dans le cercle est identique à la forme de référence (en haut à gauche).';
+
+  @override
+  String get multitaskExampleCalc =>
+      'Appuyez sur F quand le calcul encadré, en bas, est faux.';
 }

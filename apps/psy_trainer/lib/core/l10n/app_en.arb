@@ -1274,5 +1274,12 @@
   "aboutSourcesTitle": "Sources",
   "aboutSourceAirFranceCorporate": "Air France Corporate — Pilote de ligne",
   "aboutSourceAirFranceRecruitment": "Air France recruitment portal — Cadet Pilot offer",
-  "aboutSourceAirFranceNews": "Air France Corporate — Cadets recruitment news"
+  "aboutSourceAirFranceNews": "Air France Corporate — Cadets recruitment news",
+  "multitaskTouchFallback": "Non-representative touch controls: on the real day, use the keyboard.",
+  "multitaskExamKeyboardRequired": "This activity requires a physical keyboard. No keyboard was detected: this test cannot be taken representatively on this device.",
+  "multitaskShapeButtonLabel": "Space",
+  "multitaskCalcButtonLabel": "F",
+  "multitaskExampleTracking": "Keep the keyboard arrow in the direction the circle is moving.",
+  "multitaskExampleShape": "Press Space when the shape in the circle matches the reference shape (top left).",
+  "multitaskExampleCalc": "Press F when the boxed calculation, at the bottom, is wrong."
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  US-122: iOS signing stays manual (no Apple Developer secrets in CI). This
+  is a template for `xcodebuild -exportArchive -exportOptionsPlist`, used
+  from Xcode or a local `xcodebuild archive` when a maintainer with an Apple
+  Developer account cuts a TestFlight build — see docs/RELEASE.md
+  ("TestFlight (manual)").
+
+  Copy to ios/ExportOptions.plist (gitignored, like key.properties), replace
+  YOUR_TEAM_ID with the Apple Developer Team ID (Xcode > Signing & Capabilities,
+  or developer.apple.com/account > Membership), and set the signing style
+  to match how the Runner target is configured in Xcode.
+-->
+<plist version="1.0">
+<dict>
+	<key>method</key>
+	<string>app-store-connect</string>
+	<key>teamID</key>
+	<string>YOUR_TEAM_ID</string>
+	<key>signingStyle</key>
+	<string>automatic</string>
+	<key>uploadBitcode</key>
+	<false/>
+	<key>uploadSymbols</key>
+	<true/>
+	<key>compileBitcode</key>
+	<false/>
+</dict>
+</plist>

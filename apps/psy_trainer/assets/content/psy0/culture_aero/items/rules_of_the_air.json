@@ -15,7 +15,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Deux avions se rapprochent de face à la même altitude. Que doit faire chacun des pilotes ?"
+        "fr": "Deux avions se rapprochent de face à la même altitude. Que doit faire chacun des pilotes ?"
       },
       "options": [
         {
@@ -41,7 +41,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "En cas de rapprochement de face, **chaque pilote altère son cap vers la droite** afin que les deux aéronefs se croisent bâbord contre bâbord. Réflexe : de face, toujours à droite, comme sur la route."
+        "fr": "En cas de rapprochement de face, **chaque pilote altère son cap vers la droite** afin que les deux aéronefs se croisent bâbord contre bâbord. Réflexe : de face, toujours à droite, comme sur la route."
       },
       "meta": {
         "author": "hbock",
@@ -60,7 +60,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Deux avions ont des routes convergentes à la même altitude. Lequel a la priorité ?"
+        "fr": "Deux avions ont des routes convergentes à la même altitude. Lequel a la priorité ?"
       },
       "options": [
         {
@@ -86,7 +86,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Routes convergentes : **priorité à droite**. L'aéronef qui voit l'autre à sa droite doit s'écarter ; celui qui a l'autre à sa gauche garde cap et vitesse. Réflexe : « ma droite est prioritaire »."
+        "fr": "Routes convergentes : **priorité à droite**. L'aéronef qui voit l'autre à sa droite doit s'écarter ; celui qui a l'autre à sa gauche garde cap et vitesse. Réflexe : « ma droite est prioritaire »."
       },
       "meta": {
         "author": "hbock",
@@ -105,7 +105,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Un avion à moteur et un planeur ont des routes convergentes. Qui doit s'écarter ?"
+        "fr": "Un avion à moteur et un planeur ont des routes convergentes. Qui doit s'écarter ?"
       },
       "options": [
         {
@@ -131,7 +131,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "L'ordre de priorité privilégie les aéronefs les **moins manœuvrants** : ballons > planeurs > dirigeables > avions à moteur. Un motorisé cède donc toujours le passage à un planeur, quelle que soit la géométrie."
+        "fr": "L'ordre de priorité privilégie les aéronefs les **moins manœuvrants** : ballons > planeurs > dirigeables > avions à moteur. Un motorisé cède donc toujours le passage à un planeur, quelle que soit la géométrie."
       },
       "meta": {
         "author": "hbock",
@@ -150,7 +150,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Un avion en dépasse un autre plus lent, en vol. De quel côté doit-il passer ?"
+        "fr": "Un avion en dépasse un autre plus lent, en vol. De quel côté doit-il passer ?"
       },
       "options": [
         {
@@ -176,7 +176,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Le dépassement s'effectue **par la droite** de l'aéronef dépassé, en s'écartant de sa route ; l'aéronef dépassé conserve la priorité. Réflexe : en l'air, on double à droite."
+        "fr": "Le dépassement s'effectue **par la droite** de l'aéronef dépassé, en s'écartant de sa route ; l'aéronef dépassé conserve la priorité. Réflexe : en l'air, on double à droite."
       },
       "meta": {
         "author": "hbock",
@@ -195,7 +195,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Deux avions sont en finale sur la même piste, à des hauteurs différentes. Lequel a la priorité ?"
+        "fr": "Deux avions sont en finale sur la même piste, à des hauteurs différentes. Lequel a la priorité ?"
       },
       "options": [
         {
@@ -240,7 +240,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Que signifie voler en VFR ?"
+        "fr": "Que signifie voler en VFR ?"
       },
       "options": [
         {
@@ -266,7 +266,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "VFR (*Visual Flight Rules*) : le pilote assure lui-même l'anticollision et la navigation par **référence visuelle extérieure**, ce qui exige des conditions météo de vol à vue (VMC). L'IFR s'appuie sur les instruments et le contrôle aérien."
+        "fr": "VFR (*Visual Flight Rules*) : le pilote assure lui-même l'anticollision et la navigation par **référence visuelle extérieure**, ce qui exige des conditions météo de vol à vue (VMC). L'IFR s'appuie sur les instruments et le contrôle aérien."
       },
       "meta": {
         "author": "hbock",
@@ -285,7 +285,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "En espace aérien contrôlé, quelle distance verticale minimale un vol VFR doit-il garder par rapport aux nuages ?"
+        "fr": "En espace aérien contrôlé, quelle distance verticale minimale un vol VFR doit-il garder par rapport aux nuages ?"
       },
       "options": [
         {
@@ -311,7 +311,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Les minima VMC classiques (au-dessus de 3 000 ft AMSL ou 1 000 ft sol) imposent de rester à **1 500 m horizontalement et 300 m (1 000 ft) verticalement** des nuages, avec une visibilité de 5 km (8 km au-dessus du FL100). Réflexe : 1 500 m / 300 m."
+        "fr": "Les minima VMC classiques (au-dessus de 3 000 ft AMSL ou 1 000 ft sol) imposent de rester à **1 500 m horizontalement et 300 m (1 000 ft) verticalement** des nuages, avec une visibilité de 5 km (8 km au-dessus du FL100). Réflexe : 1 500 m / 300 m."
       },
       "meta": {
         "author": "hbock",
@@ -330,7 +330,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Dans quelle classe d'espace aérien le vol VFR est-il interdit ?"
+        "fr": "Dans quelle classe d'espace aérien le vol VFR est-il interdit ?"
       },
       "options": [
         {
@@ -375,12 +375,12 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quelle affirmation décrit correctement l'espace aérien de classe G ?"
+        "fr": "Quelle affirmation décrit correctement l'espace aérien de classe G ?"
       },
       "options": [
         {
           "text": {
-            "fr": "Non contrôlé : pas de clairance requise, anticollision assurée par le pilote"
+            "fr": "Non contrôlé : pas de clairance requise, anticollision assurée par le pilote"
           }
         },
         {
@@ -401,7 +401,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "La classe **G** est l'espace non contrôlé : aucun service de contrôle, aucune clairance, seulement un service d'information de vol éventuel. Le pilote y applique la règle « voir et éviter ». La description « IFR contrôlé, VFR non » correspond à la classe E."
+        "fr": "La classe **G** est l'espace non contrôlé : aucun service de contrôle, aucune clairance, seulement un service d'information de vol éventuel. Le pilote y applique la règle « voir et éviter ». La description « IFR contrôlé, VFR non » correspond à la classe E."
       },
       "meta": {
         "author": "hbock",
@@ -420,7 +420,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Sauf indication contraire publiée, dans quel sens se font les virages du tour de piste standard ?"
+        "fr": "Sauf indication contraire publiée, dans quel sens se font les virages du tour de piste standard ?"
       },
       "options": [
         {
@@ -446,7 +446,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Le tour de piste standard se fait **virages à gauche** (« main gauche ») à une hauteur voisine de **1 000 ft au-dessus du sol** ; un tour « main droite » n'existe que s'il est publié sur la carte VAC. Réflexe : gauche et 1 000 ft par défaut."
+        "fr": "Le tour de piste standard se fait **virages à gauche** (« main gauche ») à une hauteur voisine de **1 000 ft au-dessus du sol** ; un tour « main droite » n'existe que s'il est publié sur la carte VAC. Réflexe : gauche et 1 000 ft par défaut."
       },
       "meta": {
         "author": "hbock",
@@ -465,7 +465,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Radio en panne, en vol dans le circuit, la tour vous adresse une série d'éclats rouges. Que signifient-ils ?"
+        "fr": "Radio en panne, en vol dans le circuit, la tour vous adresse une série d'éclats rouges. Que signifient-ils ?"
       },
       "options": [
         {
@@ -491,7 +491,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Signaux lumineux en vol : vert fixe = autorisé à atterrir ; rouge fixe = cédez le passage et continuez le circuit ; **éclats rouges = aérodrome dangereux, n'atterrissez pas** ; éclats verts = revenez pour atterrir. Réflexe : rouge qui clignote = danger au sol."
+        "fr": "Signaux lumineux en vol : vert fixe = autorisé à atterrir ; rouge fixe = cédez le passage et continuez le circuit ; **éclats rouges = aérodrome dangereux, n'atterrissez pas** ; éclats verts = revenez pour atterrir. Réflexe : rouge qui clignote = danger au sol."
       },
       "meta": {
         "author": "hbock",
@@ -510,7 +510,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Hors décollage et atterrissage, quelle est la hauteur minimale de survol d'une agglomération ou d'un rassemblement de personnes ?"
+        "fr": "Hors décollage et atterrissage, quelle est la hauteur minimale de survol d'une agglomération ou d'un rassemblement de personnes ?"
       },
       "options": [
         {
@@ -555,7 +555,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Un vol IFR en croisière suit la route magnétique 090°. Lequel de ces niveaux respecte la règle semi-circulaire ?"
+        "fr": "Un vol IFR en croisière suit la route magnétique 090°. Lequel de ces niveaux respecte la règle semi-circulaire ?"
       },
       "options": [
         {
@@ -581,7 +581,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Règle semi-circulaire IFR : route magnétique de 000° à 179° → niveaux **impairs** (FL 90, 110…) ; de 180° à 359° → niveaux **pairs** (FL 80, 100…). Une route au 090° (vers l'est) prend donc un niveau impair. Les niveaux « +500 ft » (FL 85, 95) sont ceux du VFR."
+        "fr": "Règle semi-circulaire IFR : route magnétique de 000° à 179° → niveaux **impairs** (FL 90, 110…) ; de 180° à 359° → niveaux **pairs** (FL 80, 100…). Une route au 090° (vers l'est) prend donc un niveau impair. Les niveaux « +500 ft » (FL 85, 95) sont ceux du VFR."
       },
       "meta": {
         "author": "hbock",
@@ -600,7 +600,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quel code transpondeur un pilote affiche-t-il en cas de panne radio ?"
+        "fr": "Quel code transpondeur un pilote affiche-t-il en cas de panne radio ?"
       },
       "options": [
         {
@@ -626,7 +626,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Codes d'urgence : **7500** = intervention illicite (détournement), **7600** = panne radio, **7700** = détresse générale. Le 7000 est le code VFR par défaut en Europe. Moyen mnémotechnique : 75 « hijack », 76 « no mic », 77 « going to heaven »."
+        "fr": "Codes d'urgence : **7500** = intervention illicite (détournement), **7600** = panne radio, **7700** = détresse générale. Le 7000 est le code VFR par défaut en Europe. Moyen mnémotechnique : 75 « hijack », 76 « no mic », 77 « going to heaven »."
       },
       "meta": {
         "author": "hbock",
@@ -645,12 +645,12 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quelle différence entre un message « MAYDAY » et un message « PAN PAN » ?"
+        "fr": "Quelle différence entre un message « MAYDAY » et un message « PAN PAN » ?"
       },
       "options": [
         {
           "text": {
-            "fr": "MAYDAY = urgence médicale ; PAN PAN = panne technique"
+            "fr": "MAYDAY = urgence médicale ; PAN PAN = panne technique"
           }
         },
         {
@@ -660,18 +660,18 @@
         },
         {
           "text": {
-            "fr": "MAYDAY = détresse (danger grave et imminent) ; PAN PAN = urgence sans danger immédiat"
+            "fr": "MAYDAY = détresse (danger grave et imminent) ; PAN PAN = urgence sans danger immédiat"
           }
         },
         {
           "text": {
-            "fr": "PAN PAN = détresse ; MAYDAY = simple demande d'assistance"
+            "fr": "PAN PAN = détresse ; MAYDAY = simple demande d'assistance"
           }
         }
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**MAYDAY** (×3) signale une détresse : danger grave et imminent exigeant une assistance immédiate. **PAN PAN** (×3) signale une urgence qui ne met pas immédiatement en péril l'aéronef. Les deux s'emploient en aviation comme en mer."
+        "fr": "**MAYDAY** (×3) signale une détresse : danger grave et imminent exigeant une assistance immédiate. **PAN PAN** (×3) signale une urgence qui ne met pas immédiatement en péril l'aéronef. Les deux s'emploient en aviation comme en mer."
       },
       "meta": {
         "author": "hbock",
@@ -690,7 +690,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quelle est la fréquence internationale de détresse en VHF aéronautique ?"
+        "fr": "Quelle est la fréquence internationale de détresse en VHF aéronautique ?"
       },
       "options": [
         {
@@ -716,7 +716,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**121,5 MHz** est la fréquence VHF de détresse, veillée par les organismes de contrôle et de nombreux avions de ligne. 243 MHz est son équivalent militaire en UHF. Réflexe : « 121 décimal 5 » à connaître par cœur."
+        "fr": "**121,5 MHz** est la fréquence VHF de détresse, veillée par les organismes de contrôle et de nombreux avions de ligne. 243 MHz est son équivalent militaire en UHF. Réflexe : « 121 décimal 5 » à connaître par cœur."
       },
       "meta": {
         "author": "hbock",
@@ -735,7 +735,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "En phraséologie, que signifie « WILCO » ?"
+        "fr": "En phraséologie, que signifie « WILCO » ?"
       },
       "options": [
         {
@@ -761,7 +761,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**WILCO** (*will comply*) = « compris, je vais exécuter ». **ROGER** = « j'ai reçu tout votre message » sans engagement d'exécution ; **STANDBY** = attendez ; **SAY AGAIN** = répétez. Ne jamais dire « roger » à une clairance : on la collationne."
+        "fr": "**WILCO** (*will comply*) = « compris, je vais exécuter ». **ROGER** = « j'ai reçu tout votre message » sans engagement d'exécution ; **STANDBY** = attendez ; **SAY AGAIN** = répétez. Ne jamais dire « roger » à une clairance : on la collationne."
       },
       "meta": {
         "author": "hbock",
@@ -780,7 +780,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "De nuit, vous voyez un feu rouge à droite d'un feu vert. L'avion observé se dirige :"
+        "fr": "De nuit, vous voyez un feu rouge à droite d'un feu vert. L'avion observé se dirige :"
       },
       "options": [
         {
@@ -806,7 +806,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Feux de navigation : **rouge en bout d'aile gauche, vert à droite, blanc à la queue**. Si l'on voit le rouge à droite du vert, on regarde l'avion de face : il vient vers soi. Réflexe : « rouge à droite = danger, il arrive »."
+        "fr": "Feux de navigation : **rouge en bout d'aile gauche, vert à droite, blanc à la queue**. Si l'on voit le rouge à droite du vert, on regarde l'avion de face : il vient vers soi. Réflexe : « rouge à droite = danger, il arrive »."
       },
       "meta": {
         "author": "hbock",
@@ -825,7 +825,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Pourquoi l'A380 dispose-t-il d'une catégorie de turbulence de sillage spécifique ?"
+        "fr": "Pourquoi l'A380 dispose-t-il d'une catégorie de turbulence de sillage spécifique ?"
       },
       "options": [
         {
@@ -851,7 +851,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Les catégories de sillage (Light, Medium, Heavy) fixent les espacements à respecter derrière un aéronef ; l'A380 relève d'une catégorie **« Super »** (indicatif « Super » à la radio) car ses tourbillons marginaux, liés à sa masse, exigent des séparations supérieures à celles des Heavy."
+        "fr": "Les catégories de sillage (Light, Medium, Heavy) fixent les espacements à respecter derrière un aéronef ; l'A380 relève d'une catégorie **« Super »** (indicatif « Super » à la radio) car ses tourbillons marginaux, liés à sa masse, exigent des séparations supérieures à celles des Heavy."
       },
       "meta": {
         "author": "hbock",
@@ -870,7 +870,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quelle licence est exigée pour exercer comme commandant de bord d'un avion de ligne en transport commercial ?"
+        "fr": "Quelle licence est exigée pour exercer comme commandant de bord d'un avion de ligne en transport commercial ?"
       },
       "options": [
         {
@@ -896,7 +896,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Le **PPL** interdit toute rémunération ; le **CPL** permet d'être payé et d'occuper le siège de copilote (avec ATPL théorique « frozen ») ; seule l'**ATPL(A)**, obtenue après 1 500 h dont des heures en équipage, autorise la fonction de commandant de bord en transport public multipilote."
+        "fr": "Le **PPL** interdit toute rémunération ; le **CPL** permet d'être payé et d'occuper le siège de copilote (avec ATPL théorique « frozen ») ; seule l'**ATPL(A)**, obtenue après 1 500 h dont des heures en équipage, autorise la fonction de commandant de bord en transport public multipilote."
       },
       "meta": {
         "author": "hbock",

@@ -72,6 +72,13 @@ request and on pushes to `main`:
 
 Run the same commands locally with `make lint` and `make test` before opening a PR.
 
+## Release
+
+Pushing a `v*` tag runs [`.github/workflows/release.yml`](.github/workflows/release.yml):
+release APK/AAB (Android) and a web build, attached as artifacts and to a draft GitHub
+Release. See [docs/RELEASE.md](docs/RELEASE.md) for the full process — version bump script,
+Android signing secrets, and the manual Play internal testing / TestFlight steps.
+
 ## Conventions
 
 - Architecture, folder layout, stack and naming rules: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).

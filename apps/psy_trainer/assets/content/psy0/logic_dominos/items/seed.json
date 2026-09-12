@@ -1,0 +1,647 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "logic_dominos",
+  "items": [
+    {
+      "id": "logic_dominos.linear.gen.0001",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 1,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.linear"
+      ],
+      "generatorId": "dominos",
+      "seed": 100000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=linearEachHalf; series length 6; missing index 4; answer 4|1. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.linear.gen.0002",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 1,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.linear"
+      ],
+      "generatorId": "dominos",
+      "seed": 100001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=linearEachHalf; series length 6; missing index 1; answer 2|1. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.linear.gen.0003",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 1,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.linear"
+      ],
+      "generatorId": "dominos",
+      "seed": 100002,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=linearEachHalf; series length 6; missing index 1; answer 5|4. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.linear.gen.0004",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 1,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.linear"
+      ],
+      "generatorId": "dominos",
+      "seed": 100080,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=linearEachHalf; series length 6; missing index 2; answer 5|3. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.linear.gen.0005",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 2,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.linear"
+      ],
+      "generatorId": "dominos",
+      "seed": 200000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=linearEachHalf; series length 6; missing index 2; answer 0|6. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.sum.gen.0006",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 2,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.sum"
+      ],
+      "generatorId": "dominos",
+      "seed": 200001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=constantSum; series length 6; missing index 2; answer 3|0. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.alternating.gen.0007",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 2,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.alternating"
+      ],
+      "generatorId": "dominos",
+      "seed": 200002,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=alternatingTopBottom; series length 6; missing index 5; answer 1|1. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.linear.gen.0008",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 2,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.linear"
+      ],
+      "generatorId": "dominos",
+      "seed": 200003,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=linearEachHalf; series length 6; missing index 1; answer 3|0. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.linear.gen.0009",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 2,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.linear"
+      ],
+      "generatorId": "dominos",
+      "seed": 200004,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=linearEachHalf; series length 6; missing index 0; answer 0|0. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.sum.gen.0010",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 2,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.sum"
+      ],
+      "generatorId": "dominos",
+      "seed": 200006,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=constantSum; series length 6; missing index 5; answer 4|1. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.alternating.gen.0011",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 2,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.alternating"
+      ],
+      "generatorId": "dominos",
+      "seed": 200007,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=alternatingTopBottom; series length 6; missing index 0; answer 1|1. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.mirror.gen.0012",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 2,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.mirror"
+      ],
+      "generatorId": "dominos",
+      "seed": 200008,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=mirroredHalves; series length 6; missing index 5; answer 1|5. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.sum.gen.0013",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 2,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.sum"
+      ],
+      "generatorId": "dominos",
+      "seed": 200009,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=constantSum; series length 6; missing index 0; answer 0|6. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.mirror.gen.0014",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 2,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.mirror"
+      ],
+      "generatorId": "dominos",
+      "seed": 200010,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=mirroredHalves; series length 6; missing index 4; answer 3|3. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0015",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 2; answer 6|5. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0016",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 3; answer 3|3. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0017",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300002,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 0; answer 0|0. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0018",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300280,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 0; answer 6|2. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0019",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300281,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 3; answer 4|5. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0020",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300282,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 4; answer 2|3. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0021",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300283,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 4; answer 2|6. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0022",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300284,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 1; answer 0|2. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0023",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300285,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 2; answer 6|2. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0024",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300286,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 0; answer 6|6. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0025",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300287,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 3; answer 3|6. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0026",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300288,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 5; answer 1|3. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0027",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300289,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 4; answer 3|0. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0028",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 3,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 300290,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf; series length 6; missing index 0; answer 1|2. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0029",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 4,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 400000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, constantSum; series length 6; missing index 2; answer 0|6. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0030",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 4,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 400001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, constantSum; series length 6; missing index 1; answer 4|1. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0031",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 4,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 400002,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, mirroredHalves, linearEachHalf; series length 6; missing index 0; answer 4|2. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0032",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 4,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 400003,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf, constantSum; series length 6; missing index 5; answer 2|6. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0033",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 4,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 400004,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, constantSum, mirroredHalves; series length 6; missing index 4; answer 4|5. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0034",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 4,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 400005,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, mirroredHalves, constantSum; series length 6; missing index 3; answer 4|6. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0035",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 4,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 400006,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, constantSum, mirroredHalves; series length 6; missing index 5; answer 5|1. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0036",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 4,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 400007,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf, mirroredHalves; series length 6; missing index 3; answer 2|4. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0037",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 5,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 500000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf, mirroredHalves; series length 6; missing index 3; answer 5|1. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0038",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 5,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 500001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, mirroredHalves, linearEachHalf; series length 6; missing index 3; answer 3|3. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0039",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 5,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 500002,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, linearEachHalf, mirroredHalves; series length 6; missing index 0; answer 2|4. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "logic_dominos.spiral.gen.0040",
+      "type": "generated",
+      "version": 1,
+      "familyId": "logic_dominos",
+      "difficulty": 5,
+      "tags": [
+        "logic.dominos",
+        "logic.dominos.spiral"
+      ],
+      "generatorId": "dominos",
+      "seed": 500003,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): rules=interleavedSeries, constantSum, linearEachHalf; series length 6; missing index 3; answer 3|1. Real-test defaults (no params override)."
+      }
+    }
+  ]
+}

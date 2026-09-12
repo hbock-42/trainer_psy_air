@@ -1274,5 +1274,12 @@
   "aboutSourcesTitle": "Sources",
   "aboutSourceAirFranceCorporate": "Air France Corporate — Pilote de ligne",
   "aboutSourceAirFranceRecruitment": "Portail de recrutement Air France — offre Pilote Cadet",
-  "aboutSourceAirFranceNews": "Air France Corporate — actualités du recrutement Cadets"
+  "aboutSourceAirFranceNews": "Air France Corporate — actualités du recrutement Cadets",
+  "multitaskTouchFallback": "Touches non représentatives : le jour J, utilisez le clavier.",
+  "multitaskExamKeyboardRequired": "Cette activité nécessite un clavier physique. Aucun clavier n'a été détecté : cette épreuve ne peut pas être passée de façon représentative sur cet appareil.",
+  "multitaskShapeButtonLabel": "Espace",
+  "multitaskCalcButtonLabel": "F",
+  "multitaskExampleTracking": "Maintenez la flèche du clavier dans la direction où se déplace le cercle.",
+  "multitaskExampleShape": "Appuyez sur Espace quand la forme dans le cercle est identique à la forme de référence (en haut à gauche).",
+  "multitaskExampleCalc": "Appuyez sur F quand le calcul encadré, en bas, est faux."
 }

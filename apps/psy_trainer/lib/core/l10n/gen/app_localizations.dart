@@ -3047,6 +3047,48 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Air France Corporate — actualités du recrutement Cadets'**
   String get aboutSourceAirFranceNews;
+
+  /// No description provided for @multitaskTouchFallback.
+  ///
+  /// In fr, this message translates to:
+  /// **'Touches non représentatives : le jour J, utilisez le clavier.'**
+  String get multitaskTouchFallback;
+
+  /// No description provided for @multitaskExamKeyboardRequired.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cette activité nécessite un clavier physique. Aucun clavier n\'a été détecté : cette épreuve ne peut pas être passée de façon représentative sur cet appareil.'**
+  String get multitaskExamKeyboardRequired;
+
+  /// No description provided for @multitaskShapeButtonLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Espace'**
+  String get multitaskShapeButtonLabel;
+
+  /// No description provided for @multitaskCalcButtonLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'F'**
+  String get multitaskCalcButtonLabel;
+
+  /// No description provided for @multitaskExampleTracking.
+  ///
+  /// In fr, this message translates to:
+  /// **'Maintenez la flèche du clavier dans la direction où se déplace le cercle.'**
+  String get multitaskExampleTracking;
+
+  /// No description provided for @multitaskExampleShape.
+  ///
+  /// In fr, this message translates to:
+  /// **'Appuyez sur Espace quand la forme dans le cercle est identique à la forme de référence (en haut à gauche).'**
+  String get multitaskExampleShape;
+
+  /// No description provided for @multitaskExampleCalc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Appuyez sur F quand le calcul encadré, en bas, est faux.'**
+  String get multitaskExampleCalc;
 }
 
 class _AppLocalizationsDelegate
