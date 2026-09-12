@@ -44,6 +44,13 @@ abstract final class AppRoutes {
   /// Full location of the "edit my profile" screen.
   static const String settingsProfile = '$settings/$settingsProfileSegment';
 
+  /// Relative path of the "about" screen (nested under [settings], US-091):
+  /// app version, disclaimer, sources.
+  static const String settingsAboutSegment = 'about';
+
+  /// Full location of the "about" screen.
+  static const String settingsAbout = '$settings/$settingsAboutSegment';
+
   /// Path parameter name for a test family id (US-040).
   static const String familyIdParam = 'familyId';
 

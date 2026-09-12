@@ -3,18 +3,19 @@ import 'package:flutter/semantics.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/core/theme/app_theme.dart';
 import 'package:psy_trainer/features/progress/domain/progress_domain.dart';
 import 'package:psy_trainer/features/progress/presentation/family_trend_screen.dart';
 import 'package:psy_trainer/features/progress/presentation/providers/family_time_series_provider.dart';
 import 'package:psy_trainer/features/progress/presentation/widgets/family_trend_charts.dart';
-import 'package:psy_trainer/features/progress/presentation/widgets/segmented_choice.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
 
 import '../../../helpers/pump_app.dart';
 import 'progress_fixtures.dart';
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   late ProgressFixture fixture;
@@ -78,22 +79,25 @@ void main() {
 
     expect(find.text('Grilles de calcul'), findsOneWidget);
     expect(find.byType(LineChart), findsNWidgets(2));
-    expect(find.text(AppStrings.trendAccuracyTitle), findsOneWidget);
-    expect(find.text(AppStrings.trendSpeedTitle), findsOneWidget);
+    expect(find.text(l10nFr.trendAccuracyTitle), findsOneWidget);
+    expect(find.text(l10nFr.trendSpeedTitle), findsOneWidget);
     expect(find.byType(SegmentedChoice<TrendRange>), findsOneWidget);
     expect(find.byType(SegmentedChoice<SessionMode?>), findsOneWidget);
-    expect(find.text(AppStrings.trendRange7d), findsOneWidget);
-    expect(find.text(AppStrings.trendRange30d), findsOneWidget);
-    expect(find.text(AppStrings.trendRangeAll), findsOneWidget);
+    expect(find.text(l10nFr.trendRange7d), findsOneWidget);
+    expect(find.text(l10nFr.trendRange30d), findsOneWidget);
+    expect(find.text(l10nFr.trendRangeAll), findsOneWidget);
 
     // 30 days: five sessions (4 practice + 1 exam), 40 % -> 90 %.
     final accuracy = chartNode(tester);
-    expect(accuracy.label, AppStrings.trendAccuracyTitle);
-    expect(accuracy.value, AppStrings.trendAccuracySummary(40, 90, 5));
+    expect(accuracy.label, l10nFr.trendAccuracyTitle);
+    expect(accuracy.value, l10nFr.trendAccuracySummary(5, 90, 40));
     expect(accuracy.value, 'de 40 % à 90 % sur 5 sessions');
     final speed = chartNode(tester, index: 1);
-    expect(speed.label, AppStrings.trendSpeedTitle);
-    expect(speed.value, AppStrings.trendSpeedSummary(0.8, 0.8, 5));
+    expect(speed.label, l10nFr.trendSpeedTitle);
+    expect(
+      speed.value,
+      l10nFr.trendSpeedSummary(5, l10nFr.seconds(0.8), l10nFr.seconds(0.8)),
+    );
     expect(speed.value, 'de 0,8 s à 0,8 s sur 5 sessions');
     handle.dispose();
   });
@@ -105,19 +109,19 @@ void main() {
     await seed();
     await pumpScreen(tester, surface: const Size(500, 1400));
 
-    await tester.tap(find.text(AppStrings.trendRange7d));
+    await tester.tap(find.text(l10nFr.trendRange7d));
     await tester.pumpAndSettle();
-    expect(chartNode(tester).value, AppStrings.trendAccuracySummary(70, 90, 3));
+    expect(chartNode(tester).value, l10nFr.trendAccuracySummary(3, 90, 70));
 
-    await tester.tap(find.text(AppStrings.trendRangeAll));
+    await tester.tap(find.text(l10nFr.trendRangeAll));
     await tester.pumpAndSettle();
-    expect(chartNode(tester).value, AppStrings.trendAccuracySummary(30, 90, 6));
+    expect(chartNode(tester).value, l10nFr.trendAccuracySummary(6, 90, 30));
 
     // The selected pill carries the selected flag.
     expect(
-      tester.getSemantics(find.bySemanticsLabel(AppStrings.trendRangeAll)),
+      tester.getSemantics(find.bySemanticsLabel(l10nFr.trendRangeAll)),
       matchesSemantics(
-        label: AppStrings.trendRangeAll,
+        label: l10nFr.trendRangeAll,
         isButton: true,
         isSelected: true,
         hasSelectedState: true,
@@ -129,9 +133,9 @@ void main() {
       ),
     );
     expect(
-      tester.getSemantics(find.bySemanticsLabel(AppStrings.trendRange7d)),
+      tester.getSemantics(find.bySemanticsLabel(l10nFr.trendRange7d)),
       matchesSemantics(
-        label: AppStrings.trendRange7d,
+        label: l10nFr.trendRange7d,
         isButton: true,
         // Not selected (the matcher's default), with a selected state.
         hasSelectedState: true,
@@ -152,13 +156,13 @@ void main() {
     await seed();
     await pumpScreen(tester, surface: const Size(500, 1400));
 
-    await tester.tap(find.text(AppStrings.trendModePractice));
+    await tester.tap(find.text(l10nFr.trendModePractice));
     await tester.pumpAndSettle();
-    expect(chartNode(tester).value, AppStrings.trendAccuracySummary(40, 90, 4));
+    expect(chartNode(tester).value, l10nFr.trendAccuracySummary(4, 90, 40));
 
-    await tester.tap(find.text(AppStrings.trendModeExam));
+    await tester.tap(find.text(l10nFr.trendModeExam));
     await tester.pumpAndSettle();
-    expect(chartNode(tester).value, AppStrings.trendAccuracySummary(60, 60, 1));
+    expect(chartNode(tester).value, l10nFr.trendAccuracySummary(1, 60, 60));
     expect(chartNode(tester).value, '60 % sur 1 session');
     handle.dispose();
   });
@@ -168,12 +172,12 @@ void main() {
   ) async {
     await fixture.practice('arithmetic_grid', daysAgo: 45, correct: 3);
     await pumpScreen(tester, initialRange: TrendRange.week);
-    expect(find.text(AppStrings.trendEmpty), findsOneWidget);
+    expect(find.text(l10nFr.trendEmpty), findsOneWidget);
     expect(find.byType(LineChart), findsNothing);
 
-    await tester.tap(find.text(AppStrings.trendRangeAll));
+    await tester.tap(find.text(l10nFr.trendRangeAll));
     await tester.pumpAndSettle();
-    expect(find.text(AppStrings.trendEmpty), findsNothing);
+    expect(find.text(l10nFr.trendEmpty), findsNothing);
     expect(find.byType(LineChart), findsNWidgets(2));
   });
 
@@ -181,8 +185,8 @@ void main() {
     tester,
   ) async {
     await pumpScreen(tester, familyId: 'nope');
-    expect(find.text(AppStrings.familyTrendTitle), findsOneWidget);
-    expect(find.text(AppStrings.trendEmpty), findsOneWidget);
+    expect(find.text(l10nFr.familyTrendTitle), findsOneWidget);
+    expect(find.text(l10nFr.trendEmpty), findsOneWidget);
   });
 
   testWidgets('a failing series shows the error message', (tester) async {
@@ -196,7 +200,7 @@ void main() {
     );
     addTearDown(container.dispose);
     await pumpScreen(tester);
-    expect(find.text(AppStrings.progressError), findsOneWidget);
+    expect(find.text(l10nFr.progressError), findsOneWidget);
   });
 
   testWidgets('the tooltip shows date, kind, accuracy and response time', (
@@ -215,32 +219,26 @@ void main() {
 
     expect(find.byType(TrendTooltip), findsOneWidget);
     expect(find.text(FamilyTrendCharts.longDate(now)), findsOneWidget);
-    expect(find.text(AppStrings.activityPractice), findsOneWidget);
+    expect(find.text(l10nFr.activityPractice), findsOneWidget);
+    expect(find.text(l10nFr.trendTooltipAccuracy(9, 10, 90)), findsOneWidget);
+    expect(find.text('Réussite : 9/10 (90 %)'), findsOneWidget);
     expect(
-      find.text(AppStrings.trendTooltipAccuracy(9, 10, 90)),
+      find.text(l10nFr.trendTooltipSpeed(l10nFr.seconds(0.8))),
       findsOneWidget,
     );
-    expect(find.text('Réussite : 9/10 (90 %)'), findsOneWidget);
-    expect(find.text(AppStrings.trendTooltipSpeed(0.8)), findsOneWidget);
     expect(find.text('Temps : 0,8 s'), findsOneWidget);
 
     // Left edge: the oldest session in range, the simulation is second.
     await gesture.moveTo(Offset(chart.left + 40, chart.center.dy));
     await tester.pumpAndSettle();
-    expect(
-      find.text(AppStrings.trendTooltipAccuracy(4, 10, 40)),
-      findsOneWidget,
-    );
+    expect(find.text(l10nFr.trendTooltipAccuracy(4, 10, 40)), findsOneWidget);
 
     // Point of the exam session (index 3 of 5).
     final plotX = chart.left + 40 + (chart.right - 2 - chart.left - 40) * 3 / 4;
     await gesture.moveTo(Offset(plotX, chart.center.dy));
     await tester.pumpAndSettle();
-    expect(find.text(AppStrings.activityExam), findsOneWidget);
-    expect(
-      find.text(AppStrings.trendTooltipAccuracy(6, 10, 60)),
-      findsOneWidget,
-    );
+    expect(find.text(l10nFr.activityExam), findsOneWidget);
+    expect(find.text(l10nFr.trendTooltipAccuracy(6, 10, 60)), findsOneWidget);
   });
 
   testWidgets('phone width at 1.3x in dark mode does not overflow', (
@@ -297,9 +295,12 @@ void main() {
     });
 
     test('summaries and formats', () {
-      expect(AppStrings.seconds(1.25), '1,3 s');
-      expect(AppStrings.trendAccuracySummary(40, 70, 1), '70 % sur 1 session');
-      expect(AppStrings.trendSpeedSummary(1, 0.9, 1), '0,9 s sur 1 session');
+      expect(l10nFr.seconds(1.25), '1,3 s');
+      expect(l10nFr.trendAccuracySummary(1, 70, 40), '70 % sur 1 session');
+      expect(
+        l10nFr.trendSpeedSummary(1, l10nFr.seconds(0.9), l10nFr.seconds(1)),
+        '0,9 s sur 1 session',
+      );
       expect(TrendRange.all.from(now), isNull);
       expect(TrendRange.week.from(now), now.subtract(const Duration(days: 7)));
       expect(

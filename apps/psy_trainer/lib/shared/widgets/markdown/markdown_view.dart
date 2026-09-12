@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:markdown/markdown.dart' as md;
 
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/theme/app_theme.dart';
 import '../app_icon.dart';
 import 'markdown_document.dart';
@@ -179,25 +179,25 @@ Widget buildCallout(
 ) {
   final (label, color, subtle, glyph) = switch (kind) {
     CalloutKind.tip => (
-      AppStrings.lessonCalloutTip,
+      context.l10n.lessonCalloutTip,
       theme.colors.success,
       theme.colors.successSubtle,
       AppIconGlyph.check,
     ),
     CalloutKind.trap => (
-      AppStrings.lessonCalloutTrap,
+      context.l10n.lessonCalloutTrap,
       theme.colors.error,
       theme.colors.errorSubtle,
       AppIconGlyph.cross,
     ),
     CalloutKind.method => (
-      AppStrings.lessonCalloutMethod,
+      context.l10n.lessonCalloutMethod,
       theme.colors.warning,
       theme.colors.warningSubtle,
       AppIconGlyph.target,
     ),
     CalloutKind.example => (
-      AppStrings.lessonCalloutExample,
+      context.l10n.lessonCalloutExample,
       theme.colors.accent,
       theme.colors.accentSubtle,
       AppIconGlyph.book,
@@ -504,7 +504,7 @@ class _ImagePlaceholder extends StatelessWidget {
         border: Border.all(color: theme.colors.border),
       ),
       child: Text(
-        alt.isEmpty ? AppStrings.lessonImagePlaceholder : alt,
+        alt.isEmpty ? context.l10n.lessonImagePlaceholder : alt,
         style: theme.textStyles.caption,
       ),
     );

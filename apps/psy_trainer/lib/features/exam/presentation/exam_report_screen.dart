@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
 import '../../progress/domain/exam_summary.dart';
@@ -42,7 +42,7 @@ class _ExamReportScreenState extends ConsumerState<ExamReportScreen> {
     final data = ref.watch(examReportProvider(widget.sessionId));
 
     return AppScaffold(
-      title: AppStrings.examReportTitle,
+      title: context.l10n.examReportTitle,
       onBack: () {
         if (_reviewing != null) {
           setState(() => _reviewing = null);
@@ -53,7 +53,7 @@ class _ExamReportScreenState extends ConsumerState<ExamReportScreen> {
       body: switch (data) {
         AsyncData(value: null) => Center(
           child: Text(
-            AppStrings.examReportNotFound,
+            context.l10n.examReportNotFound,
             style: theme.textStyles.body,
           ),
         ),
@@ -70,9 +70,12 @@ class _ExamReportScreenState extends ConsumerState<ExamReportScreen> {
                       setState(() => _reviewing = (sectionIndex, itemIndex)),
                 ),
         AsyncError() => Center(
-          child: Text(AppStrings.examReportError, style: theme.textStyles.body),
+          child: Text(
+            context.l10n.examReportError,
+            style: theme.textStyles.body,
+          ),
         ),
-        _ => const Center(child: Text(AppStrings.examReportLoading)),
+        _ => Center(child: Text(context.l10n.examReportLoading)),
       },
     );
   }
@@ -105,16 +108,20 @@ class _ReportBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            report.blueprintName ?? AppStrings.examReportTitle,
+            report.blueprintName ?? context.l10n.examReportTitle,
             style: theme.textStyles.headline,
           ),
           SizedBox(height: theme.spacing.lg),
           ScoreCard(
-            title: AppStrings.examReportGlobalScoreLabel,
+            title: context.l10n.examReportGlobalScoreLabel,
             value: '${summary.percent} %',
             subtitle: passed
-                ? AppStrings.examReportEstimatedPass((threshold * 100).round())
-                : AppStrings.examReportEstimatedFail((threshold * 100).round()),
+                ? context.l10n.examReportEstimatedPass(
+                    (threshold * 100).round(),
+                  )
+                : context.l10n.examReportEstimatedFail(
+                    (threshold * 100).round(),
+                  ),
             delta: summary.deltaVsPrevious == null
                 ? null
                 : summary.deltaVsPrevious! * 100,
@@ -122,7 +129,7 @@ class _ReportBody extends StatelessWidget {
           ),
           SizedBox(height: theme.spacing.lg),
           Text(
-            AppStrings.examReportSectionsTitle,
+            context.l10n.examReportSectionsTitle,
             style: theme.textStyles.title,
           ),
           SizedBox(height: theme.spacing.sm),
@@ -134,7 +141,10 @@ class _ReportBody extends StatelessWidget {
             SizedBox(height: theme.spacing.sm),
           ],
           SizedBox(height: theme.spacing.lg),
-          Text(AppStrings.examReportReviewTitle, style: theme.textStyles.title),
+          Text(
+            context.l10n.examReportReviewTitle,
+            style: theme.textStyles.title,
+          ),
           SizedBox(height: theme.spacing.sm),
           for (final section in report.reviewSections)
             if (section.outcomes.isNotEmpty) ...[
@@ -178,7 +188,7 @@ class _SectionCard extends StatelessWidget {
                 Text(section.familyId, style: theme.textStyles.bodyStrong),
                 SizedBox(height: theme.spacing.xs),
                 Text(
-                  AppStrings.examReportSectionFraction(
+                  context.l10n.examReportSectionFraction(
                     section.correct,
                     section.attempts,
                     section.unanswered,
@@ -231,7 +241,7 @@ class _ItemRow extends StatelessWidget {
     return AppCard(
       key: ExamReportScreen.itemKey(sectionIndex, outcome.index),
       onPressed: onTap,
-      semanticsLabel: AppStrings.summaryItemLabel(outcome.index + 1),
+      semanticsLabel: context.l10n.summaryItemLabel(outcome.index + 1),
       padding: EdgeInsets.symmetric(
         horizontal: theme.spacing.md,
         vertical: theme.spacing.sm,
@@ -240,7 +250,7 @@ class _ItemRow extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              AppStrings.summaryItemLabel(outcome.index + 1),
+              context.l10n.summaryItemLabel(outcome.index + 1),
               style: theme.textStyles.body,
             ),
           ),
@@ -268,7 +278,7 @@ class _ReviewPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
-    final text = ItemReviewText.of(outcome);
+    final text = ItemReviewText.of(context, outcome);
 
     return SingleChildScrollView(
       padding: EdgeInsets.all(theme.spacing.lg),
@@ -276,15 +286,21 @@ class _ReviewPanel extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            AppStrings.summaryItemLabel(itemIndex + 1),
+            context.l10n.summaryItemLabel(itemIndex + 1),
             style: theme.textStyles.title,
           ),
           SizedBox(height: theme.spacing.md),
           Text(text.stem, style: theme.textStyles.body),
           SizedBox(height: theme.spacing.lg),
-          _Field(label: AppStrings.summaryReviewMyAnswer, value: text.myAnswer),
+          _Field(
+            label: context.l10n.summaryReviewMyAnswer,
+            value: text.myAnswer,
+          ),
           SizedBox(height: theme.spacing.sm),
-          _Field(label: AppStrings.summaryReviewExpected, value: text.expected),
+          _Field(
+            label: context.l10n.summaryReviewExpected,
+            value: text.expected,
+          ),
           if (text.explanation != null) ...[
             SizedBox(height: theme.spacing.lg),
             AppCard(
@@ -292,7 +308,7 @@ class _ReviewPanel extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    AppStrings.activityExplanationTitle,
+                    context.l10n.activityExplanationTitle,
                     style: theme.textStyles.label,
                   ),
                   SizedBox(height: theme.spacing.xs),

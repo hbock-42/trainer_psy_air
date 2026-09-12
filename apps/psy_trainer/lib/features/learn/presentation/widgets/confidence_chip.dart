@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 
 /// Small pill showing how sure we are that a value mirrors the real test
@@ -15,11 +15,12 @@ class ConfidenceChip extends StatelessWidget {
   final Confidence confidence;
   final String? text;
 
-  static String labelOf(Confidence confidence) => switch (confidence) {
-    Confidence.confirmed => AppStrings.confidenceConfirmed,
-    Confidence.reported => AppStrings.confidenceReported,
-    Confidence.assumed => AppStrings.confidenceAssumed,
-  };
+  static String labelOf(BuildContext context, Confidence confidence) =>
+      switch (confidence) {
+        Confidence.confirmed => context.l10n.confidenceConfirmed,
+        Confidence.reported => context.l10n.confidenceReported,
+        Confidence.assumed => context.l10n.confidenceAssumed,
+      };
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class ConfidenceChip extends StatelessWidget {
       Confidence.reported => (colors.accentSubtle, colors.textPrimary),
       Confidence.assumed => (colors.warningSubtle, colors.warning),
     };
-    final tag = labelOf(confidence);
+    final tag = labelOf(context, confidence);
     final label = text == null ? tag : '$text · $tag';
 
     return Semantics(

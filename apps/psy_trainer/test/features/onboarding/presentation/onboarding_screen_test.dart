@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_trainer/app.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/core/router/app_shell.dart';
 import 'package:psy_trainer/features/learn/presentation/learn_screen.dart';
@@ -18,6 +18,8 @@ import '../../../helpers/onboarding_fakes.dart';
 
 /// End to end on a fresh install: the router lands on onboarding, the flow
 /// writes the profile through the repository and the app moves to Learn.
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
+
 void main() {
   Future<InMemoryProgressRepository> pumpFreshApp(WidgetTester tester) async {
     tester.view.physicalSize = const Size(390, 844);
@@ -42,7 +44,7 @@ void main() {
     await tester.ensureVisible(find.byType(AcceptToggle));
     await tester.tap(find.byType(AcceptToggle));
     await tester.pumpAndSettle();
-    await tester.tap(find.text(AppStrings.actionContinue));
+    await tester.tap(find.text(l10nFr.actionContinue));
     await tester.pumpAndSettle();
     expect(find.byType(ExamDateStep), findsOneWidget);
   }
@@ -54,10 +56,10 @@ void main() {
     await accept(tester);
 
     // Keep the suggested date.
-    await tester.tap(find.text(AppStrings.actionContinue));
+    await tester.tap(find.text(l10nFr.actionContinue));
     await tester.pumpAndSettle();
     expect(find.byType(TargetStageStep), findsOneWidget);
-    await tester.tap(find.text(AppStrings.actionFinish));
+    await tester.tap(find.text(l10nFr.actionFinish));
     await tester.pumpAndSettle();
 
     expect(find.byType(OnboardingScreen), findsNothing);
@@ -81,7 +83,7 @@ void main() {
     final repository = await pumpFreshApp(tester);
     await accept(tester);
 
-    await tester.tap(find.text(AppStrings.actionSkip));
+    await tester.tap(find.text(l10nFr.actionSkip));
     await tester.pumpAndSettle();
 
     expect(find.byType(LearnScreen), findsOneWidget);

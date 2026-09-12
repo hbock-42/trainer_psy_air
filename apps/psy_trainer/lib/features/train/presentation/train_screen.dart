@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/repositories/repository_providers.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
@@ -36,10 +36,10 @@ class TrainScreen extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(AppStrings.tabTrain, style: theme.textStyles.headline),
+            Text(context.l10n.tabTrain, style: theme.textStyles.headline),
             SizedBox(height: theme.spacing.xs),
             Text(
-              AppStrings.trainFamiliesSubtitle,
+              context.l10n.trainFamiliesSubtitle,
               style: theme.textStyles.caption,
             ),
             SizedBox(height: theme.spacing.lg),
@@ -48,7 +48,7 @@ class TrainScreen extends ConsumerWidget {
               AsyncData(value: final list) when list.isEmpty => Padding(
                 padding: EdgeInsets.symmetric(vertical: theme.spacing.lg),
                 child: Text(
-                  AppStrings.trainFamiliesEmpty,
+                  context.l10n.trainFamiliesEmpty,
                   style: theme.textStyles.body.copyWith(
                     color: theme.colors.textSecondary,
                   ),
@@ -66,7 +66,7 @@ class TrainScreen extends ConsumerWidget {
               AsyncError() => Padding(
                 padding: EdgeInsets.symmetric(vertical: theme.spacing.lg),
                 child: Text(
-                  AppStrings.trainFamiliesError,
+                  context.l10n.trainFamiliesError,
                   style: theme.textStyles.body.copyWith(
                     color: theme.colors.textSecondary,
                   ),
@@ -75,7 +75,7 @@ class TrainScreen extends ConsumerWidget {
               _ => Padding(
                 padding: EdgeInsets.symmetric(vertical: theme.spacing.lg),
                 child: Text(
-                  AppStrings.trainFamiliesLoading,
+                  context.l10n.trainFamiliesLoading,
                   style: theme.textStyles.body.copyWith(
                     color: theme.colors.textSecondary,
                   ),
@@ -112,7 +112,7 @@ class _TrainFamilyTile extends ConsumerWidget {
     final theme = AppTheme.of(context);
     final colors = theme.colors;
     final family = entry.family;
-    final name = family.name.resolve(AppStrings.locale);
+    final name = family.name.resolve(context.l10n.localeName);
 
     return AppCard(
       padding: EdgeInsets.zero,
@@ -120,8 +120,8 @@ class _TrainFamilyTile extends ConsumerWidget {
           ? () => context.push(AppRoutes.trainFamily(family.id))
           : null,
       semanticsLabel: entry.available
-          ? AppStrings.trainFamilyOpenSemantics(name)
-          : AppStrings.trainFamilyComingSoonHint(name),
+          ? context.l10n.trainFamilyOpenSemantics(name)
+          : context.l10n.trainFamilyComingSoonHint(name),
       child: Padding(
         padding: EdgeInsets.all(theme.spacing.lg),
         child: Row(
@@ -143,7 +143,7 @@ class _TrainFamilyTile extends ConsumerWidget {
                   if (!entry.available) ...[
                     SizedBox(height: theme.spacing.xs),
                     Text(
-                      AppStrings.trainFamilyComingSoon,
+                      context.l10n.trainFamilyComingSoon,
                       style: theme.textStyles.caption,
                     ),
                   ],
@@ -153,7 +153,7 @@ class _TrainFamilyTile extends ConsumerWidget {
             if (entry.available) ...[
               SizedBox(width: theme.spacing.sm),
               SecondaryButton(
-                label: AppStrings.trainQuick5Label,
+                label: context.l10n.trainQuick5Label,
                 onPressed: () => _quick5(context, ref),
               ),
             ],

@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
@@ -32,11 +32,11 @@ class ExamScreen extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SectionHeader(
-              title: AppStrings.tabExam,
-              subtitle: AppStrings.examHomeSubtitle,
+              title: context.l10n.tabExam,
+              subtitle: context.l10n.examHomeSubtitle,
               trailing: SecondaryButton(
                 key: const Key('exam_home.history'),
-                label: AppStrings.examHistoryAction,
+                label: context.l10n.examHistoryAction,
                 onPressed: () => context.push(AppRoutes.examHistory),
               ),
             ),
@@ -44,7 +44,7 @@ class ExamScreen extends ConsumerWidget {
             const ExamResumeCard(),
             switch (blueprints) {
               AsyncData(value: final list) when list.isEmpty => Text(
-                AppStrings.examEmptyBlueprints,
+                context.l10n.examEmptyBlueprints,
                 style: theme.textStyles.body.copyWith(
                   color: theme.colors.textSecondary,
                 ),
@@ -59,13 +59,13 @@ class ExamScreen extends ConsumerWidget {
                 ],
               ),
               AsyncError() => Text(
-                AppStrings.examBlueprintsError,
+                context.l10n.examBlueprintsError,
                 style: theme.textStyles.body.copyWith(
                   color: theme.colors.textSecondary,
                 ),
               ),
               _ => Text(
-                AppStrings.examBlueprintsLoading,
+                context.l10n.examBlueprintsLoading,
                 style: theme.textStyles.body.copyWith(
                   color: theme.colors.textSecondary,
                 ),
@@ -87,8 +87,8 @@ class _BlueprintCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final blueprint = entry.blueprint;
-    final name = blueprint.name.resolve(AppStrings.locale);
-    final description = blueprint.description.resolve(AppStrings.locale);
+    final name = blueprint.name.resolve(context.l10n.localeName);
+    final description = blueprint.description.resolve(context.l10n.localeName);
     final minutes = (entry.estimatedDurationSec / 60).round();
 
     return AppCard(
@@ -100,7 +100,7 @@ class _BlueprintCard extends StatelessWidget {
           Text(description, style: theme.textStyles.caption),
           SizedBox(height: theme.spacing.sm),
           Text(
-            AppStrings.examBlueprintMeta(
+            context.l10n.examBlueprintMeta(
               minutes,
               entry.availableCount,
               entry.totalSections,
@@ -116,7 +116,7 @@ class _BlueprintCard extends StatelessWidget {
           SizedBox(height: theme.spacing.md),
           PrimaryButton(
             key: Key('exam_home.start.${blueprint.id}'),
-            label: AppStrings.examStartAction,
+            label: context.l10n.examStartAction,
             expand: true,
             onPressed: entry.hasAnySection
                 ? () => context.push(AppRoutes.examRun(blueprint.id))
@@ -137,7 +137,8 @@ class _SectionRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
-    final label = section.title?.resolve(AppStrings.locale) ?? section.familyId;
+    final label =
+        section.title?.resolve(context.l10n.localeName) ?? section.familyId;
 
     return Padding(
       padding: EdgeInsets.symmetric(vertical: theme.spacing.xs),
@@ -153,7 +154,7 @@ class _SectionRow extends StatelessWidget {
           ),
           if (!available)
             Text(
-              AppStrings.examSectionUnavailable,
+              context.l10n.examSectionUnavailable,
               style: theme.textStyles.caption.copyWith(
                 color: theme.colors.textMuted,
               ),

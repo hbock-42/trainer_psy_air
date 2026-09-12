@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
@@ -82,9 +82,9 @@ class _LearnScreenState extends ConsumerState<LearnScreen> {
                   _FlashcardsDueCard(due: dueToday, onPressed: _openCards),
                 ],
                 SizedBox(height: theme.spacing.xl),
-                const SectionHeader(
-                  title: AppStrings.learnFamiliesTitle,
-                  subtitle: AppStrings.learnFamiliesSubtitle,
+                SectionHeader(
+                  title: context.l10n.learnFamiliesTitle,
+                  subtitle: context.l10n.learnFamiliesSubtitle,
                 ),
                 SizedBox(height: theme.spacing.md),
                 switch (families) {
@@ -96,8 +96,8 @@ class _LearnScreenState extends ConsumerState<LearnScreen> {
                     onLearn: _openFamily,
                     onTrain: _openTrain,
                   ),
-                  AsyncError() => const _Message(AppStrings.learnFamiliesError),
-                  _ => const _Message(AppStrings.learnFamiliesLoading),
+                  AsyncError() => _Message(context.l10n.learnFamiliesError),
+                  _ => _Message(context.l10n.learnFamiliesLoading),
                 },
               ],
             ),
@@ -123,15 +123,15 @@ class _Header extends StatelessWidget {
       children: [
         Semantics(
           header: true,
-          child: Text(AppStrings.appName, style: theme.textStyles.headline),
+          child: Text(context.l10n.appName, style: theme.textStyles.headline),
         ),
         SizedBox(height: theme.spacing.sm),
-        Text(AppStrings.disclaimerShort, style: theme.textStyles.caption),
+        Text(context.l10n.disclaimerShort, style: theme.textStyles.caption),
         SizedBox(height: theme.spacing.xs),
         _LinkButton(
           label: expanded
-              ? AppStrings.learnDisclaimerCollapse
-              : AppStrings.learnDisclaimerExpand,
+              ? context.l10n.learnDisclaimerCollapse
+              : context.l10n.learnDisclaimerExpand,
           onPressed: onToggle,
         ),
         if (expanded) ...[
@@ -141,13 +141,13 @@ class _Header extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  AppStrings.disclaimerTitle,
+                  context.l10n.disclaimerTitle,
                   style: theme.textStyles.bodyStrong,
                 ),
                 SizedBox(height: theme.spacing.sm),
-                const Text(AppStrings.disclaimerParagraph1),
+                Text(context.l10n.disclaimerParagraph1),
                 SizedBox(height: theme.spacing.sm),
-                const Text(AppStrings.disclaimerParagraph2),
+                Text(context.l10n.disclaimerParagraph2),
               ],
             ),
           ),
@@ -206,7 +206,7 @@ class _HowItWorksCard extends StatelessWidget {
     final theme = AppTheme.of(context);
     return AppCard(
       onPressed: onPressed,
-      semanticsLabel: AppStrings.learnHowItWorksSemantics,
+      semanticsLabel: context.l10n.learnHowItWorksSemantics,
       child: Row(
         children: [
           Expanded(
@@ -214,12 +214,12 @@ class _HowItWorksCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  AppStrings.learnHowItWorksTitle,
+                  context.l10n.learnHowItWorksTitle,
                   style: theme.textStyles.title,
                 ),
                 SizedBox(height: theme.spacing.xs),
                 Text(
-                  AppStrings.learnHowItWorksSubtitle,
+                  context.l10n.learnHowItWorksSubtitle,
                   style: theme.textStyles.body.copyWith(
                     color: theme.colors.textSecondary,
                   ),
@@ -254,7 +254,7 @@ class _FlashcardsDueCard extends StatelessWidget {
     final theme = AppTheme.of(context);
     return AppCard(
       onPressed: onPressed,
-      semanticsLabel: AppStrings.flashcardsHomeSemantics,
+      semanticsLabel: context.l10n.flashcardsHomeSemantics,
       child: Row(
         children: [
           Expanded(
@@ -262,12 +262,12 @@ class _FlashcardsDueCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  AppStrings.flashcardsHomeTitle,
+                  context.l10n.flashcardsHomeTitle,
                   style: theme.textStyles.title,
                 ),
                 SizedBox(height: theme.spacing.xs),
                 Text(
-                  AppStrings.flashcardsHomeCount(due),
+                  context.l10n.flashcardsHomeCount(due),
                   style: theme.textStyles.body.copyWith(
                     color: theme.colors.textSecondary,
                   ),
@@ -371,7 +371,7 @@ class _EmptyState extends StatelessWidget {
               SizedBox(width: theme.spacing.md),
               Expanded(
                 child: Text(
-                  AppStrings.learnEmptyTitle,
+                  context.l10n.learnEmptyTitle,
                   style: theme.textStyles.title,
                 ),
               ),
@@ -379,7 +379,7 @@ class _EmptyState extends StatelessWidget {
           ),
           SizedBox(height: theme.spacing.sm),
           Text(
-            AppStrings.learnEmptyBody,
+            context.l10n.learnEmptyBody,
             style: theme.textStyles.body.copyWith(
               color: theme.colors.textSecondary,
             ),

@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/theme/app_theme.dart';
-import '../../../../shared/widgets/widgets.dart';
+import '../../core/theme/app_theme.dart';
+import 'app_pressable.dart';
 
 /// One option of a [SegmentedChoice].
 @immutable

@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/app.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_content_repository.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_progress_repository.dart';
 import 'package:psy_trainer/core/repositories/model/attempt.dart';
@@ -65,6 +65,8 @@ Future<ProviderContainer> pumpLauncher(
   return container;
 }
 
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
+
 void main() {
   group('PracticeLauncherScreen', () {
     testWidgets('shows the family defaults: 10 items, auto, untimed', (
@@ -72,9 +74,9 @@ void main() {
     ) async {
       await pumpLauncher(tester, familyId: bankFamily().id);
 
-      expect(find.text(AppStrings.practiceItemCountOption(10)), findsOneWidget);
-      expect(find.text(AppStrings.practiceDifficultyAuto), findsOneWidget);
-      expect(find.text(AppStrings.practiceTimedOff), findsOneWidget);
+      expect(find.text(l10nFr.practiceItemCountOption(10)), findsOneWidget);
+      expect(find.text(l10nFr.practiceDifficultyAuto), findsOneWidget);
+      expect(find.text(l10nFr.practiceTimedOff), findsOneWidget);
     });
 
     testWidgets('a family whose engine is missing shows "coming soon" and '
@@ -92,9 +94,9 @@ void main() {
         engineAvailable: false,
       );
 
-      expect(find.text(AppStrings.practiceEngineComingSoon), findsOneWidget);
+      expect(find.text(l10nFr.practiceEngineComingSoon), findsOneWidget);
       final start = tester.widget<PrimaryButton>(
-        find.widgetWithText(PrimaryButton, AppStrings.practiceStartAction),
+        find.widgetWithText(PrimaryButton, l10nFr.practiceStartAction),
       );
       expect(start.onPressed, isNull);
     });
@@ -108,7 +110,7 @@ void main() {
         content: InMemoryContentRepository(),
       );
 
-      expect(find.text(AppStrings.practiceLauncherNotFound), findsOneWidget);
+      expect(find.text(l10nFr.practiceLauncherNotFound), findsOneWidget);
     });
 
     testWidgets('picking 20 items and starting builds a matching config and '
@@ -117,9 +119,9 @@ void main() {
       final progress = fakeProgressRepository();
       await pumpLauncher(tester, familyId: family.id, progress: progress);
 
-      await tester.tap(find.text(AppStrings.practiceItemCountOption(20)));
+      await tester.tap(find.text(l10nFr.practiceItemCountOption(20)));
       await tester.pumpAndSettle();
-      await tester.tap(find.text(AppStrings.practiceStartAction));
+      await tester.tap(find.text(l10nFr.practiceStartAction));
       await tester.pumpAndSettle();
 
       expect(find.byType(PracticeSessionScreen), findsOneWidget);
@@ -156,12 +158,12 @@ void main() {
 
       await pumpLauncher(tester, familyId: family.id, progress: progress);
 
-      expect(find.text(AppStrings.practiceDifficultyLevel(4)), findsOneWidget);
-      expect(find.text(AppStrings.practiceTimedOn), findsOneWidget);
+      expect(find.text(l10nFr.practiceDifficultyLevel(4)), findsOneWidget);
+      expect(find.text(l10nFr.practiceTimedOn), findsOneWidget);
       // The "50" chip is selected: tapping "Commencer" would build a 50-item
       // session, which the config-built test above already covers directly;
       // here we assert the restored selection is visible.
-      expect(find.text(AppStrings.practiceItemCountOption(50)), findsOneWidget);
+      expect(find.text(l10nFr.practiceItemCountOption(50)), findsOneWidget);
     });
 
     testWidgets('Quick 5 starts immediately with 5 items, auto difficulty', (
@@ -171,9 +173,9 @@ void main() {
       await pumpLauncher(tester, familyId: family.id);
 
       // Pick a non-default selection first, to prove Quick 5 overrides it.
-      await tester.tap(find.text(AppStrings.practiceItemCountOption(50)));
+      await tester.tap(find.text(l10nFr.practiceItemCountOption(50)));
       await tester.pumpAndSettle();
-      await tester.tap(find.text(AppStrings.practiceQuick5Action));
+      await tester.tap(find.text(l10nFr.practiceQuick5Action));
       await tester.pumpAndSettle();
 
       expect(find.byType(PracticeSessionScreen), findsOneWidget);
@@ -192,7 +194,7 @@ void main() {
       await pumpLauncher(tester, familyId: bankFamily().id);
       await tester.pumpAndSettle();
 
-      expect(find.text(AppStrings.practiceRetryMistakesEmpty), findsOneWidget);
+      expect(find.text(l10nFr.practiceRetryMistakesEmpty), findsOneWidget);
       final button = tester.widget<SecondaryButton>(
         find.byKey(const Key('practice_launcher.retry_mistakes')),
       );
@@ -225,14 +227,14 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(
-          find.text(AppStrings.practiceRetryMistakesAction(5)),
+          find.text(l10nFr.practiceRetryMistakesAction(5)),
           findsOneWidget,
         );
 
         await tester.ensureVisible(
-          find.text(AppStrings.practiceRetryMistakesAction(5)),
+          find.text(l10nFr.practiceRetryMistakesAction(5)),
         );
-        await tester.tap(find.text(AppStrings.practiceRetryMistakesAction(5)));
+        await tester.tap(find.text(l10nFr.practiceRetryMistakesAction(5)));
         await tester.pumpAndSettle();
 
         expect(find.byType(PracticeSessionScreen), findsOneWidget);
@@ -277,13 +279,13 @@ void main() {
 
       await pumpLauncher(tester, familyId: family.id, progress: progress);
       await tester.pumpAndSettle();
-      await tester.tap(find.text(AppStrings.practiceItemCountOption(5)));
+      await tester.tap(find.text(l10nFr.practiceItemCountOption(5)));
       await tester.pumpAndSettle();
 
       await tester.ensureVisible(
-        find.text(AppStrings.practiceRetryMistakesAction(8)),
+        find.text(l10nFr.practiceRetryMistakesAction(8)),
       );
-      await tester.tap(find.text(AppStrings.practiceRetryMistakesAction(8)));
+      await tester.tap(find.text(l10nFr.practiceRetryMistakesAction(8)));
       await tester.pumpAndSettle();
 
       expect(find.byType(PracticeSessionScreen), findsOneWidget);

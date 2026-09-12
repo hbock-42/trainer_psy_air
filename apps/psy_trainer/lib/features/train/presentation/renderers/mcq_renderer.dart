@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../engine/engine_ui.dart';
@@ -181,7 +181,7 @@ class _McqViewState extends State<_McqView> {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final item = widget.item;
-    const locale = AppStrings.locale;
+    final locale = context.l10n.localeName;
 
     return KeyboardListener(
       focusNode: _focusNode,
@@ -224,7 +224,7 @@ class _McqViewState extends State<_McqView> {
                     SizedBox(height: theme.spacing.sm),
                     AnswerOptionTile(
                       key: const ValueKey('mcq_option_skip'),
-                      label: AppStrings.mcqSkipOption,
+                      label: context.l10n.mcqSkipOption,
                       state: _answered
                           ? AnswerOptionState.disabled
                           : (_isExam && _selection == _skipSelection
@@ -248,7 +248,7 @@ class _McqViewState extends State<_McqView> {
             SizedBox(height: theme.spacing.md),
             PrimaryButton(
               key: const ValueKey('mcq_validate'),
-              label: AppStrings.activityValidate,
+              label: context.l10n.activityValidate,
               expand: true,
               onPressed: _selection == null ? null : _validate,
             ),
@@ -275,9 +275,9 @@ class _PassagePanel extends StatelessWidget {
     final passage = this.passage;
     if (passage == null) return const SizedBox.shrink();
     final theme = AppTheme.of(context);
-    const locale = AppStrings.locale;
+    final locale = context.l10n.localeName;
     final title =
-        passage.title?.resolve(locale) ?? AppStrings.mcqPassageDefaultTitle;
+        passage.title?.resolve(locale) ?? context.l10n.mcqPassageDefaultTitle;
 
     return AppCard(
       child: Column(
@@ -288,8 +288,8 @@ class _PassagePanel extends StatelessWidget {
               Expanded(child: Text(title, style: theme.textStyles.bodyStrong)),
               SecondaryButton(
                 label: expanded
-                    ? AppStrings.mcqPassageHide
-                    : AppStrings.mcqPassageShow,
+                    ? context.l10n.mcqPassageHide
+                    : context.l10n.mcqPassageShow,
                 onPressed: onToggle,
               ),
             ],
@@ -313,8 +313,8 @@ class _MediaPlaceholder extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final label =
-        media.alt?.resolve(AppStrings.locale) ??
-        AppStrings.lessonImagePlaceholder;
+        media.alt?.resolve(context.l10n.localeName) ??
+        context.l10n.lessonImagePlaceholder;
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(theme.spacing.md),
@@ -346,7 +346,7 @@ class _Explanation extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            AppStrings.activityExplanationTitle,
+            context.l10n.activityExplanationTitle,
             style: theme.textStyles.label,
           ),
           SizedBox(height: theme.spacing.xs),
@@ -371,23 +371,23 @@ class _McqExample extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(AppStrings.mcqExampleStem, style: theme.textStyles.body),
+        Text(context.l10n.mcqExampleStem, style: theme.textStyles.body),
         SizedBox(height: theme.spacing.md),
-        const AnswerOptionTile(
+        AnswerOptionTile(
           index: 1,
-          label: AppStrings.mcqExampleOptionCorrect,
+          label: context.l10n.mcqExampleOptionCorrect,
           state: AnswerOptionState.correct,
         ),
         SizedBox(height: theme.spacing.sm),
-        const AnswerOptionTile(
+        AnswerOptionTile(
           index: 2,
-          label: AppStrings.mcqExampleOptionWrong1,
+          label: context.l10n.mcqExampleOptionWrong1,
           state: AnswerOptionState.disabled,
         ),
         SizedBox(height: theme.spacing.sm),
-        const AnswerOptionTile(
+        AnswerOptionTile(
           index: 3,
-          label: AppStrings.mcqExampleOptionWrong2,
+          label: context.l10n.mcqExampleOptionWrong2,
           state: AnswerOptionState.disabled,
         ),
       ],

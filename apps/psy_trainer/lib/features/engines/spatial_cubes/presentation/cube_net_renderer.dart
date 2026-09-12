@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../../train/domain/engine/engine.dart';
@@ -229,7 +229,10 @@ class _CubeNetViewState extends State<_CubeNetView> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(AppStrings.cubeNetReferenceLabel, style: theme.textStyles.label),
+          Text(
+            context.l10n.cubeNetReferenceLabel,
+            style: theme.textStyles.label,
+          ),
           SizedBox(height: theme.spacing.xs),
           Center(
             child: _NetGrid(
@@ -250,7 +253,7 @@ class _CubeNetViewState extends State<_CubeNetView> {
             ),
           ),
           SizedBox(height: theme.spacing.lg),
-          Text(AppStrings.cubeNetTargetLabel, style: theme.textStyles.label),
+          Text(context.l10n.cubeNetTargetLabel, style: theme.textStyles.label),
           SizedBox(height: theme.spacing.xs),
           Center(
             child: _NetGrid(
@@ -260,10 +263,10 @@ class _CubeNetViewState extends State<_CubeNetView> {
           ),
           if (!answered) ...[
             SizedBox(height: theme.spacing.lg),
-            Text(AppStrings.cubeNetTrayLabel, style: theme.textStyles.label),
+            Text(context.l10n.cubeNetTrayLabel, style: theme.textStyles.label),
             SizedBox(height: theme.spacing.xs),
             Text(
-              AppStrings.cubeNetTapToRotateHint,
+              context.l10n.cubeNetTapToRotateHint,
               style: theme.textStyles.caption,
             ),
             SizedBox(height: theme.spacing.xs),
@@ -282,13 +285,13 @@ class _CubeNetViewState extends State<_CubeNetView> {
             SizedBox(height: theme.spacing.md),
             PrimaryButton(
               key: const Key('cube_net.validate'),
-              label: AppStrings.actionValidate,
+              label: context.l10n.actionValidate,
               onPressed: _allFilled ? _submit : null,
             ),
           ] else ...[
             SizedBox(height: theme.spacing.lg),
             Text(
-              AppStrings.cubeNetCorrectFaces(
+              context.l10n.cubeNetCorrectFaces(
                 render.feedback?.metrics['correctFaces']?.toInt() ?? 0,
                 puzzle.missingCellIndices.length,
               ),
@@ -296,7 +299,7 @@ class _CubeNetViewState extends State<_CubeNetView> {
             ),
             SizedBox(height: theme.spacing.sm),
             Text(
-              AppStrings.cubeNetExplanationTitle,
+              context.l10n.cubeNetExplanationTitle,
               style: theme.textStyles.label,
             ),
             SizedBox(height: theme.spacing.xs),
@@ -362,7 +365,7 @@ class _CubeNetViewState extends State<_CubeNetView> {
       final tile = widget.puzzle.trayTiles[placedTileIndex];
       final rotation = _tileRotation[placedTileIndex]!;
       final content = Semantics(
-        label: AppStrings.cubeNetSlotFilledSemantics(index, tile.value),
+        label: context.l10n.cubeNetSlotFilledSemantics(index, tile.value),
         child: GestureDetector(
           onTap: () => _rotateTile(placedTileIndex),
           child: CustomPaint(
@@ -406,7 +409,7 @@ class _CubeNetViewState extends State<_CubeNetView> {
       onAcceptWithDetails: (details) => _place(index, details.data),
       builder: (context, candidates, rejected) => Semantics(
         label: placedTileIndex == null
-            ? AppStrings.cubeNetSlotEmptySemantics(index)
+            ? context.l10n.cubeNetSlotEmptySemantics(index)
             : null,
         child: slotContent(highlighted: candidates.isNotEmpty),
       ),
@@ -447,17 +450,17 @@ class _Tray extends StatelessWidget {
         runSpacing: theme.spacing.sm,
         children: [
           for (var i = 0; i < tiles.length; i++)
-            if (!usedIndices.contains(i)) _trayTile(i),
+            if (!usedIndices.contains(i)) _trayTile(context, i),
         ],
       ),
     );
   }
 
-  Widget _trayTile(int index) {
+  Widget _trayTile(BuildContext context, int index) {
     final tile = tiles[index];
     final rotation = rotationOf(index);
     final content = Semantics(
-      label: AppStrings.cubeNetTileSemantics(tile.value, rotation),
+      label: context.l10n.cubeNetTileSemantics(tile.value, rotation),
       child: GestureDetector(
         key: ValueKey('cube_net.tray.$index'),
         onTap: () => onTap(index),

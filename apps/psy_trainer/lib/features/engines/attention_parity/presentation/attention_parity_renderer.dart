@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 
 import 'package:psy_content/psy_content.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../../train/presentation/engine/engine_ui.dart';
@@ -107,7 +107,7 @@ class _ParitySeriesState extends State<_ParitySeries> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          AppStrings.attentionParityRestartCount(_restarts),
+          context.l10n.attentionParityRestartCount(_restarts),
           key: AttentionParityRenderer.restartsKey,
           style: theme.textStyles.caption,
         ),
@@ -183,8 +183,8 @@ class _ParityBoard extends StatelessWidget {
                       width: bubbleSize * 2,
                       child: Text(
                         number.value == layout.startValue
-                            ? AppStrings.attentionParityStartLabel
-                            : AppStrings.attentionParityEndLabel,
+                            ? context.l10n.attentionParityStartLabel
+                            : context.l10n.attentionParityEndLabel,
                         textAlign: TextAlign.center,
                         style: AppTheme.of(context).textStyles.caption,
                       ),
@@ -229,7 +229,7 @@ class _NumberBubble extends StatelessWidget {
     return AppPressable(
       key: AttentionParityRenderer.numberKey(number.value),
       onPressed: onTap,
-      semanticsLabel: AppStrings.attentionParityNumberSemantics(number.value),
+      semanticsLabel: context.l10n.attentionParityNumberSemantics(number.value),
       builder: (context, state) => DecoratedBox(
         decoration: BoxDecoration(
           color: fill,

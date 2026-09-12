@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/repositories/model/session.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
@@ -27,11 +27,11 @@ class ExamScoreChartCard extends ConsumerWidget {
         ..sort((a, b) => a.startedAt.compareTo(b.startedAt));
 
   /// "de 40 % à 70 % sur 3 simulations", the semantics summary.
-  static String describe(List<ExamSummary> exams) =>
-      AppStrings.examChartSummary(
-        exams.first.percent,
-        exams.last.percent,
+  static String describe(BuildContext context, List<ExamSummary> exams) =>
+      context.l10n.examChartSummary(
         exams.length,
+        exams.last.percent,
+        exams.first.percent,
       );
 
   @override
@@ -74,9 +74,9 @@ class _ExamScoreChartState extends State<ExamScoreChart> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.min,
       children: [
-        const SectionHeader(
-          title: AppStrings.examChartTitle,
-          subtitle: AppStrings.examChartSubtitle,
+        SectionHeader(
+          title: context.l10n.examChartTitle,
+          subtitle: context.l10n.examChartSubtitle,
         ),
         SizedBox(height: theme.spacing.md),
         AppCard(
@@ -85,8 +85,8 @@ class _ExamScoreChartState extends State<ExamScoreChart> {
             mainAxisSize: MainAxisSize.min,
             children: [
               LineChart(
-                semanticsLabel: AppStrings.examChartSemanticsLabel,
-                semanticsValue: ExamScoreChartCard.describe(exams),
+                semanticsLabel: context.l10n.examChartSemanticsLabel,
+                semanticsValue: ExamScoreChartCard.describe(context, exams),
                 yMin: 0,
                 yMax: 1,
                 yTicks: LineChart.evenTicks(
@@ -94,7 +94,7 @@ class _ExamScoreChartState extends State<ExamScoreChart> {
                   1,
                   count: 3,
                   format: (v) =>
-                      AppStrings.scorePercent(FamilyTrendCharts.percent(v)),
+                      context.l10n.scorePercent(FamilyTrendCharts.percent(v)),
                 ),
                 xTicks: [
                   for (final (i, e) in exams.indexed)
@@ -106,7 +106,7 @@ class _ExamScoreChartState extends State<ExamScoreChart> {
                 ],
                 series: [
                   LineChartSeries(
-                    label: AppStrings.examChartTitle,
+                    label: context.l10n.examChartTitle,
                     points: [
                       for (final (i, e) in exams.indexed)
                         LineChartPoint(i.toDouble(), e.score),
@@ -124,7 +124,7 @@ class _ExamScoreChartState extends State<ExamScoreChart> {
                 }),
               ),
               SizedBox(height: theme.spacing.sm),
-              Text(AppStrings.examChartHint, style: theme.textStyles.caption),
+              Text(context.l10n.examChartHint, style: theme.textStyles.caption),
               if (selectedIndex != null) ...[
                 SizedBox(height: theme.spacing.lg),
                 ExamSectionBreakdown(
@@ -154,13 +154,13 @@ class _ExamTooltip extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(AppStrings.examAttempt(number), style: theme.textStyles.label),
+          Text(context.l10n.examAttempt(number), style: theme.textStyles.label),
           Text(
             FamilyTrendCharts.longDate(exam.startedAt),
             style: theme.textStyles.caption,
           ),
           Text(
-            AppStrings.examScoreLine(exam.percent),
+            context.l10n.examScoreLine(exam.percent),
             style: theme.textStyles.caption.copyWith(
               color: ProgressBands.score(theme, exam.score),
             ),
@@ -194,7 +194,7 @@ class ExamSectionBreakdown extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          AppStrings.examSectionsTitle(
+          context.l10n.examSectionsTitle(
             FamilyTrendCharts.longDate(exam.startedAt),
           ),
           style: theme.textStyles.bodyStrong,
@@ -202,23 +202,23 @@ class ExamSectionBreakdown extends StatelessWidget {
         SizedBox(height: theme.spacing.md),
         if (sections.isEmpty)
           Text(
-            AppStrings.examSectionNotReached,
+            context.l10n.examSectionNotReached,
             style: theme.textStyles.caption,
           )
         else
           HorizontalBarChart(
-            semanticsLabel: AppStrings.examSectionsSemanticsLabel,
+            semanticsLabel: context.l10n.examSectionsSemanticsLabel,
             entries: [
               for (final s in sections)
                 BarChartEntry(
-                  label: AppStrings.examSectionLabel(
+                  label: context.l10n.examSectionLabel(
                     s.sectionIndex + 1,
                     labels.familyName(s.familyId, locale: locale, short: false),
                   ),
                   value: s.accuracy.clamp(0.0, 1.0),
                   valueLabel: s.attempts == 0
-                      ? AppStrings.examSectionNotReached
-                      : AppStrings.examSectionValue(
+                      ? context.l10n.examSectionNotReached
+                      : context.l10n.examSectionValue(
                           s.correct,
                           s.attempts,
                           FamilyTrendCharts.percent(s.accuracy),

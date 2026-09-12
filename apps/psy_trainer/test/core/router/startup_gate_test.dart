@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/db/seed/content_ready_provider.dart';
 import 'package:psy_trainer/core/db/seed/content_seeder.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/core/router/error_screen.dart';
 import 'package:psy_trainer/core/router/startup_gate.dart';
@@ -33,6 +33,8 @@ Future<ProviderContainer> pumpGate(
   );
   return container;
 }
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   testWidgets('shows the child once the content is ready and the onboarding '
@@ -73,8 +75,8 @@ void main() {
       tester.widget<AnimatedOpacity>(find.byType(AnimatedOpacity)).opacity,
       1,
     );
-    expect(find.text(AppStrings.startupLoadingContent), findsOneWidget);
-    expect(find.text(AppStrings.appName), findsOneWidget);
+    expect(find.text(l10nFr.startupLoadingContent), findsOneWidget);
+    expect(find.text(l10nFr.appName), findsOneWidget);
 
     seeding.complete(const SeedResult.upToDate(1));
     await tester.pumpAndSettle();
@@ -127,9 +129,9 @@ void main() {
     expect(find.byType(ErrorScreen), findsOneWidget);
     expect(find.byKey(childKey), findsNothing);
     expect(find.textContaining('psy0/module.json'), findsOneWidget);
-    expect(find.text(AppStrings.errorBackHome), findsNothing);
+    expect(find.text(l10nFr.errorBackHome), findsNothing);
 
-    await tester.tap(find.text(AppStrings.actionRetry));
+    await tester.tap(find.text(l10nFr.actionRetry));
     await tester.pumpAndSettle();
 
     expect(attempts, 2);

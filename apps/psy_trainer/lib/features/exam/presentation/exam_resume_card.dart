@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
@@ -36,7 +36,7 @@ class ExamResumeCard extends ConsumerWidget {
       key: const Key('exam_home.resume'),
       padding: EdgeInsets.only(bottom: theme.spacing.lg),
       child: AppCard(
-        semanticsLabel: AppStrings.examResumeCardAction,
+        semanticsLabel: context.l10n.examResumeCardAction,
         onPressed: () => _resume(context, entry),
         child: Row(
           children: [
@@ -45,12 +45,12 @@ class ExamResumeCard extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    AppStrings.examResumeCardTitle,
+                    context.l10n.examResumeCardTitle,
                     style: theme.textStyles.bodyStrong,
                   ),
                   SizedBox(height: theme.spacing.xs),
                   Text(
-                    AppStrings.examResumeCardSubtitle(name),
+                    context.l10n.examResumeCardSubtitle(name),
                     style: theme.textStyles.caption,
                   ),
                 ],
@@ -58,7 +58,7 @@ class ExamResumeCard extends ConsumerWidget {
             ),
             SizedBox(width: theme.spacing.sm),
             PrimaryButton(
-              label: AppStrings.examResumeCardAction,
+              label: context.l10n.examResumeCardAction,
               onPressed: () => _resume(context, entry),
             ),
           ],

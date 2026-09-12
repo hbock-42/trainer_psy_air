@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_trainer/app.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_content_repository.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_progress_repository.dart';
 import 'package:psy_trainer/core/repositories/model/learning.dart';
@@ -88,14 +88,16 @@ void setViewSize(WidgetTester tester, Size size) {
 /// longer than the viewport).
 Finder allCards() => find.byType(FamilyCard, skipOffstage: false);
 
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
+
 void main() {
   group('header', () {
     testWidgets('shows the app name and the short disclaimer', (tester) async {
       await pumpLearn(tester);
 
-      expect(find.text(AppStrings.appName), findsOneWidget);
-      expect(find.text(AppStrings.disclaimerShort), findsOneWidget);
-      expect(find.text(AppStrings.disclaimerParagraph1), findsNothing);
+      expect(find.text(l10nFr.appName), findsOneWidget);
+      expect(find.text(l10nFr.disclaimerShort), findsOneWidget);
+      expect(find.text(l10nFr.disclaimerParagraph1), findsNothing);
     });
 
     testWidgets('the link expands and collapses the full disclaimer', (
@@ -103,15 +105,15 @@ void main() {
     ) async {
       await pumpLearn(tester);
 
-      await tester.tap(find.text(AppStrings.learnDisclaimerExpand));
+      await tester.tap(find.text(l10nFr.learnDisclaimerExpand));
       await tester.pumpAndSettle();
-      expect(find.text(AppStrings.disclaimerTitle), findsOneWidget);
-      expect(find.text(AppStrings.disclaimerParagraph1), findsOneWidget);
-      expect(find.text(AppStrings.disclaimerParagraph2), findsOneWidget);
+      expect(find.text(l10nFr.disclaimerTitle), findsOneWidget);
+      expect(find.text(l10nFr.disclaimerParagraph1), findsOneWidget);
+      expect(find.text(l10nFr.disclaimerParagraph2), findsOneWidget);
 
-      await tester.tap(find.text(AppStrings.learnDisclaimerCollapse));
+      await tester.tap(find.text(l10nFr.learnDisclaimerCollapse));
       await tester.pumpAndSettle();
-      expect(find.text(AppStrings.disclaimerParagraph1), findsNothing);
+      expect(find.text(l10nFr.disclaimerParagraph1), findsNothing);
     });
   });
 
@@ -157,7 +159,7 @@ void main() {
         expect(
           find.descendant(
             of: first,
-            matching: find.text(AppStrings.confidenceConfirmed),
+            matching: find.text(l10nFr.confidenceConfirmed),
           ),
           findsOneWidget,
         );
@@ -166,7 +168,7 @@ void main() {
         expect(
           find.descendant(
             of: first,
-            matching: find.text(AppStrings.familyLessonsProgress(0, 2)),
+            matching: find.text(l10nFr.familyLessonsProgress(0, 2)),
           ),
           findsOneWidget,
         );
@@ -183,7 +185,7 @@ void main() {
         expect(
           find.descendant(
             of: second,
-            matching: find.text(AppStrings.confidenceReported),
+            matching: find.text(l10nFr.confidenceReported),
           ),
           findsOneWidget,
         );
@@ -211,7 +213,7 @@ void main() {
       expect(
         find.descendant(
           of: allCards().at(1),
-          matching: find.text(AppStrings.familyLessonsProgress(0, 1)),
+          matching: find.text(l10nFr.familyLessonsProgress(0, 1)),
         ),
         findsOneWidget,
       );
@@ -228,9 +230,9 @@ void main() {
           matching: find.widgetWithText(SecondaryButton, label),
         ),
       );
-      expect(button(AppStrings.familyActionCards).onPressed, isNull);
-      expect(button(AppStrings.familyActionLearn).onPressed, isNotNull);
-      expect(button(AppStrings.familyActionTrain).onPressed, isNotNull);
+      expect(button(l10nFr.familyActionCards).onPressed, isNull);
+      expect(button(l10nFr.familyActionLearn).onPressed, isNotNull);
+      expect(button(l10nFr.familyActionTrain).onPressed, isNotNull);
     });
 
     testWidgets('lays out one column on a phone', (tester) async {
@@ -271,11 +273,11 @@ void main() {
       await pumpLearn(tester, seeded: false);
 
       expect(find.byType(FamilyCard), findsNothing);
-      expect(find.text(AppStrings.learnEmptyTitle), findsOneWidget);
-      expect(find.text(AppStrings.learnEmptyBody), findsOneWidget);
+      expect(find.text(l10nFr.learnEmptyTitle), findsOneWidget);
+      expect(find.text(l10nFr.learnEmptyBody), findsOneWidget);
       // The rest of the home stays useful.
-      expect(find.text(AppStrings.learnHowItWorksTitle), findsOneWidget);
-      expect(find.text(AppStrings.learnFamiliesTitle), findsOneWidget);
+      expect(find.text(l10nFr.learnHowItWorksTitle), findsOneWidget);
+      expect(find.text(l10nFr.learnFamiliesTitle), findsOneWidget);
     });
   });
 
@@ -283,7 +285,7 @@ void main() {
     testWidgets('hidden when no deck is seeded', (tester) async {
       await pumpLearn(tester);
 
-      expect(find.text(AppStrings.flashcardsHomeTitle), findsNothing);
+      expect(find.text(l10nFr.flashcardsHomeTitle), findsNothing);
     });
 
     testWidgets('hidden when every card is up to date', (tester) async {
@@ -305,7 +307,7 @@ void main() {
       }
       await pumpLearn(tester, content: content, progress: progress);
 
-      expect(find.text(AppStrings.flashcardsHomeTitle), findsNothing);
+      expect(find.text(l10nFr.flashcardsHomeTitle), findsNothing);
     });
 
     testWidgets('shows the due count and opens the review-today screen', (
@@ -321,8 +323,8 @@ void main() {
         progress: InMemoryProgressRepository(),
       );
 
-      expect(find.text(AppStrings.flashcardsHomeTitle), findsOneWidget);
-      expect(find.text(AppStrings.flashcardsHomeCount(4)), findsOneWidget);
+      expect(find.text(l10nFr.flashcardsHomeTitle), findsOneWidget);
+      expect(find.text(l10nFr.flashcardsHomeCount(4)), findsOneWidget);
     });
   });
 
@@ -335,7 +337,7 @@ void main() {
       await tester.tap(
         find.descendant(
           of: find.byType(FamilyCard).first,
-          matching: find.text(AppStrings.familyActionLearn),
+          matching: find.text(l10nFr.familyActionLearn),
         ),
       );
       await tester.pumpAndSettle();
@@ -381,7 +383,7 @@ void main() {
       await tester.tap(
         find.descendant(
           of: find.byType(FamilyCard).first,
-          matching: find.text(AppStrings.familyActionTrain),
+          matching: find.text(l10nFr.familyActionTrain),
         ),
       );
       await tester.pumpAndSettle();
@@ -394,7 +396,7 @@ void main() {
     ) async {
       final container = await pumpFullApp(tester);
 
-      await tester.tap(find.text(AppStrings.learnHowItWorksTitle));
+      await tester.tap(find.text(l10nFr.learnHowItWorksTitle));
       await tester.pumpAndSettle();
 
       expect(find.byType(HowItWorksScreen), findsOneWidget);
@@ -402,7 +404,7 @@ void main() {
         container.read(appRouterProvider).state.uri.toString(),
         AppRoutes.learnHowItWorks,
       );
-      expect(find.text(AppStrings.stagePsy0Title), findsOneWidget);
+      expect(find.text(l10nFr.stagePsy0Title), findsOneWidget);
     });
 
     testWidgets('"À réviser aujourd\'hui" opens the review-today screen', (
@@ -414,17 +416,14 @@ void main() {
       );
       final container = await pumpFullApp(tester, content: content);
 
-      await tester.tap(find.text(AppStrings.flashcardsHomeTitle));
+      await tester.tap(find.text(l10nFr.flashcardsHomeTitle));
       await tester.pumpAndSettle();
 
       expect(
         container.read(appRouterProvider).state.uri.toString(),
         AppRoutes.learnCards,
       );
-      expect(
-        find.text(AppStrings.flashcardsDeckSummary(due: 4, total: 4)),
-        findsOneWidget,
-      );
+      expect(find.text(l10nFr.flashcardsDeckSummary(4, 4)), findsOneWidget);
     });
   });
 }

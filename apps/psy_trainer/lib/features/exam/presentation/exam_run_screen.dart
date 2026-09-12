@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
@@ -79,11 +79,11 @@ class _ExamRunScreenState extends ConsumerState<ExamRunScreen> {
     return Stack(
       children: [
         AppScaffold(
-          title: AppStrings.examRunnerTitle,
+          title: context.l10n.examRunnerTitle,
           onBack: canQuit ? _askQuit : () => context.pop(),
           body: switch (state) {
-            ExamRunLoading() => const _Centered(
-              child: Text(AppStrings.examRunnerLoading),
+            ExamRunLoading() => _Centered(
+              child: Text(context.l10n.examRunnerLoading),
             ),
             ExamRunRunning(
               :final planIndex,
@@ -96,7 +96,7 @@ class _ExamRunScreenState extends ConsumerState<ExamRunScreen> {
                   Padding(
                     padding: EdgeInsets.all(theme.spacing.md),
                     child: Text(
-                      AppStrings.examRunnerSectionProgress(
+                      context.l10n.examRunnerSectionProgress(
                         planIndex + 1,
                         totalSections,
                       ),
@@ -123,18 +123,18 @@ class _ExamRunScreenState extends ConsumerState<ExamRunScreen> {
                 nextPlanIndex: nextPlanIndex,
                 totalSections: totalSections,
               ),
-            ExamRunFinishing() => const _Centered(
-              child: Text(AppStrings.examRunnerFinishing),
+            ExamRunFinishing() => _Centered(
+              child: Text(context.l10n.examRunnerFinishing),
             ),
-            ExamRunDone() => const _Centered(
-              child: Text(AppStrings.examRunnerFinishing),
+            ExamRunDone() => _Centered(
+              child: Text(context.l10n.examRunnerFinishing),
             ),
             ExamRunAborted() => _EndMessage(
-              message: AppStrings.examRunnerAborted,
+              message: context.l10n.examRunnerAborted,
               onBack: () => context.go(AppRoutes.exam),
             ),
             ExamRunUnavailable() => _EndMessage(
-              message: AppStrings.examRunnerUnavailable,
+              message: context.l10n.examRunnerUnavailable,
               onBack: () => context.go(AppRoutes.exam),
             ),
             ExamRunError(:final message) => _EndMessage(
@@ -185,7 +185,7 @@ class _EndMessage extends StatelessWidget {
           ),
           SizedBox(height: theme.spacing.lg),
           PrimaryButton(
-            label: AppStrings.examRunnerBackToHome,
+            label: context.l10n.examRunnerBackToHome,
             expand: true,
             onPressed: onBack,
           ),
@@ -249,13 +249,13 @@ class _BreakScreenState extends ConsumerState<_BreakScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            AppStrings.examRunnerBreakTitle,
+            context.l10n.examRunnerBreakTitle,
             textAlign: TextAlign.center,
             style: theme.textStyles.headline,
           ),
           SizedBox(height: theme.spacing.sm),
           Text(
-            AppStrings.examRunnerSectionProgress(
+            context.l10n.examRunnerSectionProgress(
               widget.nextPlanIndex + 1,
               widget.totalSections,
             ),
@@ -265,14 +265,14 @@ class _BreakScreenState extends ConsumerState<_BreakScreen> {
           SizedBox(height: theme.spacing.lg),
           Text(
             key: ExamRunScreen.breakTimerKey,
-            AppStrings.examRunnerBreakCountdown(seconds),
+            context.l10n.examRunnerBreakCountdown(seconds),
             textAlign: TextAlign.center,
             style: theme.textStyles.title,
           ),
           SizedBox(height: theme.spacing.xl),
           PrimaryButton(
             key: ExamRunScreen.skipBreakKey,
-            label: AppStrings.examRunnerBreakContinue,
+            label: context.l10n.examRunnerBreakContinue,
             expand: true,
             onPressed: controller.skipBreak,
           ),
@@ -309,27 +309,27 @@ class _QuitConfirmOverlay extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
-                      AppStrings.examQuitConfirmTitle,
+                      context.l10n.examQuitConfirmTitle,
                       style: theme.textStyles.title,
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: theme.spacing.sm),
                     Text(
-                      AppStrings.examQuitConfirmBody,
+                      context.l10n.examQuitConfirmBody,
                       style: theme.textStyles.body,
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: theme.spacing.lg),
                     PrimaryButton(
                       key: ExamRunScreen.quitConfirmKey,
-                      label: AppStrings.examQuitConfirmAction,
+                      label: context.l10n.examQuitConfirmAction,
                       expand: true,
                       onPressed: onConfirm,
                     ),
                     SizedBox(height: theme.spacing.sm),
                     SecondaryButton(
                       key: ExamRunScreen.quitCancelKey,
-                      label: AppStrings.sessionQuitCancelAction,
+                      label: context.l10n.sessionQuitCancelAction,
                       expand: true,
                       onPressed: onCancel,
                     ),

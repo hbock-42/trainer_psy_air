@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import 'accept_toggle.dart';
@@ -28,38 +28,38 @@ class WelcomeStep extends StatelessWidget {
     final spacing = theme.spacing;
 
     return OnboardingStepLayout(
-      headline: AppStrings.onboardingWelcomeHeadline,
-      intro: AppStrings.onboardingWelcomeIntro,
+      headline: context.l10n.onboardingWelcomeHeadline,
+      intro: context.l10n.onboardingWelcomeIntro,
       content: [
         AppCard(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(AppStrings.disclaimerTitle, style: theme.textStyles.title),
+              Text(context.l10n.disclaimerTitle, style: theme.textStyles.title),
               SizedBox(height: spacing.sm),
-              const Text(AppStrings.disclaimerParagraph1),
+              Text(context.l10n.disclaimerParagraph1),
               SizedBox(height: spacing.sm),
-              const Text(AppStrings.disclaimerParagraph2),
+              Text(context.l10n.disclaimerParagraph2),
             ],
           ),
         ),
         SizedBox(height: spacing.lg),
         AcceptToggle(
           value: accepted,
-          label: AppStrings.onboardingDisclaimerAccept,
+          label: context.l10n.onboardingDisclaimerAccept,
           onChanged: onAcceptedChanged,
         ),
         if (!accepted) ...[
           SizedBox(height: spacing.sm),
           Text(
-            AppStrings.onboardingDisclaimerRequired,
+            context.l10n.onboardingDisclaimerRequired,
             style: theme.textStyles.caption,
           ),
         ],
       ],
       actions: [
         PrimaryButton(
-          label: AppStrings.actionContinue,
+          label: context.l10n.actionContinue,
           expand: true,
           onPressed: accepted ? onContinue : null,
         ),

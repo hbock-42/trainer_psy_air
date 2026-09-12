@@ -6,7 +6,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/theme/app_theme.dart';
 import 'package:psy_trainer/features/engines/multitask_psychomotor/domain/multitask_engine.dart';
 import 'package:psy_trainer/features/engines/multitask_psychomotor/domain/multitask_scoring.dart';
@@ -57,11 +57,14 @@ class MultitaskRenderer extends ActivityRenderer {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(AppStrings.multitaskExampleTracking, style: theme.textStyles.body),
+        Text(
+          context.l10n.multitaskExampleTracking,
+          style: theme.textStyles.body,
+        ),
         SizedBox(height: theme.spacing.xs),
-        Text(AppStrings.multitaskExampleShape, style: theme.textStyles.body),
+        Text(context.l10n.multitaskExampleShape, style: theme.textStyles.body),
         SizedBox(height: theme.spacing.xs),
-        Text(AppStrings.multitaskExampleCalc, style: theme.textStyles.body),
+        Text(context.l10n.multitaskExampleCalc, style: theme.textStyles.body),
       ],
     );
   }
@@ -244,7 +247,7 @@ class _MultitaskViewState extends State<_MultitaskView>
           if (showsTouchFallback) ...[
             SizedBox(height: theme.spacing.sm),
             Text(
-              AppStrings.multitaskTouchFallback,
+              context.l10n.multitaskTouchFallback,
               textAlign: TextAlign.center,
               style: theme.textStyles.caption,
             ),
@@ -276,14 +279,14 @@ class _ExamSkipNotice extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          AppStrings.multitaskExamKeyboardRequired,
+          context.l10n.multitaskExamKeyboardRequired,
           textAlign: TextAlign.center,
           style: theme.textStyles.body,
         ),
         SizedBox(height: theme.spacing.lg),
         SecondaryButton(
           key: const Key('multitask.skip_section'),
-          label: AppStrings.actionSkip,
+          label: context.l10n.actionSkip,
           onPressed: onSkip,
         ),
       ],
@@ -361,13 +364,13 @@ class _TouchControls extends StatelessWidget {
           children: [
             SecondaryButton(
               key: const Key('multitask.touch_shape'),
-              label: AppStrings.multitaskShapeButtonLabel,
+              label: context.l10n.multitaskShapeButtonLabel,
               onPressed: enabled ? onShapePress : null,
             ),
             SizedBox(width: theme.spacing.md),
             SecondaryButton(
               key: const Key('multitask.touch_calc'),
-              label: AppStrings.multitaskCalcButtonLabel,
+              label: context.l10n.multitaskCalcButtonLabel,
               onPressed: enabled ? onCalcPress : null,
             ),
           ],

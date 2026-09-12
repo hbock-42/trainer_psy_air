@@ -1,10 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/theme/app_theme.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
 
 import '../../../helpers/pump_app.dart';
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   group('block rendering', () {
@@ -98,7 +100,7 @@ void main() {
       await tester.pumpApp(const MarkdownView('> Just a quote.'), align: false);
 
       expect(find.text('Just a quote.'), findsOneWidget);
-      expect(find.text(AppStrings.lessonCalloutTip), findsNothing);
+      expect(find.text(l10nFr.lessonCalloutTip), findsNothing);
     });
 
     testWidgets('renders an image as an alt-text placeholder', (tester) async {
@@ -119,7 +121,7 @@ void main() {
         align: false,
       );
 
-      expect(find.text(AppStrings.lessonCalloutTip), findsOneWidget);
+      expect(find.text(l10nFr.lessonCalloutTip), findsOneWidget);
       expect(find.textContaining('[!TIP]'), findsNothing);
       expect(find.textContaining("Boire de l'eau."), findsOneWidget);
     });
@@ -136,9 +138,9 @@ void main() {
         align: false,
       );
 
-      expect(find.text(AppStrings.lessonCalloutTrap), findsOneWidget);
-      expect(find.text(AppStrings.lessonCalloutMethod), findsOneWidget);
-      expect(find.text(AppStrings.lessonCalloutExample), findsOneWidget);
+      expect(find.text(l10nFr.lessonCalloutTrap), findsOneWidget);
+      expect(find.text(l10nFr.lessonCalloutMethod), findsOneWidget);
+      expect(find.text(l10nFr.lessonCalloutExample), findsOneWidget);
     });
   });
 
@@ -166,26 +168,26 @@ Vérification finale.
       expect(find.text("Énoncé de l'exemple."), findsOneWidget);
       expect(find.text('Premier raisonnement.'), findsNothing);
       expect(find.text('Vérification finale.'), findsNothing);
-      expect(find.text(AppStrings.lessonRevealNextStep), findsOneWidget);
-      expect(find.text(AppStrings.lessonRevealAllSteps), findsOneWidget);
+      expect(find.text(l10nFr.lessonRevealNextStep), findsOneWidget);
+      expect(find.text(l10nFr.lessonRevealAllSteps), findsOneWidget);
     });
 
     testWidgets('"Étape suivante" reveals one step at a time', (tester) async {
       await tester.pumpApp(const MarkdownView(lesson), align: false);
 
-      await tester.tap(find.text(AppStrings.lessonRevealNextStep));
+      await tester.tap(find.text(l10nFr.lessonRevealNextStep));
       await tester.pump();
 
       expect(find.text('Premier raisonnement.'), findsOneWidget);
       expect(find.text('Vérification finale.'), findsNothing);
       // Last step left: "Tout afficher" no longer offered.
-      expect(find.text(AppStrings.lessonRevealAllSteps), findsNothing);
+      expect(find.text(l10nFr.lessonRevealAllSteps), findsNothing);
 
-      await tester.tap(find.text(AppStrings.lessonRevealNextStep));
+      await tester.tap(find.text(l10nFr.lessonRevealNextStep));
       await tester.pump();
 
       expect(find.text('Vérification finale.'), findsOneWidget);
-      expect(find.text(AppStrings.lessonRevealNextStep), findsNothing);
+      expect(find.text(l10nFr.lessonRevealNextStep), findsNothing);
     });
 
     testWidgets('"Tout afficher" reveals every remaining step at once', (
@@ -193,12 +195,12 @@ Vérification finale.
     ) async {
       await tester.pumpApp(const MarkdownView(lesson), align: false);
 
-      await tester.tap(find.text(AppStrings.lessonRevealAllSteps));
+      await tester.tap(find.text(l10nFr.lessonRevealAllSteps));
       await tester.pump();
 
       expect(find.text('Premier raisonnement.'), findsOneWidget);
       expect(find.text('Vérification finale.'), findsOneWidget);
-      expect(find.text(AppStrings.lessonRevealNextStep), findsNothing);
+      expect(find.text(l10nFr.lessonRevealNextStep), findsNothing);
     });
   });
 
@@ -248,7 +250,7 @@ Un paragraphe avec **gras** et `code`.
       );
 
       expect(tester.takeException(), isNull);
-      expect(find.text(AppStrings.lessonCalloutTrap), findsOneWidget);
+      expect(find.text(l10nFr.lessonCalloutTrap), findsOneWidget);
     });
   });
 }

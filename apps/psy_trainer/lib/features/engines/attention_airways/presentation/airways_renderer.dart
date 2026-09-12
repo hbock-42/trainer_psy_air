@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:psy_content/psy_content.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../../train/presentation/engine/engine_ui.dart';
@@ -65,17 +65,17 @@ class _AirwaysExample extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          AppStrings.airwaysExampleCapacity(
+          context.l10n.airwaysExampleCapacity(
             params.capacity,
             params.blueCapacity,
           ),
           style: theme.textStyles.bodyStrong,
         ),
         SizedBox(height: theme.spacing.sm),
-        Text(AppStrings.airwaysExampleBody, style: theme.textStyles.body),
+        Text(context.l10n.airwaysExampleBody, style: theme.textStyles.body),
         SizedBox(height: theme.spacing.md),
         Text(
-          AppStrings.airwaysExampleLegendTitle,
+          context.l10n.airwaysExampleLegendTitle,
           style: theme.textStyles.caption,
         ),
         SizedBox(height: theme.spacing.xs),
@@ -86,7 +86,7 @@ class _AirwaysExample extends StatelessWidget {
             for (final (i, color) in airwaysRouteColors.indexed)
               _RouteLegendChip(
                 color: color,
-                label: AppStrings.airwaysExampleButtonLabel(i + 1),
+                label: context.l10n.airwaysExampleButtonLabel(i + 1),
               ),
           ],
         ),
@@ -228,12 +228,12 @@ class _AirwaysViewState extends State<_AirwaysView>
           Row(
             children: [
               Text(
-                AppStrings.airwaysReroutesCounter(_sim.reroutesUsed),
+                context.l10n.airwaysReroutesCounter(_sim.reroutesUsed),
                 style: theme.textStyles.caption,
               ),
               SizedBox(width: theme.spacing.md),
               Text(
-                AppStrings.airwaysViolationsCounter(_sim.violations),
+                context.l10n.airwaysViolationsCounter(_sim.violations),
                 style: theme.textStyles.caption.copyWith(
                   color: _sim.violations == 0
                       ? theme.colors.textSecondary
@@ -243,7 +243,7 @@ class _AirwaysViewState extends State<_AirwaysView>
               const Spacer(),
               if (flashing)
                 Text(
-                  AppStrings.airwaysViolationFlash,
+                  context.l10n.airwaysViolationFlash,
                   key: const Key('airways.crash_flash'),
                   style: theme.textStyles.bodyStrong.copyWith(
                     color: theme.colors.error,
@@ -272,8 +272,8 @@ class _AirwaysViewState extends State<_AirwaysView>
           if (render.isAnswered)
             Text(
               _sim.violations == 0
-                  ? AppStrings.airwaysSummaryClean(_sim.reroutesUsed)
-                  : AppStrings.airwaysSummaryWithViolations(
+                  ? context.l10n.airwaysSummaryClean(_sim.reroutesUsed)
+                  : context.l10n.airwaysSummaryWithViolations(
                       _sim.violations,
                       _sim.reroutesUsed,
                     ),
@@ -281,7 +281,7 @@ class _AirwaysViewState extends State<_AirwaysView>
             )
           else ...[
             Text(
-              AppStrings.airwaysExampleLegendTitle,
+              context.l10n.airwaysExampleLegendTitle,
               style: theme.textStyles.caption,
             ),
             SizedBox(height: theme.spacing.xs),
@@ -321,7 +321,7 @@ class _RouteButton extends StatelessWidget {
     final theme = AppTheme.of(context);
     return AppPressable(
       onPressed: onPressed,
-      semanticsLabel: AppStrings.airwaysRouteButtonSemantics(number),
+      semanticsLabel: context.l10n.airwaysRouteButtonSemantics(number),
       builder: (context, state) => Container(
         width: theme.spacing.minTouchTarget,
         height: theme.spacing.minTouchTarget,

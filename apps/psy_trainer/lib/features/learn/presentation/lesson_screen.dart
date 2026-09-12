@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/repositories/repository_providers.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
@@ -104,14 +104,14 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
     final lessons = ref.watch(familyLessonsProvider(widget.familyId));
     return _AsyncValueBuilder<List<Lesson>>(
       value: lessons,
-      loading: AppStrings.lessonLoading,
-      error: AppStrings.familyLessonsEmpty,
+      loading: context.l10n.lessonLoading,
+      error: context.l10n.familyLessonsEmpty,
       builder: (context, list) {
         final index = list.indexWhere((l) => l.id == widget.lessonId);
         if (index == -1) {
           return AppScaffold(
             onBack: context.pop,
-            body: const Center(child: Text(AppStrings.lessonNotFound)),
+            body: Center(child: Text(context.l10n.lessonNotFound)),
           );
         }
         return _LessonBody(
@@ -156,7 +156,9 @@ class _LessonBody extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = AppTheme.of(context);
-    final blocks = parseMarkdown(lesson.body?.resolve(AppStrings.locale) ?? '');
+    final blocks = parseMarkdown(
+      lesson.body?.resolve(context.l10n.localeName) ?? '',
+    );
     final headings = extractHeadings(blocks);
     final read = ref.watch(lessonReadProvider(lesson.id));
     final isRead = read.value ?? false;
@@ -164,14 +166,14 @@ class _LessonBody extends ConsumerWidget {
     WidgetsBinding.instance.addPostFrameCallback((_) => onFrame());
 
     return AppScaffold(
-      title: lesson.title.resolve(AppStrings.locale),
+      title: lesson.title.resolve(context.l10n.localeName),
       onBack: context.pop,
       actions: [
         AppIconButton(
           glyph: AppIconGlyph.check,
           semanticsLabel: isRead
-              ? AppStrings.lessonMarkedRead
-              : AppStrings.lessonMarkRead,
+              ? context.l10n.lessonMarkedRead
+              : context.l10n.lessonMarkRead,
           onPressed: isRead ? null : onMarkRead,
         ),
       ],
@@ -193,7 +195,7 @@ class _LessonBody extends ConsumerWidget {
                     color: theme.colors.textSecondary,
                   ),
                   Text(
-                    AppStrings.lessonReadTime(lesson.estimatedReadMin!),
+                    context.l10n.lessonReadTime(lesson.estimatedReadMin!),
                     style: theme.textStyles.caption,
                   ),
                   if (isRead) ...[
@@ -201,10 +203,10 @@ class _LessonBody extends ConsumerWidget {
                       AppIconGlyph.check,
                       size: 16,
                       color: theme.colors.success,
-                      semanticsLabel: AppStrings.lessonMarkedRead,
+                      semanticsLabel: context.l10n.lessonMarkedRead,
                     ),
                     Text(
-                      AppStrings.lessonMarkedRead,
+                      context.l10n.lessonMarkedRead,
                       style: theme.textStyles.caption.copyWith(
                         color: theme.colors.success,
                       ),
@@ -220,7 +222,7 @@ class _LessonBody extends ConsumerWidget {
             MarkdownView.blocks(blocks),
             SizedBox(height: theme.spacing.xl),
             PrimaryButton(
-              label: AppStrings.lessonTryIt,
+              label: context.l10n.lessonTryIt,
               icon: AppIconGlyph.target,
               expand: true,
               onPressed: () => context.go(AppRoutes.trainFamily(familyId)),
@@ -259,7 +261,7 @@ class _Toc extends StatelessWidget {
                 child: Semantics(
                   header: true,
                   child: Text(
-                    AppStrings.lessonTocTitle,
+                    context.l10n.lessonTocTitle,
                     style: theme.textStyles.title,
                   ),
                 ),
@@ -270,8 +272,8 @@ class _Toc extends StatelessWidget {
               Flexible(
                 child: SecondaryButton(
                   label: open
-                      ? AppStrings.lessonTocHide
-                      : AppStrings.lessonTocShow,
+                      ? context.l10n.lessonTocHide
+                      : context.l10n.lessonTocShow,
                   onPressed: onToggle,
                 ),
               ),
@@ -330,7 +332,7 @@ class _PrevNextRow extends StatelessWidget {
         if (previous != null)
           Expanded(
             child: SecondaryButton(
-              label: AppStrings.lessonPrevious,
+              label: context.l10n.lessonPrevious,
               icon: AppIconGlyph.chevronLeft,
               onPressed: () =>
                   context.go(AppRoutes.learnLesson(familyId, previous!.id)),
@@ -340,7 +342,7 @@ class _PrevNextRow extends StatelessWidget {
         if (next != null)
           Expanded(
             child: SecondaryButton(
-              label: AppStrings.lessonNext,
+              label: context.l10n.lessonNext,
               icon: AppIconGlyph.chevronRight,
               onPressed: () =>
                   context.go(AppRoutes.learnLesson(familyId, next!.id)),

@@ -24,3 +24,4 @@ export 'radar_chart.dart';
 export 'score_card.dart';
 export 'secondary_button.dart';
 export 'section_header.dart';
+export 'segmented_choice.dart';

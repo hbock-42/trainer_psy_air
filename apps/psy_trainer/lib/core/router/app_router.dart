@@ -17,6 +17,7 @@ import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/onboarding/presentation/providers/onboarding_completed_provider.dart';
 import '../../features/progress/presentation/family_trend_screen.dart';
 import '../../features/progress/presentation/progress_screen.dart';
+import '../../features/settings/presentation/about_screen.dart';
 import '../../features/settings/presentation/edit_profile_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
 import '../../features/train/domain/engine/activity_session_config.dart';
@@ -289,6 +290,12 @@ GoRouter createAppRouter({
                     path: AppRoutes.settingsProfileSegment,
                     pageBuilder: (context, state) =>
                         _page(state, const EditProfileScreen()),
+                  ),
+                  // "À propos" (US-091): version, disclaimer, sources.
+                  GoRoute(
+                    path: AppRoutes.settingsAboutSegment,
+                    pageBuilder: (context, state) =>
+                        _page(state, const AboutScreen()),
                   ),
                 ],
               ),

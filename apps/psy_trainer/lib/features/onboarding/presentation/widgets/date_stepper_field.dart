@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../domain/exam_date_rules.dart';
@@ -46,13 +46,13 @@ class DateStepperField extends StatelessWidget {
     final theme = AppTheme.of(context);
     return Semantics(
       container: true,
-      label: AppStrings.formatLongDate(value),
+      label: context.l10n.formatLongDate(value),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: _StepperColumn(
-              label: AppStrings.dateFieldDay,
+              label: context.l10n.dateFieldDay,
               display: '${value.day}',
               onIncrement: () => _stepDay(1),
               onDecrement: () => _stepDay(-1),
@@ -62,8 +62,8 @@ class DateStepperField extends StatelessWidget {
           Expanded(
             flex: 2,
             child: _StepperColumn(
-              label: AppStrings.dateFieldMonth,
-              display: AppStrings.monthNamesShort[value.month],
+              label: context.l10n.dateFieldMonth,
+              display: context.l10n.monthShort(value.month),
               onIncrement: () => _stepMonth(1),
               onDecrement: () => _stepMonth(-1),
             ),
@@ -72,7 +72,7 @@ class DateStepperField extends StatelessWidget {
           Expanded(
             flex: 2,
             child: _StepperColumn(
-              label: AppStrings.dateFieldYear,
+              label: context.l10n.dateFieldYear,
               display: '${value.year}',
               onIncrement: value.year < maxYear ? () => _stepYear(1) : null,
               onDecrement: value.year > minYear ? () => _stepYear(-1) : null,
@@ -113,7 +113,7 @@ class _StepperColumn extends StatelessWidget {
         ),
         SizedBox(height: theme.spacing.xs),
         _StepButton(
-          semanticsLabel: '$label, ${AppStrings.dateFieldIncrement}',
+          semanticsLabel: '$label, ${context.l10n.dateFieldIncrement}',
           quarterTurns: 3,
           onPressed: onIncrement,
         ),
@@ -134,7 +134,7 @@ class _StepperColumn extends StatelessWidget {
           ),
         ),
         _StepButton(
-          semanticsLabel: '$label, ${AppStrings.dateFieldDecrement}',
+          semanticsLabel: '$label, ${context.l10n.dateFieldDecrement}',
           quarterTurns: 1,
           onPressed: onDecrement,
         ),

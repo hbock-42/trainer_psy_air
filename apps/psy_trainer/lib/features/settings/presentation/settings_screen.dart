@@ -1,38 +1,300 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
+import '../../../core/repositories/repositories.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
 import '../../onboarding/domain/onboarding_answers.dart';
 import '../../onboarding/presentation/providers/onboarding_answers_provider.dart';
+import '../../onboarding/presentation/providers/onboarding_completed_provider.dart';
+import '../domain/app_settings.dart';
+import 'providers/app_settings_provider.dart';
 
-/// Placeholder for the Settings tab; replaced by US-091. Already offers the
-/// "edit my profile" entry that reopens the onboarding answers (US-090).
-class SettingsScreen extends ConsumerWidget {
+/// The Settings tab (US-091): profile summary, appearance (theme/language),
+/// sound, keypad layout, "reset all data" (double confirmation) and About.
+class SettingsScreen extends ConsumerStatefulWidget {
   const SettingsScreen({super.key});
 
+  /// Exposed for the widget test: the key of the first "reset" button
+  /// (opens the first confirmation overlay).
+  static const Key resetActionKey = Key('settings.reset_action');
+
+  /// The first overlay's confirm button (moves to the second warning).
+  static const Key resetConfirm1Key = Key('settings.reset_confirm_1');
+
+  /// The second (final) overlay's confirm button.
+  static const Key resetConfirm2Key = Key('settings.reset_confirm_2');
+
+  /// Either overlay's cancel button.
+  static const Key resetCancelKey = Key('settings.reset_cancel');
+
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+enum _ResetStep { none, confirm1, confirm2 }
+
+class _SettingsScreenState extends ConsumerState<SettingsScreen> {
+  _ResetStep _resetStep = _ResetStep.none;
+
+  Future<void> _confirmReset() async {
+    await ref.read(progressRepositoryProvider).clearAll();
+    ref.invalidate(appSettingsProvider);
+    ref.invalidate(onboardingAnswersProvider);
+    ref.read(onboardingCompletedProvider.notifier).reset();
+    if (mounted) setState(() => _resetStep = _ResetStep.none);
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final answers = ref.watch(onboardingAnswersProvider);
+    final settings = ref.watch(appSettingsProvider);
+    final controller = ref.read(appSettingsProvider.notifier);
 
-    return AppScaffold(
-      title: AppStrings.tabSettings,
-      bodyPadding: EdgeInsets.all(theme.spacing.lg),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _ProfileSummary(answers: answers.value),
-          SizedBox(height: theme.spacing.md),
-          SecondaryButton(
-            label: AppStrings.settingsEditProfile,
-            expand: true,
-            onPressed: () => context.go(AppRoutes.settingsProfile),
+    return Stack(
+      children: [
+        AppScaffold(
+          title: context.l10n.tabSettings,
+          bodyPadding: EdgeInsets.all(theme.spacing.lg),
+          body: ListView(
+            children: [
+              _ProfileSummary(answers: answers.value),
+              SizedBox(height: theme.spacing.md),
+              SecondaryButton(
+                label: context.l10n.settingsEditProfile,
+                expand: true,
+                onPressed: () => context.go(AppRoutes.settingsProfile),
+              ),
+              SizedBox(height: theme.spacing.xl),
+              SectionHeader(title: context.l10n.settingsSectionAppearance),
+              SizedBox(height: theme.spacing.sm),
+              _SettingRow(
+                label: context.l10n.settingsThemeLabel,
+                child: SegmentedChoice<ThemeModePreference>(
+                  semanticsLabel: context.l10n.settingsThemeLabel,
+                  selected: settings.themeMode,
+                  onSelected: controller.setThemeMode,
+                  options: [
+                    SegmentedOption(
+                      value: ThemeModePreference.system,
+                      label: context.l10n.settingsThemeSystem,
+                    ),
+                    SegmentedOption(
+                      value: ThemeModePreference.light,
+                      label: context.l10n.settingsThemeLight,
+                    ),
+                    SegmentedOption(
+                      value: ThemeModePreference.dark,
+                      label: context.l10n.settingsThemeDark,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: theme.spacing.md),
+              _SettingRow(
+                label: context.l10n.settingsLanguageLabel,
+                child: SegmentedChoice<LanguagePreference>(
+                  semanticsLabel: context.l10n.settingsLanguageLabel,
+                  selected: settings.language,
+                  onSelected: controller.setLanguage,
+                  options: [
+                    SegmentedOption(
+                      value: LanguagePreference.system,
+                      label: context.l10n.settingsLanguageSystem,
+                    ),
+                    SegmentedOption(
+                      value: LanguagePreference.fr,
+                      label: context.l10n.settingsLanguageFr,
+                    ),
+                    SegmentedOption(
+                      value: LanguagePreference.en,
+                      label: context.l10n.settingsLanguageEn,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: theme.spacing.md),
+              _SettingRow(
+                label: context.l10n.settingsSoundLabel,
+                child: SegmentedChoice<bool>(
+                  semanticsLabel: context.l10n.settingsSoundLabel,
+                  selected: settings.soundEnabled,
+                  onSelected: (enabled) =>
+                      controller.setSoundEnabled(enabled: enabled),
+                  options: [
+                    SegmentedOption(
+                      value: true,
+                      label: context.l10n.settingsSoundOn,
+                    ),
+                    SegmentedOption(
+                      value: false,
+                      label: context.l10n.settingsSoundOff,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: theme.spacing.md),
+              _SettingRow(
+                label: context.l10n.settingsKeypadLabel,
+                child: SegmentedChoice<KeypadLayout>(
+                  semanticsLabel: context.l10n.settingsKeypadLabel,
+                  selected: settings.keypadLayout,
+                  onSelected: controller.setKeypadLayout,
+                  options: [
+                    SegmentedOption(
+                      value: KeypadLayout.phone,
+                      label: context.l10n.settingsKeypadPhone,
+                    ),
+                    SegmentedOption(
+                      value: KeypadLayout.calculator,
+                      label: context.l10n.settingsKeypadCalculator,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: theme.spacing.xl),
+              SectionHeader(title: context.l10n.settingsSectionData),
+              SizedBox(height: theme.spacing.sm),
+              SecondaryButton(
+                key: SettingsScreen.resetActionKey,
+                label: context.l10n.settingsResetAction,
+                expand: true,
+                onPressed: () =>
+                    setState(() => _resetStep = _ResetStep.confirm1),
+              ),
+              SizedBox(height: theme.spacing.xl),
+              SecondaryButton(
+                label: context.l10n.settingsAboutAction,
+                expand: true,
+                onPressed: () => context.go(AppRoutes.settingsAbout),
+              ),
+            ],
           ),
-        ],
+        ),
+        if (_resetStep == _ResetStep.confirm1)
+          _ResetConfirmOverlay(
+            theme: theme,
+            title: context.l10n.settingsResetConfirm1Title,
+            body: context.l10n.settingsResetConfirm1Body,
+            confirmKey: SettingsScreen.resetConfirm1Key,
+            onConfirm: () => setState(() => _resetStep = _ResetStep.confirm2),
+            onCancel: () => setState(() => _resetStep = _ResetStep.none),
+          ),
+        if (_resetStep == _ResetStep.confirm2)
+          _ResetConfirmOverlay(
+            theme: theme,
+            title: context.l10n.settingsResetConfirm2Title,
+            body: context.l10n.settingsResetConfirm2Body,
+            confirmKey: SettingsScreen.resetConfirm2Key,
+            onConfirm: () => unawaited(_confirmReset()),
+            onCancel: () => setState(() => _resetStep = _ResetStep.none),
+          ),
+      ],
+    );
+  }
+}
+
+/// A labelled row of settings content (label above, the control below), same
+/// shape as `_FilterRow` in `family_trend_screen.dart`.
+class _SettingRow extends StatelessWidget {
+  const _SettingRow({required this.label, required this.child});
+
+  final String label;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        ExcludeSemantics(
+          child: Text(
+            label,
+            style: theme.textStyles.label.copyWith(
+              color: theme.colors.textSecondary,
+            ),
+          ),
+        ),
+        SizedBox(height: theme.spacing.xs),
+        child,
+      ],
+    );
+  }
+}
+
+/// One step of the "reset all data" double confirmation, same overlay
+/// pattern as `_QuitConfirmOverlay` (`practice_session_screen.dart`).
+class _ResetConfirmOverlay extends StatelessWidget {
+  const _ResetConfirmOverlay({
+    required this.theme,
+    required this.title,
+    required this.body,
+    required this.confirmKey,
+    required this.onConfirm,
+    required this.onCancel,
+  });
+
+  final AppTheme theme;
+  final String title;
+  final String body;
+  final Key confirmKey;
+  final VoidCallback onConfirm;
+  final VoidCallback onCancel;
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned.fill(
+      child: ColoredBox(
+        color: theme.colors.background.withValues(alpha: 0.92),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 360),
+            child: Padding(
+              padding: EdgeInsets.all(theme.spacing.lg),
+              child: AppCard(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      title,
+                      style: theme.textStyles.title,
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: theme.spacing.sm),
+                    Text(
+                      body,
+                      style: theme.textStyles.body,
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: theme.spacing.lg),
+                    PrimaryButton(
+                      key: confirmKey,
+                      label: context.l10n.settingsResetConfirmAction,
+                      expand: true,
+                      onPressed: onConfirm,
+                    ),
+                    SizedBox(height: theme.spacing.sm),
+                    SecondaryButton(
+                      key: SettingsScreen.resetCancelKey,
+                      label: context.l10n.settingsResetCancelAction,
+                      expand: true,
+                      onPressed: onCancel,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
@@ -49,19 +311,19 @@ class _ProfileSummary extends StatelessWidget {
     final examDate = answers?.examDate;
     final stage = answers?.targetStage;
     final examDateText = examDate == null
-        ? AppStrings.settingsProfileSummaryNoExamDate
-        : AppStrings.formatLongDate(examDate);
+        ? context.l10n.settingsProfileSummaryNoExamDate
+        : context.l10n.formatLongDate(examDate);
     return AppCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(AppStrings.onboardingEditTitle, style: theme.textStyles.title),
+          Text(context.l10n.onboardingEditTitle, style: theme.textStyles.title),
           SizedBox(height: theme.spacing.sm),
-          Text('${AppStrings.settingsProfileSummaryExamDate}$examDateText'),
+          Text('${context.l10n.settingsProfileSummaryExamDate}$examDateText'),
           if (stage != null) ...[
             SizedBox(height: theme.spacing.xs),
             Text(
-              '${AppStrings.settingsProfileSummaryStage}'
+              '${context.l10n.settingsProfileSummaryStage}'
               '${stage.key.toUpperCase()}',
             ),
           ],

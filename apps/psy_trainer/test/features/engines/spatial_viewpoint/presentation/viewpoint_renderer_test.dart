@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/engines/spatial_viewpoint/domain/viewpoint_engine.dart';
 import 'package:psy_trainer/features/engines/spatial_viewpoint/domain/viewpoint_explanation.dart';
@@ -19,6 +19,8 @@ import '../../../../helpers/pump_app.dart';
 /// scene -- and so the exact right answer -- a session with
 /// `sessionSeed`/`difficulty` will show as its first item.
 int _firstItemSeed(int sessionSeed) => Random(sessionSeed).nextInt(1 << 31);
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   final start = DateTime.utc(2026, 9, 5, 9);
@@ -82,12 +84,12 @@ void main() {
     );
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
     expect(find.text(explanationFor(scene)), findsOneWidget);
 
     await tester.tap(find.byKey(SessionHost.nextKey));
     await tester.pump();
-    expect(find.text(AppStrings.sessionFinishedTitle), findsOneWidget);
+    expect(find.text(l10nFr.sessionFinishedTitle), findsOneWidget);
     expect(finished, hasLength(1));
     expect(finished.single.section.correct, 1);
   });
@@ -101,7 +103,7 @@ void main() {
     await tester.tap(find.byKey(ValueKey('viewpoint_position_$wrongAzimuth')));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackWrong), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackWrong), findsOneWidget);
   });
 
   testWidgets('a keyboard digit 1-8 answers the item directly', (tester) async {
@@ -112,7 +114,7 @@ void main() {
     await tester.sendKeyEvent(_digitKey(scene.correctAzimuth));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
   });
 }
 

@@ -1,10 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'core/l10n/strings.dart';
+import 'core/l10n/l10n_extensions.dart';
 import 'core/router/app_router.dart';
 import 'core/router/startup_gate.dart';
 import 'core/theme/app_theme.dart';
+import 'features/settings/domain/app_settings.dart';
+import 'features/settings/presentation/providers/app_settings_provider.dart';
 
 /// Root of the application.
 ///
@@ -20,19 +22,29 @@ class PsyTrainerApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final themeMode = ref.watch(themeModeProvider);
     return WidgetsApp.router(
-      title: AppStrings.appName,
+      title: 'PSY Trainer',
       color: AppColors.light.background,
       debugShowCheckedModeBanner: false,
       routerConfig: ref.watch(appRouterProvider),
+      locale: ref.watch(localeProvider),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       builder: (context, child) {
         // WidgetsApp provides no theme nor default text style. AppThemeScope
         // installs both (tokens + DefaultTextStyle body) for every route and
-        // overlay; the theme follows the platform brightness until a setting
-        // exists (US-091).
-        final theme = AppTheme.forBrightness(
-          MediaQuery.platformBrightnessOf(context),
-        );
+        // overlay. The brightness follows the theme setting (US-091):
+        // "system" reads the platform brightness, "light"/"dark" are
+        // explicit.
+        final brightness = switch (themeMode) {
+          ThemeModePreference.system => MediaQuery.platformBrightnessOf(
+            context,
+          ),
+          ThemeModePreference.light => Brightness.light,
+          ThemeModePreference.dark => Brightness.dark,
+        };
+        final theme = AppTheme.forBrightness(brightness);
         // StartupGate keeps the Router (child) unmounted until the content
         // is seeded and the onboarding flag is known (US-013).
         return AppThemeScope(

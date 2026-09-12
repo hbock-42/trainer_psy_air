@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../domain/recommendation.dart';
@@ -25,7 +25,7 @@ class TrainNextCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     if (recommendations.isEmpty) {
-      return Text(AppStrings.trainNextEmpty, style: theme.textStyles.caption);
+      return Text(context.l10n.trainNextEmpty, style: theme.textStyles.caption);
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -55,12 +55,12 @@ class _RecommendationTile extends StatelessWidget {
   /// Below this width the action button sits under the description.
   static const double _sideBySideMinWidth = 400;
 
-  String get _actionLabel => switch (recommendation.kind) {
+  String _actionLabel(BuildContext context) => switch (recommendation.kind) {
     RecommendationKind.family ||
-    RecommendationKind.tag => AppStrings.trainNextActionFamily,
-    RecommendationKind.examSim => AppStrings.trainNextActionExam,
-    RecommendationKind.lesson => AppStrings.trainNextActionLesson,
-    RecommendationKind.flashcards => AppStrings.trainNextActionFlashcards,
+    RecommendationKind.tag => context.l10n.trainNextActionFamily,
+    RecommendationKind.examSim => context.l10n.trainNextActionExam,
+    RecommendationKind.lesson => context.l10n.trainNextActionLesson,
+    RecommendationKind.flashcards => context.l10n.trainNextActionFlashcards,
   };
 
   AppIconGlyph get _icon => switch (recommendation.kind) {
@@ -100,7 +100,7 @@ class _RecommendationTile extends StatelessWidget {
                 description,
                 SizedBox(height: theme.spacing.md),
                 SecondaryButton(
-                  label: _actionLabel,
+                  label: _actionLabel(context),
                   icon: _icon,
                   expand: true,
                   onPressed: onAction,
@@ -113,7 +113,7 @@ class _RecommendationTile extends StatelessWidget {
               Expanded(child: description),
               SizedBox(width: theme.spacing.md),
               SecondaryButton(
-                label: _actionLabel,
+                label: _actionLabel(context),
                 icon: _icon,
                 onPressed: onAction,
               ),

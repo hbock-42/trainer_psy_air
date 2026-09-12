@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
 import 'learn_screen.dart';
@@ -23,7 +23,7 @@ class HowItWorksScreen extends StatelessWidget {
     );
 
     return AppScaffold(
-      title: AppStrings.learnHowItWorksTitle,
+      title: context.l10n.learnHowItWorksTitle,
       onBack: context.pop,
       body: Center(
         child: ConstrainedBox(
@@ -35,40 +35,42 @@ class HowItWorksScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Text(AppStrings.howItWorksIntro),
+                Text(context.l10n.howItWorksIntro),
                 SizedBox(height: theme.spacing.sm),
                 Text(
-                  AppStrings.confidenceLegend,
+                  context.l10n.confidenceLegend,
                   style: theme.textStyles.caption,
                 ),
                 SizedBox(height: theme.spacing.xl),
-                const SectionHeader(title: AppStrings.howItWorksStagesTitle),
+                SectionHeader(title: context.l10n.howItWorksStagesTitle),
                 SizedBox(height: theme.spacing.md),
-                for (final (i, stage) in selectionStages.indexed) ...[
+                for (final (i, stage) in selectionStagesOf(
+                  context,
+                ).indexed) ...[
                   if (i > 0) SizedBox(height: theme.spacing.md),
                   SelectionStageCard(stage: stage, index: i + 1),
                 ],
                 SizedBox(height: theme.spacing.xl),
-                const SectionHeader(title: AppStrings.howItWorksCalendarTitle),
+                SectionHeader(title: context.l10n.howItWorksCalendarTitle),
                 SizedBox(height: theme.spacing.sm),
-                Text(AppStrings.howItWorksCalendarBody, style: secondary),
+                Text(context.l10n.howItWorksCalendarBody, style: secondary),
                 SizedBox(height: theme.spacing.xl),
-                const SectionHeader(title: AppStrings.howItWorksRetakeTitle),
+                SectionHeader(title: context.l10n.howItWorksRetakeTitle),
                 SizedBox(height: theme.spacing.sm),
-                Text(AppStrings.howItWorksRetakeBody, style: secondary),
+                Text(context.l10n.howItWorksRetakeBody, style: secondary),
                 SizedBox(height: theme.spacing.xl),
                 AppCard(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        AppStrings.disclaimerTitle,
+                        context.l10n.disclaimerTitle,
                         style: theme.textStyles.bodyStrong,
                       ),
                       SizedBox(height: theme.spacing.sm),
-                      const Text(AppStrings.disclaimerParagraph1),
+                      Text(context.l10n.disclaimerParagraph1),
                       SizedBox(height: theme.spacing.sm),
-                      const Text(AppStrings.disclaimerParagraph2),
+                      Text(context.l10n.disclaimerParagraph2),
                     ],
                   ),
                 ),

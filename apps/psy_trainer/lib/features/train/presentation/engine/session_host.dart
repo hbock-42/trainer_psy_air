@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../domain/engine/engine.dart';
@@ -96,10 +96,11 @@ class _Briefing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
-    final title = config.title?.resolve(AppStrings.locale) ?? config.familyId;
+    final title =
+        config.title?.resolve(context.l10n.localeName) ?? config.familyId;
     final briefing =
-        config.briefing?.resolve(AppStrings.locale) ??
-        AppStrings.sessionBriefingDefault;
+        config.briefing?.resolve(context.l10n.localeName) ??
+        context.l10n.sessionBriefingDefault;
     final source = config.source;
     final runContext = source is GeneratorSource
         ? RunExampleContext(runSeed: source.seed, params: source.params)
@@ -114,13 +115,13 @@ class _Briefing extends StatelessWidget {
           Text(title, style: theme.textStyles.headline),
           SizedBox(height: theme.spacing.sm),
           Text(
-            AppStrings.sessionItemCount(state.itemCount),
+            context.l10n.sessionItemCount(state.itemCount),
             style: theme.textStyles.caption,
           ),
           if (state.startIndex > 0) ...[
             SizedBox(height: theme.spacing.xs),
             Text(
-              AppStrings.sessionResumeHint(
+              context.l10n.sessionResumeHint(
                 state.startIndex + 1,
                 state.itemCount,
               ),
@@ -139,7 +140,7 @@ class _Briefing extends StatelessWidget {
                     child:
                         example ??
                         Text(
-                          AppStrings.sessionExamplePlaceholder,
+                          context.l10n.sessionExamplePlaceholder,
                           style: theme.textStyles.caption,
                         ),
                   ),
@@ -150,7 +151,7 @@ class _Briefing extends StatelessWidget {
           SizedBox(height: theme.spacing.lg),
           PrimaryButton(
             key: SessionHost.startKey,
-            label: AppStrings.sessionStart,
+            label: context.l10n.sessionStart,
             icon: AppIconGlyph.play,
             expand: true,
             autofocus: true,
@@ -221,14 +222,14 @@ class _Running extends ConsumerWidget {
             children: [
               SecondaryButton(
                 key: SessionHost.quitKey,
-                label: AppStrings.sessionQuit,
+                label: context.l10n.sessionQuit,
                 onPressed: controller.abort,
               ),
               if (config.canPause) ...[
                 SizedBox(width: theme.spacing.sm),
                 SecondaryButton(
                   key: SessionHost.pauseKey,
-                  label: AppStrings.sessionPause,
+                  label: context.l10n.sessionPause,
                   icon: AppIconGlyph.pause,
                   onPressed: controller.pause,
                 ),
@@ -237,7 +238,7 @@ class _Running extends ConsumerWidget {
               if (running.awaitsNext)
                 PrimaryButton(
                   key: SessionHost.nextKey,
-                  label: AppStrings.sessionNext,
+                  label: context.l10n.sessionNext,
                   icon: AppIconGlyph.chevronRight,
                   autofocus: true,
                   onPressed: controller.next,
@@ -294,7 +295,7 @@ class _CountdownsState extends ConsumerState<_Countdowns> {
       children: [
         if (sectionLeft != null && sectionLimit != null)
           Semantics(
-            label: AppStrings.sessionSectionTimerLabel,
+            label: context.l10n.sessionSectionTimerLabel,
             child: CountdownTimerBar(
               key: SessionHost.sectionTimerKey,
               remaining: sectionLeft,
@@ -304,7 +305,7 @@ class _CountdownsState extends ConsumerState<_Countdowns> {
         if (itemLeft != null && itemLimit != null) ...[
           if (sectionLeft != null) SizedBox(height: theme.spacing.sm),
           Semantics(
-            label: AppStrings.sessionItemTimerLabel,
+            label: context.l10n.sessionItemTimerLabel,
             child: CountdownTimerBar(
               key: SessionHost.itemTimerKey,
               remaining: itemLeft,
@@ -329,18 +330,18 @@ class _FeedbackLabel extends StatelessWidget {
     final colors = theme.colors;
     final (label, color) = switch (result) {
       ItemResult(correct: true) => (
-        AppStrings.sessionFeedbackCorrect,
+        context.l10n.sessionFeedbackCorrect,
         colors.success,
       ),
       ItemResult(timedOut: true) => (
-        AppStrings.sessionFeedbackTimeout,
+        context.l10n.sessionFeedbackTimeout,
         colors.warning,
       ),
       ItemResult(skipped: true) => (
-        AppStrings.sessionFeedbackSkipped,
+        context.l10n.sessionFeedbackSkipped,
         colors.textSecondary,
       ),
-      _ => (AppStrings.sessionFeedbackWrong, colors.error),
+      _ => (context.l10n.sessionFeedbackWrong, colors.error),
     };
     return Text(
       label,
@@ -371,14 +372,14 @@ class _Paused extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            AppStrings.sessionPausedTitle,
+            context.l10n.sessionPausedTitle,
             textAlign: TextAlign.center,
             style: theme.textStyles.headline,
           ),
           SizedBox(height: theme.spacing.xl),
           PrimaryButton(
             key: SessionHost.resumeKey,
-            label: AppStrings.sessionResume,
+            label: context.l10n.sessionResume,
             icon: AppIconGlyph.play,
             expand: true,
             autofocus: true,
@@ -387,7 +388,7 @@ class _Paused extends StatelessWidget {
           SizedBox(height: theme.spacing.sm),
           SecondaryButton(
             key: SessionHost.quitKey,
-            label: AppStrings.sessionQuit,
+            label: context.l10n.sessionQuit,
             expand: true,
             onPressed: onQuit,
           ),
@@ -405,7 +406,7 @@ class _Finished extends StatelessWidget {
     final theme = AppTheme.of(context);
     return Center(
       child: Text(
-        AppStrings.sessionFinishedTitle,
+        context.l10n.sessionFinishedTitle,
         style: theme.textStyles.headline,
       ),
     );

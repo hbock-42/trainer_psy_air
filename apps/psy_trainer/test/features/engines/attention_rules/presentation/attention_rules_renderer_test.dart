@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/engines/attention_rules/domain/attention_rules_engine.dart';
 import 'package:psy_trainer/features/engines/attention_rules/domain/stimulus_rule_set.dart';
@@ -10,6 +10,8 @@ import 'package:psy_trainer/features/engines/attention_rules/presentation/attent
 import 'package:psy_trainer/features/train/presentation/engine/engine_ui.dart';
 
 import '../../../../helpers/pump_app.dart';
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   final start = DateTime.utc(2026, 9, 5, 9);
@@ -67,7 +69,7 @@ void main() {
     await pumpHost(tester, ActivitySessionRequest.fresh(config()));
     expect(
       find.text(
-        AppStrings.attentionRulesExampleFilled(
+        l10nFr.attentionRulesExampleShapes(
           ruleSet.shapeA,
           ruleSet.keyA,
           ruleSet.shapeB,
@@ -78,7 +80,7 @@ void main() {
     );
     expect(
       find.text(
-        AppStrings.attentionRulesExampleEmpty(
+        l10nFr.attentionRulesExampleColours(
           ruleSet.colourA,
           ruleSet.keyA,
           ruleSet.colourB,
@@ -93,7 +95,7 @@ void main() {
 
     expect(
       find.text(
-        AppStrings.attentionRulesExampleFilled(
+        l10nFr.attentionRulesExampleShapes(
           ruleSet.shapeA,
           ruleSet.keyA,
           ruleSet.shapeB,
@@ -142,7 +144,7 @@ void main() {
         ),
       );
       await tester.pump();
-      expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+      expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
     },
   );
 
@@ -169,7 +171,7 @@ void main() {
 
     await tester.sendKeyEvent(key);
     await tester.pump();
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
   });
 
   testWidgets('a wrong physical key press is scored wrong, live', (
@@ -197,6 +199,6 @@ void main() {
 
     await tester.sendKeyEvent(wrongKey);
     await tester.pump();
-    expect(find.text(AppStrings.sessionFeedbackWrong), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackWrong), findsOneWidget);
   });
 }

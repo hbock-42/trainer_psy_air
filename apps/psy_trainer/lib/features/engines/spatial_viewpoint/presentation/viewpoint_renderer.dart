@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../../train/domain/engine/engine.dart';
@@ -189,7 +189,7 @@ class _ViewpointViewState extends State<_ViewpointView> {
             SizedBox(height: theme.spacing.md),
             PrimaryButton(
               key: const ValueKey('viewpoint_validate'),
-              label: AppStrings.activityValidate,
+              label: context.l10n.activityValidate,
               expand: true,
               onPressed: _selected == null ? null : _validate,
             ),
@@ -224,7 +224,7 @@ class _ViewpointMap extends StatelessWidget {
     final theme = AppTheme.of(context);
 
     return Semantics(
-      label: AppStrings.viewpointMapSemanticsLabel,
+      label: context.l10n.viewpointMapSemanticsLabel,
       child: SizedBox(
         width: _mapSize,
         height: _mapSize,
@@ -312,7 +312,7 @@ class _MapPositionMarker extends StatelessWidget {
     return AppPressable(
       key: ValueKey('viewpoint_position_$azimuth'),
       onPressed: onPressed,
-      semanticsLabel: AppStrings.viewpointPositionSemantics(azimuth),
+      semanticsLabel: context.l10n.viewpointPositionSemantics(azimuth),
       excludeSemantics: true,
       selected: state == _MapPositionState.selected,
       minSize: 40,
@@ -351,7 +351,7 @@ class _Explanation extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            AppStrings.activityExplanationTitle,
+            context.l10n.activityExplanationTitle,
             style: theme.textStyles.label,
           ),
           SizedBox(height: theme.spacing.xs),
@@ -372,7 +372,10 @@ class _ViewpointExample extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(AppStrings.viewpointExampleCaption, style: theme.textStyles.body),
+        Text(
+          context.l10n.viewpointExampleCaption,
+          style: theme.textStyles.body,
+        ),
         SizedBox(height: theme.spacing.md),
         const SizedBox(
           height: 120,

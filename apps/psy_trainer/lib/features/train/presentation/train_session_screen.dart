@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
 import '../domain/engine/activity_session_config.dart';
@@ -29,9 +29,9 @@ class TrainSessionScreen extends StatelessWidget {
     }
     final theme = AppTheme.of(context);
     final familyName =
-        config.title?.resolve(AppStrings.locale) ?? config.familyId;
+        config.title?.resolve(context.l10n.localeName) ?? config.familyId;
     return AppScaffold(
-      title: AppStrings.trainSessionPlaceholderTitle,
+      title: context.l10n.trainSessionPlaceholderTitle,
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(theme.spacing.lg),
@@ -40,16 +40,16 @@ class TrainSessionScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppStrings.trainSessionPlaceholderTitle,
+                context.l10n.trainSessionPlaceholderTitle,
                 style: theme.textStyles.headline,
               ),
               SizedBox(height: theme.spacing.md),
-              Text(AppStrings.trainSessionSummaryFamily(familyName)),
-              Text(AppStrings.trainSessionSummaryItemCount(config.itemCount)),
+              Text(context.l10n.trainSessionSummaryFamily(familyName)),
+              Text(context.l10n.trainSessionSummaryItemCount(config.itemCount)),
               Text(
                 config.timing.isUntimed
-                    ? AppStrings.trainSessionSummaryUntimed
-                    : AppStrings.trainSessionSummaryTimed,
+                    ? context.l10n.trainSessionSummaryUntimed
+                    : context.l10n.trainSessionSummaryTimed,
               ),
             ],
           ),

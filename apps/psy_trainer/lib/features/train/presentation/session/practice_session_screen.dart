@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/repositories/repository_providers.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
@@ -125,7 +125,8 @@ class _PracticeSessionScreenState extends ConsumerState<PracticeSessionScreen> {
     }
 
     final theme = AppTheme.of(context);
-    final title = _config.title?.resolve(AppStrings.locale) ?? _config.familyId;
+    final title =
+        _config.title?.resolve(context.l10n.localeName) ?? _config.familyId;
 
     return Stack(
       children: [
@@ -202,27 +203,27 @@ class _QuitConfirmOverlay extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
-                      AppStrings.sessionQuitConfirmTitle,
+                      context.l10n.sessionQuitConfirmTitle,
                       style: theme.textStyles.title,
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: theme.spacing.sm),
                     Text(
-                      AppStrings.sessionQuitConfirmBody,
+                      context.l10n.sessionQuitConfirmBody,
                       style: theme.textStyles.body,
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: theme.spacing.lg),
                     PrimaryButton(
                       key: PracticeSessionScreen.quitConfirmKey,
-                      label: AppStrings.sessionQuitConfirmAction,
+                      label: context.l10n.sessionQuitConfirmAction,
                       expand: true,
                       onPressed: onConfirm,
                     ),
                     SizedBox(height: theme.spacing.sm),
                     SecondaryButton(
                       key: PracticeSessionScreen.quitCancelKey,
-                      label: AppStrings.sessionQuitCancelAction,
+                      label: context.l10n.sessionQuitCancelAction,
                       expand: true,
                       onPressed: onCancel,
                     ),

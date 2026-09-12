@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../../train/domain/engine/engine.dart';
@@ -105,7 +105,7 @@ class _NbackViewState extends State<_NbackView> {
             Padding(
               padding: EdgeInsets.only(bottom: theme.spacing.sm),
               child: Text(
-                AppStrings.nbackPrimerLabel,
+                context.l10n.nbackPrimerLabel,
                 key: NbackRenderer.primerLabelKey,
                 textAlign: TextAlign.center,
                 style: theme.textStyles.caption,
@@ -121,7 +121,7 @@ class _NbackViewState extends State<_NbackView> {
           Expanded(
             child: Center(
               child: Semantics(
-                label: AppStrings.nbackStimulusSemantics(
+                label: context.l10n.nbackStimulusSemantics(
                   widget.render.itemIndex + 1,
                 ),
                 child: ExcludeSemantics(
@@ -141,24 +141,24 @@ class _NbackViewState extends State<_NbackView> {
               Expanded(
                 child: AnswerOptionTile(
                   key: NbackRenderer.noKey,
-                  label: AppStrings.nbackNoSemantics('N'),
+                  label: context.l10n.nbackNoSemantics('N'),
                   state: showsAnswerControls
                       ? AnswerOptionState.idle
                       : AnswerOptionState.disabled,
                   onPressed: showsAnswerControls ? () => _answer(false) : null,
-                  child: const Text(AppStrings.nbackNo),
+                  child: Text(context.l10n.nbackNo),
                 ),
               ),
               SizedBox(width: theme.spacing.md),
               Expanded(
                 child: AnswerOptionTile(
                   key: NbackRenderer.yesKey,
-                  label: AppStrings.nbackYesSemantics('Y'),
+                  label: context.l10n.nbackYesSemantics('Y'),
                   state: showsAnswerControls
                       ? AnswerOptionState.idle
                       : AnswerOptionState.disabled,
                   onPressed: showsAnswerControls ? () => _answer(true) : null,
-                  child: const Text(AppStrings.nbackYes),
+                  child: Text(context.l10n.nbackYes),
                 ),
               ),
             ],
@@ -184,12 +184,12 @@ class _HistoryStrip extends StatelessWidget {
     final theme = AppTheme.of(context);
     return Semantics(
       container: true,
-      label: AppStrings.nbackHistoryStripLabel,
+      label: context.l10n.nbackHistoryStripLabel,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            AppStrings.nbackHistoryStripLabel,
+            context.l10n.nbackHistoryStripLabel,
             style: theme.textStyles.caption,
           ),
           SizedBox(height: theme.spacing.xs),

@@ -334,6 +334,20 @@ class LocalProgressRepository implements ProgressRepository {
     );
   }
 
+  // --- Reset ------------------------------------------------------------
+
+  @override
+  Future<void> clearAll() {
+    return _db.transaction(() async {
+      await _db.delete(_db.attempts).go();
+      await _db.delete(_db.sessions).go();
+      await _db.delete(_db.itemStats).go();
+      await _db.delete(_db.flashcardReviews).go();
+      await _db.delete(_db.lessonProgress).go();
+      await _db.delete(_db.userProfiles).go();
+    });
+  }
+
   // --- Mapping --------------------------------------------------------------
 
   static TrainingSession _session(SessionRow row) => TrainingSession(

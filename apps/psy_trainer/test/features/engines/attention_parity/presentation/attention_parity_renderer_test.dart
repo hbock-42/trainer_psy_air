@@ -1,14 +1,17 @@
 import 'dart:math';
 
+import 'package:flutter/widgets.dart' show Locale;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/engines/attention_parity/domain/attention_parity_engine.dart';
 import 'package:psy_trainer/features/engines/attention_parity/presentation/attention_parity_renderer.dart';
 import 'package:psy_trainer/features/train/presentation/engine/engine_ui.dart';
 
 import '../../../../helpers/pump_app.dart';
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   const engine = AttentionParityEngine();
@@ -75,10 +78,7 @@ void main() {
     await tester.tap(find.byKey(SessionHost.startKey));
     await tester.pump();
 
-    expect(
-      find.text(AppStrings.attentionParityRestartCount(0)),
-      findsOneWidget,
-    );
+    expect(find.text(l10nFr.attentionParityRestartCount(0)), findsOneWidget);
 
     for (final value in expectedPath()) {
       await tapNumber(tester, value);
@@ -86,7 +86,7 @@ void main() {
     await tester.tap(find.byKey(SessionHost.nextKey));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFinishedTitle), findsOneWidget);
+    expect(find.text(l10nFr.sessionFinishedTitle), findsOneWidget);
     expect(finished, hasLength(1));
     expect(finished.single.section.correct, 1);
     expect(finished.single.section.metricTotals['restarts'], 0);
@@ -108,10 +108,7 @@ void main() {
     // Tapping the second element first is always wrong: the path must
     // start with path[0].
     await tapNumber(tester, path[1]);
-    expect(
-      find.text(AppStrings.attentionParityRestartCount(1)),
-      findsOneWidget,
-    );
+    expect(find.text(l10nFr.attentionParityRestartCount(1)), findsOneWidget);
 
     for (final value in path) {
       await tapNumber(tester, value);
@@ -119,7 +116,7 @@ void main() {
     await tester.tap(find.byKey(SessionHost.nextKey));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFinishedTitle), findsOneWidget);
+    expect(find.text(l10nFr.sessionFinishedTitle), findsOneWidget);
     expect(finished.single.section.correct, 1);
     expect(finished.single.section.metricTotals['restarts'], 1);
     expect(finished.single.section.metricTotals['totalTaps'], path.length + 1);

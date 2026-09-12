@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../features/onboarding/presentation/providers/onboarding_completed_provider.dart';
 import '../db/seed/content_ready_provider.dart';
-import '../l10n/strings.dart';
+import '../l10n/l10n_extensions.dart';
 import '../theme/app_theme.dart';
 import 'error_screen.dart';
 
@@ -86,10 +86,10 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(AppStrings.appName, style: theme.textStyles.display),
+                Text(context.l10n.appName, style: theme.textStyles.display),
                 SizedBox(height: theme.spacing.md),
                 Text(
-                  AppStrings.startupLoadingContent,
+                  context.l10n.startupLoadingContent,
                   style: theme.textStyles.body.copyWith(
                     color: theme.colors.textSecondary,
                   ),

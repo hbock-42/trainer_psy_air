@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../../train/domain/engine/engine.dart';
@@ -136,26 +136,26 @@ class _DominosViewState extends State<_DominosView> {
           SizedBox(height: theme.spacing.lg),
           if (!answered) ...[
             _HalfSelector(
-              label: AppStrings.dominoTopLabel,
+              label: context.l10n.dominoTopLabel,
               half: 'top',
               value: _top,
               onSelect: (v) => _pick('top', v),
             ),
             SizedBox(height: theme.spacing.sm),
             _HalfSelector(
-              label: AppStrings.dominoBottomLabel,
+              label: context.l10n.dominoBottomLabel,
               half: 'bottom',
               value: _bottom,
               onSelect: (v) => _pick('bottom', v),
             ),
             SizedBox(height: theme.spacing.md),
             PrimaryButton(
-              label: AppStrings.actionValidate,
+              label: context.l10n.actionValidate,
               onPressed: (_top != null && _bottom != null) ? _submit : null,
             ),
           ] else ...[
             Text(
-              AppStrings.dominoAnswerSummary(
+              context.l10n.dominoAnswerSummary(
                 board.answer.top,
                 board.answer.bottom,
               ),
@@ -203,7 +203,7 @@ class _HalfSelector extends StatelessWidget {
                       key: ValueKey('domino-$half-$v'),
                       label: '$v',
                       emphasized: value == v,
-                      semanticsLabel: AppStrings.dominoSelectorSemantics(
+                      semanticsLabel: context.l10n.dominoSelectorSemantics(
                         label,
                         v,
                       ),
@@ -241,7 +241,9 @@ class _DominoSeries extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tiles = [for (var i = 0; i < board.dominoes.length; i++) _tileAt(i)];
+    final tiles = [
+      for (var i = 0; i < board.dominoes.length; i++) _tileAt(context, i),
+    ];
     switch (board.layout) {
       case DominoLayout.row:
         return SingleChildScrollView(
@@ -266,7 +268,7 @@ class _DominoSeries extends StatelessWidget {
     }
   }
 
-  Widget _tileAt(int index) {
+  Widget _tileAt(BuildContext context, int index) {
     final isMissing = index == board.missingIndex;
     if (!isMissing) {
       final domino = board.dominoes[index];
@@ -276,7 +278,7 @@ class _DominoSeries extends StatelessWidget {
       return _DominoTile(top: board.answer.top, bottom: board.answer.bottom);
     }
     return Semantics(
-      label: AppStrings.dominoMissingSemantics,
+      label: context.l10n.dominoMissingSemantics,
       child: _DominoTile(top: pendingTop, bottom: pendingBottom, missing: true),
     );
   }

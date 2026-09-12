@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
@@ -32,8 +32,8 @@ class FamilyScreen extends ConsumerWidget {
 
     return AppScaffold(
       title: switch (family) {
-        AsyncData(value: final f?) => f.name.resolve(AppStrings.locale),
-        _ => AppStrings.tabLearn,
+        AsyncData(value: final f?) => f.name.resolve(context.l10n.localeName),
+        _ => context.l10n.tabLearn,
       },
       onBack: context.pop,
       body: Center(
@@ -45,11 +45,11 @@ class FamilyScreen extends ConsumerWidget {
             AsyncData(value: final f?) => _FamilyBody(family: f),
             AsyncData() || AsyncError() => Padding(
               padding: EdgeInsets.all(theme.spacing.lg),
-              child: const Text(AppStrings.familyNotFound),
+              child: Text(context.l10n.familyNotFound),
             ),
             _ => Padding(
               padding: EdgeInsets.all(theme.spacing.lg),
-              child: const Text(AppStrings.familyLoading),
+              child: Text(context.l10n.familyLoading),
             ),
           },
         ),
@@ -74,8 +74,8 @@ class _FamilyBody extends ConsumerWidget {
       ).select((a) => (a.value?.total ?? 0) > 0),
     );
     final masteryText = switch (mastery) {
-      AsyncData(:final value?) => AppStrings.masteryPercent(value),
-      _ => AppStrings.familyMasteryUnknown,
+      AsyncData(:final value?) => context.l10n.masteryPercentText(value),
+      _ => context.l10n.familyMasteryUnknown,
     };
     final secondary = theme.textStyles.body.copyWith(
       color: theme.colors.textSecondary,
@@ -87,11 +87,11 @@ class _FamilyBody extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            AppStrings.familyEvaluatedLabel,
+            context.l10n.familyEvaluatedLabel,
             style: theme.textStyles.caption,
           ),
           SizedBox(height: theme.spacing.xs),
-          Text(family.description.resolve(AppStrings.locale)),
+          Text(family.description.resolve(context.l10n.localeName)),
           SizedBox(height: theme.spacing.lg),
           Wrap(
             spacing: theme.spacing.md,
@@ -99,15 +99,15 @@ class _FamilyBody extends ConsumerWidget {
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               ScoreCard(
-                title: AppStrings.familyFormatLabel,
-                value: AppStrings.familyFormat(
+                title: context.l10n.familyFormatLabel,
+                value: context.l10n.familyFormat(
                   itemCount: family.defaultItemCount,
                   durationSec: family.defaultDurationSec,
                   perItemSec: family.defaultPerItemTimeSec,
                 ),
               ),
               ScoreCard(
-                title: AppStrings.familyMasteryLabel,
+                title: context.l10n.familyMasteryLabel,
                 value: masteryText,
               ),
               ConfidenceChip(confidence: family.confidence),
@@ -119,12 +119,12 @@ class _FamilyBody extends ConsumerWidget {
             runSpacing: theme.spacing.sm,
             children: [
               PrimaryButton(
-                label: AppStrings.familyActionTrain,
+                label: context.l10n.familyActionTrain,
                 icon: AppIconGlyph.target,
                 onPressed: () => context.go(AppRoutes.train),
               ),
               SecondaryButton(
-                label: AppStrings.familyActionCards,
+                label: context.l10n.familyActionCards,
                 onPressed: hasDeck
                     ? () => context.push(AppRoutes.learnFamilyCards(family.id))
                     : null,
@@ -133,13 +133,13 @@ class _FamilyBody extends ConsumerWidget {
           ),
           SizedBox(height: theme.spacing.xl),
           SectionHeader(
-            title: AppStrings.familyLessonsTitle,
+            title: context.l10n.familyLessonsTitle,
             trailing: _LessonProgressRing(familyId: family.id),
           ),
           SizedBox(height: theme.spacing.md),
           switch (lessons) {
             AsyncData(value: final list) when list.isEmpty => Text(
-              AppStrings.familyLessonsEmpty,
+              context.l10n.familyLessonsEmpty,
               style: secondary,
             ),
             AsyncData(value: final list) => Column(
@@ -152,10 +152,10 @@ class _FamilyBody extends ConsumerWidget {
               ],
             ),
             AsyncError() => Text(
-              AppStrings.learnFamiliesError,
+              context.l10n.learnFamiliesError,
               style: secondary,
             ),
-            _ => Text(AppStrings.familyLoading, style: secondary),
+            _ => Text(context.l10n.familyLoading, style: secondary),
           },
         ],
       ),
@@ -183,10 +183,10 @@ class _LessonProgressRing extends ConsumerWidget {
       value: read / total,
       color: theme.colors.accent,
       size: 40,
-      semanticsLabel: AppStrings.familyLessonsTitle,
-      semanticsValue: AppStrings.familyLessonsProgressSemantics(read, total),
+      semanticsLabel: context.l10n.familyLessonsTitle,
+      semanticsValue: context.l10n.familyLessonsProgressSemantics(read, total),
       child: Text(
-        AppStrings.familyLessonsProgress(read, total),
+        context.l10n.familyLessonsProgress(read, total),
         style: theme.textStyles.caption,
         textAlign: TextAlign.center,
       ),
@@ -205,9 +205,9 @@ class _LessonTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = AppTheme.of(context);
-    final summary = lesson.summary?.resolve(AppStrings.locale);
+    final summary = lesson.summary?.resolve(context.l10n.localeName);
     final minutes = lesson.estimatedReadMin;
-    final title = lesson.title.resolve(AppStrings.locale);
+    final title = lesson.title.resolve(context.l10n.localeName);
     final read = ref.watch(lessonReadProvider(lesson.id)).value ?? false;
     return AppCard(
       onPressed: () => context.go(AppRoutes.learnLesson(familyId, lesson.id)),
@@ -232,7 +232,7 @@ class _LessonTile extends ConsumerWidget {
                 if (minutes != null) ...[
                   SizedBox(height: theme.spacing.xs),
                   Text(
-                    AppStrings.lessonReadTime(minutes),
+                    context.l10n.lessonReadTime(minutes),
                     style: theme.textStyles.caption,
                   ),
                 ],
@@ -245,7 +245,7 @@ class _LessonTile extends ConsumerWidget {
               AppIconGlyph.check,
               size: 18,
               color: theme.colors.success,
-              semanticsLabel: AppStrings.lessonMarkedRead,
+              semanticsLabel: context.l10n.lessonMarkedRead,
             ),
           ],
         ],

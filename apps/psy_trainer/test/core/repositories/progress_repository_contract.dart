@@ -520,6 +520,47 @@ void runProgressRepositoryContract({
       expect(stored.settings, profile.settings);
     });
   });
+
+  group('clearAll', () {
+    test('wipes every user table (US-091 "reset all data")', () async {
+      final session = await repo.startSession(
+        mode: SessionMode.practice,
+        familyId: 'english',
+      );
+      await repo.recordAttempt(
+        NewAttempt(
+          sessionId: session.id,
+          familyId: 'english',
+          itemId: 'item-1',
+          answer: const {'value': 1},
+          isCorrect: true,
+          responseMs: 800,
+          position: 0,
+        ),
+      );
+      await repo.saveFlashcardReview(
+        FlashcardReview(
+          flashcardId: 'card-1',
+          deckId: 'deck-1',
+          box: 1,
+          reviews: 1,
+          lapses: 0,
+          nextReviewAt: fixedNow,
+        ),
+      );
+      await repo.markLessonRead('lesson-1');
+      await repo.saveProfile(const UserProfile(locale: 'fr'));
+
+      await repo.clearAll();
+
+      expect(await repo.sessions(), isEmpty);
+      expect(await repo.attemptsForSession(session.id), isEmpty);
+      expect(await repo.itemStats(), isEmpty);
+      expect(await repo.dueFlashcardReviews(now: fixedNow), isEmpty);
+      expect(await repo.lessonsRead(), isEmpty);
+      expect(await repo.profile(), isNull);
+    });
+  });
 }
 
 /// "Now" as seen by the repositories under test.

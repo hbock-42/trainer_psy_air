@@ -1,7 +1,8 @@
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart' show Locale;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_content_repository.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_progress_repository.dart';
 import 'package:psy_trainer/core/repositories/model/learning.dart';
@@ -34,6 +35,8 @@ Future<void> pumpFlashcards(
   await tester.pumpAndSettle();
 }
 
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
+
 void main() {
   testWidgets('deck summary shows due/total then starts the session', (
     tester,
@@ -41,19 +44,16 @@ void main() {
     final deck = flashcardsDeckFixture(familyId: 'culture_aero');
     await pumpFlashcards(tester, deck: deck);
 
-    expect(
-      find.text(AppStrings.flashcardsDeckSummary(due: 3, total: 3)),
-      findsOneWidget,
-    );
+    expect(find.text(l10nFr.flashcardsDeckSummary(3, 3)), findsOneWidget);
     expect(find.byType(PrimaryButton), findsOneWidget);
 
     await tester.tap(
-      find.widgetWithText(PrimaryButton, AppStrings.flashcardsStart),
+      find.widgetWithText(PrimaryButton, l10nFr.flashcardsStart),
     );
     await tester.pumpAndSettle();
 
     expect(find.text('Recto 1'), findsOneWidget);
-    expect(find.text(AppStrings.flashcardsProgress(1, 3)), findsOneWidget);
+    expect(find.text(l10nFr.flashcardsProgress(1, 3)), findsOneWidget);
   });
 
   testWidgets('flipping reveals the back and the grading buttons', (
@@ -61,19 +61,19 @@ void main() {
   ) async {
     final deck = flashcardsDeckFixture(familyId: 'culture_aero', count: 1);
     await pumpFlashcards(tester, deck: deck);
-    await tester.tap(find.text(AppStrings.flashcardsStart));
+    await tester.tap(find.text(l10nFr.flashcardsStart));
     await tester.pumpAndSettle();
 
     expect(find.text('Verso 1'), findsNothing);
-    expect(find.text(AppStrings.flashcardsAgain), findsNothing);
+    expect(find.text(l10nFr.flashcardsAgain), findsNothing);
 
     await tester.tap(find.text('Recto 1'));
     await tester.pumpAndSettle();
 
     expect(find.text('Verso 1'), findsOneWidget);
-    expect(find.text(AppStrings.flashcardsAgain), findsOneWidget);
-    expect(find.text(AppStrings.flashcardsHard), findsOneWidget);
-    expect(find.text(AppStrings.flashcardsGood), findsOneWidget);
+    expect(find.text(l10nFr.flashcardsAgain), findsOneWidget);
+    expect(find.text(l10nFr.flashcardsHard), findsOneWidget);
+    expect(find.text(l10nFr.flashcardsGood), findsOneWidget);
   });
 
   testWidgets('space flips and 1/2/3 grade, advancing to the next card', (
@@ -81,7 +81,7 @@ void main() {
   ) async {
     final deck = flashcardsDeckFixture(familyId: 'culture_aero', count: 2);
     await pumpFlashcards(tester, deck: deck);
-    await tester.tap(find.text(AppStrings.flashcardsStart));
+    await tester.tap(find.text(l10nFr.flashcardsStart));
     await tester.pumpAndSettle();
 
     expect(find.text('Recto 1'), findsOneWidget);
@@ -93,7 +93,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Recto 2'), findsOneWidget);
-    expect(find.text(AppStrings.flashcardsProgress(2, 2)), findsOneWidget);
+    expect(find.text(l10nFr.flashcardsProgress(2, 2)), findsOneWidget);
   });
 
   testWidgets('grading every due card shows the end-of-session summary', (
@@ -101,7 +101,7 @@ void main() {
   ) async {
     final deck = flashcardsDeckFixture(familyId: 'culture_aero', count: 2);
     await pumpFlashcards(tester, deck: deck);
-    await tester.tap(find.text(AppStrings.flashcardsStart));
+    await tester.tap(find.text(l10nFr.flashcardsStart));
     await tester.pumpAndSettle();
 
     // Card 1: flip then "again".
@@ -116,9 +116,9 @@ void main() {
     await tester.sendKeyEvent(LogicalKeyboardKey.digit3);
     await tester.pumpAndSettle();
 
-    expect(find.text(AppStrings.flashcardsSummaryTitle), findsOneWidget);
+    expect(find.text(l10nFr.flashcardsSummaryTitle), findsOneWidget);
     expect(
-      find.text(AppStrings.flashcardsSummaryBody(again: 1, hard: 0, good: 1)),
+      find.text(l10nFr.flashcardsSummaryBody(again: 1, hard: 0, good: 1)),
       findsOneWidget,
     );
   });
@@ -129,7 +129,7 @@ void main() {
     final deck = flashcardsDeckFixture(familyId: 'culture_aero', count: 1);
     final progress = InMemoryProgressRepository();
     await pumpFlashcards(tester, deck: deck, progress: progress);
-    await tester.tap(find.text(AppStrings.flashcardsStart));
+    await tester.tap(find.text(l10nFr.flashcardsStart));
     await tester.pumpAndSettle();
 
     await tester.sendKeyEvent(LogicalKeyboardKey.space);
@@ -158,7 +158,7 @@ void main() {
     );
     await pumpFlashcards(tester, deck: deck, progress: progress);
 
-    expect(find.text(AppStrings.flashcardsEmptyTitle), findsOneWidget);
+    expect(find.text(l10nFr.flashcardsEmptyTitle), findsOneWidget);
     expect(find.byType(PrimaryButton), findsNothing);
   });
 }

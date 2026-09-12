@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
@@ -32,14 +32,14 @@ class ResumeSessionCard extends ConsumerWidget {
     final familyId = candidate.session.familyId;
     final families = ref.watch(trainFamiliesProvider);
     final name = switch (families) {
-      AsyncData(value: final entries) => _nameOf(entries, familyId),
+      AsyncData(value: final entries) => _nameOf(context, entries, familyId),
       _ => familyId,
     };
 
     return Padding(
       padding: EdgeInsets.only(bottom: theme.spacing.lg),
       child: AppCard(
-        semanticsLabel: AppStrings.sessionResumeCardAction,
+        semanticsLabel: context.l10n.sessionResumeCardAction,
         onPressed: () => _resume(context, candidate),
         child: Row(
           children: [
@@ -48,12 +48,12 @@ class ResumeSessionCard extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    AppStrings.sessionResumeCardTitle,
+                    context.l10n.sessionResumeCardTitle,
                     style: theme.textStyles.bodyStrong,
                   ),
                   SizedBox(height: theme.spacing.xs),
                   Text(
-                    AppStrings.sessionResumeCardSubtitle(name ?? ''),
+                    context.l10n.sessionResumeCardSubtitle(name ?? ''),
                     style: theme.textStyles.caption,
                   ),
                 ],
@@ -61,7 +61,7 @@ class ResumeSessionCard extends ConsumerWidget {
             ),
             SizedBox(width: theme.spacing.sm),
             PrimaryButton(
-              label: AppStrings.sessionResumeCardAction,
+              label: context.l10n.sessionResumeCardAction,
               onPressed: () => _resume(context, candidate),
             ),
           ],
@@ -70,10 +70,14 @@ class ResumeSessionCard extends ConsumerWidget {
     );
   }
 
-  static String? _nameOf(List<TrainFamilyEntry> entries, String? familyId) {
+  static String? _nameOf(
+    BuildContext context,
+    List<TrainFamilyEntry> entries,
+    String? familyId,
+  ) {
     for (final entry in entries) {
       if (entry.family.id == familyId) {
-        return entry.family.name.resolve(AppStrings.locale);
+        return entry.family.name.resolve(context.l10n.localeName);
       }
     }
     return familyId;

@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:psy_trainer/app.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repository_providers.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
 import 'package:psy_trainer/core/router/app_routes.dart';
@@ -59,18 +59,24 @@ Finder _tab(String label) => find.descendant(
   ),
 );
 
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
+
 void main() {
   testWidgets('shows five tabs in AppRoutes.tabs order', (tester) async {
     await pumpShell(tester);
 
     final bar = tester.widget<AppTabBar>(find.byType(AppTabBar));
-    expect(bar.items, AppShell.tabs);
+    final context = tester.element(find.byType(AppTabBar));
+    expect(
+      bar.items.map((i) => (i.label, i.glyph)),
+      AppShell.tabsOf(context).map((i) => (i.label, i.glyph)),
+    );
     expect(bar.items.map((i) => i.label), [
-      AppStrings.tabLearn,
-      AppStrings.tabTrain,
-      AppStrings.tabExam,
-      AppStrings.tabProgress,
-      AppStrings.tabSettings,
+      l10nFr.tabLearn,
+      l10nFr.tabTrain,
+      l10nFr.tabExam,
+      l10nFr.tabProgress,
+      l10nFr.tabSettings,
     ]);
     expect(bar.items.length, AppRoutes.tabs.length);
     expect(bar.selectedIndex, 0);
@@ -83,11 +89,11 @@ void main() {
     final router = container.read(appRouterProvider);
 
     final expectations = <String, (Type, String)>{
-      AppStrings.tabTrain: (TrainScreen, AppRoutes.train),
-      AppStrings.tabExam: (ExamScreen, AppRoutes.exam),
-      AppStrings.tabProgress: (ProgressScreen, AppRoutes.progress),
-      AppStrings.tabSettings: (SettingsScreen, AppRoutes.settings),
-      AppStrings.tabLearn: (LearnScreen, AppRoutes.learn),
+      l10nFr.tabTrain: (TrainScreen, AppRoutes.train),
+      l10nFr.tabExam: (ExamScreen, AppRoutes.exam),
+      l10nFr.tabProgress: (ProgressScreen, AppRoutes.progress),
+      l10nFr.tabSettings: (SettingsScreen, AppRoutes.settings),
+      l10nFr.tabLearn: (LearnScreen, AppRoutes.learn),
     };
     var index = 1;
     for (final entry in expectations.entries) {
@@ -113,14 +119,14 @@ void main() {
   ) async {
     await pumpShell(tester);
 
-    expect(find.text(AppStrings.appName), findsOneWidget);
-    expect(find.text(AppStrings.disclaimerShort), findsOneWidget);
+    expect(find.text(l10nFr.appName), findsOneWidget);
+    expect(find.text(l10nFr.disclaimerShort), findsOneWidget);
     // The full text sits behind the "read the full disclaimer" link (US-040).
-    await tester.tap(find.text(AppStrings.learnDisclaimerExpand));
+    await tester.tap(find.text(l10nFr.learnDisclaimerExpand));
     await tester.pumpAndSettle();
-    expect(find.text(AppStrings.disclaimerTitle), findsOneWidget);
-    expect(find.text(AppStrings.disclaimerParagraph1), findsOneWidget);
-    expect(find.text(AppStrings.disclaimerParagraph2), findsOneWidget);
+    expect(find.text(l10nFr.disclaimerTitle), findsOneWidget);
+    expect(find.text(l10nFr.disclaimerParagraph1), findsOneWidget);
+    expect(find.text(l10nFr.disclaimerParagraph2), findsOneWidget);
     expect(find.textContaining('Air France'), findsWidgets);
   });
 
@@ -130,9 +136,9 @@ void main() {
 
     // Train is no longer a placeholder (US-050): it has its own test.
     for (final (route, label) in [
-      (AppRoutes.exam, AppStrings.tabExam),
-      (AppRoutes.progress, AppStrings.tabProgress),
-      (AppRoutes.settings, AppStrings.tabSettings),
+      (AppRoutes.exam, l10nFr.tabExam),
+      (AppRoutes.progress, l10nFr.tabProgress),
+      (AppRoutes.settings, l10nFr.tabSettings),
     ]) {
       router.go(route);
       await tester.pumpAndSettle();
@@ -151,7 +157,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(TrainSessionScreen), findsOneWidget);
 
-    await tester.tap(_tab(AppStrings.tabLearn));
+    await tester.tap(_tab(l10nFr.tabLearn));
     await tester.pumpAndSettle();
     expect(find.byType(LearnScreen), findsOneWidget);
     expect(find.byType(TrainSessionScreen), findsNothing);
@@ -161,7 +167,7 @@ void main() {
     );
 
     // Back to Train: the session is still on top of that branch.
-    await tester.tap(_tab(AppStrings.tabTrain));
+    await tester.tap(_tab(l10nFr.tabTrain));
     await tester.pumpAndSettle();
     expect(find.byType(TrainSessionScreen), findsOneWidget);
     expect(
@@ -180,7 +186,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(TrainSessionScreen), findsOneWidget);
 
-    await tester.tap(_tab(AppStrings.tabTrain));
+    await tester.tap(_tab(l10nFr.tabTrain));
     await tester.pumpAndSettle();
     expect(find.byType(TrainSessionScreen), findsNothing);
     expect(find.byType(TrainScreen), findsOneWidget);
@@ -213,7 +219,7 @@ void main() {
     expect(barRect.height, _desktop.height);
     expect(contentRect.left, greaterThanOrEqualTo(barRect.right));
 
-    await tester.tap(_tab(AppStrings.tabSettings));
+    await tester.tap(_tab(l10nFr.tabSettings));
     await tester.pumpAndSettle();
     expect(find.byType(SettingsScreen), findsOneWidget);
   });
@@ -242,11 +248,11 @@ void main() {
     final handle = tester.ensureSemantics();
     await pumpShell(tester);
 
-    expect(find.bySemanticsLabel(AppStrings.tabBarLabel), findsOneWidget);
+    expect(find.bySemanticsLabel(l10nFr.tabBarLabel), findsOneWidget);
     expect(
-      tester.getSemantics(_tab(AppStrings.tabLearn)),
+      tester.getSemantics(_tab(l10nFr.tabLearn)),
       matchesSemantics(
-        label: AppStrings.tabLearn,
+        label: l10nFr.tabLearn,
         isButton: true,
         isSelected: true,
         hasSelectedState: true,

@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/train/presentation/engine/engine_ui.dart';
 import 'package:psy_trainer/features/train/presentation/renderers/mcq_renderer.dart';
@@ -41,6 +41,8 @@ McqItem _mcq({
   passageId: passageId,
   media: media,
 );
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   late ManualClock clock;
@@ -97,8 +99,8 @@ void main() {
     tester,
   ) async {
     await pumpHost(tester, config(items: [_mcq()]));
-    expect(find.text(AppStrings.mcqExampleStem), findsOneWidget);
-    expect(find.text(AppStrings.mcqExampleOptionCorrect), findsOneWidget);
+    expect(find.text(l10nFr.mcqExampleStem), findsOneWidget);
+    expect(find.text(l10nFr.mcqExampleOptionCorrect), findsOneWidget);
   });
 
   testWidgets('practice: tapping an option answers immediately and shows '
@@ -113,7 +115,7 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('mcq_option_0')));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
     expect(find.text('Parce que voilà.', findRichText: true), findsOneWidget);
     final tile = tester.widget<AnswerOptionTile>(
       find.byKey(const ValueKey('mcq_option_0')),
@@ -130,7 +132,7 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('mcq_option_0')));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackWrong), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackWrong), findsOneWidget);
     expect(
       tester
           .widget<AnswerOptionTile>(find.byKey(const ValueKey('mcq_option_0')))
@@ -195,11 +197,11 @@ void main() {
     await pumpHost(tester, config(items: [_mcq(allowSkip: true)]));
     await start(tester);
 
-    expect(find.text(AppStrings.mcqSkipOption), findsOneWidget);
-    await tester.tap(find.text(AppStrings.mcqSkipOption));
+    expect(find.text(l10nFr.mcqSkipOption), findsOneWidget);
+    await tester.tap(find.text(l10nFr.mcqSkipOption));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackSkipped), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackSkipped), findsOneWidget);
   });
 
   testWidgets('keyboard: digit 1 answers in practice, digit + Enter '
@@ -208,7 +210,7 @@ void main() {
     await start(tester);
     await tester.sendKeyEvent(LogicalKeyboardKey.digit1);
     await tester.pump();
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
   });
 
   testWidgets('keyboard: exam mode selects with a digit then Enter '
@@ -254,13 +256,13 @@ void main() {
       findsOneWidget,
     );
 
-    await tester.tap(find.text(AppStrings.mcqPassageHide));
+    await tester.tap(find.text(l10nFr.mcqPassageHide));
     await tester.pump();
     expect(
       find.text('Corps du texte de référence.', findRichText: true),
       findsNothing,
     );
-    expect(find.text(AppStrings.mcqPassageShow), findsOneWidget);
+    expect(find.text(l10nFr.mcqPassageShow), findsOneWidget);
   });
 
   testWidgets('no passage panel is shown when the resolver has none', (
@@ -273,8 +275,8 @@ void main() {
     );
     await start(tester);
     expect(find.text('Question 1', findRichText: true), findsOneWidget);
-    expect(find.text(AppStrings.mcqPassageShow), findsNothing);
-    expect(find.text(AppStrings.mcqPassageHide), findsNothing);
+    expect(find.text(l10nFr.mcqPassageShow), findsNothing);
+    expect(find.text(l10nFr.mcqPassageHide), findsNothing);
   });
 
   testWidgets('survives a 1.3x text scale without overflow', (tester) async {

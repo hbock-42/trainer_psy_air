@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:psy_trainer/app.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/core/router/app_page.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
@@ -58,6 +58,8 @@ Future<ProviderContainer> pumpApp(
   if (settle) await tester.pumpAndSettle();
   return container;
 }
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   testWidgets('cold start lands on the Learn tab inside the shell', (
@@ -244,9 +246,9 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(ErrorScreen), findsOneWidget);
-    expect(find.text(AppStrings.errorTitle), findsOneWidget);
+    expect(find.text(l10nFr.errorTitle), findsOneWidget);
 
-    await tester.tap(find.text(AppStrings.errorBackHome));
+    await tester.tap(find.text(l10nFr.errorBackHome));
     await tester.pumpAndSettle();
     expect(find.byType(LearnScreen), findsOneWidget);
   });

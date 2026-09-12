@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/theme/app_theme.dart';
 
 /// Test helpers that reproduce the root context of the real app: a
@@ -22,6 +23,7 @@ extension PumpApp on WidgetTester {
     AppTheme? theme,
     double textScale = 1.0,
     bool align = true,
+    Locale locale = const Locale('fr'),
   }) async {
     final effectiveTheme = theme ?? AppTheme.light();
     FocusManager.instance.highlightStrategy =
@@ -34,6 +36,9 @@ extension PumpApp on WidgetTester {
       WidgetsApp(
         color: effectiveTheme.colors.background,
         debugShowCheckedModeBanner: false,
+        locale: locale,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
         builder: (context, _) {
           return MediaQuery(
             data: MediaQuery.of(
@@ -75,11 +80,13 @@ Future<void> pumpApp(
   AppTheme? theme,
   double textScale = 1.0,
   bool align = false,
+  Locale locale = const Locale('fr'),
 }) {
   return tester.pumpApp(
     ProviderScope(overrides: overrides, child: child),
     theme: theme,
     textScale: textScale,
     align: align,
+    locale: locale,
   );
 }

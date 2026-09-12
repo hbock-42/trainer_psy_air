@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../../train/presentation/engine/activity_renderer.dart';
@@ -62,7 +62,7 @@ class _TubesHeaderState extends State<_TubesHeader> {
           children: [
             Expanded(
               child: _TubesDiagram(
-                label: AppStrings.tubesStartLabel,
+                label: context.l10n.tubesStartLabel,
                 tubes: puzzle.start.tubes,
                 capacities: puzzle.capacities,
               ),
@@ -70,7 +70,7 @@ class _TubesHeaderState extends State<_TubesHeader> {
             SizedBox(width: theme.spacing.lg),
             Expanded(
               child: _TubesDiagram(
-                label: AppStrings.tubesTargetLabel,
+                label: context.l10n.tubesTargetLabel,
                 tubes: puzzle.target.tubes,
                 capacities: puzzle.capacities,
               ),
@@ -81,7 +81,7 @@ class _TubesHeaderState extends State<_TubesHeader> {
           SizedBox(height: theme.spacing.lg),
           if (!_showSolution)
             SecondaryButton(
-              label: AppStrings.tubesShowSolutionAction,
+              label: context.l10n.tubesShowSolutionAction,
               onPressed: () => setState(() {
                 _showSolution = true;
                 _step = 0;
@@ -126,13 +126,13 @@ class _SolutionStepper extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            AppStrings.tubesSolutionStepLabel(clampedStep, total),
+            context.l10n.tubesSolutionStepLabel(clampedStep, total),
             style: theme.textStyles.bodyStrong,
           ),
           SizedBox(height: theme.spacing.xs),
           if (clampedStep > 0)
             Text(
-              AppStrings.tubesSolutionMoveLabel(
+              context.l10n.tubesSolutionMoveLabel(
                 _tubeLetter(moves[clampedStep - 1].from),
                 _tubeLetter(moves[clampedStep - 1].to),
               ),
@@ -150,7 +150,7 @@ class _SolutionStepper extends StatelessWidget {
               AppIconButton(
                 key: const ValueKey('tubes_solution_previous_step'),
                 glyph: AppIconGlyph.chevronLeft,
-                semanticsLabel: AppStrings.tubesSolutionPreviousStep,
+                semanticsLabel: context.l10n.tubesSolutionPreviousStep,
                 onPressed: clampedStep > 0
                     ? () => onStepChanged(clampedStep - 1)
                     : null,
@@ -159,7 +159,7 @@ class _SolutionStepper extends StatelessWidget {
               AppIconButton(
                 key: const ValueKey('tubes_solution_next_step'),
                 glyph: AppIconGlyph.chevronRight,
-                semanticsLabel: AppStrings.tubesSolutionNextStep,
+                semanticsLabel: context.l10n.tubesSolutionNextStep,
                 onPressed: clampedStep < total
                     ? () => onStepChanged(clampedStep + 1)
                     : null,
@@ -168,7 +168,7 @@ class _SolutionStepper extends StatelessWidget {
           ),
           SizedBox(height: theme.spacing.sm),
           SecondaryButton(
-            label: AppStrings.tubesHideSolutionAction,
+            label: context.l10n.tubesHideSolutionAction,
             onPressed: onHide,
           ),
         ],
@@ -231,27 +231,27 @@ class _TubesExample extends StatelessWidget {
     final theme = AppTheme.of(context);
     return Row(
       children: [
-        const Expanded(
+        Expanded(
           child: _TubesDiagram(
-            label: AppStrings.tubesStartLabel,
-            tubes: [
+            label: context.l10n.tubesStartLabel,
+            tubes: const [
               [0, 1],
               [],
               [2],
             ],
-            capacities: [3, 2, 3],
+            capacities: const [3, 2, 3],
           ),
         ),
         SizedBox(width: theme.spacing.lg),
-        const Expanded(
+        Expanded(
           child: _TubesDiagram(
-            label: AppStrings.tubesTargetLabel,
-            tubes: [
+            label: context.l10n.tubesTargetLabel,
+            tubes: const [
               [1],
               [],
               [2, 0],
             ],
-            capacities: [3, 2, 3],
+            capacities: const [3, 2, 3],
           ),
         ),
       ],
