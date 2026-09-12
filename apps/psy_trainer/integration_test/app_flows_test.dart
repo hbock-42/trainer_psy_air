@@ -86,6 +86,12 @@ void main() {
     final db = AppDatabase(openInMemoryExecutor());
     addTearDown(db.close);
 
+    // The app follows the system locale by default; the CI runner reports
+    // English, so pin the platform locale to French — the scenario ends with
+    // an explicit switch to English and asserts the label changes.
+    tester.platformDispatcher.localesTestValue = const [Locale('fr')];
+    addTearDown(tester.platformDispatcher.clearLocalesTestValue);
+
     final container = ProviderContainer(
       overrides: [
         appDatabaseProvider.overrideWithValue(db),
