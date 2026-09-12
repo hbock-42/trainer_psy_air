@@ -2179,4 +2179,31 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get p1CubeRotationExplanationAltered =>
       'Le cube candidat a été modifié (faces échangées ou face inversée) : ce n\'est pas une simple rotation.';
+
+  @override
+  String get p1AnglesExampleCaption =>
+      'Parmi les valeurs proposées, touchez celles qui correspondent à un angle dessiné (A, B...), puis Valider.';
+
+  @override
+  String p1AnglesCandidateSemantics(int index, int value) {
+    return 'Valeur $index, $value degrés';
+  }
+
+  @override
+  String get mentalArithmeticAllIntervalsPrompt =>
+      'Sélectionnez tous les intervalles qui contiennent la valeur exacte.';
+
+  @override
+  String mentalArithmeticTrueValue(int value) {
+    return 'Valeur exacte : $value';
+  }
+
+  @override
+  String mentalArithmeticIntervalSemantics(int index, String label) {
+    return 'Intervalle $index, $label';
+  }
+
+  @override
+  String get mentalArithmeticAllIntervalsExampleCaption =>
+      'Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider.';
 }

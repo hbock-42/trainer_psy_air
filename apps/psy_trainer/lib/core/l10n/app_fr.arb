@@ -1460,5 +1460,38 @@
   "p1CubeRotationSameAnswer": "Même cube, tourné",
   "p1CubeRotationAlteredAnswer": "Modifié",
   "p1CubeRotationExplanationSame": "Le cube candidat est bien le cube de référence, vu sous un autre angle.",
-  "p1CubeRotationExplanationAltered": "Le cube candidat a été modifié (faces échangées ou face inversée) : ce n'est pas une simple rotation."
+  "p1CubeRotationExplanationAltered": "Le cube candidat a été modifié (faces échangées ou face inversée) : ce n'est pas une simple rotation.",
+  "p1AnglesExampleCaption": "Parmi les valeurs proposées, touchez celles qui correspondent à un angle dessiné (A, B...), puis Valider.",
+  "p1AnglesCandidateSemantics": "Valeur {index}, {value} degrés",
+  "@p1AnglesCandidateSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "mentalArithmeticAllIntervalsPrompt": "Sélectionnez tous les intervalles qui contiennent la valeur exacte.",
+  "mentalArithmeticTrueValue": "Valeur exacte : {value}",
+  "@mentalArithmeticTrueValue": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "mentalArithmeticIntervalSemantics": "Intervalle {index}, {label}",
+  "@mentalArithmeticIntervalSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "mentalArithmeticAllIntervalsExampleCaption": "Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider."
 }
