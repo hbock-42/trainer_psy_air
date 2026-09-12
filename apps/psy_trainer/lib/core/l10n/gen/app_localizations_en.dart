@@ -2143,6 +2143,15 @@ class AppLocalizationsEn extends AppLocalizations {
       'Press F when the boxed calculation, at the bottom, is wrong.';
 
   @override
+  String get p1AnglesExampleCaption =>
+      'Among the candidate values, tap the ones matching a drawn angle (A, B...), then Confirm.';
+
+  @override
+  String p1AnglesCandidateSemantics(int index, int value) {
+    return 'Value $index, $value degrees';
+  }
+
+  @override
   String get mentalArithmeticAllIntervalsPrompt =>
       'Select every interval that contains the exact value.';
 

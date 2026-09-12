@@ -3516,6 +3516,18 @@ abstract class AppLocalizations {
   /// **'Appuyez sur F quand le calcul encadré, en bas, est faux.'**
   String get multitaskExampleCalc;
 
+  /// No description provided for @p1AnglesExampleCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Parmi les valeurs proposées, touchez celles qui correspondent à un angle dessiné (A, B...), puis Valider.'**
+  String get p1AnglesExampleCaption;
+
+  /// No description provided for @p1AnglesCandidateSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeur {index}, {value} degrés'**
+  String p1AnglesCandidateSemantics(int index, int value);
+
   /// No description provided for @mentalArithmeticAllIntervalsPrompt.
   ///
   /// In fr, this message translates to:
