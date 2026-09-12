@@ -100,3 +100,44 @@ InMemoryContentRepository psy0ContentRepository({bool seeded = true}) =>
       families: seeded ? psy0Families() : const [],
       lessons: seeded ? psy0Lessons() : const [],
     );
+
+/// A couple of PSY1 family ids (US-101), for module-switch tests.
+const List<String> psy1FamilyIds = ['p1_raven_matrices', 'p1_psychomotor'];
+
+/// Test fixture: a couple of PSY1 families, same shape as [psy0Families].
+List<TestFamily> psy1Families() => [
+  const TestFamily(
+    id: 'p1_raven_matrices',
+    moduleId: ModuleId.psy1,
+    version: 1,
+    order: 1,
+    name: LocalizedText(fr: 'Matrices progressives'),
+    description: LocalizedText(fr: 'Complétion de matrice.'),
+    engineType: EngineType.p1RavenMatrices,
+    answerFormat: AnswerFormat.mcq,
+    defaultDurationSec: 1800,
+    defaultItemCount: 30,
+    confidence: Confidence.reported,
+  ),
+  const TestFamily(
+    id: 'p1_psychomotor',
+    moduleId: ModuleId.psy1,
+    version: 1,
+    order: 2,
+    name: LocalizedText(fr: 'Psychomoteur'),
+    description: LocalizedText(fr: 'Test psychomoteur.'),
+    engineType: EngineType.p1Psychomotor,
+    answerFormat: AnswerFormat.simulation,
+    defaultDurationSec: 1080,
+    defaultItemCount: 6,
+    confidence: Confidence.reported,
+  ),
+];
+
+/// An in-memory content repository seeded with both the PSY0 and PSY1
+/// fixtures, for module-switch tests (US-101).
+InMemoryContentRepository psy0AndPsy1ContentRepository() =>
+    InMemoryContentRepository(
+      families: [...psy0Families(), ...psy1Families()],
+      lessons: psy0Lessons(),
+    );

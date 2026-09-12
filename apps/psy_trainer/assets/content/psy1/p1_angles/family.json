@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "p1_angles",
+  "moduleId": "psy1",
+  "version": 1,
+  "order": 5,
+  "name": { "fr": "Angles à saisir", "en": "Angle estimation" },
+  "shortName": { "fr": "Angles", "en": "Angles" },
+  "description": {
+    "fr": "Parmi environ 9 valeurs d'angle proposées, sélectionnez jusqu'à 4 bonnes réponses.",
+    "en": "Among about 9 candidate angle values, select up to 4 correct ones."
+  },
+  "engineType": "p1_angles",
+  "generatorId": "p1_angles",
+  "answerFormat": "multi_select",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 300,
+  "defaultItemCount": 3,
+  "confidence": "assumed",
+  "tags": ["spatial"],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §2.3 row 5, §4.1 row 5 (9 possibilités, max 4 bonnes réponses [reported]; count/timing [assumed])"
+  }
+}

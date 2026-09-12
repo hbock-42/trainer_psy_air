@@ -70,9 +70,11 @@ class _StageTile extends StatelessWidget {
       TargetStage.psy1 => context.l10n.stagePsy1Title,
       TargetStage.psy2 => context.l10n.stagePsy2Title,
     };
-    final subtitle = stage.isAvailable
-        ? context.l10n.stagePsy0Subtitle
-        : context.l10n.stageComingSoon;
+    final subtitle = switch (stage) {
+      TargetStage.psy0 => context.l10n.stagePsy0Subtitle,
+      TargetStage.psy1 => context.l10n.stagePsy1Subtitle,
+      TargetStage.psy2 => context.l10n.stageComingSoon,
+    };
     final state = !stage.isAvailable
         ? AnswerOptionState.disabled
         : selected

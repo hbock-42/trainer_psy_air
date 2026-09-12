@@ -183,6 +183,21 @@ flutter:
     - assets/content/psy0/spatial_viewpoint/items/
     - assets/content/psy0/verbal_boxes/
     - assets/content/psy0/verbal_boxes/lexical_fields/
+    - assets/content/psy1/
+    - assets/content/psy1/blueprints/
+    - assets/content/psy1/p1_angles/
+    - assets/content/psy1/p1_attention_sustained/
+    - assets/content/psy1/p1_counters/
+    - assets/content/psy1/p1_cube_nets/
+    - assets/content/psy1/p1_general_efficiency/
+    - assets/content/psy1/p1_math_word_problems/
+    - assets/content/psy1/p1_mental_arithmetic/
+    - assets/content/psy1/p1_psychomotor/
+    - assets/content/psy1/p1_raven_matrices/
+    - assets/content/psy1/p1_reading_fr/
+    - assets/content/psy1/p1_tangram/
+    - assets/content/psy1/p1_wm_calc_back/
+    - assets/content/psy1/p1_wm_reverse_span/
   # END content assets
 
   # An image asset can refer to one or more resolution-specific "variants", see

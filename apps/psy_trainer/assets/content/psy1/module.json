@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../../../packages/psy_content/schema/family.schema.json#/$defs/Module",
+  "kind": "module",
+  "id": "psy1",
+  "version": 1,
+  "order": 1,
+  "name": {
+    "fr": "PSY1 — tests psychotechniques et psychomoteurs",
+    "en": "PSY1 — psychotechnical and psychomotor tests"
+  },
+  "description": {
+    "fr": "Deuxième étape de la sélection Cadets : une journée complète, en présentiel (ENAC Toulouse rapporté), de tests cognitifs et psychomoteurs sur ordinateur — mathématiques, tangram, attention, lecture, angles, efficience générale, compteurs, cubes, mémoire de travail, matrices, calcul mental, puis un test psychomoteur à deux joysticks. Étape la plus sélective du parcours (~70 % d'élimination rapportée). Structure et durées **estimées** à partir de retours de candidats (`docs/content/psy1-spec.md`).",
+    "en": "Second stage of the Cadet selection: a full in-person day (reported at ENAC Toulouse) of computer-based cognitive and psychomotor tests — mathematics, tangram, attention, reading, angles, general efficiency, counters, cubes, working memory, matrices, mental arithmetic, then a two-joystick psychomotor test. The most selective stage of the process (~70% reported elimination). Structure and timings are **estimated** from candidate reports (`docs/content/psy1-spec.md`)."
+  },
+  "familyIds": [
+    "p1_math_word_problems",
+    "p1_tangram",
+    "p1_attention_sustained",
+    "p1_reading_fr",
+    "p1_angles",
+    "p1_general_efficiency",
+    "p1_counters",
+    "p1_cube_nets",
+    "p1_wm_reverse_span",
+    "p1_wm_calc_back",
+    "p1_raven_matrices",
+    "p1_mental_arithmetic",
+    "p1_psychomotor"
+  ],
+  "defaultBlueprintId": "psy1.blueprint.full"
+}

@@ -37,6 +37,9 @@ void main() {
     File('../../apps/psy_trainer/assets/content/psy0/module.json'),
     ...familyFiles('../../apps/psy_trainer/assets/content/psy0'),
     ...jsonFiles('../../apps/psy_trainer/assets/content/psy0/blueprints'),
+    File('../../apps/psy_trainer/assets/content/psy1/module.json'),
+    ...familyFiles('../../apps/psy_trainer/assets/content/psy1'),
+    ...jsonFiles('../../apps/psy_trainer/assets/content/psy1/blueprints'),
   ];
 
   test('the content folders are where we expect them', () {
@@ -319,7 +322,9 @@ void main() {
       expect(generated.map((f) => f.generatorId!), hasLength(12));
       expect(
         generated.map((f) => f.generatorId!).toSet(),
-        GeneratorId.values.toSet(),
+        // The 12 PSY0 generators (EPIC-03); PSY1 (EPIC-10, US-101) adds 13
+        // more `p1_*` ones, checked by the psy1 module tests below.
+        GeneratorId.values.where((id) => !id.name.startsWith('p1')).toSet(),
       );
       final bankDriven = families.where((f) => f.generatorId == null);
       expect(
@@ -407,6 +412,99 @@ void main() {
           'attention_airways',
         ]),
       );
+    });
+  });
+
+  group('real PSY1 content (US-101)', () {
+    final families = familyFiles('../../apps/psy_trainer/assets/content/psy1')
+        .map((f) => parser.parseFamily(f.readAsStringSync(), file: f.path))
+        .toList();
+    final module = parser.parseModule(
+      File(
+        '../../apps/psy_trainer/assets/content/psy1/module.json',
+      ).readAsStringSync(),
+      file: 'psy1/module.json',
+    );
+
+    test('13 family files, ids aligned with the module and each other', () {
+      expect(families, hasLength(13));
+      expect(families.map((f) => f.id).toSet(), module.familyIds.toSet());
+      for (final family in families) {
+        expect(family.toJson()['engineType'], family.id, reason: family.id);
+        expect(family.toJson()['generatorId'], family.id, reason: family.id);
+        expect(family.moduleId, ModuleId.psy1);
+      }
+      final orders = families.map((f) => f.order).toList()..sort();
+      expect(orders, List.generate(families.length, (i) => i + 1));
+    });
+
+    test('every family names one of the 13 p1_* generators, one each', () {
+      final generated = families.map((f) => f.generatorId!).toSet();
+      expect(
+        generated,
+        GeneratorId.values.where((id) => id.name.startsWith('p1')).toSet(),
+      );
+    });
+
+    for (final name in ['psy1_full', 'psy1_short']) {
+      test('$name.json references known families and generators', () {
+        final blueprint = parser.parseBlueprint(
+          File(
+            '../../apps/psy_trainer/assets/content/psy1/blueprints/$name.json',
+          ).readAsStringSync(),
+          file: '$name.json',
+        );
+        final familyIds = families.map((f) => f.id).toSet();
+        for (final section in blueprint.sections) {
+          expect(familyIds, contains(section.familyId), reason: section.id);
+          expect(section.hasTiming, isTrue, reason: section.id);
+          final family = families.firstWhere((f) => f.id == section.familyId);
+          switch (section.itemSelection) {
+            case GeneratedSelection(:final generatorId):
+              expect(generatorId, family.generatorId, reason: section.id);
+            case BankSelection():
+              expect(family.generatorId, isNull, reason: section.id);
+          }
+        }
+      });
+    }
+
+    test('psy1_full.json follows the reported order of psy1-spec.md §4.1', () {
+      final blueprint = parser.parseBlueprint(
+        File(
+          '../../apps/psy_trainer/assets/content/psy1/blueprints/psy1_full.json',
+        ).readAsStringSync(),
+        file: 'psy1_full.json',
+      );
+      expect(blueprint.sections, hasLength(13));
+      expect(blueprint.sections.map((s) => s.familyId), [
+        'p1_math_word_problems',
+        'p1_tangram',
+        'p1_attention_sustained',
+        'p1_reading_fr',
+        'p1_angles',
+        'p1_general_efficiency',
+        'p1_counters',
+        'p1_cube_nets',
+        'p1_wm_reverse_span',
+        'p1_wm_calc_back',
+        'p1_raven_matrices',
+        'p1_mental_arithmetic',
+        'p1_psychomotor',
+      ]);
+      // The psychomotor test is consistently reported as last, and needs
+      // the joystick input abstraction of US-102, not yet built.
+      expect(blueprint.sections.last.familyId, 'p1_psychomotor');
+    });
+
+    test('manifest.json lists both psy0 and psy1', () {
+      final manifest = parser.parseManifest(
+        File(
+          '../../apps/psy_trainer/assets/content/manifest.json',
+        ).readAsStringSync(),
+        file: 'manifest.json',
+      );
+      expect(manifest.modules, containsAll([ModuleId.psy0, ModuleId.psy1]));
     });
   });
 }

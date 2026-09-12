@@ -30,6 +30,18 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tabBarLabel => 'Navigation principale';
 
   @override
+  String get moduleSwitchSemanticsLabel => 'Module actif';
+
+  @override
+  String get moduleSwitchPsy0 => 'PSY0';
+
+  @override
+  String get moduleSwitchPsy1 => 'PSY1';
+
+  @override
+  String get moduleSwitchPsy2 => 'PSY2';
+
+  @override
   String get disclaimerShort =>
       'Entraîneur indépendant et non officiel — aucun lien avec Air France.';
 
@@ -137,6 +149,10 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get stagePsy0Subtitle =>
       'Tests cognitifs, culture aéronautique et anglais, à distance.';
+
+  @override
+  String get stagePsy1Subtitle =>
+      'Tests psychotechniques et psychomoteurs, une journée en présentiel.';
 
   @override
   String get stageComingSoon => 'Bientôt';

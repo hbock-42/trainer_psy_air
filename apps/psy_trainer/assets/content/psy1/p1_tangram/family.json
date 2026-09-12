@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "p1_tangram",
+  "moduleId": "psy1",
+  "version": 1,
+  "order": 2,
+  "name": { "fr": "Tangram", "en": "Tangram" },
+  "shortName": { "fr": "Tangram", "en": "Tangram" },
+  "description": {
+    "fr": "Composez mentalement une forme à partir d'un jeu fixe de pièces, ou (variante 2024) comptez combien de fois une pièce donnée y apparaît.",
+    "en": "Mentally compose a shape from a fixed set of pieces, or (2024 variant) count how many times a given piece occurs in it."
+  },
+  "engineType": "p1_tangram",
+  "generatorId": "p1_tangram",
+  "answerFormat": "drag",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 1200,
+  "defaultItemCount": 24,
+  "confidence": "reported",
+  "tags": ["spatial"],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §2.3 row 2, §4.1 row 2 (24 planches, ~20 min, 2024 debrief)"
+  }
+}

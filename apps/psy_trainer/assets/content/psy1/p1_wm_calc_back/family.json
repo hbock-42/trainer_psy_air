@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "p1_wm_calc_back",
+  "moduleId": "psy1",
+  "version": 1,
+  "order": 10,
+  "name": {
+    "fr": "Mémoire de travail II",
+    "en": "Working memory II"
+  },
+  "shortName": { "fr": "Mém. II", "en": "WM II" },
+  "description": {
+    "fr": "\"Calcul memory back\" : maintenez des résultats intermédiaires en mémoire de travail tout en poursuivant les calculs, sur 4 étapes de charge croissante.",
+    "en": "\"Calc memory back\": hold intermediate arithmetic results in working memory while computing further steps, over 4 stages of increasing load."
+  },
+  "engineType": "p1_wm_calc_back",
+  "generatorId": "p1_wm_calc_back",
+  "answerFormat": "numeric",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 900,
+  "defaultItemCount": 80,
+  "confidence": "reported",
+  "tags": ["memory", "numerical"],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §2.3 row 10, §4.1 row 10 (4 stages x 20+ calculations)"
+  }
+}

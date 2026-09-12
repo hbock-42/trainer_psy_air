@@ -1,0 +1,104 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/blueprint.schema.json",
+  "kind": "blueprint",
+  "id": "psy1.blueprint.short",
+  "version": 1,
+  "moduleId": "psy1",
+  "name": {
+    "fr": "PSY1 — échauffement (~26 min)",
+    "en": "PSY1 — warm-up (~26 min)"
+  },
+  "description": {
+    "fr": "Cinq familles courtes plus un test psychomoteur d'une phase (joystick uniquement, ignoré sans manette), pour une répétition quotidienne rapide. Durées **estimées** (`docs/content/psy1-spec.md` §4.2).",
+    "en": "Five short families plus a one-phase psychomotor test (gamepad only, skipped without one), for a quick daily rehearsal. Timings are **estimated** (`docs/content/psy1-spec.md` §4.2)."
+  },
+  "confidence": "assumed",
+  "tags": ["blueprint.short"],
+  "briefingSec": 0,
+  "sections": [
+    {
+      "id": "s01-mental-arith",
+      "familyId": "p1_mental_arithmetic",
+      "itemCount": 10,
+      "sectionTimeSec": 240,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_mental_arithmetic",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "count": 10 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s02-raven",
+      "familyId": "p1_raven_matrices",
+      "itemCount": 8,
+      "sectionTimeSec": 480,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_raven_matrices",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "count": 8 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s03-cubes",
+      "familyId": "p1_cube_nets",
+      "itemCount": 3,
+      "sectionTimeSec": 360,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_cube_nets",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "phaseCount": 1, "netsPerPhase": 3 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s04-counters",
+      "familyId": "p1_counters",
+      "itemCount": 4,
+      "sectionTimeSec": 180,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_counters",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "count": 4 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s05-angles",
+      "familyId": "p1_angles",
+      "itemCount": 3,
+      "sectionTimeSec": 120,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_angles",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "setCount": 3 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s06-psychomotor",
+      "familyId": "p1_psychomotor",
+      "itemCount": 1,
+      "sectionTimeSec": 180,
+      "inputRequirement": "keyboard",
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_psychomotor",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "phaseCount": 1, "phaseDurationSec": 180 }
+      },
+      "confidence": "assumed",
+      "weight": 0
+    }
+  ],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §4.2 (US-101)",
+    "notes": "≈ 26 min total. The psychomotor section is gamepad-only (real-hardware substitute, US-102); it is skipped entirely when no gamepad is connected rather than substituted, hence weight 0 like PSY0's practice-only sections."
+  }
+}

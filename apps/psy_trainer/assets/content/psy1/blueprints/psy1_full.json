@@ -1,0 +1,199 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/blueprint.schema.json",
+  "kind": "blueprint",
+  "id": "psy1.blueprint.full",
+  "version": 1,
+  "moduleId": "psy1",
+  "name": {
+    "fr": "PSY1 — journée complète (~2 h 47 d'activité)",
+    "en": "PSY1 — full day (~2 h 47 of activity)"
+  },
+  "description": {
+    "fr": "Les 13 familles PSY1 dans l'ordre rapporté du vrai test, avec les pauses (15 min, ~90 min déjeuner, 10 min). Durées **estimées** à partir de retours de candidats (`docs/content/psy1-spec.md` §4.1). Le vrai jour dure environ 8 h avec l'accueil et le déjeuner.",
+    "en": "The 13 PSY1 families in the reported real-test order, with the breaks (15 min, ~90 min lunch, 10 min). Timings are **estimated** from candidate reports (`docs/content/psy1-spec.md` §4.1). The real day runs about 8 h including check-in and lunch."
+  },
+  "confidence": "assumed",
+  "tags": ["blueprint.full"],
+  "briefingSec": 0,
+  "sections": [
+    {
+      "id": "s01-math",
+      "familyId": "p1_math_word_problems",
+      "itemCount": 30,
+      "sectionTimeSec": 2100,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_math_word_problems",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "count": 30 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s02-tangram",
+      "familyId": "p1_tangram",
+      "itemCount": 24,
+      "sectionTimeSec": 1200,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_tangram",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "count": 24 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s03-attention",
+      "familyId": "p1_attention_sustained",
+      "itemCount": 15,
+      "sectionTimeSec": 540,
+      "cadence": { "stimulusMs": 500, "answerWindowMs": 3000 },
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_attention_sustained",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "seriesCount": 3, "itemsPerSeries": 5 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s04-reading",
+      "familyId": "p1_reading_fr",
+      "itemCount": 10,
+      "sectionTimeSec": 1200,
+      "breakAfterSec": 900,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_reading_fr",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "passageCount": 10 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s05-angles",
+      "familyId": "p1_angles",
+      "itemCount": 3,
+      "sectionTimeSec": 300,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_angles",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "setCount": 3 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s06-efg",
+      "familyId": "p1_general_efficiency",
+      "itemCount": 35,
+      "sectionTimeSec": 1800,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_general_efficiency",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "count": 35 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s07-counters",
+      "familyId": "p1_counters",
+      "itemCount": 10,
+      "sectionTimeSec": 600,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_counters",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "count": 10 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s08-cubes",
+      "familyId": "p1_cube_nets",
+      "itemCount": 20,
+      "sectionTimeSec": 2400,
+      "breakAfterSec": 5400,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_cube_nets",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "phaseCount": 2, "netsPerPhase": 10 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s09-wm-span",
+      "familyId": "p1_wm_reverse_span",
+      "itemCount": 10,
+      "sectionTimeSec": 600,
+      "perItemTimeSec": 4,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_wm_reverse_span",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "count": 10 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s10-wm-calc",
+      "familyId": "p1_wm_calc_back",
+      "itemCount": 80,
+      "sectionTimeSec": 900,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_wm_calc_back",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "stageCount": 4, "calcsPerStage": 20 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s11-raven",
+      "familyId": "p1_raven_matrices",
+      "itemCount": 30,
+      "sectionTimeSec": 1800,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_raven_matrices",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "count": 30 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s12-mental-arith",
+      "familyId": "p1_mental_arithmetic",
+      "itemCount": 40,
+      "sectionTimeSec": 900,
+      "breakAfterSec": 600,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_mental_arithmetic",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "count": 40 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s13-psychomotor",
+      "familyId": "p1_psychomotor",
+      "itemCount": 6,
+      "sectionTimeSec": 1080,
+      "inputRequirement": "keyboard",
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_psychomotor",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "phaseCount": 6, "phaseDurationSec": 180 }
+      },
+      "confidence": "reported"
+    }
+  ],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §4.1 (US-101); to validate/adjust once US-103 content and US-102..116 engines land",
+    "notes": "≈ 2 h 47 min of active testing, consistent with a ~8 h wall-clock day including breaks/lunch/admin. No engine is registered for any PSY1 family yet (US-101 is the contract/module gate); every section shows \"Bientôt\" in the exam launcher until its own story lands."
+  }
+}

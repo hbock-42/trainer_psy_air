@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "p1_raven_matrices",
+  "moduleId": "psy1",
+  "version": 1,
+  "order": 11,
+  "name": {
+    "fr": "Matrices progressives",
+    "en": "Progressive matrices"
+  },
+  "shortName": { "fr": "Matrices", "en": "Matrices" },
+  "description": {
+    "fr": "Complétion de matrice visuelle façon Raven : trouvez la tuile manquante qui poursuit le motif.",
+    "en": "Classic Raven-style visual matrix completion: find the missing tile that continues the pattern."
+  },
+  "engineType": "p1_raven_matrices",
+  "generatorId": "p1_raven_matrices",
+  "answerFormat": "mcq",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 1800,
+  "defaultItemCount": 30,
+  "confidence": "reported",
+  "tags": ["reasoning"],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §2.3 row 11, §4.1 row 11 (30 q / 30 min, 2024 debrief; reported harder than prep material)"
+  }
+}

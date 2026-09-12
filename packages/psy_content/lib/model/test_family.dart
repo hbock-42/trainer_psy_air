@@ -45,6 +45,37 @@ enum EngineType {
   englishListening,
   @JsonValue('english_speaking')
   englishSpeaking,
+
+  // PSY1 (EPIC-10, US-101): the 13 family ids of `psy1-spec.md` §4.1. Every
+  // one reuses the same `ActivityEngine`/`SessionHost` runtime as PSY0
+  // (`psy1-spec.md` §4.3); no engine is registered for them yet, so they
+  // show "Bientôt" until their own story (US-102..116) lands.
+  @JsonValue('p1_math_word_problems')
+  p1MathWordProblems,
+  @JsonValue('p1_tangram')
+  p1Tangram,
+  @JsonValue('p1_attention_sustained')
+  p1AttentionSustained,
+  @JsonValue('p1_reading_fr')
+  p1ReadingFr,
+  @JsonValue('p1_angles')
+  p1Angles,
+  @JsonValue('p1_general_efficiency')
+  p1GeneralEfficiency,
+  @JsonValue('p1_counters')
+  p1Counters,
+  @JsonValue('p1_cube_nets')
+  p1CubeNets,
+  @JsonValue('p1_wm_reverse_span')
+  p1WmReverseSpan,
+  @JsonValue('p1_wm_calc_back')
+  p1WmCalcBack,
+  @JsonValue('p1_raven_matrices')
+  p1RavenMatrices,
+  @JsonValue('p1_mental_arithmetic')
+  p1MentalArithmetic,
+  @JsonValue('p1_psychomotor')
+  p1Psychomotor,
 }
 
 /// Primary answer widget of a family.

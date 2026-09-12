@@ -140,6 +140,30 @@ abstract class AppLocalizations {
   /// **'Navigation principale'**
   String get tabBarLabel;
 
+  /// No description provided for @moduleSwitchSemanticsLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Module actif'**
+  String get moduleSwitchSemanticsLabel;
+
+  /// No description provided for @moduleSwitchPsy0.
+  ///
+  /// In fr, this message translates to:
+  /// **'PSY0'**
+  String get moduleSwitchPsy0;
+
+  /// No description provided for @moduleSwitchPsy1.
+  ///
+  /// In fr, this message translates to:
+  /// **'PSY1'**
+  String get moduleSwitchPsy1;
+
+  /// No description provided for @moduleSwitchPsy2.
+  ///
+  /// In fr, this message translates to:
+  /// **'PSY2'**
+  String get moduleSwitchPsy2;
+
   /// No description provided for @disclaimerShort.
   ///
   /// In fr, this message translates to:
@@ -337,6 +361,12 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Tests cognitifs, culture aéronautique et anglais, à distance.'**
   String get stagePsy0Subtitle;
+
+  /// No description provided for @stagePsy1Subtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tests psychotechniques et psychomoteurs, une journée en présentiel.'**
+  String get stagePsy1Subtitle;
 
   /// No description provided for @stageComingSoon.
   ///

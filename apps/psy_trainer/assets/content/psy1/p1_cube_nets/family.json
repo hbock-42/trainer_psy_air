@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "p1_cube_nets",
+  "moduleId": "psy1",
+  "version": 1,
+  "order": 8,
+  "name": { "fr": "Patrons de cubes", "en": "Cube nets" },
+  "shortName": { "fr": "Cubes", "en": "Cubes" },
+  "description": {
+    "fr": "Reconstituez un patron de cube en 2D↔3D, avec deux alphabets de symboles (latin, puis un alphabet runique inventé qui empêche la mémorisation par cœur). Inclut la variante de rotation (jugez si un cube candidat est le même objet tourné ou modifié).",
+    "en": "Rebuild a 2D↔3D cube net, with two symbol alphabets (latin, then an invented runic set that defeats rote memorisation). Includes the rotation-matching variant (judge whether a candidate cube is the same object rotated or altered)."
+  },
+  "engineType": "p1_cube_nets",
+  "generatorId": "p1_cube_nets",
+  "answerFormat": "drag",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 2400,
+  "defaultItemCount": 20,
+  "confidence": "reported",
+  "tags": ["spatial"],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §2.3 row 8, §4.1 row 8 (2 phases x 10 patrons x 20 min, 2024 debrief; rotation-matching ~25 items / 8-10 min, -0.25 per wrong)"
+  }
+}

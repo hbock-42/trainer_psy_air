@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "p1_reading_fr",
+  "moduleId": "psy1",
+  "version": 1,
+  "order": 4,
+  "name": {
+    "fr": "Compréhension de lecture",
+    "en": "Reading comprehension"
+  },
+  "shortName": { "fr": "Lecture FR", "en": "FR reading" },
+  "description": {
+    "fr": "QCM de compréhension sur des textes en français, même famille que le test d'anglais de PSY0 mais en langue française.",
+    "en": "MCQ reading comprehension on French-language passages, the same family as PSY0's English reading test but in French."
+  },
+  "engineType": "p1_reading_fr",
+  "generatorId": "p1_reading_fr",
+  "answerFormat": "mcq",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 1200,
+  "defaultItemCount": 10,
+  "confidence": "reported",
+  "tags": ["verbal"],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §2.3 row 4, §4.1 row 4 (10 texts / 20 min, 2024 debrief)"
+  }
+}
