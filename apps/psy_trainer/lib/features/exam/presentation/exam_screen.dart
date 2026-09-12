@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -9,6 +11,7 @@ import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
 import 'exam_resume_card.dart';
 import 'providers/exam_blueprints_provider.dart';
+import 'providers/exam_realism_options_provider.dart';
 
 /// Exam home (`/exam`, US-060/061): the PSY0 blueprints, each with its
 /// duration and section count, "Commencer" (`/exam/run/:blueprintId`) and a
@@ -42,6 +45,9 @@ class ExamScreen extends ConsumerWidget {
             ),
             SizedBox(height: theme.spacing.lg),
             const ExamResumeCard(),
+            SizedBox(height: theme.spacing.lg),
+            const _RealismOptionsPanel(),
+            SizedBox(height: theme.spacing.lg),
             switch (blueprints) {
               AsyncData(value: final list) when list.isEmpty => Text(
                 context.l10n.examEmptyBlueprints,
@@ -159,6 +165,152 @@ class _SectionRow extends StatelessWidget {
                 color: theme.colors.textMuted,
               ),
             ),
+        ],
+      ),
+    );
+  }
+}
+
+/// US-063 "realism options" panel: toggles applied by `planExamSections`
+/// (negative marking, randomised generators), `SessionHost`'s countdown
+/// bars (hidden time), `ExamRunController`/`ExamRunScreen` (break pause,
+/// immersive chrome, sound cues) once "Commencer" is pressed. Persisted in
+/// `UserProfile.settings['exam.realism']` through `examRealismOptionsProvider`
+/// (`ExamRealismOptionsController`), so it survives navigating away and
+/// applies to every blueprint below.
+class _RealismOptionsPanel extends ConsumerWidget {
+  const _RealismOptionsPanel();
+
+  static const Key presetKey = Key('exam_realism.preset');
+  static const Key negativeMarkingKey = Key('exam_realism.negative_marking');
+  static const Key hideRemainingTimeKey = Key(
+    'exam_realism.hide_remaining_time',
+  );
+  static const Key hideTimerEnglishKey = Key('exam_realism.hide_timer_english');
+  static const Key randomizeKey = Key('exam_realism.randomize');
+  static const Key allowPauseKey = Key('exam_realism.allow_pause');
+  static const Key immersiveKey = Key('exam_realism.immersive');
+  static const Key soundCuesKey = Key('exam_realism.sound_cues');
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = AppTheme.of(context);
+    final options = ref.watch(examRealismOptionsProvider);
+    final controller = ref.read(examRealismOptionsProvider.notifier);
+
+    return AppCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(context.l10n.examRealismTitle, style: theme.textStyles.title),
+          SizedBox(height: theme.spacing.xs),
+          Text(
+            context.l10n.examRealismSubtitle,
+            style: theme.textStyles.caption,
+          ),
+          SizedBox(height: theme.spacing.sm),
+          SecondaryButton(
+            key: _RealismOptionsPanel.presetKey,
+            label: context.l10n.examRealismPresetAction,
+            expand: true,
+            onPressed: () => unawaited(controller.applyRealConditionsPreset()),
+          ),
+          SizedBox(height: theme.spacing.md),
+          _RealismToggleRow(
+            toggleKey: _RealismOptionsPanel.negativeMarkingKey,
+            label: context.l10n.examRealismNegativeMarkingLabel,
+            value: options.negativeMarkingCulture,
+            onChanged: (v) =>
+                unawaited(controller.setNegativeMarkingCulture(enabled: v)),
+          ),
+          _RealismToggleRow(
+            toggleKey: _RealismOptionsPanel.hideRemainingTimeKey,
+            label: context.l10n.examRealismHideRemainingTimeLabel,
+            value: options.hideRemainingTime,
+            onChanged: (v) =>
+                unawaited(controller.setHideRemainingTime(enabled: v)),
+          ),
+          _RealismToggleRow(
+            toggleKey: _RealismOptionsPanel.hideTimerEnglishKey,
+            label: context.l10n.examRealismHideTimerEnglishLabel,
+            value: options.hideTimerEnglish,
+            onChanged: (v) =>
+                unawaited(controller.setHideTimerEnglish(enabled: v)),
+          ),
+          _RealismToggleRow(
+            toggleKey: _RealismOptionsPanel.randomizeKey,
+            label: context.l10n.examRealismRandomizeLabel,
+            value: options.randomizeGenerated,
+            onChanged: (v) =>
+                unawaited(controller.setRandomizeGenerated(enabled: v)),
+          ),
+          _RealismToggleRow(
+            toggleKey: _RealismOptionsPanel.allowPauseKey,
+            label: context.l10n.examRealismAllowPauseLabel,
+            value: options.allowPauseBetweenSections,
+            onChanged: (v) =>
+                unawaited(controller.setAllowPauseBetweenSections(enabled: v)),
+          ),
+          _RealismToggleRow(
+            toggleKey: _RealismOptionsPanel.immersiveKey,
+            label: context.l10n.examRealismImmersiveLabel,
+            value: options.immersiveFullScreen,
+            onChanged: (v) =>
+                unawaited(controller.setImmersiveFullScreen(enabled: v)),
+          ),
+          _RealismToggleRow(
+            toggleKey: _RealismOptionsPanel.soundCuesKey,
+            label: context.l10n.examRealismSoundCuesLabel,
+            value: options.soundCuesEnabled,
+            onChanged: (v) =>
+                unawaited(controller.setSoundCuesEnabled(enabled: v)),
+            isLast: true,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// One boolean setting row of [_RealismOptionsPanel]: label + on/off pills,
+/// same layout as `_SettingRow` in `settings_screen.dart`.
+class _RealismToggleRow extends StatelessWidget {
+  const _RealismToggleRow({
+    required this.label,
+    required this.value,
+    required this.onChanged,
+    this.toggleKey,
+    this.isLast = false,
+  });
+
+  final String label;
+  final bool value;
+  final ValueChanged<bool> onChanged;
+  final Key? toggleKey;
+  final bool isLast;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
+    return Padding(
+      padding: EdgeInsets.only(bottom: isLast ? 0 : theme.spacing.sm),
+      child: Row(
+        children: [
+          Expanded(child: Text(label, style: theme.textStyles.body)),
+          SizedBox(width: theme.spacing.sm),
+          SegmentedChoice<bool>(
+            key: toggleKey,
+            semanticsLabel: label,
+            selected: value,
+            onSelected: onChanged,
+            options: [
+              SegmentedOption(value: true, label: context.l10n.settingsSoundOn),
+              SegmentedOption(
+                value: false,
+                label: context.l10n.settingsSoundOff,
+              ),
+            ],
+          ),
         ],
       ),
     );
