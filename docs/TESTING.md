@@ -150,6 +150,73 @@ golden without looking at the new image.
 Keep goldens for key screens (one per major screen and per important state), not for every
 widget: each PNG is a maintenance cost.
 
+### Accessibility guideline tests (US-123)
+
+Every top-level screen (the five tab homes: Learn, Train, Exam, Progress, Settings) has one
+widget test that runs `flutter_test`'s built-in accessibility guidelines over it:
+
+```dart
+testWidgets('meets accessibility guidelines', (tester) async {
+  final handle = tester.ensureSemantics();
+  await pumpLearn(tester);              // or the screen's own pump helper
+
+  await expectLater(tester, meetsGuideline(textContrastGuideline));
+  await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+  await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+  handle.dispose();
+});
+```
+
+- `tester.ensureSemantics()` turns semantics on for the test (the app doesn't otherwise need a
+  screen reader attached) and must be `dispose()`d at the end.
+- `textContrastGuideline` checks every text node against its background for the WCAG AA ratio
+  (4.5:1 for normal text); `androidTapTargetGuideline` checks every tappable node is at least
+  48x48; `labeledTapTargetGuideline` checks every tappable node has a semantics label. All three
+  come from `package:flutter_test/flutter_test.dart`, no extra dependency.
+- These are real checks, not smoke tests: this pass found and fixed genuine violations —
+  `success`-on-`successSubtle` text just under the contrast ratio (`ConfidenceChip`,
+  `AppColors.light.success` darkened, US-123), the selected tab bar label using `accent` text
+  directly on the bar's `surface` (`AppTabBar`, switched to `textPrimary`), `SegmentedChoice`'s
+  pills built at 32 dp instead of the design system's 48 dp minimum, and an inline link
+  (`LearnScreen`'s "read the full disclaimer") explicitly opted out of the minimum with
+  `minSize: 0`. Treat a new failure the same way: fix the widget, don't loosen the guideline.
+- `textContrastGuideline`'s check renders a real frame through
+  `tester.binding.runAsync` to rasterise the surface. Pumped under the **whole app** (router +
+  every provider the shell wires up), that real-async step can leave an unrelated provider's
+  retry `Timer` pending at teardown (`!timersPending`) even though the screen under test has
+  nothing to do with it — `SettingsScreen`'s accessibility test hit this and works around it by
+  pumping the bare screen (`pump_app.pumpApp`) instead of the full `PsyTrainerApp` + router,
+  which reproduces the same visuals without the interaction. Prefer pumping the screen alone for
+  a new accessibility test unless the screen genuinely needs the router.
+
+### 360 dp / 1.3x overflow tests
+
+Every top-level screen also has a test that pumps it at a 360x780 (or similar) logical surface
+and 1.3x text scale — the narrowest phone width and largest scale factor this app supports —
+and asserts `tester.takeException()` is `null` (no `RenderFlex` overflow, no other exception):
+
+```dart
+testWidgets('survives 1.3x text scaling at 360dp without overflow', (tester) async {
+  tester.view.physicalSize = const Size(360, 780);
+  tester.view.devicePixelRatio = 1;
+  addTearDown(tester.view.reset);
+  await pumpScreen(tester, textScale: 1.3);
+
+  expect(tester.takeException(), isNull);
+});
+```
+
+Use content with a genuinely long, real (not placeholder) label where the screen renders one —
+a long family/blueprint name, a long section title — the overflow this catches only shows up
+with real content width, not a two-word fixture string. This pass found and fixed two: a
+`Row(Expanded(name), SecondaryButton("Rapide (5)"))` on the Train home whose fixed-width button
+plus a long family name exceeded 360 dp (`TrainScreen`, moved the button to its own row below the
+name instead of beside it), and `_RealismToggleRow` on the Exam home, whose trailing
+`SegmentedChoice` sat in a `Row` where a non-flex child gets an *unbounded* width — its own
+`Wrap` never got the chance to wrap onto a second line — fixed by switching that row to a
+`Column` (label above, pills below), the same layout `_SettingRow` in `settings_screen.dart`
+already used correctly.
+
 ## Testing time
 
 Anything that depends on the clock (exam timers, streaks, spaced repetition due dates,

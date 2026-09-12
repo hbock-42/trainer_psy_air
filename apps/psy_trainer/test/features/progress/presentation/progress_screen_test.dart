@@ -447,4 +447,18 @@ void main() {
       expect(find.text(l10nFr.examChartTitle), findsOneWidget);
     });
   });
+
+  group('accessibility', () {
+    testWidgets('meets accessibility guidelines', (tester) async {
+      final handle = tester.ensureSemantics();
+      await seedThreeFamilies();
+      await fixture.exam(daysAgo: 0, correct: 6);
+      await pumpScreen(tester, surface: const Size(390, 2400));
+
+      await expectLater(tester, meetsGuideline(textContrastGuideline));
+      await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+      await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+      handle.dispose();
+    });
+  });
 }

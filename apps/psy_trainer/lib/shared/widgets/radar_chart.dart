@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart' show listEquals;
 import 'package:flutter/widgets.dart';
 
 import '../../core/theme/app_theme.dart';
@@ -24,6 +25,16 @@ class RadarChartAxis {
   final String? valueLabel;
 
   String get semanticsValue => valueLabel ?? '${(value * 100).round()} %';
+
+  @override
+  bool operator ==(Object other) =>
+      other is RadarChartAxis &&
+      other.label == label &&
+      other.value == value &&
+      other.valueLabel == valueLabel;
+
+  @override
+  int get hashCode => Object.hash(label, value, valueLabel);
 }
 
 /// A radar (spider) chart of at least three 0..1 values, painted with
@@ -85,18 +96,20 @@ class RadarChart extends StatelessWidget {
               child: SizedBox(
                 width: side,
                 height: side,
-                child: CustomPaint(
-                  painter: _RadarChartPainter(
-                    axes: axes,
-                    rings: rings,
-                    gridColor: theme.colors.border,
-                    outerRingColor: theme.colors.borderStrong,
-                    fillColor: theme.colors.accent.withValues(alpha: 0.25),
-                    strokeColor: theme.colors.accent,
-                    labelStyle: labelStyle,
-                    textScaler: textScaler,
-                    textDirection: Directionality.of(context),
-                    labelGap: theme.spacing.sm,
+                child: RepaintBoundary(
+                  child: CustomPaint(
+                    painter: _RadarChartPainter(
+                      axes: axes,
+                      rings: rings,
+                      gridColor: theme.colors.border,
+                      outerRingColor: theme.colors.borderStrong,
+                      fillColor: theme.colors.accent.withValues(alpha: 0.25),
+                      strokeColor: theme.colors.accent,
+                      labelStyle: labelStyle,
+                      textScaler: textScaler,
+                      textDirection: Directionality.of(context),
+                      labelGap: theme.spacing.sm,
+                    ),
                   ),
                 ),
               ),
@@ -229,7 +242,7 @@ class _RadarChartPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(_RadarChartPainter oldDelegate) =>
-      axes != oldDelegate.axes ||
+      !listEquals(axes, oldDelegate.axes) ||
       rings != oldDelegate.rings ||
       gridColor != oldDelegate.gridColor ||
       outerRingColor != oldDelegate.outerRingColor ||

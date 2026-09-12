@@ -15,6 +15,7 @@ import 'package:psy_trainer/shared/widgets/widgets.dart';
 
 import '../../../helpers/content_ready_fakes.dart';
 import '../../../helpers/onboarding_fakes.dart';
+import '../../../helpers/pump_app.dart' as pump_app;
 
 Finder _pressable(String label) => find.byWidgetPredicate(
   (widget) => widget is AppPressable && widget.semanticsLabel == label,
@@ -25,10 +26,16 @@ final l10nFr = lookupAppLocalizations(const Locale('fr'));
 void main() {
   late InMemoryProgressRepository repository;
 
-  Future<ProviderContainer> pumpSettings(WidgetTester tester) async {
-    tester.view.physicalSize = const Size(390, 844);
+  Future<ProviderContainer> pumpSettings(
+    WidgetTester tester, {
+    Size size = const Size(390, 844),
+    double textScale = 1.0,
+  }) async {
+    tester.view.physicalSize = size;
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
+    tester.platformDispatcher.textScaleFactorTestValue = textScale;
+    addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
     repository = fakeProgressRepository();
     final container = ProviderContainer(
       overrides: [
@@ -182,4 +189,34 @@ void main() {
       expect(find.text(l10nFr.onboardingWelcomeHeadline), findsOneWidget);
     },
   );
+
+  testWidgets('meets accessibility guidelines', (tester) async {
+    // Pumps the bare screen (not the full app + router, unlike
+    // `pumpSettings`): `meetsGuideline`'s contrast check pumps a real frame
+    // through `tester.binding.runAsync` to rasterize the surface, and doing
+    // that under the full app leaves an unrelated provider retry timer
+    // pending at teardown. The screen alone reproduces the same visuals
+    // without that interaction.
+    repository = fakeProgressRepository();
+    final handle = tester.ensureSemantics();
+    await pump_app.pumpApp(
+      tester,
+      const SettingsScreen(),
+      overrides: [progressRepositoryOverride(repository: repository)],
+    );
+    await tester.pumpAndSettle();
+
+    await expectLater(tester, meetsGuideline(textContrastGuideline));
+    await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+    await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+    handle.dispose();
+  });
+
+  testWidgets('survives 1.3x text scaling at 360dp without overflow', (
+    tester,
+  ) async {
+    await pumpSettings(tester, size: const Size(360, 780), textScale: 1.3);
+
+    expect(tester.takeException(), isNull);
+  });
 }

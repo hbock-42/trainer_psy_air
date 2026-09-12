@@ -1,3 +1,4 @@
+import 'package:flutter/semantics.dart' show CustomSemanticsAction;
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -127,29 +128,41 @@ class _HistoryRow extends StatelessWidget {
       statusLabel,
     ];
 
-    return GestureDetector(
-      onLongPress: onDelete,
-      child: AppCard(
-        key: Key('exam_history.row.${summary.sessionId}'),
-        onPressed: canOpen
-            ? () => context.push(AppRoutes.examReport(summary.sessionId))
-            : null,
-        semanticsLabel: '$name, $statusLabel',
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(name, style: theme.textStyles.bodyStrong),
-                  SizedBox(height: theme.spacing.xs),
-                  Text(metaParts.join(' · '), style: theme.textStyles.caption),
-                ],
+    return Semantics(
+      // Long-press deletes the row; screen reader users have no gesture
+      // equivalent for a long press, so the same action is exposed as a
+      // named custom action (shows up in TalkBack/VoiceOver's action menu).
+      customSemanticsActions: {
+        CustomSemanticsAction(label: context.l10n.examHistoryDeleteAction):
+            onDelete,
+      },
+      child: GestureDetector(
+        onLongPress: onDelete,
+        child: AppCard(
+          key: Key('exam_history.row.${summary.sessionId}'),
+          onPressed: canOpen
+              ? () => context.push(AppRoutes.examReport(summary.sessionId))
+              : null,
+          semanticsLabel: '$name, $statusLabel',
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(name, style: theme.textStyles.bodyStrong),
+                    SizedBox(height: theme.spacing.xs),
+                    Text(
+                      metaParts.join(' · '),
+                      style: theme.textStyles.caption,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            if (summary.status == SessionStatus.completed)
-              Text('${summary.percent} %', style: theme.textStyles.title),
-          ],
+              if (summary.status == SessionStatus.completed)
+                Text('${summary.percent} %', style: theme.textStyles.title),
+            ],
+          ),
         ),
       ),
     );

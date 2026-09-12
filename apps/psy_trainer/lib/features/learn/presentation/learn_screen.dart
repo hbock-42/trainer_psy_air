@@ -173,7 +173,10 @@ class _LinkButton extends StatelessWidget {
         onPressed: onPressed,
         semanticsLabel: label,
         excludeSemantics: true,
-        minSize: 0,
+        // No `minSize: 0` override: the design system's own rule is a
+        // 48x48 minimum hit target for every interactive widget
+        // (`androidTapTargetGuideline` caught the 26 dp-tall link, US-123).
+        // The extra hit area is invisible padding, not a visual change.
         builder: (context, state) => AppFocusRing(
           visible: state.focused,
           borderRadius: theme.radii.smAll,

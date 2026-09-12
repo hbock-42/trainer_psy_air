@@ -54,15 +54,20 @@ class ArcGauge extends StatelessWidget {
         child: SizedBox(
           width: size,
           height: size,
-          child: CustomPaint(
-            painter: _ArcGaugePainter(
-              value: value.clamp(0.0, 1.0),
-              trackColor: theme.colors.border,
-              arcColor: color ?? theme.colors.accent,
-              strokeWidth: size * 0.085,
-            ),
-            child: Center(
-              child: Padding(padding: EdgeInsets.all(size * 0.2), child: child),
+          child: RepaintBoundary(
+            child: CustomPaint(
+              painter: _ArcGaugePainter(
+                value: value.clamp(0.0, 1.0),
+                trackColor: theme.colors.border,
+                arcColor: color ?? theme.colors.accent,
+                strokeWidth: size * 0.085,
+              ),
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.all(size * 0.2),
+                  child: child,
+                ),
+              ),
             ),
           ),
         ),

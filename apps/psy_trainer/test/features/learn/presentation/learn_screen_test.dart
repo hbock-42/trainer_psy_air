@@ -334,12 +334,12 @@ void main() {
     ) async {
       final container = await pumpFullApp(tester);
 
-      await tester.tap(
-        find.descendant(
-          of: find.byType(FamilyCard).first,
-          matching: find.text(l10nFr.familyActionLearn),
-        ),
+      final learnAction = find.descendant(
+        of: find.byType(FamilyCard).first,
+        matching: find.text(l10nFr.familyActionLearn),
       );
+      await tester.ensureVisible(learnAction);
+      await tester.tap(learnAction);
       await tester.pumpAndSettle();
 
       expect(find.byType(FamilyScreen), findsOneWidget);
@@ -380,12 +380,12 @@ void main() {
     testWidgets('"S\'entraîner" switches to the Train tab', (tester) async {
       await pumpFullApp(tester);
 
-      await tester.tap(
-        find.descendant(
-          of: find.byType(FamilyCard).first,
-          matching: find.text(l10nFr.familyActionTrain),
-        ),
+      final trainAction = find.descendant(
+        of: find.byType(FamilyCard).first,
+        matching: find.text(l10nFr.familyActionTrain),
       );
+      await tester.ensureVisible(trainAction);
+      await tester.tap(trainAction);
       await tester.pumpAndSettle();
 
       expect(find.byType(TrainScreen), findsOneWidget);
@@ -424,6 +424,18 @@ void main() {
         AppRoutes.learnCards,
       );
       expect(find.text(l10nFr.flashcardsDeckSummary(4, 4)), findsOneWidget);
+    });
+  });
+
+  group('accessibility', () {
+    testWidgets('meets accessibility guidelines', (tester) async {
+      final handle = tester.ensureSemantics();
+      await pumpLearn(tester);
+
+      await expectLater(tester, meetsGuideline(textContrastGuideline));
+      await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+      await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+      handle.dispose();
     });
   });
 }

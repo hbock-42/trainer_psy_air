@@ -255,16 +255,18 @@ class _AirwaysViewState extends State<_AirwaysView>
           Expanded(
             child: ClipRRect(
               borderRadius: theme.radii.mdAll,
-              child: CustomPaint(
-                painter: AirwaysPainter(
-                  graph: _sim.graph,
-                  zones: _sim.zones,
-                  aircraft: _sim.aircraft,
-                  flashZones: zoneFlashSet,
-                  zoneBorderColor: theme.colors.borderStrong,
-                  zoneLabelColor: theme.colors.textPrimary,
+              child: RepaintBoundary(
+                child: CustomPaint(
+                  painter: AirwaysPainter(
+                    graph: _sim.graph,
+                    zones: _sim.zones,
+                    aircraft: _sim.aircraft,
+                    flashZones: zoneFlashSet,
+                    zoneBorderColor: theme.colors.borderStrong,
+                    zoneLabelColor: theme.colors.textPrimary,
+                  ),
+                  size: Size.infinite,
                 ),
-                size: Size.infinite,
               ),
             ),
           ),
