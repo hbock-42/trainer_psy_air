@@ -54,6 +54,8 @@ void main() {
 
     test('skip and timeout are flagged on any item', () {
       expect(Scorer.scoreItem(mcq, const Answer.skip()), ItemResult.skip);
+      expect(outcome(0, ItemResult.skip).isSkipped, isTrue);
+      expect(outcome(0, ItemResult.right).isSkipped, isFalse);
       expect(Scorer.scoreItem(mcq, const Answer.timeout()), ItemResult.timeout);
       expect(Scorer.scoreItem(mcq, const Answer.skip()).isError, isTrue);
     });

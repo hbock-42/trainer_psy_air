@@ -84,6 +84,7 @@ void main() {
     test('starts in briefing with the item count', () {
       final s = session(config(items: 4));
       expect(s.state, const ActivitySessionState.briefing(itemCount: 4));
+      expect(s.config.itemCount, 4);
       expect(s.items, hasLength(4));
       expect(s.outcomes, isEmpty);
       expect(s.sessionId, isNull);
