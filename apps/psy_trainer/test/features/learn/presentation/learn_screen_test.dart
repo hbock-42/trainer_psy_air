@@ -4,6 +4,9 @@ import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_trainer/app.dart';
 import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/repositories/in_memory/in_memory_content_repository.dart';
+import 'package:psy_trainer/core/repositories/in_memory/in_memory_progress_repository.dart';
+import 'package:psy_trainer/core/repositories/model/learning.dart';
 import 'package:psy_trainer/core/repositories/repository_providers.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
 import 'package:psy_trainer/core/router/app_routes.dart';
@@ -16,15 +19,22 @@ import 'package:psy_trainer/features/train/presentation/train_screen.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
 
 import '../../../helpers/content_ready_fakes.dart';
-import '../../../helpers/onboarding_fakes.dart';
+import '../../../helpers/flashcards_fixtures.dart';
+import '../../../helpers/onboarding_fakes.dart' show progressRepositoryOverride;
 import '../../../helpers/psy0_families.dart';
 import '../../../helpers/pump_app.dart';
 
 /// Pumps the bare [LearnScreen] over the in-memory repository.
+///
+/// [progress] overrides `progressRepositoryProvider` (defaults to a fresh
+/// fake); pass it instead of doing so through [overrides], which would
+/// override the same provider twice.
 Future<void> pumpLearn(
   WidgetTester tester, {
   bool seeded = true,
   double textScale = 1.0,
+  InMemoryContentRepository? content,
+  InMemoryProgressRepository? progress,
   List<Override> overrides = const [],
 }) async {
   await pumpApp(
@@ -33,8 +43,9 @@ Future<void> pumpLearn(
     textScale: textScale,
     overrides: [
       contentRepositoryProvider.overrideWithValue(
-        psy0ContentRepository(seeded: seeded),
+        content ?? psy0ContentRepository(seeded: seeded),
       ),
+      progressRepositoryOverride(repository: progress),
       ...overrides,
     ],
   );
@@ -43,10 +54,15 @@ Future<void> pumpLearn(
 
 /// Pumps the whole app (router included) over the in-memory repository, so
 /// navigation from the Learn home can be exercised.
-Future<ProviderContainer> pumpFullApp(WidgetTester tester) async {
+Future<ProviderContainer> pumpFullApp(
+  WidgetTester tester, {
+  InMemoryContentRepository? content,
+}) async {
   final ProviderContainer container = ProviderContainer(
     overrides: [
-      contentRepositoryProvider.overrideWithValue(psy0ContentRepository()),
+      contentRepositoryProvider.overrideWithValue(
+        content ?? psy0ContentRepository(),
+      ),
       progressRepositoryOverride(),
       contentReadyOverride(),
     ],
@@ -145,10 +161,12 @@ void main() {
           ),
           findsOneWidget,
         );
+        // No mastery yet: the slot falls back to lesson-read progress
+        // (memory_nback has 2 lessons in the fixture, US-044).
         expect(
           find.descendant(
             of: first,
-            matching: find.text(AppStrings.familyMasteryUnknown),
+            matching: find.text(AppStrings.familyLessonsProgress(0, 2)),
           ),
           findsOneWidget,
         );
@@ -188,10 +206,12 @@ void main() {
         find.descendant(of: allCards().first, matching: find.text('72 %')),
         findsOneWidget,
       );
+      // planning_tubes has no mastery override: falls back to lesson
+      // progress (1 lesson in the fixture, US-044).
       expect(
         find.descendant(
           of: allCards().at(1),
-          matching: find.text(AppStrings.familyMasteryUnknown),
+          matching: find.text(AppStrings.familyLessonsProgress(0, 1)),
         ),
         findsOneWidget,
       );
@@ -256,6 +276,53 @@ void main() {
       // The rest of the home stays useful.
       expect(find.text(AppStrings.learnHowItWorksTitle), findsOneWidget);
       expect(find.text(AppStrings.learnFamiliesTitle), findsOneWidget);
+    });
+  });
+
+  group('flashcards due today (US-042)', () {
+    testWidgets('hidden when no deck is seeded', (tester) async {
+      await pumpLearn(tester);
+
+      expect(find.text(AppStrings.flashcardsHomeTitle), findsNothing);
+    });
+
+    testWidgets('hidden when every card is up to date', (tester) async {
+      final content = psy0ContentRepository();
+      content.addDeck(
+        flashcardsDeckFixture(familyId: 'memory_nback', count: 2),
+      );
+      final progress = InMemoryProgressRepository();
+      for (var i = 1; i <= 2; i++) {
+        progress.reviewsByCard['memory_nback.deck.test.000$i'] =
+            FlashcardReview(
+              flashcardId: 'memory_nback.deck.test.000$i',
+              deckId: 'memory_nback.deck.test',
+              box: 5,
+              reviews: 5,
+              lapses: 0,
+              nextReviewAt: DateTime.utc(2099),
+            );
+      }
+      await pumpLearn(tester, content: content, progress: progress);
+
+      expect(find.text(AppStrings.flashcardsHomeTitle), findsNothing);
+    });
+
+    testWidgets('shows the due count and opens the review-today screen', (
+      tester,
+    ) async {
+      final content = psy0ContentRepository();
+      content.addDeck(
+        flashcardsDeckFixture(familyId: 'memory_nback', count: 4),
+      );
+      await pumpLearn(
+        tester,
+        content: content,
+        progress: InMemoryProgressRepository(),
+      );
+
+      expect(find.text(AppStrings.flashcardsHomeTitle), findsOneWidget);
+      expect(find.text(AppStrings.flashcardsHomeCount(4)), findsOneWidget);
     });
   });
 
@@ -336,6 +403,28 @@ void main() {
         AppRoutes.learnHowItWorks,
       );
       expect(find.text(AppStrings.stagePsy0Title), findsOneWidget);
+    });
+
+    testWidgets('"À réviser aujourd\'hui" opens the review-today screen', (
+      tester,
+    ) async {
+      final content = psy0ContentRepository();
+      content.addDeck(
+        flashcardsDeckFixture(familyId: 'memory_nback', count: 4),
+      );
+      final container = await pumpFullApp(tester, content: content);
+
+      await tester.tap(find.text(AppStrings.flashcardsHomeTitle));
+      await tester.pumpAndSettle();
+
+      expect(
+        container.read(appRouterProvider).state.uri.toString(),
+        AppRoutes.learnCards,
+      );
+      expect(
+        find.text(AppStrings.flashcardsDeckSummary(due: 4, total: 4)),
+        findsOneWidget,
+      );
     });
   });
 }

@@ -108,7 +108,7 @@ void main() {
 
       expect(result.seeded, isTrue);
       expect(result.previousVersion, isNull);
-      expect(result.contentVersion, 1);
+      expect(result.contentVersion, 2);
       expect(
         result.elapsed,
         lessThan(const Duration(seconds: 2)),
@@ -117,7 +117,7 @@ void main() {
 
       final content = LocalContentRepository(db);
       final info = await content.contentInfo();
-      expect(info?.contentVersion, 1);
+      expect(info?.contentVersion, 2);
       expect(info?.schemaVersion, 2);
       expect(info?.seededAt, now);
 
@@ -166,8 +166,8 @@ void main() {
       final again = await seeder(inline: true, clock: later).seedIfNeeded();
 
       expect(again.seeded, isFalse);
-      expect(again.previousVersion, 1);
-      expect(again.contentVersion, 1);
+      expect(again.previousVersion, 2);
+      expect(again.contentVersion, 2);
       final info = await LocalContentRepository(db).contentInfo();
       expect(info?.seededAt, now, reason: 'nothing was rewritten');
     });
@@ -215,7 +215,7 @@ void main() {
       );
       await progress.markLessonRead('lesson.memory_nback.01');
 
-      copy.setContentVersion(2);
+      copy.setContentVersion(3);
       final later = now.add(const Duration(days: 30));
       final result = await seeder(
         assets: copy.reader(),
@@ -224,11 +224,11 @@ void main() {
       ).seedIfNeeded();
 
       expect(result.seeded, isTrue);
-      expect(result.previousVersion, 1);
-      expect(result.contentVersion, 2);
+      expect(result.previousVersion, 2);
+      expect(result.contentVersion, 3);
       final content = LocalContentRepository(db);
       final info = await content.contentInfo();
-      expect(info?.contentVersion, 2);
+      expect(info?.contentVersion, 3);
       expect(info?.seededAt, later);
       expect(await content.families(), hasLength(16));
       expect(await content.itemById(english.single.id), isNotNull);

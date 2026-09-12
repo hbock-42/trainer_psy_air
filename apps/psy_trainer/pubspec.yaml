@@ -51,6 +51,7 @@ dependencies:
   path: ^1.9.1
   uuid: ^4.6.0
   sqlite3: ^3.5.2
+  markdown: ^7.3.1
 
 dev_dependencies:
   flutter_test:
@@ -96,13 +97,17 @@ flutter:
     - assets/content/
     - assets/content/psy0/
     - assets/content/psy0/arithmetic_grid/
+    - assets/content/psy0/arithmetic_grid/decks/
     - assets/content/psy0/attention_airways/
     - assets/content/psy0/attention_parity/
     - assets/content/psy0/attention_rules/
+    - assets/content/psy0/attention_rules/decks/
     - assets/content/psy0/blueprints/
     - assets/content/psy0/culture_aero/
+    - assets/content/psy0/culture_aero/decks/
     - assets/content/psy0/culture_aero/items/
     - assets/content/psy0/english/
+    - assets/content/psy0/english/decks/
     - assets/content/psy0/english/items/
     - assets/content/psy0/english_listening/
     - assets/content/psy0/english_speaking/
@@ -123,7 +128,9 @@ flutter:
     - assets/content/psy0/lessons/spatial_viewpoint/
     - assets/content/psy0/lessons/verbal_boxes/
     - assets/content/psy0/logic_dominos/
+    - assets/content/psy0/logic_dominos/decks/
     - assets/content/psy0/memory_nback/
+    - assets/content/psy0/memory_nback/decks/
     - assets/content/psy0/multitask_psychomotor/
     - assets/content/psy0/planning_tubes/
     - assets/content/psy0/spatial_cubes/

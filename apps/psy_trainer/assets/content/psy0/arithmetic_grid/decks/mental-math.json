@@ -1,0 +1,753 @@
+{
+  "$schema": "../../../../docs/content/schema/deck.schema.json",
+  "kind": "deck",
+  "id": "arithmetic_grid.deck.mental-math",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "arithmetic_grid",
+  "order": 1,
+  "name": {
+    "fr": "Astuces de calcul mental",
+    "en": "Mental-math tricks"
+  },
+  "description": {
+    "fr": "Carrés de 11 à 25, astuces ×11/×25, conversions fractions ↔ pourcentages et priorités opératoires.",
+    "en": "Squares from 11 to 25, ×11/×25 tricks, fraction/percentage conversions and operator priorities."
+  },
+  "tags": [
+    "arith"
+  ],
+  "cards": [
+    {
+      "id": "arithmetic_grid.deck.mental-math.0001",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "11² = ?",
+        "en": "11 squared = ?"
+      },
+      "back": {
+        "fr": "**121**",
+        "en": "**121**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0002",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "12² = ?",
+        "en": "12 squared = ?"
+      },
+      "back": {
+        "fr": "**144**",
+        "en": "**144**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0003",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "13² = ?",
+        "en": "13 squared = ?"
+      },
+      "back": {
+        "fr": "**169**",
+        "en": "**169**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0004",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "14² = ?",
+        "en": "14 squared = ?"
+      },
+      "back": {
+        "fr": "**196**",
+        "en": "**196**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0005",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "15² = ?",
+        "en": "15 squared = ?"
+      },
+      "back": {
+        "fr": "**225**",
+        "en": "**225**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0006",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "16² = ?",
+        "en": "16 squared = ?"
+      },
+      "back": {
+        "fr": "**256**",
+        "en": "**256**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0007",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "17² = ?",
+        "en": "17 squared = ?"
+      },
+      "back": {
+        "fr": "**289**",
+        "en": "**289**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0008",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "18² = ?",
+        "en": "18 squared = ?"
+      },
+      "back": {
+        "fr": "**324**",
+        "en": "**324**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0009",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "19² = ?",
+        "en": "19 squared = ?"
+      },
+      "back": {
+        "fr": "**361**",
+        "en": "**361**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0010",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "20² = ?",
+        "en": "20 squared = ?"
+      },
+      "back": {
+        "fr": "**400**",
+        "en": "**400**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0011",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "21² = ?",
+        "en": "21 squared = ?"
+      },
+      "back": {
+        "fr": "**441**",
+        "en": "**441**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0012",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "22² = ?",
+        "en": "22 squared = ?"
+      },
+      "back": {
+        "fr": "**484**",
+        "en": "**484**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0013",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "23² = ?",
+        "en": "23 squared = ?"
+      },
+      "back": {
+        "fr": "**529**",
+        "en": "**529**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0014",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "24² = ?",
+        "en": "24 squared = ?"
+      },
+      "back": {
+        "fr": "**576**",
+        "en": "**576**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0015",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "25² = ?",
+        "en": "25 squared = ?"
+      },
+      "back": {
+        "fr": "**625**",
+        "en": "**625**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.squares"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0016",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "Astuce ×11 : 23 × 11 = ?",
+        "en": "×11 trick: 23 × 11 = ?"
+      },
+      "back": {
+        "fr": "**253**. Astuce : écarte les deux chiffres de 23 et insère leur somme au milieu (2+3=5) ; retenue si ≥ 10.",
+        "en": "**253**. Trick: spread the two digits of 23 and insert their sum in the middle, carrying if needed."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.tricks.times11"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0017",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "Astuce ×11 : 45 × 11 = ?",
+        "en": "×11 trick: 45 × 11 = ?"
+      },
+      "back": {
+        "fr": "**495**. Astuce : écarte les deux chiffres de 45 et insère leur somme au milieu (4+5=9) ; retenue si ≥ 10.",
+        "en": "**495**. Trick: spread the two digits of 45 and insert their sum in the middle, carrying if needed."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.tricks.times11"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0018",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "Astuce ×11 : 34 × 11 = ?",
+        "en": "×11 trick: 34 × 11 = ?"
+      },
+      "back": {
+        "fr": "**374**. Astuce : écarte les deux chiffres de 34 et insère leur somme au milieu (3+4=7) ; retenue si ≥ 10.",
+        "en": "**374**. Trick: spread the two digits of 34 and insert their sum in the middle, carrying if needed."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.tricks.times11"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0019",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "Astuce ×11 : 52 × 11 = ?",
+        "en": "×11 trick: 52 × 11 = ?"
+      },
+      "back": {
+        "fr": "**572**. Astuce : écarte les deux chiffres de 52 et insère leur somme au milieu (5+2=7) ; retenue si ≥ 10.",
+        "en": "**572**. Trick: spread the two digits of 52 and insert their sum in the middle, carrying if needed."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.tricks.times11"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0020",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "Astuce ×25 : 16 × 25 = ?",
+        "en": "×25 trick: 16 × 25 = ?"
+      },
+      "back": {
+        "fr": "**400**. Astuce : 16 × 25 = 16 ÷ 4 × 100 = 4 × 100.",
+        "en": "**400**. Trick: 16 × 25 = 16 / 4 × 100 = 4 × 100."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.tricks.times25"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0021",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "Astuce ×25 : 24 × 25 = ?",
+        "en": "×25 trick: 24 × 25 = ?"
+      },
+      "back": {
+        "fr": "**600**. Astuce : 24 × 25 = 24 ÷ 4 × 100 = 6 × 100.",
+        "en": "**600**. Trick: 24 × 25 = 24 / 4 × 100 = 6 × 100."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.tricks.times25"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0022",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "Astuce ×25 : 48 × 25 = ?",
+        "en": "×25 trick: 48 × 25 = ?"
+      },
+      "back": {
+        "fr": "**1200**. Astuce : 48 × 25 = 48 ÷ 4 × 100 = 12 × 100.",
+        "en": "**1200**. Trick: 48 × 25 = 48 / 4 × 100 = 12 × 100."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.tricks.times25"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0023",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "Astuce ×25 : 32 × 25 = ?",
+        "en": "×25 trick: 32 × 25 = ?"
+      },
+      "back": {
+        "fr": "**800**. Astuce : 32 × 25 = 32 ÷ 4 × 100 = 8 × 100.",
+        "en": "**800**. Trick: 32 × 25 = 32 / 4 × 100 = 8 × 100."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.tricks.times25"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0024",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "1/2 = ? %",
+        "en": "1/2 = ? %"
+      },
+      "back": {
+        "fr": "**50 %**",
+        "en": "**50 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0025",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "1/4 = ? %",
+        "en": "1/4 = ? %"
+      },
+      "back": {
+        "fr": "**25 %**",
+        "en": "**25 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0026",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "3/4 = ? %",
+        "en": "3/4 = ? %"
+      },
+      "back": {
+        "fr": "**75 %**",
+        "en": "**75 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0027",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "1/5 = ? %",
+        "en": "1/5 = ? %"
+      },
+      "back": {
+        "fr": "**20 %**",
+        "en": "**20 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0028",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "2/5 = ? %",
+        "en": "2/5 = ? %"
+      },
+      "back": {
+        "fr": "**40 %**",
+        "en": "**40 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0029",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "3/5 = ? %",
+        "en": "3/5 = ? %"
+      },
+      "back": {
+        "fr": "**60 %**",
+        "en": "**60 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0030",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "4/5 = ? %",
+        "en": "4/5 = ? %"
+      },
+      "back": {
+        "fr": "**80 %**",
+        "en": "**80 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0031",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "1/8 = ? %",
+        "en": "1/8 = ? %"
+      },
+      "back": {
+        "fr": "**12,5 %**",
+        "en": "**12,5 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0032",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "3/8 = ? %",
+        "en": "3/8 = ? %"
+      },
+      "back": {
+        "fr": "**37,5 %**",
+        "en": "**37,5 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0033",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "5/8 = ? %",
+        "en": "5/8 = ? %"
+      },
+      "back": {
+        "fr": "**62,5 %**",
+        "en": "**62,5 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0034",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "1/3 = ? %",
+        "en": "1/3 = ? %"
+      },
+      "back": {
+        "fr": "**≈ 33,3 %**",
+        "en": "**≈ 33,3 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0035",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "2/3 = ? %",
+        "en": "2/3 = ? %"
+      },
+      "back": {
+        "fr": "**≈ 66,7 %**",
+        "en": "**≈ 66,7 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0036",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "1/6 = ? %",
+        "en": "1/6 = ? %"
+      },
+      "back": {
+        "fr": "**≈ 16,7 %**",
+        "en": "**≈ 16,7 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0037",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "1/10 = ? %",
+        "en": "1/10 = ? %"
+      },
+      "back": {
+        "fr": "**10 %**",
+        "en": "**10 %**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "arith.fractions_percent"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0038",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "2 + 3 × 4 = ?",
+        "en": "2 + 3 × 4 = ?"
+      },
+      "back": {
+        "fr": "**14** (la multiplication passe avant l'addition).",
+        "en": "**14** (la multiplication passe avant l'addition)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.priorities"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0039",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "(2 + 3) × 4 = ?",
+        "en": "(2 + 3) × 4 = ?"
+      },
+      "back": {
+        "fr": "**20** (les parenthèses passent en premier).",
+        "en": "**20** (les parenthèses passent en premier)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.priorities"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0040",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "10 − 4 ÷ 2 = ?",
+        "en": "10 − 4 ÷ 2 = ?"
+      },
+      "back": {
+        "fr": "**8** (division avant soustraction : 10 − 2).",
+        "en": "**8** (division avant soustraction : 10 − 2)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.priorities"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0041",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "6 × 2² = ?",
+        "en": "6 × 2² = ?"
+      },
+      "back": {
+        "fr": "**24** (exposant avant multiplication : 6 × 4).",
+        "en": "**24** (exposant avant multiplication : 6 × 4)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.priorities"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0042",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "20 ÷ 2 × 5 = ?",
+        "en": "20 ÷ 2 × 5 = ?"
+      },
+      "back": {
+        "fr": "**50** (division et multiplication de gauche à droite : 10 × 5).",
+        "en": "**50** (division et multiplication de gauche à droite : 10 × 5)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.priorities"
+      ]
+    },
+    {
+      "id": "arithmetic_grid.deck.mental-math.0043",
+      "version": 1,
+      "deckId": "arithmetic_grid.deck.mental-math",
+      "front": {
+        "fr": "8 − 2 − 3 = ?",
+        "en": "8 − 2 − 3 = ?"
+      },
+      "back": {
+        "fr": "**3** (soustractions de gauche à droite : (8 − 2) − 3).",
+        "en": "**3** (soustractions de gauche à droite : (8 − 2) − 3)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "arith.priorities"
+      ]
+    }
+  ]
+}

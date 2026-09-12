@@ -7,6 +7,7 @@ import '../../../core/l10n/strings.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
+import 'providers/flashcards_queue_provider.dart';
 import 'providers/psy0_families_provider.dart';
 import 'widgets/family_card.dart';
 
@@ -44,10 +45,13 @@ class _LearnScreenState extends ConsumerState<LearnScreen> {
 
   void _openHowItWorks() => context.push(AppRoutes.learnHowItWorks);
 
+  void _openCards() => context.push(AppRoutes.learnCards);
+
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final families = ref.watch(psy0FamiliesProvider);
+    final dueToday = ref.watch(flashcardsDueTodayProvider).value ?? 0;
     final twoColumns =
         MediaQuery.sizeOf(context).width >= LearnScreen.twoColumnBreakpoint;
 
@@ -73,6 +77,10 @@ class _LearnScreenState extends ConsumerState<LearnScreen> {
                 ),
                 SizedBox(height: theme.spacing.xl),
                 _HowItWorksCard(onPressed: _openHowItWorks),
+                if (dueToday > 0) ...[
+                  SizedBox(height: theme.spacing.xl),
+                  _FlashcardsDueCard(due: dueToday, onPressed: _openCards),
+                ],
                 SizedBox(height: theme.spacing.xl),
                 const SectionHeader(
                   title: AppStrings.learnFamiliesTitle,
@@ -212,6 +220,54 @@ class _HowItWorksCard extends StatelessWidget {
                 SizedBox(height: theme.spacing.xs),
                 Text(
                   AppStrings.learnHowItWorksSubtitle,
+                  style: theme.textStyles.body.copyWith(
+                    color: theme.colors.textSecondary,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(width: theme.spacing.sm),
+          AppIcon(
+            AppIconGlyph.chevronRight,
+            size: 20,
+            color: theme.colors.textMuted,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// "À réviser aujourd'hui" entry (US-042): the flashcards due across every
+/// deck. Only rendered by the parent when [due] is positive (no deck seeded
+/// yet, or every card up to date, both hide the whole card so the layout
+/// below never shifts for nothing).
+class _FlashcardsDueCard extends StatelessWidget {
+  const _FlashcardsDueCard({required this.due, required this.onPressed});
+
+  final int due;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
+    return AppCard(
+      onPressed: onPressed,
+      semanticsLabel: AppStrings.flashcardsHomeSemantics,
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  AppStrings.flashcardsHomeTitle,
+                  style: theme.textStyles.title,
+                ),
+                SizedBox(height: theme.spacing.xs),
+                Text(
+                  AppStrings.flashcardsHomeCount(due),
                   style: theme.textStyles.body.copyWith(
                     color: theme.colors.textSecondary,
                   ),
