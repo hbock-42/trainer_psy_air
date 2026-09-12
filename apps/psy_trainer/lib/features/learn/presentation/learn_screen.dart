@@ -65,16 +65,18 @@ class _LearnScreenState extends ConsumerState<LearnScreen> {
         MediaQuery.sizeOf(context).width >= LearnScreen.twoColumnBreakpoint;
 
     return AppScaffold(
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxWidth: LearnScreen.maxContentWidth,
-          ),
-          // A Column in a scroll view rather than a lazy ListView: the page
-          // holds at most ~15 cards and eager building keeps the whole list
-          // measurable (tests, semantics) at no visible cost.
-          child: SingleChildScrollView(
-            padding: EdgeInsets.all(theme.spacing.lg),
+      // The scroll view spans the whole body and the width cap sits inside
+      // it, so scrolling works from the margins of a wide window too.
+      // A Column in a scroll view rather than a lazy ListView: the page
+      // holds at most ~15 cards and eager building keeps the whole list
+      // measurable (tests, semantics) at no visible cost.
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(theme.spacing.lg),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: LearnScreen.maxContentWidth,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [

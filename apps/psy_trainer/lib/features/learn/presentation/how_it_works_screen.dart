@@ -25,13 +25,13 @@ class HowItWorksScreen extends StatelessWidget {
     return AppScaffold(
       title: context.l10n.learnHowItWorksTitle,
       onBack: context.pop,
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxWidth: LearnScreen.maxContentWidth,
-          ),
-          child: SingleChildScrollView(
-            padding: EdgeInsets.all(theme.spacing.lg),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(theme.spacing.lg),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: LearnScreen.maxContentWidth,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
