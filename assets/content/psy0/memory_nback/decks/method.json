@@ -1,0 +1,192 @@
+{
+  "$schema": "../../../../docs/content/schema/deck.schema.json",
+  "kind": "deck",
+  "id": "memory_nback.deck.method",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "memory_nback",
+  "order": 1,
+  "name": {
+    "fr": "Méthode N-back",
+    "en": "N-back method"
+  },
+  "description": {
+    "fr": "Aide-mémoire de méthode pour l'épreuve N-back : gérer la fenêtre glissante sans perdre le fil.",
+    "en": "Method reminders for the N-back task: managing the sliding window without losing track."
+  },
+  "tags": [
+    "memory"
+  ],
+  "cards": [
+    {
+      "id": "memory_nback.deck.method.0001",
+      "version": 1,
+      "deckId": "memory_nback.deck.method",
+      "front": {
+        "fr": "N-back : quelle est la méthode du \"train de wagons\" ?",
+        "en": "N-back: what is the \"train of wagons\" method?"
+      },
+      "back": {
+        "fr": "Imagine chaque nouveau stimulus comme un **wagon qui pousse la file** : dès qu'un wagon rentre, celui qui est N places plus loin \"sort\" et devient la réponse à comparer.",
+        "en": "Picture each new stimulus as a **wagon pushing the line**: as one wagon enters, the one N places back \"exits\" and becomes the item to compare against."
+      },
+      "difficulty": 2,
+      "tags": [
+        "memory.nback.method"
+      ]
+    },
+    {
+      "id": "memory_nback.deck.method.0002",
+      "version": 1,
+      "deckId": "memory_nback.deck.method",
+      "front": {
+        "fr": "N-back : comment garder le rythme sans se laisser déborder ?",
+        "en": "N-back: how to keep pace without falling behind?"
+      },
+      "back": {
+        "fr": "Ne cherche pas à \"tout retenir\" : ne garde en tête que les **N derniers éléments**, pas toute la séquence.",
+        "en": "Don't try to \"remember everything\": keep only the **last N items** in mind, never the whole sequence."
+      },
+      "difficulty": 2,
+      "tags": [
+        "memory.nback.method"
+      ]
+    },
+    {
+      "id": "memory_nback.deck.method.0003",
+      "version": 1,
+      "deckId": "memory_nback.deck.method",
+      "front": {
+        "fr": "N-back : que faire en cas de doute sur un item ?",
+        "en": "N-back: what to do when unsure about an item?"
+      },
+      "back": {
+        "fr": "Réponds selon ta **meilleure estimation immédiate** ; s'arrêter pour vérifier fait perdre le fil de la file entière.",
+        "en": "Answer with your **best immediate guess**; pausing to double-check derails the whole running window."
+      },
+      "difficulty": 2,
+      "tags": [
+        "memory.nback.method"
+      ]
+    },
+    {
+      "id": "memory_nback.deck.method.0004",
+      "version": 1,
+      "deckId": "memory_nback.deck.method",
+      "front": {
+        "fr": "N-back : comment répéter mentalement la fenêtre de N éléments ?",
+        "en": "N-back: how to mentally rehearse the N-item window?"
+      },
+      "back": {
+        "fr": "Récite-la en boucle silencieuse (\"a-b-c, b-c-d, c-d-e...\") à chaque nouvel élément, en abandonnant le plus ancien.",
+        "en": "Silently loop it (\"a-b-c, b-c-d, c-d-e...\") on every new item, dropping the oldest one each time."
+      },
+      "difficulty": 2,
+      "tags": [
+        "memory.nback.method"
+      ]
+    },
+    {
+      "id": "memory_nback.deck.method.0005",
+      "version": 1,
+      "deckId": "memory_nback.deck.method",
+      "front": {
+        "fr": "N-back : pourquoi éviter de compter les répétitions ?",
+        "en": "N-back: why avoid counting repetitions?"
+      },
+      "back": {
+        "fr": "Compter détourne l'attention de la comparaison position par position, qui est la vraie tâche.",
+        "en": "Counting distracts from the position-by-position comparison, which is the actual task."
+      },
+      "difficulty": 2,
+      "tags": [
+        "memory.nback.method"
+      ]
+    },
+    {
+      "id": "memory_nback.deck.method.0006",
+      "version": 1,
+      "deckId": "memory_nback.deck.method",
+      "front": {
+        "fr": "N-back : comment gérer une erreur qu'on vient de commettre ?",
+        "en": "N-back: how to handle a mistake just made?"
+      },
+      "back": {
+        "fr": "Laisse-la passer immédiatement : ruminer une erreur fait rater les items suivants.",
+        "en": "Let it go immediately: dwelling on one error makes you miss the next items."
+      },
+      "difficulty": 2,
+      "tags": [
+        "memory.nback.method"
+      ]
+    },
+    {
+      "id": "memory_nback.deck.method.0007",
+      "version": 1,
+      "deckId": "memory_nback.deck.method",
+      "front": {
+        "fr": "N-back : à quoi sert de sous-vocaliser les stimuli ?",
+        "en": "N-back: what is subvocal rehearsal for?"
+      },
+      "back": {
+        "fr": "Sous-vocaliser (répéter mentalement à voix basse) renforce la trace en mémoire de travail sans mobiliser les yeux.",
+        "en": "Subvocalising (silently repeating) reinforces the working-memory trace without engaging the eyes."
+      },
+      "difficulty": 2,
+      "tags": [
+        "memory.nback.method"
+      ]
+    },
+    {
+      "id": "memory_nback.deck.method.0008",
+      "version": 1,
+      "deckId": "memory_nback.deck.method",
+      "front": {
+        "fr": "N-back : comment s'entraîner à augmenter N progressivement ?",
+        "en": "N-back: how to progressively train higher N?"
+      },
+      "back": {
+        "fr": "Maîtrise 1-back sans erreur avant de passer à 2-back, puis 3-back : la charge de travail augmente vite avec N.",
+        "en": "Master 1-back error-free before moving to 2-back, then 3-back: workload rises fast with N."
+      },
+      "difficulty": 2,
+      "tags": [
+        "memory.nback.method"
+      ]
+    },
+    {
+      "id": "memory_nback.deck.method.0009",
+      "version": 1,
+      "deckId": "memory_nback.deck.method",
+      "front": {
+        "fr": "N-back : quel est le piège des stimuli qui se ressemblent ?",
+        "en": "N-back: what is the trap of similar-looking stimuli?"
+      },
+      "back": {
+        "fr": "Des lettres ou sons proches (b/d, m/n) sont confondus sous pression : ralentis mentalement sur ces paires plutôt que d'aller plus vite.",
+        "en": "Similar letters or sounds (b/d, m/n) get confused under pressure: slow down mentally on those pairs instead of rushing."
+      },
+      "difficulty": 2,
+      "tags": [
+        "memory.nback.method"
+      ]
+    },
+    {
+      "id": "memory_nback.deck.method.0010",
+      "version": 1,
+      "deckId": "memory_nback.deck.method",
+      "front": {
+        "fr": "N-back : comment reprendre after une perte de fil ?",
+        "en": "N-back: how to recover after losing track?"
+      },
+      "back": {
+        "fr": "Reprends au stimulus courant sans essayer de reconstruire les items manqués : mieux vaut sacrifier un item que perdre toute la fenêtre.",
+        "en": "Resume at the current stimulus without trying to rebuild missed ones: better to sacrifice one item than lose the whole window."
+      },
+      "difficulty": 2,
+      "tags": [
+        "memory.nback.method"
+      ]
+    }
+  ]
+}

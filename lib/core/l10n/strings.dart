@@ -430,6 +430,46 @@ abstract final class AppStrings {
   static String familyLessonsProgressSemantics(int read, int total) =>
       '$read leçons lues sur $total';
 
+  // Flashcards (US-042).
+  static const String flashcardsHomeTitle = 'À réviser aujourd\'hui';
+  static String flashcardsHomeCount(int count) => switch (count) {
+    0 => 'Aucune carte à réviser',
+    1 => '1 carte à réviser',
+    _ => '$count cartes à réviser',
+  };
+  static const String flashcardsHomeSemantics =
+      'Réviser les cartes du jour, ouvrir la session';
+  static const String flashcardsTitle = 'Cartes';
+  static const String flashcardsLoading = 'Chargement des cartes…';
+  static const String flashcardsError = 'Impossible de charger les cartes.';
+
+  /// `12 à réviser · 48 au total`.
+  static String flashcardsDeckSummary({required int due, required int total}) =>
+      '$due à réviser · $total au total';
+  static const String flashcardsStart = 'Commencer';
+  static const String flashcardsEmptyTitle = 'Rien à réviser';
+  static const String flashcardsEmptyBody =
+      'Toutes les cartes de ce paquet sont à jour. Reviens plus tard.';
+  static const String flashcardsFlipHint = 'Appuie ou Espace pour retourner';
+  static const String flashcardsAgain = 'À revoir';
+  static const String flashcardsHard = 'Difficile';
+  static const String flashcardsGood = 'Facile';
+  static const String flashcardsAgainSemantics = 'À revoir (touche 1)';
+  static const String flashcardsHardSemantics = 'Difficile (touche 2)';
+  static const String flashcardsGoodSemantics = 'Facile (touche 3)';
+  static String flashcardsProgress(int index, int total) =>
+      'Carte $index sur $total';
+  static const String flashcardsSummaryTitle = 'Session terminée';
+  static String flashcardsSummaryBody({
+    required int again,
+    required int hard,
+    required int good,
+  }) =>
+      '$good facile${good > 1 ? 's' : ''} · $hard difficile${hard > 1 ? 's' : ''} '
+      '· $again à revoir';
+  static const String flashcardsSummaryDone = 'Terminer';
+  static const String flashcardsBackSemantics = 'Retour';
+
   // Score-over-time charts (US-071).
   static const String familyDetailsTitle = 'Détails par famille';
   static const String familyDetailsHint =
