@@ -4,6 +4,8 @@ import '../../../engines/arithmetic_grid/domain/arithmetic_grid_engine.dart';
 import '../../../engines/arithmetic_grid/presentation/arithmetic_grid_renderer.dart';
 import '../../../engines/attention_parity/domain/attention_parity_engine.dart';
 import '../../../engines/attention_parity/presentation/attention_parity_renderer.dart';
+import '../../../engines/attention_rules/domain/attention_rules_engine.dart';
+import '../../../engines/attention_rules/presentation/attention_rules_renderer.dart';
 import '../../domain/engine/engine.dart';
 import 'activity_renderer.dart';
 
@@ -24,6 +26,8 @@ final Provider<EngineRegistry> engineRegistryProvider =
         ArithmeticGridEngine(),
         // US-021..036: add engines here, one line each.
         AttentionParityEngine(),
+        AttentionRulesEngine(),
+        // US-021..036: add engines here, one line each.
       ]),
     );
 
@@ -36,6 +40,8 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         ArithmeticGridRenderer(),
         // US-021..036: add renderers here, one line each.
         AttentionParityRenderer(),
+        AttentionRulesRenderer(),
+        // US-021..036: add renderers here, one line each.
       ]),
     );
 
