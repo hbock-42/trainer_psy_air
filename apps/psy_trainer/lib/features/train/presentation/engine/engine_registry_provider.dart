@@ -44,8 +44,8 @@ final Provider<EngineRegistry> engineRegistryProvider =
     Provider<EngineRegistry>(
       (ref) => EngineRegistry(<ActivityEngine>[
         // US-021..036: add one line per engine (alphabetical by family id).
-        const ArithmeticGridEngine(),
         const AirwaysEngine(),
+        const ArithmeticGridEngine(),
         const AttentionParityEngine(),
         const AttentionRulesEngine(),
         const CubeNetEngine(),
@@ -65,8 +65,8 @@ final Provider<RendererRegistry> rendererRegistryProvider =
     Provider<RendererRegistry>(
       (ref) => RendererRegistry(<ActivityRenderer>[
         // US-021..036: add one line per engine (alphabetical by family id).
-        const ArithmeticGridRenderer(),
         const AirwaysRenderer(),
+        const ArithmeticGridRenderer(),
         const AttentionParityRenderer(),
         const AttentionRulesRenderer(),
         const CubeNetRenderer(),
