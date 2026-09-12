@@ -350,6 +350,17 @@
   "sessionResumeCardTitle": "Reprendre la session",
   "sessionResumeCardAction": "Reprendre la session",
   "summaryTitle": "Résumé",
+  "summaryLevelChangeLabel": "Niveau {from} → {to}",
+  "@summaryLevelChangeLabel": {
+    "placeholders": {
+      "from": {
+        "type": "int"
+      },
+      "to": {
+        "type": "int"
+      }
+    }
+  },
   "summaryAccuracyLabel": "Précision",
   "summaryMeanRtLabel": "Temps moyen",
   "summaryMedianRtLabel": "Temps médian",

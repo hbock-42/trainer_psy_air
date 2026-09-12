@@ -963,6 +963,11 @@ class AppLocalizationsFr extends AppLocalizations {
   String get summaryTitle => 'Résumé';
 
   @override
+  String summaryLevelChangeLabel(int from, int to) {
+    return 'Niveau $from → $to';
+  }
+
+  @override
   String get summaryAccuracyLabel => 'Précision';
 
   @override
