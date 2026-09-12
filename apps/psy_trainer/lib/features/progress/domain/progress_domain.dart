@@ -8,6 +8,8 @@ export 'family_progress.dart';
 export 'progress_analytics.dart';
 export 'progress_snapshot.dart';
 export 'readiness_score.dart';
+export 'recommendation.dart';
+export 'recommendation_service.dart';
 export 'stats_config.dart';
 export 'stats_service.dart';
 export 'time_series.dart';

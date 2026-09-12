@@ -8,29 +8,49 @@ import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
 import '../domain/progress_snapshot.dart';
+import '../domain/recommendation.dart';
 import 'providers/dashboard_labels_provider.dart';
 import 'providers/exam_date_provider.dart';
 import 'providers/progress_snapshot_provider.dart';
 import 'providers/recent_activity_provider.dart';
+import 'providers/recommendations_provider.dart';
 import 'widgets/exam_score_chart_card.dart';
 import 'widgets/family_levels_chart.dart';
 import 'widgets/progress_bands.dart';
 import 'widgets/progress_empty_state.dart';
 import 'widgets/readiness_card.dart';
 import 'widgets/recent_activity_list.dart';
-import 'widgets/weak_areas_preview.dart';
+import 'widgets/train_next_card.dart';
 
 /// The Progress tab (US-070): readiness gauge, days until the exam, family
-/// levels chart, weak areas and recent activity, all read from the cached
-/// stats providers (refreshed through `progressVersionProvider`).
-///
-/// "Train" actions go to the Train tab for now; US-072 will target the
-/// weak family directly.
+/// levels chart, "train next" recommendations (US-072) and recent activity,
+/// all read from the cached stats providers (refreshed through
+/// `progressVersionProvider`).
 class ProgressScreen extends ConsumerWidget {
   const ProgressScreen({super.key});
 
   void _goTrain(BuildContext context) =>
       GoRouter.of(context).go(AppRoutes.train);
+
+  /// Where a recommendation's one-tap action goes. A weak tag has no
+  /// dedicated launcher target (the practice launcher is family-scoped, see
+  /// the story's final report), so it falls back to the Train tab like the
+  /// pre-US-072 weak-area preview did.
+  void _onRecommendation(BuildContext context, Recommendation rec) {
+    final router = GoRouter.of(context);
+    switch (rec.kind) {
+      case RecommendationKind.family:
+        router.go(AppRoutes.trainFamily(rec.targetId!));
+      case RecommendationKind.tag:
+        router.go(AppRoutes.train);
+      case RecommendationKind.examSim:
+        router.go(AppRoutes.exam);
+      case RecommendationKind.lesson:
+        router.go(AppRoutes.learnLesson(rec.targetId!, rec.secondaryId!));
+      case RecommendationKind.flashcards:
+        router.go(AppRoutes.learnCards);
+    }
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -49,7 +69,7 @@ class ProgressScreen extends ConsumerWidget {
         ),
         AsyncData(:final value) => _Dashboard(
           snapshot: value,
-          onTrain: () => _goTrain(context),
+          onRecommendation: (rec) => _onRecommendation(context, rec),
         ),
         AsyncError() => _Message(
           AppStrings.progressError,
@@ -80,10 +100,10 @@ class _Message extends StatelessWidget {
 }
 
 class _Dashboard extends ConsumerWidget {
-  const _Dashboard({required this.snapshot, required this.onTrain});
+  const _Dashboard({required this.snapshot, required this.onRecommendation});
 
   final ProgressSnapshot snapshot;
-  final VoidCallback onTrain;
+  final ValueChanged<Recommendation> onRecommendation;
 
   /// Content of the dashboard is kept readable on wide windows.
   static const double _maxContentWidth = 720;
@@ -96,6 +116,8 @@ class _Dashboard extends ConsumerWidget {
     final examDate = ref.watch(examDateProvider).value;
     final activities =
         ref.watch(recentActivityProvider).value ?? const <RecentActivity>[];
+    final recommendations =
+        ref.watch(recommendationsProvider).value ?? const <Recommendation>[];
 
     return ListView(
       padding: EdgeInsets.all(theme.spacing.lg),
@@ -131,14 +153,13 @@ class _Dashboard extends ConsumerWidget {
                 // Hidden (header included) until a simulation is completed.
                 ExamScoreChartCard(labels: labels),
                 const SectionHeader(
-                  title: AppStrings.weakAreasTitle,
-                  subtitle: AppStrings.weakAreasSubtitle,
+                  title: AppStrings.trainNextTitle,
+                  subtitle: AppStrings.trainNextSubtitle,
                 ),
                 SizedBox(height: theme.spacing.md),
-                WeakAreasPreview(
-                  weakAreas: snapshot.weakAreas,
-                  labels: labels,
-                  onTrain: (_) => onTrain(),
+                TrainNextCard(
+                  recommendations: recommendations,
+                  onAction: onRecommendation,
                 ),
                 SizedBox(height: theme.spacing.xl),
                 const SectionHeader(
