@@ -4,7 +4,7 @@ issue: 68
 title: "Research and document the PSY1 battery"
 type: story
 epic: EPIC-10
-status: backlog
+status: review
 priority: P2
 size: S
 lane: content
@@ -14,4 +14,4 @@ labels: [research]
 
 # US-100 — Research and document the PSY1 battery
 
-- [ ] `docs/content/psy1-spec.md` same format as PSY0 spec: psychomotor, multitasking, instrument reading, tracking, memory under load…
+- [x] `docs/content/psy1-spec.md` same format as PSY0 spec: psychomotor, multitasking, instrument reading, tracking, memory under load…

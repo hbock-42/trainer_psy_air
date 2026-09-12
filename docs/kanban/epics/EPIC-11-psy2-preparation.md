@@ -10,8 +10,9 @@ lane: learn-ui
 
 # EPIC-11 — PSY2 preparation
 
-Third stage (group exercise + psychologist interview). Mostly learn-mode content and
-self-assessment tools, no test engines.
+Third stage (personality inventories, NDA'd group exercise, interviews with pilots and a psychologist)
+— see `docs/content/psy2-spec.md` (US-110). Learn-mode content and self-assessment tools only; no
+test engines, no reproduction of confidential exercise content, no personality-test gaming.
 
 ## Stories
-US-110, US-111, US-112
+US-111 (interview preparation), US-112 (group exercise guide + CRM rubric)
