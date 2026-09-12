@@ -1,0 +1,47 @@
+{
+  "$schema": "../../../docs/content/schema/lexical_fields.schema.json",
+  "kind": "lexical_fields",
+  "familyId": "verbal_boxes",
+  "fields": [
+    {
+      "id": "verbal_boxes.field.cuisine",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": { "fr": "La cuisine", "en": "Cooking" },
+      "lang": "fr",
+      "difficulty": 1,
+      "tags": ["verbal.boxes", "verbal.boxes.everyday"],
+      "words": ["casserole", "poêle", "louche", "fouet", "passoire", "mijoter", "éplucher", "spatule", "marmite", "râpe", "four", "recette", "assaisonner", "bouillir", "rôtir"],
+      "traps": [
+        { "word": "balance", "trapFor": "verbal_boxes.field.aeronef" }
+      ],
+      "incompatibleWith": ["verbal_boxes.field.restaurant"],
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "verbal_boxes.field.aeronef",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": { "fr": "L'aéronef", "en": "The aircraft" },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": ["verbal.boxes", "verbal.boxes.aviation"],
+      "words": ["aileron", "empennage", "fuselage", "gouverne", "train", "volet", "cockpit", "hélice", "réacteur", "voilure", "dérive", "carlingue", "hublot", "saumon", "bec"],
+      "traps": [
+        { "word": "gouvernail", "trapFor": "verbal_boxes.field.marine" }
+      ],
+      "meta": { "author": "hbock", "source": "own", "notes": "'train' (d'atterrissage) is deliberately kept: it is unambiguous once the box is labelled." }
+    },
+    {
+      "id": "verbal_boxes.field.marine",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": { "fr": "La marine", "en": "Seafaring" },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": ["verbal.boxes", "verbal.boxes.everyday"],
+      "words": ["voilier", "amarre", "quille", "bâbord", "tribord", "mât", "ancre", "coque", "cale", "pont", "écoutille", "gréement", "mousse", "marée", "houle"],
+      "status": "published"
+    }
+  ]
+}

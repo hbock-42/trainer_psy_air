@@ -1215,275 +1215,9 @@ as num,
 
 
 /// @nodoc
-mixin _$GridSize {
-
- int get rows; int get cols;
-/// Create a copy of GridSize
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$GridSizeCopyWith<GridSize> get copyWith => _$GridSizeCopyWithImpl<GridSize>(this as GridSize, _$identity);
-
-  /// Serializes this GridSize to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GridSize&&(identical(other.rows, rows) || other.rows == rows)&&(identical(other.cols, cols) || other.cols == cols));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,rows,cols);
-
-@override
-String toString() {
-  return 'GridSize(rows: $rows, cols: $cols)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $GridSizeCopyWith<$Res>  {
-  factory $GridSizeCopyWith(GridSize value, $Res Function(GridSize) _then) = _$GridSizeCopyWithImpl;
-@useResult
-$Res call({
- int rows, int cols
-});
-
-
-
-
-}
-/// @nodoc
-class _$GridSizeCopyWithImpl<$Res>
-    implements $GridSizeCopyWith<$Res> {
-  _$GridSizeCopyWithImpl(this._self, this._then);
-
-  final GridSize _self;
-  final $Res Function(GridSize) _then;
-
-/// Create a copy of GridSize
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? rows = null,Object? cols = null,}) {
-  return _then(_self.copyWith(
-rows: null == rows ? _self.rows : rows // ignore: cast_nullable_to_non_nullable
-as int,cols: null == cols ? _self.cols : cols // ignore: cast_nullable_to_non_nullable
-as int,
-  ));
-}
-
-}
-
-
-/// Adds pattern-matching-related methods to [GridSize].
-extension GridSizePatterns on GridSize {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GridSize value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _GridSize() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GridSize value)  $default,){
-final _that = this;
-switch (_that) {
-case _GridSize():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GridSize value)?  $default,){
-final _that = this;
-switch (_that) {
-case _GridSize() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int rows,  int cols)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _GridSize() when $default != null:
-return $default(_that.rows,_that.cols);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int rows,  int cols)  $default,) {final _that = this;
-switch (_that) {
-case _GridSize():
-return $default(_that.rows,_that.cols);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int rows,  int cols)?  $default,) {final _that = this;
-switch (_that) {
-case _GridSize() when $default != null:
-return $default(_that.rows,_that.cols);case _:
-  return null;
-
-}
-}
-
-}
-
-/// @nodoc
-@JsonSerializable()
-
-class _GridSize implements GridSize {
-  const _GridSize({required this.rows, required this.cols});
-  factory _GridSize.fromJson(Map<String, dynamic> json) => _$GridSizeFromJson(json);
-
-@override final  int rows;
-@override final  int cols;
-
-/// Create a copy of GridSize
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$GridSizeCopyWith<_GridSize> get copyWith => __$GridSizeCopyWithImpl<_GridSize>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$GridSizeToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GridSize&&(identical(other.rows, rows) || other.rows == rows)&&(identical(other.cols, cols) || other.cols == cols));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,rows,cols);
-
-@override
-String toString() {
-  return 'GridSize(rows: $rows, cols: $cols)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$GridSizeCopyWith<$Res> implements $GridSizeCopyWith<$Res> {
-  factory _$GridSizeCopyWith(_GridSize value, $Res Function(_GridSize) _then) = __$GridSizeCopyWithImpl;
-@override @useResult
-$Res call({
- int rows, int cols
-});
-
-
-
-
-}
-/// @nodoc
-class __$GridSizeCopyWithImpl<$Res>
-    implements _$GridSizeCopyWith<$Res> {
-  __$GridSizeCopyWithImpl(this._self, this._then);
-
-  final _GridSize _self;
-  final $Res Function(_GridSize) _then;
-
-/// Create a copy of GridSize
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? rows = null,Object? cols = null,}) {
-  return _then(_GridSize(
-rows: null == rows ? _self.rows : rows // ignore: cast_nullable_to_non_nullable
-as int,cols: null == cols ? _self.cols : cols // ignore: cast_nullable_to_non_nullable
-as int,
-  ));
-}
-
-
-}
-
-
-/// @nodoc
 mixin _$ItemOrigin {
 
- String get generatorId; int get seed;
+ GeneratorId get generatorId; int get seed;
 /// Create a copy of ItemOrigin
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1516,7 +1250,7 @@ abstract mixin class $ItemOriginCopyWith<$Res>  {
   factory $ItemOriginCopyWith(ItemOrigin value, $Res Function(ItemOrigin) _then) = _$ItemOriginCopyWithImpl;
 @useResult
 $Res call({
- String generatorId, int seed
+ GeneratorId generatorId, int seed
 });
 
 
@@ -1536,7 +1270,7 @@ class _$ItemOriginCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? generatorId = null,Object? seed = null,}) {
   return _then(_self.copyWith(
 generatorId: null == generatorId ? _self.generatorId : generatorId // ignore: cast_nullable_to_non_nullable
-as String,seed: null == seed ? _self.seed : seed // ignore: cast_nullable_to_non_nullable
+as GeneratorId,seed: null == seed ? _self.seed : seed // ignore: cast_nullable_to_non_nullable
 as int,
   ));
 }
@@ -1622,7 +1356,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String generatorId,  int seed)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( GeneratorId generatorId,  int seed)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ItemOrigin() when $default != null:
 return $default(_that.generatorId,_that.seed);case _:
@@ -1643,7 +1377,7 @@ return $default(_that.generatorId,_that.seed);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String generatorId,  int seed)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( GeneratorId generatorId,  int seed)  $default,) {final _that = this;
 switch (_that) {
 case _ItemOrigin():
 return $default(_that.generatorId,_that.seed);case _:
@@ -1663,7 +1397,7 @@ return $default(_that.generatorId,_that.seed);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String generatorId,  int seed)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( GeneratorId generatorId,  int seed)?  $default,) {final _that = this;
 switch (_that) {
 case _ItemOrigin() when $default != null:
 return $default(_that.generatorId,_that.seed);case _:
@@ -1681,7 +1415,7 @@ class _ItemOrigin implements ItemOrigin {
   const _ItemOrigin({required this.generatorId, required this.seed});
   factory _ItemOrigin.fromJson(Map<String, dynamic> json) => _$ItemOriginFromJson(json);
 
-@override final  String generatorId;
+@override final  GeneratorId generatorId;
 @override final  int seed;
 
 /// Create a copy of ItemOrigin
@@ -1717,7 +1451,7 @@ abstract mixin class _$ItemOriginCopyWith<$Res> implements $ItemOriginCopyWith<$
   factory _$ItemOriginCopyWith(_ItemOrigin value, $Res Function(_ItemOrigin) _then) = __$ItemOriginCopyWithImpl;
 @override @useResult
 $Res call({
- String generatorId, int seed
+ GeneratorId generatorId, int seed
 });
 
 
@@ -1737,7 +1471,7 @@ class __$ItemOriginCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? generatorId = null,Object? seed = null,}) {
   return _then(_ItemOrigin(
 generatorId: null == generatorId ? _self.generatorId : generatorId // ignore: cast_nullable_to_non_nullable
-as String,seed: null == seed ? _self.seed : seed // ignore: cast_nullable_to_non_nullable
+as GeneratorId,seed: null == seed ? _self.seed : seed // ignore: cast_nullable_to_non_nullable
 as int,
   ));
 }
@@ -1956,13 +1690,13 @@ return generated(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  LocalizedText stem,  List<McqOption> options,  int correctIndex,  LocalizedText explanation,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  MediaRef? media,  String? passageId,  bool shuffleOptions)?  mcq,TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  LocalizedText stem,  num expected,  LocalizedText explanation,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  MediaRef? media,  Tolerance? tolerance,  String? unit,  InputFormat inputFormat,  int decimals)?  numeric,TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  StimulusKind stimulusKind,  List<String> stimulus,  RecallMode recallMode,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  LocalizedText? instructions,  GridSize? grid,  int presentationMs,  int gapMs,  LocalizedText? explanation)?  sequence,TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  String generatorId,  int seed,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  Map<String, Object?> params)?  generated,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  LocalizedText stem,  List<McqOption> options,  int correctIndex,  LocalizedText explanation,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  MediaRef? media,  String? passageId,  bool shuffleOptions,  bool allowSkip, @DateOnlyConverter()  DateTime? validAsOf)?  mcq,TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  LocalizedText stem,  num expected,  LocalizedText explanation,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  MediaRef? media,  Tolerance? tolerance,  String? unit,  InputFormat inputFormat,  int decimals)?  numeric,TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  StimulusKind stimulusKind,  List<String> stimulus,  RecallMode recallMode,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  LocalizedText? instructions,  GridSize? grid,  int presentationMs,  int gapMs,  LocalizedText? explanation)?  sequence,TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  GeneratorId generatorId,  int seed, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)  GeneratorParams params,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta)?  generated,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case McqItem() when mcq != null:
-return mcq(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.stem,_that.options,_that.correctIndex,_that.explanation,_that.lang,_that.status,_that.origin,_that.meta,_that.media,_that.passageId,_that.shuffleOptions);case NumericItem() when numeric != null:
+return mcq(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.stem,_that.options,_that.correctIndex,_that.explanation,_that.lang,_that.status,_that.origin,_that.meta,_that.media,_that.passageId,_that.shuffleOptions,_that.allowSkip,_that.validAsOf);case NumericItem() when numeric != null:
 return numeric(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.stem,_that.expected,_that.explanation,_that.lang,_that.status,_that.origin,_that.meta,_that.media,_that.tolerance,_that.unit,_that.inputFormat,_that.decimals);case SequenceItem() when sequence != null:
 return sequence(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.stimulusKind,_that.stimulus,_that.recallMode,_that.lang,_that.status,_that.origin,_that.meta,_that.instructions,_that.grid,_that.presentationMs,_that.gapMs,_that.explanation);case GeneratedItem() when generated != null:
-return generated(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.generatorId,_that.seed,_that.lang,_that.status,_that.origin,_that.meta,_that.params);case _:
+return generated(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.generatorId,_that.seed,_that.params,_that.lang,_that.status,_that.origin,_that.meta);case _:
   return orElse();
 
 }
@@ -1980,13 +1714,13 @@ return generated(_that.id,_that.version,_that.familyId,_that.difficulty,_that.ta
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  LocalizedText stem,  List<McqOption> options,  int correctIndex,  LocalizedText explanation,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  MediaRef? media,  String? passageId,  bool shuffleOptions)  mcq,required TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  LocalizedText stem,  num expected,  LocalizedText explanation,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  MediaRef? media,  Tolerance? tolerance,  String? unit,  InputFormat inputFormat,  int decimals)  numeric,required TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  StimulusKind stimulusKind,  List<String> stimulus,  RecallMode recallMode,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  LocalizedText? instructions,  GridSize? grid,  int presentationMs,  int gapMs,  LocalizedText? explanation)  sequence,required TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  String generatorId,  int seed,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  Map<String, Object?> params)  generated,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  LocalizedText stem,  List<McqOption> options,  int correctIndex,  LocalizedText explanation,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  MediaRef? media,  String? passageId,  bool shuffleOptions,  bool allowSkip, @DateOnlyConverter()  DateTime? validAsOf)  mcq,required TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  LocalizedText stem,  num expected,  LocalizedText explanation,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  MediaRef? media,  Tolerance? tolerance,  String? unit,  InputFormat inputFormat,  int decimals)  numeric,required TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  StimulusKind stimulusKind,  List<String> stimulus,  RecallMode recallMode,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  LocalizedText? instructions,  GridSize? grid,  int presentationMs,  int gapMs,  LocalizedText? explanation)  sequence,required TResult Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  GeneratorId generatorId,  int seed, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)  GeneratorParams params,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta)  generated,}) {final _that = this;
 switch (_that) {
 case McqItem():
-return mcq(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.stem,_that.options,_that.correctIndex,_that.explanation,_that.lang,_that.status,_that.origin,_that.meta,_that.media,_that.passageId,_that.shuffleOptions);case NumericItem():
+return mcq(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.stem,_that.options,_that.correctIndex,_that.explanation,_that.lang,_that.status,_that.origin,_that.meta,_that.media,_that.passageId,_that.shuffleOptions,_that.allowSkip,_that.validAsOf);case NumericItem():
 return numeric(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.stem,_that.expected,_that.explanation,_that.lang,_that.status,_that.origin,_that.meta,_that.media,_that.tolerance,_that.unit,_that.inputFormat,_that.decimals);case SequenceItem():
 return sequence(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.stimulusKind,_that.stimulus,_that.recallMode,_that.lang,_that.status,_that.origin,_that.meta,_that.instructions,_that.grid,_that.presentationMs,_that.gapMs,_that.explanation);case GeneratedItem():
-return generated(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.generatorId,_that.seed,_that.lang,_that.status,_that.origin,_that.meta,_that.params);}
+return generated(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.generatorId,_that.seed,_that.params,_that.lang,_that.status,_that.origin,_that.meta);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -2000,13 +1734,13 @@ return generated(_that.id,_that.version,_that.familyId,_that.difficulty,_that.ta
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  LocalizedText stem,  List<McqOption> options,  int correctIndex,  LocalizedText explanation,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  MediaRef? media,  String? passageId,  bool shuffleOptions)?  mcq,TResult? Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  LocalizedText stem,  num expected,  LocalizedText explanation,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  MediaRef? media,  Tolerance? tolerance,  String? unit,  InputFormat inputFormat,  int decimals)?  numeric,TResult? Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  StimulusKind stimulusKind,  List<String> stimulus,  RecallMode recallMode,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  LocalizedText? instructions,  GridSize? grid,  int presentationMs,  int gapMs,  LocalizedText? explanation)?  sequence,TResult? Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  String generatorId,  int seed,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  Map<String, Object?> params)?  generated,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  LocalizedText stem,  List<McqOption> options,  int correctIndex,  LocalizedText explanation,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  MediaRef? media,  String? passageId,  bool shuffleOptions,  bool allowSkip, @DateOnlyConverter()  DateTime? validAsOf)?  mcq,TResult? Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  LocalizedText stem,  num expected,  LocalizedText explanation,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  MediaRef? media,  Tolerance? tolerance,  String? unit,  InputFormat inputFormat,  int decimals)?  numeric,TResult? Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  StimulusKind stimulusKind,  List<String> stimulus,  RecallMode recallMode,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta,  LocalizedText? instructions,  GridSize? grid,  int presentationMs,  int gapMs,  LocalizedText? explanation)?  sequence,TResult? Function( String id,  int version,  String familyId, @JsonKey(fromJson: difficultyFromJson)  Difficulty difficulty,  List<String> tags,  GeneratorId generatorId,  int seed, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)  GeneratorParams params,  ContentLang? lang,  ContentStatus status,  ItemOrigin? origin,  ContentMeta? meta)?  generated,}) {final _that = this;
 switch (_that) {
 case McqItem() when mcq != null:
-return mcq(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.stem,_that.options,_that.correctIndex,_that.explanation,_that.lang,_that.status,_that.origin,_that.meta,_that.media,_that.passageId,_that.shuffleOptions);case NumericItem() when numeric != null:
+return mcq(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.stem,_that.options,_that.correctIndex,_that.explanation,_that.lang,_that.status,_that.origin,_that.meta,_that.media,_that.passageId,_that.shuffleOptions,_that.allowSkip,_that.validAsOf);case NumericItem() when numeric != null:
 return numeric(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.stem,_that.expected,_that.explanation,_that.lang,_that.status,_that.origin,_that.meta,_that.media,_that.tolerance,_that.unit,_that.inputFormat,_that.decimals);case SequenceItem() when sequence != null:
 return sequence(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.stimulusKind,_that.stimulus,_that.recallMode,_that.lang,_that.status,_that.origin,_that.meta,_that.instructions,_that.grid,_that.presentationMs,_that.gapMs,_that.explanation);case GeneratedItem() when generated != null:
-return generated(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.generatorId,_that.seed,_that.lang,_that.status,_that.origin,_that.meta,_that.params);case _:
+return generated(_that.id,_that.version,_that.familyId,_that.difficulty,_that.tags,_that.generatorId,_that.seed,_that.params,_that.lang,_that.status,_that.origin,_that.meta);case _:
   return null;
 
 }
@@ -2018,7 +1752,7 @@ return generated(_that.id,_that.version,_that.familyId,_that.difficulty,_that.ta
 @JsonSerializable()
 
 class McqItem implements Item {
-  const McqItem({required this.id, required this.version, required this.familyId, @JsonKey(fromJson: difficultyFromJson) required this.difficulty, required final  List<String> tags, required this.stem, required final  List<McqOption> options, required this.correctIndex, required this.explanation, this.lang, this.status = ContentStatus.published, this.origin, this.meta, this.media, this.passageId, this.shuffleOptions = true, final  String? $type}): assert(difficulty >= minDifficulty && difficulty <= maxDifficulty, 'difficulty must be 1..5'),assert(correctIndex >= 0 && correctIndex < options.length, 'correctIndex must index into options'),_tags = tags,_options = options,$type = $type ?? 'mcq';
+  const McqItem({required this.id, required this.version, required this.familyId, @JsonKey(fromJson: difficultyFromJson) required this.difficulty, required final  List<String> tags, required this.stem, required final  List<McqOption> options, required this.correctIndex, required this.explanation, this.lang, this.status = ContentStatus.published, this.origin, this.meta, this.media, this.passageId, this.shuffleOptions = true, this.allowSkip = false, @DateOnlyConverter() this.validAsOf, final  String? $type}): assert(difficulty >= minDifficulty && difficulty <= maxDifficulty, 'difficulty must be 1..5'),assert(correctIndex >= 0 && correctIndex < options.length, 'correctIndex must index into options'),_tags = tags,_options = options,$type = $type ?? 'mcq';
   factory McqItem.fromJson(Map<String, dynamic> json) => _$McqItemFromJson(json);
 
 @override final  String id;
@@ -2049,6 +1783,12 @@ class McqItem implements Item {
  final  MediaRef? media;
  final  String? passageId;
 @JsonKey() final  bool shuffleOptions;
+/// v2: offer an explicit "je ne sais pas" answer, scored with
+/// `ScoringPolicy.skip`.
+@JsonKey() final  bool allowSkip;
+/// v2: date at which the correct answer was last checked (perishable
+/// culture facts).
+@DateOnlyConverter() final  DateTime? validAsOf;
 
 @JsonKey(name: 'type')
 final String $type;
@@ -2067,16 +1807,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is McqItem&&(identical(other.id, id) || other.id == id)&&(identical(other.version, version) || other.version == version)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&const DeepCollectionEquality().equals(other._tags, _tags)&&(identical(other.stem, stem) || other.stem == stem)&&const DeepCollectionEquality().equals(other._options, _options)&&(identical(other.correctIndex, correctIndex) || other.correctIndex == correctIndex)&&(identical(other.explanation, explanation) || other.explanation == explanation)&&(identical(other.lang, lang) || other.lang == lang)&&(identical(other.status, status) || other.status == status)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.meta, meta) || other.meta == meta)&&(identical(other.media, media) || other.media == media)&&(identical(other.passageId, passageId) || other.passageId == passageId)&&(identical(other.shuffleOptions, shuffleOptions) || other.shuffleOptions == shuffleOptions));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is McqItem&&(identical(other.id, id) || other.id == id)&&(identical(other.version, version) || other.version == version)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&const DeepCollectionEquality().equals(other._tags, _tags)&&(identical(other.stem, stem) || other.stem == stem)&&const DeepCollectionEquality().equals(other._options, _options)&&(identical(other.correctIndex, correctIndex) || other.correctIndex == correctIndex)&&(identical(other.explanation, explanation) || other.explanation == explanation)&&(identical(other.lang, lang) || other.lang == lang)&&(identical(other.status, status) || other.status == status)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.meta, meta) || other.meta == meta)&&(identical(other.media, media) || other.media == media)&&(identical(other.passageId, passageId) || other.passageId == passageId)&&(identical(other.shuffleOptions, shuffleOptions) || other.shuffleOptions == shuffleOptions)&&(identical(other.allowSkip, allowSkip) || other.allowSkip == allowSkip)&&(identical(other.validAsOf, validAsOf) || other.validAsOf == validAsOf));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,version,familyId,difficulty,const DeepCollectionEquality().hash(_tags),stem,const DeepCollectionEquality().hash(_options),correctIndex,explanation,lang,status,origin,meta,media,passageId,shuffleOptions);
+int get hashCode => Object.hash(runtimeType,id,version,familyId,difficulty,const DeepCollectionEquality().hash(_tags),stem,const DeepCollectionEquality().hash(_options),correctIndex,explanation,lang,status,origin,meta,media,passageId,shuffleOptions,allowSkip,validAsOf);
 
 @override
 String toString() {
-  return 'Item.mcq(id: $id, version: $version, familyId: $familyId, difficulty: $difficulty, tags: $tags, stem: $stem, options: $options, correctIndex: $correctIndex, explanation: $explanation, lang: $lang, status: $status, origin: $origin, meta: $meta, media: $media, passageId: $passageId, shuffleOptions: $shuffleOptions)';
+  return 'Item.mcq(id: $id, version: $version, familyId: $familyId, difficulty: $difficulty, tags: $tags, stem: $stem, options: $options, correctIndex: $correctIndex, explanation: $explanation, lang: $lang, status: $status, origin: $origin, meta: $meta, media: $media, passageId: $passageId, shuffleOptions: $shuffleOptions, allowSkip: $allowSkip, validAsOf: $validAsOf)';
 }
 
 
@@ -2087,7 +1827,7 @@ abstract mixin class $McqItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
   factory $McqItemCopyWith(McqItem value, $Res Function(McqItem) _then) = _$McqItemCopyWithImpl;
 @override @useResult
 $Res call({
- String id, int version, String familyId,@JsonKey(fromJson: difficultyFromJson) Difficulty difficulty, List<String> tags, LocalizedText stem, List<McqOption> options, int correctIndex, LocalizedText explanation, ContentLang? lang, ContentStatus status, ItemOrigin? origin, ContentMeta? meta, MediaRef? media, String? passageId, bool shuffleOptions
+ String id, int version, String familyId,@JsonKey(fromJson: difficultyFromJson) Difficulty difficulty, List<String> tags, LocalizedText stem, List<McqOption> options, int correctIndex, LocalizedText explanation, ContentLang? lang, ContentStatus status, ItemOrigin? origin, ContentMeta? meta, MediaRef? media, String? passageId, bool shuffleOptions, bool allowSkip,@DateOnlyConverter() DateTime? validAsOf
 });
 
 
@@ -2104,7 +1844,7 @@ class _$McqItemCopyWithImpl<$Res>
 
 /// Create a copy of Item
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? version = null,Object? familyId = null,Object? difficulty = null,Object? tags = null,Object? stem = null,Object? options = null,Object? correctIndex = null,Object? explanation = null,Object? lang = freezed,Object? status = null,Object? origin = freezed,Object? meta = freezed,Object? media = freezed,Object? passageId = freezed,Object? shuffleOptions = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? version = null,Object? familyId = null,Object? difficulty = null,Object? tags = null,Object? stem = null,Object? options = null,Object? correctIndex = null,Object? explanation = null,Object? lang = freezed,Object? status = null,Object? origin = freezed,Object? meta = freezed,Object? media = freezed,Object? passageId = freezed,Object? shuffleOptions = null,Object? allowSkip = null,Object? validAsOf = freezed,}) {
   return _then(McqItem(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
@@ -2122,7 +1862,9 @@ as ItemOrigin?,meta: freezed == meta ? _self.meta : meta // ignore: cast_nullabl
 as ContentMeta?,media: freezed == media ? _self.media : media // ignore: cast_nullable_to_non_nullable
 as MediaRef?,passageId: freezed == passageId ? _self.passageId : passageId // ignore: cast_nullable_to_non_nullable
 as String?,shuffleOptions: null == shuffleOptions ? _self.shuffleOptions : shuffleOptions // ignore: cast_nullable_to_non_nullable
-as bool,
+as bool,allowSkip: null == allowSkip ? _self.allowSkip : allowSkip // ignore: cast_nullable_to_non_nullable
+as bool,validAsOf: freezed == validAsOf ? _self.validAsOf : validAsOf // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 
@@ -2541,7 +2283,7 @@ $LocalizedTextCopyWith<$Res>? get explanation {
 @JsonSerializable()
 
 class GeneratedItem implements Item {
-  const GeneratedItem({required this.id, required this.version, required this.familyId, @JsonKey(fromJson: difficultyFromJson) required this.difficulty, required final  List<String> tags, required this.generatorId, required this.seed, this.lang, this.status = ContentStatus.published, this.origin, this.meta, final  Map<String, Object?> params = const <String, Object?>{}, final  String? $type}): assert(difficulty >= minDifficulty && difficulty <= maxDifficulty, 'difficulty must be 1..5'),_tags = tags,_params = params,$type = $type ?? 'generated';
+  const GeneratedItem({required this.id, required this.version, required this.familyId, @JsonKey(fromJson: difficultyFromJson) required this.difficulty, required final  List<String> tags, required this.generatorId, required this.seed, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson) required this.params, this.lang, this.status = ContentStatus.published, this.origin, this.meta, final  String? $type}): assert(difficulty >= minDifficulty && difficulty <= maxDifficulty, 'difficulty must be 1..5'),_tags = tags,$type = $type ?? 'generated';
   factory GeneratedItem.fromJson(Map<String, dynamic> json) => _$GeneratedItemFromJson(json);
 
 @override final  String id;
@@ -2555,19 +2297,13 @@ class GeneratedItem implements Item {
   return EqualUnmodifiableListView(_tags);
 }
 
- final  String generatorId;
+ final  GeneratorId generatorId;
  final  int seed;
+@JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson) final  GeneratorParams params;
 @override final  ContentLang? lang;
 @override@JsonKey() final  ContentStatus status;
 @override final  ItemOrigin? origin;
 @override final  ContentMeta? meta;
- final  Map<String, Object?> _params;
-@JsonKey() Map<String, Object?> get params {
-  if (_params is EqualUnmodifiableMapView) return _params;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_params);
-}
-
 
 @JsonKey(name: 'type')
 final String $type;
@@ -2586,16 +2322,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GeneratedItem&&(identical(other.id, id) || other.id == id)&&(identical(other.version, version) || other.version == version)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&const DeepCollectionEquality().equals(other._tags, _tags)&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.seed, seed) || other.seed == seed)&&(identical(other.lang, lang) || other.lang == lang)&&(identical(other.status, status) || other.status == status)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.meta, meta) || other.meta == meta)&&const DeepCollectionEquality().equals(other._params, _params));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GeneratedItem&&(identical(other.id, id) || other.id == id)&&(identical(other.version, version) || other.version == version)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&const DeepCollectionEquality().equals(other._tags, _tags)&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.seed, seed) || other.seed == seed)&&(identical(other.params, params) || other.params == params)&&(identical(other.lang, lang) || other.lang == lang)&&(identical(other.status, status) || other.status == status)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.meta, meta) || other.meta == meta));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,version,familyId,difficulty,const DeepCollectionEquality().hash(_tags),generatorId,seed,lang,status,origin,meta,const DeepCollectionEquality().hash(_params));
+int get hashCode => Object.hash(runtimeType,id,version,familyId,difficulty,const DeepCollectionEquality().hash(_tags),generatorId,seed,params,lang,status,origin,meta);
 
 @override
 String toString() {
-  return 'Item.generated(id: $id, version: $version, familyId: $familyId, difficulty: $difficulty, tags: $tags, generatorId: $generatorId, seed: $seed, lang: $lang, status: $status, origin: $origin, meta: $meta, params: $params)';
+  return 'Item.generated(id: $id, version: $version, familyId: $familyId, difficulty: $difficulty, tags: $tags, generatorId: $generatorId, seed: $seed, params: $params, lang: $lang, status: $status, origin: $origin, meta: $meta)';
 }
 
 
@@ -2606,11 +2342,11 @@ abstract mixin class $GeneratedItemCopyWith<$Res> implements $ItemCopyWith<$Res>
   factory $GeneratedItemCopyWith(GeneratedItem value, $Res Function(GeneratedItem) _then) = _$GeneratedItemCopyWithImpl;
 @override @useResult
 $Res call({
- String id, int version, String familyId,@JsonKey(fromJson: difficultyFromJson) Difficulty difficulty, List<String> tags, String generatorId, int seed, ContentLang? lang, ContentStatus status, ItemOrigin? origin, ContentMeta? meta, Map<String, Object?> params
+ String id, int version, String familyId,@JsonKey(fromJson: difficultyFromJson) Difficulty difficulty, List<String> tags, GeneratorId generatorId, int seed,@JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson) GeneratorParams params, ContentLang? lang, ContentStatus status, ItemOrigin? origin, ContentMeta? meta
 });
 
 
-@override $ItemOriginCopyWith<$Res>? get origin;@override $ContentMetaCopyWith<$Res>? get meta;
+$GeneratorParamsCopyWith<$Res> get params;@override $ItemOriginCopyWith<$Res>? get origin;@override $ContentMetaCopyWith<$Res>? get meta;
 
 }
 /// @nodoc
@@ -2623,7 +2359,7 @@ class _$GeneratedItemCopyWithImpl<$Res>
 
 /// Create a copy of Item
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? version = null,Object? familyId = null,Object? difficulty = null,Object? tags = null,Object? generatorId = null,Object? seed = null,Object? lang = freezed,Object? status = null,Object? origin = freezed,Object? meta = freezed,Object? params = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? version = null,Object? familyId = null,Object? difficulty = null,Object? tags = null,Object? generatorId = null,Object? seed = null,Object? params = null,Object? lang = freezed,Object? status = null,Object? origin = freezed,Object? meta = freezed,}) {
   return _then(GeneratedItem(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
@@ -2631,17 +2367,26 @@ as int,familyId: null == familyId ? _self.familyId : familyId // ignore: cast_nu
 as String,difficulty: null == difficulty ? _self.difficulty : difficulty // ignore: cast_nullable_to_non_nullable
 as Difficulty,tags: null == tags ? _self._tags : tags // ignore: cast_nullable_to_non_nullable
 as List<String>,generatorId: null == generatorId ? _self.generatorId : generatorId // ignore: cast_nullable_to_non_nullable
-as String,seed: null == seed ? _self.seed : seed // ignore: cast_nullable_to_non_nullable
-as int,lang: freezed == lang ? _self.lang : lang // ignore: cast_nullable_to_non_nullable
+as GeneratorId,seed: null == seed ? _self.seed : seed // ignore: cast_nullable_to_non_nullable
+as int,params: null == params ? _self.params : params // ignore: cast_nullable_to_non_nullable
+as GeneratorParams,lang: freezed == lang ? _self.lang : lang // ignore: cast_nullable_to_non_nullable
 as ContentLang?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as ContentStatus,origin: freezed == origin ? _self.origin : origin // ignore: cast_nullable_to_non_nullable
 as ItemOrigin?,meta: freezed == meta ? _self.meta : meta // ignore: cast_nullable_to_non_nullable
-as ContentMeta?,params: null == params ? _self._params : params // ignore: cast_nullable_to_non_nullable
-as Map<String, Object?>,
+as ContentMeta?,
   ));
 }
 
 /// Create a copy of Item
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$GeneratorParamsCopyWith<$Res> get params {
+  
+  return $GeneratorParamsCopyWith<$Res>(_self.params, (value) {
+    return _then(_self.copyWith(params: value));
+  });
+}/// Create a copy of Item
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')

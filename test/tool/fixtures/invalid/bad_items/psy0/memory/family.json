@@ -6,7 +6,7 @@
   "order": 4,
   "name": { "fr": "Mémoire", "en": "Memory" },
   "description": { "fr": "Empan de chiffres et motifs.", "en": "Digit span and patterns." },
-  "engineType": "memory_digit_span",
+  "engineType": "memory_nback",
   "answerFormat": "sequence",
   "defaultDurationSec": 300,
   "defaultItemCount": 10,

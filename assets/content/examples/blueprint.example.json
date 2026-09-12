@@ -1,0 +1,93 @@
+{
+  "$schema": "../../../docs/content/schema/blueprint.schema.json",
+  "kind": "blueprint",
+  "id": "psy0.blueprint.example-custom",
+  "version": 1,
+  "moduleId": "psy0",
+  "name": { "fr": "PSY0 — échauffement attention + culture (12 min)", "en": "PSY0 — attention + culture warm-up (12 min)" },
+  "description": {
+    "fr": "Exemple de blueprint personnalisé montrant chaque champ du contrat v2 : cadence fixe, temps par item, temps de section, barème, retour immédiat, exigence clavier. Durées **estimées**.",
+    "en": "Example custom blueprint exercising every v2 field: fixed cadence, per-item time, section time, scoring policy, live feedback, keyboard requirement. Timings are **estimated**."
+  },
+  "confidence": "assumed",
+  "tags": ["blueprint.custom"],
+  "briefingSec": 0,
+  "sections": [
+    {
+      "id": "s01-nback",
+      "familyId": "memory_nback",
+      "briefing": {
+        "fr": "Une couleur s'affiche toutes les 2,5 s. Répondez **Oui** si elle est identique à celle affichée deux rangs plus tôt, sinon **Non**. Pas de réponse = erreur.",
+        "en": "A colour appears every 2.5 s. Answer **Yes** if it equals the one shown two steps earlier, otherwise **No**. No answer = error."
+      },
+      "itemCount": 42,
+      "cadence": { "stimulusMs": 1000, "answerWindowMs": 1500 },
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "nback",
+        "difficulty": { "min": 3, "max": 3 },
+        "params": { "n": 2, "stimulusKind": "colour", "paletteSize": 3, "count": 42, "primers": 2 }
+      },
+      "breakAfterSec": 0,
+      "confidence": "reported"
+    },
+    {
+      "id": "s02-rules",
+      "familyId": "attention_rules",
+      "itemCount": 24,
+      "sectionTimeSec": 75,
+      "cadence": { "stimulusMs": 500, "answerWindowMs": 3000 },
+      "liveFeedback": true,
+      "inputRequirement": "keyboard",
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "stimulus_response",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "count": 24, "keys": ["n", "x"] }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s03-parity",
+      "familyId": "attention_parity",
+      "itemCount": 2,
+      "perItemTimeSec": 60,
+      "liveFeedback": true,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "parity_sequence",
+        "difficulty": { "min": 2, "max": 3 },
+        "params": { "numberCount": 16, "restartOnError": true }
+      },
+      "breakAfterSec": 30,
+      "confidence": "reported"
+    },
+    {
+      "id": "s04-culture",
+      "familyId": "culture_aero",
+      "title": { "fr": "Culture aéronautique (barème historique)", "en": "Aeronautical culture (historical marking)" },
+      "itemCount": 12,
+      "sectionTimeSec": 220,
+      "perItemTimeSec": 18,
+      "scoringPolicy": { "correct": 3, "wrong": -1, "skip": 0 },
+      "itemSelection": {
+        "mode": "bank",
+        "difficulty": { "min": 2, "max": 4 },
+        "balanceByTagPrefix": "culture",
+        "avoidRecentSessions": 3
+      },
+      "confidence": "reported",
+      "weight": 2
+    },
+    {
+      "id": "s05-speaking",
+      "familyId": "english_speaking",
+      "itemCount": 1,
+      "perItemTimeSec": 105,
+      "itemSelection": { "mode": "bank", "tags": ["english.speaking"] },
+      "confidence": "assumed",
+      "weight": 0
+    }
+  ],
+  "meta": { "source": "docs/content/psy0-spec.md §3", "notes": "Total ~12 min including the break." }
+}

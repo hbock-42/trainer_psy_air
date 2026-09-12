@@ -1,15 +1,15 @@
 {
   "$schema": "../../../docs/content/schema/bank.schema.json",
   "kind": "bank",
-  "familyId": "memory",
+  "familyId": "memory_nback",
   "items": [
     {
-      "id": "memory.digit_span.0001",
+      "id": "memory_nback.span.0001",
       "type": "sequence",
       "version": 1,
-      "familyId": "memory",
+      "familyId": "memory_nback",
       "difficulty": 2,
-      "tags": ["memory.digit_span", "memory.digit_span.forward"],
+      "tags": ["memory.span", "memory.span.forward"],
       "instructions": {
         "fr": "Des chiffres vont s'afficher un par un. Retenez-les puis saisissez-les **dans l'ordre**.",
         "en": "Digits will appear one at a time. Memorise them, then type them back **in order**."
@@ -21,15 +21,16 @@
       "recallMode": "forward",
       "explanation": {
         "fr": "Six chiffres : groupez-les par deux (72 · 94 · 18) ou par trois (729 · 418) et répétez-les mentalement pendant l'affichage. Le regroupement (*chunking*) fait passer de 6 éléments à 2 ou 3."
-      }
+      },
+      "meta": { "notes": "Practice-only warm-up: digit span is not part of PSY0 (spec §4.1), it trains the same updating skill as the N-back." }
     },
     {
-      "id": "memory.digit_span.0002",
+      "id": "memory_nback.span.0002",
       "type": "sequence",
       "version": 1,
-      "familyId": "memory",
+      "familyId": "memory_nback",
       "difficulty": 4,
-      "tags": ["memory.digit_span", "memory.digit_span.backward"],
+      "tags": ["memory.span", "memory.span.backward"],
       "stimulusKind": "digits",
       "stimulus": ["3", "8", "1", "6", "9", "2", "5"],
       "presentationMs": 800,
@@ -40,10 +41,10 @@
       }
     },
     {
-      "id": "memory.pattern.0001",
+      "id": "memory_nback.pattern.0001",
       "type": "sequence",
       "version": 1,
-      "familyId": "memory",
+      "familyId": "memory_nback",
       "difficulty": 3,
       "tags": ["memory.pattern"],
       "instructions": { "fr": "Une grille s'affiche 2 secondes. Reproduisez les cases allumées." },

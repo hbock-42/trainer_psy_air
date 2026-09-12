@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trainer-psy-air.local/schema/lexical_fields.schema.json",
+  "title": "LexicalFieldBank file",
+  "description": "One JSON file under assets/content/<module>/verbal_boxes/lexical_fields/. Holds the French lexical fields the word_boxes generator draws from (Boîte à mots, spec §2.4-I, US-030/US-085). Dart: LexicalFieldBank, LexicalField, LexicalTrap.",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "kind": { "const": "lexical_fields" },
+    "familyId": { "$ref": "common.schema.json#/$defs/Id", "description": "Always verbal_boxes for PSY0." },
+    "fields": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/LexicalField" },
+      "minItems": 1,
+      "maxItems": 100
+    }
+  },
+  "required": ["kind", "familyId", "fields"],
+  "additionalProperties": false,
+  "$defs": {
+    "LexicalField": {
+      "type": "object",
+      "description": "A semantic category and the words that belong to it. A word must belong to exactly one field among any set of fields the generator may mix in one series (validator check, US-014).",
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/Id", "description": "verbal_boxes.field.<slug>, e.g. verbal_boxes.field.cuisine" },
+        "version": { "$ref": "common.schema.json#/$defs/Version" },
+        "familyId": { "$ref": "common.schema.json#/$defs/Id" },
+        "name": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "Name of the field, shown in explanations only (in the real test boxes are labelled by their first word)." },
+        "lang": { "$ref": "common.schema.json#/$defs/Lang", "default": "fr" },
+        "difficulty": { "$ref": "common.schema.json#/$defs/Difficulty", "description": "How obvious the category is: 1 = animals, 5 = abstract or specialised fields." },
+        "tags": { "$ref": "common.schema.json#/$defs/Tags", "description": "verbal.boxes plus a theme tag, e.g. verbal.boxes.everyday / verbal.boxes.aviation." },
+        "words": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 2, "maxLength": 40 },
+          "minItems": 5,
+          "maxItems": 60,
+          "uniqueItems": true,
+          "description": "Unambiguous members of the field, 15-25 recommended. Lowercase, singular, no article."
+        },
+        "traps": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/LexicalTrap" },
+          "default": [],
+          "description": "Words that DO belong to this field but look like they belong to another (near misses). Drawn according to WordBoxesParams.trapRatio."
+        },
+        "incompatibleWith": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/Id" },
+          "uniqueItems": true,
+          "default": [],
+          "description": "Fields that must never share a series with this one because some words would fit both (e.g. 'fruits' and 'desserts')."
+        },
+        "status": { "$ref": "common.schema.json#/$defs/Status" },
+        "meta": { "$ref": "common.schema.json#/$defs/Meta" }
+      },
+      "required": ["id", "version", "familyId", "name", "difficulty", "tags", "words"],
+      "additionalProperties": false
+    },
+    "LexicalTrap": {
+      "type": "object",
+      "properties": {
+        "word": { "type": "string", "minLength": 2, "maxLength": 40 },
+        "trapFor": { "$ref": "common.schema.json#/$defs/Id", "description": "Id of the field a hurried candidate would wrongly pick for this word." }
+      },
+      "required": ["word", "trapFor"],
+      "additionalProperties": false
+    }
+  }
+}

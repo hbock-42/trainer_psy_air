@@ -14,41 +14,55 @@ spirit; note your source in `meta.source`.
 
 ```
 assets/content/
-  manifest.json                     # contentVersion, schemaVersion  (manifest.schema.json)
+  manifest.json                     # contentVersion, schemaVersion (2)  (manifest.schema.json)
   psy0/
-    module.json                     # the stage                      (family.schema.json#/$defs/Module)
-    lessons/                        # module-level lessons (selection overview, exam-day tips)
-      01-how-the-selection-works.json
-      01-how-the-selection-works.fr.md
-      english/                      # family lessons may also be grouped here, one sub-folder per family
-        01-anglais.json
-        01-anglais.fr.md
+    module.json                     # the stage, ordered familyIds   (family.schema.json#/$defs/Module)
+    lessons/                        # lessons grouped by family or theme (US-081 layout)
+      selection_process/
+        01-comment-fonctionne-la-selection.json
+        01-comment-fonctionne-la-selection.fr.md
+      memory_nback/
+        01-n-back.json              # familyId memory_nback, id lesson.memory_nback.01
+        01-n-back.fr.md
     blueprints/
-      psy0_full.json                # (blueprint.schema.json)
-      psy0_short.json
+      psy0_full.json                # (blueprint.schema.json) — spec §3.1
+      psy0_short.json               # spec §3.2
     english/                        # one folder per family, folder name == family id
-      family.json                   # (family.schema.json)
+      family.json                   # (family.schema.json) — engineType english_reading
       items/
-        grammar-001.json            # ≤ 100 items per file           (bank.schema.json)
-        grammar-002.json
-        vocab-001.json
-        reading-001.json            # bank files may hold passages
-      lessons/
-        01-tenses.json              # (lesson.schema.json)
-        01-tenses.fr.md             # body referenced by the json
-        01-tenses.en.md             # optional
+        reading-001.json            # ≤ 100 items per file           (bank.schema.json)
+        reading-002.json            # bank files may hold passages
+        grammar-001.json
       decks/
         aviation-vocab.json         # deck + its cards               (deck.schema.json)
       media/
         runway-signs.svg
-    mental_arithmetic/
-      …
+    culture_aero/
+      family.json
+      items/
+        flight_mechanics-001.json
+        …
+    verbal_boxes/
+      family.json
+      lexical_fields/
+        everyday-001.json           # French lexical fields          (lexical_fields.schema.json)
+    memory_nback/
+      family.json
+      items/
+        worked-examples.json        # generated recipes pinned by seed
+    attention_rules/ … spatial_cubes/ … multitask_psychomotor/ …   # one folder per family (16 in PSY0)
   psy1/ …
 ```
 
 Rules:
 
-- Folder name = family `id` = `familyId` inside every file of the folder.
+- Folder name = family `id` = `familyId` inside every file of the folder; `family.json` is
+  mandatory in every family folder listed in `module.json` (the validator checks both
+  directions). PSY0 families: the 14 activities of EPIC-03 — with the English test as one
+  `english` family (engineType `english_reading`; grammar/vocab drills live in the same bank)
+  — plus `english_listening` and `english_speaking` (2026 format, still empty).
+- Lessons may live inside their family folder (`<family>/lessons/`) or under the module's
+  `lessons/<family>/` folder; in both cases they carry `familyId`.
 - Media paths in JSON are **relative to the module folder**: `english/media/runway-signs.svg`.
 - Bank files: at most **100 items**, all of the same family. Name them
   `<subtag>-<nnn>.json` and start a new file when one is full. Files are seeded in
@@ -65,15 +79,16 @@ Ids are permanent: renaming an id orphans user statistics (`item_stats`, `attemp
 | Entity | Convention | Example |
 |---|---|---|
 | Module | fixed | `psy0`, `psy1`, `psy2` |
-| Family | one word, `_` allowed, no dot | `english`, `maths_physics`, `mental_arithmetic`, `logic`, `spatial`, `memory`, `verbal`, `attention` |
-| Item (bank) | `<family>.<subskill>.<nnnn>` (4-digit, zero-padded, never reused) | `english.grammar.0042` |
-| Item (generated recipe) | `<family>.<subskill>.gen.<nnnn>` | `logic.series.gen.0001` |
+| Family | the activity id of EPIC-03, `_` allowed, no dot | `memory_nback`, `planning_tubes`, `attention_rules`, `attention_parity`, `spatial_overlay`, `logic_dominos`, `attention_airways`, `verbal_boxes`, `arithmetic_grid`, `spatial_viewpoint`, `spatial_cubes`, `culture_aero`, `multitask_psychomotor`, `english`, `english_listening`, `english_speaking` |
+| Item (bank) | `<family>.<subskill>.<nnnn>` (4-digit, zero-padded, never reused) | `culture_aero.meteorology.0042` |
+| Item (generated recipe) | `<family>.<subskill>.gen.<nnnn>` | `memory_nback.colour.gen.0001` |
 | Passage | `<family>.reading.p<nnn>` | `english.reading.p001` |
-| Lesson | `<family>.lesson.<nn>-<slug>` (module-level: `<module>.lesson.<nn>-<slug>`) | `mental_arithmetic.lesson.03-speed-time-distance` |
-| Deck | `<family>.deck.<slug>` | `mental_arithmetic.deck.aviation-conversions` |
-| Flashcard | `<deckId>.<nnnn>` | `mental_arithmetic.deck.aviation-conversions.0001` |
+| Lexical field | `verbal_boxes.field.<slug>` | `verbal_boxes.field.cuisine` |
+| Lesson | `<family>.lesson.<nn>-<slug>` (module-level: `<module>.lesson.<nn>-<slug>`) | `arithmetic_grid.lesson.03-speed-time-distance` |
+| Deck | `<family>.deck.<slug>` | `arithmetic_grid.deck.aviation-conversions` |
+| Flashcard | `<deckId>.<nnnn>` | `arithmetic_grid.deck.aviation-conversions.0001` |
 | Blueprint | `<module>.blueprint.<slug>` | `psy0.blueprint.full` |
-| Blueprint section | unique inside its blueprint: `s<nn>-<slug>` | `s03-english` |
+| Blueprint section | unique inside its blueprint: `s<nn>-<slug>` | `s12-culture` |
 
 Items materialised by a generator at runtime get `gen.<generatorId>.<seed>` ids; you never
 write those.
@@ -92,7 +107,11 @@ One item = one JSON object inside a bank file's `items` array. Common fields:
   "tags": ["english.grammar", "english.grammar.tenses"],   // see §7
   "lang": "en",                  // language of the stimulus, optional (defaults to the family's)
   "status": "published",         // optional; "draft" = validated but not shipped
-  "meta": { "author": "…", "source": "own" }               // optional, never shown
+  "meta": {                      // optional, never shown
+    "author": "…",
+    "source": "own",
+    "sources": [{ "title": "…", "url": "https://…", "accessedOn": "2026-09-11" }]   // v2, dated references
+  }
   // + type-specific fields below
 }
 ```
@@ -100,7 +119,8 @@ One item = one JSON object inside a bank file's `items` array. Common fields:
 ### `mcq` — multiple choice
 
 - `stem` (LocalizedText), `options` (2–6, each with `text` and/or `media`), `correctIndex`
-  (0-based), `explanation` (mandatory), optional `media`, `passageId`, `shuffleOptions`.
+  (0-based), `explanation` (mandatory), optional `media`, `passageId`, `shuffleOptions`,
+  `allowSkip`, `validAsOf`.
 - Exactly **one** option is right and it must be *unambiguously* right. Distractors must be
   plausible (a common mistake each), never silly.
 - Keep options homogeneous (same grammatical form, same length order of magnitude).
@@ -108,6 +128,11 @@ One item = one JSON object inside a bank file's `items` array. Common fields:
   sorted numbers).
 - Reading comprehension: put the text in the bank file's `passages` array and reference it
   from 3–5 items via `passageId`. Passage 80–250 words for PSY0 English.
+- **Culture items** (`culture_aero`): `allowSkip: true` lets the realism option offer
+  "Je ne sais pas" (scored with the section's `scoringPolicy.skip`). Any **perishable fact**
+  (fleet size, CEO, routes, figures, "latest" anything) must carry `validAsOf` (the date you
+  checked it) and at least one `meta.sources[]` entry with `url` and `accessedOn`; the app
+  shows the date next to the explanation. Timeless facts (physics, history) need neither.
 
 ### `numeric` — typed answer on the keypad
 
@@ -129,30 +154,63 @@ One item = one JSON object inside a bank file's `items` array. Common fields:
   here: a chunking tip).
 - Symbols: `circle square triangle star cross diamond`. Colors:
   `red blue green yellow orange purple`.
-- Digit-span difficulty roughly follows length: 3–4 → 1, 5 → 2, 6 → 3, 7 → 4, 8+ → 5
+- Practice-only at PSY0 (the real memory activity is the N-back, see `generated`). Digit-span difficulty roughly follows length: 3–4 → 1, 5 → 2, 6 → 3, 7 → 4, 8+ → 5
   (backward: one level higher for the same length).
 
 ### `generated` — reproducible recipe
 
-- `generatorId` (engine key, see CONTRACT.md), `seed` (integer), optional `params`.
+- `generatorId` (one of the 12 generators below), `seed` (integer), optional `params`.
 - Use it to pin a **specific** generated item: worked examples in lessons, regression cases,
   calibration sets (US-086). Everyday practice/exam items are generated on the fly from the
   blueprint or the family defaults, not from bank files.
 - `difficulty` is the level you *expect*; the validator (later) checks the generator agrees.
-- `params` keys are defined by each engine story (US-023…US-029); unknown keys are ignored.
+- `params` is **typed per generator** (`docs/content/schema/generators.schema.json`): only the
+  keys of that generator are allowed, and every key you omit takes the **real-test default**
+  below, so `"params": {}` (or no `params` at all) is the real test. Same
+  `(generatorId, seed, params)` ⇒ same item, always. Never put the answer in `params`.
+
+| `generatorId` | Family | Params (real-test default) — see spec §2.4 |
+|---|---|---|
+| `nback` | `memory_nback` | `n` 2 · `stimulusKind` colour \| digit \| letter · `paletteSize` 3 · `count` 42 · `primers` 2 · `stimulusMs` 1000 · `answerWindowMs` 1500 · `targetRatio` 0.3 · `lureRatio` 0.1 |
+| `tubes` | `planning_tubes` | `capacities` [3,2,3] · `colourCount` 3 · `ballCount` 5 · `minMoves` 2 · `maxMoves` 8 |
+| `stimulus_response` | `attention_rules` | `count` 36 · `stimulusMs` 500 · `answerWindowMs` 3000 · `keys` ["n","x"] · `shapes` [square,triangle] · `colours` [blue,orange] · `ruleDepth` 2 |
+| `parity_sequence` | `attention_parity` | `numberCount` 16 · `numberMin` 1 · `numberMax` 99 · `restartOnError` true · `labelEnds` true |
+| `overlay_grid` | `spatial_overlay` | `grid` {5,5} · `tileCount` 3 · `overlapping` true · `blackCells` true |
+| `dominos` | `logic_dominos` | `length` 6 · `layout` row \| grid \| spiral · `ruleCount` 1 · `answerMode` pick \| mcq |
+| `airways` | `attention_airways` | `capacity` 4 · `blueCapacity` 2 · `zoneCount` 2 · `routeCount` 3 · `spawnIntervalMs` 2500 · `durationSec` 30 |
+| `word_boxes` | `verbal_boxes` | `boxCount` 5 · `wordCount` 20 · `fieldIds` (optional pin) · `trapRatio` 0.1 · `wordTimeMs` 3000 |
+| `arithmetic_grid` | `arithmetic_grid` | `grid` {3,3} · `wrongMin` 0 · `wrongMax` 4 · `operations` [add,sub,mul,div,square,priority] (+ percent) · `maxOperand` 100 |
+| `viewpoint` | `spatial_viewpoint` | `viewpointCount` 8 · `objectCount` 4 · `objectKinds` [cube,cylinder,cone] (+ sphere, pyramid) · `allowSymmetric` false |
+| `cube_net` | `spatial_cubes` | `missingFaces` 2 · `distractorFaces` 2 · `symbolKind` letters \| shapes \| mixed · `flippable` true |
+| `multitask` | `multitask_psychomotor` | `durationSec` 300 · `trackingSpeed` 1 · `trackingNoise` 1 · `shapeIntervalMs` 2000 · `calcIntervalMs` 4000 · `shapeTargetRatio` 0.3 · `calcWrongRatio` 0.4 · `shapeKey` space · `calcKey` f |
+
+Values tagged **[assumed]** in the spec (tube counts, domino counts, grid size of the overlay
+board, airways spawn rate…) are our estimates — change them in the blueprint, not in the
+generator, when the research is refined.
+
+### `lexical_fields` — French lexical fields for *Boîte à mots* (US-085)
+
+Not an item: a separate file kind under `verbal_boxes/lexical_fields/`. Each field has an
+`id` (`verbal_boxes.field.<slug>`), `name` (shown only in explanations — in the real test a
+box is labelled by its first word), `difficulty`, `tags`, 15–25 `words` (lowercase,
+singular, no article, unambiguous), optional `traps` (`{ "word", "trapFor": "<fieldId>" }`:
+words that *do* belong to this field but that a hurried candidate would file under
+`trapFor`) and `incompatibleWith` (fields that must never share a series because some
+words fit both). A word must belong to exactly one field among any set the generator may
+mix; the validator (US-014) checks it. See `assets/content/examples/lexical_fields.example.json`.
 
 ## 4. Difficulty scale
 
 Calibrate against the **real test**, not against a beginner. The app's adaptive mode (US-053)
 moves users between levels, so the scale must be consistent across a family.
 
-| Level | Meaning | Mental arithmetic | English | Logic series | Memory (digit span) |
+| Level | Meaning | Arithmetic grid | Culture aéro / English | Dominos | N-back |
 |---|---|---|---|---|---|
-| **1** | Warm-up. Anyone with a bac gets it in a few seconds. Never appears in the full exam blueprint. | `48 + 27`, `6 × 7` | present simple / plural -s, basic vocab (*runway*) | `2 4 6 8 ?` | 3–4 digits forward |
-| **2** | Easy real-test item. Correct > 90 % of the time when not rushed. | `340 × 3`, 10 min at 420 kt | past simple vs present perfect, common prepositions | `3 6 12 24 ?`, letters `A C E ?` | 5 digits forward |
-| **3** | Typical real-test item. Needs the method from the lesson; ~10–20 s. | `5 600 kg ÷ 2 400 kg/h`, 15 % of 240 | past perfect, conditionals 1–2, phrasal verbs, aviation phraseology | alternating two-step series, 3×3 matrix with 2 rules | 6 forward / 5 backward |
-| **4** | Hard real-test item. Two steps or a trap; a good candidate hesitates. | 11 000 ft in m ±2 %, 2 h 50 after 14:35 | inversion, mixed conditionals, inference questions on a passage | Fibonacci-like, matrix with 3 rules, plausible distractors | 7 forward / 6 backward |
-| **5** | Hardest expected; discriminates the top. Rare in the bank (≤ 10 %). | 3-digit × 2-digit, chained conversions | subtle register/collocation, dense passage with inference | matrix with rotation + count + fill, two interleaved series | 8+ forward / 7 backward |
+| **1** | Warm-up. Anyone with a bac gets it in a few seconds. Never appears in the full exam blueprint. | one wrong cell, `48 + 27`, `6 × 7` | "What does ATC stand for?" / present simple, basic vocab (*runway*) | `+1` series | 1-back, 2 colours |
+| **2** | Easy real-test item. Correct > 90 % of the time when not rushed. | 0–2 wrong cells, `340 × 3`, `12²` | BIA basics (four forces, ICAO codes of major hubs) / past simple vs present perfect | `+k` mod 7 on both halves | 2-back, 3 colours, no lures |
+| **3** | Typical real-test item. Needs the method from the lesson; ~10–20 s. | 2–3 wrong cells, priorities `3 + 4 × 5`, simple divisions | PPL-level physics/nav (stall speed vs load factor, 240 kt for 15 min) / inference on a passage | alternating rules top/bottom | 2-back, 3 colours, 10 % lures |
+| **4** | Hard real-test item. Two steps or a trap; a good candidate hesitates. | 3–4 wrong cells with ±1 / sign traps | dated company facts (fleet, leaders, routes) with `validAsOf` / dense passage, chart reading | two interleaved rules, spiral layout | 3-back digits |
+| **5** | Hardest expected; discriminates the top. Rare in the bank (≤ 10 %). | 4 wrong cells, squares + priorities mixed | very specific trivia (a runway count, a quote) / subtle register, collocations | three rules, mirrored halves | 3-back, 4+ stimuli, lures |
 
 Target distribution per family bank: 10 % / 25 % / 35 % / 20 % / 10 %.
 
@@ -173,7 +231,7 @@ tip) and absent for `generated` (the generator writes it).
 ## 6. Media
 
 - Path relative to the module folder, in the family's `media/` folder:
-  `logic/media/matrix-0001.svg`.
+  `spatial_cubes/media/net-0001.svg`.
 - **Vector (SVG) preferred** for figures, diagrams, instruments. PNG/JPEG only for
   photographs, max 1 200 px on the long side, ≤ 200 kB. Audio: `.m4a` (AAC), mono, ≤ 60 s.
 - Every informative image carries `alt` (FR mandatory).
@@ -190,14 +248,20 @@ using them; third-level tags are free.
 
 | Family (`familyId`) | Root | Second level |
 |---|---|---|
-| `english` | `english` | `english.grammar` (`.tenses`, `.modals`, `.conditionals`, `.prepositions`, `.articles`, `.questions`, `.passive`, `.reported_speech`), `english.vocab` (`.general`, `.aviation`, `.phrasal_verbs`, `.collocations`), `english.reading` (`.detail`, `.inference`, `.main_idea`, `.vocab_in_context`), `english.listening` |
-| `mental_arithmetic` | `arith` | `arith.add_sub`, `arith.mul`, `arith.div`, `arith.percent`, `arith.fractions`, `arith.squares_roots`, `arith.rule_of_three`, `arith.time`, `arith.aviation` (`.speed_distance`, `.fuel`, `.conversion`, `.descent`) |
-| `maths_physics` | `math` / `phys` | `math.algebra`, `math.functions`, `math.trigonometry`, `math.geometry`, `math.probabilities`, `math.statistics`, `math.vectors`, `phys.mechanics`, `phys.energy`, `phys.electricity`, `phys.optics`, `phys.waves`, `phys.thermo`, `phys.units` |
-| `logic` | `logic` | `logic.series` (`.arithmetic`, `.geometric`, `.alternating`, `.two_step`, `.fibonacci`, `.letters`), `logic.matrix` (`.shape`, `.count`, `.rotation`, `.fill`, `.position`), `logic.odd_one_out` |
-| `spatial` | `spatial` | `spatial.rotation_2d`, `spatial.mirror`, `spatial.cube_net`, `spatial.cube_rotation`, `spatial.paper_folding` |
-| `memory` | `memory` | `memory.digit_span` (`.forward`, `.backward`), `memory.pattern`, `memory.sequence` (`.symbols`, `.colors`, `.positions`), `memory.n_back` |
-| `verbal` | `verbal` | `verbal.analogy`, `verbal.odd_one_out`, `verbal.syllogism`, `verbal.comprehension`, `verbal.vocab` |
-| `attention` | `attention` | `attention.symbol_count`, `attention.target_detection`, `attention.n_back`, `attention.stroop` |
+| `memory_nback` | `memory` | `memory.n_back` (`.colour`, `.digit`, `.letter`), `memory.span` (`.forward`, `.backward`, practice only), `memory.pattern` (practice only) |
+| `planning_tubes` | `planning` | `planning.tubes` (`.two_colours`, `.three_colours`), `planning.hanoi` |
+| `attention_rules` | `attention` | `attention.rules` (`.shape`, `.colour`, `.fill`, `.two_level`) |
+| `attention_parity` | `attention` | `attention.parity` (`.dense`, `.wide_range`) |
+| `attention_airways` | `attention` | `attention.airways` (`.capacity`, `.colour_rule`) |
+| `spatial_overlay` | `spatial` | `spatial.overlay` (`.v1`, `.v2`, `.black_cells`) |
+| `spatial_viewpoint` | `spatial` | `spatial.viewpoint` (`.azimuth`, `.symmetry`) |
+| `spatial_cubes` | `spatial` | `spatial.cube_net` (`.letters`, `.shapes`, `.flip`), `spatial.cube_rotation` |
+| `logic_dominos` | `logic` | `logic.dominos` (`.linear`, `.alternating`, `.mirror`, `.sum`, `.spiral`), `logic.series` (secondary drill: `.arithmetic`, `.alternating`, `.letters`) |
+| `verbal_boxes` | `verbal` | `verbal.boxes` (`.everyday`, `.aviation`, `.abstract`, `.trap`) |
+| `arithmetic_grid` | `arith` | `arith.grid` (`.priority`, `.squares`, `.division`, `.sign`), `arith.drill` (practice-only free input: `.add_sub`, `.mul`, `.div`, `.percent`, `.squares`, `.time`, `.aviation`) |
+| `culture_aero` | `culture` | the 14 topic areas of spec §4.1: `culture.flight_mechanics`, `culture.meteorology`, `culture.human_factors`, `culture.rules_of_the_air`, `culture.navigation`, `culture.ops_documents`, `culture.history`, `culture.accidents`, `culture.airports_manufacturers`, `culture.network_geography`, `culture.af_fleet_figures`, `culture.subsidiaries_alliances`, `culture.pilot_job_cadet_path`, `culture.institutions` |
+| `multitask_psychomotor` | `multitask` | `multitask.tracking`, `multitask.shapes`, `multitask.calc` |
+| `english` (+ `english_listening`, `english_speaking`) | `english` | `english.reading` (`.detail`, `.inference`, `.main_idea`, `.vocab_in_context`, `.graph`), `english.grammar` (`.tenses`, `.modals`, `.conditionals`, `.prepositions`, `.articles`, `.questions`, `.passive`, `.reported_speech`), `english.vocab` (`.general`, `.aviation`, `.phrasal_verbs`, `.collocations`), `english.listening`, `english.speaking`, `english.strategy` |
 | blueprints | `blueprint` | `blueprint.full`, `blueprint.short`, `blueprint.custom` |
 
 Lessons and decks reuse the same tags so the "Try it" button and weak-area recommendations
@@ -315,10 +379,27 @@ Editor autocompletion still works without the validator: keep the `$schema` line
 
 ## 12. Blueprints
 
-- Sections in the order of the real test; each section names its `familyId`, `durationSec`,
-  `itemCount`, `itemSelection` (`bank` with filters or `generated` with a `generatorId` and a
-  difficulty range), optional `perItemTimeSec` and `breakAfterSec`.
+- Sections in the order of the real test; each section names its `familyId`, `itemCount`
+  (stimuli, series, boards, grids or questions; `1` for the continuous multitask activity)
+  and `itemSelection` (`bank` with filters or `generated` with a `generatorId`, a difficulty
+  range and typed `params`, see §3).
+- **Timing** (v2) is any combination of `sectionTimeSec` (hard limit for the section),
+  `perItemTimeSec` (timeout advances with a null answer) and `cadence`
+  (`{ "stimulusMs", "answerWindowMs" }`, fixed rhythm for `memory_nback` and
+  `attention_rules`); at least one is required. A section `cadence` overrides the generator's
+  `stimulusMs` / `answerWindowMs` params.
+- `scoringPolicy` (`{ "correct", "wrong", "skip" }`, default `{1, 0, 0}`) sets the points;
+  `{3, -1, 0}` reproduces the historical culture marking and is meant for the realism
+  options (US-063), not for `psy0.blueprint.full`.
+- `liveFeedback: true` on the sections whose real activity shows right/wrong live
+  (`attention_rules`, `attention_parity` restart, `attention_airways` crash);
+  `inputRequirement: "keyboard"` on keyboard-native ones (`attention_rules`,
+  `multitask_psychomotor`); `weight: 0` for practice-only sections (`english_speaking`).
+- Optional `title`, `briefing` (instruction screen with the worked example, markdown) and
+  `breakAfterSec`.
 - Every section and the blueprint itself carry `confidence`
   (`confirmed` | `reported` | `assumed`) tied to the research doc (US-080). The exam launcher
   shows "estimated" for anything not `confirmed`.
-- Keep `psy0.blueprint.full` faithful; make separate `short`/custom blueprints for rehearsal.
+- Keep `psy0.blueprint.full` faithful (spec §3.1); `psy0.blueprint.short` (§3.2) and custom
+  blueprints are for rehearsal. `assets/content/examples/blueprint.example.json` shows every
+  field.

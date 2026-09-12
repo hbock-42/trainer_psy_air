@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../../docs/content/schema/family.schema.json",
+  "kind": "family",
+  "id": "verbal_boxes",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 8,
+  "name": {
+    "fr": "Boîte à mots",
+    "en": "Word boxes"
+  },
+  "shortName": {
+    "fr": "Boîte à mots",
+    "en": "Word boxes"
+  },
+  "description": {
+    "fr": "4 à 6 boîtes vides. Des mots apparaissent un par un : cliquez la boîte dont le **champ lexical** correspond ; le premier mot d'un champ s'empare d'une boîte libre. Temps limité par mot, erreurs comptées. En français.",
+    "en": "4 to 6 empty boxes. Words appear one at a time: click the box whose **lexical field** matches; the first word of a field claims a free box. Time limit per word, errors counted. In French."
+  },
+  "engineType": "verbal_boxes",
+  "generatorId": "word_boxes",
+  "answerFormat": "tap",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 300,
+  "defaultItemCount": 4,
+  "defaultPerItemTimeSec": 75,
+  "confidence": "reported",
+  "tags": [
+    "verbal"
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §2.4-I, §3.1 row 8 (4-5 series reported; fields authored in US-085)"
+  }
+}

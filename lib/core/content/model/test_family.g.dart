@@ -50,6 +50,17 @@ _TestFamily _$TestFamilyFromJson(
       (v) =>
           v == null ? null : LocalizedText.fromJson(v as Map<String, dynamic>),
     ),
+    generatorId: $checkedConvert(
+      'generatorId',
+      (v) => $enumDecodeNullable(_$GeneratorIdEnumMap, v),
+    ),
+    inputRequirement: $checkedConvert(
+      'inputRequirement',
+      (v) =>
+          $enumDecodeNullable(_$InputRequirementEnumMap, v) ??
+          InputRequirement.touch,
+    ),
+    liveFeedback: $checkedConvert('liveFeedback', (v) => v as bool? ?? false),
     lang: $checkedConvert(
       'lang',
       (v) => $enumDecodeNullable(_$ContentLangEnumMap, v) ?? ContentLang.fr,
@@ -57,6 +68,10 @@ _TestFamily _$TestFamilyFromJson(
     defaultPerItemTimeSec: $checkedConvert(
       'defaultPerItemTimeSec',
       (v) => (v as num?)?.toInt(),
+    ),
+    defaultCadence: $checkedConvert(
+      'defaultCadence',
+      (v) => v == null ? null : Cadence.fromJson(v as Map<String, dynamic>),
     ),
     tags: $checkedConvert(
       'tags',
@@ -92,8 +107,12 @@ Map<String, dynamic> _$TestFamilyToJson(_TestFamily instance) =>
       'defaultItemCount': instance.defaultItemCount,
       'confidence': _$ConfidenceEnumMap[instance.confidence]!,
       'shortName': ?instance.shortName?.toJson(),
+      'generatorId': ?_$GeneratorIdEnumMap[instance.generatorId],
+      'inputRequirement': _$InputRequirementEnumMap[instance.inputRequirement]!,
+      'liveFeedback': instance.liveFeedback,
       'lang': _$ContentLangEnumMap[instance.lang]!,
       'defaultPerItemTimeSec': ?instance.defaultPerItemTimeSec,
+      'defaultCadence': ?instance.defaultCadence?.toJson(),
       'tags': instance.tags,
       'status': _$ContentStatusEnumMap[instance.status]!,
       'meta': ?instance.meta?.toJson(),
@@ -106,20 +125,23 @@ const _$ModuleIdEnumMap = {
 };
 
 const _$EngineTypeEnumMap = {
-  EngineType.mcqBank: 'mcq_bank',
-  EngineType.numericBank: 'numeric_bank',
-  EngineType.mentalArithmetic: 'mental_arithmetic',
-  EngineType.logicSeries: 'logic_series',
-  EngineType.figureMatrix: 'figure_matrix',
-  EngineType.spatialRotation: 'spatial_rotation',
-  EngineType.cubeFolding: 'cube_folding',
-  EngineType.memoryDigitSpan: 'memory_digit_span',
-  EngineType.memoryPattern: 'memory_pattern',
-  EngineType.memorySequence: 'memory_sequence',
-  EngineType.attentionSymbols: 'attention_symbols',
-  EngineType.attentionStream: 'attention_stream',
-  EngineType.multitasking: 'multitasking',
-  EngineType.instrumentReading: 'instrument_reading',
+  EngineType.memoryNback: 'memory_nback',
+  EngineType.planningTubes: 'planning_tubes',
+  EngineType.attentionRules: 'attention_rules',
+  EngineType.attentionParity: 'attention_parity',
+  EngineType.spatialOverlay: 'spatial_overlay',
+  EngineType.logicDominos: 'logic_dominos',
+  EngineType.attentionAirways: 'attention_airways',
+  EngineType.verbalBoxes: 'verbal_boxes',
+  EngineType.arithmeticGrid: 'arithmetic_grid',
+  EngineType.spatialViewpoint: 'spatial_viewpoint',
+  EngineType.spatialCubes: 'spatial_cubes',
+  EngineType.cultureAero: 'culture_aero',
+  EngineType.multitaskPsychomotor: 'multitask_psychomotor',
+  EngineType.englishReading: 'english_reading',
+  EngineType.englishGrammar: 'english_grammar',
+  EngineType.englishListening: 'english_listening',
+  EngineType.englishSpeaking: 'english_speaking',
 };
 
 const _$AnswerFormatEnumMap = {
@@ -128,12 +150,38 @@ const _$AnswerFormatEnumMap = {
   AnswerFormat.sequence: 'sequence',
   AnswerFormat.grid: 'grid',
   AnswerFormat.tap: 'tap',
+  AnswerFormat.keyPress: 'key_press',
+  AnswerFormat.clickSequence: 'click_sequence',
+  AnswerFormat.drag: 'drag',
+  AnswerFormat.multiSelect: 'multi_select',
+  AnswerFormat.simulation: 'simulation',
+  AnswerFormat.recording: 'recording',
 };
 
 const _$ConfidenceEnumMap = {
   Confidence.confirmed: 'confirmed',
   Confidence.reported: 'reported',
   Confidence.assumed: 'assumed',
+};
+
+const _$GeneratorIdEnumMap = {
+  GeneratorId.nback: 'nback',
+  GeneratorId.tubes: 'tubes',
+  GeneratorId.stimulusResponse: 'stimulus_response',
+  GeneratorId.paritySequence: 'parity_sequence',
+  GeneratorId.overlayGrid: 'overlay_grid',
+  GeneratorId.dominos: 'dominos',
+  GeneratorId.airways: 'airways',
+  GeneratorId.wordBoxes: 'word_boxes',
+  GeneratorId.arithmeticGrid: 'arithmetic_grid',
+  GeneratorId.viewpoint: 'viewpoint',
+  GeneratorId.cubeNet: 'cube_net',
+  GeneratorId.multitask: 'multitask',
+};
+
+const _$InputRequirementEnumMap = {
+  InputRequirement.touch: 'touch',
+  InputRequirement.keyboard: 'keyboard',
 };
 
 const _$ContentLangEnumMap = {ContentLang.fr: 'fr', ContentLang.en: 'en'};

@@ -1,0 +1,39 @@
+{
+  "$schema": "../../../../docs/content/schema/family.schema.json",
+  "kind": "family",
+  "id": "attention_rules",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 3,
+  "name": {
+    "fr": "Formes et couleurs",
+    "en": "Shapes and colours"
+  },
+  "shortName": {
+    "fr": "Formes/coul.",
+    "en": "Rules S-R"
+  },
+  "description": {
+    "fr": "Des règles conditionnelles sont données au départ (par ex. *forme pleine → N pour un carré, X pour un triangle ; forme vide → N pour bleu, X pour orange*). Une forme clignote 0,5 s toutes les 3 s : appuyez sur la bonne **touche du clavier**. Le retour juste / faux est affiché en direct, comme dans le vrai test.",
+    "en": "Conditional rules are given at the start (e.g. *filled → N for a square, X for a triangle; empty → N for blue, X for orange*). A shape flashes for 0.5 s every 3 s: press the right **keyboard key**. Right / wrong feedback is shown live, as in the real test."
+  },
+  "engineType": "attention_rules",
+  "generatorId": "stimulus_response",
+  "answerFormat": "key_press",
+  "inputRequirement": "keyboard",
+  "liveFeedback": true,
+  "lang": "fr",
+  "defaultDurationSec": 120,
+  "defaultItemCount": 36,
+  "defaultCadence": {
+    "stimulusMs": 500,
+    "answerWindowMs": 3000
+  },
+  "confidence": "reported",
+  "tags": [
+    "attention"
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §2.4-C, §3.1 row 3 (20-41 stimuli reported; 36 retained)"
+  }
+}

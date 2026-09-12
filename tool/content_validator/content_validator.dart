@@ -296,6 +296,8 @@ class ContentValidator {
         _parser.deckFromJson(json, file: name);
       case 'blueprint':
         _parser.blueprintFromJson(json, file: name);
+      case 'lexical_fields':
+        _parser.lexicalFieldsFromJson(json, file: name);
       default:
         throw UnsupportedError(
           'kind "$kind" has a schema but no ContentBundleParser method; '

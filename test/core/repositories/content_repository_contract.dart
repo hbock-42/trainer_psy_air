@@ -40,7 +40,7 @@ void runContentRepositoryContract({
     expect(families.map((f) => f.order), isSorted);
     expect(await repo.families(moduleId: ModuleId.psy0), content.families);
     expect(await repo.families(moduleId: ModuleId.psy1), isEmpty);
-    expect(await repo.familyById('mental_arithmetic'), content.families.single);
+    expect(await repo.familyById('memory_nback'), content.families.single);
     expect(await repo.familyById('nope'), isNull);
   });
 
@@ -52,7 +52,9 @@ void runContentRepositoryContract({
       expect(actual, expected, reason: family);
     }
     expect(
-      (await repo.items(familyId: 'logic')).every((i) => i is GeneratedItem),
+      (await repo.items(
+        familyId: 'memory_nback',
+      )).any((i) => i is GeneratedItem),
       isTrue,
     );
     expect(await repo.items(familyId: 'unknown'), isEmpty);

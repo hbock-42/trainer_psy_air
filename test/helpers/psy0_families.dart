@@ -48,7 +48,7 @@ List<TestFamily> psy0Families() => [
       order: i + 1,
       name: LocalizedText(fr: psy0FamilyNames[i]),
       description: LocalizedText(fr: 'Ce qui est évalué pour $id.'),
-      engineType: EngineType.mcqBank,
+      engineType: EngineType.cultureAero,
       answerFormat: AnswerFormat.mcq,
       defaultDurationSec: 60 * (i + 1) + (i.isEven ? 0 : 45),
       defaultItemCount: 10 + i,

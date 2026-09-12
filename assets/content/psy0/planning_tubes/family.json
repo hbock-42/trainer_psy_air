@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../../docs/content/schema/family.schema.json",
+  "kind": "family",
+  "id": "planning_tubes",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 2,
+  "name": {
+    "fr": "Billes et éprouvettes",
+    "en": "Balls and tubes"
+  },
+  "shortName": {
+    "fr": "Éprouvettes",
+    "en": "Tubes"
+  },
+  "description": {
+    "fr": "Trois éprouvettes (capacités 3 / 2 / 3) contiennent des billes de couleur. Saisissez le **nombre minimal de déplacements** pour passer de la configuration de départ à la configuration cible. Planification mentale, famille des tours de Hanoï.",
+    "en": "Three tubes (capacities 3 / 2 / 3) hold coloured balls. Type the **minimum number of moves** from the start configuration to the target one. Mental planning, Tower-of-Hanoi family."
+  },
+  "engineType": "planning_tubes",
+  "generatorId": "tubes",
+  "answerFormat": "numeric",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 420,
+  "defaultItemCount": 10,
+  "defaultPerItemTimeSec": 40,
+  "confidence": "assumed",
+  "tags": [
+    "planning"
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §2.4-B, §3.1 row 2 (capacities reported, count assumed)"
+  }
+}

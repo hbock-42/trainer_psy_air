@@ -13,7 +13,6 @@
   "difficulty": 2,
   "tags": ["arithmetic_grid", "arithmetic_grid.strategy", "arith.mental"],
   "practiceTags": ["arithmetic_grid"],
-  "deckIds": ["deck.arithmetic_grid"],
   "status": "published",
   "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 J" }
 }

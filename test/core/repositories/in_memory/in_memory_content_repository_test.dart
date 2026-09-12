@@ -35,7 +35,7 @@ void main() {
           order: 1,
           name: LocalizedText(fr: 'Anglais'),
           description: LocalizedText(fr: 'QCM'),
-          engineType: EngineType.mcqBank,
+          engineType: EngineType.englishReading,
           answerFormat: AnswerFormat.mcq,
           defaultDurationSec: 600,
           defaultItemCount: 20,

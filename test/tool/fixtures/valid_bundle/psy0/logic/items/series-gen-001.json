@@ -9,9 +9,9 @@
       "familyId": "logic",
       "difficulty": 2,
       "tags": ["logic.series", "logic.series.arithmetic"],
-      "generatorId": "logic_series",
+      "generatorId": "dominos",
       "seed": 1842,
-      "params": { "kind": "arithmetic", "length": 5 }
+      "params": { "layout": "row", "length": 5 }
     }
   ]
 }

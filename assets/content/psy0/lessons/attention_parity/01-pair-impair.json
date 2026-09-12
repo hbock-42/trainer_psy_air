@@ -13,7 +13,6 @@
   "difficulty": 2,
   "tags": ["attention_parity", "attention_parity.strategy", "attention.target_detection"],
   "practiceTags": ["attention_parity"],
-  "deckIds": ["deck.attention_parity"],
   "status": "published",
   "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 D" }
 }

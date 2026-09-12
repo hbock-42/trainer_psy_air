@@ -27,9 +27,9 @@ void main() {
       hasLength(content.families.length),
     );
     expect(
-      await db.contentDao.itemsOf(familyId: 'mental_arithmetic'),
+      await db.contentDao.itemsOf(familyId: 'arithmetic_grid'),
       hasLength(
-        content.items.where((i) => i.familyId == 'mental_arithmetic').length,
+        content.items.where((i) => i.familyId == 'arithmetic_grid').length,
       ),
     );
     expect(await db.contentDao.lessonsOf(), hasLength(content.lessons.length));
@@ -91,28 +91,28 @@ void main() {
 
   test('items honour limit, exclusions and deterministic order', () async {
     final ordered = await db.contentDao.itemsOf(
-      familyId: 'mental_arithmetic',
+      familyId: 'arithmetic_grid',
       shuffle: false,
     );
     final ids = ordered.map((r) => r.id).toList();
     expect(ids, ids.toList()..sort());
 
     final limited = await db.contentDao.itemsOf(
-      familyId: 'mental_arithmetic',
+      familyId: 'arithmetic_grid',
       limit: 2,
       shuffle: false,
     );
     expect(limited.map((r) => r.id), ids.take(2));
 
     final without = await db.contentDao.itemsOf(
-      familyId: 'mental_arithmetic',
+      familyId: 'arithmetic_grid',
       excludeIds: [ids.first],
       shuffle: false,
     );
     expect(without.map((r) => r.id), ids.skip(1));
 
     final sampled = await db.contentDao.itemsOf(
-      familyId: 'mental_arithmetic',
+      familyId: 'arithmetic_grid',
       limit: 2,
     );
     expect(sampled, hasLength(2));
@@ -125,13 +125,12 @@ void main() {
     expect(await db.contentDao.itemById('nope'), isNull);
     expect(await db.contentDao.itemsByIds([]), isEmpty);
     expect(await db.contentDao.itemsByIds([item.id, 'nope']), hasLength(1));
-    expect(
-      (await db.contentDao.familyById('mental_arithmetic'))!.moduleId,
-      'psy0',
-    );
+    expect((await db.contentDao.familyById('memory_nback'))!.moduleId, 'psy0');
     expect((await db.contentDao.moduleById('psy0'))!.sortOrder, isNotNull);
     expect(
-      (await db.contentDao.blueprintById('psy0.blueprint.short'))!.moduleId,
+      (await db.contentDao.blueprintById(
+        'psy0.blueprint.example-custom',
+      ))!.moduleId,
       'psy0',
     );
     expect(await db.contentDao.lessonById(content.lessons.first.id), isNotNull);
@@ -140,7 +139,7 @@ void main() {
   test('lessons filter by module and family', () async {
     expect(await db.contentDao.lessonsOf(moduleId: 'psy1'), isEmpty);
     expect(
-      await db.contentDao.lessonsOf(familyId: 'mental_arithmetic'),
+      await db.contentDao.lessonsOf(familyId: 'arithmetic_grid'),
       hasLength(1),
     );
     expect(await db.contentDao.lessonsOf(familyId: 'english'), isEmpty);

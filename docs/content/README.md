@@ -6,8 +6,8 @@ Non-code documentation for the PSY trainer content: research, authoring rules, s
 |---|---|---|
 | [psy0-spec.md](psy0-spec.md) | Research on the real Air France Cadets selection and the PSY0 online pre-selection: stages, modality, the ~14 activities with formats/timings, proposed `psy0_full` / `psy0_short` blueprints, mapping to EPIC-03 families, open questions, sources, legal note and FR/EN app disclaimer. Every claim is tagged **[confirmed]** / **[reported]** / **[assumed]**. | US-080 |
 | [AUTHORING.md](AUTHORING.md) | How to write an item, naming, difficulty scale, explanation rules, how to run the validator. | US-010 |
-| [CONTRACT.md](CONTRACT.md) | The content data model shared by engines, UI, database and authors; Dart types. | US-010 |
-| [`schema/*.schema.json`](schema/) | JSON Schemas (draft 2020-12) for the manifest, modules, families, item banks, lessons, decks, flashcards and blueprints. `tool/validate_content.dart` validates every content file against them. | US-010 / US-014 |
+| [CONTRACT.md](CONTRACT.md) | The content data model (v2) shared by engines, UI, database and authors: the 14 PSY0 activity families, typed generator params, cadence / scoring policy, lexical fields; Dart types; v1 → v2 diff. | US-010 / US-015 |
+| [`schema/*.schema.json`](schema/) | JSON Schemas (draft 2020-12) for the manifest, modules, families, item banks, generators (typed params), lexical fields, lessons, decks, flashcards and blueprints. `tool/validate_content.dart` validates every content file against them. | US-010 / US-014 / US-015 |
 
 Conventions
 - Dates are ISO (`2026-09-11`). Sources are listed with URL and access date.

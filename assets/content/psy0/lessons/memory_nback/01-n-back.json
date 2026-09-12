@@ -13,7 +13,6 @@
   "difficulty": 2,
   "tags": ["memory_nback", "memory_nback.strategy", "memory.n_back"],
   "practiceTags": ["memory_nback"],
-  "deckIds": ["deck.memory_nback"],
   "status": "published",
   "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 A" }
 }
