@@ -6,6 +6,8 @@ import '../../../engines/attention_parity/domain/attention_parity_engine.dart';
 import '../../../engines/attention_parity/presentation/attention_parity_renderer.dart';
 import '../../../engines/attention_rules/domain/attention_rules_engine.dart';
 import '../../../engines/attention_rules/presentation/attention_rules_renderer.dart';
+import '../../../engines/memory_nback/domain/nback_engine.dart';
+import '../../../engines/memory_nback/presentation/nback_renderer.dart';
 import '../../domain/engine/engine.dart';
 import 'activity_renderer.dart';
 
@@ -21,13 +23,11 @@ import 'activity_renderer.dart';
 final Provider<EngineRegistry> engineRegistryProvider =
     Provider<EngineRegistry>(
       (ref) => EngineRegistry(const <ActivityEngine>[
-        // US-021..036: add engines here, one line each (alphabetical by
-        // family id).
+        // US-021..036: add one line per engine (alphabetical by family id).
         ArithmeticGridEngine(),
-        // US-021..036: add engines here, one line each.
         AttentionParityEngine(),
         AttentionRulesEngine(),
-        // US-021..036: add engines here, one line each.
+        NbackEngine(),
       ]),
     );
 
@@ -35,13 +35,11 @@ final Provider<EngineRegistry> engineRegistryProvider =
 final Provider<RendererRegistry> rendererRegistryProvider =
     Provider<RendererRegistry>(
       (ref) => RendererRegistry(const <ActivityRenderer>[
-        // US-021..036: add renderers here, one line each (alphabetical by
-        // family id).
+        // US-021..036: add one line per engine (alphabetical by family id).
         ArithmeticGridRenderer(),
-        // US-021..036: add renderers here, one line each.
         AttentionParityRenderer(),
         AttentionRulesRenderer(),
-        // US-021..036: add renderers here, one line each.
+        NbackRenderer(),
       ]),
     );
 
