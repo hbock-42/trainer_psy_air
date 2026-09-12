@@ -7,6 +7,7 @@ import '../../../core/l10n/strings.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
+import 'exam_resume_card.dart';
 import 'providers/exam_blueprints_provider.dart';
 
 /// Exam home (`/exam`, US-060/061): the PSY0 blueprints, each with its
@@ -40,6 +41,7 @@ class ExamScreen extends ConsumerWidget {
               ),
             ),
             SizedBox(height: theme.spacing.lg),
+            const ExamResumeCard(),
             switch (blueprints) {
               AsyncData(value: final list) when list.isEmpty => Text(
                 AppStrings.examEmptyBlueprints,

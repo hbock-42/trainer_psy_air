@@ -761,6 +761,20 @@ abstract final class AppStrings {
   static const String examHistoryStatusCompleted = 'Terminée';
   static const String examHistoryStatusAbandoned = 'Abandonnée';
   static const String examHistoryStatusInProgress = 'En cours';
+  static String examHistoryDuration(int minutes) =>
+      minutes < 1 ? '< 1 min' : '$minutes min';
+  static const String examHistoryDeleteAction = 'Supprimer';
+  static const String examHistoryDeleteConfirmTitle =
+      'Supprimer cette simulation ?';
+  static const String examHistoryDeleteConfirmBody =
+      'Cette action est définitive : la simulation et ses réponses seront '
+      'supprimées.';
+
+  // Exam resume (US-064): "Reprendre" card on the Exam home.
+  static const String examResumeCardTitle = 'Reprendre la simulation';
+  static String examResumeCardSubtitle(String blueprintName) =>
+      'Simulation en cours : $blueprintName';
+  static const String examResumeCardAction = 'Reprendre';
 
   // Exam report (US-062).
   static const String examReportTitle = 'Rapport de simulation';

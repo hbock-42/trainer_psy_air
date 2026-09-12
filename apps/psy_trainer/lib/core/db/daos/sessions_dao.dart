@@ -17,6 +17,11 @@ class SessionsDao extends DatabaseAccessor<AppDatabase>
   Future<SessionRow?> byId(String id) =>
       (select(sessions)..where((t) => t.id.equals(id))).getSingleOrNull();
 
+  /// Deletes one session row (US-064 "delete a simulation"). Returns the
+  /// number of rows removed (0 when unknown).
+  Future<int> deleteById(String id) =>
+      (delete(sessions)..where((t) => t.id.equals(id))).go();
+
   /// Sets the terminal [status], [score] and [endedAt]. Returns the number
   /// of rows changed (0 when the session does not exist).
   Future<int> finish(
