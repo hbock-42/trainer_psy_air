@@ -3515,6 +3515,12 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Appuyez sur F quand le calcul encadré, en bas, est faux.'**
   String get multitaskExampleCalc;
+
+  /// No description provided for @p1CountersExampleCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.'**
+  String get p1CountersExampleCaption;
 }
 
 class _AppLocalizationsDelegate

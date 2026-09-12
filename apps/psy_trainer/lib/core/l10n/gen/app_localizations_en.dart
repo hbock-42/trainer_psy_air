@@ -2141,4 +2141,8 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get multitaskExampleCalc =>
       'Press F when the boxed calculation, at the bottom, is wrong.';
+
+  @override
+  String get p1CountersExampleCaption =>
+      'Read each gauge (needle, scale or drum counter) then answer the question asked.';
 }

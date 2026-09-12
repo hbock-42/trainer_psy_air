@@ -2156,4 +2156,8 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get multitaskExampleCalc =>
       'Appuyez sur F quand le calcul encadré, en bas, est faux.';
+
+  @override
+  String get p1CountersExampleCaption =>
+      'Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.';
 }

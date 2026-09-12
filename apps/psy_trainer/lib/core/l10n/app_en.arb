@@ -1453,5 +1453,6 @@
   "multitaskCalcButtonLabel": "F",
   "multitaskExampleTracking": "Keep the keyboard arrow in the direction the circle is moving.",
   "multitaskExampleShape": "Press Space when the shape in the circle matches the reference shape (top left).",
-  "multitaskExampleCalc": "Press F when the boxed calculation, at the bottom, is wrong."
+  "multitaskExampleCalc": "Press F when the boxed calculation, at the bottom, is wrong.",
+  "p1CountersExampleCaption": "Read each gauge (needle, scale or drum counter) then answer the question asked."
 }
