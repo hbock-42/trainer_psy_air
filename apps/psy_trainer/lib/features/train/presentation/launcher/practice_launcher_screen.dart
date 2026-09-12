@@ -10,6 +10,7 @@ import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../../engines/english/presentation/english_passage_cache.dart';
+import '../../../progress/presentation/providers/progress_analytics_provider.dart';
 import '../../domain/engine/timing_policy.dart';
 import '../../domain/mistakes/mistake_pool.dart';
 import '../../domain/mistakes/mistake_session_builder.dart';
@@ -64,10 +65,15 @@ class _LauncherBody extends ConsumerWidget {
     PracticeConfig config,
   ) async {
     final family = ref.read(practiceLauncherProvider(familyId)).family!;
+    final auto = await ref
+        .read(progressAnalyticsProvider)
+        .familyProgress(familyId);
     final activityConfig = await buildActivitySessionConfig(
       family: family,
       config: config,
       contentRepository: ref.read(contentRepositoryProvider),
+      autoLevel: auto.level,
+      autoFastThresholdMs: auto.medianResponseMs?.round(),
       onPassagesLoaded: ref.read(englishPassageCacheProvider).addAll,
     );
     if (!context.mounted) return;

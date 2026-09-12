@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:psy_content/psy_content.dart';
 import '../../../../core/repositories/model/attempt.dart';
+import '../adaptive/adaptive_difficulty_policy.dart';
 import 'activity_engine.dart';
 
 part 'item_source.freezed.dart';
@@ -37,6 +38,34 @@ sealed class ItemSource with _$ItemSource {
     @Default(DifficultyRange(min: 3, max: 3)) DifficultyRange difficulty,
   }) = GeneratorSource;
 
+  /// Generate [count] items from `generatorId` with [params], starting at
+  /// [initialDifficulty] and adjusted in-session by [policy] (US-053): +1
+  /// after a few consecutive correct-and-fast answers, -1 after a couple of
+  /// wrong ones (see [AdaptiveDifficultyPolicy]). Unlike
+  /// [ItemSource.generator], the difficulty of item *k* is not fixed up
+  /// front — it depends on how items `0..k-1` were answered — so items are
+  /// materialised lazily, one at a time, as `ActivitySession` shows them
+  /// (see `materialiseAdaptive`); [materialise] throws for this kind, and
+  /// `itemCount` is the only thing about it known ahead of time. [runSeed]
+  /// plays the same role as `ItemSource.generator.seed` (US-037): every
+  /// item's `generate` call gets it unchanged, so a run is reproducible
+  /// from `(runSeed, the answers given)`. [fastThresholdMs] is normally the
+  /// family's own median response time (`StatsService`/`FamilyProgress
+  /// .medianResponseMs`, resolved once when the session is built); null
+  /// falls back to a fraction of the per-item time limit (see
+  /// [AdaptiveDifficultyPolicy.fastCutoffMs]).
+  @FreezedUnionValue('adaptive')
+  const factory ItemSource.adaptive({
+    required GeneratorId generatorId,
+    required int runSeed,
+    @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)
+    required GeneratorParams params,
+    required int count,
+    required int initialDifficulty,
+    int? fastThresholdMs,
+    @Default(AdaptiveDifficultyPolicy.standard) AdaptiveDifficultyPolicy policy,
+  }) = AdaptiveSource;
+
   /// Replays generated items from their stored [AttemptOrigin]s (US-054
   /// "retry my mistakes"): each origin carries everything
   /// `ActivityEngine.generate` needs (`generatorId`, `seed`, `params`,
@@ -55,10 +84,18 @@ sealed class ItemSource with _$ItemSource {
   int get itemCount => switch (this) {
     BankSource(:final items) => items.length,
     GeneratorSource(:final count) => count,
+    AdaptiveSource(:final count) => count,
     ReplaySource(:final origins) => origins.length,
   };
 
-  /// Builds the concrete items with [engine]. Deterministic.
+  /// True for [ItemSource.adaptive]: see [materialiseAdaptive].
+  bool get isAdaptive => this is AdaptiveSource;
+
+  /// Builds the concrete items with [engine]. Deterministic. Throws
+  /// [UnsupportedError] for [ItemSource.adaptive]: an adaptive source has no
+  /// fixed item list (the difficulty of item *k* depends on how items
+  /// `0..k-1` were answered) — `ActivitySession` materialises it lazily
+  /// with [materialiseAdaptive] instead.
   List<SessionItem> materialise(ActivityEngine engine) => switch (this) {
     BankSource(:final items) => [
       for (final item in items) SessionItem.of(engine.materialise(item), item),
@@ -71,12 +108,69 @@ sealed class ItemSource with _$ItemSource {
       :final difficulty,
     ) =>
       _generate(engine, generatorId, seed, params, count, difficulty),
+    AdaptiveSource() => throw UnsupportedError(
+      'ItemSource.adaptive materialises lazily; use materialiseAdaptive',
+    ),
     ReplaySource(:final origins) => [
       for (final origin in origins) _replay(engine, origin),
     ],
   };
 
-  static SessionItem _replay(ActivityEngine engine, AttemptOrigin origin) {
+  /// Materialises item [index] of an [ItemSource.adaptive] source at
+  /// [difficulty] (the adaptive policy's current level). The per-item seed
+  /// is a pure function of `(runSeed, index)` (unlike
+  /// [ItemSource.generator]'s sequential draw from one `Random`), so items
+  /// can be (re)materialised in any order — needed since a resumed session
+  /// replays earlier indices from their stored attempts, not from a
+  /// upfront-built list.
+  SessionItem materialiseAdaptive(
+    ActivityEngine engine,
+    int index,
+    int difficulty,
+  ) {
+    final self = this;
+    if (self is! AdaptiveSource) {
+      throw StateError(
+        'materialiseAdaptive is only valid for ItemSource.adaptive',
+      );
+    }
+    final itemSeed = _adaptiveItemSeed(self.runSeed, index);
+    final item = engine.generate(
+      params: self.params,
+      seed: itemSeed,
+      difficulty: difficulty,
+      index: index,
+      runSeed: self.runSeed,
+    );
+    return SessionItem(
+      item: item,
+      origin: AttemptOrigin(
+        generatorId: self.generatorId.jsonName,
+        seed: itemSeed,
+        params: generatorParamsToJson(self.params),
+        difficulty: difficulty,
+      ),
+    );
+  }
+
+  /// Deterministic per-item seed for [ItemSource.adaptive], addressable by
+  /// [index] directly (not a running draw from one shared `Random`, which
+  /// would force materialising every earlier index first).
+  static int _adaptiveItemSeed(int runSeed, int index) =>
+      Random(runSeed + index * 0x1000193).nextInt(1 << 31);
+
+  /// Rebuilds the exact item [origin] describes against [engine] (must be
+  /// the origin's own generator). Used to replay one attempt
+  /// ([ItemSource.replay]) and to restore an [ItemSource.adaptive] run's
+  /// already-played items on resume — their difficulty was decided by the
+  /// policy at the time and is recorded in the attempt's own [origin],
+  /// which is exactly what this reconstructs from.
+  static Item itemFromOrigin(
+    ActivityEngine engine,
+    AttemptOrigin origin, {
+    int index = 0,
+    int? runSeed,
+  }) {
     final generatorId = engine.generatorId;
     if (generatorId == null || generatorId.jsonName != origin.generatorId) {
       throw ArgumentError.value(
@@ -89,13 +183,17 @@ sealed class ItemSource with _$ItemSource {
       ...origin.params,
       generatorParamsUnionKey: origin.generatorId,
     });
-    final item = engine.generate(
+    return engine.generate(
       params: params,
       seed: origin.seed,
       difficulty: origin.difficulty,
+      index: index,
+      runSeed: runSeed ?? origin.seed,
     );
-    return SessionItem(item: item, origin: origin);
   }
+
+  static SessionItem _replay(ActivityEngine engine, AttemptOrigin origin) =>
+      SessionItem(item: itemFromOrigin(engine, origin), origin: origin);
 
   static List<SessionItem> _generate(
     ActivityEngine engine,

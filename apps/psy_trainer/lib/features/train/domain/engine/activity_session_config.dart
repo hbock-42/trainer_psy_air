@@ -13,6 +13,19 @@ part 'activity_session_config.g.dart';
 ///
 /// Serialisable: the session stores `toJson()` in `TrainingSession.config`
 /// so an interrupted session can be rebuilt (`ActivitySession.resume`).
+///
+/// US-053 deviation: an `ItemSource.adaptive` source's in-session level
+/// changes are *not* added here. `TrainingSession.config` is written once,
+/// by `startSession`, before the first item plays — before any change can
+/// have happened — and `ProgressRepository.finishSession` (core layer, out
+/// of this story's scope) takes no config update, so there is no seam to
+/// persist them into the stored session afterwards. They travel instead on
+/// `SessionResult.levelChanges`, which is what actually reaches the summary
+/// screen (`PracticeSessionScreen` holds the `SessionResult` in memory,
+/// never re-reads the session from the repository to show it); the
+/// difficulty actually played on every item still lands in the database,
+/// unchanged from before this story, via each attempt's own
+/// `AttemptOrigin.difficulty`.
 @freezed
 abstract class ActivitySessionConfig with _$ActivitySessionConfig {
   const factory ActivitySessionConfig({
