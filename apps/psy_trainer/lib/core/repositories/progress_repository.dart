@@ -56,6 +56,16 @@ abstract interface class ProgressRepository {
   /// Attempts of one session ordered by position.
   Future<List<Attempt>> attemptsForSession(String sessionId);
 
+  /// Attempts of one family answered within `[from, to]` (inclusive, both
+  /// optional), oldest first: the raw material "retry my mistakes" (US-054)
+  /// folds into per-item streaks (an `ItemStat` only remembers the *last*
+  /// answer, not how many were correct in a row since the last mistake).
+  Future<List<Attempt>> attemptsForFamily({
+    required String familyId,
+    DateTime? from,
+    DateTime? to,
+  });
+
   // --- Aggregates -----------------------------------------------------------
 
   /// Accuracy and response-time aggregates per family over the attempts
