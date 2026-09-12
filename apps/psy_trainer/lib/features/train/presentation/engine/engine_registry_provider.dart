@@ -14,6 +14,8 @@ import '../../../engines/logic_dominos/domain/dominos_engine.dart';
 import '../../../engines/logic_dominos/presentation/dominos_renderer.dart';
 import '../../../engines/memory_nback/domain/nback_engine.dart';
 import '../../../engines/memory_nback/presentation/nback_renderer.dart';
+import '../../../engines/spatial_viewpoint/domain/viewpoint_engine.dart';
+import '../../../engines/spatial_viewpoint/presentation/viewpoint_renderer.dart';
 import '../../domain/engine/engine.dart';
 import '../renderers/mcq_renderer.dart';
 import 'activity_renderer.dart';
@@ -38,6 +40,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         DominosEngine(),
         EnglishEngine(),
         NbackEngine(),
+        ViewpointEngine(),
       ]),
     );
 
@@ -60,6 +63,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
               ref.read(englishPassageCacheProvider).get(id),
         ),
         const NbackRenderer(),
+        const ViewpointRenderer(),
       ]),
     );
 
