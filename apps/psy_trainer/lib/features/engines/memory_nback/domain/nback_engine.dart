@@ -3,14 +3,19 @@ import 'package:psy_content/psy_content.dart';
 import '../../../train/domain/engine/engine.dart';
 import 'nback_stimulus.dart';
 
-/// `memory_nback` (spec §2.4-A, US-026): "Deux rangs avant" / M2/M3-back. A
-/// stimulus (colour, or digit) is shown for `stimulusMs`; the candidate
-/// answers yes/no whether it equals the one shown `n` steps earlier, within
-/// `answerWindowMs`. Modelled as one `GeneratedItem` per stimulus (not one
-/// item for the whole run) so the runtime's cadence
+/// `memory_nback` (spec §2.4-A, US-026, US-037): "Deux rangs avant" /
+/// M2/M3-back. A stimulus (colour, or digit) is shown for `stimulusMs`; the
+/// candidate answers yes/no whether it equals the one shown `n` steps
+/// earlier, within `answerWindowMs`. Modelled as one `GeneratedItem` per
+/// stimulus (not one item for the whole run) so the runtime's cadence
 /// (`TimingPolicy.cadence`, `render.phase`) and per-item attempt recording
-/// apply exactly as they do for any other cadence-driven activity; see
-/// `NbackStimulus`'s doc for why, and for the resulting limitation.
+/// apply exactly as they do for any other cadence-driven activity; the
+/// item carries no engine-specific data of its own -- `generate` reads
+/// `runSeed` + `index` (US-037: `ItemSource.generator` passes them to
+/// every call, identical `runSeed` for the whole run) and stores them on
+/// `origin` so the renderer and the scorer can recompute the exact same
+/// position of the same continuous stream (`NbackStimulus.decode`,
+/// `NbackSequence`) instead of a private per-item simulation.
 class NbackEngine extends ActivityEngine {
   const NbackEngine();
 
@@ -25,6 +30,8 @@ class NbackEngine extends ActivityEngine {
     required GeneratorParams params,
     required int seed,
     required int difficulty,
+    int index = 0,
+    int? runSeed,
   }) {
     final typed = params as NbackParams;
     return GeneratedItem(
@@ -36,14 +43,28 @@ class NbackEngine extends ActivityEngine {
       generatorId: GeneratorId.nback,
       seed: seed,
       params: typed,
-      origin: ItemOrigin(generatorId: GeneratorId.nback, seed: seed),
+      origin: ItemOrigin(
+        generatorId: GeneratorId.nback,
+        seed: seed,
+        runSeed: runSeed ?? seed,
+        index: index,
+      ),
     );
   }
 
   /// The decoded stimulus of a materialised `GeneratedItem` of this family;
-  /// used by the renderer and by [score].
-  static NbackStimulus stimulusOf(GeneratedItem item) =>
-      NbackStimulus.decode(item.params as NbackParams, item.seed);
+  /// used by the renderer and by [score]. Reads `runSeed`/`index` off
+  /// `origin` (always set by [generate]); a direct `generate()` call with
+  /// neither (a unit test) falls back to `runSeed = seed`, `index = 0` --
+  /// the first item of its own single-item run.
+  static NbackStimulus stimulusOf(GeneratedItem item) {
+    final origin = item.origin;
+    return NbackStimulus.decode(
+      item.params as NbackParams,
+      origin?.runSeed ?? item.seed,
+      origin?.index ?? 0,
+    );
+  }
 
   /// Primers (no valid n-back reference yet) are scored neutrally: always
   /// correct, whatever the candidate answers (or doesn't). Otherwise the

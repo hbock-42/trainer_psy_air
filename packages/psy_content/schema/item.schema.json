@@ -29,10 +29,12 @@
     },
     "Origin": {
       "type": "object",
-      "description": "Present only on items materialised at runtime by a generator (never in bank files). Lets an Attempt be replayed: same generatorId + seed => same item.",
+      "description": "Present only on items materialised at runtime by a generator (never in bank files). Lets an Attempt be replayed: same generatorId + seed => same item. `runSeed`/`index` (US-037, additive, no schemaVersion bump) are the seed shared by every item of the run and this item's 0-based position in it, for generators whose items depend on the run's earlier items (n-back, rule sets).",
       "properties": {
         "generatorId": { "$ref": "generators.schema.json#/$defs/GeneratorId" },
-        "seed": { "type": "integer", "minimum": 0 }
+        "seed": { "type": "integer", "minimum": 0 },
+        "runSeed": { "type": "integer", "minimum": 0 },
+        "index": { "type": "integer", "minimum": 0 }
       },
       "required": ["generatorId", "seed"],
       "additionalProperties": false

@@ -25,7 +25,8 @@ class ArithmeticGridRenderer extends ActivityRenderer {
       _ArithmeticGridBoard(key: ValueKey(render.item.id), render: render);
 
   @override
-  Widget? buildExample(BuildContext context) => const _ArithmeticGridExample();
+  Widget? buildExample(BuildContext context, [RunExampleContext? run]) =>
+      const _ArithmeticGridExample();
 
   /// `Key` of the cell at row-major [index] (0-based).
   static Key cellKey(int index) => Key('arithmetic_grid.cell.$index');

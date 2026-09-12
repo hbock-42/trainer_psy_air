@@ -3,18 +3,19 @@ import 'package:psy_trainer/features/train/domain/engine/engine.dart';
 
 import 'stimulus_rule_set.dart';
 
-/// *Formes et couleurs* (spec §2.4-C, US-029): a shape flashes every 3 s (the
-/// cadence is the family's, `defaultCadence`/`ExamSection.cadence`), and the
-/// candidate presses the key the run's rule set assigns to it -- see
-/// [StimulusRuleSet] for how that rule set is derived and stays identical
-/// for every item of a run.
+/// *Formes et couleurs* (spec §2.4-C, US-029, US-037): a shape flashes
+/// every 3 s (the cadence is the family's, `defaultCadence`/
+/// `ExamSection.cadence`), and the candidate presses the key the run's rule
+/// set assigns to it -- see [StimulusRuleSet] for how that rule set is
+/// derived from the run seed and stays identical for every item of a run.
 ///
 /// `generate` returns the recipe unchanged (`GeneratedItem(seed, params)`):
 /// per `docs/ARCHITECTURE.md` ("interactive activities... keep the stimulus
 /// in engine-owned data derived again from the seed"), the renderer and the
-/// scorer both call [StimulusRuleSet.fromParams] and [StimulusRuleSet.trial]
-/// again from the same `(seed, params)` rather than have the item carry
-/// extra, schema-less fields.
+/// scorer both call [StimulusRuleSet.fromRunSeed] and [StimulusRuleSet.trial]
+/// again from `(runSeed, params)`/`seed` rather than have the item carry
+/// extra, schema-less fields; `runSeed` (identical for the whole run) is
+/// stored on `origin` so it survives materialisation.
 class AttentionRulesEngine extends ActivityEngine {
   const AttentionRulesEngine();
 
@@ -31,6 +32,8 @@ class AttentionRulesEngine extends ActivityEngine {
     required GeneratorParams params,
     required int seed,
     required int difficulty,
+    int index = 0,
+    int? runSeed,
   }) {
     final typed = params as StimulusResponseParams;
     return GeneratedItem(
@@ -42,7 +45,12 @@ class AttentionRulesEngine extends ActivityEngine {
       generatorId: GeneratorId.stimulusResponse,
       seed: seed,
       params: typed,
-      origin: ItemOrigin(generatorId: GeneratorId.stimulusResponse, seed: seed),
+      origin: ItemOrigin(
+        generatorId: GeneratorId.stimulusResponse,
+        seed: seed,
+        runSeed: runSeed ?? seed,
+        index: index,
+      ),
     );
   }
 

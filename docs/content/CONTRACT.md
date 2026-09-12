@@ -320,7 +320,7 @@ class Tolerance  { ToleranceMode mode; num value; }   enum ToleranceMode { absol
 enum InputFormat { integer, decimal, time }
 enum StimulusKind { digits, letters, symbols, colors, gridCells }
 enum RecallMode   { forward, backward, anyOrder }
-class ItemOrigin  { GeneratorId generatorId; int seed; }
+class ItemOrigin  { GeneratorId generatorId; int seed; int? runSeed; int? index; } // runSeed/index: US-037, additive
 
 // Lexical fields (lexical_fields.schema.json)
 class LexicalFieldBank { String familyId; List<LexicalField> fields; }
@@ -405,6 +405,7 @@ Additive (backward compatible for `mcq`/`numeric`/`sequence` items, passages, le
 | `Meta.sources[]` | `{title, url?, accessedOn?}` | — | dated references |
 | `common.GridSize`, `Cadence`, `ScoringPolicy`, `InputRequirement`, `Source` | value types | — | shared definitions |
 | `lexical_fields` file kind, `LexicalField`, `LexicalTrap` | new entity | — | US-085 bank for *Boîte à mots* |
+| `ItemOrigin.runSeed`, `.index` | int? | — | US-037: run-scoped generation (n-back stream, rules rule set); no `schemaVersion` bump, both optional |
 
 Real content added: `assets/content/manifest.json`, `assets/content/psy0/module.json`, `assets/content/psy0/<family>/family.json` (16 families) and
 `assets/content/psy0/blueprints/psy0_full.json` / `psy0_short.json` transcribed from

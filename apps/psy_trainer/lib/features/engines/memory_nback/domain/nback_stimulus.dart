@@ -4,13 +4,13 @@ import 'package:psy_content/psy_content.dart';
 
 /// The role US-026 assigns to one materialised n-back stimulus.
 enum NbackRole {
-  /// One of the run's early items: not enough history to judge yet, scored
-  /// neutrally regardless of the answer (spec §2.4-A: "42 stimuli incl. 2
-  /// primers").
+  /// One of the run's first `n` items: no real n-back reference exists yet
+  /// (there is nothing at k-n), scored neutrally regardless of the answer
+  /// (spec §2.4-A: "42 stimuli incl. 2 primers").
   primer,
 
-  /// Truly equals the stimulus shown `n` steps earlier: the correct
-  /// answer is "yes".
+  /// Truly equals the stimulus actually shown `n` steps earlier: the
+  /// correct answer is "yes".
   target,
 
   /// A near miss (repeats the most recent stimulus, an `n-1` match, instead
@@ -25,42 +25,17 @@ enum NbackRole {
 
 /// One decoded n-back stimulus: what to display and the correct answer.
 ///
-/// Deterministic from `(params, seed)` alone, exactly like
-/// `ActivityEngine.generate`'s contract requires: [NbackEngine.generate]
-/// (`nback_engine.dart`) returns a thin `GeneratedItem` echo — the same
-/// pattern `AttentionParityEngine.layoutOf` uses for `parity_sequence` — and
-/// both the renderer and the scorer call [decode] again to read it; nothing
-/// engine-specific is stored on the item itself.
-///
-/// ## Why each item is self-contained (read before changing this)
-///
-/// `ItemSource.generator` (`features/train/domain/engine/item_source.dart`,
-/// part of the US-020 runtime, not owned by this engine) draws one
-/// **independent** seed per item from `Random(sectionSeed)` and calls
-/// `ActivityEngine.generate` once per item with that seed alone; it does
-/// not pass the item's ordinal position in the run, nor a seed shared
-/// across the whole 42-item run. A byte-for-byte faithful n-back needs
-/// exactly that (item k is a target iff it equals the stimulus *actually
-/// displayed* at position k-n), so with the current runtime contract a
-/// generator cannot reconstruct one continuous, globally consistent
-/// stream: each `generate`/`decode` call has no way to see what any other
-/// call produced, and `ActivityEngine.generate` must stay a pure function
-/// of its inputs (same `(params, seed)` ⇒ same item — required for replay
-/// and unit-tested here).
-///
-/// [decode] works around this the only way that stays pure: it simulates a
-/// private length-`n` "history" window from the item's own seed and
-/// chooses this item's role and displayed value against *that* window. So
-/// every item is internally consistent (its own declared correctness
-/// matches its own synthetic window) and the run-level statistics (target
-/// ratio, lure ratio, primer share) match `params`, but the colour a player
-/// remembers from their own previous real turn is not literally what this
-/// item's ground truth compares against. That is a genuine gap in the
-/// runtime for stateful/sequential generators (also relevant to
-/// `parity_sequence`'s restart-on-error and `stimulus_response`'s rule
-/// history); the real fix is for `ItemSource.generator` to pass either the
-/// loop index or a shared run seed to `ActivityEngine.generate`. See the
-/// story's final report for the recommendation.
+/// US-037 rework: the whole run is one continuous stream derived from the
+/// shared `runSeed` ([NbackSequence]), so item k's target/lure/filler role
+/// is checked against the value the run *actually* showed at `k-n`, not a
+/// private per-item simulation (the US-026 workaround this class used to
+/// carry a long doc-comment about; the runtime now passes every engine
+/// `runSeed` + `index`, see `ActivityEngine.generate` and
+/// `docs/ARCHITECTURE.md#engine`). [decode] recomputes the run from
+/// `runSeed` and reads position [NbackSequence.values]`[index]`: still a
+/// pure function of its inputs (same `(params, runSeed, index)`, same
+/// result, unit-tested), still nothing stored on the item itself besides
+/// `origin.runSeed`/`origin.index` (`NbackEngine.stimulusOf`).
 class NbackStimulus {
   const NbackStimulus({
     required this.role,
@@ -73,10 +48,13 @@ class NbackStimulus {
   /// Index into the active palette (`0..paletteSize-1`).
   final int value;
 
-  /// The `n` synthetic values immediately preceding [value], oldest first;
-  /// `history.first` is the n-back reference this stimulus was checked
-  /// against. Exposed so the practice UI can show a reference window next
-  /// to the current stimulus (spec: "practice option ... history strip").
+  /// The stream values immediately preceding this one, oldest first, up to
+  /// `n` of them (fewer for a primer, which has no full `n`-item history
+  /// yet); `history.first` is the n-back reference this stimulus was
+  /// checked against once the history is exactly `n` long (every
+  /// non-primer item), `history.last` the most recent one. Exposed so the
+  /// practice UI can show a reference window next to the current stimulus
+  /// (spec: "practice option ... history strip").
   final List<int> history;
 
   bool get isPrimer => role == NbackRole.primer;
@@ -85,41 +63,87 @@ class NbackStimulus {
   /// scored neutrally).
   bool get expectsYes => role == NbackRole.target;
 
-  /// Decodes the stimulus of a `GeneratedItem(seed: seed, params: params)`
-  /// of `memory_nback`. Pure function of its inputs: same `(params, seed)`,
-  /// same result (unit-tested).
-  static NbackStimulus decode(NbackParams params, int seed) {
-    final rng = Random(seed);
-    final paletteSize = params.paletteSize < 1 ? 1 : params.paletteSize;
-    final n = params.n < 1 ? 1 : params.n;
-    final primerProb = params.count <= 0 ? 0.0 : params.primers / params.count;
-    final history = List<int>.generate(n, (_) => rng.nextInt(paletteSize));
-    final roll = rng.nextDouble();
-
-    final NbackRole role;
-    final int value;
-    if (roll < primerProb) {
-      role = NbackRole.primer;
-      value = rng.nextInt(paletteSize);
-    } else if (roll < primerProb + params.targetRatio) {
-      role = NbackRole.target;
-      value = history.first;
-    } else if (roll < primerProb + params.targetRatio + params.lureRatio) {
-      role = NbackRole.lure;
-      value = _nearMiss(rng, paletteSize, history);
-    } else {
-      role = NbackRole.filler;
-      value = _differentFrom(rng, paletteSize, history.first);
-    }
-    return NbackStimulus(role: role, value: value, history: history);
+  /// Decodes the stimulus at [index] of the run `(params, runSeed)`: same
+  /// inputs, same result.
+  static NbackStimulus decode(NbackParams params, int runSeed, int index) {
+    final sequence = NbackSequence.build(params, runSeed, upTo: index + 1);
+    final n = _clampN(params.n);
+    final historyStart = (index - n).clamp(0, index);
+    return NbackStimulus(
+      role: sequence.roles[index],
+      value: sequence.values[index],
+      history: sequence.values.sublist(historyStart, index),
+    );
   }
 
-  /// Repeats the most recent stimulus (an `n-1` match) instead of the true
-  /// `n`-back one, unless that coincides with it (short histories, `n==1`),
-  /// in which case it falls back to any other value.
-  static int _nearMiss(Random rng, int paletteSize, List<int> history) {
-    final recent = history.last;
-    if (recent != history.first || paletteSize <= 1) return recent;
+  static int _clampN(int n) => n < 1 ? 1 : n;
+}
+
+/// The whole run's stream of stimuli, derived once from `(params, runSeed)`
+/// (US-037): every item of the run reads the same sequence, so item k's
+/// target/lure/filler status reflects the value *actually* shown at
+/// `k - n`, not a synthetic stand-in.
+///
+/// The first `n` items are primers (`params.primers` no longer drives how
+/// many: the run needs at least `n` real values before a k-n reference
+/// exists at all, so "first n items" is the only faithful choice -- kept
+/// as the family's own "2 primers" default only insofar as the real-test
+/// `n` is 2, spec §2.4-A). From item `n` on, each position rolls a role
+/// against `targetRatio`/`lureRatio` (the remainder is a filler) and
+/// derives its value from the stream already built:
+/// - **target**: repeats `values[i - n]` exactly.
+/// - **lure**: repeats the most recent value (`values[i - 1]`, an `n-1`
+///   match), unless that coincides with the target value, in which case it
+///   falls back to any other value.
+/// - **filler**: any value other than `values[i - n]`.
+class NbackSequence {
+  const NbackSequence({required this.values, required this.roles});
+
+  /// The stimulus shown at each position, in play order.
+  final List<int> values;
+
+  /// The role assigned at each position, in play order.
+  final List<NbackRole> roles;
+
+  /// Builds the run's stream from `(params, runSeed)`. [upTo] limits how
+  /// many positions are computed (defaults to the whole run,
+  /// `params.count`); [NbackStimulus.decode] only needs up to its own
+  /// `index`, but the result is identical whatever [upTo] is, because each
+  /// position depends only on earlier ones.
+  factory NbackSequence.build(NbackParams params, int runSeed, {int? upTo}) {
+    final rng = Random(runSeed);
+    final paletteSize = params.paletteSize < 1 ? 1 : params.paletteSize;
+    final n = NbackStimulus._clampN(params.n);
+    final count = upTo ?? (params.count < 1 ? 1 : params.count);
+    final values = <int>[];
+    final roles = <NbackRole>[];
+    for (var i = 0; i < count; i++) {
+      if (i < n) {
+        roles.add(NbackRole.primer);
+        values.add(rng.nextInt(paletteSize));
+        continue;
+      }
+      final target = values[i - n];
+      final roll = rng.nextDouble();
+      if (roll < params.targetRatio) {
+        roles.add(NbackRole.target);
+        values.add(target);
+      } else if (roll < params.targetRatio + params.lureRatio) {
+        roles.add(NbackRole.lure);
+        values.add(_nearMiss(rng, paletteSize, values[i - 1], target));
+      } else {
+        roles.add(NbackRole.filler);
+        values.add(_differentFrom(rng, paletteSize, target));
+      }
+    }
+    return NbackSequence(values: values, roles: roles);
+  }
+
+  /// Repeats the most recent stimulus ([recent], an `n-1` match) unless it
+  /// coincides with the true n-back [target] (short runs, `n == 1`), in
+  /// which case it falls back to any other value.
+  static int _nearMiss(Random rng, int paletteSize, int recent, int target) {
+    if (recent != target || paletteSize <= 1) return recent;
     return _differentFrom(rng, paletteSize, recent);
   }
 

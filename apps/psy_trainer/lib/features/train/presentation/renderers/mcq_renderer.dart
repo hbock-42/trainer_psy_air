@@ -61,7 +61,8 @@ class McqRenderer extends ActivityRenderer {
   }
 
   @override
-  Widget? buildExample(BuildContext context) => const _McqExample();
+  Widget? buildExample(BuildContext context, [RunExampleContext? run]) =>
+      const _McqExample();
 }
 
 /// -1 sentinel for the "je ne sais pas" option so it shares the same

@@ -24,16 +24,30 @@ abstract class ActivityEngine {
   /// The generator this engine implements, or null for bank-only engines.
   GeneratorId? get generatorId => null;
 
-  /// Builds the concrete item of the recipe `(params, seed, difficulty)`.
+  /// Builds the concrete item of the recipe `(params, seed, difficulty)`,
+  /// at position [index] of the run seeded with [runSeed] (US-037).
   ///
-  /// Must be deterministic: same inputs, same item. The returned item's `id`
-  /// is [generatedItemId] and its `origin` is `ItemOrigin(generatorId,
-  /// seed)` so attempts can be replayed. Bank-only engines throw
-  /// [UnsupportedError].
+  /// `runSeed` is identical for every item of the run (`ItemSource
+  /// .generator`'s own `seed`); `seed` stays the per-item value drawn from
+  /// it (kept for backward compatibility: `generatedItemId`, existing
+  /// engines) and defaults `runSeed` to itself when the caller does not
+  /// pass one (a direct `generate()` call in a unit test, an older
+  /// caller). Most engines only need `(params, seed, difficulty)`, exactly
+  /// as before; a generator whose items depend on the run's earlier items
+  /// (the n-back stream, the rules engine's rule set) reads `index` and
+  /// `runSeed` to reconstruct the run instead of a private per-item
+  /// history.
+  ///
+  /// Must be deterministic: same inputs, same item. The returned item's
+  /// `id` is [generatedItemId] and its `origin` is `ItemOrigin(generatorId,
+  /// seed, runSeed:, index:)` so attempts can be replayed. Bank-only
+  /// engines throw [UnsupportedError].
   Item generate({
     required GeneratorParams params,
     required int seed,
     required int difficulty,
+    int index = 0,
+    int? runSeed,
   }) => throw UnsupportedError('$familyId has no generator');
 
   /// Scores [answer] against [item]. Never called with a

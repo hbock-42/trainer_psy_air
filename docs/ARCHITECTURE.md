@@ -565,8 +565,9 @@ section and exposes the state to the screens.
 ```
 features/train/
   domain/engine/                      pure Dart (no Flutter), barrel engine.dart
-    activity_engine.dart              ActivityEngine (familyId, generatorId, generate, score, materialise),
-                                      EngineRegistry, EngineNotFoundError, GeneratorId.jsonName
+    activity_engine.dart              ActivityEngine (familyId, generatorId, generate(params, seed, difficulty,
+                                      index, runSeed), score, materialise), EngineRegistry, EngineNotFoundError,
+                                      GeneratorId.jsonName
     activity_session.dart             ActivitySession: the state machine (start/answer/next/pause/resume/abort,
                                       resume from attempts), persistence through ProgressRepository
     activity_session_config.dart      ActivitySessionConfig (family, mode, source, timing, scoring, liveFeedback,
@@ -575,14 +576,18 @@ features/train/
     answer.dart                       Answer = choice | numeric | multiSelect | key | sequence | skip | timeout | raw
     item_result.dart                  ItemResult (correct, timedOut, skipped, metrics), ItemOutcome (+ responseMs)
     item_source.dart                  ItemSource = bank(items) | generator(generatorId, seed, params, count, difficulty),
-                                      SessionItem (item + itemId | AttemptOrigin)
+                                      SessionItem (item + itemId | AttemptOrigin). `seed` doubles as the run's
+                                      `runSeed` (US-037): identical for every item, handed to `generate` alongside
+                                      each item's own position (`index`) and its per-item `seed` (still derived
+                                      from `runSeed`, kept for id/backward-compat)
     timing_policy.dart                TimingPolicy (perItemMs, sectionMs, cadence; fromSection, forPractice)
     scorer.dart                       Scorer.scoreItem (mcq / numeric / sequence defaults), Scorer.section
     session_result.dart               SectionResult (accuracy, RT, timeouts, points), SessionResult, FinishReason
     engine_clock.dart                 EngineClock, SystemClock, ManualClock (tests)
   presentation/engine/                widgets + Riverpod, barrel engine_ui.dart (re-exports the domain barrel)
-    activity_renderer.dart            ActivityRenderer (build, buildExample), ActivityRenderContext,
-                                      ActivityWidgetBuilder, FunctionRenderer, RendererRegistry
+    activity_renderer.dart            ActivityRenderer (build, buildExample(context, [run])), ActivityRenderContext,
+                                      ActivityWidgetBuilder, FunctionRenderer, RendererRegistry, RunExampleContext
+                                      (runSeed + params of the run about to play, from a generator source; US-037)
     engine_registry_provider.dart     engineRegistryProvider, rendererRegistryProvider, engineClockProvider
                                       = the composition root where engines are registered
     activity_session_controller.dart  activitySessionControllerProvider (autoDispose family Notifier),
@@ -628,8 +633,12 @@ runner (US-061) and every engine's renderer depend on it, exactly as they depend
 - **Resume.** `ActivitySession.resume(session:, attempts:)` rebuilds the config from
   `TrainingSession.config` (the runtime stored `ActivitySessionConfig.toJson()` there), replays
   the attempts of its section into outcomes, starts at the next item (`ActivityBriefing.startIndex`)
-  and shortens a section limit by the response time already spent. US-051/US-064 decide when
-  to offer it (`sessions(status: inProgress)`).
+  and shortens a section limit by the response time already spent. Because a generator source's
+  `seed` (the run's `runSeed`, US-037) is part of that stored config, re-materialising it
+  (`ItemSource.materialise`) always yields the exact same items in the exact same order,
+  whether or not any engine reads `runSeed`/`index` -- a resumed run-scoped generator (n-back,
+  rules) picks up mid-stream identically to a fresh one. US-051/US-064 decide when to offer it
+  (`sessions(status: inProgress)`).
 - **Time.** Everything goes through `EngineClock`; `SystemClock` uses `Timer`s (fake-able with
   `fakeAsync`), `ManualClock.elapse()` steps time by hand in unit and widget tests.
 - **Controller.** `activitySessionControllerProvider(request)` builds the session over
@@ -642,13 +651,30 @@ runner (US-061) and every engine's renderer depend on it, exactly as they depend
 1. **Generator** (`lib/features/engines/<family>/domain/<family>_engine.dart`): subclass
    `ActivityEngine`, return `familyId` (= `TestFamily.engineType`, e.g. `memory_nback`) and
    `generatorId` (`GeneratorId.nback`), and implement
-   `generate({params, seed, difficulty})` with `Random(seed)` only: same inputs, same item.
-   Cast the typed params (`params as NbackParams`, or `switch`), give the item the id
+   `generate({params, seed, difficulty, index = 0, runSeed})` with `Random(seed)` (or
+   `Random(runSeed)`, see below) only: same inputs, same item. Cast the typed params
+   (`params as NbackParams`, or `switch`), give the item the id
    `ActivityEngine.generatedItemId(generatorId, seed)` and `origin: ItemOrigin(generatorId,
-   seed)`. Return an `McqItem` / `NumericItem` when the activity is one (dominos, viewpoint,
-   tubes); for interactive activities return a `GeneratedItem` whose `params` carry what the
-   renderer needs, or keep the stimulus in engine-owned data derived again from the seed.
-   Bank-driven engines (culture, English) skip this step: `generatorId` stays null.
+   seed, runSeed: runSeed ?? seed, index: index)`. Return an `McqItem` / `NumericItem` when
+   the activity is one (dominos, viewpoint, tubes); for interactive activities return a
+   `GeneratedItem` whose `params` carry what the renderer needs, or keep the stimulus in
+   engine-owned data derived again from the seed. Bank-driven engines (culture, English) skip
+   this step: `generatorId` stays null.
+
+   **`runSeed`/`index` (US-037).** `ItemSource.generator`'s own `seed` is the run's `runSeed`:
+   identical for every item of the run, unlike the per-item `seed` (still drawn one per item
+   from `Random(runSeed)`, still what `generatedItemId` and `ItemOrigin` key replay on for
+   simple generators). Most engines never read `runSeed`/`index` (arithmetic grid, dominos,
+   parity: every item is independent). An engine whose items depend on the run's *other* items
+   -- item k needs to know what item k-n actually showed (n-back), or every item of a run must
+   share one property drawn once (the rules engine's rule set) -- reads `runSeed` (and, for a
+   continuous stream, `index`) instead of deriving state from its own `seed` alone: recompute
+   the whole run from `Random(runSeed)` (`NbackSequence.build` in `memory_nback`) or shuffle a
+   `params` pool with `Random(runSeed)` (`StimulusRuleSet.fromRunSeed` in `attention_rules`),
+   and store `runSeed`/`index` on `origin` so the renderer and the scorer can redo the same
+   computation from the materialised item alone. A direct `generate()` call with no `runSeed`
+   (a unit test) falls back to `runSeed = seed`, `index = 0` -- the first item of its own
+   single-item run.
 2. **Scorer**: override `score(Item, Answer)` when the default (`Scorer.scoreItem`: MCQ choice,
    numeric with tolerance, sequence recall) does not apply. Return `ItemResult(correct:,
    metrics: {...})`; the metrics are summed into `SectionResult.metricTotals` for the engine's
@@ -663,7 +689,11 @@ runner (US-061) and every engine's renderer depend on it, exactly as they depend
    the touch fallback labelled non-representative when `inputRequirement == keyboard`. Do not
    run your own timers for the runtime's limits: `SessionHost` draws the countdown bars from
    `render.itemDeadline`; the cadence phases arrive through `render.phase`. Optionally override
-   `buildExample` for the briefing screen.
+   `buildExample(context, [run])` for the briefing screen; when the session's source is a
+   generator, `SessionHost` passes a `RunExampleContext` (`runSeed` + `params` of the run about
+   to play, US-037) so a renderer whose activity derives run-specific state from the run seed
+   (the rules engine's rule set) can show this run's actual briefing instead of a generic
+   stand-in. Most renderers ignore `run` and show a fixed illustration.
 4. **Register**: add the engine to `engineRegistryProvider` and the renderer to
    `rendererRegistryProvider` in `features/train/presentation/engine/engine_registry_provider.dart`
    (one line each). Tests override both providers with `FakeEngine` / `FakeRenderer`

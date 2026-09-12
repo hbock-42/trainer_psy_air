@@ -9,16 +9,20 @@ import 'package:psy_trainer/features/train/domain/engine/engine.dart';
 /// `ManualClock`, exactly as the real test's cadence works (spec §2.4-A:
 /// ~1 s stimulus, 1.5 s to answer, a missing answer is an error).
 ///
-/// With `sectionSeed = 777` and `NbackParams(count: 3, primers: 0)`,
-/// `ItemSource.generator`'s per-item draw (`Random(777)`, replicated in
-/// the story's report) yields, in order: a filler, a target, a filler —
-/// stable as long as `NbackStimulus`'s roll thresholds do not change.
+/// US-037: the run is one continuous stream derived from the section's
+/// seed (`runSeed`), so `ItemSource.generator` no longer decides each
+/// item's role independently. With `sectionSeed = 8` and
+/// `NbackParams(n: 1, count: 3)` (found by scanning seeds against
+/// `NbackSequence.build`, stable as long as the roll thresholds do not
+/// change), the run's first item is always a primer (the first `n` items
+/// are, regardless of `params.primers`) and this run continues target,
+/// filler.
 void main() {
   final start = DateTime.utc(2026, 9, 5, 9);
   const cadence = Cadence(stimulusMs: 1000, answerWindowMs: 1500);
   const engine = NbackEngine();
-  const params = NbackParams(count: 3, primers: 0);
-  const sectionSeed = 777;
+  const params = NbackParams(n: 1, count: 3);
+  const sectionSeed = 8;
 
   late ManualClock clock;
   late InMemoryProgressRepository repo;
@@ -53,13 +57,13 @@ void main() {
   ActivityRunning running(ActivitySession s) => s.state as ActivityRunning;
   ActivityFinished finished(ActivitySession s) => s.state as ActivityFinished;
 
-  test('roles of the section are filler, target, filler', () {
+  test('roles of the section are primer, target, filler', () {
     final s = session();
     final roles = [
       for (final item in s.items)
         NbackEngine.stimulusOf(item.item as GeneratedItem).role,
     ];
-    expect(roles, [NbackRole.filler, NbackRole.target, NbackRole.filler]);
+    expect(roles, [NbackRole.primer, NbackRole.target, NbackRole.filler]);
   });
 
   test('the cadence shows the stimulus then the answer phase, per item', () {
@@ -74,7 +78,7 @@ void main() {
     r = running(s);
     expect(r.phase, ItemPhase.answer);
 
-    // A correct rejection on the filler.
+    // Item 0 is a primer: any answer is scored correct.
     s.answer(NbackAnswer.no);
     r = running(s);
     expect(r.phase, ItemPhase.answered);
@@ -91,12 +95,11 @@ void main() {
     expect(r.itemStartedAt, start.add(const Duration(milliseconds: 2500)));
   });
 
-  test('a hit, a correct rejection and a missed timeout score correctly', () {
+  test('a hit, a primer and a missed timeout score correctly', () {
     final s = session();
     s.start();
 
-    // Item 0 (filler): answer "no" during the answer phase -> correct
-    // rejection.
+    // Item 0 (primer): any answer scores correct.
     clock.elapse(const Duration(milliseconds: 1200));
     s.answer(NbackAnswer.no);
     clock.elapse(const Duration(milliseconds: 1300)); // rest of the window
@@ -117,17 +120,18 @@ void main() {
     final section = f.result.section;
     expect(section.correct, 2);
     expect(section.timeouts, 1);
-    expect(section.metricTotals[NbackMetrics.correctRejections], 1);
+    expect(section.metricTotals[NbackMetrics.primers], 1);
     expect(section.metricTotals[NbackMetrics.hits], 1);
     expect(section.metricTotals[NbackMetrics.misses], 0);
     expect(section.metricTotals[NbackMetrics.falseAlarms], 0);
+    expect(section.metricTotals[NbackMetrics.correctRejections], 0);
     expect(
       nbackSensitivity(
         hits: section.metricTotals[NbackMetrics.hits]!.toInt(),
         misses: section.metricTotals[NbackMetrics.misses]!.toInt(),
         falseAlarms: section.metricTotals[NbackMetrics.falseAlarms]!.toInt(),
-        correctRejections: section.metricTotals[NbackMetrics.correctRejections]!
-            .toInt(),
+        correctRejections:
+            (section.metricTotals[NbackMetrics.correctRejections] ?? 0).toInt(),
       ),
       greaterThan(0),
     );

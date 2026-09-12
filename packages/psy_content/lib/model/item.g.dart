@@ -126,6 +126,8 @@ _ItemOrigin _$ItemOriginFromJson(Map<String, dynamic> json) =>
           (v) => $enumDecode(_$GeneratorIdEnumMap, v),
         ),
         seed: $checkedConvert('seed', (v) => (v as num).toInt()),
+        runSeed: $checkedConvert('runSeed', (v) => (v as num?)?.toInt()),
+        index: $checkedConvert('index', (v) => (v as num?)?.toInt()),
       );
       return val;
     });
@@ -134,6 +136,8 @@ Map<String, dynamic> _$ItemOriginToJson(_ItemOrigin instance) =>
     <String, dynamic>{
       'generatorId': _$GeneratorIdEnumMap[instance.generatorId]!,
       'seed': instance.seed,
+      'runSeed': ?instance.runSeed,
+      'index': ?instance.index,
     };
 
 const _$GeneratorIdEnumMap = {
