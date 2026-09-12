@@ -124,6 +124,10 @@ class ContentSeeder {
       items: [
         for (final i in bundle.items) ContentRows.item(i, seededAt: seededAt),
       ],
+      passages: [
+        for (final p in bundle.passages)
+          ContentRows.passage(p, seededAt: seededAt),
+      ],
       lessons: [
         for (final l in bundle.lessons)
           ContentRows.lesson(l, seededAt: seededAt),

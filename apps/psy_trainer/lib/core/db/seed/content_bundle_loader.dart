@@ -31,6 +31,7 @@ class LoadedContentBundle {
     required this.modules,
     required this.families,
     required this.items,
+    required this.passages,
     required this.lessons,
     required this.decks,
     required this.blueprints,
@@ -43,6 +44,12 @@ class LoadedContentBundle {
 
   /// Every published bank item of every family, bank files in path order.
   final List<Item> items;
+
+  /// Every reading passage inlined in a bank file (`ItemBank.passages`),
+  /// bank files in path order. An `McqItem.passageId` resolves into this
+  /// list (US-027); passage ids are unique across the whole bundle by
+  /// authoring convention.
+  final List<Passage> passages;
 
   /// Lessons with their markdown inlined in `body` (`file` is null).
   final List<Lesson> lessons;
@@ -153,6 +160,7 @@ class _Parser {
   final List<Module> modules = [];
   final List<TestFamily> families = [];
   final List<Item> items = [];
+  final List<Passage> passages = [];
   final List<Lesson> lessons = [];
   final List<Deck> decks = [];
   final List<ExamBlueprint> blueprints = [];
@@ -181,6 +189,7 @@ class _Parser {
       modules: modules,
       families: families,
       items: items,
+      passages: passages,
       lessons: lessons,
       decks: decks,
       blueprints: blueprints,
@@ -222,6 +231,7 @@ class _Parser {
         items.addAll(
           bank.items.where((i) => i.status == ContentStatus.published),
         );
+        passages.addAll(bank.passages);
       case 'lesson':
         final lesson = parser.lessonFromJson(decoded, file: file);
         if (lesson.status == ContentStatus.published) {

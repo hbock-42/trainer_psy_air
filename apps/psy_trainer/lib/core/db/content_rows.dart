@@ -59,6 +59,16 @@ abstract final class ContentRows {
     );
   }
 
+  static PassagesCompanion passage(
+    Passage passage, {
+    required DateTime seededAt,
+  }) => PassagesCompanion.insert(
+    id: passage.id,
+    json: passage.toJson(),
+    createdAt: seededAt,
+    updatedAt: seededAt,
+  );
+
   static LessonsCompanion lesson(Lesson lesson, {required DateTime seededAt}) =>
       LessonsCompanion.insert(
         id: lesson.id,

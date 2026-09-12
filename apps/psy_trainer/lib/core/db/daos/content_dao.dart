@@ -14,6 +14,7 @@ part 'content_dao.g.dart';
     Modules,
     Families,
     Items,
+    Passages,
     Lessons,
     Decks,
     Flashcards,
@@ -34,6 +35,7 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
     List<ModulesCompanion> modules = const [],
     List<FamiliesCompanion> families = const [],
     List<ItemsCompanion> items = const [],
+    List<PassagesCompanion> passages = const [],
     List<LessonsCompanion> lessons = const [],
     List<DecksCompanion> decks = const [],
     List<FlashcardsCompanion> flashcards = const [],
@@ -45,6 +47,7 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
         b.insertAll(this.modules, modules);
         b.insertAll(this.families, families);
         b.insertAll(this.items, items);
+        b.insertAll(this.passages, passages);
         b.insertAll(this.lessons, lessons);
         b.insertAll(this.decks, decks);
         b.insertAll(this.flashcards, flashcards);
@@ -64,6 +67,7 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
       modules,
       families,
       items,
+      passages,
       lessons,
       decks,
       flashcards,
@@ -130,6 +134,15 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
   Future<List<ItemRow>> itemsByIds(List<String> ids) => ids.isEmpty
       ? Future.value(const [])
       : (select(items)..where((t) => t.id.isIn(ids))).get();
+
+  // --- Passages --------------------------------------------------------
+
+  Future<PassageRow?> passageById(String id) =>
+      (select(passages)..where((t) => t.id.equals(id))).getSingleOrNull();
+
+  Future<List<PassageRow>> passagesByIds(List<String> ids) => ids.isEmpty
+      ? Future.value(const [])
+      : (select(passages)..where((t) => t.id.isIn(ids))).get();
 
   // --- Lessons -------------------------------------------------------------
 

@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_trainer/core/db/app_database.dart';
 import 'package:psy_trainer/core/db/open_database.dart';
@@ -9,7 +12,7 @@ void main() {
   tearDown(() => db.close());
 
   test(
-    'opens at schema version 1 with every table and index created',
+    'opens at schema version 2 with every table and index created',
     () async {
       final tables = await db
           .customSelect(
@@ -31,6 +34,7 @@ void main() {
         'lesson_progress',
         'lessons',
         'modules',
+        'passages',
         'sessions',
         'user_profile',
       ]);
@@ -56,7 +60,58 @@ void main() {
           .map((row) => row.read<int>('user_version'))
           .getSingle();
       expect(version, db.schemaVersion);
-      expect(db.schemaVersion, 1);
+      expect(db.schemaVersion, 2);
+    },
+  );
+
+  test(
+    'v2 upgrade creates `passages` on a v1 file without losing content',
+    () async {
+      final path = Directory.systemTemp
+          .createTempSync('app_database_migration_test')
+          .path;
+      final file = '$path/db.sqlite';
+      addTearDown(() => Directory(path).delete(recursive: true));
+
+      // Simulate a v1 file: create the current schema, then drop `passages`
+      // (the only table v1 lacked) and roll `user_version` back to 1.
+      final v1 = AppDatabase(NativeDatabase(File(file)));
+      await v1.customStatement('DROP TABLE passages');
+      await v1.customStatement('PRAGMA user_version = 1');
+      await v1
+          .into(v1.families)
+          .insert(
+            FamiliesCompanion.insert(
+              id: 'f1',
+              moduleId: 'psy0',
+              sortOrder: 0,
+              version: 1,
+              json: const {'kept': true},
+              createdAt: DateTime.utc(2026),
+              updatedAt: DateTime.utc(2026),
+            ),
+          );
+      await v1.close();
+
+      final upgraded = AppDatabase(NativeDatabase(File(file)));
+      addTearDown(upgraded.close);
+      final families = await upgraded.contentDao.familiesOf();
+      expect(families, hasLength(1), reason: 'user data must survive');
+      expect(families.single.json, {'kept': true});
+
+      final tables = await upgraded
+          .customSelect(
+            "SELECT name FROM sqlite_master WHERE type = 'table' "
+            "AND name = 'passages'",
+          )
+          .get();
+      expect(tables, hasLength(1));
+
+      final version = await upgraded
+          .customSelect('PRAGMA user_version')
+          .map((row) => row.read<int>('user_version'))
+          .getSingle();
+      expect(version, 2);
     },
   );
 

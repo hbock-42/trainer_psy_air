@@ -9,6 +9,7 @@ import '../../../../core/repositories/repository_providers.dart';
 import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
+import '../../../engines/english/presentation/english_passage_cache.dart';
 import '../engine/engine_registry_provider.dart';
 import 'practice_config.dart';
 import 'practice_launcher_provider.dart';
@@ -64,6 +65,7 @@ class _LauncherBody extends ConsumerWidget {
       family: family,
       config: config,
       contentRepository: ref.read(contentRepositoryProvider),
+      onPassagesLoaded: ref.read(englishPassageCacheProvider).addAll,
     );
     if (!context.mounted) return;
     unawaited(
