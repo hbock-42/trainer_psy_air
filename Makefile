@@ -1,7 +1,7 @@
 FLUTTER ?= flutter
 DART    ?= dart
 
-.PHONY: help deps gen gen-watch lint format test test-watch coverage content-check run run-macos run-web build-macos build-web clean board
+.PHONY: help deps gen gen-watch lint format test test-watch coverage content-check content-assets run run-macos run-web build-macos build-web clean board
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-12s %s\n", $$1, $$2}'
@@ -40,6 +40,9 @@ coverage: deps ## Run tests with coverage and enforce the 70 % gate on domain/da
 
 content-check: deps ## Validate the content bundle (PATHS=<files or dirs>, default assets/content)
 	$(DART) run --verbosity=error tool/validate_content.dart $(PATHS)
+
+content-assets: ## Rewrite the assets/content folder list in pubspec.yaml (US-013)
+	$(DART) run --verbosity=error tool/list_content_assets.dart --write
 
 run: deps ## Run the app on the connected device (DEVICE=<id> to pick one)
 	$(FLUTTER) run $(if $(DEVICE),-d $(DEVICE),)

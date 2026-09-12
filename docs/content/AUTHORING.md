@@ -68,6 +68,11 @@ Rules:
   `<subtag>-<nnn>.json` and start a new file when one is full. Files are seeded in
   alphabetical order, which only matters for items sharing a `passageId` (kept in file order).
 - Every JSON file starts with `"kind"` so the validator and the seeder know what it is.
+- **New folder = pubspec entry.** Flutter bundles assets per folder, so after creating a family
+  folder, a `lessons/<family>/` folder or an `items/`, `decks/`, `lexical_fields/` or `media/`
+  subfolder, run `make content-assets` (`dart run tool/list_content_assets.dart --write`) to update the list in
+  `pubspec.yaml` (`test/tool/list_content_assets_test.dart` fails otherwise; the seeder reports
+  a declared module or a lesson `.md` file it cannot find with a hint to that command).
 - Add `"$schema": "../../../../docs/content/schema/<kind>.schema.json"` at the top to get
   editor autocompletion (VS Code understands it). It is ignored by the app.
 
@@ -282,6 +287,20 @@ Lessons and decks reuse the same tags so the "Try it" button and weak-area recom
      `changelog`.
   3. One bump per PR is enough even if it touches many files. Two PRs bumping in parallel
      will conflict on the manifest — rebase and take the higher number + 1.
+
+  **Did you bump `contentVersion`?** Without the bump an installed app keeps the previous
+  content forever: the seeder (US-013) only re-reads the bundle when the manifest value is
+  greater than the one stored in its `content_meta` row, and a fresh install is the only
+  other trigger. During development, the fastest way to see a content change without bumping
+  is to delete the app's database (`psy_trainer.sqlite` in the application support folder) or
+  reinstall. Bumping while the number is *lower* than the installed one (a downgraded build)
+  does nothing either; the app keeps the newer content.
+
+  What the app stores from a bump: every published module, family, bank item, lesson (with the
+  markdown of its `file` copied into the row), deck, flashcard and blueprint. Drafts
+  (`"status": "draft"`) and lexical fields (no table yet, US-085) are validated but not stored.
+  User progress (`attempts`, `item_stats`, lesson reads...) survives every re-seed because it
+  references content by id — which is why ids are permanent.
 - **`schemaVersion`** in the manifest changes only when the Dart models change incompatibly
   (a developer bumps it in the same PR as the models, CONTRACT.md and these schemas).
 

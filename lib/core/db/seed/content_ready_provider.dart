@@ -24,6 +24,10 @@ final Provider<ContentSeeder> contentSeederProvider = Provider<ContentSeeder>(
 /// (`core/router/startup_gate.dart`) shows a splash until then and an error
 /// screen with a retry (`ref.invalidate(contentReadyProvider)`) on failure.
 ///
+/// Riverpod's automatic retry is disabled: a parse error is deterministic
+/// (a corrupt bundle) and a database error needs the user to see it; the
+/// retry button re-runs the seeder on demand instead.
+///
 /// Widget tests that pump the whole app with in-memory repositories override
 /// it with `contentReadyOverride()` (`test/helpers/content_ready_fakes.dart`).
 final FutureProvider<SeedResult> contentReadyProvider =
@@ -31,4 +35,4 @@ final FutureProvider<SeedResult> contentReadyProvider =
       final result = await ref.watch(contentSeederProvider).seedIfNeeded();
       developer.log('$result', name: 'psy_trainer.content');
       return result;
-    });
+    }, retry: (retryCount, error) => null);

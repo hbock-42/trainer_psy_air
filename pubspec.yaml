@@ -94,9 +94,9 @@ flutter:
     - assets/content/psy0/blueprints/
     - assets/content/psy0/culture_aero/
     - assets/content/psy0/english/
+    - assets/content/psy0/english/items/
     - assets/content/psy0/english_listening/
     - assets/content/psy0/english_speaking/
-    - assets/content/psy0/english/items/
     - assets/content/psy0/lessons/
     - assets/content/psy0/lessons/arithmetic_grid/
     - assets/content/psy0/lessons/attention_airways/
