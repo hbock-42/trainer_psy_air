@@ -857,6 +857,18 @@ abstract final class AppStrings {
       'Solution : emplacement de chaque pièce.';
   static const String overlayGridExampleCaption =
       'Glissez les pièces sur la grille centrale pour reproduire la cible.';
+  // Word boxes / Boîte à mots (US-030).
+  static String wordBoxesErrorCount(int errors) =>
+      errors == 0 ? 'Aucune erreur' : '$errors erreur${errors > 1 ? 's' : ''}';
+  static const String wordBoxesEmptyBox = '—';
+  static String wordBoxesBoxSemantics(int boxNumber, String label) =>
+      'Boîte $boxNumber : $label';
+  static String wordBoxesResultSummary(int errors, int wordCount) => errors == 0
+      ? 'Série réussie sans erreur ($wordCount mots)'
+      : '$errors erreur${errors > 1 ? 's' : ''} sur $wordCount mots';
+  static const String wordBoxesMissedTitle = 'Mots mal classés';
+  static String wordBoxesMissedWord(String word, String fieldName) =>
+      '$word → $fieldName';
   // spatial_cubes (US-025): cube-net renderer.
   static const String cubeNetReferenceLabel = 'Patron de référence';
   static const String cubeNetTargetLabel = 'Patron à compléter';

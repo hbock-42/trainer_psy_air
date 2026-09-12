@@ -19,6 +19,7 @@ part 'content_dao.g.dart';
     Decks,
     Flashcards,
     Blueprints,
+    LexicalFields,
   ],
 )
 class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
@@ -40,6 +41,7 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
     List<DecksCompanion> decks = const [],
     List<FlashcardsCompanion> flashcards = const [],
     List<BlueprintsCompanion> blueprints = const [],
+    List<LexicalFieldsCompanion> lexicalFields = const [],
   }) {
     return transaction(() async {
       await clearContent();
@@ -52,6 +54,7 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
         b.insertAll(this.decks, decks);
         b.insertAll(this.flashcards, flashcards);
         b.insertAll(this.blueprints, blueprints);
+        b.insertAll(this.lexicalFields, lexicalFields);
         b.insert(
           contentMetaTable,
           meta.copyWith(id: const Value(ContentMetaTable.singletonId)),
@@ -72,6 +75,7 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
       decks,
       flashcards,
       blueprints,
+      lexicalFields,
     ];
     for (final table in tables) {
       await delete(table).go();
@@ -206,4 +210,16 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
 
   Future<BlueprintRow?> blueprintById(String id) =>
       (select(blueprints)..where((t) => t.id.equals(id))).getSingleOrNull();
+
+  // --- Lexical fields --------------------------------------------------
+
+  Future<List<LexicalFieldRow>> lexicalFieldsOf({String? familyId}) {
+    final query = select(lexicalFields)
+      ..orderBy([(t) => OrderingTerm.asc(t.id)]);
+    if (familyId != null) query.where((t) => t.familyId.equals(familyId));
+    return query.get();
+  }
+
+  Future<LexicalFieldRow?> lexicalFieldById(String id) =>
+      (select(lexicalFields)..where((t) => t.id.equals(id))).getSingleOrNull();
 }
