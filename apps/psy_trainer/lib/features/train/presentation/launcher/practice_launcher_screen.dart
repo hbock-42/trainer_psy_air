@@ -9,6 +9,7 @@ import '../../../../core/repositories/repository_providers.dart';
 import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
+import '../../../engines/english/presentation/english_passage_cache.dart';
 import '../../domain/engine/timing_policy.dart';
 import '../../domain/mistakes/mistake_pool.dart';
 import '../../domain/mistakes/mistake_session_builder.dart';
@@ -67,6 +68,7 @@ class _LauncherBody extends ConsumerWidget {
       family: family,
       config: config,
       contentRepository: ref.read(contentRepositoryProvider),
+      onPassagesLoaded: ref.read(englishPassageCacheProvider).addAll,
     );
     if (!context.mounted) return;
     unawaited(
@@ -89,6 +91,7 @@ class _LauncherBody extends ConsumerWidget {
       contentRepository: ref.read(contentRepositoryProvider),
       timing: TimingPolicy.forPractice(family, timed: config.timed),
       title: family.name,
+      onPassagesLoaded: ref.read(englishPassageCacheProvider).addAll,
     );
     if (!context.mounted) return;
     unawaited(

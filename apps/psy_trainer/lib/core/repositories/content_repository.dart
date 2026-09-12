@@ -42,6 +42,15 @@ abstract interface class ContentRepository {
   /// Items for the given ids, in the order of [ids]; unknown ids are skipped.
   Future<List<Item>> itemsByIds(Iterable<String> ids);
 
+  /// The reading passage an `McqItem.passageId` points to (US-027), or null
+  /// when unknown.
+  Future<Passage?> passage(String id);
+
+  /// Passages for the given ids, in the order of [ids]; unknown ids are
+  /// skipped. Used to preload every passage a sampled set of bank items
+  /// references, since a `PassageResolver` is synchronous.
+  Future<List<Passage>> passagesByIds(Iterable<String> ids);
+
   /// Lessons ordered by `order`, optionally filtered by module and/or family.
   /// Passing `familyId: ''` is not supported; use null for "any".
   Future<List<Lesson>> lessons({ModuleId? moduleId, String? familyId});

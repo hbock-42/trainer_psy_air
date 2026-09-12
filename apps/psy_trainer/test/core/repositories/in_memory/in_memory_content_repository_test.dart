@@ -16,6 +16,7 @@ void main() {
         modules: content.modules,
         families: content.families,
         items: content.items,
+        passages: content.passages,
         lessons: content.lessons,
         decks: content.decks,
         blueprints: content.blueprints,

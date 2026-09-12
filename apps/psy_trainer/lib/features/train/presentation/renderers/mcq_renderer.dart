@@ -30,13 +30,24 @@ typedef PassageResolver = Passage? Function(String passageId);
 /// [SkipAnswer]. Keyboard: digits 1-6 pick an option, Enter validates in exam
 /// mode.
 class McqRenderer extends ActivityRenderer {
-  const McqRenderer({required this.familyId, this.passageResolver});
+  const McqRenderer({
+    required this.familyId,
+    this.passageResolver,
+    this.explanationFooter,
+  });
 
   @override
   final String familyId;
 
   /// See [PassageResolver]; null when this family never uses passages.
   final PassageResolver? passageResolver;
+
+  /// Optional extra line appended under the explanation, e.g.
+  /// `culture_aero`'s "Donnée valable au `<date>`" for a perishable fact
+  /// (`McqItem.validAsOf`, see `features/engines/culture_aero`). Returns
+  /// null to omit it; kept generic so any bank-driven family reusing this
+  /// renderer can supply its own.
+  final String? Function(McqItem item)? explanationFooter;
 
   @override
   Widget build(BuildContext context, ActivityRenderContext render) {
@@ -45,6 +56,7 @@ class McqRenderer extends ActivityRenderer {
       item: render.item as McqItem,
       render: render,
       passageResolver: passageResolver,
+      explanationFooter: explanationFooter,
     );
   }
 
@@ -61,12 +73,14 @@ class _McqView extends StatefulWidget {
     required this.item,
     required this.render,
     required this.passageResolver,
+    required this.explanationFooter,
     super.key,
   });
 
   final McqItem item;
   final ActivityRenderContext render;
   final PassageResolver? passageResolver;
+  final String? Function(McqItem item)? explanationFooter;
 
   @override
   State<_McqView> createState() => _McqViewState();
@@ -220,7 +234,10 @@ class _McqViewState extends State<_McqView> {
                   ],
                   if (_answered) ...[
                     SizedBox(height: theme.spacing.lg),
-                    _Explanation(text: item.explanation.resolve(locale)),
+                    _Explanation(
+                      text: item.explanation.resolve(locale),
+                      footer: widget.explanationFooter?.call(item),
+                    ),
                   ],
                 ],
               ),
@@ -312,13 +329,17 @@ class _MediaPlaceholder extends StatelessWidget {
 }
 
 class _Explanation extends StatelessWidget {
-  const _Explanation({required this.text});
+  const _Explanation({required this.text, this.footer});
 
   final String text;
+
+  /// See [McqRenderer.explanationFooter]; null omits the row.
+  final String? footer;
 
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
+    final footer = this.footer;
     return AppCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -329,6 +350,10 @@ class _Explanation extends StatelessWidget {
           ),
           SizedBox(height: theme.spacing.xs),
           MarkdownView(text),
+          if (footer != null) ...[
+            SizedBox(height: theme.spacing.xs),
+            Text(footer, style: theme.textStyles.caption),
+          ],
         ],
       ),
     );

@@ -14,17 +14,34 @@ import 'mistake_pool.dart';
 /// without the engine at build time (`ActivitySession` materialises it when
 /// the session starts, as it does for any other source).
 ///
+/// [onPassagesLoaded], if given, is called with every distinct `Passage` the
+/// bank items reference (`english`, US-027: its `McqRenderer` reads passages
+/// synchronously from a cache the launcher must preload first — see
+/// `PassagesLoaded` in `practice_session_builder.dart`, the equivalent hook
+/// for a fresh session).
+///
 /// [pool] is entirely bank or entirely generated in practice — one practice
 /// session plays one family, and a family is entirely bank-driven or
 /// entirely generator-driven (ARCHITECTURE.md "Engine" step 5) — but bank
 /// entries win if a pool ever mixes both.
 Future<ItemSource> itemSourceOfMistakes(
   MistakePool pool,
-  ContentRepository contentRepository,
-) async {
+  ContentRepository contentRepository, {
+  void Function(List<Passage> passages)? onPassagesLoaded,
+}) async {
   final bankIds = pool.bankItemIds;
   if (bankIds.isNotEmpty) {
-    return ItemSource.bank(await contentRepository.itemsByIds(bankIds));
+    final items = await contentRepository.itemsByIds(bankIds);
+    if (onPassagesLoaded != null) {
+      final passageIds = {
+        for (final item in items)
+          if (item is McqItem && item.passageId != null) item.passageId!,
+      };
+      if (passageIds.isNotEmpty) {
+        onPassagesLoaded(await contentRepository.passagesByIds(passageIds));
+      }
+    }
+    return ItemSource.bank(items);
   }
   return ItemSource.replay(pool.generatedOrigins);
 }
@@ -41,8 +58,13 @@ Future<ActivitySessionConfig> buildMistakeSessionConfig({
   required ContentRepository contentRepository,
   TimingPolicy timing = TimingPolicy.none,
   LocalizedText? title,
+  void Function(List<Passage> passages)? onPassagesLoaded,
 }) async {
-  final source = await itemSourceOfMistakes(pool, contentRepository);
+  final source = await itemSourceOfMistakes(
+    pool,
+    contentRepository,
+    onPassagesLoaded: onPassagesLoaded,
+  );
   return ActivitySessionConfig(
     familyId: familyId,
     mode: SessionMode.practice,
