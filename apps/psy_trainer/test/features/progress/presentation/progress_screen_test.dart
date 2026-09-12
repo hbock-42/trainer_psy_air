@@ -16,7 +16,8 @@ import 'package:psy_trainer/features/progress/presentation/widgets/family_levels
 import 'package:psy_trainer/features/progress/presentation/widgets/progress_empty_state.dart';
 import 'package:psy_trainer/features/progress/presentation/widgets/readiness_card.dart';
 import 'package:psy_trainer/features/progress/presentation/widgets/recent_activity_list.dart';
-import 'package:psy_trainer/features/progress/presentation/widgets/weak_areas_preview.dart';
+import 'package:psy_trainer/features/progress/presentation/widgets/train_next_card.dart';
+import 'package:psy_trainer/features/train/presentation/launcher/practice_launcher_screen.dart';
 import 'package:psy_trainer/features/train/presentation/train_screen.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
 
@@ -222,7 +223,7 @@ void main() {
     expect(find.text(AppStrings.recentActivityNone), findsOneWidget);
   });
 
-  testWidgets('weak areas list the weakest families with a train action', (
+  testWidgets('train next lists the weakest families with a train action', (
     tester,
   ) async {
     await fixture.practice('arithmetic_grid', daysAgo: 3, correct: 10);
@@ -230,31 +231,38 @@ void main() {
     await fixture.practice('memory_nback', daysAgo: 1, correct: 2);
     await pumpScreen(tester);
 
-    final preview = find.byType(WeakAreasPreview);
-    expect(preview, findsOneWidget);
-    expect(find.text(AppStrings.weakAreasNone), findsNothing);
+    final card = find.byType(TrainNextCard);
+    expect(card, findsOneWidget);
+    expect(find.text(AppStrings.trainNextEmpty), findsNothing);
     final buttons = find.descendant(
-      of: preview,
-      matching: find.widgetWithText(SecondaryButton, AppStrings.weakAreaTrain),
+      of: card,
+      matching: find.widgetWithText(
+        SecondaryButton,
+        AppStrings.trainNextActionFamily,
+      ),
     );
     expect(buttons, findsNWidgets(2));
-    // Weakest first, full family names.
+    // Weakest first, full family names, an FR reason built from the data.
     final nback = tester.getTopLeft(find.text('Mémoire n-back'));
     final dominos = tester.getTopLeft(find.text('Dominos').last);
     expect(nback.dy, lessThan(dominos.dy));
-    expect(find.text(AppStrings.weakAreaDetail(20, 10)), findsOneWidget);
-    expect(find.text(AppStrings.weakReasonLowAccuracy), findsNWidgets(2));
+    expect(
+      find.textContaining('précision 20 % sur Mémoire n-back'),
+      findsOneWidget,
+    );
+    expect(find.textContaining('précision 50 % sur Dominos'), findsOneWidget);
   });
 
-  testWidgets('strong families show the "nothing to report" caption', (
+  testWidgets('strong families show the "nothing to recommend" caption', (
     tester,
   ) async {
     await seedThreeFamilies();
     await fixture.practice('memory_nback', daysAgo: 0, correct: 10);
     await fixture.practice('memory_nback', daysAgo: 0, correct: 10);
     await pumpScreen(tester);
-    // memory_nback: 23/30 = 0.77 > 0.6 and the 30-day trend is up.
-    expect(find.text(AppStrings.weakAreasNone), findsOneWidget);
+    // memory_nback: 23/30 = 0.77 > 0.6 and the 30-day trend is up: no weak
+    // area, and readiness is not high enough yet to suggest a simulation.
+    expect(find.text(AppStrings.trainNextEmpty), findsOneWidget);
     expect(find.text(AppStrings.readinessTrendUp), findsOneWidget);
   });
 
@@ -377,7 +385,7 @@ void main() {
       expect(find.byType(TrainScreen), findsOneWidget);
     });
 
-    testWidgets('a weak area "train" action opens the Train tab', (
+    testWidgets('a "train next" family action opens its practice launcher', (
       tester,
     ) async {
       await tester.binding.setSurfaceSize(const Size(800, 2400));
@@ -386,12 +394,12 @@ void main() {
       await pumpTheApp(tester);
       final button = find.widgetWithText(
         SecondaryButton,
-        AppStrings.weakAreaTrain,
+        AppStrings.trainNextActionFamily,
       );
       expect(button, findsOneWidget);
       await tester.tap(button);
       await tester.pumpAndSettle();
-      expect(find.byType(TrainScreen), findsOneWidget);
+      expect(find.byType(PracticeLauncherScreen), findsOneWidget);
     });
 
     testWidgets('a family chip opens its score-over-time page in the tab', (

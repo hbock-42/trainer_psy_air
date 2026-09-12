@@ -416,6 +416,19 @@ abstract final class AppStrings {
   static const String weakReasonNegativeTrend = 'en baisse';
   static String weakAreaDetail(int accuracyPercent, int attempts) =>
       '$accuracyPercent % de réussite sur $attempts réponses';
+
+  // "Train next" (US-072): TrainNextCard replaces WeakAreasPreview.
+  static const String trainNextTitle = 'À faire ensuite';
+  static const String trainNextSubtitle =
+      'Ce qui fera le plus progresser ta préparation';
+  static const String trainNextEmpty =
+      'Rien à recommander pour le moment : continue à t\'entraîner '
+      'régulièrement.';
+  static const String trainNextActionFamily = 'S\'entraîner';
+  static const String trainNextActionExam = 'Simuler l\'examen';
+  static const String trainNextActionLesson = 'Lire la leçon';
+  static const String trainNextActionFlashcards = 'Réviser';
+
   static const String recentActivityTitle = 'Activité récente';
   static const String recentActivitySubtitle = 'Exercices et simulations';
   static const String recentActivityNone = 'Aucune session terminée.';
