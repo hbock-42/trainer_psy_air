@@ -46,6 +46,7 @@ void main() {
           params: generatorParamsToJson(
             const GeneratorParams.dominos(length: 5),
           ),
+          difficulty: 4,
         ),
       );
     });
@@ -105,6 +106,40 @@ void main() {
   test('a bank source round-trips through JSON', () {
     final source = ItemSource.bank(fakeBank(2));
     expect(ItemSource.fromJson(source.toJson()), source);
+  });
+
+  group('ReplaySource', () {
+    test('reproduces the same item as the original generation', () {
+      final generated = const ItemSource.generator(
+        generatorId: GeneratorId.dominos,
+        seed: 99,
+        params: GeneratorParams.dominos(),
+        count: 3,
+        difficulty: DifficultyRange(min: 2, max: 4),
+      ).materialise(engine);
+
+      final origins = [for (final s in generated) s.origin!];
+      final replayed = ItemSource.replay(origins).materialise(engine);
+
+      expect(replayed.map((s) => s.item), generated.map((s) => s.item));
+      expect(replayed.map((s) => s.origin), origins);
+      expect(replayed.every((s) => s.isGenerated), isTrue);
+    });
+
+    test('itemCount is the number of origins', () {
+      const source = ItemSource.replay([
+        AttemptOrigin(generatorId: 'dominos', seed: 1),
+        AttemptOrigin(generatorId: 'dominos', seed: 2),
+      ]);
+      expect(source.itemCount, 2);
+    });
+
+    test('rejects an origin for a different generator', () {
+      const source = ItemSource.replay([
+        AttemptOrigin(generatorId: 'nback', seed: 1),
+      ]);
+      expect(() => source.materialise(engine), throwsArgumentError);
+    });
   });
 
   test('SessionItem requires exactly one of itemId / origin', () {

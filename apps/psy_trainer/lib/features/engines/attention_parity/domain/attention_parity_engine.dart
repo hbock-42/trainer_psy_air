@@ -28,6 +28,8 @@ class AttentionParityEngine extends ActivityEngine {
     required GeneratorParams params,
     required int seed,
     required int difficulty,
+    int index = 0,
+    int? runSeed,
   }) {
     final typed = params as ParitySequenceParams;
     return GeneratedItem(

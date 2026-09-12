@@ -18,7 +18,11 @@ void main() {
   late List<SessionResult> finished;
 
   const params = StimulusResponseParams();
-  final ruleSet = StimulusRuleSet.fromParams(params);
+  // US-037: the run's actual rule set is derived from the run seed, not
+  // straight from `params` (see `StimulusRuleSet.fromRunSeed`); every
+  // config below plays `seed: 1`, so this is the rule the briefing and
+  // the run itself must agree on.
+  final ruleSet = StimulusRuleSet.fromRunSeed(1, params);
 
   setUp(() {
     clock = ManualClock(start);
@@ -58,16 +62,16 @@ void main() {
         ],
       );
 
-  testWidgets('the briefing shows the canonical rule example, not repeated '
+  testWidgets('the briefing shows this run\'s actual rule, not repeated '
       'again during the run', (tester) async {
     await pumpHost(tester, ActivitySessionRequest.fresh(config()));
     expect(
       find.text(
         AppStrings.attentionRulesExampleFilled(
-          StimulusShape.square,
-          'n',
-          StimulusShape.triangle,
-          'x',
+          ruleSet.shapeA,
+          ruleSet.keyA,
+          ruleSet.shapeB,
+          ruleSet.keyB,
         ),
       ),
       findsOneWidget,
@@ -75,10 +79,10 @@ void main() {
     expect(
       find.text(
         AppStrings.attentionRulesExampleEmpty(
-          StimulusColour.blue,
-          'n',
-          StimulusColour.orange,
-          'x',
+          ruleSet.colourA,
+          ruleSet.keyA,
+          ruleSet.colourB,
+          ruleSet.keyB,
         ),
       ),
       findsOneWidget,
@@ -90,10 +94,10 @@ void main() {
     expect(
       find.text(
         AppStrings.attentionRulesExampleFilled(
-          StimulusShape.square,
-          'n',
-          StimulusShape.triangle,
-          'x',
+          ruleSet.shapeA,
+          ruleSet.keyA,
+          ruleSet.shapeB,
+          ruleSet.keyB,
         ),
       ),
       findsNothing,

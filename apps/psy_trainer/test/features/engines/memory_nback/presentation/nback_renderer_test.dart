@@ -28,6 +28,7 @@ void main() {
     required NbackParams params,
     SessionMode mode = SessionMode.practice,
     TimingPolicy timing = TimingPolicy.none,
+    int count = 1,
   }) => ActivitySessionConfig(
     familyId: 'memory_nback',
     mode: mode,
@@ -35,7 +36,7 @@ void main() {
       generatorId: GeneratorId.nback,
       seed: seed,
       params: params,
-      count: 1,
+      count: count,
     ),
     timing: timing,
   );
@@ -59,19 +60,38 @@ void main() {
     ],
   );
 
-  // sectionSeed 2 with `NbackParams(count: 1, primers: 0)` decodes to a
-  // single target stimulus (see the story's report for how this was found).
+  // US-037: the first `n` items of any run are primers (there is no real
+  // n-back reference yet), so a run needs at least 2 items to reach a real
+  // target/lure/filler. `runSeed = 0` with `NbackParams(n: 1, count: 2)`
+  // decodes to [primer, target] (found by scanning seeds against
+  // `NbackSequence.build`, stable as long as the roll thresholds do not
+  // change).
   NbackParams targetParams({
     NbackStimulusKind kind = NbackStimulusKind.colour,
-  }) => NbackParams(count: 1, primers: 0, stimulusKind: kind);
-  const targetSeed = 2;
+  }) => NbackParams(n: 1, count: 2, stimulusKind: kind);
+  const targetSeed = 0;
+
+  /// Answers the practice-mode primer (item 0, always correct whatever the
+  /// answer) and moves past its feedback, so the test can then interact
+  /// with item 1, the run's real target.
+  Future<void> answerPrimer(WidgetTester tester) async {
+    expect(find.byKey(NbackRenderer.primerLabelKey), findsOneWidget);
+    await tester.tap(find.byKey(NbackRenderer.noKey));
+    await tester.pump();
+    await tester.tap(find.byKey(SessionHost.nextKey));
+    await tester.pump();
+  }
 
   testWidgets('tapping Yes on a target answers a hit and is correct', (
     tester,
   ) async {
-    await pumpHost(tester, config(seed: targetSeed, params: targetParams()));
+    await pumpHost(
+      tester,
+      config(seed: targetSeed, params: targetParams(), count: 2),
+    );
     await tester.tap(find.byKey(SessionHost.startKey));
     await tester.pump();
+    await answerPrimer(tester);
 
     expect(find.byKey(NbackRenderer.stimulusKey), findsOneWidget);
     await tester.tap(find.byKey(NbackRenderer.yesKey));
@@ -81,14 +101,18 @@ void main() {
     await tester.tap(find.byKey(SessionHost.nextKey));
     await tester.pump();
 
-    expect(finished.single.section.correct, 1);
+    expect(finished.single.section.correct, 2);
     expect(finished.single.section.metricTotals['nbackHits'], 1);
   });
 
   testWidgets('the Y key answers yes, exactly like the button', (tester) async {
-    await pumpHost(tester, config(seed: targetSeed, params: targetParams()));
+    await pumpHost(
+      tester,
+      config(seed: targetSeed, params: targetParams(), count: 2),
+    );
     await tester.tap(find.byKey(SessionHost.startKey));
     await tester.pump();
+    await answerPrimer(tester);
 
     await tester.sendKeyEvent(LogicalKeyboardKey.keyY);
     await tester.pump();
@@ -99,9 +123,13 @@ void main() {
   testWidgets('the left arrow answers no, exactly like the button', (
     tester,
   ) async {
-    await pumpHost(tester, config(seed: targetSeed, params: targetParams()));
+    await pumpHost(
+      tester,
+      config(seed: targetSeed, params: targetParams(), count: 2),
+    );
     await tester.tap(find.byKey(SessionHost.startKey));
     await tester.pump();
+    await answerPrimer(tester);
 
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowLeft);
     await tester.pump();

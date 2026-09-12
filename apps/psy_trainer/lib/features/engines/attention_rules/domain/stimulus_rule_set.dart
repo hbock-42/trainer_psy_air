@@ -32,11 +32,14 @@ class StimulusTrial {
   final String correctKey;
 
   /// Re-derives the trial [item] (a `GeneratedItem` of `attention_rules`)
-  /// stands for, from its own `seed`/`params` -- the renderer and the
-  /// scorer both call this instead of the item carrying extra fields (see
-  /// [StimulusRuleSet]).
+  /// stands for, from its own `origin.runSeed`/`params`/`seed` -- the
+  /// renderer and the scorer both call this instead of the item carrying
+  /// extra fields (see [StimulusRuleSet]). Falls back to `runSeed = seed`
+  /// when `origin` carries none (a direct `generate()` call with no
+  /// `runSeed`, e.g. a unit test).
   factory StimulusTrial.forItem(GeneratedItem item) =>
-      StimulusRuleSet.fromParams(
+      StimulusRuleSet.fromRunSeed(
+        item.origin?.runSeed ?? item.seed,
         item.params as StimulusResponseParams,
       ).trial(item.seed);
 }
@@ -46,27 +49,23 @@ class StimulusTrial {
 /// colour decides the key* (`colourA` -> `keyA`, `colourB` -> `keyB`). 2
 /// conditions x 2 outcomes -> 2 keys, exactly as briefed to the candidate.
 ///
-/// **Convention (why this is not seeded by the per-item `seed`).**
-/// `ItemSource.generator` (`item_source.dart`) draws one independent
-/// `itemSeed` per stimulus from the run's seed before calling
-/// `ActivityEngine.generate` (`params`, that `itemSeed`, `difficulty`); nothing
-/// ties one item's `itemSeed` to another's, so nothing derived from it can be
-/// shared across the run. The one value every call *does* share is `params`
-/// itself (the same `StimulusResponseParams` instance for every item), so
-/// [StimulusRuleSet.fromParams] derives the rule from `params` alone --
-/// `shapes[0]`/`colours[0]` always pair with `keys[0]`, `shapes[1]`/`colours[1]`
-/// with `keys[1]` -- which trivially makes it identical for every item of a
-/// run (and matches the family's own briefing example: filled square -> N,
-/// filled triangle -> X, empty blue -> N, empty orange -> X). "Shapes,
-/// colours and keys randomised per run" is then simply a property of the
-/// `params` the caller builds the run's `GeneratorSource` with (a different
-/// order, or a longer `shapes`/`colours` pool `ruleDepth` also draws
-/// distractors from) -- this class only ever reacts to `params`, so any such
-/// variation flows straight through. Each item's own `seed` is reserved for
-/// what *is* legitimately per-item: which of the 4 rule branches (and which
-/// irrelevant shape/colour, for visual variety) this one trial flashes, kept
-/// balanced across the run by drawing every branch with equal probability
-/// (see [trial]).
+/// **Derivation (US-037).** The runtime now passes every engine a `runSeed`
+/// identical for the whole run (`ActivityEngine.generate`'s `runSeed`
+/// parameter, from `ItemSource.generator`), so the rule set can finally be
+/// randomised *per run* while staying identical across every item of that
+/// run: [StimulusRuleSet.fromRunSeed] shuffles the `shapes`/`colours`/`keys`
+/// pools with `Random(runSeed)` before pairing them up, so two runs with the
+/// same `params` get different (but each internally stable) rules.
+/// [StimulusRuleSet.fromParams] keeps the older, unshuffled pairing
+/// (`shapes[0]`/`colours[0]` with `keys[0]`, etc., matching the family's
+/// own briefing example: filled square -> N, filled triangle -> X, empty
+/// blue -> N, empty orange -> X) as the canonical stand-in
+/// `AttentionRulesRenderer.buildExample` falls back to when it has no run
+/// to describe yet (no session started, a catalogue screen). Each item's
+/// own `seed` is reserved for what *is* legitimately per-item: which of the
+/// 4 rule branches (and which irrelevant shape/colour, for visual variety)
+/// this one trial flashes, kept balanced across the run by drawing every
+/// branch with equal probability (see [trial]).
 class StimulusRuleSet {
   StimulusRuleSet._({
     required this.shapeA,
@@ -79,29 +78,60 @@ class StimulusRuleSet {
     required this.distractorColours,
   });
 
-  /// Derives the run's rule set from `params` alone -- see the class doc.
-  factory StimulusRuleSet.fromParams(StimulusResponseParams params) {
-    final shapes = params.shapes.length >= 2
-        ? params.shapes
+  /// The canonical, unshuffled rule set for `params` -- see the class doc.
+  /// Used as the briefing's fallback illustration when no run is known.
+  factory StimulusRuleSet.fromParams(StimulusResponseParams params) => _build(
+    shapes: params.shapes,
+    colours: params.colours,
+    keys: params.keys,
+    ruleDepth: params.ruleDepth,
+  );
+
+  /// The run's actual rule set (US-037): the `shapes`/`colours`/`keys`
+  /// pools of `params` are shuffled with `Random(runSeed)` before pairing,
+  /// so the mapping varies run to run while staying fixed within one run
+  /// (every item of the run calls this with the same `runSeed`).
+  factory StimulusRuleSet.fromRunSeed(
+    int runSeed,
+    StimulusResponseParams params,
+  ) {
+    final rng = Random(runSeed);
+    final shapes = List<StimulusShape>.of(params.shapes)..shuffle(rng);
+    final colours = List<StimulusColour>.of(params.colours)..shuffle(rng);
+    final keys = List<String>.of(params.keys)..shuffle(rng);
+    return _build(
+      shapes: shapes,
+      colours: colours,
+      keys: keys,
+      ruleDepth: params.ruleDepth,
+    );
+  }
+
+  static StimulusRuleSet _build({
+    required List<StimulusShape> shapes,
+    required List<StimulusColour> colours,
+    required List<String> keys,
+    required int ruleDepth,
+  }) {
+    final effectiveShapes = shapes.length >= 2
+        ? shapes
         : const <StimulusShape>[StimulusShape.square, StimulusShape.triangle];
-    final colours = params.colours.length >= 2
-        ? params.colours
+    final effectiveColours = colours.length >= 2
+        ? colours
         : const <StimulusColour>[StimulusColour.blue, StimulusColour.orange];
-    final keys = params.keys.length >= 2
-        ? params.keys
-        : const <String>['n', 'x'];
-    final extraShapes = shapes.length > 2
-        ? shapes.sublist(2)
+    final effectiveKeys = keys.length >= 2 ? keys : const <String>['n', 'x'];
+    final extraShapes = effectiveShapes.length > 2
+        ? effectiveShapes.sublist(2)
         : const <StimulusShape>[];
-    final extraColours = colours.length > 2
-        ? colours.sublist(2)
+    final extraColours = effectiveColours.length > 2
+        ? effectiveColours.sublist(2)
         : const <StimulusColour>[];
 
     // ruleDepth (>= 2) raises complexity by adding distractor shapes/colours
     // -- visual noise on whichever attribute the current condition ignores
     // -- never extra rule branches: the real test always keys 2 conditions x
     // 2 outcomes to 2 keys (spec §2.4-C).
-    final extra = (params.ruleDepth - 2).clamp(
+    final extra = (ruleDepth - 2).clamp(
       0,
       extraShapes.length > extraColours.length
           ? extraShapes.length
@@ -109,12 +139,12 @@ class StimulusRuleSet {
     );
 
     return StimulusRuleSet._(
-      shapeA: shapes[0],
-      shapeB: shapes[1],
-      colourA: colours[0],
-      colourB: colours[1],
-      keyA: keys[0],
-      keyB: keys[1],
+      shapeA: effectiveShapes[0],
+      shapeB: effectiveShapes[1],
+      colourA: effectiveColours[0],
+      colourB: effectiveColours[1],
+      keyA: effectiveKeys[0],
+      keyB: effectiveKeys[1],
       distractorShapes: extraShapes.take(extra).toList(),
       distractorColours: extraColours.take(extra).toList(),
     );

@@ -15,6 +15,10 @@ _AttemptOrigin _$AttemptOriginFromJson(Map<String, dynamic> json) =>
           'params',
           (v) => v as Map<String, dynamic>? ?? const <String, Object?>{},
         ),
+        difficulty: $checkedConvert(
+          'difficulty',
+          (v) => (v as num?)?.toInt() ?? 3,
+        ),
       );
       return val;
     });
@@ -24,4 +28,5 @@ Map<String, dynamic> _$AttemptOriginToJson(_AttemptOrigin instance) =>
       'generatorId': instance.generatorId,
       'seed': instance.seed,
       'params': instance.params,
+      'difficulty': instance.difficulty,
     };

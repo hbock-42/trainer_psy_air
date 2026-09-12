@@ -60,6 +60,23 @@ class ActivityRenderContext {
 typedef ActivityWidgetBuilder =
     Widget Function(BuildContext context, ActivityRenderContext render);
 
+/// The run [ActivityRenderer.buildExample] is briefing for, when the
+/// session's source is a generator (US-037): its `runSeed` (identical for
+/// every item that will play) and `params`, so a renderer whose activity
+/// derives run-specific state from the run seed (the rules engine's rule
+/// set) can show this run's actual briefing instead of a generic stand-in.
+/// Null on a bank source, or when the caller (a test, a catalogue screen)
+/// has no run to describe yet.
+class RunExampleContext {
+  const RunExampleContext({required this.runSeed, required this.params});
+
+  /// The run's seed (`GeneratorSource.seed`), shared by every item.
+  final int runSeed;
+
+  /// The run's generator params (`GeneratorSource.params`).
+  final GeneratorParams params;
+}
+
 /// The widget half of an activity: one per family, registered in
 /// `rendererRegistryProvider` next to its `ActivityEngine`.
 ///
@@ -77,8 +94,11 @@ abstract class ActivityRenderer {
   Widget build(BuildContext context, ActivityRenderContext render);
 
   /// Optional worked example shown on the briefing screen; null shows the
-  /// briefing text only.
-  Widget? buildExample(BuildContext context) => null;
+  /// briefing text only. [run] is the run about to play when the source is
+  /// a generator (see [RunExampleContext]); most renderers ignore it and
+  /// show a fixed illustration, but one whose rule set is derived from the
+  /// run seed (`attention_rules`) uses it to show this run's actual rule.
+  Widget? buildExample(BuildContext context, [RunExampleContext? run]) => null;
 }
 
 /// [ActivityRenderer] over a plain function, for tests and trivial
@@ -101,7 +121,8 @@ class FunctionRenderer extends ActivityRenderer {
       _builder(context, render);
 
   @override
-  Widget? buildExample(BuildContext context) => _example?.call(context);
+  Widget? buildExample(BuildContext context, [RunExampleContext? run]) =>
+      _example?.call(context);
 }
 
 /// Raised when a session runs a family nobody registered a renderer for.

@@ -41,7 +41,7 @@ class AttentionParityRenderer extends ActivityRenderer {
   }
 
   @override
-  Widget? buildExample(BuildContext context) {
+  Widget? buildExample(BuildContext context, [RunExampleContext? run]) {
     const layout = ParityLayout(
       numbers: [
         ParityNumber(value: 2, x: 0.2, y: 0.25),

@@ -158,6 +158,22 @@ class InMemoryProgressRepository implements ProgressRepository {
       attempts.where((a) => a.sessionId == sessionId).toList()
         ..sort((a, b) => a.position.compareTo(b.position));
 
+  @override
+  Future<List<Attempt>> attemptsForFamily({
+    required String familyId,
+    DateTime? from,
+    DateTime? to,
+  }) async =>
+      attempts
+          .where(
+            (a) =>
+                a.familyId == familyId &&
+                (from == null || !a.answeredAt.isBefore(from.toUtc())) &&
+                (to == null || !a.answeredAt.isAfter(to.toUtc())),
+          )
+          .toList()
+        ..sort((a, b) => a.answeredAt.compareTo(b.answeredAt));
+
   // --- Aggregates -----------------------------------------------------------
 
   @override
