@@ -955,4 +955,187 @@ void main() {
       expect(resumed.items.map((s) => s.item).toList(), freshItems);
     });
   });
+
+  group('adaptive difficulty (US-053)', () {
+    ActivitySessionConfig adaptiveConfig({
+      int count = 6,
+      int initialDifficulty = 2,
+      int? fastThresholdMs,
+      int runSeed = 42,
+    }) => ActivitySessionConfig(
+      familyId: 'fake_family',
+      mode: SessionMode.practice,
+      source: ItemSource.adaptive(
+        generatorId: GeneratorId.dominos,
+        runSeed: runSeed,
+        params: const GeneratorParams.dominos(),
+        count: count,
+        initialDifficulty: initialDifficulty,
+        fastThresholdMs: fastThresholdMs,
+      ),
+    );
+
+    test('items are not pre-materialised: only the shown item exists '
+        'ahead of an answer', () {
+      final s = session(adaptiveConfig());
+      expect(s.items, isEmpty);
+      s.start();
+      expect(s.items, hasLength(1));
+      expect(s.items.single.item.difficulty, 2);
+    });
+
+    test('levels up by 1 after 3 consecutive correct-and-fast answers, '
+        'reflected on the next item shown', () {
+      final s = session(adaptiveConfig(fastThresholdMs: 1000));
+      s.start();
+      expect(running(s).level, 2);
+      for (var i = 0; i < 2; i++) {
+        s.answer(right);
+        s.next();
+      }
+      expect(
+        running(s).level,
+        2,
+        reason: 'only 2 of the 3 needed correct-and-fast answers so far',
+      );
+      s.answer(right);
+      expect(
+        running(s).level,
+        2,
+        reason:
+            'the level for the *next* item, not retroactively for this '
+            'one',
+      );
+      s.next();
+      expect(running(s).level, 3);
+      expect(s.items.last.item.difficulty, 3);
+    });
+
+    test('levels down by 1 after 2 consecutive wrong answers, reflected on '
+        'the next item shown', () {
+      final s = session(adaptiveConfig(initialDifficulty: 3));
+      s.start();
+      s.answer(wrong);
+      s.next();
+      expect(running(s).level, 3, reason: 'only 1 of the 2 wrong so far');
+      s.answer(wrong);
+      s.next();
+      expect(running(s).level, 2);
+    });
+
+    test('the level is clamped to 1..5 across the whole session', () {
+      final s = session(adaptiveConfig(count: 20, initialDifficulty: 5));
+      s.start();
+      // Every answer correct and fast (no threshold given -> always fast):
+      // stays clamped at 5, never overshoots.
+      for (var i = 0; i < 19; i++) {
+        s.answer(right);
+        s.next();
+      }
+      expect(running(s).level, 5);
+    });
+
+    test('every attempt stores the difficulty it was actually shown at '
+        '(AttemptOrigin.difficulty)', () async {
+      final s = session(adaptiveConfig(fastThresholdMs: 1000));
+      s.start();
+      for (var i = 0; i < 4; i++) {
+        s.answer(right);
+        s.next();
+      }
+      await s.idle;
+      final difficulties =
+          repo.attempts.where((a) => a.sessionId == s.sessionId).toList()
+            ..sort((a, b) => a.position.compareTo(b.position));
+      expect(difficulties.map((a) => a.origin!.difficulty), [
+        2,
+        2,
+        2, // the 3rd correct-and-fast answer only levels up *after* it
+        3,
+      ]);
+    });
+
+    test('finishing records every level change for the summary '
+        '("niveau 2 → 3")', () async {
+      final s = session(adaptiveConfig(count: 3, fastThresholdMs: 1000));
+      s.start();
+      for (var i = 0; i < 3; i++) {
+        s.answer(right);
+        s.next();
+      }
+      final result = finished(s).result;
+      expect(result.levelChanges, [
+        const LevelChange(atItemIndex: 3, from: 2, to: 3),
+      ]);
+    });
+
+    test('same runSeed + same answers -> the same items, in a fresh '
+        'session', () {
+      ActivitySession fresh() => session(adaptiveConfig(fastThresholdMs: 1000));
+      final a = fresh();
+      final b = fresh();
+      for (final s in [a, b]) {
+        s.start();
+        for (var i = 0; i < 5; i++) {
+          s.answer(i.isEven ? right : wrong);
+          s.next();
+        }
+      }
+      expect(a.items.map((i) => i.item), b.items.map((i) => i.item));
+      expect(
+        a.items.map((i) => i.origin!.difficulty),
+        b.items.map((i) => i.origin!.difficulty),
+      );
+    });
+
+    test('a different runSeed with the same answers diverges', () {
+      final a = session(adaptiveConfig(runSeed: 1, fastThresholdMs: 1000));
+      final b = session(adaptiveConfig(runSeed: 2, fastThresholdMs: 1000));
+      for (final s in [a, b]) {
+        s.start();
+        for (var i = 0; i < 3; i++) {
+          s.answer(right);
+          s.next();
+        }
+      }
+      expect(a.items.map((i) => i.item), isNot(b.items.map((i) => i.item)));
+    });
+
+    test('resuming rebuilds the already-played items from their attempts '
+        'and continues adapting from the same state', () async {
+      final generatorConfig = adaptiveConfig(fastThresholdMs: 1000);
+      final original = session(generatorConfig);
+      original.start();
+      for (var i = 0; i < 3; i++) {
+        original.answer(right);
+        original.next();
+      }
+      await original.idle;
+      expect(running(original).level, 3);
+      // `original.items` also has the 4th (unanswered) item, materialised
+      // when it was shown; only the first 3 were actually played.
+      final playedItems = original.items.take(3).map((i) => i.item).toList();
+
+      final stored = repo.sessionsById[original.sessionId]!;
+      final attempts = repo.attempts
+          .where((a) => a.sessionId == original.sessionId)
+          .toList();
+      final resumed = ActivitySession.resume(
+        session: stored,
+        attempts: attempts,
+        registry: registry,
+        repository: repo,
+        clock: clock,
+      );
+      addTearDown(resumed.dispose);
+
+      // The 3 already-played items are rebuilt identically...
+      expect(resumed.items.map((i) => i.item).toList(), playedItems);
+      // ...and the level resumes exactly where it left off (3), continuing
+      // the same adaptation from there.
+      resumed.start();
+      expect(running(resumed).level, 3);
+      expect(running(resumed).itemIndex, 3);
+    });
+  });
 }

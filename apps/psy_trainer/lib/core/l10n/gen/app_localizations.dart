@@ -1796,6 +1796,12 @@ abstract class AppLocalizations {
   /// **'Résumé'**
   String get summaryTitle;
 
+  /// No description provided for @summaryLevelChangeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Niveau {from} → {to}'**
+  String summaryLevelChangeLabel(int from, int to);
+
   /// No description provided for @summaryAccuracyLabel.
   ///
   /// In fr, this message translates to:

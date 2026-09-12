@@ -900,6 +900,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get summaryTitle => 'Summary';
 
   @override
+  String summaryLevelChangeLabel(int from, int to) {
+    return 'Level $from → $to';
+  }
+
+  @override
   String get summaryAccuracyLabel => 'Accuracy';
 
   @override

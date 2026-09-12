@@ -591,11 +591,16 @@ features/train/
     activity_session_state.dart       ActivitySessionState = briefing | running | paused | finished; ItemPhase
     answer.dart                       Answer = choice | numeric | multiSelect | key | sequence | skip | timeout | raw
     item_result.dart                  ItemResult (correct, timedOut, skipped, metrics), ItemOutcome (+ responseMs)
-    item_source.dart                  ItemSource = bank(items) | generator(generatorId, seed, params, count, difficulty),
+    item_source.dart                  ItemSource = bank(items) | generator(generatorId, seed, params, count, difficulty)
+                                      | adaptive(generatorId, runSeed, params, count, initialDifficulty,
+                                      fastThresholdMs, policy) (US-053) | replay(origins),
                                       SessionItem (item + itemId | AttemptOrigin). `seed` doubles as the run's
                                       `runSeed` (US-037): identical for every item, handed to `generate` alongside
                                       each item's own position (`index`) and its per-item `seed` (still derived
                                       from `runSeed`, kept for id/backward-compat)
+    adaptive/                         domain/adaptive/ (US-053), pure Dart, imported by domain/engine/
+      adaptive_difficulty_policy.dart AdaptiveDifficultyPolicy (streak thresholds, clamps, fastCutoffMs),
+                                      AdaptiveDifficultyState (level + both streaks), LevelChange
     timing_policy.dart                TimingPolicy (perItemMs, sectionMs, cadence; fromSection, forPractice)
     scorer.dart                       Scorer.scoreItem (mcq / numeric / sequence defaults), Scorer.section
     session_result.dart               SectionResult (accuracy, RT, timeouts, points), SessionResult, FinishReason
@@ -655,6 +660,32 @@ runner (US-061) and every engine's renderer depend on it, exactly as they depend
   whether or not any engine reads `runSeed`/`index` -- a resumed run-scoped generator (n-back,
   rules) picks up mid-stream identically to a fresh one. US-051/US-064 decide when to offer it
   (`sessions(status: inProgress)`).
+- **Adaptive difficulty (US-053).** `ItemSource.adaptive` is the practice launcher's
+  choice for a generated family: it starts at `initialDifficulty` (the launcher's fixed pick,
+  or the family's `StatsService`/`FamilyProgress.level` on "Auto") and has no fixed item list
+  up front -- the difficulty of item *k* depends on how items `0..k-1` were answered, so
+  `ActivitySession` materialises each item lazily, right when it is shown
+  (`ItemSource.materialiseAdaptive(engine, index, difficulty)`), keyed by `(runSeed, index)` so
+  it stays reproducible whatever order indices are materialised in (a resumed session rebuilds
+  earlier indices from their stored `AttemptOrigin`s, not by replaying from index 0).
+  `AdaptiveDifficultyPolicy` (`domain/adaptive/`) folds each answered item into an
+  `AdaptiveDifficultyState` (current level + both streaks): 3 consecutive correct-and-*fast*
+  answers move the level up by 1, 2 consecutive wrong ones move it down by 1, both clamped
+  1..5, both streaks resetting on a level change. "Fast" is at or under `fastThresholdMs` (the
+  family's own median response time, resolved once by the launcher from `StatsService`) or,
+  failing that, 60% of the per-item time limit; with neither known (untimed, no history) every
+  correct answer counts as fast. Every `LevelChange` is recorded on `SessionResult.levelChanges`
+  for the summary ("niveau 2 -> 4", `session_summary_screen.dart`) and `SessionHost` shows a
+  small pill next to the progress dots (`ActivityRunning.level`) that only exists for this
+  source. Deviations, both intentional and documented in code: (1) `TrainingSession.config` is
+  written once by `startSession`, before any level change can have happened, and
+  `ProgressRepository.finishSession` takes no config update, so level changes do not also ride
+  along in the persisted config -- only on the in-memory `SessionResult` the summary screen
+  already holds; the difficulty actually played on every item is still durable, via each
+  attempt's own (pre-existing) `AttemptOrigin.difficulty`. (2) Bank families do not adapt
+  in-session: their whole sample is drawn once, up front, and "Auto" still samples from the
+  whole pool rather than narrowing to the resolved level, since a bank's item pool at exactly
+  one level can be thin or empty for content not yet calibrated across all 5 levels.
 - **Time.** Everything goes through `EngineClock`; `SystemClock` uses `Timer`s (fake-able with
   `fakeAsync`), `ManualClock.elapse()` steps time by hand in unit and widget tests.
 - **Controller.** `activitySessionControllerProvider(request)` builds the session over
