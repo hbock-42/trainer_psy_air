@@ -310,6 +310,35 @@ abstract final class AppStrings {
       'Transavia, non choisie par le cadet.';
   static const String stageTrainingFactDuration = '24 mois, rémunérée';
 
+  // Activity session runtime (US-020): briefing, running, paused, finished.
+  static const String sessionStart = 'Commencer';
+  static const String sessionNext = 'Suivant';
+  static const String sessionPause = 'Pause';
+  static const String sessionResume = 'Reprendre';
+  static const String sessionQuit = 'Quitter';
+  static const String sessionPausedTitle = 'Session en pause';
+  static const String sessionFinishedTitle = 'Activité terminée';
+  static const String sessionBriefingDefault =
+      'Lisez les consignes, puis appuyez sur Commencer. Le chronomètre '
+      'démarre avec la première question.';
+  static const String sessionExamplePlaceholder = 'Exemple à venir.';
+  static const String sessionFeedbackCorrect = 'Bonne réponse';
+  static const String sessionFeedbackWrong = 'Mauvaise réponse';
+  static const String sessionFeedbackTimeout = 'Temps écoulé';
+  static const String sessionFeedbackSkipped = 'Question passée';
+
+  /// Accessibility label of the per-item countdown.
+  static const String sessionItemTimerLabel = 'Temps pour cette question';
+
+  /// Accessibility label of the section countdown.
+  static const String sessionSectionTimerLabel = 'Temps restant';
+
+  static String sessionItemCount(int count) =>
+      count == 1 ? '1 question' : '$count questions';
+
+  static String sessionResumeHint(int next, int total) =>
+      'Reprise à la question $next sur $total';
+
   // Progress dashboard (US-070).
   static const String progressTitle = 'Progrès';
   static const String progressLoading = 'Calcul en cours…';
