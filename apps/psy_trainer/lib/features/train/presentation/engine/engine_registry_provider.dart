@@ -18,6 +18,8 @@ import '../../../engines/memory_nback/domain/nback_engine.dart';
 import '../../../engines/memory_nback/presentation/nback_renderer.dart';
 import '../../../engines/multitask_psychomotor/domain/multitask_engine.dart';
 import '../../../engines/multitask_psychomotor/presentation/multitask_renderer.dart';
+import '../../../engines/p1_angles/domain/p1_angles_engine.dart';
+import '../../../engines/p1_angles/presentation/p1_angles_renderer.dart';
 import '../../../engines/planning_tubes/domain/tubes_engine.dart';
 import '../../../engines/planning_tubes/presentation/tubes_renderer.dart';
 import '../../../engines/spatial_cubes/domain/cube_net_engine.dart';
@@ -57,6 +59,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const MultitaskEngine(),
         const NbackEngine(),
         const OverlayGridEngine(),
+        const P1AnglesEngine(),
         const TubesEngine(),
         const ViewpointEngine(),
         WordBoxesEngine(ref.read(lexicalFieldCatalogueProvider)),
@@ -86,6 +89,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const MultitaskRenderer(),
         const NbackRenderer(),
         const OverlayGridRenderer(),
+        const P1AnglesRenderer(),
         const TubesRenderer(),
         const ViewpointRenderer(),
         WordBoxesRenderer(ref.read(lexicalFieldCatalogueProvider)),

@@ -2141,4 +2141,13 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get multitaskExampleCalc =>
       'Press F when the boxed calculation, at the bottom, is wrong.';
+
+  @override
+  String get p1AnglesExampleCaption =>
+      'Among the candidate values, tap the ones matching a drawn angle (A, B...), then Confirm.';
+
+  @override
+  String p1AnglesCandidateSemantics(int index, int value) {
+    return 'Value $index, $value degrees';
+  }
 }
