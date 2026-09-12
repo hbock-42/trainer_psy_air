@@ -99,6 +99,27 @@ abstract final class AppRoutes {
   /// Full location of a family's score-over-time charts.
   static String progressFamily(String familyId) => '$progress/family/$familyId';
 
+  /// Path parameter name for a blueprint id (US-061).
+  static const String blueprintIdParam = 'blueprintId';
+
+  /// Relative path of the exam runner (nested under [exam]).
+  static const String examRunSegment = 'run/:$blueprintIdParam';
+
+  /// Full location of the exam runner for one blueprint.
+  static String examRun(String blueprintId) => '$exam/run/$blueprintId';
+
+  /// Relative path of the exam history (nested under [exam], US-064).
+  static const String examHistorySegment = 'history';
+
+  /// Full location of the exam history.
+  static const String examHistory = '$exam/$examHistorySegment';
+
+  /// Relative path of an exam report (nested under [exam], US-062).
+  static const String examReportSegment = 'report/:$sessionIdParam';
+
+  /// Full location of one exam session's report.
+  static String examReport(String sessionId) => '$exam/report/$sessionId';
+
   /// The tab routes, in bottom-navigation order. The index in this list is the
   /// `StatefulShellRoute` branch index.
   static const List<String> tabs = [learn, train, exam, progress, settings];

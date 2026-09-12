@@ -712,4 +712,71 @@ abstract final class AppStrings {
   static const String summaryReviewMyAnswer = 'Ma réponse';
   static const String summaryReviewExpected = 'Réponse attendue';
   static const String summaryReviewRawAnswer = 'Réponse enregistrée';
+
+  // Exam home (US-060/061).
+  static const String examHomeSubtitle =
+      'Simulations chronométrées, dans l\'ordre du vrai test';
+  static const String examHistoryAction = 'Historique';
+  static const String examEmptyBlueprints =
+      'Aucune simulation disponible pour le moment.';
+  static const String examBlueprintsError =
+      'Impossible de charger les simulations.';
+  static const String examBlueprintsLoading = 'Chargement des simulations…';
+  static String examBlueprintMeta(int minutes, int available, int total) =>
+      '≈ $minutes min · $available/$total activités disponibles';
+  static const String examSectionUnavailable = 'non disponible — sera ignorée';
+  static const String examStartAction = 'Commencer';
+
+  // Exam runner (US-061).
+  static const String examRunnerTitle = 'Simulation';
+  static const String examRunnerLoading = 'Préparation de la simulation…';
+  static String examRunnerSectionProgress(int current, int total) =>
+      'Section $current/$total';
+  static const String examRunnerFinishing = 'Calcul des résultats…';
+  static const String examRunnerAborted =
+      'Simulation interrompue : elle a été enregistrée comme abandonnée.';
+  static const String examRunnerUnavailable =
+      'Aucune activité de cette simulation n\'est disponible pour le '
+      'moment.';
+  static const String examRunnerBackToHome = 'Retour';
+  static const String examRunnerBreakTitle = 'Pause';
+  static String examRunnerBreakCountdown(int seconds) {
+    final m = seconds ~/ 60;
+    final s = seconds % 60;
+    return m > 0 ? '$m:${s.toString().padLeft(2, '0')}' : '$s s';
+  }
+
+  static const String examRunnerBreakContinue = 'Continuer';
+  static const String examQuitConfirmTitle = 'Quitter la simulation ?';
+  static const String examQuitConfirmBody =
+      'La simulation entière sera enregistrée comme abandonnée : elle ne '
+      'peut pas reprendre en cours.';
+  static const String examQuitConfirmAction = 'Quitter';
+
+  // Exam history (US-064 placeholder).
+  static const String examHistoryTitle = 'Historique des simulations';
+  static const String examHistoryEmpty = 'Aucune simulation pour le moment.';
+  static const String examHistoryError = 'Impossible de charger l\'historique.';
+  static const String examHistoryLoading = 'Chargement de l\'historique…';
+  static const String examHistoryStatusCompleted = 'Terminée';
+  static const String examHistoryStatusAbandoned = 'Abandonnée';
+  static const String examHistoryStatusInProgress = 'En cours';
+
+  // Exam report (US-062).
+  static const String examReportTitle = 'Rapport de simulation';
+  static const String examReportNotFound = 'Rapport introuvable.';
+  static const String examReportError = 'Impossible de charger le rapport.';
+  static const String examReportLoading = 'Chargement du rapport…';
+  static const String examReportGlobalScoreLabel = 'Score global';
+  static String examReportEstimatedPass(int thresholdPercent) =>
+      'Estimation : admis (seuil estimé $thresholdPercent %)';
+  static String examReportEstimatedFail(int thresholdPercent) =>
+      'Estimation : non admis (seuil estimé $thresholdPercent %)';
+  static const String examReportSectionsTitle = 'Détail par activité';
+  static const String examReportReviewTitle = 'Détail des questions';
+  static String examReportSectionFraction(
+    int correct,
+    int attempts,
+    int unanswered,
+  ) => '$correct/$attempts correctes · $unanswered sans réponse';
 }
