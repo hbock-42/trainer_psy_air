@@ -713,6 +713,35 @@ abstract final class AppStrings {
   static const String summaryReviewExpected = 'Réponse attendue';
   static const String summaryReviewRawAnswer = 'Réponse enregistrée';
 
+  // 3-D viewpoint engine / "Objets 3D" (US-034, spatial_viewpoint).
+  static String viewpointPositionSemantics(int azimuth) =>
+      'Point de vue $azimuth';
+  static const String viewpointMapSemanticsLabel =
+      'Carte : 8 points de vue autour de la scène';
+  static String viewpointExplanation(int azimuth, String left, String right) =>
+      'Vu depuis la position $azimuth : l\'objet $left est à gauche de '
+      'l\'objet $right.';
+  static const String viewpointExampleCaption =
+      'Cliquez le point de vue depuis lequel la scène a été photographiée.';
+
+  /// Article-free noun, meant to follow "l'objet " (`viewpointExplanation`)
+  /// so the sentence never has to agree a gender.
+  static String viewpointSolidName(SolidKind kind) => switch (kind) {
+    SolidKind.cube => 'cube',
+    SolidKind.cylinder => 'cylindre',
+    SolidKind.cone => 'cône',
+    SolidKind.sphere => 'sphère',
+    SolidKind.pyramid => 'pyramide',
+  };
+
+  static String viewpointColorName(int colorIndex) => switch (colorIndex % 6) {
+    0 => 'orange',
+    1 => 'bleu ciel',
+    2 => 'vert',
+    3 => 'jaune',
+    4 => 'bleu',
+    _ => 'vermillon',
+  };
   // Exam home (US-060/061).
   static const String examHomeSubtitle =
       'Simulations chronométrées, dans l\'ordre du vrai test';
