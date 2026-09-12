@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../engines/attention_parity/domain/attention_parity_engine.dart';
+import '../../../engines/attention_parity/presentation/attention_parity_renderer.dart';
 import '../../../engines/memory_nback/domain/nback_engine.dart';
 import '../../../engines/memory_nback/presentation/nback_renderer.dart';
 import '../../domain/engine/engine.dart';
@@ -19,6 +21,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
       (ref) => EngineRegistry(const <ActivityEngine>[
         // US-021..036: add engines here, one line each (alphabetical by
         // family id).
+        AttentionParityEngine(),
         NbackEngine(),
       ]),
     );
@@ -29,6 +32,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
       (ref) => RendererRegistry(const <ActivityRenderer>[
         // US-021..036: add renderers here, one line each (alphabetical by
         // family id).
+        AttentionParityRenderer(),
         NbackRenderer(),
       ]),
     );

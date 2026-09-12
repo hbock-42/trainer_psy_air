@@ -174,17 +174,13 @@ void main() {
     expect(repo.attempts.map((a) => a.position), [0, 1, 2]);
   });
 
-  test(
-    'the default providers build the registered engines and a system clock',
-    () {
-      // Not `isEmpty`: EPIC-03 stories register their engine/renderer here
-      // one line at a time (`engine_registry_provider.dart`), so this just
-      // checks an unrelated family/generator was never registered by
-      // mistake, the way the renderer assertion below already does.
-      final fresh = ProviderContainer.test();
-      expect(fresh.read(engineRegistryProvider).hasFamily('x'), isFalse);
-      expect(fresh.read(rendererRegistryProvider).hasFamily('x'), isFalse);
-      expect(fresh.read(engineClockProvider), isA<SystemClock>());
-    },
-  );
+  test('the default providers wire up the real engines and a system clock', () {
+    final fresh = ProviderContainer.test();
+    // EPIC-03 engines register themselves in `engine_registry_provider.dart`
+    // as they land, so this is never empty once at least one engine
+    // exists; a bogus family id still resolves to nothing.
+    expect(fresh.read(engineRegistryProvider).engines, isNotEmpty);
+    expect(fresh.read(rendererRegistryProvider).hasFamily('x'), isFalse);
+    expect(fresh.read(engineClockProvider), isA<SystemClock>());
+  });
 }

@@ -538,4 +538,11 @@ abstract final class AppStrings {
   static const String nbackPrimerLabel = 'Amorce — pas de réponse attendue';
   static const String nbackHistoryStripLabel = 'Repère (derniers stimuli)';
   static String nbackStimulusSemantics(int index) => 'Stimulus $index';
+
+  // Pair / impair (attention_parity, US-031).
+  static const String attentionParityStartLabel = 'DÉPART';
+  static const String attentionParityEndLabel = 'ARRIVÉE';
+  static String attentionParityNumberSemantics(int value) => 'Nombre $value';
+  static String attentionParityRestartCount(int count) =>
+      count == 1 ? '1 redémarrage' : '$count redémarrages';
 }
