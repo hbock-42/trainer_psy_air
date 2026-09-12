@@ -33,7 +33,6 @@ final Provider<EngineRegistry> engineRegistryProvider =
         AttentionParityEngine(),
         AttentionRulesEngine(),
         CultureAeroEngine(),
-        // US-021..036: add engines here, one line each.
         DominosEngine(),
         NbackEngine(),
       ]),
@@ -47,11 +46,6 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         ArithmeticGridRenderer(),
         AttentionParityRenderer(),
         AttentionRulesRenderer(),
-        McqRenderer(
-          familyId: 'culture_aero',
-          explanationFooter: cultureAeroExplanationFooter,
-        ),
-        // US-021..036: add renderers here, one line each.
         DominosRenderer(),
         NbackRenderer(),
       ]),
