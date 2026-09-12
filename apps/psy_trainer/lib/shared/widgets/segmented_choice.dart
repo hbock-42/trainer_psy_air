@@ -72,7 +72,9 @@ class _Pill extends StatelessWidget {
       selected: selected,
       semanticsLabel: label,
       excludeSemantics: true,
-      minSize: theme.spacing.xxl,
+      // Was `theme.spacing.xxl` (32): below Android's 48 dp minimum tap
+      // target (`androidTapTargetGuideline` caught it, US-123).
+      minSize: theme.spacing.minTouchTarget,
       builder: (context, state) {
         var background = selected
             ? colors.accentSubtle

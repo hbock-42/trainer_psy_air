@@ -151,6 +151,7 @@ class _SectionRow extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
+            flex: 2,
             child: Text(
               label,
               style: theme.textStyles.body.copyWith(
@@ -158,13 +159,23 @@ class _SectionRow extends StatelessWidget {
               ),
             ),
           ),
-          if (!available)
-            Text(
-              context.l10n.examSectionUnavailable,
-              style: theme.textStyles.caption.copyWith(
-                color: theme.colors.textMuted,
+          if (!available) ...[
+            SizedBox(width: theme.spacing.xs),
+            // Flexible (not a bare Text): a long section title left the
+            // Expanded label above no room, and this fixed-width caption
+            // used to force the row past 360 dp at 1.3x text (US-123).
+            Flexible(
+              child: Text(
+                context.l10n.examSectionUnavailable,
+                textAlign: TextAlign.end,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: theme.textStyles.caption.copyWith(
+                  color: theme.colors.textMuted,
+                ),
               ),
             ),
+          ],
         ],
       ),
     );
@@ -294,10 +305,19 @@ class _RealismToggleRow extends StatelessWidget {
     final theme = AppTheme.of(context);
     return Padding(
       padding: EdgeInsets.only(bottom: isLast ? 0 : theme.spacing.sm),
-      child: Row(
+      // A Row gives the trailing `SegmentedChoice` an unbounded width (a
+      // non-flex Row child is never constrained along the main axis), so
+      // its own `Wrap` never gets the chance to wrap its pills onto a
+      // second line -- it and a long, localized label used to overflow
+      // together at 360 dp / 1.3x text (US-123). A Column, like
+      // `_SettingRow` in `settings_screen.dart`, always bounds the pills to
+      // the full row width instead.
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Expanded(child: Text(label, style: theme.textStyles.body)),
-          SizedBox(width: theme.spacing.sm),
+          Text(label, style: theme.textStyles.body),
+          SizedBox(height: theme.spacing.xs),
           SegmentedChoice<bool>(
             key: toggleKey,
             semanticsLabel: label,

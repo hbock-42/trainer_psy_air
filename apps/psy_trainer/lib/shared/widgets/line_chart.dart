@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart' show listEquals;
 import 'package:flutter/widgets.dart';
 
 import '../../core/theme/app_theme.dart';
@@ -41,6 +42,16 @@ class LineChartSeries {
   /// Line colour; defaults to the accent for the first series, then
   /// `success`, `warning`, `error`.
   final Color? color;
+
+  @override
+  bool operator ==(Object other) =>
+      other is LineChartSeries &&
+      other.label == label &&
+      other.color == color &&
+      listEquals(other.points, points);
+
+  @override
+  int get hashCode => Object.hash(label, color, Object.hashAll(points));
 }
 
 /// A labelled position on an axis.
@@ -412,24 +423,26 @@ class _LineChartState extends State<LineChart> {
                     clipBehavior: Clip.none,
                     children: [
                       Positioned.fill(
-                        child: CustomPaint(
-                          painter: LineChartPainter(
-                            series: widget.series,
-                            colors: colors,
-                            scale: scale,
-                            xTicks: widget.xTicks,
-                            yTicks: widget.yTicks,
-                            gridColor: theme.colors.border,
-                            axisColor: theme.colors.borderStrong,
-                            guideColor: theme.colors.textMuted,
-                            surfaceColor: theme.colors.surface,
-                            labelStyle: labelStyle,
-                            textScaler: textScaler,
-                            textDirection: textDirection,
-                            gap: theme.spacing.sm,
-                            showPoints: widget.showPoints,
-                            highlightX: hit?.x,
-                            selectedX: widget.selectedX,
+                        child: RepaintBoundary(
+                          child: CustomPaint(
+                            painter: LineChartPainter(
+                              series: widget.series,
+                              colors: colors,
+                              scale: scale,
+                              xTicks: widget.xTicks,
+                              yTicks: widget.yTicks,
+                              gridColor: theme.colors.border,
+                              axisColor: theme.colors.borderStrong,
+                              guideColor: theme.colors.textMuted,
+                              surfaceColor: theme.colors.surface,
+                              labelStyle: labelStyle,
+                              textScaler: textScaler,
+                              textDirection: textDirection,
+                              gap: theme.spacing.sm,
+                              showPoints: widget.showPoints,
+                              highlightX: hit?.x,
+                              selectedX: widget.selectedX,
+                            ),
                           ),
                         ),
                       ),
@@ -716,11 +729,11 @@ class LineChartPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(LineChartPainter oldDelegate) =>
-      series != oldDelegate.series ||
-      colors != oldDelegate.colors ||
+      !listEquals(series, oldDelegate.series) ||
+      !listEquals(colors, oldDelegate.colors) ||
       scale != oldDelegate.scale ||
-      xTicks != oldDelegate.xTicks ||
-      yTicks != oldDelegate.yTicks ||
+      !listEquals(xTicks, oldDelegate.xTicks) ||
+      !listEquals(yTicks, oldDelegate.yTicks) ||
       gridColor != oldDelegate.gridColor ||
       axisColor != oldDelegate.axisColor ||
       guideColor != oldDelegate.guideColor ||

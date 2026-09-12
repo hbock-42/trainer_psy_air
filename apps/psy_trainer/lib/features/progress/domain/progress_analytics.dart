@@ -128,11 +128,13 @@ class ProgressAnalytics {
       for (final s in sessions)
         if (s.blueprintId != null) s.blueprintId!,
     };
-    final blueprints = <String, ExamBlueprint>{};
-    for (final id in blueprintIds) {
-      final blueprint = await _content.blueprintById(id);
-      if (blueprint != null) blueprints[id] = blueprint;
-    }
+    // One query for every blueprint rather than one per distinct id seen in
+    // the exam history (an N+1 the content repository already avoids for
+    // items, see `_tagAccuracy` below).
+    final blueprints = <String, ExamBlueprint>{
+      for (final b in await _content.blueprints())
+        if (blueprintIds.contains(b.id)) b.id: b,
+    };
     return _stats.examHistory(
       sessions: sessions,
       rows: examRows,

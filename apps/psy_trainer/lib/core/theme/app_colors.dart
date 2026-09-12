@@ -96,7 +96,10 @@ class AppColors {
     accent: Color(0xFFE08A1E),
     onAccent: Color(0xFF0B1D3A),
     accentSubtle: Color(0xFFFCEFD9),
-    success: Color(0xFF1E7F4F),
+    // Darker than a naive "success green" so `success`-on-`successSubtle`
+    // text (e.g. `ConfidenceChip`) clears the WCAG AA 4.5:1 contrast ratio
+    // for small text (was 4.29:1; `textContrastGuideline` caught it, US-123).
+    success: Color(0xFF156B42),
     onSuccess: Color(0xFFFFFFFF),
     successSubtle: Color(0xFFDDF3E6),
     error: Color(0xFFB3261E),

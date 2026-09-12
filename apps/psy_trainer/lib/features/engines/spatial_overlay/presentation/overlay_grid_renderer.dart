@@ -408,6 +408,7 @@ class _DraggableTileVisual extends StatelessWidget {
         feedback: Opacity(opacity: 0.85, child: dragVisual),
         childWhenDragging: Opacity(opacity: 0.25, child: dragVisual),
         child: Semantics(
+          button: true,
           label: context.l10n.overlayGridTileSemantics(tileIndex + 1),
           child: resting,
         ),
