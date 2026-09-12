@@ -18,12 +18,15 @@ void main() {
   test('is deterministic: same params/seed/difficulty, same grid', () {
     final a = build(seed: 42, difficulty: 4);
     final b = build(seed: 42, difficulty: 4);
-    expect(a.cells.map((c) => c.label).toList(), b.cells.map((c) => c.label).toList());
+    expect(
+      a.cells.map((c) => c.label).toList(),
+      b.cells.map((c) => c.label).toList(),
+    );
     expect(a.wrongIndices, b.wrongIndices);
   });
 
   test('a different seed usually yields a different grid', () {
-    final a = build(seed: 1);
+    final a = build();
     final b = build(seed: 2);
     expect(a.cells.map((c) => c.label), isNot(b.cells.map((c) => c.label)));
   });
@@ -37,7 +40,6 @@ void main() {
   test('respects a custom grid size', () {
     const params = GeneratorParams.arithmeticGrid(
       grid: GridSize(rows: 2, cols: 2),
-      wrongMin: 0,
       wrongMax: 2,
     );
     for (var seed = 0; seed < 50; seed++) {
@@ -47,26 +49,27 @@ void main() {
     }
   });
 
-  test(
-    'the wrong-cell count always falls within wrongMin..wrongMax, over many '
-    'seeds and difficulties',
-    () {
-      const params = GeneratorParams.arithmeticGrid(wrongMin: 1, wrongMax: 4);
-      for (var seed = 0; seed < 300; seed++) {
-        for (var difficulty = minDifficulty; difficulty <= maxDifficulty; difficulty++) {
-          final grid = build(params: params, seed: seed, difficulty: difficulty);
-          expect(
-            grid.wrongIndices.length,
-            inInclusiveRange(1, 4),
-            reason: 'seed=$seed difficulty=$difficulty',
-          );
-        }
+  test('the wrong-cell count always falls within wrongMin..wrongMax, over many '
+      'seeds and difficulties', () {
+    const params = GeneratorParams.arithmeticGrid(wrongMin: 1);
+    for (var seed = 0; seed < 300; seed++) {
+      for (
+        var difficulty = minDifficulty;
+        difficulty <= maxDifficulty;
+        difficulty++
+      ) {
+        final grid = build(params: params, seed: seed, difficulty: difficulty);
+        expect(
+          grid.wrongIndices.length,
+          inInclusiveRange(1, 4),
+          reason: 'seed=$seed difficulty=$difficulty',
+        );
       }
-    },
-  );
+    }
+  });
 
   test('wrongMin == wrongMax == 0 never marks a cell wrong', () {
-    const params = GeneratorParams.arithmeticGrid(wrongMin: 0, wrongMax: 0);
+    const params = GeneratorParams.arithmeticGrid(wrongMax: 0);
     for (var seed = 0; seed < 50; seed++) {
       final grid = build(params: params, seed: seed);
       expect(grid.wrongIndices, isEmpty);
@@ -76,33 +79,29 @@ void main() {
     }
   });
 
-  test(
-    'no item is ambiguous: a wrong cell always differs from its correct '
-    'value, a correct cell always matches it, over many seeds',
-    () {
-      const params = GeneratorParams.arithmeticGrid();
-      for (var seed = 0; seed < 500; seed++) {
-        final grid = build(params: params, seed: seed, difficulty: 1 + seed % 5);
-        final wrong = grid.wrongIndices;
-        for (var i = 0; i < grid.cells.length; i++) {
-          final cell = grid.cells[i];
-          if (wrong.contains(i)) {
-            expect(
-              cell.displayedValue,
-              isNot(cell.correctValue),
-              reason: 'seed=$seed cell=$i (${cell.expression})',
-            );
-          } else {
-            expect(
-              cell.displayedValue,
-              cell.correctValue,
-              reason: 'seed=$seed cell=$i (${cell.expression})',
-            );
-          }
+  test('no item is ambiguous: a wrong cell always differs from its correct '
+      'value, a correct cell always matches it, over many seeds', () {
+    for (var seed = 0; seed < 500; seed++) {
+      final grid = build(seed: seed, difficulty: 1 + seed % 5);
+      final wrong = grid.wrongIndices;
+      for (var i = 0; i < grid.cells.length; i++) {
+        final cell = grid.cells[i];
+        if (wrong.contains(i)) {
+          expect(
+            cell.displayedValue,
+            isNot(cell.correctValue),
+            reason: 'seed=$seed cell=$i (${cell.expression})',
+          );
+        } else {
+          expect(
+            cell.displayedValue,
+            cell.correctValue,
+            reason: 'seed=$seed cell=$i (${cell.expression})',
+          );
         }
       }
-    },
-  );
+    }
+  });
 
   test('every equality actually evaluates to its correctValue', () {
     const params = GeneratorParams.arithmeticGrid(
@@ -119,7 +118,11 @@ void main() {
     for (var seed = 0; seed < 200; seed++) {
       final grid = build(params: params, seed: seed);
       for (final cell in grid.cells) {
-        expect(cell.correctValue, _evaluate(cell.expression), reason: cell.expression);
+        expect(
+          cell.correctValue,
+          _evaluate(cell.expression),
+          reason: cell.expression,
+        );
       }
     }
   });
@@ -127,7 +130,6 @@ void main() {
   test('higher difficulty allows larger operands (add/sub)', () {
     const params = GeneratorParams.arithmeticGrid(
       operations: [ArithmeticOperation.add],
-      maxOperand: 100,
     );
     int maxTerm(ArithmeticGrid grid) => grid.cells
         .expand((c) => c.expression.split(' + '))

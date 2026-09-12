@@ -18,24 +18,35 @@ void main() {
     expect(a, isA<GeneratedItem>());
     expect(a, b);
     expect(a.id, ActivityEngine.generatedItemId(GeneratorId.arithmeticGrid, 7));
-    expect((a as GeneratedItem).origin, const ItemOrigin(generatorId: GeneratorId.arithmeticGrid, seed: 7));
+    expect(
+      (a as GeneratedItem).origin,
+      const ItemOrigin(generatorId: GeneratorId.arithmeticGrid, seed: 7),
+    );
   });
 
-  test('selecting exactly the wrong set scores correct with perfect metrics', () {
-    final item = engine.generate(params: params, seed: 7, difficulty: 3) as GeneratedItem;
-    final wrong = ArithmeticGridEngine.gridOf(item).wrongIndices.toList()..sort();
+  test(
+    'selecting exactly the wrong set scores correct with perfect metrics',
+    () {
+      final item =
+          engine.generate(params: params, seed: 7, difficulty: 3)
+              as GeneratedItem;
+      final wrong = ArithmeticGridEngine.gridOf(item).wrongIndices.toList()
+        ..sort();
 
-    final result = engine.score(item, Answer.multiSelect(wrong));
+      final result = engine.score(item, Answer.multiSelect(wrong));
 
-    expect(result.correct, isTrue);
-    expect(result.metrics['precision'], 1.0);
-    expect(result.metrics['recall'], 1.0);
-    expect(result.metrics['selectedCount'], wrong.length.toDouble());
-  });
+      expect(result.correct, isTrue);
+      expect(result.metrics['precision'], 1.0);
+      expect(result.metrics['recall'], 1.0);
+      expect(result.metrics['selectedCount'], wrong.length.toDouble());
+    },
+  );
 
   test('selecting nothing when nothing is wrong scores correct', () {
-    const emptyParams = GeneratorParams.arithmeticGrid(wrongMin: 0, wrongMax: 0);
-    final item = engine.generate(params: emptyParams, seed: 3, difficulty: 2) as GeneratedItem;
+    const emptyParams = GeneratorParams.arithmeticGrid(wrongMax: 0);
+    final item =
+        engine.generate(params: emptyParams, seed: 3, difficulty: 2)
+            as GeneratedItem;
 
     final result = engine.score(item, const Answer.multiSelect([]));
 
@@ -46,8 +57,11 @@ void main() {
   });
 
   test('a wrong selection scores incorrect with partial precision/recall', () {
-    final item = engine.generate(params: params, seed: 7, difficulty: 3) as GeneratedItem;
-    final wrong = ArithmeticGridEngine.gridOf(item).wrongIndices.toList()..sort();
+    final item =
+        engine.generate(params: params, seed: 7, difficulty: 3)
+            as GeneratedItem;
+    final wrong = ArithmeticGridEngine.gridOf(item).wrongIndices.toList()
+      ..sort();
     expect(wrong.length, 2);
 
     // Select one true wrong cell plus one cell that is actually correct.
@@ -64,7 +78,9 @@ void main() {
   });
 
   test('selecting none of the wrong cells scores zero recall', () {
-    final item = engine.generate(params: params, seed: 7, difficulty: 3) as GeneratedItem;
+    final item =
+        engine.generate(params: params, seed: 7, difficulty: 3)
+            as GeneratedItem;
     final wrong = ArithmeticGridEngine.gridOf(item).wrongIndices;
     final correctOnly = List<int>.generate(
       9,
@@ -79,14 +95,18 @@ void main() {
   });
 
   test('a timeout answer is a timeout, never scored as a grid', () {
-    final item = engine.generate(params: params, seed: 7, difficulty: 3) as GeneratedItem;
+    final item =
+        engine.generate(params: params, seed: 7, difficulty: 3)
+            as GeneratedItem;
     final result = engine.score(item, const Answer.timeout());
     expect(result.timedOut, isTrue);
     expect(result.correct, isFalse);
   });
 
   test('an answer of the wrong kind is simply wrong', () {
-    final item = engine.generate(params: params, seed: 7, difficulty: 3) as GeneratedItem;
+    final item =
+        engine.generate(params: params, seed: 7, difficulty: 3)
+            as GeneratedItem;
     final result = engine.score(item, const Answer.choice(0));
     expect(result.correct, isFalse);
   });

@@ -68,7 +68,7 @@ class _ArithmeticGridBoardState extends State<_ArithmeticGridBoard> {
     widget.render.onAnswer(Answer.multiSelect(indices));
   }
 
-  static const Map<LogicalKeyboardKey, int> _digitKeys = {
+  static final Map<LogicalKeyboardKey, int> _digitKeys = {
     LogicalKeyboardKey.digit1: 1,
     LogicalKeyboardKey.numpad1: 1,
     LogicalKeyboardKey.digit2: 2,
@@ -284,7 +284,7 @@ class _ArithmeticGridExample extends StatelessWidget {
   const _ArithmeticGridExample();
 
   static final ArithmeticGrid _grid = ArithmeticGridGenerator.build(
-    params: const GeneratorParams.arithmeticGrid(
+    params: const ArithmeticGridParams(
       wrongMin: 1,
       wrongMax: 1,
       operations: [ArithmeticOperation.mul, ArithmeticOperation.add],

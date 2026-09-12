@@ -214,7 +214,8 @@ abstract final class ArithmeticGridGenerator {
     final bound = max(1, min(12, cap ~/ unit));
     final k = 1 + rng.nextInt(bound);
     final base = k * unit;
-    return _Equality(expression: '$pct % de $base', correctValue: k * pct);
+    // base = k * (100 / pct), so pct % of base is exactly k.
+    return _Equality(expression: '$pct % de $base', correctValue: k);
   }
 
   static _Equality _buildPriority(Random rng, int cap) {
