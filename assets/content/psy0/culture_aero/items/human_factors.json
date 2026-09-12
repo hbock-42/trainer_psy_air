@@ -1,0 +1,817 @@
+{
+  "$schema": "../../../../docs/content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "culture_aero",
+  "items": [
+    {
+      "id": "cult.human_factors.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.hypoxia"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "L'hypoxie d'altitude est due :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "à la baisse de la pression partielle d'oxygène"
+          }
+        },
+        {
+          "text": {
+            "fr": "au froid qui ralentit la respiration"
+          }
+        },
+        {
+          "text": {
+            "fr": "à l'excès de CO₂ dans la cabine"
+          }
+        },
+        {
+          "text": {
+            "fr": "à la baisse du pourcentage d'oxygène dans l'air"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "L'air contient toujours ≈ 21 % d'oxygène, mais la pression totale chute avec l'altitude : la **pression partielle** d'O₂ ne suffit plus à saturer le sang. Réflexe : c'est la pression, pas la proportion, qui manque."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.hypoxia"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Après une dépressurisation à 35 000 ft, le temps de conscience utile sans oxygène est de l'ordre de :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "3 à 5 minutes"
+          }
+        },
+        {
+          "text": {
+            "fr": "30 secondes à 1 minute"
+          }
+        },
+        {
+          "text": {
+            "fr": "quelques secondes"
+          }
+        },
+        {
+          "text": {
+            "fr": "10 à 15 minutes"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Repères de temps de conscience utile : ≈ 20–30 min à 18 000 ft, 3–5 min à 25 000 ft, **30 s à 1 min à 35 000 ft**, 15 s ou moins à 40 000 ft et plus. D'où le geste réflexe : masque d'abord, puis descente d'urgence."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.hypoxia"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Pourquoi l'hypoxie est-elle particulièrement dangereuse pour un pilote ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Elle ne survient qu'au-dessus de 40 000 ft"
+          }
+        },
+        {
+          "text": {
+            "fr": "Elle provoque une douleur intense qui empêche de piloter"
+          }
+        },
+        {
+          "text": {
+            "fr": "Ses premiers signes sont insidieux : euphorie, confiance excessive, jugement dégradé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Elle déclenche immédiatement une perte de connaissance"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "La victime ne se sent pas mal : euphorie, cyanose des lèvres et ongles, vision qui se rétrécit, calculs qui se dégradent. Le pilote peut s'en persuader que tout va bien. En Europe, l'oxygène est requis pour l'équipage au-delà de 10 000 ft en cabine non pressurisée pendant plus de 30 min, et toujours au-dessus de 13 000 ft."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.hyperventilation"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "L'hyperventilation, souvent liée au stress, provoque :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "un manque d'oxygène identique à l'hypoxie"
+          }
+        },
+        {
+          "text": {
+            "fr": "une hausse de la pression artérielle sans autre symptôme"
+          }
+        },
+        {
+          "text": {
+            "fr": "un excès de CO₂ dans le sang et une somnolence"
+          }
+        },
+        {
+          "text": {
+            "fr": "un déficit de CO₂ dans le sang, avec fourmillements et vertiges"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Respirer trop vite chasse le CO₂ (hypocapnie) : fourmillements des extrémités, vertiges, spasmes, jusqu'à la syncope. Les symptômes ressemblent à l'hypoxie ; le remède est inverse : ralentir volontairement la respiration, parler, se calmer. En doute en altitude, on met quand même l'oxygène."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.disorientation"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "L'illusion somatogravique se produit typiquement :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "à l'accélération au décollage de nuit, où l'on croit cabrer"
+          }
+        },
+        {
+          "text": {
+            "fr": "en approche sur une piste plus large que d'habitude"
+          }
+        },
+        {
+          "text": {
+            "fr": "lors d'un mouvement de tête pendant un virage"
+          }
+        },
+        {
+          "text": {
+            "fr": "en virage prolongé, où l'on croit être en ligne droite"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "L'oreille interne confond accélération linéaire et inclinaison : à la mise de puissance de nuit ou en IMC, le pilote se sent cabrer et pousse sur le manche — vers le sol. Parade : **croire les instruments**, pas les sensations. Le mouvement de tête en virage, lui, donne l'illusion de Coriolis ; le virage prolongé, les « leans »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.disorientation"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Après un virage prolongé en IMC, un pilote qui remet les ailes à plat a l'impression de virer de l'autre côté. C'est :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "l'illusion du trou noir"
+          }
+        },
+        {
+          "text": {
+            "fr": "les « leans »"
+          }
+        },
+        {
+          "text": {
+            "fr": "l'autokinésie"
+          }
+        },
+        {
+          "text": {
+            "fr": "l'illusion de Coriolis"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Les canaux semi-circulaires ne détectent que les **variations** de rotation : après 20 s de virage constant, le liquide se stabilise et le cerveau croit l'avion à plat ; le retour à l'horizontale est alors perçu comme un virage inverse. Le pilote a tendance à se pencher (« lean ») du côté du virage initial."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.visual_illusions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "En approche sur une piste plus étroite que celles habituelles, le pilote a tendance à :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "surestimer sa vitesse et arrondir trop tôt"
+          }
+        },
+        {
+          "text": {
+            "fr": "sous-estimer la distance restante"
+          }
+        },
+        {
+          "text": {
+            "fr": "se croire trop haut et descendre sous le plan"
+          }
+        },
+        {
+          "text": {
+            "fr": "se croire trop bas et arriver trop haut"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Une piste étroite paraît plus loin, donc l'avion semble plus haut : le pilote descend sous le plan, avec un risque d'atterrissage court. Une piste large produit l'inverse. Même logique pour une piste en montée (on se croit haut). Parade : suivre le PAPI ou le plan de descente calculé."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.pressurisation"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "En croisière, l'altitude-cabine d'un avion de ligne pressurisé est maintenue vers :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "15 000 ft"
+          }
+        },
+        {
+          "text": {
+            "fr": "le niveau de la mer"
+          }
+        },
+        {
+          "text": {
+            "fr": "2 000 ft"
+          }
+        },
+        {
+          "text": {
+            "fr": "6 000 à 8 000 ft"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "La pressurisation maintient une pression équivalente à **6 000–8 000 ft** (les cellules composites A350/787 descendent vers 6 000 ft) : compromis entre confort et contraintes structurelles sur le fuselage. C'est pour cela que les oreilles se bouchent et que l'on se déshydrate."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.pressurisation"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Les masques à oxygène passagers tombent automatiquement lorsque l'altitude-cabine dépasse environ :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "14 000 ft"
+          }
+        },
+        {
+          "text": {
+            "fr": "25 000 ft"
+          }
+        },
+        {
+          "text": {
+            "fr": "35 000 ft"
+          }
+        },
+        {
+          "text": {
+            "fr": "8 000 ft"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le largage automatique se déclenche vers **14 000 ft** d'altitude-cabine. Les générateurs chimiques fournissent une dizaine de minutes d'oxygène, le temps pour l'équipage de descendre en urgence vers 10 000 ft, altitude respirable sans assistance."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.fatigue"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Le creux de vigilance lié au rythme circadien se situe surtout :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "uniquement après un repas copieux"
+          }
+        },
+        {
+          "text": {
+            "fr": "entre 2 h et 6 h du matin (heure biologique)"
+          }
+        },
+        {
+          "text": {
+            "fr": "en fin de matinée"
+          }
+        },
+        {
+          "text": {
+            "fr": "entre 18 h et 20 h"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "L'horloge interne impose un creux nocturne majeur (≈ 2 h–6 h) et un creux secondaire en début d'après-midi. Un vol de nuit place l'équipage en plein creux, d'où les règles de temps de vol (FTL) et le repos contrôlé en croisière. Réflexe : la fatigue se gère avant le vol, pas au café."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.alcohol"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "En France, le taux d'alcool maximal autorisé pour un pilote est de :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "0 g/L strictement"
+          }
+        },
+        {
+          "text": {
+            "fr": "0,5 g/L, comme en voiture"
+          }
+        },
+        {
+          "text": {
+            "fr": "0,2 g/L"
+          }
+        },
+        {
+          "text": {
+            "fr": "0,8 g/L"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "La réglementation européenne (EASA) et le Code des transports fixent **0,2 g/L** de sang, soit pratiquement zéro. Règle pratique complémentaire : pas d'alcool dans les 8 h précédant le vol, et bien plus après une soirée arrosée — l'alcool s'élimine à ≈ 0,1–0,15 g/L par heure."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.crm"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Le CRM (Crew Resource Management) est né à la fin des années 1970 pour :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "former les pilotes au pilotage automatique"
+          }
+        },
+        {
+          "text": {
+            "fr": "certifier les compétences techniques individuelles"
+          }
+        },
+        {
+          "text": {
+            "fr": "réduire la consommation de carburant par une meilleure coordination"
+          }
+        },
+        {
+          "text": {
+            "fr": "améliorer communication, prise de décision et gestion d'équipage après des accidents dus à l'erreur humaine"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Des accidents d'avions parfaitement en état (Tenerife 1977, Portland 1978) ont montré que la hiérarchie trop rigide et la mauvaise communication tuaient. Le CRM apprend à utiliser toutes les ressources : équipage, ATC, procédures. Idée clé : le copilote doit pouvoir contester le commandant."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.safety_models"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Le modèle du « fromage suisse » de James Reason illustre que :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "un accident survient quand les failles de plusieurs barrières de défense s'alignent"
+          }
+        },
+        {
+          "text": {
+            "fr": "chaque accident a une cause unique qu'il faut identifier"
+          }
+        },
+        {
+          "text": {
+            "fr": "la fatigue est le premier facteur d'accident"
+          }
+        },
+        {
+          "text": {
+            "fr": "les automatismes suppriment l'erreur humaine"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Chaque tranche (réglementation, formation, procédures, équipage) a des trous ; l'accident passe quand les trous s'alignent. D'où la logique de **barrières multiples** et l'analyse des causes latentes (organisation) plutôt que du seul dernier acteur."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.tem"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Dans le modèle TEM (Threat and Error Management), une « menace » est :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "une erreur commise par l'équipage"
+          }
+        },
+        {
+          "text": {
+            "fr": "un événement extérieur à l'équipage qui complique le vol (météo, panne, terrain)"
+          }
+        },
+        {
+          "text": {
+            "fr": "une sanction disciplinaire"
+          }
+        },
+        {
+          "text": {
+            "fr": "un état indésirable de l'avion"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "TEM distingue trois niveaux : la **menace** (externe, à anticiper au briefing), l'**erreur** (de l'équipage, à détecter et corriger) et l'**état indésirable** de l'avion (à récupérer avant l'accident). Réflexe : anticiper les menaces au briefing, c'est déjà de la sécurité."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.sterile_cockpit"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "La règle du « cockpit stérile » interdit les conversations non essentielles :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "uniquement en croisière de nuit"
+          }
+        },
+        {
+          "text": {
+            "fr": "pendant toute la durée du vol"
+          }
+        },
+        {
+          "text": {
+            "fr": "dans les phases critiques, en dessous de 10 000 ft"
+          }
+        },
+        {
+          "text": {
+            "fr": "uniquement pendant le roulage"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Roulage, décollage, montée initiale, approche et atterrissage concentrent la charge de travail et la majorité des accidents : sous **10 000 ft**, on ne parle que du vol, et la cabine ne contacte le cockpit qu'en cas de sécurité. Née aux États-Unis en 1981 après plusieurs accidents dus à la distraction."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.diving"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Après une plongée sous-marine avec paliers, le délai recommandé avant de voler est d'au moins :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "72 heures"
+          }
+        },
+        {
+          "text": {
+            "fr": "2 heures"
+          }
+        },
+        {
+          "text": {
+            "fr": "6 heures"
+          }
+        },
+        {
+          "text": {
+            "fr": "24 heures"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "L'azote dissous pendant la plongée peut former des bulles quand la pression baisse en altitude (accident de décompression). Repères usuels : 12 h après une plongée sans palier, **24 h** après une plongée avec paliers ou des plongées répétées. Une cabine à 8 000 ft suffit à déclencher le problème."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.vision"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "L'adaptation complète de l'œil à l'obscurité (vision nocturne) demande environ :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "30 minutes"
+          }
+        },
+        {
+          "text": {
+            "fr": "2 heures"
+          }
+        },
+        {
+          "text": {
+            "fr": "quelques secondes"
+          }
+        },
+        {
+          "text": {
+            "fr": "5 minutes"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Les bâtonnets atteignent leur sensibilité maximale après ≈ **30 min** d'obscurité, mais un éclair lumineux la détruit en quelques secondes. D'où l'éclairage rouge ou tamisé du cockpit de nuit. Autre piège nocturne : la tache aveugle centrale — on voit mieux une lumière faible en regardant légèrement à côté."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.human_factors.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 5,
+      "tags": [
+        "culture.human_factors",
+        "culture.human_factors.g_forces"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Sous facteur de charge positif élevé, le pilote subit dans l'ordre :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "voile noir, puis voile gris, puis perte de connaissance"
+          }
+        },
+        {
+          "text": {
+            "fr": "voile gris, puis voile noir, puis perte de connaissance (G-LOC)"
+          }
+        },
+        {
+          "text": {
+            "fr": "voile rouge, puis perte de connaissance"
+          }
+        },
+        {
+          "text": {
+            "fr": "perte de connaissance immédiate sans signe précurseur"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Les G positifs chassent le sang vers les jambes : la rétine est privée en premier (**voile gris** : couleurs qui s'effacent, puis **voile noir** : vision perdue), puis le cerveau (**G-LOC**). Le voile rouge correspond aux G négatifs (sang vers la tête). Parade : contraction musculaire et respiration forcée, combinaison anti-G."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    }
+  ]
+}

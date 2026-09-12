@@ -5,6 +5,8 @@ No Material, no Cupertino (enforced by `test/architecture/no_material_cupertino_
 
 - Tokens: `lib/core/theme/` (`AppTheme`, `AppColors`, `AppTextStyles`, `AppSpacing`, `AppRadii`,
   `AppDurations`)
+- Charts: no chart package (`fl_chart` needs Material); `ArcGauge`, `RadarChart` and
+  `HorizontalBarChart` are `CustomPaint` primitives in the catalogue below
 - Widgets: `lib/shared/widgets/` (import the barrel `widgets.dart`)
 - Gallery: `lib/shared/gallery/widget_gallery_screen.dart` (debug only)
 - Test helpers: `test/helpers/pump_app.dart`, `test/helpers/visuals.dart`
@@ -96,6 +98,9 @@ hit target and a `Semantics` node (button flag, label, enabled/selected state). 
 | `AppScaffold` | page frame | background + `SafeArea` + optional `AppTopBar` (title, back chevron, actions) + body; no bottom nav (the tab shell owns it) |
 | `AppTopBar` | header row used by `AppScaffold` | reusable in custom layouts |
 | `AppTabBar` | main navigation (the shell's five tabs) | `items` (`AppTabItem` glyph + label), `selectedIndex`, `onSelected` (also fired on the active tab, so the shell can pop it to root); `layout: bottom` (row, phones) or `rail` (left column, windows >= `railBreakpoint` 900 dp); handles the safe-area inset on its own edge; each tab is an `AppPressable` with selected flag and label; bottom labels use the caption size so five fit on a phone, rail labels use `label` |
+| `ArcGauge` | one 0..1 figure as a 270° arc (readiness score) | `value`, `color` (pass a semantic band: `success` / `warning` / `error`), `size`, `child` centred inside the arc (the formatted value); `semanticsLabel` + `semanticsValue` required, the painting is excluded from semantics |
+| `RadarChart` | 3+ values on spokes (family levels in real-test order) | `axes` (`RadarChartAxis(label, value 0..1, valueLabel?)`), `rings`, `maxSize`; square, fills the width up to `maxSize`; accent polygon on grey rings, labels painted around; one semantics node whose value is `RadarChart.describe(axes)` (`label : valueLabel`, ...) |
+| `HorizontalBarChart` | 1+ values as horizontal bars, the fallback of `RadarChart` below 3 axes | `entries` (`BarChartEntry(label, value 0..1, valueLabel?, color?)`), `barHeight`; label and value are text (they wrap at 1.3x), the bar is a `CustomPaint`; per-entry `color` for level bands; one semantics node, `HorizontalBarChart.describe(entries)` |
 | `AppIcon` | vector glyph painted with `CustomPaint` | `AppIconGlyph.check, cross, chevronLeft, chevronRight, clock, play, pause, settings, chart, book, target`; follows the text colour; decorative unless `semanticsLabel` is given |
 
 ## Gallery

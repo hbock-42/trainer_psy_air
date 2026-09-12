@@ -12,13 +12,14 @@ lib/
   core/                      # cross-cutting infrastructure: database, routing,
                              # error/logging, constants, extensions
     content/                 # US-010 content models (JSON contract), pure Dart
-    db/                      # Drift: AppDatabase, tables/, daos/, repositories/ (local impls)
+    db/                      # Drift: AppDatabase, tables/, daos/, repositories/ (local impls),
+                             # seed/ (content seeder, US-013)
     repositories/            # ContentRepository / ProgressRepository interfaces, domain
                              # models, Riverpod providers, in_memory/ fakes (US-012)
     errors/                  # logError + global error hooks
     l10n/                    # AppStrings (FR constants until ARB i18n, US-091)
     router/                  # go_router config, AppPage, AppRoutes, redirect, shell,
-                             # error screen (the only UI allowed in core/)
+                             # error screen + startup gate (the only UI allowed in core/)
   shared/                    # reusable UI + small helpers used by several features:
                              # design system (theme, buttons, text styles, scaffold),
                              # generic widgets, formatters
@@ -41,6 +42,8 @@ test/                        # see docs/TESTING.md
   app_test.dart              # smoke test of the root widget
 tool/
   coverage_gate.dart         # lcov parser + 70 % gate on domain/data/core (make coverage)
+  validate_content.dart      # content validator (US-014, make content-check)
+  list_content_assets.dart   # (re)generates the assets/content/ list in pubspec.yaml (US-013)
 docs/
   ARCHITECTURE.md            # this file
   TESTING.md                 # test pyramid, conventions, coverage gate
@@ -68,7 +71,7 @@ imports go through a `domain` interface, not into another feature's `presentatio
 | Models         | `freezed` + `json_serializable` | Immutable entities, `copyWith`, JSON for content files |
 | Local database | `drift` on `package:sqlite3` 3.x | `sqlite3` bundles the native library through Dart hooks, so `sqlite3_flutter_libs` (now discontinued) is not needed. Schema: see "Data layer" |
 | IDs / paths    | `uuid`, `path`, `path_provider` | |
-| Charts         | not decided                     | `fl_chart` was proposed but its widgets build on Material; to be checked in US-07x (either confirm it works without a Material ancestor or draw with `CustomPainter`) |
+| Charts         | our own `CustomPainter`s        | `fl_chart` builds on Material, so US-070 draws with `CustomPaint`: `ArcGauge`, `RadarChart`, `HorizontalBarChart` in `shared/widgets/` (see `docs/DESIGN_SYSTEM.md`) |
 | Lints          | `flutter_lints` + stricter rules in `analysis_options.yaml` | `custom_lint` was dropped: its analyzer pin conflicts with `drift_dev` |
 
 Versions are pinned with caret constraints in `pubspec.yaml` and locked in `pubspec.lock`
@@ -189,7 +192,8 @@ feature would still go in that feature's `domain/`.
 | `app_database_provider.dart` | `appDatabaseProvider` (opens lazily, closes with the container) |
 | `tables/` | `AuditedTable` mixin (id + createdAt/updatedAt), content mirrors, user tables |
 | `daos/` | One DAO per concern, typed queries; the only place SQL is written |
-| `content_rows.dart` | `ContentRows`: US-010 models -> table companions (used by the seeder, US-013) |
+| `content_rows.dart` | `ContentRows`: US-010 models -> table companions (used by the seeder) |
+| `seed/` | US-013: `AssetReader` (+ `RootBundleAssetReader`), `ContentBundleLoader`, `ContentSeeder`, `contentReadyProvider`; see "Content seeding" |
 | `repositories/` | `LocalContentRepository`, `LocalProgressRepository` |
 | `converters.dart` | `JsonMapConverter` for `TEXT` JSON blobs |
 
@@ -198,7 +202,7 @@ Schema v1 (every table has `id TEXT PRIMARY KEY`, `created_at`, `updated_at`):
 | Table | Key columns | Notes |
 |-------|-------------|-------|
 | `content_meta` | schemaVersion, contentVersion, seededAt | single row (`id = 'content'`) |
-| `modules`, `families`, `items`, `lessons`, `decks`, `flashcards`, `blueprints` | indexed columns + `version` + `json` blob | mirrors of the seeded bundle, keyed by the content id; `items(family_id, difficulty)`, `flashcards(deck_id, difficulty)`, `lessons(module_id, family_id)`, `decks(family_id, sort_order)` indexed. Decks are stored without cards; cards are rows of `flashcards` |
+| `modules`, `families`, `items`, `lessons`, `decks`, `flashcards`, `blueprints` | indexed columns + `version` + `json` blob | mirrors of the seeded bundle, keyed by the content id; `items(family_id, difficulty)`, `flashcards(deck_id, difficulty)`, `lessons(module_id, family_id)`, `decks(family_id, sort_order)` indexed. Decks are stored without cards; cards are rows of `flashcards`. Lesson rows carry the markdown inline in `body` (the seeder reads the `.md` files; `file` is always null in the database) |
 | `sessions` | mode, familyId?, blueprintId?, startedAt, endedAt?, status, score?, config json | indexes `(started_at)`, `(family_id, started_at)` |
 | `attempts` | sessionId (FK), familyId, itemId? or origin json, answer json?, isCorrect, responseMs, position, sectionIndex?, answeredAt | indexes `(session_id, position)`, `(family_id, answered_at)`, `(item_id)` |
 | `item_stats` | itemId (unique), familyId, seen, correct, totalResponseMs, lastCorrect, lastSeenAt | maintained by `INSERT ... ON CONFLICT DO UPDATE` |
@@ -249,6 +253,81 @@ Design decisions:
 
 Content mirrors need no migration: the seeder (US-013) re-seeds them from assets whenever
 `content_meta` does not match the bundled manifest; only the user tables need a real upgrade path.
+
+### Content seeding (US-013)
+
+The app ships its whole content in the asset bundle and mirrors it into the content tables on
+first launch and after every `contentVersion` bump, so it works offline from the first screen.
+
+```
+assets/content/**  --rootBundle-->  AssetReader  -->  ContentBundleLoader  -->  ContentSeeder  -->  ContentDao.replaceAll
+                                    (core/db/seed/)   read + parse           version check        one transaction
+```
+
+| File (`core/db/seed/`) | Role |
+|------|------|
+| `asset_reader.dart` | `AssetReader` interface (`listAssets(prefix)`, `readString(path)`); `RootBundleAssetReader` lists the generated `AssetManifest` and reads through `rootBundle`. Tests use `FileAssetReader` (`test/helpers/`) over the repository's `assets/content/` or a temp copy of it |
+| `content_bundle_loader.dart` | `ContentBundleLoader.read()` loads `manifest.json` then every `.json` / `.md` under the declared module folders into a `RawContentBundle` (a map of strings); the static `parse()` decodes it with `ContentBundleParser` into a `LoadedContentBundle`. Files are dispatched on their `kind` field; media is never read. Drafts (`status: draft`) are dropped |
+| `content_seeder.dart` | `ContentSeeder.seedIfNeeded()`: reads the manifest, compares `contentVersion` with `content_meta`, and when the bundle is newer (or nothing is stored) reads, parses and calls `ContentDao.replaceAll` (delete + batch insert of every content table and the new meta in **one transaction**). Returns a `SeedResult` (seeded or not, versions, elapsed, counts) |
+| `content_ready_provider.dart` | `assetReaderProvider`, `contentSeederProvider`, `contentReadyProvider` (`FutureProvider<SeedResult>`, Riverpod auto-retry disabled) |
+
+The seeder lives under `core/db/` rather than `core/content/` because it depends on Drift
+(`ContentDao`, `ContentRows`); `core/content/` stays pure Dart.
+
+Decisions:
+
+- **Versioning.** Only `manifest.contentVersion` matters: bundle newer than `content_meta` (or no
+  row) -> re-seed; equal -> no-op (a few milliseconds: one asset read and one row); older (a
+  downgraded build) -> left alone. `seedIfNeeded(force: true)` exists for tooling. Entity
+  `version`s are stored but never compared.
+- **User data is never touched.** `replaceAll` only deletes and inserts the content tables;
+  `sessions`, `attempts`, `item_stats`, `flashcard_reviews`, `lesson_progress` and
+  `user_profile` keep referencing content by id (ids are permanent, AUTHORING.md §2). Verified
+  by `test/core/db/seed/content_seeder_test.dart` ("a version bump re-seeds and keeps sessions
+  and attempts").
+- **Lessons store their markdown.** The seeder reads the `.fr.md` / `.en.md` files a lesson's
+  `file` points to and stores them in `body` (`file` becomes null). The lesson viewer (US-041)
+  therefore reads `Lesson.body` from the repository like any other field and never touches the
+  asset bundle, and a remote content source (EPIC-13) needs no asset access either. Images
+  referenced from the markdown stay module-relative asset paths (`english/media/x.svg`),
+  loaded by the viewer from `assets/content/<module>/`.
+- **Lexical fields** (`verbal_boxes/lexical_fields/*.json`) are parsed and validated at seeding
+  time but not stored: there is no table until the `word_boxes` generator (US-085) needs one.
+- **Off the UI thread.** Asset reads are asynchronous on the main isolate (they need the
+  platform channel); parsing runs in a short-lived isolate through `compute`
+  (`ContentBundleLoader.parse` is static and works on plain strings; parse errors are re-thrown
+  without their `cause` so they cross the isolate boundary); the SQL runs on the database
+  isolate (`NativeDatabase.createInBackground`). Tests inject an inline parse function.
+- **Performance.** `content_seeder_test.dart` seeds the real bundle into an in-memory database
+  and asserts `elapsed < 2 s`, printing the measurement (about 0.35 s for 594 items and 16
+  lessons on a laptop, isolate spawn included).
+- **Errors.** A corrupt file surfaces as the parser's `ContentParseException` (file and entity
+  named); nothing is written (the transaction never starts). The startup gate shows it on
+  `ErrorScreen` with a retry button that re-runs the seeder.
+
+**Startup sequence.** `lib/app.dart` wraps the `Router` in `StartupGate`
+(`core/router/startup_gate.dart`; with `ErrorScreen`, the only UI in `core/`), which watches
+`contentReadyProvider` and `onboardingCompletedProvider` and renders:
+
+- the seeding error -> `ErrorScreen` with retry (`ref.invalidate(contentReadyProvider)`);
+- content ready **and** onboarding flag hydrated -> the router (first location resolved with
+  the guard already synchronous, so nothing flashes);
+- otherwise `SplashScreen`: page background only, then after `StartupGate.splashDelay`
+  (250 ms) the app name and "Chargement du contenu…" fade in. A warm launch never shows the
+  text; a first launch or a content update shows it for the seeding time.
+
+Watching the onboarding provider from the gate starts its hydration in parallel with the
+seeding instead of after it. Tests that pump the whole app add `contentReadyOverride()`
+(`test/helpers/content_ready_fakes.dart`) next to `progressRepositoryOverride()`.
+
+**Registering assets.** Flutter lists asset *directories* non-recursively, so every folder under
+`assets/content/` (except `examples/`) is listed in `pubspec.yaml` between the
+`# BEGIN content assets` / `# END content assets` markers. After adding a family folder, a
+`lessons/<family>/` folder or an `items/`, `decks/`, `lexical_fields/`, `media/` subfolder, run
+`dart run tool/list_content_assets.dart --write` (`--check` verifies;
+`test/tool/list_content_assets_test.dart` fails when the list is stale, and
+`test/core/db/seed/content_ready_provider_test.dart` checks through `rootBundle` that every
+file on disk is actually bundled).
 
 ## Progress / analytics (US-075)
 
@@ -343,6 +422,39 @@ grows with sessions, not attempts) and derives every family from them.
 
 Every constant lives in `StatsConfig` (`statsConfigProvider`); change it there, not in the
 service, and update this section.
+
+### Dashboard (US-070)
+
+`features/progress/presentation/` renders the snapshot:
+
+```
+progress_screen.dart                 ProgressScreen: loading / error / empty state / dashboard
+providers/
+  exam_date_provider.dart            examDateProvider (UserProfile.examDate), daysUntil()
+  dashboard_labels_provider.dart     dashboardLabelsProvider: family / blueprint names by id
+  recent_activity_provider.dart      recentActivityProvider: last 10 finished sessions + score
+widgets/
+  readiness_card.dart                ArcGauge of the readiness, trend arrow, ExamCountdownChip
+  family_levels_chart.dart           RadarChart (>= 3 practised families) or HorizontalBarChart
+  weak_areas_preview.dart            top 3 WeakAreas with a "train" action (-> /train until US-072)
+  recent_activity_list.dart          sessions and sims, newest first
+  progress_empty_state.dart          no data yet -> first drill
+  progress_bands.dart                success / warning / error thresholds, overallTrend()
+```
+
+Presentation-only rules (the formulas above stay in the service):
+
+- **Bands**: readiness `< 40` error, `< 70` warning, else success; level `1..2` error, `3`
+  warning, `4..5` success; a session score uses the readiness thresholds (`ProgressBands`).
+- **Overall trend arrow** = majority of the 30-day `TrendDirection` over families with data
+  (`up` when more families improve than decline, `down` in the opposite case, else `flat`).
+- **Recent activity score** = the `ExamSummary.score` for a simulation, else
+  `TrainingSession.score` when the runner stored one, else `correct / attempts` over the
+  session's `sessionFamilyStats` rows; null (shown as `—`) when nothing was answered.
+- **Chart choice**: the radar shows every content family in `order` (level 1 = centre) once at
+  least three have data; below that, horizontal bars of the practised families only.
+- **Days until exam** are whole local calendar days (`daysUntil`), computed against the
+  snapshot's `computedAt` so tests with a fixed clock are deterministic.
 
 ### Caching and invalidation
 
@@ -515,7 +627,8 @@ Everything lives in `lib/core/router/`:
 | `app_page.dart` | `AppPage`, the page type used by every route. |
 | `app_redirect.dart` | `computeRedirect(...)`: the top-level guard as a pure function. |
 | `app_shell.dart` | `AppShell`: `AppScaffold` + `AppTabBar` around the `StatefulNavigationShell`; bottom bar under 900 dp, left rail above; re-tapping the active tab resets it to its root. Tab labels/glyphs live in `AppShell.tabs`, in `AppRoutes.tabs` order. |
-| `error_screen.dart` | `ErrorScreen`: go_router `errorBuilder` target (unknown route, route error). |
+| `error_screen.dart` | `ErrorScreen`: go_router `errorBuilder` target (unknown route, route error) and the startup gate's failure screen; optional `onRetry`, "back to home" only when a router is in scope. |
+| `startup_gate.dart` | `StartupGate` + `SplashScreen`: holds the `Router` until the content is seeded and the onboarding flag is hydrated (see "Content seeding"). |
 
 Route table:
 
