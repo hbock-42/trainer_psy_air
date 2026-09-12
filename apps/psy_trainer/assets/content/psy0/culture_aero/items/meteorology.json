@@ -15,7 +15,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Dans l'atmosphère standard (ISA), quelles sont la température et la pression au niveau de la mer ?"
+        "fr": "Dans l'atmosphère standard (ISA), quelles sont la température et la pression au niveau de la mer ?"
       },
       "options": [
         {
@@ -60,7 +60,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "En atmosphère standard, quelle est la température au FL100 (10 000 ft) ?"
+        "fr": "En atmosphère standard, quelle est la température au FL100 (10 000 ft) ?"
       },
       "options": [
         {
@@ -86,7 +86,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Le gradient ISA est de **−2 °C par 1 000 ft**. À 10 000 ft : 15 − 2 × 10 = **−5 °C**. Réflexe : température ISA = 15 − 2 × (altitude en milliers de pieds)."
+        "fr": "Le gradient ISA est de **−2 °C par 1 000 ft**. À 10 000 ft : 15 − 2 × 10 = **−5 °C**. Réflexe : température ISA = 15 − 2 × (altitude en milliers de pieds)."
       },
       "meta": {
         "author": "hbock",
@@ -105,7 +105,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Température ISA à 4 000 m d'altitude ?"
+        "fr": "Température ISA à 4 000 m d'altitude ?"
       },
       "options": [
         {
@@ -131,7 +131,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "En unités métriques, le gradient ISA vaut **−6,5 °C par km**. À 4 km : 15 − 6,5 × 4 = 15 − 26 = **−11 °C**. Piège classique : oublier de partir de +15 °C et répondre −26 °C."
+        "fr": "En unités métriques, le gradient ISA vaut **−6,5 °C par km**. À 4 km : 15 − 6,5 × 4 = 15 − 26 = **−11 °C**. Piège classique : oublier de partir de +15 °C et répondre −26 °C."
       },
       "meta": {
         "author": "hbock",
@@ -150,33 +150,33 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Où se situe approximativement la tropopause en atmosphère standard, et que devient la température au-dessus ?"
+        "fr": "Où se situe approximativement la tropopause en atmosphère standard, et que devient la température au-dessus ?"
       },
       "options": [
         {
           "text": {
-            "fr": "Vers 11 km ; la température devient constante (≈ −56,5 °C)"
+            "fr": "Vers 11 km ; la température devient constante (≈ −56,5 °C)"
           }
         },
         {
           "text": {
-            "fr": "Vers 5 km ; la température continue de baisser"
+            "fr": "Vers 5 km ; la température continue de baisser"
           }
         },
         {
           "text": {
-            "fr": "Vers 20 km ; la température remonte fortement"
+            "fr": "Vers 20 km ; la température remonte fortement"
           }
         },
         {
           "text": {
-            "fr": "Vers 11 km ; la température chute plus vite"
+            "fr": "Vers 11 km ; la température chute plus vite"
           }
         }
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "La tropopause ISA est à **11 km (≈ 36 000 ft)** ; au-dessus, dans la basse stratosphère, la température reste **constante à −56,5 °C**. C'est aussi la zone où circulent les jet-streams et où volent les long-courriers."
+        "fr": "La tropopause ISA est à **11 km (≈ 36 000 ft)** ; au-dessus, dans la basse stratosphère, la température reste **constante à −56,5 °C**. C'est aussi la zone où circulent les jet-streams et où volent les long-courriers."
       },
       "meta": {
         "author": "hbock",
@@ -195,7 +195,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Près du niveau de la mer, une variation de 1 hPa correspond à une variation d'altitude d'environ :"
+        "fr": "Près du niveau de la mer, une variation de 1 hPa correspond à une variation d'altitude d'environ :"
       },
       "options": [
         {
@@ -221,7 +221,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Dans les basses couches, **1 hPa ≈ 8 m ≈ 27-30 ft**. Réflexe de calage altimétrique : une erreur de 10 hPa sur le QNH décale l'altitude lue d'environ 280 ft."
+        "fr": "Dans les basses couches, **1 hPa ≈ 8 m ≈ 27-30 ft**. Réflexe de calage altimétrique : une erreur de 10 hPa sur le QNH décale l'altitude lue d'environ 280 ft."
       },
       "meta": {
         "author": "hbock",
@@ -240,7 +240,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Avec l'altimètre calé au QFE, que lit-on une fois posé sur la piste ?"
+        "fr": "Avec l'altimètre calé au QFE, que lit-on une fois posé sur la piste ?"
       },
       "options": [
         {
@@ -266,7 +266,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Le **QFE** est la pression au niveau de l'aérodrome : calé dessus, l'altimètre indique la **hauteur**, donc 0 au sol. Le **QNH**, ramené au niveau de la mer, fait lire l'**altitude** de l'aérodrome au sol."
+        "fr": "Le **QFE** est la pression au niveau de l'aérodrome : calé dessus, l'altimètre indique la **hauteur**, donc 0 au sol. Le **QNH**, ramené au niveau de la mer, fait lire l'**altitude** de l'aérodrome au sol."
       },
       "meta": {
         "author": "hbock",
@@ -285,7 +285,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Un vent annoncé « 270° / 20 kt » souffle :"
+        "fr": "Un vent annoncé « 270° / 20 kt » souffle :"
       },
       "options": [
         {
@@ -311,7 +311,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "En aéronautique, la direction du vent est toujours **celle d'où il vient**, et la vitesse est en **nœuds**. 270° = vent d'ouest. Réflexe : « le vent vient de… »."
+        "fr": "En aéronautique, la direction du vent est toujours **celle d'où il vient**, et la vitesse est en **nœuds**. 270° = vent d'ouest. Réflexe : « le vent vient de… »."
       },
       "meta": {
         "author": "hbock",
@@ -330,7 +330,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Piste 27, vent du 300° pour 20 kt. Composante de vent traversier approximative ?"
+        "fr": "Piste 27, vent du 300° pour 20 kt. Composante de vent traversier approximative ?"
       },
       "options": [
         {
@@ -356,7 +356,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "L'angle entre le vent et l'axe de piste est 300 − 270 = **30°**. Traversier = 20 × sin 30° = 20 × 0,5 = **10 kt**. Repères : 30° → moitié, 45° → 0,7, 60° → ≈ 0,87, 90° → tout le vent."
+        "fr": "L'angle entre le vent et l'axe de piste est 300 − 270 = **30°**. Traversier = 20 × sin 30° = 20 × 0,5 = **10 kt**. Repères : 30° → moitié, 45° → 0,7, 60° → ≈ 0,87, 90° → tout le vent."
       },
       "meta": {
         "author": "hbock",
@@ -375,7 +375,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Dans l'hémisphère nord, un observateur dos au vent a la dépression :"
+        "fr": "Dans l'hémisphère nord, un observateur dos au vent a la dépression :"
       },
       "options": [
         {
@@ -401,7 +401,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Loi de **Buys-Ballot** : dans l'hémisphère nord, dos au vent, les basses pressions sont à **gauche** (et un peu en avant). C'est la conséquence de la force de Coriolis qui dévie le vent vers la droite."
+        "fr": "Loi de **Buys-Ballot** : dans l'hémisphère nord, dos au vent, les basses pressions sont à **gauche** (et un peu en avant). C'est la conséquence de la force de Coriolis qui dévie le vent vers la droite."
       },
       "meta": {
         "author": "hbock",
@@ -420,7 +420,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Dans l'hémisphère nord, l'air tourne autour d'un anticyclone :"
+        "fr": "Dans l'hémisphère nord, l'air tourne autour d'un anticyclone :"
       },
       "options": [
         {
@@ -446,7 +446,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Hémisphère nord : **anticyclone = horaire, divergent, air subsident** (beau temps stable) ; **dépression = antihoraire, convergent, air ascendant** (nuages, précipitations). Inversé dans l'hémisphère sud."
+        "fr": "Hémisphère nord : **anticyclone = horaire, divergent, air subsident** (beau temps stable) ; **dépression = antihoraire, convergent, air ascendant** (nuages, précipitations). Inversé dans l'hémisphère sud."
       },
       "meta": {
         "author": "hbock",
@@ -465,7 +465,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Par une après-midi ensoleillée d'été, la brise de mer souffle :"
+        "fr": "Par une après-midi ensoleillée d'été, la brise de mer souffle :"
       },
       "options": [
         {
@@ -491,7 +491,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Le jour, la **terre chauffe plus vite** que la mer : l'air s'y élève, créant une basse pression relative qui aspire l'air marin → brise **de mer** l'après-midi. La nuit, le mécanisme s'inverse (brise de terre)."
+        "fr": "Le jour, la **terre chauffe plus vite** que la mer : l'air s'y élève, créant une basse pression relative qui aspire l'air marin → brise **de mer** l'après-midi. La nuit, le mécanisme s'inverse (brise de terre)."
       },
       "meta": {
         "author": "hbock",
@@ -510,7 +510,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quel type de nuage et de précipitations accompagne typiquement un front chaud ?"
+        "fr": "Quel type de nuage et de précipitations accompagne typiquement un front chaud ?"
       },
       "options": [
         {
@@ -536,7 +536,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "L'air chaud glisse **lentement** au-dessus de l'air froid : nuages **stratiformes** (Ci → Cs → As → **Ns**) et pluie **continue et durable**, plafond bas, visibilité médiocre. Le front froid, lui, est convectif (Cb, averses, grains)."
+        "fr": "L'air chaud glisse **lentement** au-dessus de l'air froid : nuages **stratiformes** (Ci → Cs → As → **Ns**) et pluie **continue et durable**, plafond bas, visibilité médiocre. Le front froid, lui, est convectif (Cb, averses, grains)."
       },
       "meta": {
         "author": "hbock",
@@ -555,7 +555,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Au passage d'un front froid, on observe généralement :"
+        "fr": "Au passage d'un front froid, on observe généralement :"
       },
       "options": [
         {
@@ -581,7 +581,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Le front froid est raide et rapide : **cumulonimbus, averses, grains, rotation du vent vers la droite** (hémisphère nord), chute de température, puis la pression **remonte** et le ciel se dégage (traîne). Le ciel qui se voile est la signature du front **chaud**."
+        "fr": "Le front froid est raide et rapide : **cumulonimbus, averses, grains, rotation du vent vers la droite** (hémisphère nord), chute de température, puis la pression **remonte** et le ciel se dégage (traîne). Le ciel qui se voile est la signature du front **chaud**."
       },
       "meta": {
         "author": "hbock",
@@ -600,7 +600,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Qu'est-ce qu'une occlusion ?"
+        "fr": "Qu'est-ce qu'une occlusion ?"
       },
       "options": [
         {
@@ -626,7 +626,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Dans une dépression, le **front froid avance plus vite** que le front chaud : quand il le rejoint, le secteur chaud est **soulevé du sol** — c'est l'occlusion, qui marque la fin de vie de la perturbation."
+        "fr": "Dans une dépression, le **front froid avance plus vite** que le front chaud : quand il le rejoint, le secteur chaud est **soulevé du sol** — c'est l'occlusion, qui marque la fin de vie de la perturbation."
       },
       "meta": {
         "author": "hbock",
@@ -645,7 +645,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Lequel de ces nuages appartient à l'étage supérieur (au-dessus d'environ 6 000 m) ?"
+        "fr": "Lequel de ces nuages appartient à l'étage supérieur (au-dessus d'environ 6 000 m) ?"
       },
       "options": [
         {
@@ -671,7 +671,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Préfixe **« cirr- » = étage supérieur** (Ci, Cs, Cc, cristaux de glace) ; **« alto- » = étage moyen** (Ac, As) ; **strato-/nimbo- sans préfixe = étage inférieur** (St, Sc, Ns). Cu et Cb sont à développement vertical."
+        "fr": "Préfixe **« cirr- » = étage supérieur** (Ci, Cs, Cc, cristaux de glace) ; **« alto- » = étage moyen** (Ac, As) ; **strato-/nimbo- sans préfixe = étage inférieur** (St, Sc, Ns). Cu et Cb sont à développement vertical."
       },
       "meta": {
         "author": "hbock",
@@ -690,7 +690,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quel phénomène lié au cumulonimbus est le plus dangereux en courte finale ?"
+        "fr": "Quel phénomène lié au cumulonimbus est le plus dangereux en courte finale ?"
       },
       "options": [
         {
@@ -716,7 +716,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Sous un Cb, le courant descendant s'étale au sol : l'avion rencontre d'abord un vent de face (portance en hausse) puis brutalement un vent arrière et une rabattante — le **windshear**. À basse hauteur, la marge d'énergie est trop faible : on **retarde l'approche**."
+        "fr": "Sous un Cb, le courant descendant s'étale au sol : l'avion rencontre d'abord un vent de face (portance en hausse) puis brutalement un vent arrière et une rabattante — le **windshear**. À basse hauteur, la marge d'énergie est trop faible : on **retarde l'approche**."
       },
       "meta": {
         "author": "hbock",
@@ -735,7 +735,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Les trois stades de vie d'une cellule orageuse sont, dans l'ordre :"
+        "fr": "Les trois stades de vie d'une cellule orageuse sont, dans l'ordre :"
       },
       "options": [
         {
@@ -761,7 +761,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Cumulus** (courants ascendants seuls) → **maturité** (ascendances et descendances coexistent, précipitations, foudre, grêle : le stade le plus violent) → **dissipation** (descendances seules, enclume). Une cellule vit ~30 min à 1 h."
+        "fr": "**Cumulus** (courants ascendants seuls) → **maturité** (ascendances et descendances coexistent, précipitations, foudre, grêle : le stade le plus violent) → **dissipation** (descendances seules, enclume). Une cellule vit ~30 min à 1 h."
       },
       "meta": {
         "author": "hbock",
@@ -780,7 +780,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Le brouillard de rayonnement se forme surtout :"
+        "fr": "Le brouillard de rayonnement se forme surtout :"
       },
       "options": [
         {
@@ -806,7 +806,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Le sol se refroidit par **rayonnement** nocturne (ciel clair, pas de couverture nuageuse), l'air en contact atteint son point de rosée ; un **vent faible** (1-5 kt) mélange juste assez. Il se dissipe au soleil. L'air chaud humide sur surface froide, c'est le brouillard d'**advection**."
+        "fr": "Le sol se refroidit par **rayonnement** nocturne (ciel clair, pas de couverture nuageuse), l'air en contact atteint son point de rosée ; un **vent faible** (1-5 kt) mélange juste assez. Il se dissipe au soleil. L'air chaud humide sur surface froide, c'est le brouillard d'**advection**."
       },
       "meta": {
         "author": "hbock",
@@ -825,7 +825,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Que signifie un écart faible entre température et point de rosée dans un METAR (ex. 12/11) ?"
+        "fr": "Que signifie un écart faible entre température et point de rosée dans un METAR (ex. 12/11) ?"
       },
       "options": [
         {
@@ -835,7 +835,7 @@
         },
         {
           "text": {
-            "fr": "L'air est proche de la saturation : risque de brouillard ou nuages bas"
+            "fr": "L'air est proche de la saturation : risque de brouillard ou nuages bas"
           }
         },
         {
@@ -851,7 +851,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Le **point de rosée** est la température à laquelle l'air devient saturé. Plus il est proche de la température, plus l'humidité relative est élevée : un écart ≤ 2 °C annonce brouillard ou stratus, surtout si la nuit refroidit encore l'air."
+        "fr": "Le **point de rosée** est la température à laquelle l'air devient saturé. Plus il est proche de la température, plus l'humidité relative est élevée : un écart ≤ 2 °C annonce brouillard ou stratus, surtout si la nuit refroidit encore l'air."
       },
       "meta": {
         "author": "hbock",
@@ -870,7 +870,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Le givrage cellule est le plus sévère lorsque l'avion vole dans un nuage dont la température est :"
+        "fr": "Le givrage cellule est le plus sévère lorsque l'avion vole dans un nuage dont la température est :"
       },
       "options": [
         {
@@ -896,7 +896,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Entre **0 et −15 °C**, l'eau des nuages reste liquide en **surfusion** et gèle à l'impact sur la cellule. En dessous de −40 °C, tout est déjà cristallisé (peu de givrage). Réflexe : nuage + températures légèrement négatives = zone de givrage."
+        "fr": "Entre **0 et −15 °C**, l'eau des nuages reste liquide en **surfusion** et gèle à l'impact sur la cellule. En dessous de −40 °C, tout est déjà cristallisé (peu de givrage). Réflexe : nuage + températures légèrement négatives = zone de givrage."
       },
       "meta": {
         "author": "hbock",
@@ -915,7 +915,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Le givrage carburateur d'un moteur à pistons peut survenir avec une température extérieure allant jusqu'à :"
+        "fr": "Le givrage carburateur d'un moteur à pistons peut survenir avec une température extérieure allant jusqu'à :"
       },
       "options": [
         {
@@ -941,7 +941,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "La détente au venturi et l'évaporation de l'essence refroidissent l'air du carburateur de **20 à 30 °C** : de la glace peut se former par air humide jusqu'à **+25 °C** environ, surtout à faible puissance. D'où la réchauffe carburateur en descente."
+        "fr": "La détente au venturi et l'évaporation de l'essence refroidissent l'air du carburateur de **20 à 30 °C** : de la glace peut se former par air humide jusqu'à **+25 °C** environ, surtout à faible puissance. D'où la réchauffe carburateur en descente."
       },
       "meta": {
         "author": "hbock",
@@ -960,7 +960,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Les jet-streams des latitudes moyennes soufflent principalement :"
+        "fr": "Les jet-streams des latitudes moyennes soufflent principalement :"
       },
       "options": [
         {
@@ -1005,7 +1005,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "La turbulence en air clair (CAT) est surtout rencontrée :"
+        "fr": "La turbulence en air clair (CAT) est surtout rencontrée :"
       },
       "options": [
         {
@@ -1031,7 +1031,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "La **CAT** naît du cisaillement de vent en **bordure des jet-streams** et des ondes de relief à haute altitude. Elle est invisible au radar météo et aux yeux : c'est la raison principale de l'obligation de garder sa ceinture attachée en croisière."
+        "fr": "La **CAT** naît du cisaillement de vent en **bordure des jet-streams** et des ondes de relief à haute altitude. Elle est invisible au radar météo et aux yeux : c'est la raison principale de l'obligation de garder sa ceinture attachée en croisière."
       },
       "meta": {
         "author": "hbock",
@@ -1050,7 +1050,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "La turbulence de sillage derrière un gros porteur est la plus forte quand celui-ci est :"
+        "fr": "La turbulence de sillage derrière un gros porteur est la plus forte quand celui-ci est :"
       },
       "options": [
         {
@@ -1076,7 +1076,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Les tourbillons marginaux sont d'autant plus intenses que l'avion génère beaucoup de portance à faible vitesse : **lourd, lent, lisse** (« heavy, slow, clean »). D'où les séparations de sillage au décollage et à l'atterrissage (catégories Light/Medium/Heavy/Super)."
+        "fr": "Les tourbillons marginaux sont d'autant plus intenses que l'avion génère beaucoup de portance à faible vitesse : **lourd, lent, lisse** (« heavy, slow, clean »). D'où les séparations de sillage au décollage et à l'atterrissage (catégories Light/Medium/Heavy/Super)."
       },
       "meta": {
         "author": "hbock",
@@ -1095,7 +1095,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Dans un METAR, que signifie le groupe « 27015G25KT » ?"
+        "fr": "Dans un METAR, que signifie le groupe « 27015G25KT » ?"
       },
       "options": [
         {
@@ -1121,7 +1121,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Lecture : **ddd** direction (270°), **ff** vitesse moyenne (15), **G** = gust, rafales (25), **KT** = nœuds. La variabilité de direction s'écrit à part, ex. « 240V300 »."
+        "fr": "Lecture : **ddd** direction (270°), **ff** vitesse moyenne (15), **G** = gust, rafales (25), **KT** = nœuds. La variabilité de direction s'écrit à part, ex. « 240V300 »."
       },
       "meta": {
         "author": "hbock",
@@ -1140,7 +1140,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Que signifie « CAVOK » dans un METAR ?"
+        "fr": "Que signifie « CAVOK » dans un METAR ?"
       },
       "options": [
         {
@@ -1166,7 +1166,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**CAVOK** (« ceiling and visibility OK ») résume : visibilité **≥ 10 km**, aucun nuage sous **5 000 ft** ou sous l'altitude minimale de secteur (la plus haute), **pas de Cb/TCu**, pas de temps significatif. Il ne dit rien du vent."
+        "fr": "**CAVOK** (« ceiling and visibility OK ») résume : visibilité **≥ 10 km**, aucun nuage sous **5 000 ft** ou sous l'altitude minimale de secteur (la plus haute), **pas de Cb/TCu**, pas de temps significatif. Il ne dit rien du vent."
       },
       "meta": {
         "author": "hbock",
@@ -1185,7 +1185,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Dans un METAR, « BKN040 » indique :"
+        "fr": "Dans un METAR, « BKN040 » indique :"
       },
       "options": [
         {
@@ -1211,7 +1211,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Nébulosité : **FEW** 1-2, **SCT** 3-4, **BKN** 5-7, **OVC** 8 octas ; la hauteur suit en **centaines de pieds** au-dessus du sol (040 = 4 000 ft). BKN et OVC définissent le plafond."
+        "fr": "Nébulosité : **FEW** 1-2, **SCT** 3-4, **BKN** 5-7, **OVC** 8 octas ; la hauteur suit en **centaines de pieds** au-dessus du sol (040 = 4 000 ft). BKN et OVC définissent le plafond."
       },
       "meta": {
         "author": "hbock",
@@ -1230,7 +1230,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Un jour chaud, en altitude et par forte humidité, l'altitude-densité est élevée. Conséquence sur le décollage ?"
+        "fr": "Un jour chaud, en altitude et par forte humidité, l'altitude-densité est élevée. Conséquence sur le décollage ?"
       },
       "options": [
         {
@@ -1245,7 +1245,7 @@
         },
         {
           "text": {
-            "fr": "Aucune : l'altimètre compense automatiquement"
+            "fr": "Aucune : l'altimètre compense automatiquement"
           }
         },
         {
@@ -1256,7 +1256,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Air chaud, altitude élevée et humidité **réduisent la masse volumique** : moins de portance, moins de poussée, moins d'air pour le moteur. La **vitesse indiquée** de rotation ne change pas, mais la **vitesse vraie** et donc la distance au sol augmentent. Réflexe : « hot and high » = performances dégradées."
+        "fr": "Air chaud, altitude élevée et humidité **réduisent la masse volumique** : moins de portance, moins de poussée, moins d'air pour le moteur. La **vitesse indiquée** de rotation ne change pas, mais la **vitesse vraie** et donc la distance au sol augmentent. Réflexe : « hot and high » = performances dégradées."
       },
       "meta": {
         "author": "hbock",

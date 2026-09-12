@@ -16,7 +16,7 @@
       "lang": "fr",
       "validAsOf": "2025-12-31",
       "stem": {
-        "fr": "Au 31 décembre 2025, combien d'avions comptait la flotte Air France (HOP! inclus) ?"
+        "fr": "Au 31 décembre 2025, combien d'avions comptait la flotte Air France (HOP! inclus) ?"
       },
       "options": [
         {
@@ -42,7 +42,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Le site corporate annonce **268 avions Air France (HOP! inclus) au 31 décembre 2025**. Les 600 correspondent au groupe Air France-KLM entier (avec KLM et Transavia). Réflexe : AF seule ≈ 270, groupe ≈ 600."
+        "fr": "Le site corporate annonce **268 avions Air France (HOP! inclus) au 31 décembre 2025**. Les 600 correspondent au groupe Air France-KLM entier (avec KLM et Transavia). Réflexe : AF seule ≈ 270, groupe ≈ 600."
       },
       "meta": {
         "author": "hbock",
@@ -69,7 +69,7 @@
       "lang": "fr",
       "validAsOf": "2026-07-01",
       "stem": {
-        "fr": "Lequel de ces types n'appartient pas à la flotte long-courrier actuelle d'Air France ?"
+        "fr": "Lequel de ces types n'appartient pas à la flotte long-courrier actuelle d'Air France ?"
       },
       "options": [
         {
@@ -95,7 +95,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "La flotte long-courrier Air France se compose d'A350-900, de 777-200ER et -300ER, de 787-9 et des derniers A330-200. L'**A340** a été retiré en 2020, comme l'A380. Réflexe : quadrimoteurs = passé ; le long-courrier AF est 100 % biréacteur."
+        "fr": "La flotte long-courrier Air France se compose d'A350-900, de 777-200ER et -300ER, de 787-9 et des derniers A330-200. L'**A340** a été retiré en 2020, comme l'A380. Réflexe : quadrimoteurs = passé ; le long-courrier AF est 100 % biréacteur."
       },
       "meta": {
         "author": "hbock",
@@ -122,7 +122,7 @@
       "lang": "fr",
       "validAsOf": "2026-07-01",
       "stem": {
-        "fr": "Quel appareil remplace progressivement les A318 et A319 sur le moyen-courrier d'Air France ?"
+        "fr": "Quel appareil remplace progressivement les A318 et A319 sur le moyen-courrier d'Air France ?"
       },
       "options": [
         {
@@ -148,7 +148,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "L'**A220-300** (ex-Bombardier CSeries) est l'appareil de renouvellement du moyen-courrier Air France : il remplace les A318 et A319, plus anciens et moins économes. Le 737 est chez Transavia, l'E190 chez HOP!. Réflexe : A220 = nouveau visage du court/moyen-courrier AF."
+        "fr": "L'**A220-300** (ex-Bombardier CSeries) est l'appareil de renouvellement du moyen-courrier Air France : il remplace les A318 et A319, plus anciens et moins économes. Le 737 est chez Transavia, l'E190 chez HOP!. Réflexe : A220 = nouveau visage du court/moyen-courrier AF."
       },
       "meta": {
         "author": "hbock",
@@ -175,7 +175,7 @@
       "lang": "fr",
       "validAsOf": "2026-07-01",
       "stem": {
-        "fr": "Quel type long-courrier l'A350-900 est-il appelé à remplacer chez Air France ?"
+        "fr": "Quel type long-courrier l'A350-900 est-il appelé à remplacer chez Air France ?"
       },
       "options": [
         {
@@ -201,7 +201,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "L'A350-900 remplace les **A330-200** (retrait prévu début 2027) et les **777-200ER**, puis les plus anciens 777-300ER. Le 787-9 reste en flotte, le 747 a quitté Air France en 2016. Réflexe : A350 = colonne vertébrale du long-courrier AF."
+        "fr": "L'A350-900 remplace les **A330-200** (retrait prévu début 2027) et les **777-200ER**, puis les plus anciens 777-300ER. Le 787-9 reste en flotte, le 747 a quitté Air France en 2016. Réflexe : A350 = colonne vertébrale du long-courrier AF."
       },
       "meta": {
         "author": "hbock",
@@ -227,7 +227,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "En quelle année Air France a-t-elle retiré du service ses Airbus A380 ?"
+        "fr": "En quelle année Air France a-t-elle retiré du service ses Airbus A380 ?"
       },
       "options": [
         {
@@ -253,7 +253,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Air France a retiré ses **A380 en 2020**, de manière anticipée à cause de la crise du COVID-19, après une dizaine d'années d'exploitation depuis 2009. Les A340 ont quitté la flotte la même année. Réflexe : 2020 = fin des quadrimoteurs chez AF."
+        "fr": "Air France a retiré ses **A380 en 2020**, de manière anticipée à cause de la crise du COVID-19, après une dizaine d'années d'exploitation depuis 2009. Les A340 ont quitté la flotte la même année. Réflexe : 2020 = fin des quadrimoteurs chez AF."
       },
       "meta": {
         "author": "hbock",
@@ -280,7 +280,7 @@
       "lang": "fr",
       "validAsOf": "2026-07-01",
       "stem": {
-        "fr": "Air France est la dernière compagnie au monde à exploiter commercialement quel type d'avion ?"
+        "fr": "Air France est la dernière compagnie au monde à exploiter commercialement quel type d'avion ?"
       },
       "options": [
         {
@@ -306,7 +306,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Le plus petit membre de la famille A320, l'**A318**, n'a connu qu'un succès limité ; Air France en est le dernier exploitant en ligne, avec quelques exemplaires en fin de carrière, remplacés par l'A220. Réflexe : A318 = le « bébé Airbus » qu'AF est la seule à encore faire voler."
+        "fr": "Le plus petit membre de la famille A320, l'**A318**, n'a connu qu'un succès limité ; Air France en est le dernier exploitant en ligne, avec quelques exemplaires en fin de carrière, remplacés par l'A220. Réflexe : A318 = le « bébé Airbus » qu'AF est la seule à encore faire voler."
       },
       "meta": {
         "author": "hbock",
@@ -333,7 +333,7 @@
       "lang": "fr",
       "validAsOf": "2026-09-11",
       "stem": {
-        "fr": "En septembre 2023, le groupe Air France-KLM a passé une commande ferme de 50 appareils de quel type, partagée entre Air France et KLM ?"
+        "fr": "En septembre 2023, le groupe Air France-KLM a passé une commande ferme de 50 appareils de quel type, partagée entre Air France et KLM ?"
       },
       "options": [
         {
@@ -359,7 +359,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "La commande de **50 Airbus A350** (47 A350-900 et 3 A350-1000, plus 40 options) livrés de 2026 à 2030 sert à remplacer les A330 et les 777-200ER des deux compagnies ; 22 A350-900 sont destinés à KLM. Réflexe : A350 = choix long-courrier commun du groupe."
+        "fr": "La commande de **50 Airbus A350** (47 A350-900 et 3 A350-1000, plus 40 options) livrés de 2026 à 2030 sert à remplacer les A330 et les 777-200ER des deux compagnies ; 22 A350-900 sont destinés à KLM. Réflexe : A350 = choix long-courrier commun du groupe."
       },
       "meta": {
         "author": "hbock",
@@ -386,7 +386,7 @@
       "lang": "fr",
       "validAsOf": "2026-07-01",
       "stem": {
-        "fr": "Quel avion-cargo Air France exploite-t-elle aujourd'hui, en attendant l'A350F ?"
+        "fr": "Quel avion-cargo Air France exploite-t-elle aujourd'hui, en attendant l'A350F ?"
       },
       "options": [
         {
@@ -412,7 +412,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Air France Cargo exploite deux **Boeing 777F** (elle en fut la compagnie de lancement) ; trois **A350F** sont commandés pour les remplacer. Les 747 cargo ont quitté la flotte en 2015. Réflexe : le fret AF est aujourd'hui surtout transporté dans les soutes des avions passagers."
+        "fr": "Air France Cargo exploite deux **Boeing 777F** (elle en fut la compagnie de lancement) ; trois **A350F** sont commandés pour les remplacer. Les 747 cargo ont quitté la flotte en 2015. Réflexe : le fret AF est aujourd'hui surtout transporté dans les soutes des avions passagers."
       },
       "meta": {
         "author": "hbock",
@@ -439,7 +439,7 @@
       "lang": "fr",
       "validAsOf": "2025-12-31",
       "stem": {
-        "fr": "Au cours de l'année 2025, quels appareils neufs le groupe Air France a-t-il reçus pour son long-courrier ?"
+        "fr": "Au cours de l'année 2025, quels appareils neufs le groupe Air France a-t-il reçus pour son long-courrier ?"
       },
       "options": [
         {
@@ -465,7 +465,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "En 2025, le long-courrier a reçu **six A350-900**, tandis que quatre A330 et les deux derniers A380 étaient retirés ; le moyen-courrier a reçu onze A220-300 contre douze avions de la famille A320 retirés. Réflexe : entrées = A350 et A220, sorties = A330/A380 et A318/A319."
+        "fr": "En 2025, le long-courrier a reçu **six A350-900**, tandis que quatre A330 et les deux derniers A380 étaient retirés ; le moyen-courrier a reçu onze A220-300 contre douze avions de la famille A320 retirés. Réflexe : entrées = A350 et A220, sorties = A330/A380 et A318/A319."
       },
       "meta": {
         "author": "hbock",
@@ -492,7 +492,7 @@
       "lang": "fr",
       "validAsOf": "2025-12-31",
       "stem": {
-        "fr": "Quel constructeur équipe la flotte régionale de HOP!, filiale d'Air France ?"
+        "fr": "Quel constructeur équipe la flotte régionale de HOP!, filiale d'Air France ?"
       },
       "options": [
         {
@@ -518,7 +518,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "HOP! vole exclusivement sur **Embraer** E170 et E190 ; en 2025 elle a retiré un E170 et reçu quatre E190. Les ATR et les Bombardier CRJ ont quitté la flotte régionale. Réflexe : HOP! = biréacteurs Embraer sur le réseau domestique et européen."
+        "fr": "HOP! vole exclusivement sur **Embraer** E170 et E190 ; en 2025 elle a retiré un E170 et reçu quatre E190. Les ATR et les Bombardier CRJ ont quitté la flotte régionale. Réflexe : HOP! = biréacteurs Embraer sur le réseau domestique et européen."
       },
       "meta": {
         "author": "hbock",
@@ -545,7 +545,7 @@
       "lang": "fr",
       "validAsOf": "2025-12-31",
       "stem": {
-        "fr": "Combien de pilotes Air France employait-elle fin 2025 ?"
+        "fr": "Combien de pilotes Air France employait-elle fin 2025 ?"
       },
       "options": [
         {
@@ -571,7 +571,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Au 31 décembre 2025, Air France comptait **4 275 pilotes**, 11 923 personnels navigants commerciaux et 20 816 personnels au sol, soit plus de 37 000 salariés. Réflexe : les pilotes représentent un peu plus de 10 % des effectifs."
+        "fr": "Au 31 décembre 2025, Air France comptait **4 275 pilotes**, 11 923 personnels navigants commerciaux et 20 816 personnels au sol, soit plus de 37 000 salariés. Réflexe : les pilotes représentent un peu plus de 10 % des effectifs."
       },
       "meta": {
         "author": "hbock",
@@ -598,7 +598,7 @@
       "lang": "fr",
       "validAsOf": "2025-12-31",
       "stem": {
-        "fr": "Quel est l'ordre de grandeur de l'effectif total d'Air France fin 2025 ?"
+        "fr": "Quel est l'ordre de grandeur de l'effectif total d'Air France fin 2025 ?"
       },
       "options": [
         {
@@ -624,7 +624,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Le site corporate indique **plus de 37 000 salariés** Air France, dont 20 816 au sol, 11 923 PNC et 4 275 pilotes. Le groupe Air France-KLM entier dépasse les 70 000 personnes. Réflexe : AF ≈ 37 000, ne pas confondre avec le groupe."
+        "fr": "Le site corporate indique **plus de 37 000 salariés** Air France, dont 20 816 au sol, 11 923 PNC et 4 275 pilotes. Le groupe Air France-KLM entier dépasse les 70 000 personnes. Réflexe : AF ≈ 37 000, ne pas confondre avec le groupe."
       },
       "meta": {
         "author": "hbock",
@@ -651,7 +651,7 @@
       "lang": "fr",
       "validAsOf": "2025-12-31",
       "stem": {
-        "fr": "Combien de passagers Air France (seule) a-t-elle transportés en 2025 ?"
+        "fr": "Combien de passagers Air France (seule) a-t-elle transportés en 2025 ?"
       },
       "options": [
         {
@@ -677,7 +677,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Air France a transporté **42,3 millions de passagers en 2025** ; KLM 34,5 millions et Transavia 26,1 millions, soit 102,8 millions pour le groupe. Réflexe : AF ≈ 42 M, groupe ≈ 103 M."
+        "fr": "Air France a transporté **42,3 millions de passagers en 2025** ; KLM 34,5 millions et Transavia 26,1 millions, soit 102,8 millions pour le groupe. Réflexe : AF ≈ 42 M, groupe ≈ 103 M."
       },
       "meta": {
         "author": "hbock",
@@ -709,7 +709,7 @@
       "lang": "fr",
       "validAsOf": "2025-12-31",
       "stem": {
-        "fr": "En 2025, le groupe Air France-KLM a franchi pour la première fois quel seuil de résultat d'exploitation ?"
+        "fr": "En 2025, le groupe Air France-KLM a franchi pour la première fois quel seuil de résultat d'exploitation ?"
       },
       "options": [
         {
@@ -735,7 +735,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Pour l'exercice 2025, le groupe affiche un chiffre d'affaires record de 33,0 milliards d'euros et un résultat d'exploitation de **2,0 milliards d'euros**, une première dans son histoire (marge 6,1 %). Réflexe : CA ≈ 33 Md€, résultat d'exploitation ≈ 2 Md€."
+        "fr": "Pour l'exercice 2025, le groupe affiche un chiffre d'affaires record de 33,0 milliards d'euros et un résultat d'exploitation de **2,0 milliards d'euros**, une première dans son histoire (marge 6,1 %). Réflexe : CA ≈ 33 Md€, résultat d'exploitation ≈ 2 Md€."
       },
       "meta": {
         "author": "hbock",
@@ -762,7 +762,7 @@
       "lang": "fr",
       "validAsOf": "2026-09-11",
       "stem": {
-        "fr": "Qui est la Directrice générale d'Air France, en poste depuis décembre 2018 ?"
+        "fr": "Qui est la Directrice générale d'Air France, en poste depuis décembre 2018 ?"
       },
       "options": [
         {
@@ -788,7 +788,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Anne Rigail**, ingénieure des Mines entrée à Air Inter en 1991, est Directrice générale d'Air France depuis le 12 décembre 2018 : première femme à diriger la compagnie. Marjan Rintel dirige KLM. Réflexe : Rigail = Air France, Smith = groupe."
+        "fr": "**Anne Rigail**, ingénieure des Mines entrée à Air Inter en 1991, est Directrice générale d'Air France depuis le 12 décembre 2018 : première femme à diriger la compagnie. Marjan Rintel dirige KLM. Réflexe : Rigail = Air France, Smith = groupe."
       },
       "meta": {
         "author": "hbock",
@@ -815,7 +815,7 @@
       "lang": "fr",
       "validAsOf": "2026-09-11",
       "stem": {
-        "fr": "Quelle fonction Benjamin Smith occupe-t-il ?"
+        "fr": "Quelle fonction Benjamin Smith occupe-t-il ?"
       },
       "options": [
         {
@@ -841,7 +841,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Benjamin Smith**, ancien d'Air Canada, dirige le groupe Air France-KLM depuis 2018 et préside le Conseil d'administration d'Air France, dont Anne Rigail est Directrice générale. Réflexe : Smith au groupe et au CA, Rigail à la direction générale d'AF."
+        "fr": "**Benjamin Smith**, ancien d'Air Canada, dirige le groupe Air France-KLM depuis 2018 et préside le Conseil d'administration d'Air France, dont Anne Rigail est Directrice générale. Réflexe : Smith au groupe et au CA, Rigail à la direction générale d'AF."
       },
       "meta": {
         "author": "hbock",
@@ -867,7 +867,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quel moteur équipe exclusivement l'Airbus A350 ?"
+        "fr": "Quel moteur équipe exclusivement l'Airbus A350 ?"
       },
       "options": [
         {
@@ -893,7 +893,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "L'A350 n'a qu'une motorisation possible : le **Rolls-Royce Trent XWB**. Le GE90 équipe le 777, le LEAP-1A l'A320neo (avec le PW1100G en alternative) et le PW1500G l'A220. Réflexe : A350 = Trent XWB, 777 = GE90, 787 = GEnx."
+        "fr": "L'A350 n'a qu'une motorisation possible : le **Rolls-Royce Trent XWB**. Le GE90 équipe le 777, le LEAP-1A l'A320neo (avec le PW1100G en alternative) et le PW1500G l'A220. Réflexe : A350 = Trent XWB, 777 = GE90, 787 = GEnx."
       },
       "meta": {
         "author": "hbock",
@@ -912,7 +912,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quel motoriste fournit le CFM56-7B des Boeing 737-800 de Transavia et le LEAP-1A des A320neo ?"
+        "fr": "Quel motoriste fournit le CFM56-7B des Boeing 737-800 de Transavia et le LEAP-1A des A320neo ?"
       },
       "options": [
         {
@@ -938,7 +938,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**CFM International** est la coentreprise à parts égales entre le français Safran (ex-Snecma) et l'américain General Electric ; ses CFM56 puis LEAP sont les moteurs de monocouloir les plus vendus au monde. Réflexe : CFM = Safran + GE."
+        "fr": "**CFM International** est la coentreprise à parts égales entre le français Safran (ex-Snecma) et l'américain General Electric ; ses CFM56 puis LEAP sont les moteurs de monocouloir les plus vendus au monde. Réflexe : CFM = Safran + GE."
       },
       "meta": {
         "author": "hbock",
@@ -958,7 +958,7 @@
       "lang": "fr",
       "validAsOf": "2026-07-01",
       "stem": {
-        "fr": "Quelle est, à une trentaine de sièges près, la capacité d'un A350-900 d'Air France en configuration triclasse ?"
+        "fr": "Quelle est, à une trentaine de sièges près, la capacité d'un A350-900 d'Air France en configuration triclasse ?"
       },
       "options": [
         {
@@ -984,7 +984,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "L'A350-900 d'Air France emporte environ **292 passagers** (Business, Premium, Economy), certaines versions un peu plus. Les 470 sièges correspondent aux 777-300ER haute densité vers les Antilles. Réflexe : A350 ≈ 300, A220 ≈ 150, 777-300ER de 300 à 470 selon la version."
+        "fr": "L'A350-900 d'Air France emporte environ **292 passagers** (Business, Premium, Economy), certaines versions un peu plus. Les 470 sièges correspondent aux 777-300ER haute densité vers les Antilles. Réflexe : A350 ≈ 300, A220 ≈ 150, 777-300ER de 300 à 470 selon la version."
       },
       "meta": {
         "author": "hbock",
@@ -1010,7 +1010,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quel animal, surnommé « la crevette », est l'emblème historique d'Air France ?"
+        "fr": "Quel animal, surnommé « la crevette », est l'emblème historique d'Air France ?"
       },
       "options": [
         {
@@ -1036,7 +1036,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "L'**hippocampe ailé**, hérité d'Air Orient en 1933, symbolise l'union de l'air (les ailes) et de la mer (le cheval marin, clin d'œil aux hydravions). Les personnels le surnomment affectueusement « la crevette ». Réflexe : crevette = hippocampe = Air France."
+        "fr": "L'**hippocampe ailé**, hérité d'Air Orient en 1933, symbolise l'union de l'air (les ailes) et de la mer (le cheval marin, clin d'œil aux hydravions). Les personnels le surnomment affectueusement « la crevette ». Réflexe : crevette = hippocampe = Air France."
       },
       "meta": {
         "author": "hbock",
@@ -1055,7 +1055,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Combien de Concorde Air France a-t-elle exploités au total ?"
+        "fr": "Combien de Concorde Air France a-t-elle exploités au total ?"
       },
       "options": [
         {
@@ -1081,7 +1081,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Air France a exploité **7 Concorde** entre 1976 et 2003 (British Airways en avait également 7). L'un d'eux s'est écrasé à Gonesse en juillet 2000. Réflexe : 20 Concorde construits en tout, 14 en service commercial, 7 par compagnie."
+        "fr": "Air France a exploité **7 Concorde** entre 1976 et 2003 (British Airways en avait également 7). L'un d'eux s'est écrasé à Gonesse en juillet 2000. Réflexe : 20 Concorde construits en tout, 14 en service commercial, 7 par compagnie."
       },
       "meta": {
         "author": "hbock",
@@ -1108,7 +1108,7 @@
       "lang": "fr",
       "validAsOf": "2025-12-31",
       "stem": {
-        "fr": "Quelle part de carburant d'aviation durable (SAF) le groupe Air France-KLM a-t-il incorporée en 2025 ?"
+        "fr": "Quelle part de carburant d'aviation durable (SAF) le groupe Air France-KLM a-t-il incorporée en 2025 ?"
       },
       "options": [
         {
@@ -1134,7 +1134,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Le groupe a incorporé **2,9 % de SAF** en 2025, contre 1,3 % l'année précédente, avec un objectif de 10 % en 2030. Le SAF réduit les émissions sur le cycle de vie mais reste rare et cher. Réflexe : ≈ 3 % aujourd'hui, 10 % visés en 2030."
+        "fr": "Le groupe a incorporé **2,9 % de SAF** en 2025, contre 1,3 % l'année précédente, avec un objectif de 10 % en 2030. Le SAF réduit les émissions sur le cycle de vie mais reste rare et cher. Réflexe : ≈ 3 % aujourd'hui, 10 % visés en 2030."
       },
       "meta": {
         "author": "hbock",
@@ -1166,7 +1166,7 @@
       "lang": "fr",
       "validAsOf": "2025-12-31",
       "stem": {
-        "fr": "Fin 2025, quelle proportion de la flotte du groupe Air France-KLM était constituée d'avions de nouvelle génération (A350, 787, A220, A320neo…) ?"
+        "fr": "Fin 2025, quelle proportion de la flotte du groupe Air France-KLM était constituée d'avions de nouvelle génération (A350, 787, A220, A320neo…) ?"
       },
       "options": [
         {
@@ -1192,7 +1192,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Le communiqué annuel 2025 indique **35 % d'avions de nouvelle génération**, en hausse de 8 points sur un an. Ces appareils consomment environ 20 à 25 % de carburant en moins. Réflexe : un peu plus d'un tiers de la flotte, renouvellement en cours jusqu'en 2030."
+        "fr": "Le communiqué annuel 2025 indique **35 % d'avions de nouvelle génération**, en hausse de 8 points sur un an. Ces appareils consomment environ 20 à 25 % de carburant en moins. Réflexe : un peu plus d'un tiers de la flotte, renouvellement en cours jusqu'en 2030."
       },
       "meta": {
         "author": "hbock",
@@ -1219,7 +1219,7 @@
       "lang": "fr",
       "validAsOf": "2025-12-31",
       "stem": {
-        "fr": "Depuis quels deux hubs opère Air France KLM Martinair Cargo ?"
+        "fr": "Depuis quels deux hubs opère Air France KLM Martinair Cargo ?"
       },
       "options": [
         {
@@ -1245,7 +1245,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "L'activité fret du groupe est organisée autour de **Paris-Charles de Gaulle et d'Amsterdam-Schiphol**, les hubs passagers d'Air France et de KLM ; elle a transporté 917 000 tonnes en 2025 vers 117 destinations. Réflexe : hubs cargo = hubs passagers du groupe."
+        "fr": "L'activité fret du groupe est organisée autour de **Paris-Charles de Gaulle et d'Amsterdam-Schiphol**, les hubs passagers d'Air France et de KLM ; elle a transporté 917 000 tonnes en 2025 vers 117 destinations. Réflexe : hubs cargo = hubs passagers du groupe."
       },
       "meta": {
         "author": "hbock",
