@@ -567,6 +567,14 @@ abstract final class AppStrings {
   static const String dominoRuleInterleavedSeries =
       'Deux séries s\'entrelacent : une pour les positions paires, une pour '
       'les impaires.';
+  // Memory N-back (US-026).
+  static const String nbackYes = 'Oui';
+  static const String nbackNo = 'Non';
+  static String nbackYesSemantics(String shortcut) => 'Oui ($shortcut)';
+  static String nbackNoSemantics(String shortcut) => 'Non ($shortcut)';
+  static const String nbackPrimerLabel = 'Amorce — pas de réponse attendue';
+  static const String nbackHistoryStripLabel = 'Repère (derniers stimuli)';
+  static String nbackStimulusSemantics(int index) => 'Stimulus $index';
   // Formes et couleurs (US-029, attention_rules).
   static const String attentionRulesTouchFallback =
       'Touches non représentatives : le jour J, utilisez le clavier.';
