@@ -207,7 +207,7 @@ deliberate split by role (US-006):
 |--------|--------|------|
 | Android, iOS (phone) | `android/`, `ios/` | **Learn and practice**: lessons, flashcards, drills, progress. Touch-first layouts. |
 | macOS, Windows | `macos/`, `windows/` | **Exam mode** for keyboard-native activities; the window opens at 1280×800 and cannot shrink below 1024×700 logical pixels (`macos/Runner/MainFlutterWindow.swift`, `windows/runner/win32_window.cpp`). |
-| Web (Chrome) | `web/` | Same as desktop for people without a build; also the cheapest platform to build in CI (`flutter build web --release` in the `check` job). |
+| Web (Chrome) | `web/` | Same as desktop for people without a build; also the cheapest platform to build in CI (`flutter build web --release` in the `check` job). Deployed continuously to GitHub Pages (US-124, see `docs/RELEASE.md` "Web (GitHub Pages)") at `https://hbock-42.github.io/trainer_psy_air/`, using the hash URL strategy (`main.dart`) so deep links survive a reload from a project-site sub-path with no server-side SPA rewrite. |
 | Tablet + physical keyboard | `android/`, `ios/` | Treated as desktop when a hardware keyboard is present. |
 
 One codebase, one `WidgetsApp`: nothing in `lib/app.dart` or the router is platform-specific.
