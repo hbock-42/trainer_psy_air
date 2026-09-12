@@ -4,7 +4,7 @@ issue: 95
 title: "Multitask psychomotor engine (keyboard)"
 type: story
 epic: EPIC-03
-status: backlog
+status: review
 priority: P1
 size: L
 lane: engines
@@ -19,7 +19,7 @@ labels: [engine,generator,keyboard,desktop]
 Real test (spec §2.4-M): hold the arrow key in the direction a circle moves (tracking); press SPACE when the shape inside the circle equals the reference shape; press F when the framed calculation is wrong; ~5 min continuous; erratic target.
 
 ## Acceptance criteria
-- [ ] Deterministic tick simulation: target trajectory (seeded noise), shape stream, calculation stream; difficulty = speed / event rates
-- [ ] Renderer with `Ticker` + `CustomPainter`, physical keyboard input via `Focus`/`RawKeyboardListener`-equivalent on the widgets layer; **desktop/web only** in exam mode; touch adaptation (on-screen arrows/buttons) allowed in practice, labelled "non-representative"
-- [ ] Scorer: tracking error (RMS), hit/miss/false alarm for shapes and calculations
-- [ ] Unit tests on the simulation and scorer
+- [x] Deterministic tick simulation: target trajectory (seeded noise), shape stream, calculation stream; difficulty = speed / event rates
+- [x] Renderer with `Ticker` + `CustomPainter`, physical keyboard input via `Focus`/`KeyboardListener` on the widgets layer; **desktop/web only** in exam mode; touch adaptation (on-screen arrows/buttons) allowed in practice, labelled "non-representative"
+- [x] Scorer: tracking error (RMS), hit/miss/false alarm for shapes and calculations
+- [x] Unit tests on the simulation and scorer
