@@ -20,28 +20,28 @@ import 'activity_renderer.dart';
 // Registration order does not matter; the registries key by family id.
 
 /// The generators and scorers of every activity.
-final Provider<EngineRegistry>
-engineRegistryProvider = Provider<EngineRegistry>(
-  (ref) => EngineRegistry(const <ActivityEngine>[
-    // US-021..036: add one line per engine (alphabetical by family id).
-    ArithmeticGridEngine(),
-    AttentionParityEngine(),
-    AttentionRulesEngine(),
-    NbackEngine(),
-  ]),
-);
+final Provider<EngineRegistry> engineRegistryProvider =
+    Provider<EngineRegistry>(
+      (ref) => EngineRegistry(const <ActivityEngine>[
+        // US-021..036: add one line per engine (alphabetical by family id).
+        ArithmeticGridEngine(),
+        AttentionParityEngine(),
+        AttentionRulesEngine(),
+        NbackEngine(),
+      ]),
+    );
 
 /// The widgets of every activity.
-final Provider<RendererRegistry>
-rendererRegistryProvider = Provider<RendererRegistry>(
-  (ref) => RendererRegistry(const <ActivityRenderer>[
-    // US-021..036: add one line per engine (alphabetical by family id).
-    ArithmeticGridRenderer(),
-    AttentionParityRenderer(),
-    AttentionRulesRenderer(),
-    NbackRenderer(),
-  ]),
-);
+final Provider<RendererRegistry> rendererRegistryProvider =
+    Provider<RendererRegistry>(
+      (ref) => RendererRegistry(const <ActivityRenderer>[
+        // US-021..036: add one line per engine (alphabetical by family id).
+        ArithmeticGridRenderer(),
+        AttentionParityRenderer(),
+        AttentionRulesRenderer(),
+        NbackRenderer(),
+      ]),
+    );
 
 /// Time source of every session. Widget tests override it with a
 /// `ManualClock` to step timers by hand.
