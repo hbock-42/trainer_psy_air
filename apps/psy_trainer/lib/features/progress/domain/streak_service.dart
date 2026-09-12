@@ -30,6 +30,15 @@ class DailyActivity {
   /// Local midnight of that day.
   final DateTime date;
   final int itemCount;
+
+  @override
+  bool operator ==(Object other) =>
+      other is DailyActivity &&
+      other.date == date &&
+      other.itemCount == itemCount;
+
+  @override
+  int get hashCode => Object.hash(date, itemCount);
 }
 
 /// Everything the dashboard's streak card and heat-map need, computed once

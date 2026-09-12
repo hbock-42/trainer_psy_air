@@ -1025,16 +1025,18 @@ StatefulShellRoute.indexedStack      AppShell; one branch (own Navigator) per ta
 Findings and fixes from the accessibility & performance pass. Add to this section rather than
 starting a new one when the next perf pass finds something.
 
-**Chart painters (`shared/widgets/`).** `ArcGauge`, `RadarChart`, `HorizontalBarChart` and
-`LineChart` each own a `CustomPainter` with a `shouldRepaint` that compares fields instead of
-defaulting to `true`. Two of them were comparing a `List` field (`RadarChart`'s `axes`,
-`LineChart`'s `series`/`colors`/`xTicks`/`yTicks`) with `!=`, which is reference equality on the
-list itself — every rebuild passes a freshly built `List` literal, so the comparison was `true`
-(repaint) even when every element was unchanged. Fixed with `listEquals` (and an `==`/`hashCode`
-override on `LineChartSeries`/`RadarChartAxis`, whose own equality `listEquals` needs). `ArcGauge`
-and `HorizontalBarChart` only ever compared scalar fields and were already correct. Each chart's
-`CustomPaint` is now also wrapped in its own `RepaintBoundary`, so a repaint (hover, a changed
-value) rasterises just that chart's layer instead of the screen around it.
+**Chart painters (`shared/widgets/`, `features/progress/presentation/widgets/activity_heatmap.dart`).**
+`ArcGauge`, `RadarChart`, `HorizontalBarChart`, `LineChart` and `ActivityHeatmap` each own a
+`CustomPainter` with a `shouldRepaint` that compares fields instead of defaulting to `true`.
+Three of them were comparing a `List` field (`RadarChart`'s `axes`, `LineChart`'s
+`series`/`colors`/`xTicks`/`yTicks`, `ActivityHeatmap`'s `days`) with `!=`, which is reference
+equality on the list itself — every rebuild passes a freshly built `List` literal, so the
+comparison was `true` (repaint) even when every element was unchanged. Fixed with `listEquals`
+(and an `==`/`hashCode` override on `LineChartSeries`/`RadarChartAxis`/`DailyActivity`, whose own
+equality `listEquals` needs). `ArcGauge` and `HorizontalBarChart` only ever compared scalar
+fields and were already correct. Each chart's `CustomPaint` is now also wrapped in its own
+`RepaintBoundary`, so a repaint (hover, a changed value) rasterises just that chart's layer
+instead of the screen around it.
 
 **Ticker-driven engine scenes.** `attention_airways` and `multitask_psychomotor` run a
 widget-layer `Ticker` at 60 fps (`_onTick` -> `_sim.advance(...)` -> `setState(() {})`); the scene
