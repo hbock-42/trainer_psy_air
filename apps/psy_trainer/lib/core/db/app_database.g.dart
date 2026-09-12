@@ -4004,6 +4004,473 @@ class BlueprintsCompanion extends UpdateCompanion<BlueprintRow> {
   }
 }
 
+class $LexicalFieldsTable extends LexicalFields
+    with TableInfo<$LexicalFieldsTable, LexicalFieldRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $LexicalFieldsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _familyIdMeta = const VerificationMeta(
+    'familyId',
+  );
+  @override
+  late final GeneratedColumn<String> familyId = GeneratedColumn<String>(
+    'family_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _difficultyMeta = const VerificationMeta(
+    'difficulty',
+  );
+  @override
+  late final GeneratedColumn<int> difficulty = GeneratedColumn<int>(
+    'difficulty',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _versionMeta = const VerificationMeta(
+    'version',
+  );
+  @override
+  late final GeneratedColumn<int> version = GeneratedColumn<int>(
+    'version',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  @override
+  late final GeneratedColumnWithTypeConverter<Map<String, Object?>, String>
+  json = GeneratedColumn<String>(
+    'json',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  ).withConverter<Map<String, Object?>>($LexicalFieldsTable.$converterjson);
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    createdAt,
+    updatedAt,
+    familyId,
+    difficulty,
+    version,
+    json,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'lexical_fields';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<LexicalFieldRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    if (data.containsKey('family_id')) {
+      context.handle(
+        _familyIdMeta,
+        familyId.isAcceptableOrUnknown(data['family_id']!, _familyIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_familyIdMeta);
+    }
+    if (data.containsKey('difficulty')) {
+      context.handle(
+        _difficultyMeta,
+        difficulty.isAcceptableOrUnknown(data['difficulty']!, _difficultyMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_difficultyMeta);
+    }
+    if (data.containsKey('version')) {
+      context.handle(
+        _versionMeta,
+        version.isAcceptableOrUnknown(data['version']!, _versionMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_versionMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  LexicalFieldRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return LexicalFieldRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+      familyId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}family_id'],
+      )!,
+      difficulty: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}difficulty'],
+      )!,
+      version: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}version'],
+      )!,
+      json: $LexicalFieldsTable.$converterjson.fromSql(
+        attachedDatabase.typeMapping.read(
+          DriftSqlType.string,
+          data['${effectivePrefix}json'],
+        )!,
+      ),
+    );
+  }
+
+  @override
+  $LexicalFieldsTable createAlias(String alias) {
+    return $LexicalFieldsTable(attachedDatabase, alias);
+  }
+
+  static TypeConverter<Map<String, Object?>, String> $converterjson =
+      const JsonMapConverter();
+}
+
+class LexicalFieldRow extends DataClass implements Insertable<LexicalFieldRow> {
+  final String id;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  final String familyId;
+  final int difficulty;
+  final int version;
+  final Map<String, Object?> json;
+  const LexicalFieldRow({
+    required this.id,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.familyId,
+    required this.difficulty,
+    required this.version,
+    required this.json,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    map['family_id'] = Variable<String>(familyId);
+    map['difficulty'] = Variable<int>(difficulty);
+    map['version'] = Variable<int>(version);
+    {
+      map['json'] = Variable<String>(
+        $LexicalFieldsTable.$converterjson.toSql(json),
+      );
+    }
+    return map;
+  }
+
+  LexicalFieldsCompanion toCompanion(bool nullToAbsent) {
+    return LexicalFieldsCompanion(
+      id: Value(id),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+      familyId: Value(familyId),
+      difficulty: Value(difficulty),
+      version: Value(version),
+      json: Value(json),
+    );
+  }
+
+  factory LexicalFieldRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return LexicalFieldRow(
+      id: serializer.fromJson<String>(json['id']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+      familyId: serializer.fromJson<String>(json['familyId']),
+      difficulty: serializer.fromJson<int>(json['difficulty']),
+      version: serializer.fromJson<int>(json['version']),
+      json: serializer.fromJson<Map<String, Object?>>(json['json']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+      'familyId': serializer.toJson<String>(familyId),
+      'difficulty': serializer.toJson<int>(difficulty),
+      'version': serializer.toJson<int>(version),
+      'json': serializer.toJson<Map<String, Object?>>(json),
+    };
+  }
+
+  LexicalFieldRow copyWith({
+    String? id,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+    String? familyId,
+    int? difficulty,
+    int? version,
+    Map<String, Object?>? json,
+  }) => LexicalFieldRow(
+    id: id ?? this.id,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+    familyId: familyId ?? this.familyId,
+    difficulty: difficulty ?? this.difficulty,
+    version: version ?? this.version,
+    json: json ?? this.json,
+  );
+  LexicalFieldRow copyWithCompanion(LexicalFieldsCompanion data) {
+    return LexicalFieldRow(
+      id: data.id.present ? data.id.value : this.id,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+      familyId: data.familyId.present ? data.familyId.value : this.familyId,
+      difficulty: data.difficulty.present
+          ? data.difficulty.value
+          : this.difficulty,
+      version: data.version.present ? data.version.value : this.version,
+      json: data.json.present ? data.json.value : this.json,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('LexicalFieldRow(')
+          ..write('id: $id, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('familyId: $familyId, ')
+          ..write('difficulty: $difficulty, ')
+          ..write('version: $version, ')
+          ..write('json: $json')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    createdAt,
+    updatedAt,
+    familyId,
+    difficulty,
+    version,
+    json,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is LexicalFieldRow &&
+          other.id == this.id &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt &&
+          other.familyId == this.familyId &&
+          other.difficulty == this.difficulty &&
+          other.version == this.version &&
+          other.json == this.json);
+}
+
+class LexicalFieldsCompanion extends UpdateCompanion<LexicalFieldRow> {
+  final Value<String> id;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<String> familyId;
+  final Value<int> difficulty;
+  final Value<int> version;
+  final Value<Map<String, Object?>> json;
+  final Value<int> rowid;
+  const LexicalFieldsCompanion({
+    this.id = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.familyId = const Value.absent(),
+    this.difficulty = const Value.absent(),
+    this.version = const Value.absent(),
+    this.json = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  LexicalFieldsCompanion.insert({
+    required String id,
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    required String familyId,
+    required int difficulty,
+    required int version,
+    required Map<String, Object?> json,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt),
+       familyId = Value(familyId),
+       difficulty = Value(difficulty),
+       version = Value(version),
+       json = Value(json);
+  static Insertable<LexicalFieldRow> custom({
+    Expression<String>? id,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<String>? familyId,
+    Expression<int>? difficulty,
+    Expression<int>? version,
+    Expression<String>? json,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (familyId != null) 'family_id': familyId,
+      if (difficulty != null) 'difficulty': difficulty,
+      if (version != null) 'version': version,
+      if (json != null) 'json': json,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  LexicalFieldsCompanion copyWith({
+    Value<String>? id,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<String>? familyId,
+    Value<int>? difficulty,
+    Value<int>? version,
+    Value<Map<String, Object?>>? json,
+    Value<int>? rowid,
+  }) {
+    return LexicalFieldsCompanion(
+      id: id ?? this.id,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      familyId: familyId ?? this.familyId,
+      difficulty: difficulty ?? this.difficulty,
+      version: version ?? this.version,
+      json: json ?? this.json,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (familyId.present) {
+      map['family_id'] = Variable<String>(familyId.value);
+    }
+    if (difficulty.present) {
+      map['difficulty'] = Variable<int>(difficulty.value);
+    }
+    if (version.present) {
+      map['version'] = Variable<int>(version.value);
+    }
+    if (json.present) {
+      map['json'] = Variable<String>(
+        $LexicalFieldsTable.$converterjson.toSql(json.value),
+      );
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('LexicalFieldsCompanion(')
+          ..write('id: $id, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('familyId: $familyId, ')
+          ..write('difficulty: $difficulty, ')
+          ..write('version: $version, ')
+          ..write('json: $json, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 class $SessionsTable extends Sessions
     with TableInfo<$SessionsTable, SessionRow> {
   @override
@@ -7562,6 +8029,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $DecksTable decks = $DecksTable(this);
   late final $FlashcardsTable flashcards = $FlashcardsTable(this);
   late final $BlueprintsTable blueprints = $BlueprintsTable(this);
+  late final $LexicalFieldsTable lexicalFields = $LexicalFieldsTable(this);
   late final $SessionsTable sessions = $SessionsTable(this);
   late final $AttemptsTable attempts = $AttemptsTable(this);
   late final $ItemStatsTable itemStats = $ItemStatsTable(this);
@@ -7593,6 +8061,10 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final Index blueprintsModule = Index(
     'blueprints_module',
     'CREATE INDEX blueprints_module ON blueprints (module_id)',
+  );
+  late final Index lexicalFieldsFamilyDifficulty = Index(
+    'lexical_fields_family_difficulty',
+    'CREATE INDEX lexical_fields_family_difficulty ON lexical_fields (family_id, difficulty)',
   );
   late final Index sessionsStartedAt = Index(
     'sessions_started_at',
@@ -7661,6 +8133,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     decks,
     flashcards,
     blueprints,
+    lexicalFields,
     sessions,
     attempts,
     itemStats,
@@ -7673,6 +8146,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     decksFamily,
     flashcardsDeckDifficulty,
     blueprintsModule,
+    lexicalFieldsFamilyDifficulty,
     sessionsStartedAt,
     sessionsFamilyStartedAt,
     attemptsSessionPosition,
@@ -9790,6 +10264,251 @@ typedef $$BlueprintsTableProcessedTableManager =
       BlueprintRow,
       PrefetchHooks Function()
     >;
+typedef $$LexicalFieldsTableCreateCompanionBuilder =
+    LexicalFieldsCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      required String familyId,
+      required int difficulty,
+      required int version,
+      required Map<String, Object?> json,
+      Value<int> rowid,
+    });
+typedef $$LexicalFieldsTableUpdateCompanionBuilder =
+    LexicalFieldsCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<String> familyId,
+      Value<int> difficulty,
+      Value<int> version,
+      Value<Map<String, Object?>> json,
+      Value<int> rowid,
+    });
+
+class $$LexicalFieldsTableFilterComposer
+    extends Composer<_$AppDatabase, $LexicalFieldsTable> {
+  $$LexicalFieldsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get familyId => $composableBuilder(
+    column: $table.familyId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get difficulty => $composableBuilder(
+    column: $table.difficulty,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get version => $composableBuilder(
+    column: $table.version,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnWithTypeConverterFilters<
+    Map<String, Object?>,
+    Map<String, Object>,
+    String
+  >
+  get json => $composableBuilder(
+    column: $table.json,
+    builder: (column) => ColumnWithTypeConverterFilters(column),
+  );
+}
+
+class $$LexicalFieldsTableOrderingComposer
+    extends Composer<_$AppDatabase, $LexicalFieldsTable> {
+  $$LexicalFieldsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get familyId => $composableBuilder(
+    column: $table.familyId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get difficulty => $composableBuilder(
+    column: $table.difficulty,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get version => $composableBuilder(
+    column: $table.version,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get json => $composableBuilder(
+    column: $table.json,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$LexicalFieldsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $LexicalFieldsTable> {
+  $$LexicalFieldsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  GeneratedColumn<String> get familyId =>
+      $composableBuilder(column: $table.familyId, builder: (column) => column);
+
+  GeneratedColumn<int> get difficulty => $composableBuilder(
+    column: $table.difficulty,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get version =>
+      $composableBuilder(column: $table.version, builder: (column) => column);
+
+  GeneratedColumnWithTypeConverter<Map<String, Object?>, String> get json =>
+      $composableBuilder(column: $table.json, builder: (column) => column);
+}
+
+class $$LexicalFieldsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $LexicalFieldsTable,
+          LexicalFieldRow,
+          $$LexicalFieldsTableFilterComposer,
+          $$LexicalFieldsTableOrderingComposer,
+          $$LexicalFieldsTableAnnotationComposer,
+          $$LexicalFieldsTableCreateCompanionBuilder,
+          $$LexicalFieldsTableUpdateCompanionBuilder,
+          (
+            LexicalFieldRow,
+            BaseReferences<_$AppDatabase, $LexicalFieldsTable, LexicalFieldRow>,
+          ),
+          LexicalFieldRow,
+          PrefetchHooks Function()
+        > {
+  $$LexicalFieldsTableTableManager(_$AppDatabase db, $LexicalFieldsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$LexicalFieldsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$LexicalFieldsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$LexicalFieldsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<String> familyId = const Value.absent(),
+                Value<int> difficulty = const Value.absent(),
+                Value<int> version = const Value.absent(),
+                Value<Map<String, Object?>> json = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => LexicalFieldsCompanion(
+                id: id,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                familyId: familyId,
+                difficulty: difficulty,
+                version: version,
+                json: json,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                required String familyId,
+                required int difficulty,
+                required int version,
+                required Map<String, Object?> json,
+                Value<int> rowid = const Value.absent(),
+              }) => LexicalFieldsCompanion.insert(
+                id: id,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                familyId: familyId,
+                difficulty: difficulty,
+                version: version,
+                json: json,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$LexicalFieldsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $LexicalFieldsTable,
+      LexicalFieldRow,
+      $$LexicalFieldsTableFilterComposer,
+      $$LexicalFieldsTableOrderingComposer,
+      $$LexicalFieldsTableAnnotationComposer,
+      $$LexicalFieldsTableCreateCompanionBuilder,
+      $$LexicalFieldsTableUpdateCompanionBuilder,
+      (
+        LexicalFieldRow,
+        BaseReferences<_$AppDatabase, $LexicalFieldsTable, LexicalFieldRow>,
+      ),
+      LexicalFieldRow,
+      PrefetchHooks Function()
+    >;
 typedef $$SessionsTableCreateCompanionBuilder =
     SessionsCompanion Function({
       required String id,
@@ -11780,6 +12499,8 @@ class $AppDatabaseManager {
       $$FlashcardsTableTableManager(_db, _db.flashcards);
   $$BlueprintsTableTableManager get blueprints =>
       $$BlueprintsTableTableManager(_db, _db.blueprints);
+  $$LexicalFieldsTableTableManager get lexicalFields =>
+      $$LexicalFieldsTableTableManager(_db, _db.lexicalFields);
   $$SessionsTableTableManager get sessions =>
       $$SessionsTableTableManager(_db, _db.sessions);
   $$AttemptsTableTableManager get attempts =>

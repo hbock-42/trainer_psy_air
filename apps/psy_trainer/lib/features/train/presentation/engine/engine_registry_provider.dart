@@ -20,8 +20,13 @@ import '../../../engines/planning_tubes/domain/tubes_engine.dart';
 import '../../../engines/planning_tubes/presentation/tubes_renderer.dart';
 import '../../../engines/spatial_cubes/domain/cube_net_engine.dart';
 import '../../../engines/spatial_cubes/presentation/cube_net_renderer.dart';
+import '../../../engines/spatial_overlay/domain/overlay_grid_engine.dart';
+import '../../../engines/spatial_overlay/presentation/overlay_grid_renderer.dart';
 import '../../../engines/spatial_viewpoint/domain/viewpoint_engine.dart';
 import '../../../engines/spatial_viewpoint/presentation/viewpoint_renderer.dart';
+import '../../../engines/verbal_boxes/domain/word_boxes_engine.dart';
+import '../../../engines/verbal_boxes/presentation/lexical_field_catalogue.dart';
+import '../../../engines/verbal_boxes/presentation/word_boxes_renderer.dart';
 import '../../domain/engine/engine.dart';
 import '../renderers/mcq_renderer.dart';
 import 'activity_renderer.dart';
@@ -37,19 +42,21 @@ import 'activity_renderer.dart';
 /// The generators and scorers of every activity.
 final Provider<EngineRegistry> engineRegistryProvider =
     Provider<EngineRegistry>(
-      (ref) => EngineRegistry(const <ActivityEngine>[
+      (ref) => EngineRegistry(<ActivityEngine>[
         // US-021..036: add one line per engine (alphabetical by family id).
-        ArithmeticGridEngine(),
-        AttentionParityEngine(),
-        AttentionRulesEngine(),
-        CultureAeroEngine(),
-        DominosEngine(),
-        EnglishEngine(),
-        NbackEngine(),
-        MultitaskEngine(),
-        TubesEngine(),
-        CubeNetEngine(),
-        ViewpointEngine(),
+        const ArithmeticGridEngine(),
+        const AttentionParityEngine(),
+        const AttentionRulesEngine(),
+        const CultureAeroEngine(),
+        const EnglishEngine(),
+        const DominosEngine(),
+        const NbackEngine(),
+        const MultitaskEngine(),
+        const TubesEngine(),
+        const CubeNetEngine(),
+        const OverlayGridEngine(),
+        const ViewpointEngine(),
+        WordBoxesEngine(ref.read(lexicalFieldCatalogueProvider)),
       ]),
     );
 
@@ -61,6 +68,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const ArithmeticGridRenderer(),
         const AttentionParityRenderer(),
         const AttentionRulesRenderer(),
+        const CubeNetRenderer(),
         const DominosRenderer(),
         const McqRenderer(
           familyId: 'culture_aero',
@@ -74,8 +82,9 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const NbackRenderer(),
         const MultitaskRenderer(),
         const TubesRenderer(),
-        const CubeNetRenderer(),
+        const OverlayGridRenderer(),
         const ViewpointRenderer(),
+        WordBoxesRenderer(ref.read(lexicalFieldCatalogueProvider)),
       ]),
     );
 

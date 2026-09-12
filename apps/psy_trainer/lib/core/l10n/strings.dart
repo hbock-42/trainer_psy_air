@@ -865,6 +865,28 @@ abstract final class AppStrings {
   static const String multitaskExampleCalc =
       'Appuyez sur F quand le calcul encadré, en bas, est faux.';
 
+  // Overlay grid engine (US-033, spec §2.4-E).
+  static const String overlayGridResetAction = 'Réinitialiser';
+  static const String overlayGridTargetLabel = 'Grille cible';
+  static const String overlayGridWorkingLabel = 'Votre grille';
+  static const String overlayGridTrayLabel = 'Pièces à glisser';
+  static String overlayGridTileSemantics(int index) => 'Pièce ${index + 1}';
+  static const String overlayGridSolutionCaption =
+      'Solution : emplacement de chaque pièce.';
+  static const String overlayGridExampleCaption =
+      'Glissez les pièces sur la grille centrale pour reproduire la cible.';
+  // Word boxes / Boîte à mots (US-030).
+  static String wordBoxesErrorCount(int errors) =>
+      errors == 0 ? 'Aucune erreur' : '$errors erreur${errors > 1 ? 's' : ''}';
+  static const String wordBoxesEmptyBox = '—';
+  static String wordBoxesBoxSemantics(int boxNumber, String label) =>
+      'Boîte $boxNumber : $label';
+  static String wordBoxesResultSummary(int errors, int wordCount) => errors == 0
+      ? 'Série réussie sans erreur ($wordCount mots)'
+      : '$errors erreur${errors > 1 ? 's' : ''} sur $wordCount mots';
+  static const String wordBoxesMissedTitle = 'Mots mal classés';
+  static String wordBoxesMissedWord(String word, String fieldName) =>
+      '$word → $fieldName';
   // spatial_cubes (US-025): cube-net renderer.
   static const String cubeNetReferenceLabel = 'Patron de référence';
   static const String cubeNetTargetLabel = 'Patron à compléter';
