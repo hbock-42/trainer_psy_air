@@ -3,7 +3,7 @@ id: EPIC-02
 issue: 2
 title: "Content model & local database"
 type: epic
-status: done
+status: in-progress
 priority: P0
 lane: core
 ---
