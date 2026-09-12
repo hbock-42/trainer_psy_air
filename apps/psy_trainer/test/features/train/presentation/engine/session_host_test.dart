@@ -1,6 +1,7 @@
+import 'package:flutter/widgets.dart' show Locale;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/train/presentation/engine/engine_ui.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
@@ -8,6 +9,8 @@ import 'package:psy_trainer/shared/widgets/widgets.dart';
 import '../../../../helpers/fake_engine.dart';
 import '../../../../helpers/fake_renderer.dart';
 import '../../../../helpers/pump_app.dart';
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   final start = DateTime.utc(2026, 9, 5, 9);
@@ -65,8 +68,8 @@ void main() {
     );
     expect(find.text('Dominos'), findsOneWidget);
     expect(find.text('Trouvez le domino manquant.'), findsOneWidget);
-    expect(find.text(AppStrings.sessionItemCount(2)), findsOneWidget);
-    expect(find.text(AppStrings.sessionExamplePlaceholder), findsOneWidget);
+    expect(find.text(l10nFr.sessionItemCount(2)), findsOneWidget);
+    expect(find.text(l10nFr.sessionExamplePlaceholder), findsOneWidget);
     expect(find.byKey(SessionHost.startKey), findsOneWidget);
     expect(find.byType(ProgressDots), findsNothing);
     expect(repo.sessionsById, isEmpty);
@@ -81,9 +84,9 @@ void main() {
       renderer: const FakeRenderer(withExample: true),
     );
     expect(find.text('fake_family'), findsOneWidget);
-    expect(find.text(AppStrings.sessionBriefingDefault), findsOneWidget);
+    expect(find.text(l10nFr.sessionBriefingDefault), findsOneWidget);
     expect(find.byKey(FakeRenderer.exampleKey), findsOneWidget);
-    expect(find.text(AppStrings.sessionExamplePlaceholder), findsNothing);
+    expect(find.text(l10nFr.sessionExamplePlaceholder), findsNothing);
   });
 
   testWidgets('a practice session runs through feedback to the end', (
@@ -105,7 +108,7 @@ void main() {
     await tester.pump();
     expect(find.text('phase:answered'), findsOneWidget);
     expect(find.text('feedback:true'), findsOneWidget);
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
     expect(find.byKey(SessionHost.nextKey), findsOneWidget);
 
     await tester.tap(find.byKey(SessionHost.nextKey));
@@ -113,11 +116,11 @@ void main() {
     expect(find.text('Question 2'), findsOneWidget);
     await tester.tap(find.byKey(FakeRenderer.optionKey(2)));
     await tester.pump();
-    expect(find.text(AppStrings.sessionFeedbackWrong), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackWrong), findsOneWidget);
     await tester.tap(find.byKey(SessionHost.nextKey));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFinishedTitle), findsOneWidget);
+    expect(find.text(l10nFr.sessionFinishedTitle), findsOneWidget);
     expect(finished, hasLength(1));
     expect(finished.single.reason, FinishReason.completed);
     expect(finished.single.section.correct, 1);
@@ -162,7 +165,7 @@ void main() {
 
     clock.elapse(const Duration(seconds: 10));
     await tester.pump();
-    expect(find.text(AppStrings.sessionFinishedTitle), findsOneWidget);
+    expect(find.text(l10nFr.sessionFinishedTitle), findsOneWidget);
     expect(finished.single.section.timeouts, 1);
   });
 
@@ -172,7 +175,7 @@ void main() {
     await tester.pump();
     await tester.tap(find.byKey(SessionHost.pauseKey));
     await tester.pump();
-    expect(find.text(AppStrings.sessionPausedTitle), findsOneWidget);
+    expect(find.text(l10nFr.sessionPausedTitle), findsOneWidget);
     expect(find.text('Question 1'), findsNothing);
     await tester.tap(find.byKey(SessionHost.resumeKey));
     await tester.pump();
@@ -214,7 +217,7 @@ void main() {
         attempts: await repo.attemptsForSession(session.id),
       ),
     );
-    expect(find.text(AppStrings.sessionResumeHint(2, 3)), findsOneWidget);
+    expect(find.text(l10nFr.sessionResumeHint(2, 3)), findsOneWidget);
     await tester.tap(find.byKey(SessionHost.startKey));
     await tester.pump();
     expect(find.text('Question 2'), findsOneWidget);

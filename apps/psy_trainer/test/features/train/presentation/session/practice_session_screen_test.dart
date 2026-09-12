@@ -1,7 +1,8 @@
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart' show Locale;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/train/presentation/engine/engine_ui.dart';
 import 'package:psy_trainer/features/train/presentation/session/practice_session_screen.dart';
@@ -11,6 +12,8 @@ import 'package:psy_trainer/shared/widgets/widgets.dart';
 import '../../../../helpers/fake_engine.dart';
 import '../../../../helpers/fake_renderer.dart';
 import '../../../../helpers/pump_app.dart';
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   final start = DateTime.utc(2026, 9, 12, 9);
@@ -72,8 +75,8 @@ void main() {
 
     // Landed on the summary (US-052), the session runner gone.
     expect(find.byType(SessionHost), findsNothing);
-    expect(find.text(AppStrings.summaryTitle), findsOneWidget);
-    expect(find.text(AppStrings.summaryScoreFraction(2, 3)), findsOneWidget);
+    expect(find.text(l10nFr.summaryTitle), findsOneWidget);
+    expect(find.text(l10nFr.summaryScoreFraction(2, 3)), findsOneWidget);
     await tester.pump();
     expect(repo.sessionsById.values.single.status, SessionStatus.completed);
 
@@ -81,7 +84,7 @@ void main() {
     await tester.tap(find.byKey(SessionSummaryScreen.itemKey(1)));
     await tester.pump();
     expect(find.text('Question 2'), findsWidgets);
-    expect(find.text(AppStrings.summaryReviewMyAnswer), findsOneWidget);
+    expect(find.text(l10nFr.summaryReviewMyAnswer), findsOneWidget);
     expect(find.text('C'), findsOneWidget); // my (wrong) answer
     expect(find.text('A'), findsOneWidget); // expected
     expect(find.text('Parce que.'), findsOneWidget); // explanation
@@ -96,7 +99,7 @@ void main() {
     await simulateKeyDownEvent(LogicalKeyboardKey.escape);
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionPausedTitle), findsOneWidget);
+    expect(find.text(l10nFr.sessionPausedTitle), findsOneWidget);
   });
 
   testWidgets(
@@ -108,12 +111,12 @@ void main() {
 
       await tester.tap(find.byType(AppIconButton));
       await tester.pump();
-      expect(find.text(AppStrings.sessionQuitConfirmTitle), findsOneWidget);
+      expect(find.text(l10nFr.sessionQuitConfirmTitle), findsOneWidget);
 
       // Cancel: the session keeps running.
       await tester.tap(find.byKey(PracticeSessionScreen.quitCancelKey));
       await tester.pump();
-      expect(find.text(AppStrings.sessionQuitConfirmTitle), findsNothing);
+      expect(find.text(l10nFr.sessionQuitConfirmTitle), findsNothing);
       expect(find.text('Question 1'), findsOneWidget);
 
       await tester.tap(find.byType(AppIconButton));
@@ -122,7 +125,7 @@ void main() {
       await tester.pump();
       await tester.pump();
 
-      expect(find.text(AppStrings.summaryTitle), findsOneWidget);
+      expect(find.text(l10nFr.summaryTitle), findsOneWidget);
       expect(repo.sessionsById.values.single.status, SessionStatus.abandoned);
     },
   );
@@ -137,7 +140,7 @@ void main() {
     await tester.pump();
     await tester.tap(find.byKey(SessionHost.nextKey));
     await tester.pump();
-    expect(find.text(AppStrings.summaryTitle), findsOneWidget);
+    expect(find.text(l10nFr.summaryTitle), findsOneWidget);
 
     await tester.tap(find.byKey(SessionSummaryScreen.restartKey));
     await tester.pump();
@@ -155,7 +158,7 @@ void main() {
       await answer(tester, 2); // q2: wrong
       await answer(tester, 2); // q3: wrong
       await tester.pump();
-      expect(find.text(AppStrings.summaryTitle), findsOneWidget);
+      expect(find.text(l10nFr.summaryTitle), findsOneWidget);
 
       await tester.ensureVisible(
         find.byKey(SessionSummaryScreen.retryMistakesKey),
@@ -172,7 +175,7 @@ void main() {
       expect(find.text('Question 3'), findsOneWidget);
       await answer(tester, 0);
       await tester.pump();
-      expect(find.text(AppStrings.summaryScoreFraction(2, 2)), findsOneWidget);
+      expect(find.text(l10nFr.summaryScoreFraction(2, 2)), findsOneWidget);
     },
   );
 }

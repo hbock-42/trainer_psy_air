@@ -2,13 +2,15 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/engines/attention_airways/domain/airways_engine.dart';
 import 'package:psy_trainer/features/engines/attention_airways/presentation/airways_renderer.dart';
 import 'package:psy_trainer/features/train/presentation/engine/engine_ui.dart';
 
 import '../../../../helpers/pump_app.dart';
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   final start = DateTime.utc(2026, 9, 5, 9);
@@ -67,9 +69,9 @@ void main() {
     tester,
   ) async {
     await pumpHost(tester, ActivitySessionRequest.fresh(config()));
-    expect(find.text(AppStrings.airwaysExampleCapacity(4, 2)), findsOneWidget);
-    expect(find.text(AppStrings.airwaysExampleButtonLabel(1)), findsOneWidget);
-    expect(find.text(AppStrings.airwaysExampleButtonLabel(2)), findsOneWidget);
+    expect(find.text(l10nFr.airwaysExampleCapacity(4, 2)), findsOneWidget);
+    expect(find.text(l10nFr.airwaysExampleButtonLabel(1)), findsOneWidget);
+    expect(find.text(l10nFr.airwaysExampleButtonLabel(2)), findsOneWidget);
   });
 
   testWidgets('a touch reroute increases the reroute counter', (tester) async {
@@ -77,7 +79,7 @@ void main() {
     await tester.tap(find.byKey(SessionHost.startKey));
     await tester.pump();
 
-    expect(find.text(AppStrings.airwaysReroutesCounter(0)), findsOneWidget);
+    expect(find.text(l10nFr.airwaysReroutesCounter(0)), findsOneWidget);
 
     // Let the first scheduled aircraft take to the air (it always spawns
     // within the first ~200 ms) but keep well clear of its ~1.8-3.4 s
@@ -93,7 +95,7 @@ void main() {
     await tester.tap(find.byKey(const Key('airways.route_button.1')));
     await tester.pump();
 
-    expect(find.text(AppStrings.airwaysReroutesCounter(1)), findsOneWidget);
+    expect(find.text(l10nFr.airwaysReroutesCounter(1)), findsOneWidget);
   });
 
   testWidgets('a keyboard digit reroutes the same way as its button', (
@@ -112,7 +114,7 @@ void main() {
     await tester.sendKeyEvent(LogicalKeyboardKey.digit2);
     await tester.pump();
 
-    expect(find.text(AppStrings.airwaysReroutesCounter(1)), findsOneWidget);
+    expect(find.text(l10nFr.airwaysReroutesCounter(1)), findsOneWidget);
   });
 
   testWidgets(

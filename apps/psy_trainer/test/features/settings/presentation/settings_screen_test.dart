@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_trainer/app.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
 import 'package:psy_trainer/core/router/app_routes.dart';
@@ -18,6 +18,8 @@ import '../../../helpers/onboarding_fakes.dart';
 Finder _pressable(String label) => find.byWidgetPredicate(
   (widget) => widget is AppPressable && widget.semanticsLabel == label,
 );
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   late InMemoryProgressRepository repository;
@@ -52,12 +54,12 @@ void main() {
 
     expect(
       find.textContaining(
-        AppStrings.formatLongDate(completedAnswers.examDate!),
+        l10nFr.formatLongDate(completedAnswers.examDate!),
       ),
       findsOneWidget,
     );
     expect(find.textContaining('PSY0'), findsOneWidget);
-    expect(find.text(AppStrings.settingsEditProfile), findsOneWidget);
+    expect(find.text(l10nFr.settingsEditProfile), findsOneWidget);
   });
 
   testWidgets('"edit my profile" replays the flow and saves the changes', (
@@ -65,18 +67,18 @@ void main() {
   ) async {
     await pumpSettings(tester);
 
-    await tester.tap(find.text(AppStrings.settingsEditProfile));
+    await tester.tap(find.text(l10nFr.settingsEditProfile));
     await tester.pumpAndSettle();
     expect(find.byType(EditProfileScreen), findsOneWidget);
     expect(find.byType(OnboardingFlow), findsOneWidget);
-    expect(find.text(AppStrings.onboardingEditTitle), findsOneWidget);
+    expect(find.text(l10nFr.onboardingEditTitle), findsOneWidget);
 
     // Already accepted: continue straight to the date and clear it.
-    await tester.tap(find.text(AppStrings.actionContinue));
+    await tester.tap(find.text(l10nFr.actionContinue));
     await tester.pumpAndSettle();
-    await tester.tap(find.text(AppStrings.onboardingExamDateUnknown));
+    await tester.tap(find.text(l10nFr.onboardingExamDateUnknown));
     await tester.pumpAndSettle();
-    await tester.tap(find.text(AppStrings.actionSave));
+    await tester.tap(find.text(l10nFr.actionSave));
     await tester.pumpAndSettle();
 
     expect(find.byType(EditProfileScreen), findsNothing);
@@ -88,7 +90,7 @@ void main() {
       completedAnswers.disclaimerAcceptedAt,
     );
     expect(
-      find.textContaining(AppStrings.settingsProfileSummaryNoExamDate),
+      find.textContaining(l10nFr.settingsProfileSummaryNoExamDate),
       findsOneWidget,
     );
   });
@@ -97,7 +99,7 @@ void main() {
     tester,
   ) async {
     await pumpSettings(tester);
-    await tester.tap(find.text(AppStrings.settingsEditProfile));
+    await tester.tap(find.text(l10nFr.settingsEditProfile));
     await tester.pumpAndSettle();
 
     await tester.tap(_pressable('Back'));

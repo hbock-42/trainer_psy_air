@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/core/theme/app_theme.dart';
 import 'package:psy_trainer/features/progress/domain/progress_domain.dart';
@@ -12,6 +12,8 @@ import 'package:psy_trainer/shared/widgets/widgets.dart';
 
 import '../../../../helpers/pump_app.dart';
 import '../progress_fixtures.dart';
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   late ProgressFixture fixture;
@@ -59,7 +61,7 @@ void main() {
     await pumpCard(tester);
     expect(find.byType(ExamScoreChart), findsNothing);
     expect(find.byType(LineChart), findsNothing);
-    expect(find.text(AppStrings.examChartTitle), findsNothing);
+    expect(find.text(l10nFr.examChartTitle), findsNothing);
   });
 
   testWidgets('plots completed simulations oldest first with a summary', (
@@ -71,11 +73,11 @@ void main() {
     await fixture.exam(daysAgo: 1, correct: 8);
     await pumpCard(tester);
 
-    expect(find.text(AppStrings.examChartTitle), findsOneWidget);
-    expect(find.text(AppStrings.examChartHint), findsOneWidget);
+    expect(find.text(l10nFr.examChartTitle), findsOneWidget);
+    expect(find.text(l10nFr.examChartHint), findsOneWidget);
     final node = tester.getSemantics(find.byType(LineChart));
-    expect(node.label, AppStrings.examChartSemanticsLabel);
-    expect(node.value, AppStrings.examChartSummary(40, 80, 3));
+    expect(node.label, l10nFr.examChartSemanticsLabel);
+    expect(node.value, l10nFr.examChartSummary(3, 80, 40));
     expect(node.value, 'de 40 % à 80 % sur 3 simulations');
     expect(find.byType(ExamSectionBreakdown), findsNothing);
     handle.dispose();
@@ -97,16 +99,16 @@ void main() {
     expect(find.byType(ExamSectionBreakdown), findsOneWidget);
     expect(
       find.text(
-        AppStrings.examSectionsTitle(FamilyTrendCharts.longDate(daysAgo(1))),
+        l10nFr.examSectionsTitle(FamilyTrendCharts.longDate(daysAgo(1))),
       ),
       findsOneWidget,
     );
     // The tooltip of the tapped point stays visible.
-    expect(find.text(AppStrings.examAttempt(2)), findsOneWidget);
-    expect(find.text(AppStrings.examScoreLine(80)), findsOneWidget);
+    expect(find.text(l10nFr.examAttempt(2)), findsOneWidget);
+    expect(find.text(l10nFr.examScoreLine(80)), findsOneWidget);
 
     final bars = tester.getSemantics(
-      find.bySemanticsLabel(AppStrings.examSectionsSemanticsLabel),
+      find.bySemanticsLabel(l10nFr.examSectionsSemanticsLabel),
     );
     expect(
       bars.value,
@@ -118,11 +120,11 @@ void main() {
     await tester.pumpAndSettle();
     expect(
       find.text(
-        AppStrings.examSectionsTitle(FamilyTrendCharts.longDate(daysAgo(10))),
+        l10nFr.examSectionsTitle(FamilyTrendCharts.longDate(daysAgo(10))),
       ),
       findsOneWidget,
     );
-    expect(find.text(AppStrings.examAttempt(1)), findsOneWidget);
+    expect(find.text(l10nFr.examAttempt(1)), findsOneWidget);
 
     // Tapping the same point again closes the panel.
     await tester.tapAt(Offset(chart.left + 45, chart.center.dy));
@@ -162,12 +164,12 @@ void main() {
     await tester.tapAt(chart.center);
     await tester.pumpAndSettle();
     final bars = tester.getSemantics(
-      find.bySemanticsLabel(AppStrings.examSectionsSemanticsLabel),
+      find.bySemanticsLabel(l10nFr.examSectionsSemanticsLabel),
     );
     expect(
       bars.value,
       '1. Grilles de calcul : 5/10 · 50 %, '
-      '2. Dominos : ${AppStrings.examSectionNotReached}',
+      '2. Dominos : ${l10nFr.examSectionNotReached}',
     );
     handle.dispose();
   });
@@ -203,7 +205,7 @@ void main() {
       ['a', 'c'],
     );
     expect(
-      ExamScoreChartCard.describe([history.last]),
+      l10nFr.examChartSummary(1, 50, 50),
       '50 % sur 1 simulation',
     );
   });

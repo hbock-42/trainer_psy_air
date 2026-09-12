@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart' hide Tolerance;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/train/presentation/engine/engine_ui.dart';
 import 'package:psy_trainer/features/train/presentation/renderers/numeric_renderer.dart';
@@ -38,6 +38,8 @@ NumericItem _numeric({
   unit: unit,
   inputFormat: inputFormat,
 );
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   late ManualClock clock;
@@ -101,7 +103,7 @@ void main() {
     tester,
   ) async {
     await pumpHost(tester, config(items: [_numeric()]));
-    expect(find.text(AppStrings.numericExampleStem), findsOneWidget);
+    expect(find.text(l10nFr.numericExampleStem), findsOneWidget);
     expect(find.byType(AppKeypadButton), findsWidgets);
   });
 
@@ -129,7 +131,7 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('numeric_key_validate')));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
   });
 
   testWidgets('negative and decimal keys build the typed value', (
@@ -145,7 +147,7 @@ void main() {
     expect(find.text('-1.5 kg', findRichText: true), findsOneWidget);
     await tester.tap(find.byKey(const ValueKey('numeric_key_validate')));
     await tester.pump();
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
   });
 
   testWidgets('backspace erases the last character', (tester) async {
@@ -194,7 +196,7 @@ void main() {
     await tapDigits(tester, '43');
     await tester.tap(find.byKey(const ValueKey('numeric_key_validate')));
     await tester.pump();
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
   });
 
   testWidgets('physical keyboard: digits, minus, backspace and Enter work', (
@@ -210,7 +212,7 @@ void main() {
 
     await tester.sendKeyEvent(LogicalKeyboardKey.enter);
     await tester.pump();
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
   });
 
   testWidgets('exam mode is silent: Valider moves on without feedback', (

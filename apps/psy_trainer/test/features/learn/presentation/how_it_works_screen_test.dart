@@ -1,13 +1,15 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/features/learn/presentation/how_it_works_screen.dart';
 import 'package:psy_trainer/features/learn/presentation/selection_stages.dart';
 import 'package:psy_trainer/features/learn/presentation/widgets/confidence_chip.dart';
 import 'package:psy_trainer/features/learn/presentation/widgets/selection_stage_card.dart';
 
 import '../../../helpers/pump_app.dart';
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   testWidgets('lists the stages PSY0 → PSY1 → PSY2 → medical in order', (
@@ -17,7 +19,9 @@ void main() {
     await tester.pumpAndSettle();
 
     final cards = find.byType(SelectionStageCard, skipOffstage: false);
-    expect(cards, findsNWidgets(selectionStages.length));
+    final context = tester.element(find.byType(HowItWorksScreen));
+    final stages = selectionStagesOf(context);
+    expect(cards, findsNWidgets(stages.length));
     final titles = tester
         .widgetList<SelectionStageCard>(cards)
         .map((c) => c.stage.title)
@@ -25,14 +29,14 @@ void main() {
     expect(
       titles,
       containsAllInOrder([
-        AppStrings.stagePsy0Title,
-        AppStrings.stagePsy1Title,
-        AppStrings.stagePsy2Title,
-        AppStrings.stageMedicalTitle,
+        l10nFr.stagePsy0Title,
+        l10nFr.stagePsy1Title,
+        l10nFr.stagePsy2Title,
+        l10nFr.stageMedicalTitle,
       ]),
     );
-    expect(selectionStages.where((s) => s.isTarget).map((s) => s.title), [
-      AppStrings.stagePsy0Title,
+    expect(stages.where((s) => s.isTarget).map((s) => s.title), [
+      l10nFr.stagePsy0Title,
     ]);
   });
 
@@ -49,7 +53,7 @@ void main() {
       find.descendant(
         of: find.byType(ConfidenceChip, skipOffstage: false),
         matching: find.textContaining(
-          AppStrings.stagePsy1FactVenue,
+          l10nFr.stagePsy1FactVenue,
           skipOffstage: false,
         ),
       ),
@@ -62,7 +66,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(
-      find.text(AppStrings.disclaimerParagraph2, skipOffstage: false),
+      find.text(l10nFr.disclaimerParagraph2, skipOffstage: false),
       findsOneWidget,
     );
   });

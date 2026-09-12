@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/engines/logic_dominos/domain/domino_board.dart';
 import 'package:psy_trainer/features/engines/logic_dominos/domain/domino_explanation.dart';
@@ -19,6 +19,8 @@ import '../../../../helpers/pump_app.dart';
 /// puzzle -- and so the exact right answer -- a session with
 /// `sessionSeed`/`difficulty` will show as its first item.
 int _firstItemSeed(int sessionSeed) => Random(sessionSeed).nextInt(1 << 31);
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   final start = DateTime.utc(2026, 9, 5, 9);
@@ -85,21 +87,21 @@ void main() {
       find.byKey(ValueKey('domino-bottom-${board.answer.bottom}')),
     );
     await tester.pump();
-    await tester.tap(find.text(AppStrings.actionValidate));
+    await tester.tap(find.text(l10nFr.actionValidate));
     await tester.pump();
 
     expect(
       find.text(
-        AppStrings.dominoAnswerSummary(board.answer.top, board.answer.bottom),
+        l10nFr.dominoAnswerSummary(board.answer.top, board.answer.bottom),
       ),
       findsOneWidget,
     );
     expect(find.text(explanationFor(board.ruleKinds)), findsOneWidget);
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
 
     await tester.tap(find.byKey(SessionHost.nextKey));
     await tester.pump();
-    expect(find.text(AppStrings.sessionFinishedTitle), findsOneWidget);
+    expect(find.text(l10nFr.sessionFinishedTitle), findsOneWidget);
     expect(finished, hasLength(1));
     expect(finished.single.section.correct, 1);
   });
@@ -116,10 +118,10 @@ void main() {
       find.byKey(ValueKey('domino-bottom-${board.answer.bottom}')),
     );
     await tester.pump();
-    await tester.tap(find.text(AppStrings.actionValidate));
+    await tester.tap(find.text(l10nFr.actionValidate));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackWrong), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackWrong), findsOneWidget);
   });
 
   testWidgets(
@@ -136,7 +138,7 @@ void main() {
       await tester.sendKeyEvent(LogicalKeyboardKey.enter);
       await tester.pump();
 
-      expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+      expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
     },
   );
 }

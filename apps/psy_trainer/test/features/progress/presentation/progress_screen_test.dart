@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_trainer/app.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
 import 'package:psy_trainer/core/router/app_routes.dart';
@@ -25,6 +25,8 @@ import '../../../helpers/content_ready_fakes.dart';
 import '../../../helpers/onboarding_fakes.dart';
 import '../../../helpers/pump_app.dart';
 import 'progress_fixtures.dart';
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   late ProgressFixture fixture;
@@ -73,12 +75,12 @@ void main() {
       ),
       align: false,
     );
-    expect(find.text(AppStrings.progressLoading), findsOneWidget);
+    expect(find.text(l10nFr.progressLoading), findsOneWidget);
     await tester.pumpAndSettle();
 
     expect(find.byType(ProgressEmptyState), findsOneWidget);
-    expect(find.text(AppStrings.progressEmptyTitle), findsOneWidget);
-    expect(find.text(AppStrings.progressEmptyAction), findsOneWidget);
+    expect(find.text(l10nFr.progressEmptyTitle), findsOneWidget);
+    expect(find.text(l10nFr.progressEmptyAction), findsOneWidget);
     expect(find.byType(ReadinessCard), findsNothing);
   });
 
@@ -95,7 +97,7 @@ void main() {
     );
     addTearDown(container.dispose);
     await pumpScreen(tester);
-    expect(find.text(AppStrings.progressError), findsOneWidget);
+    expect(find.text(l10nFr.progressError), findsOneWidget);
     expect(find.byType(ProgressEmptyState), findsNothing);
   });
 
@@ -119,11 +121,11 @@ void main() {
       ),
       findsOneWidget,
     );
-    expect(find.text(AppStrings.readinessOutOf), findsOneWidget);
+    expect(find.text(l10nFr.readinessOutOf), findsOneWidget);
     // Single sessions per family: no trend yet.
-    expect(find.text(AppStrings.readinessTrendFlat), findsOneWidget);
-    expect(find.text(AppStrings.readinessFamilies(3, 4)), findsOneWidget);
-    expect(find.text(AppStrings.readinessExams(0)), findsOneWidget);
+    expect(find.text(l10nFr.readinessTrendFlat), findsOneWidget);
+    expect(find.text(l10nFr.readinessFamilies(3, 4)), findsOneWidget);
+    expect(find.text(l10nFr.readinessExams(0)), findsOneWidget);
     // No exam date: no countdown chip.
     expect(find.byType(ExamCountdownChip), findsNothing);
   });
@@ -134,12 +136,12 @@ void main() {
     await pumpScreen(tester);
     final snapshot = await container.read(progressSnapshotProvider.future);
     final node = tester.getSemantics(
-      find.bySemanticsLabel(AppStrings.readinessSemanticsLabel),
+      find.bySemanticsLabel(l10nFr.readinessSemanticsLabel),
     );
     expect(
       node.value,
-      '${snapshot.readiness.rounded} ${AppStrings.readinessOutOf}, '
-      '${AppStrings.readinessTrendFlat}',
+      '${snapshot.readiness.rounded} ${l10nFr.readinessOutOf}, '
+      '${l10nFr.readinessTrendFlat}',
     );
     handle.dispose();
   });
@@ -152,7 +154,7 @@ void main() {
     await pumpScreen(tester);
 
     expect(find.byType(ExamCountdownChip), findsOneWidget);
-    expect(find.text(AppStrings.examDaysLeft(12)), findsOneWidget);
+    expect(find.text(l10nFr.examDaysLeft(12)), findsOneWidget);
     expect(find.text('J-12'), findsOneWidget);
   });
 
@@ -164,7 +166,7 @@ void main() {
       UserProfile(locale: 'fr', examDate: daysAgo(2)),
     );
     await pumpScreen(tester);
-    expect(find.text(AppStrings.examDatePassed), findsOneWidget);
+    expect(find.text(l10nFr.examDatePassed), findsOneWidget);
   });
 
   testWidgets('three practised families draw a radar in real-test order', (
@@ -179,15 +181,15 @@ void main() {
     expect(find.byType(HorizontalBarChart), findsNothing);
 
     final node = tester.getSemantics(
-      find.bySemanticsLabel(AppStrings.familyLevelsSemanticsLabel),
+      find.bySemanticsLabel(l10nFr.familyLevelsSemanticsLabel),
     );
     // Every content family, in `order`, short names, level or "not practised".
     expect(
       node.value,
-      'Calcul : ${AppStrings.familyLevel(5)}, '
-      'Dominos : ${AppStrings.familyLevel(3)}, '
-      'N-back : ${AppStrings.familyLevel(1)}, '
-      'Anglais : ${AppStrings.familyNotPractised}',
+      'Calcul : ${l10nFr.familyLevel(5)}, '
+      'Dominos : ${l10nFr.familyLevel(3)}, '
+      'N-back : ${l10nFr.familyLevel(1)}, '
+      'Anglais : ${l10nFr.familyNotPractised}',
     );
     handle.dispose();
   });
@@ -203,13 +205,13 @@ void main() {
     expect(find.byType(RadarChart), findsNothing);
     expect(find.byType(HorizontalBarChart), findsOneWidget);
     final node = tester.getSemantics(
-      find.bySemanticsLabel(AppStrings.familyLevelsSemanticsLabel),
+      find.bySemanticsLabel(l10nFr.familyLevelsSemanticsLabel),
     );
     // Only practised families, full names, still in real-test order.
     expect(
       node.value,
-      'Grilles de calcul : ${AppStrings.familyLevel(1)}, '
-      'Anglais : ${AppStrings.familyLevel(4)}',
+      'Grilles de calcul : ${l10nFr.familyLevel(1)}, '
+      'Anglais : ${l10nFr.familyLevel(4)}',
     );
     handle.dispose();
   });
@@ -218,9 +220,9 @@ void main() {
     await fixture.progress.markLessonRead(lesson.id);
     await pumpScreen(tester);
     expect(find.byType(ProgressEmptyState), findsNothing);
-    expect(find.text(AppStrings.readinessLessons(1, 1)), findsOneWidget);
-    expect(find.text(AppStrings.familyLevelsNone), findsOneWidget);
-    expect(find.text(AppStrings.recentActivityNone), findsOneWidget);
+    expect(find.text(l10nFr.readinessLessons(1, 1)), findsOneWidget);
+    expect(find.text(l10nFr.familyLevelsNone), findsOneWidget);
+    expect(find.text(l10nFr.recentActivityNone), findsOneWidget);
   });
 
   testWidgets('train next lists the weakest families with a train action', (
@@ -233,12 +235,12 @@ void main() {
 
     final card = find.byType(TrainNextCard);
     expect(card, findsOneWidget);
-    expect(find.text(AppStrings.trainNextEmpty), findsNothing);
+    expect(find.text(l10nFr.trainNextEmpty), findsNothing);
     final buttons = find.descendant(
       of: card,
       matching: find.widgetWithText(
         SecondaryButton,
-        AppStrings.trainNextActionFamily,
+        l10nFr.trainNextActionFamily,
       ),
     );
     expect(buttons, findsNWidgets(2));
@@ -262,8 +264,8 @@ void main() {
     await pumpScreen(tester);
     // memory_nback: 23/30 = 0.77 > 0.6 and the 30-day trend is up: no weak
     // area, and readiness is not high enough yet to suggest a simulation.
-    expect(find.text(AppStrings.trainNextEmpty), findsOneWidget);
-    expect(find.text(AppStrings.readinessTrendUp), findsOneWidget);
+    expect(find.text(l10nFr.trainNextEmpty), findsOneWidget);
+    expect(find.text(l10nFr.readinessTrendUp), findsOneWidget);
   });
 
   testWidgets('recent activity lists sessions and sims newest first', (
@@ -288,10 +290,10 @@ void main() {
 
     final list = find.byType(RecentActivityList);
     expect(list, findsOneWidget);
-    final english = find.text('${AppStrings.activityPractice} · Anglais');
-    final exam = find.text('${AppStrings.activityExam} · PSY0 complet');
+    final english = find.text('${l10nFr.activityPractice} · Anglais');
+    final exam = find.text('${l10nFr.activityExam} · PSY0 complet');
     final calcul = find.text(
-      '${AppStrings.activityPractice} · Grilles de calcul',
+      '${l10nFr.activityPractice} · Grilles de calcul',
     );
     expect(english, findsOneWidget);
     expect(exam, findsOneWidget);
@@ -308,13 +310,13 @@ void main() {
     expect(examY, lessThan(calculY));
 
     // Scores: 2/4, 12/20, 8/10.
-    expect(find.text(AppStrings.scorePercent(50)), findsOneWidget);
-    expect(find.text(AppStrings.scorePercent(60)), findsOneWidget);
-    expect(find.text(AppStrings.scorePercent(80)), findsOneWidget);
+    expect(find.text(l10nFr.scorePercent(50)), findsOneWidget);
+    expect(find.text(l10nFr.scorePercent(60)), findsOneWidget);
+    expect(find.text(l10nFr.scorePercent(80)), findsOneWidget);
     // Abandoned sessions say so, next to the date.
     final date = RecentActivityList.formatDate(daysAgo(1));
     expect(
-      find.text('$date · ${AppStrings.activityAbandoned}'),
+      find.text('$date · ${l10nFr.activityAbandoned}'),
       findsOneWidget,
     );
   });
@@ -380,7 +382,7 @@ void main() {
     testWidgets('the empty state action opens the Train tab', (tester) async {
       await pumpTheApp(tester);
       expect(find.byType(ProgressScreen), findsOneWidget);
-      await tester.tap(find.text(AppStrings.progressEmptyAction));
+      await tester.tap(find.text(l10nFr.progressEmptyAction));
       await tester.pumpAndSettle();
       expect(find.byType(TrainScreen), findsOneWidget);
     });
@@ -394,7 +396,7 @@ void main() {
       await pumpTheApp(tester);
       final button = find.widgetWithText(
         SecondaryButton,
-        AppStrings.trainNextActionFamily,
+        l10nFr.trainNextActionFamily,
       );
       expect(button, findsOneWidget);
       await tester.tap(button);
@@ -413,9 +415,9 @@ void main() {
 
       // One chip per practised family, labelled for screen readers.
       expect(find.byType(FamilyChip), findsNWidgets(3));
-      expect(find.text(AppStrings.familyDetailsHint), findsOneWidget);
+      expect(find.text(l10nFr.familyDetailsHint), findsOneWidget);
       final chip = find.bySemanticsLabel(
-        AppStrings.familyTrendOpenSemantics('Dominos'),
+        l10nFr.familyTrendOpenSemantics('Dominos'),
       );
       expect(chip, findsOneWidget);
       await tester.tap(chip);
@@ -441,13 +443,13 @@ void main() {
       await seedThreeFamilies();
       final appContainer = await pumpTheApp(tester);
       expect(find.byType(ExamScoreChart), findsNothing);
-      expect(find.text(AppStrings.examChartTitle), findsNothing);
+      expect(find.text(l10nFr.examChartTitle), findsNothing);
 
       await fixture.exam(daysAgo: 0, correct: 6);
       appContainer.read(progressVersionProvider.notifier).bump();
       await tester.pumpAndSettle();
       expect(find.byType(ExamScoreChart), findsOneWidget);
-      expect(find.text(AppStrings.examChartTitle), findsOneWidget);
+      expect(find.text(l10nFr.examChartTitle), findsOneWidget);
     });
   });
 }

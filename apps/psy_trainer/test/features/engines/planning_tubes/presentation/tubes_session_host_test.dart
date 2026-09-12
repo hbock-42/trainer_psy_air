@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/engines/planning_tubes/domain/tubes_engine.dart';
 import 'package:psy_trainer/features/engines/planning_tubes/presentation/tubes_renderer.dart';
@@ -15,6 +15,8 @@ import '../../../../helpers/pump_app.dart';
 /// engine and the real renderer (see
 /// `test/features/train/presentation/engine/session_host_test.dart`, the
 /// template for this file).
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
+
 void main() {
   final start = DateTime.utc(2026, 9, 5, 9);
   late ManualClock clock;
@@ -73,7 +75,7 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('numeric_key_validate')));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
   });
 
   testWidgets('a wrong number of moves scores wrong', (tester) async {
@@ -86,7 +88,7 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('numeric_key_validate')));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackWrong), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackWrong), findsOneWidget);
   });
 
   testWidgets('physical keyboard digits and Enter also work', (tester) async {
@@ -114,7 +116,7 @@ void main() {
     await tester.sendKeyEvent(LogicalKeyboardKey.enter);
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
   });
 
   testWidgets('the start and target tube diagrams are drawn', (tester) async {
@@ -122,8 +124,8 @@ void main() {
     await tester.tap(find.byKey(SessionHost.startKey));
     await tester.pump();
 
-    expect(find.text(AppStrings.tubesStartLabel), findsOneWidget);
-    expect(find.text(AppStrings.tubesTargetLabel), findsOneWidget);
+    expect(find.text(l10nFr.tubesStartLabel), findsOneWidget);
+    expect(find.text(l10nFr.tubesTargetLabel), findsOneWidget);
   });
 
   testWidgets(
@@ -138,13 +140,13 @@ void main() {
       await tester.tap(find.byKey(const ValueKey('numeric_key_validate')));
       await tester.pump();
 
-      expect(find.text(AppStrings.tubesShowSolutionAction), findsOneWidget);
-      await tester.tap(find.text(AppStrings.tubesShowSolutionAction));
+      expect(find.text(l10nFr.tubesShowSolutionAction), findsOneWidget);
+      await tester.tap(find.text(l10nFr.tubesShowSolutionAction));
       await tester.pump();
 
       final distance = item.expected.toInt();
       expect(
-        find.text(AppStrings.tubesSolutionStepLabel(0, distance)),
+        find.text(l10nFr.tubesSolutionStepLabel(0, distance)),
         findsOneWidget,
       );
 
@@ -156,7 +158,7 @@ void main() {
         );
         await tester.pump();
         expect(
-          find.text(AppStrings.tubesSolutionStepLabel(step, distance)),
+          find.text(l10nFr.tubesSolutionStepLabel(step, distance)),
           findsOneWidget,
         );
       }
@@ -173,7 +175,7 @@ void main() {
       );
       await tester.pump();
       expect(
-        find.text(AppStrings.tubesSolutionStepLabel(distance - 1, distance)),
+        find.text(l10nFr.tubesSolutionStepLabel(distance - 1, distance)),
         findsOneWidget,
       );
     },
@@ -183,8 +185,8 @@ void main() {
     tester,
   ) async {
     await pumpHost(tester, ActivitySessionRequest.fresh(practiceConfig()));
-    expect(find.text(AppStrings.sessionExamplePlaceholder), findsNothing);
-    expect(find.text(AppStrings.tubesStartLabel), findsOneWidget);
-    expect(find.text(AppStrings.tubesTargetLabel), findsOneWidget);
+    expect(find.text(l10nFr.sessionExamplePlaceholder), findsNothing);
+    expect(find.text(l10nFr.tubesStartLabel), findsOneWidget);
+    expect(find.text(l10nFr.tubesTargetLabel), findsOneWidget);
   });
 }

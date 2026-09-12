@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/engines/spatial_overlay/domain/overlay_board.dart';
 import 'package:psy_trainer/features/engines/spatial_overlay/domain/overlay_grid_engine.dart';
@@ -16,6 +16,8 @@ import '../../../../helpers/pump_app.dart';
 /// template for this file). Drags are driven with `WidgetTester.drag`,
 /// which moves a real pointer -- exactly what `DragTarget.onAcceptWithDetails`
 /// reads to snap onto a cell.
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
+
 void main() {
   final start = DateTime.utc(2026, 9, 5, 9);
   late ManualClock clock;
@@ -119,14 +121,14 @@ void main() {
 
       await dragAllTilesToSolution(tester, board);
 
-      expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
-      expect(find.text(AppStrings.overlayGridSolutionCaption), findsOneWidget);
+      expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
+      expect(find.text(l10nFr.overlayGridSolutionCaption), findsOneWidget);
       expect(find.byKey(SessionHost.nextKey), findsOneWidget);
 
       await tester.tap(find.byKey(SessionHost.nextKey));
       await tester.pump();
 
-      expect(find.text(AppStrings.sessionFinishedTitle), findsOneWidget);
+      expect(find.text(l10nFr.sessionFinishedTitle), findsOneWidget);
       expect(finished.single.section.correct, 1);
     },
   );
@@ -146,8 +148,8 @@ void main() {
     final board = OverlayGridEngine.boardOf(itemAt(1) as GeneratedItem);
     await dragAllTilesToSolution(tester, board);
 
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsNothing);
-    expect(find.text(AppStrings.sessionFinishedTitle), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsNothing);
+    expect(find.text(l10nFr.sessionFinishedTitle), findsOneWidget);
     expect(finished.single.section.correct, 1);
   });
 
@@ -178,7 +180,7 @@ void main() {
 
   testWidgets('the briefing shows the worked example', (tester) async {
     await pumpHost(tester, ActivitySessionRequest.fresh(practiceConfig(1)));
-    expect(find.text(AppStrings.sessionExamplePlaceholder), findsNothing);
-    expect(find.text(AppStrings.overlayGridExampleCaption), findsOneWidget);
+    expect(find.text(l10nFr.sessionExamplePlaceholder), findsNothing);
+    expect(find.text(l10nFr.overlayGridExampleCaption), findsOneWidget);
   });
 }

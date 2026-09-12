@@ -1,5 +1,6 @@
+import 'package:flutter/widgets.dart' show Locale;
 import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/features/progress/domain/recommendation.dart';
 import 'package:psy_trainer/features/progress/presentation/widgets/train_next_card.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
@@ -45,6 +46,8 @@ const Recommendation flashcardsRec = Recommendation(
   severity: 0,
 );
 
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
+
 void main() {
   testWidgets('shows the empty caption without recommendations', (
     tester,
@@ -52,7 +55,7 @@ void main() {
     await tester.pumpApp(
       const TrainNextCard(recommendations: [], onAction: _noop),
     );
-    expect(find.text(AppStrings.trainNextEmpty), findsOneWidget);
+    expect(find.text(l10nFr.trainNextEmpty), findsOneWidget);
     expect(find.byType(SecondaryButton), findsNothing);
   });
 
@@ -79,21 +82,21 @@ void main() {
     expect(find.text('15 cartes en attente'), findsOneWidget);
 
     expect(
-      find.widgetWithText(SecondaryButton, AppStrings.trainNextActionFamily),
+      find.widgetWithText(SecondaryButton, l10nFr.trainNextActionFamily),
       findsOneWidget,
     );
     expect(
-      find.widgetWithText(SecondaryButton, AppStrings.trainNextActionExam),
+      find.widgetWithText(SecondaryButton, l10nFr.trainNextActionExam),
       findsOneWidget,
     );
     expect(
-      find.widgetWithText(SecondaryButton, AppStrings.trainNextActionLesson),
+      find.widgetWithText(SecondaryButton, l10nFr.trainNextActionLesson),
       findsOneWidget,
     );
     expect(
       find.widgetWithText(
         SecondaryButton,
-        AppStrings.trainNextActionFlashcards,
+        l10nFr.trainNextActionFlashcards,
       ),
       findsOneWidget,
     );
@@ -106,7 +109,7 @@ void main() {
       const TrainNextCard(recommendations: [tagRec], onAction: _noop),
     );
     expect(
-      find.widgetWithText(SecondaryButton, AppStrings.trainNextActionFamily),
+      find.widgetWithText(SecondaryButton, l10nFr.trainNextActionFamily),
       findsOneWidget,
     );
   });
@@ -124,13 +127,13 @@ void main() {
     );
 
     await tester.tap(
-      find.widgetWithText(SecondaryButton, AppStrings.trainNextActionFamily),
+      find.widgetWithText(SecondaryButton, l10nFr.trainNextActionFamily),
     );
     await tester.pump();
     expect(tapped, familyRec);
 
     await tester.tap(
-      find.widgetWithText(SecondaryButton, AppStrings.trainNextActionExam),
+      find.widgetWithText(SecondaryButton, l10nFr.trainNextActionExam),
     );
     await tester.pump();
     expect(tapped, examRec);

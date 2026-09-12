@@ -1,13 +1,16 @@
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart' show Locale;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/engines/memory_nback/domain/nback_engine.dart';
 import 'package:psy_trainer/features/engines/memory_nback/presentation/nback_renderer.dart';
 import 'package:psy_trainer/features/train/presentation/engine/engine_ui.dart';
 
 import '../../../../helpers/pump_app.dart';
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   const engine = NbackEngine();
@@ -97,7 +100,7 @@ void main() {
     await tester.tap(find.byKey(NbackRenderer.yesKey));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
     await tester.tap(find.byKey(SessionHost.nextKey));
     await tester.pump();
 
@@ -117,7 +120,7 @@ void main() {
     await tester.sendKeyEvent(LogicalKeyboardKey.keyY);
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
   });
 
   testWidgets('the left arrow answers no, exactly like the button', (
@@ -135,7 +138,7 @@ void main() {
     await tester.pump();
 
     // Answering "no" on a target is a miss: wrong.
-    expect(find.text(AppStrings.sessionFeedbackWrong), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackWrong), findsOneWidget);
   });
 
   testWidgets('a digit stimulus renders its label instead of a colour', (
@@ -166,7 +169,7 @@ void main() {
     expect(find.byKey(NbackRenderer.primerLabelKey), findsOneWidget);
     await tester.tap(find.byKey(NbackRenderer.noKey));
     await tester.pump();
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
   });
 
   testWidgets('practice shows the history strip, exam does not', (
@@ -191,8 +194,8 @@ void main() {
 
     await tester.tap(find.byKey(NbackRenderer.yesKey));
     await tester.pump();
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsNothing);
-    expect(find.text(AppStrings.sessionFeedbackWrong), findsNothing);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsNothing);
+    expect(find.text(l10nFr.sessionFeedbackWrong), findsNothing);
   });
 
   testWidgets('the buttons are disabled during the stimulus-only phase', (

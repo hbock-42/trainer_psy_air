@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/engines/verbal_boxes/domain/word_box_series.dart';
 import 'package:psy_trainer/features/engines/verbal_boxes/domain/word_boxes_engine.dart';
@@ -32,6 +32,8 @@ final _catalogue = [
   for (final letter in ['a', 'b', 'c', 'd', 'e', 'f'])
     _field(letter, words: [for (var i = 0; i < 20; i++) '$letter-$i']),
 ];
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   final start = DateTime.utc(2026, 9, 5, 9);
@@ -100,15 +102,15 @@ void main() {
       await tester.pump();
     }
 
-    expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
     expect(
-      find.text(AppStrings.wordBoxesResultSummary(0, series.events.length)),
+      find.text(l10nFr.wordBoxesResultSummary(0, series.events.length)),
       findsOneWidget,
     );
 
     await tester.tap(find.byKey(SessionHost.nextKey));
     await tester.pump();
-    expect(find.text(AppStrings.sessionFinishedTitle), findsOneWidget);
+    expect(find.text(l10nFr.sessionFinishedTitle), findsOneWidget);
     expect(finished, hasLength(1));
     expect(finished.single.section.correct, 1);
   });
@@ -127,11 +129,11 @@ void main() {
       await tester.pump();
     }
 
-    expect(find.text(AppStrings.sessionFeedbackWrong), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackWrong), findsOneWidget);
     expect(
-      find.text(AppStrings.wordBoxesResultSummary(1, series.events.length)),
+      find.text(l10nFr.wordBoxesResultSummary(1, series.events.length)),
       findsOneWidget,
     );
-    expect(find.text(AppStrings.wordBoxesMissedTitle), findsOneWidget);
+    expect(find.text(l10nFr.wordBoxesMissedTitle), findsOneWidget);
   });
 }

@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/app.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_content_repository.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_progress_repository.dart';
 import 'package:psy_trainer/core/repositories/repository_providers.dart';
@@ -94,13 +94,15 @@ Future<(ProviderContainer, InMemoryProgressRepository)> pumpLesson(
   return (container, progress);
 }
 
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
+
 void main() {
   group('navigation', () {
     testWidgets('shows the title and reading time', (tester) async {
       await pumpLesson(tester, lessonId: 'lesson.01');
 
       expect(find.text('N-back : tenir le rythme'), findsOneWidget);
-      expect(find.text(AppStrings.lessonReadTime(9)), findsOneWidget);
+      expect(find.text(l10nFr.lessonReadTime(9)), findsOneWidget);
     });
 
     testWidgets('offers "next" only for the first lesson of the family', (
@@ -108,8 +110,8 @@ void main() {
     ) async {
       await pumpLesson(tester, lessonId: 'lesson.01');
 
-      expect(find.text(AppStrings.lessonNext), findsOneWidget);
-      expect(find.text(AppStrings.lessonPrevious), findsNothing);
+      expect(find.text(l10nFr.lessonNext), findsOneWidget);
+      expect(find.text(l10nFr.lessonPrevious), findsNothing);
     });
 
     testWidgets('"next" opens the following lesson of the family', (
@@ -124,12 +126,12 @@ void main() {
       scrollable.position.jumpTo(scrollable.position.maxScrollExtent);
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text(AppStrings.lessonNext));
+      await tester.tap(find.text(l10nFr.lessonNext));
       await tester.pumpAndSettle();
 
       expect(find.text('N-back : gérer les leurres'), findsOneWidget);
-      expect(find.text(AppStrings.lessonPrevious), findsOneWidget);
-      expect(find.text(AppStrings.lessonNext), findsNothing);
+      expect(find.text(l10nFr.lessonPrevious), findsOneWidget);
+      expect(find.text(l10nFr.lessonNext), findsNothing);
     });
 
     testWidgets('"previous" opens the earlier lesson of the family', (
@@ -137,7 +139,7 @@ void main() {
     ) async {
       await pumpLesson(tester, lessonId: 'lesson.02');
 
-      await tester.tap(find.text(AppStrings.lessonPrevious));
+      await tester.tap(find.text(l10nFr.lessonPrevious));
       await tester.pumpAndSettle();
 
       expect(find.text('N-back : tenir le rythme'), findsOneWidget);
@@ -148,7 +150,7 @@ void main() {
     ) async {
       await pumpLesson(tester, lessonId: 'nope');
 
-      expect(find.text(AppStrings.lessonNotFound), findsOneWidget);
+      expect(find.text(l10nFr.lessonNotFound), findsOneWidget);
     });
 
     testWidgets('survives 1.3x text scaling on a phone', (tester) async {
@@ -171,20 +173,20 @@ void main() {
       // The "Le rythme" heading itself is always in the body; only the TOC
       // *entry* for it is collapsible, so the heading appears once (body)
       // before expanding, and twice (body + TOC link) after.
-      expect(find.text(AppStrings.lessonTocShow), findsOneWidget);
+      expect(find.text(l10nFr.lessonTocShow), findsOneWidget);
       expect(find.text('Le rythme'), findsOneWidget);
 
-      await tester.tap(find.text(AppStrings.lessonTocShow));
+      await tester.tap(find.text(l10nFr.lessonTocShow));
       await tester.pumpAndSettle();
 
-      expect(find.text(AppStrings.lessonTocHide), findsOneWidget);
+      expect(find.text(l10nFr.lessonTocHide), findsOneWidget);
       expect(find.text('Le rythme'), findsNWidgets(2));
     });
 
     testWidgets('hidden for a lesson without any heading', (tester) async {
       await pumpLesson(tester, lessonId: 'lesson.02');
 
-      expect(find.text(AppStrings.lessonTocShow), findsNothing);
+      expect(find.text(l10nFr.lessonTocShow), findsNothing);
     });
   });
 
@@ -193,7 +195,7 @@ void main() {
       final (_, progress) = await pumpLesson(tester, lessonId: 'lesson.01');
 
       expect(await progress.lessonsRead(), isEmpty);
-      expect(find.text(AppStrings.lessonMarkedRead), findsNothing);
+      expect(find.text(l10nFr.lessonMarkedRead), findsNothing);
 
       final markReadButton = find.byWidgetPredicate(
         (w) => w is AppIconButton && w.glyph == AppIconGlyph.check,
@@ -203,7 +205,7 @@ void main() {
 
       final reads = await progress.lessonsRead();
       expect(reads.map((r) => r.lessonId), contains('lesson.01'));
-      expect(find.text(AppStrings.lessonMarkedRead), findsWidgets);
+      expect(find.text(l10nFr.lessonMarkedRead), findsWidgets);
     });
 
     testWidgets('a short lesson is marked read after 20 s', (tester) async {

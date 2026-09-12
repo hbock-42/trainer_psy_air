@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_trainer/app.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_progress_repository.dart';
 import 'package:psy_trainer/core/repositories/repository_providers.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
@@ -39,6 +39,8 @@ Future<void> pumpFamily(
   await tester.pumpAndSettle();
 }
 
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
+
 void main() {
   testWidgets('shows the family, its format, mastery and lesson titles', (
     tester,
@@ -48,11 +50,11 @@ void main() {
     expect(find.text('Mémoire N-back'), findsOneWidget);
     expect(find.text('Ce qui est évalué pour memory_nback.'), findsOneWidget);
     expect(find.text('10 items · ~1 min'), findsOneWidget);
-    expect(find.text(AppStrings.familyMasteryUnknown), findsOneWidget);
-    expect(find.text(AppStrings.confidenceConfirmed), findsOneWidget);
+    expect(find.text(l10nFr.familyMasteryUnknown), findsOneWidget);
+    expect(find.text(l10nFr.confidenceConfirmed), findsOneWidget);
     expect(find.text('N-back : tenir le rythme'), findsOneWidget);
     expect(find.text('Méthode du train de wagons.'), findsOneWidget);
-    expect(find.text(AppStrings.lessonReadTime(9)), findsOneWidget);
+    expect(find.text(l10nFr.lessonReadTime(9)), findsOneWidget);
     expect(find.text('N-back : gérer les leurres'), findsOneWidget);
     expect(find.text('Éprouvettes : compter les coups'), findsNothing);
     expect(find.byType(PrimaryButton), findsOneWidget);
@@ -62,13 +64,13 @@ void main() {
     await pumpFamily(tester, 'logic_dominos');
 
     expect(find.text('Dominos'), findsOneWidget);
-    expect(find.text(AppStrings.familyLessonsEmpty), findsOneWidget);
+    expect(find.text(l10nFr.familyLessonsEmpty), findsOneWidget);
   });
 
   testWidgets('shows a not-found message for an unknown id', (tester) async {
     await pumpFamily(tester, 'nope');
 
-    expect(find.text(AppStrings.familyNotFound), findsOneWidget);
+    expect(find.text(l10nFr.familyNotFound), findsOneWidget);
     expect(find.byType(PrimaryButton), findsNothing);
   });
 
@@ -78,7 +80,7 @@ void main() {
     await pumpFamily(tester, 'logic_dominos');
 
     final button = tester.widget<SecondaryButton>(
-      find.widgetWithText(SecondaryButton, AppStrings.familyActionCards),
+      find.widgetWithText(SecondaryButton, l10nFr.familyActionCards),
     );
     expect(button.onPressed, isNull);
   });
@@ -102,7 +104,7 @@ void main() {
     );
 
     final button = tester.widget<SecondaryButton>(
-      find.widgetWithText(SecondaryButton, AppStrings.familyActionCards),
+      find.widgetWithText(SecondaryButton, l10nFr.familyActionCards),
     );
     expect(button.onPressed, isNotNull);
   });
@@ -120,7 +122,7 @@ void main() {
     testWidgets('the lessons ring shows 0 read of the total', (tester) async {
       await pumpFamily(tester, 'memory_nback');
 
-      expect(find.text(AppStrings.familyLessonsProgress(0, 2)), findsOneWidget);
+      expect(find.text(l10nFr.familyLessonsProgress(0, 2)), findsOneWidget);
     });
 
     testWidgets('the ring reflects an already-read lesson', (tester) async {
@@ -129,7 +131,7 @@ void main() {
 
       await pumpFamily(tester, 'memory_nback', progress: progress);
 
-      expect(find.text(AppStrings.familyLessonsProgress(1, 2)), findsOneWidget);
+      expect(find.text(l10nFr.familyLessonsProgress(1, 2)), findsOneWidget);
     });
 
     testWidgets('no ring when the family has no lesson', (tester) async {

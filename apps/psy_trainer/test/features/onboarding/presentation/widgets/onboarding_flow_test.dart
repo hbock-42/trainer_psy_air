@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/features/onboarding/domain/onboarding_answers.dart';
 import 'package:psy_trainer/features/onboarding/domain/target_stage.dart';
 import 'package:psy_trainer/features/onboarding/presentation/widgets/accept_toggle.dart';
@@ -44,7 +44,7 @@ Future<void> toggleAccept(WidgetTester tester) async {
 
 Future<void> acceptAndContinue(WidgetTester tester) async {
   await toggleAccept(tester);
-  await tester.tap(find.text(AppStrings.actionContinue));
+  await tester.tap(find.text(l10nFr.actionContinue));
   await tester.pumpAndSettle();
 }
 
@@ -59,6 +59,8 @@ Future<void> tapPressable(WidgetTester tester, String label) async {
   await tester.tap(pressable(label));
   await tester.pumpAndSettle();
 }
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   Future<_Harness> pumpFlow(
@@ -78,25 +80,25 @@ void main() {
       await pumpFlow(tester);
 
       expect(find.byType(WelcomeStep), findsOneWidget);
-      expect(find.text(AppStrings.disclaimerTitle), findsOneWidget);
-      expect(find.text(AppStrings.disclaimerParagraph1), findsOneWidget);
+      expect(find.text(l10nFr.disclaimerTitle), findsOneWidget);
+      expect(find.text(l10nFr.disclaimerParagraph1), findsOneWidget);
       expect(
-        find.text(AppStrings.onboardingDisclaimerRequired),
+        find.text(l10nFr.onboardingDisclaimerRequired),
         findsOneWidget,
       );
-      expect(primaryAction(tester, AppStrings.actionContinue), isNull);
+      expect(primaryAction(tester, l10nFr.actionContinue), isNull);
       // No skip and no back on the first step of a first run.
-      expect(find.text(AppStrings.actionSkip), findsNothing);
+      expect(find.text(l10nFr.actionSkip), findsNothing);
       expect(pressable('Back'), findsNothing);
 
       await toggleAccept(tester);
 
-      expect(find.text(AppStrings.onboardingDisclaimerRequired), findsNothing);
-      expect(primaryAction(tester, AppStrings.actionContinue), isNotNull);
+      expect(find.text(l10nFr.onboardingDisclaimerRequired), findsNothing);
+      expect(primaryAction(tester, l10nFr.actionContinue), isNotNull);
 
       // Toggling back off disables the button again.
       await toggleAccept(tester);
-      expect(primaryAction(tester, AppStrings.actionContinue), isNull);
+      expect(primaryAction(tester, l10nFr.actionContinue), isNull);
     });
 
     testWidgets('continue moves to the exam date step', (tester) async {
@@ -105,7 +107,7 @@ void main() {
       await acceptAndContinue(tester);
 
       expect(find.byType(ExamDateStep), findsOneWidget);
-      expect(find.text(AppStrings.actionSkip), findsOneWidget);
+      expect(find.text(l10nFr.actionSkip), findsOneWidget);
       expect(pressable('Back'), findsOneWidget);
     });
   });
@@ -122,7 +124,7 @@ void main() {
       expect(find.text('2027'), findsOneWidget);
       expect(find.text('sept.'), findsOneWidget);
       expect(find.text('4'), findsOneWidget);
-      expect(primaryAction(tester, AppStrings.actionContinue), isNotNull);
+      expect(primaryAction(tester, l10nFr.actionContinue), isNotNull);
     });
 
     testWidgets('refuses a past date and accepts it again once fixed', (
@@ -135,8 +137,8 @@ void main() {
       await tapPressable(tester, 'Année, Précédent');
 
       expect(find.text('vendredi 4 septembre 2026'), findsOneWidget);
-      expect(find.text(AppStrings.onboardingExamDateInThePast), findsOneWidget);
-      expect(primaryAction(tester, AppStrings.actionContinue), isNull);
+      expect(find.text(l10nFr.onboardingExamDateInThePast), findsOneWidget);
+      expect(primaryAction(tester, l10nFr.actionContinue), isNull);
       // The year cannot go below the current one.
       expect(pressable('Année, Précédent'), findsOneWidget);
 
@@ -144,8 +146,8 @@ void main() {
       await tapPressable(tester, 'Mois, Suivant');
 
       expect(find.text('dimanche 4 octobre 2026'), findsOneWidget);
-      expect(find.text(AppStrings.onboardingExamDateInThePast), findsNothing);
-      expect(primaryAction(tester, AppStrings.actionContinue), isNotNull);
+      expect(find.text(l10nFr.onboardingExamDateInThePast), findsNothing);
+      expect(primaryAction(tester, l10nFr.actionContinue), isNotNull);
     });
 
     testWidgets('day and month wrap, the day is clamped to the month', (
@@ -178,10 +180,10 @@ void main() {
       await acceptAndContinue(tester);
 
       await tapPressable(tester, 'Année, Suivant');
-      await tester.tap(find.text(AppStrings.actionContinue));
+      await tester.tap(find.text(l10nFr.actionContinue));
       await tester.pumpAndSettle();
       expect(find.byType(TargetStageStep), findsOneWidget);
-      await tester.tap(find.text(AppStrings.actionFinish));
+      await tester.tap(find.text(l10nFr.actionFinish));
       await tester.pumpAndSettle();
 
       expect(harness.submitted, hasLength(1));
@@ -195,10 +197,10 @@ void main() {
       final harness = await pumpFlow(tester);
       await acceptAndContinue(tester);
 
-      await tester.tap(find.text(AppStrings.onboardingExamDateUnknown));
+      await tester.tap(find.text(l10nFr.onboardingExamDateUnknown));
       await tester.pumpAndSettle();
       expect(find.byType(TargetStageStep), findsOneWidget);
-      await tester.tap(find.text(AppStrings.actionFinish));
+      await tester.tap(find.text(l10nFr.actionFinish));
       await tester.pumpAndSettle();
 
       expect(harness.submitted.single.examDate, isNull);
@@ -213,7 +215,7 @@ void main() {
       await tapPressable(tester, 'Back');
 
       expect(find.byType(WelcomeStep), findsOneWidget);
-      expect(primaryAction(tester, AppStrings.actionContinue), isNotNull);
+      expect(primaryAction(tester, l10nFr.actionContinue), isNotNull);
     });
   });
 
@@ -223,7 +225,7 @@ void main() {
     ) async {
       final harness = await pumpFlow(tester);
       await acceptAndContinue(tester);
-      await tester.tap(find.text(AppStrings.onboardingExamDateUnknown));
+      await tester.tap(find.text(l10nFr.onboardingExamDateUnknown));
       await tester.pumpAndSettle();
 
       final tiles = tester
@@ -233,12 +235,12 @@ void main() {
       expect(tiles[0].state, AnswerOptionState.selected);
       expect(tiles[1].state, AnswerOptionState.disabled);
       expect(tiles[2].state, AnswerOptionState.disabled);
-      expect(find.text(AppStrings.stageComingSoon), findsNWidgets(2));
+      expect(find.text(l10nFr.stageComingSoon), findsNWidgets(2));
 
       // Tapping a disabled stage changes nothing.
-      await tester.tap(find.text(AppStrings.stagePsy1Title));
+      await tester.tap(find.text(l10nFr.stagePsy1Title));
       await tester.pumpAndSettle();
-      await tester.tap(find.text(AppStrings.actionFinish));
+      await tester.tap(find.text(l10nFr.actionFinish));
       await tester.pumpAndSettle();
       expect(harness.submitted.single.targetStage, TargetStage.psy0);
     });
@@ -251,7 +253,7 @@ void main() {
       final harness = await pumpFlow(tester);
       await acceptAndContinue(tester);
 
-      await tester.tap(find.text(AppStrings.actionSkip));
+      await tester.tap(find.text(l10nFr.actionSkip));
       await tester.pumpAndSettle();
 
       expect(
@@ -268,19 +270,19 @@ void main() {
       final harness = await pumpFlow(tester, initial: completedAnswers);
 
       // Already accepted: continue is enabled; back on step 1 exits.
-      expect(find.text(AppStrings.onboardingEditTitle), findsOneWidget);
-      expect(primaryAction(tester, AppStrings.actionContinue), isNotNull);
+      expect(find.text(l10nFr.onboardingEditTitle), findsOneWidget);
+      expect(primaryAction(tester, l10nFr.actionContinue), isNotNull);
       await tapPressable(tester, 'Back');
       expect(harness.exits, 1);
 
-      await tester.tap(find.text(AppStrings.actionContinue));
+      await tester.tap(find.text(l10nFr.actionContinue));
       await tester.pumpAndSettle();
-      expect(find.text(AppStrings.actionSkip), findsNothing);
+      expect(find.text(l10nFr.actionSkip), findsNothing);
       expect(find.text('samedi 4 septembre 2027'), findsWidgets);
-      await tester.tap(find.text(AppStrings.actionContinue));
+      await tester.tap(find.text(l10nFr.actionContinue));
       await tester.pumpAndSettle();
-      expect(find.text(AppStrings.actionFinish), findsNothing);
-      await tester.tap(find.text(AppStrings.actionSave));
+      expect(find.text(l10nFr.actionFinish), findsNothing);
+      await tester.tap(find.text(l10nFr.actionSave));
       await tester.pumpAndSettle();
 
       expect(harness.submitted.single, completedAnswers);

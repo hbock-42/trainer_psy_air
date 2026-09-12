@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/engines/english/domain/english_engine.dart';
 import 'package:psy_trainer/features/train/presentation/engine/engine_ui.dart';
@@ -13,6 +13,8 @@ import '../../../../helpers/pump_app.dart';
 /// contract gap was about — `McqRenderer`'s `passageResolver` fed by a
 /// preloaded cache, exactly how `practice_session_builder.dart` +
 /// `EnglishPassageCache` wire it for a real session.
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
+
 void main() {
   const passageId = 'english.reading.p001';
   const passageTitle = 'Pre-flight briefing';
@@ -96,12 +98,12 @@ void main() {
     expect(find.text(passageTitle), findsOneWidget);
 
     // Hide, then show again: the passage stays re-openable while answering.
-    await tester.tap(find.text(AppStrings.mcqPassageHide));
+    await tester.tap(find.text(l10nFr.mcqPassageHide));
     await tester.pump();
-    expect(find.text(AppStrings.mcqPassageShow), findsOneWidget);
-    await tester.tap(find.text(AppStrings.mcqPassageShow));
+    expect(find.text(l10nFr.mcqPassageShow), findsOneWidget);
+    await tester.tap(find.text(l10nFr.mcqPassageShow));
     await tester.pump();
-    expect(find.text(AppStrings.mcqPassageHide), findsOneWidget);
+    expect(find.text(l10nFr.mcqPassageHide), findsOneWidget);
 
     await tester.tap(find.byKey(const Key('mcq_option_0')));
     await tester.pump();

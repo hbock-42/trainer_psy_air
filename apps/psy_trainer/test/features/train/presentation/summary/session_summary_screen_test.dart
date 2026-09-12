@@ -1,6 +1,7 @@
+import 'package:flutter/widgets.dart' show Locale;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/train/domain/engine/engine.dart';
 import 'package:psy_trainer/features/train/presentation/summary/session_summary_screen.dart';
@@ -8,6 +9,8 @@ import 'package:psy_trainer/shared/widgets/widgets.dart';
 
 import '../../../../helpers/fake_engine.dart';
 import '../../../../helpers/pump_app.dart';
+
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
   ItemOutcome outcome({
@@ -65,14 +68,14 @@ void main() {
       ),
     );
 
-    expect(find.text(AppStrings.summaryScoreFraction(2, 3)), findsOneWidget);
+    expect(find.text(l10nFr.summaryScoreFraction(2, 3)), findsOneWidget);
     expect(find.text('67 %'), findsOneWidget);
     expect(find.text('0.6 s'), findsOneWidget); // mean (100+1500+200)/3=600
     expect(find.text('0.2 s'), findsOneWidget); // median of [100,200,1500]
     expect(find.text('0'), findsOneWidget); // timeouts
     // Fastest correct (index 0) and the wrong one (index 1) are called out.
-    expect(find.text(AppStrings.summaryBestItemLabel(1)), findsOneWidget);
-    expect(find.text(AppStrings.summaryWorstItemLabel(2)), findsOneWidget);
+    expect(find.text(l10nFr.summaryBestItemLabel(1)), findsOneWidget);
+    expect(find.text(l10nFr.summaryWorstItemLabel(2)), findsOneWidget);
   });
 
   testWidgets('tapping a wrong item reviews stem, my answer and expected', (
@@ -101,9 +104,9 @@ void main() {
     await tester.tap(find.byKey(SessionSummaryScreen.itemKey(0)));
     await tester.pump();
 
-    expect(find.text(AppStrings.summaryReviewMyAnswer), findsOneWidget);
+    expect(find.text(l10nFr.summaryReviewMyAnswer), findsOneWidget);
     expect(find.text('B'), findsOneWidget); // chosen
-    expect(find.text(AppStrings.summaryReviewExpected), findsOneWidget);
+    expect(find.text(l10nFr.summaryReviewExpected), findsOneWidget);
     expect(find.text('A'), findsOneWidget); // correct option
     expect(find.text('Parce que.'), findsOneWidget); // explanation
   });

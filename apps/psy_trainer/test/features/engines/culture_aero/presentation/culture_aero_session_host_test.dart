@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/engines/culture_aero/domain/culture_aero_engine.dart';
 import 'package:psy_trainer/features/engines/culture_aero/presentation/culture_aero_explanation.dart';
@@ -15,6 +15,8 @@ import '../../../../helpers/pump_app.dart';
 /// see `test/features/train/presentation/renderers/mcq_renderer_test.dart`
 /// and `test/features/engines/arithmetic_grid/presentation/
 /// arithmetic_grid_session_host_test.dart`, the templates for this file).
+final l10nFr = lookupAppLocalizations(const Locale('fr'));
+
 void main() {
   late ManualClock clock;
   late InMemoryProgressRepository repo;
@@ -105,7 +107,7 @@ void main() {
       );
       await tester.tap(find.byKey(ValueKey('mcq_option_${it.correctIndex}')));
       await tester.pump();
-      expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
+      expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
       if (index < items.length - 1) {
         await tester.tap(find.byKey(SessionHost.nextKey));
         await tester.pump();
@@ -114,7 +116,7 @@ void main() {
     await tester.tap(find.byKey(SessionHost.nextKey));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFinishedTitle), findsOneWidget);
+    expect(find.text(l10nFr.sessionFinishedTitle), findsOneWidget);
     expect(repo.attempts, hasLength(3));
     expect(repo.attempts.every((a) => a.isCorrect), isTrue);
   });
@@ -136,7 +138,7 @@ void main() {
       await tester.pump();
     }
 
-    expect(find.text(AppStrings.sessionFinishedTitle), findsOneWidget);
+    expect(find.text(l10nFr.sessionFinishedTitle), findsOneWidget);
     expect(repo.attempts, hasLength(3));
   });
 
@@ -144,7 +146,7 @@ void main() {
       'the item allows it', (tester) async {
     await pumpHost(tester, config(items: [item(id: 'q1')]));
     await start(tester);
-    expect(find.text(AppStrings.mcqSkipOption), findsNothing);
+    expect(find.text(l10nFr.mcqSkipOption), findsNothing);
   });
 
   testWidgets('allowSkip shows the skip option and it scores a skip, not '
@@ -152,11 +154,11 @@ void main() {
     await pumpHost(tester, config(items: [item(id: 'q1', allowSkip: true)]));
     await start(tester);
 
-    expect(find.text(AppStrings.mcqSkipOption), findsOneWidget);
-    await tester.tap(find.text(AppStrings.mcqSkipOption));
+    expect(find.text(l10nFr.mcqSkipOption), findsOneWidget);
+    await tester.tap(find.text(l10nFr.mcqSkipOption));
     await tester.pump();
 
-    expect(find.text(AppStrings.sessionFeedbackSkipped), findsOneWidget);
+    expect(find.text(l10nFr.sessionFeedbackSkipped), findsOneWidget);
     expect(repo.attempts.single.isCorrect, isFalse);
   });
 
@@ -178,7 +180,7 @@ void main() {
       find.text('Explication détaillée.', findRichText: true),
       findsOneWidget,
     );
-    expect(find.text(AppStrings.cultureValidAsOf(validAsOf)), findsOneWidget);
+    expect(find.text(l10nFr.cultureValidAsOf(validAsOf)), findsOneWidget);
   });
 
   testWidgets('an item without validAsOf shows no extra footer', (
@@ -191,7 +193,7 @@ void main() {
     await tester.pump();
 
     expect(
-      find.text(AppStrings.cultureValidAsOf(DateTime.utc(2026, 3, 15))),
+      find.text(l10nFr.cultureValidAsOf(DateTime.utc(2026, 3, 15))),
       findsNothing,
     );
   });
