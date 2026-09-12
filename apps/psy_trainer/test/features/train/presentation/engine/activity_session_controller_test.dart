@@ -180,8 +180,14 @@ void main() {
       final fresh = ProviderContainer.test();
       // EPIC-03 registers its engines here as their stories land (US-023
       // etc.); an unregistered family id is still absent.
-      expect(fresh.read(engineRegistryProvider).hasFamily('arithmetic_grid'), isTrue);
-      expect(fresh.read(rendererRegistryProvider).hasFamily('arithmetic_grid'), isTrue);
+      expect(
+        fresh.read(engineRegistryProvider).hasFamily('arithmetic_grid'),
+        isTrue,
+      );
+      expect(
+        fresh.read(rendererRegistryProvider).hasFamily('arithmetic_grid'),
+        isTrue,
+      );
       expect(fresh.read(rendererRegistryProvider).hasFamily('x'), isFalse);
       expect(fresh.read(engineClockProvider), isA<SystemClock>());
     },
