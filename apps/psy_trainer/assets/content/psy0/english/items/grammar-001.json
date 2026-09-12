@@ -41,7 +41,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "« *every day* » indique une **habitude / un horaire fixe** : **present simple**. *Is departing* décrirait une action en cours à l'instant, pas une répétition. Réflexe : fréquence (*every*, *always*, *usually*) → present simple."
+        "fr": "« *every day* » indique une **habitude / un horaire fixe** : **present simple**. *Is departing* décrirait une action en cours à l'instant, pas une répétition. Réflexe : fréquence (*every*, *always*, *usually*) → present simple."
       },
       "meta": {
         "author": "hbock",
@@ -86,7 +86,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "« *right now* » + « *Look* » : action en train de se dérouler → **present continuous** (*be* + -ing). *Load* au present simple décrirait une routine, pas ce qui se passe sous nos yeux. Réflexe : *now / at the moment / look!* → be + -ing."
+        "fr": "« *right now* » + « *Look* » : action en train de se dérouler → **present continuous** (*be* + -ing). *Load* au present simple décrirait une routine, pas ce qui se passe sous nos yeux. Réflexe : *now / at the moment / look !* → be + -ing."
       },
       "meta": {
         "author": "hbock",
@@ -131,7 +131,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "« *since* + date » marque une action commencée dans le passé et **toujours vraie** : **present perfect**. Le français dit « travaille depuis » au présent, d'où le piège *works*. Réflexe : *since / for* + durée non terminée → present perfect."
+        "fr": "« *since* + date » marque une action commencée dans le passé et **toujours vraie** : **present perfect**. Le français dit « travaille depuis » au présent, d'où le piège *works*. Réflexe : *since / for* + durée non terminée → present perfect."
       },
       "meta": {
         "author": "hbock",
@@ -176,7 +176,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "« *twenty minutes ago* » date précisément l'action dans un passé **révolu** : **past simple**. Le present perfect est incompatible avec *ago* ou toute date passée. Réflexe : *ago / yesterday / in 2020 / last week* → past simple."
+        "fr": "« *twenty minutes ago* » date précisément l'action dans un passé **révolu** : **past simple**. Le present perfect est incompatible avec *ago* ou toute date passée. Réflexe : *ago / yesterday / in 2020 / last week* → past simple."
       },
       "meta": {
         "author": "hbock",
@@ -221,7 +221,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "« *at the moment* » = maintenant, action en cours → **present continuous**. *Talks* exprimerait une généralité (elle parle aux clients en général). Réflexe : *at the moment / currently* → be + -ing."
+        "fr": "« *at the moment* » = maintenant, action en cours → **present continuous**. *Talks* exprimerait une généralité (elle parle aux clients en général). Réflexe : *at the moment / currently* → be + -ing."
       },
       "meta": {
         "author": "hbock",
@@ -266,7 +266,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Décision prise **sur le moment** (« *Don't worry* ») → **will** + base verbale. *Am going to calling* est grammaticalement impossible (*going to* + base verbale). Réflexe : promesse ou décision spontanée → *will*."
+        "fr": "Décision prise **sur le moment** (« *Don't worry* ») → **will** + base verbale. *Am going to calling* est grammaticalement impossible (*going to* + base verbale). Réflexe : promesse ou décision spontanée → *will*."
       },
       "meta": {
         "author": "hbock",
@@ -311,7 +311,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Deux actions passées, l'une **avant** l'autre : « *arrived* » (past simple) est la plus récente, donc l'action antérieure prend le **past perfect**. Réflexe : *by the time* + past simple appelle presque toujours un past perfect."
+        "fr": "Deux actions passées, l'une **avant** l'autre : « *arrived* » (past simple) est la plus récente, donc l'action antérieure prend le **past perfect**. Réflexe : *by the time* + past simple appelle presque toujours un past perfect."
       },
       "meta": {
         "author": "hbock",
@@ -356,7 +356,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Action commencée dans le passé, **toujours en cours**, dont on souligne la **durée** (« *for over an hour* ») → **present perfect continuous**. *Have waited* est possible mais n'insiste pas sur le déroulement ; *are waiting* ignore la durée. Réflexe : *for/since* + action en cours → have been + -ing."
+        "fr": "Action commencée dans le passé, **toujours en cours**, dont on souligne la **durée** (« *for over an hour* ») → **present perfect continuous**. *Have waited* est possible mais n'insiste pas sur le déroulement ; *are waiting* ignore la durée. Réflexe : *for/since* + action en cours → have been + -ing."
       },
       "meta": {
         "author": "hbock",
@@ -401,7 +401,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "« *While* » introduit une action **en cours** qui sert de cadre à une autre → **past continuous**. *Repaired* (past simple) présenterait la réparation comme achevée et ponctuelle. Réflexe : *while* + action longue → was/were + -ing."
+        "fr": "« *While* » introduit une action **en cours** qui sert de cadre à une autre → **past continuous**. *Repaired* (past simple) présenterait la réparation comme achevée et ponctuelle. Réflexe : *while* + action longue → was/were + -ing."
       },
       "meta": {
         "author": "hbock",
@@ -446,7 +446,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "« *Please be quiet* » situe l'action **maintenant** → **present continuous**. *Starts* au present simple conviendrait à un horaire (« *the demo starts at 9* »), pas à une action immédiate. Réflexe : consigne liée à l'instant présent → be + -ing."
+        "fr": "« *Please be quiet* » situe l'action **maintenant** → **present continuous**. *Starts* au present simple conviendrait à un horaire (« *the demo starts at 9* »), pas à une action immédiate. Réflexe : consigne liée à l'instant présent → be + -ing."
       },
       "meta": {
         "author": "hbock",
@@ -491,7 +491,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "« *This is the third time* » + période **non terminée** (« *this week* ») → **present perfect**. Le past simple (*broke down*) irait avec une période close (*last week*). Réflexe : *it's the first/second time…* → present perfect."
+        "fr": "« *This is the third time* » + période **non terminée** (« *this week* ») → **present perfect**. Le past simple (*broke down*) irait avec une période close (*last week*). Réflexe : *it's the first/second time…* → present perfect."
       },
       "meta": {
         "author": "hbock",
@@ -536,7 +536,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "« *last night* » = passé daté → **past simple** : *arrived* suffit, **aucun auxiliaire**. *Have/has arrived* (present perfect) est exclu par le repère passé, *was arrived* n'existe pas (*arrive* n'a pas de passif). Réflexe : date passée → prétérit seul, sans *have*."
+        "fr": "« *last night* » = passé daté → **past simple** : *arrived* suffit, **aucun auxiliaire**. *Have/has arrived* (present perfect) est exclu par le repère passé, *was arrived* n'existe pas (*arrive* n'a pas de passif). Réflexe : date passée → prétérit seul, sans *have*."
       },
       "meta": {
         "author": "hbock",
@@ -581,7 +581,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Arrangement futur **déjà planifié** avec un repère (« *tomorrow* ») → **present continuous** à valeur de futur. *Get* au present simple conviendrait à un horaire officiel (un train, un vol), pas à un événement personnel. Réflexe : *tomorrow / next week* + événement organisé → be + -ing."
+        "fr": "Arrangement futur **déjà planifié** avec un repère (« *tomorrow* ») → **present continuous** à valeur de futur. *Get* au present simple conviendrait à un horaire officiel (un train, un vol), pas à un événement personnel. Réflexe : *tomorrow / next week* + événement organisé → be + -ing."
       },
       "meta": {
         "author": "hbock",
@@ -626,7 +626,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "*Understand* est un **verbe d'état** (comme *know, believe, want, seem*) : pas de forme continue. La conversation est au présent → **present simple**. Réflexe : verbes de pensée / perception / possession → jamais en be + -ing (sauf sens particulier)."
+        "fr": "*Understand* est un **verbe d'état** (comme *know, believe, want, seem*) : pas de forme continue. La conversation est au présent → **present simple**. Réflexe : verbes de pensée / perception / possession → jamais en be + -ing (sauf sens particulier)."
       },
       "meta": {
         "author": "hbock",
@@ -671,7 +671,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Action **en cours** interrompue par un événement ponctuel (« *when the tow-bar snapped* ») → **past continuous**, ici au passif (*was being* + participe). *Was pushed back* décrirait un repoussage terminé, incompatible avec l'interruption. Réflexe : *when* + fait soudain → l'action de fond est en was/were + -ing."
+        "fr": "Action **en cours** interrompue par un événement ponctuel (« *when the tow-bar snapped* ») → **past continuous**, ici au passif (*was being* + participe). *Was pushed back* décrirait un repoussage terminé, incompatible avec l'interruption. Réflexe : *when* + fait soudain → l'action de fond est en was/were + -ing."
       },
       "meta": {
         "author": "hbock",
@@ -716,7 +716,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "« *By the end of next month* » = échéance dans le futur avant laquelle l'action sera **achevée** → **future perfect** (*will have* + participe passé). *Will be inspecting* décrirait une action en cours à ce moment-là, pas terminée. Réflexe : *by* + moment futur → will have + participe."
+        "fr": "« *By the end of next month* » = échéance dans le futur avant laquelle l'action sera **achevée** → **future perfect** (*will have* + participe passé). *Will be inspecting* décrirait une action en cours à ce moment-là, pas terminée. Réflexe : *by* + moment futur → will have + participe."
       },
       "meta": {
         "author": "hbock",
@@ -761,7 +761,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Le récit est au passé (« *looked* ») et l'on explique un état par une action **antérieure et prolongée** (« *for two weeks* ») → **past perfect continuous**. *Has been working* ramènerait au présent, incompatible avec *looked*. Réflexe : cause d'un état passé + durée → had been + -ing."
+        "fr": "Le récit est au passé (« *looked* ») et l'on explique un état par une action **antérieure et prolongée** (« *for two weeks* ») → **past perfect continuous**. *Has been working* ramènerait au présent, incompatible avec *looked*. Réflexe : cause d'un état passé + durée → had been + -ing."
       },
       "meta": {
         "author": "hbock",
@@ -806,7 +806,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Action qui sera **en cours à un moment précis du futur** (« *at 8* ») → **future continuous** (*will be* + -ing). *Will have done* signifierait que le briefing sera déjà terminé, ce qui n'expliquerait pas pourquoi il ne faut pas appeler. Réflexe : *at + heure future* + action en cours → will be + -ing."
+        "fr": "Action qui sera **en cours à un moment précis du futur** (« *at 8* ») → **future continuous** (*will be* + -ing). *Will have done* signifierait que le briefing sera déjà terminé, ce qui n'expliquerait pas pourquoi il ne faut pas appeler. Réflexe : *at + heure future* + action en cours → will be + -ing."
       },
       "meta": {
         "author": "hbock",
@@ -851,7 +851,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "« *was going to* » exprime une **intention passée non réalisée** (le *but* le confirme). *Went* affirmerait que l'appel a eu lieu. Réflexe : intention avortée → *was/were going to* + base verbale."
+        "fr": "« *was going to* » exprime une **intention passée non réalisée** (le *but* le confirme). *Went* affirmerait que l'appel a eu lieu. Réflexe : intention avortée → *was/were going to* + base verbale."
       },
       "meta": {
         "author": "hbock",
@@ -896,7 +896,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "« *well before* + past simple » (« *hit* ») marque une antériorité nette entre deux faits passés → **past perfect**. *Announced* seul est possible en anglais courant, mais *well before* invite à marquer l'antériorité ; *has announced* est exclu par le repère passé. Réflexe : *before / after* avec insistance sur l'ordre → past perfect."
+        "fr": "« *well before* + past simple » (« *hit* ») marque une antériorité nette entre deux faits passés → **past perfect**. *Announced* seul est possible en anglais courant, mais *well before* invite à marquer l'antériorité ; *has announced* est exclu par le repère passé. Réflexe : *before / after* avec insistance sur l'ordre → past perfect."
       },
       "meta": {
         "author": "hbock",
@@ -941,7 +941,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "« *this year* » désigne une période **encore ouverte**, et la suite (« *a fourth is under discussion* ») confirme le bilan en cours → **present perfect**. Avec *last year*, on aurait *opened*. Réflexe : période non achevée (*today, this week, this year*) → present perfect."
+        "fr": "« *this year* » désigne une période **encore ouverte**, et la suite (« *a fourth is under discussion* ») confirme le bilan en cours → **present perfect**. Avec *last year*, on aurait *opened*. Réflexe : période non achevée (*today, this week, this year*) → present perfect."
       },
       "meta": {
         "author": "hbock",
@@ -986,7 +986,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Le regret porte sur un moment **passé** (« *would have swapped* ») → **past simple** ; *know* est un verbe d'état, donc pas de forme continue. *Don't know* rendrait la seconde partie incohérente. Réflexe : *know* → jamais en -ing, et on cale le temps sur le contexte."
+        "fr": "Le regret porte sur un moment **passé** (« *would have swapped* ») → **past simple** ; *know* est un verbe d'état, donc pas de forme continue. *Don't know* rendrait la seconde partie incohérente. Réflexe : *know* → jamais en -ing, et on cale le temps sur le contexte."
       },
       "meta": {
         "author": "hbock",
@@ -1031,7 +1031,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Devant **to + verbe**, seul **have** fonctionne : *have to* = obligation. *Must* et *should* sont des modaux suivis directement de la base verbale, jamais de *to*. Sans rien, « *You to report* » n'a pas de verbe conjugué. Réflexe : *to* après le trou → *have to / need to*, pas un modal."
+        "fr": "Devant **to + verbe**, seul **have** fonctionne : *have to* = obligation. *Must* et *should* sont des modaux suivis directement de la base verbale, jamais de *to*. Sans rien, « *You to report* » n'a pas de verbe conjugué. Réflexe : *to* après le trou → *have to / need to*, pas un modal."
       },
       "meta": {
         "author": "hbock",
@@ -1076,7 +1076,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Absence d'obligation** (« *the mobile version is accepted* ») → **don't have to**. *Mustn't* = interdiction, ce qui contredirait la seconde partie. Réflexe : *mustn't* interdit, *don't have to* dispense — ne pas confondre avec le français « ne doit pas »."
+        "fr": "**Absence d'obligation** (« *the mobile version is accepted* ») → **don't have to**. *Mustn't* = interdiction, ce qui contredirait la seconde partie. Réflexe : *mustn't* interdit, *don't have to* dispense — ne pas confondre avec le français « ne doit pas »."
       },
       "meta": {
         "author": "hbock",
@@ -1121,7 +1121,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Il s'agit d'une **interdiction** (téléphone en phase critique) → **mustn't**. *Don't have to* et *needn't* signifieraient « ce n'est pas obligatoire ». Réflexe : règle de sécurité = interdiction → *mustn't / are not allowed to*."
+        "fr": "Il s'agit d'une **interdiction** (téléphone en phase critique) → **mustn't**. *Don't have to* et *needn't* signifieraient « ce n'est pas obligatoire ». Réflexe : règle de sécurité = interdiction → *mustn't / are not allowed to*."
       },
       "meta": {
         "author": "hbock",
@@ -1166,7 +1166,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Demande de **permission** polie → **May I…?** (ou *Can I*). *Must I* demanderait si c'est obligatoire, *Should I* si c'est conseillé. Réflexe : demander une autorisation → *may / can / could I*."
+        "fr": "Demande de **permission** polie → **May I… ?** (ou *Can I*). *Must I* demanderait si c'est obligatoire, *Should I* si c'est conseillé. Réflexe : demander une autorisation → *may / can / could I*."
       },
       "meta": {
         "author": "hbock",
@@ -1211,7 +1211,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Déduction logique** sur un fait passé (indices : lumières éteintes, porte fermée) → **must have** + participe passé. *Should have gone* exprimerait un reproche, et *can have* n'existe pas à l'affirmatif pour la déduction. Réflexe : certitude quasi totale sur le passé → *must have*."
+        "fr": "**Déduction logique** sur un fait passé (indices : lumières éteintes, porte fermée) → **must have** + participe passé. *Should have gone* exprimerait un reproche, et *can have* n'existe pas à l'affirmatif pour la déduction. Réflexe : certitude quasi totale sur le passé → *must have*."
       },
       "meta": {
         "author": "hbock",
@@ -1256,7 +1256,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Reproche** sur une action passée non faite → **should have** + participe passé. *Must have called* serait une déduction (« tu as sûrement appelé »), à l'opposé du sens voulu. Réflexe : « tu aurais dû » → *should have*."
+        "fr": "**Reproche** sur une action passée non faite → **should have** + participe passé. *Must have called* serait une déduction (« tu as sûrement appelé »), à l'opposé du sens voulu. Réflexe : « tu aurais dû » → *should have*."
       },
       "meta": {
         "author": "hbock",
@@ -1301,7 +1301,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Déduction négative** (« c'est impossible que ce soit… ») → **can't**. *Mustn't* n'exprime jamais une déduction, seulement une interdiction. Réflexe : *must* = « sûrement », son contraire est *can't*, pas *mustn't*."
+        "fr": "**Déduction négative** (« c'est impossible que ce soit… ») → **can't**. *Mustn't* n'exprime jamais une déduction, seulement une interdiction. Réflexe : *must* = « sûrement », son contraire est *can't*, pas *mustn't*."
       },
       "meta": {
         "author": "hbock",
@@ -1346,7 +1346,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Obligation dans le **passé** : *must* n'a pas de prétérit, on utilise **had to**. *Must* renverrait au présent. Réflexe : obligation passée → *had to*, obligation future → *will have to*."
+        "fr": "Obligation dans le **passé** : *must* n'a pas de prétérit, on utilise **had to**. *Must* renverrait au présent. Réflexe : obligation passée → *had to*, obligation future → *will have to*."
       },
       "meta": {
         "author": "hbock",
@@ -1391,7 +1391,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Possibilité incertaine** (« *nobody has confirmed* ») → **might** (ou *may / could*). *Must* et *has to* exprimeraient une quasi-certitude, contredite par la seconde partie. Réflexe : hypothèse ouverte → *might / may*."
+        "fr": "**Possibilité incertaine** (« *nobody has confirmed* ») → **might** (ou *may / could*). *Must* et *has to* exprimeraient une quasi-certitude, contredite par la seconde partie. Réflexe : hypothèse ouverte → *might / may*."
       },
       "meta": {
         "author": "hbock",
@@ -1436,7 +1436,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Needn't have + participe** = on l'a fait, et c'était inutile (ici, on est bien arrivé trop tôt). *Didn't need to arrive* suggère plutôt qu'on n'a pas eu besoin de le faire (et souvent qu'on ne l'a pas fait). Réflexe : action accomplie mais superflue → *needn't have*."
+        "fr": "**Needn't have + participe** = on l'a fait, et c'était inutile (ici, on est bien arrivé trop tôt). *Didn't need to arrive* suggère plutôt qu'on n'a pas eu besoin de le faire (et souvent qu'on ne l'a pas fait). Réflexe : action accomplie mais superflue → *needn't have*."
       },
       "meta": {
         "author": "hbock",
@@ -1481,7 +1481,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Didn't need to** = ce n'était pas nécessaire et on ne l'a **pas fait** (le brouillard s'est levé, donc pas de déroutement). *Needn't have diverted* impliquerait qu'on s'est dérouté pour rien. Réflexe : action non réalisée car inutile → *didn't need to*."
+        "fr": "**Didn't need to** = ce n'était pas nécessaire et on ne l'a **pas fait** (le brouillard s'est levé, donc pas de déroutement). *Needn't have diverted* impliquerait qu'on s'est dérouté pour rien. Réflexe : action non réalisée car inutile → *didn't need to*."
       },
       "meta": {
         "author": "hbock",
@@ -1526,7 +1526,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Capacité non exploitée dans le passé** (conditionnel de type 3 : « *if he had had* ») → **could have** + participe passé. *Could find* renverrait au présent/futur ; *must have* exprimerait une certitude. Réflexe : « il aurait pu » → *could have*."
+        "fr": "**Capacité non exploitée dans le passé** (conditionnel de type 3 : « *if he had had* ») → **could have** + participe passé. *Could find* renverrait au présent/futur ; *must have* exprimerait une certitude. Réflexe : « il aurait pu » → *could have*."
       },
       "meta": {
         "author": "hbock",
@@ -1571,7 +1571,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Reproche sur une action **passée** → **ought not to have** + participe (équivalent soutenu de *shouldn't have*). *Must not have spoken* n'est pas un reproche mais une déduction (« tu ne lui as sûrement pas parlé »). Réflexe : *ought to* garde son *to*, même à la forme négative."
+        "fr": "Reproche sur une action **passée** → **ought not to have** + participe (équivalent soutenu de *shouldn't have*). *Must not have spoken* n'est pas un reproche mais une déduction (« tu ne lui as sûrement pas parlé »). Réflexe : *ought to* garde son *to*, même à la forme négative."
       },
       "meta": {
         "author": "hbock",
@@ -1616,7 +1616,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Déduction négative sur une action passée en cours** → **can't have been** + -ing. *Mustn't have been* est impossible pour une déduction ; *couldn't be* ne renvoie pas au passé accompli. Réflexe : *must have* ↔ *can't have* pour les déductions passées."
+        "fr": "**Déduction négative sur une action passée en cours** → **can't have been** + -ing. *Mustn't have been* est impossible pour une déduction ; *couldn't be* ne renvoie pas au passé accompli. Réflexe : *must have* ↔ *can't have* pour les déductions passées."
       },
       "meta": {
         "author": "hbock",
@@ -1661,7 +1661,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Conditionnel de type 1** : dans la proposition en *if*, le verbe reste au **present simple** (*rains*), jamais *will* ni *would*, même si le sens est futur. *Is rains* est impossible. Réflexe : *if* + présent ; *will* seulement dans l'autre proposition."
+        "fr": "**Conditionnel de type 1** : dans la proposition en *if*, le verbe reste au **present simple** (*rains*), jamais *will* ni *would*, même si le sens est futur. *Is rains* est impossible. Réflexe : *if* + présent ; *will* seulement dans l'autre proposition."
       },
       "meta": {
         "author": "hbock",
@@ -1706,7 +1706,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Conditionnel de type 1** : condition réelle au présent, conséquence future → *if* + present simple, **will** + base verbale. *Activates* donnerait un conditionnel zéro (règle générale), possible mais moins attendu avec une conséquence ponctuelle. Réflexe : *if* + présent → *will* dans la principale."
+        "fr": "**Conditionnel de type 1** : condition réelle au présent, conséquence future → *if* + present simple, **will** + base verbale. *Activates* donnerait un conditionnel zéro (règle générale), possible mais moins attendu avec une conséquence ponctuelle. Réflexe : *if* + présent → *will* dans la principale."
       },
       "meta": {
         "author": "hbock",
@@ -1751,7 +1751,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Conditionnel de type 2** (situation irréelle au présent) : *if* + prétérit, *would* + base verbale. Avec *be*, la forme **were** est de rigueur à toutes les personnes en registre soigné. Réflexe : « si j'étais » → *if I were*."
+        "fr": "**Conditionnel de type 2** (situation irréelle au présent) : *if* + prétérit, *would* + base verbale. Avec *be*, la forme **were** est de rigueur à toutes les personnes en registre soigné. Réflexe : « si j'étais » → *if I were*."
       },
       "meta": {
         "author": "hbock",
@@ -1796,7 +1796,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "La condition est **positive** (le camion doit arriver pour embarquer) → **if**. *Unless* (= *if not*) inverserait le sens. Réflexe : traduire mentalement *unless* par « sauf si » avant de choisir."
+        "fr": "La condition est **positive** (le camion doit arriver pour embarquer) → **if**. *Unless* (= *if not*) inverserait le sens. Réflexe : traduire mentalement *unless* par « sauf si » avant de choisir."
       },
       "meta": {
         "author": "hbock",
@@ -1841,7 +1841,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "« Les départs restent bloqués **sauf si** le brouillard se lève » → **unless**. *If* et *provided that* donneraient le sens inverse (« si le brouillard se lève, les départs restent bloqués »). Réflexe : *unless* = *if… not*."
+        "fr": "« Les départs restent bloqués **sauf si** le brouillard se lève » → **unless**. *If* et *provided that* donneraient le sens inverse (« si le brouillard se lève, les départs restent bloqués »). Réflexe : *unless* = *if… not*."
       },
       "meta": {
         "author": "hbock",
@@ -1886,7 +1886,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Conditionnel de type 3** (passé irréel) : *if* + **past perfect**, *would have* + participe passé. *Completed* donnerait un type 2 (présent irréel), incompatible avec *would not have gone off*. Réflexe : *would have* dans la principale → *had* + participe dans la *if-clause*."
+        "fr": "**Conditionnel de type 3** (passé irréel) : *if* + **past perfect**, *would have* + participe passé. *Completed* donnerait un type 2 (présent irréel), incompatible avec *would not have gone off*. Réflexe : *would have* dans la principale → *had* + participe dans la *if-clause*."
       },
       "meta": {
         "author": "hbock",
@@ -1931,7 +1931,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Provided that** = « à condition que » : la permission dépend d'une condition positive. *Unless* inverserait le sens, *otherwise* n'introduit pas de subordonnée. Réflexe : *provided (that) / as long as* = *if* renforcé."
+        "fr": "**Provided that** = « à condition que » : la permission dépend d'une condition positive. *Unless* inverserait le sens, *otherwise* n'introduit pas de subordonnée. Réflexe : *provided (that) / as long as* = *if* renforcé."
       },
       "meta": {
         "author": "hbock",
@@ -1976,7 +1976,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**In case** = « au cas où » : on prend une précaution **avant** un problème possible. *If* signifierait qu'on prend la batterie seulement une fois le casque en panne. Réflexe : précaution anticipée → *in case* + present simple."
+        "fr": "**In case** = « au cas où » : on prend une précaution **avant** un problème possible. *If* signifierait qu'on prend la batterie seulement une fois le casque en panne. Réflexe : précaution anticipée → *in case* + present simple."
       },
       "meta": {
         "author": "hbock",
@@ -2021,7 +2021,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Conditionnel mixte** : cause passée (*if* + **past perfect**) → conséquence présente (*would* + base verbale, « *today* »). *Paid* ferait porter la condition sur le présent, or le sous-effectif résulte d'une politique passée. Réflexe : *would* + *today/now* avec une cause passée → *if* + had + participe."
+        "fr": "**Conditionnel mixte** : cause passée (*if* + **past perfect**) → conséquence présente (*would* + base verbale, « *today* »). *Paid* ferait porter la condition sur le présent, or le sous-effectif résulte d'une politique passée. Réflexe : *would* + *today/now* avec une cause passée → *if* + had + participe."
       },
       "meta": {
         "author": "hbock",
@@ -2066,7 +2066,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Conditionnel mixte inversé** : trait de caractère **permanent** (*if* + prétérit) → conséquence passée (*would have* + participe). *Hadn't been* limiterait la timidité au passé. Réflexe : caractéristique toujours vraie → prétérit dans la *if-clause*, même avec *would have*."
+        "fr": "**Conditionnel mixte inversé** : trait de caractère **permanent** (*if* + prétérit) → conséquence passée (*would have* + participe). *Hadn't been* limiterait la timidité au passé. Réflexe : caractéristique toujours vraie → prétérit dans la *if-clause*, même avec *would have*."
       },
       "meta": {
         "author": "hbock",
@@ -2111,7 +2111,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "« *Even without the delay* » = « même sans le retard » : concession + conditionnel irréel. *Unless* et *provided* attendent un verbe, *if not* n'est pas suivi directement d'un nom. Réflexe : *even if / even without* introduit une condition qui **ne change pas** le résultat."
+        "fr": "« *Even without the delay* » = « même sans le retard » : concession + conditionnel irréel. *Unless* et *provided* attendent un verbe, *if not* n'est pas suivi directement d'un nom. Réflexe : *even if / even without* introduit une condition qui **ne change pas** le résultat."
       },
       "meta": {
         "author": "hbock",
@@ -2156,7 +2156,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Inversion formelle** du conditionnel de type 3 : *Had* + sujet + participe passé remplace *If we had seen*. *If we would have seen* est une faute classique (jamais *would* dans la *if-clause*). Réflexe : *Had I known… / Were I you… / Should you need…* en registre soutenu."
+        "fr": "**Inversion formelle** du conditionnel de type 3 : *Had* + sujet + participe passé remplace *If we had seen*. *If we would have seen* est une faute classique (jamais *would* dans la *if-clause*). Réflexe : *Had I known… / Were I you… / Should you need…* en registre soutenu."
       },
       "meta": {
         "author": "hbock",
@@ -2201,7 +2201,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Should** + sujet + base verbale = inversion formelle de *If you require* (registre écrit, courriers). *Would* et *might* ne s'emploient pas ainsi ; *Had* appellerait un participe passé. Réflexe : *Should you…* = « si jamais vous… »."
+        "fr": "**Should** + sujet + base verbale = inversion formelle de *If you require* (registre écrit, courriers). *Would* et *might* ne s'emploient pas ainsi ; *Had* appellerait un participe passé. Réflexe : *Should you…* = « si jamais vous… »."
       },
       "meta": {
         "author": "hbock",
@@ -2246,7 +2246,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**I wish + prétérit** exprime un regret sur une situation **présente** (« *we can never plan* »). *Were* (subjonctif) est la forme attendue au passif : *were published*. *Would have been* renverrait à un regret passé ponctuel. Réflexe : *wish* + présent irréel → prétérit ; *wish* + passé → past perfect."
+        "fr": "**I wish + prétérit** exprime un regret sur une situation **présente** (« *we can never plan* »). *Were* (subjonctif) est la forme attendue au passif : *were published*. *Would have been* renverrait à un regret passé ponctuel. Réflexe : *wish* + présent irréel → prétérit ; *wish* + passé → past perfect."
       },
       "meta": {
         "author": "hbock",
@@ -2291,7 +2291,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Le sujet (« *boarding passes* ») **subit** l'action → **passif** : *be* + participe passé, ici au présent (procédure). *Are checking* (actif continu) signifierait que les cartes vérifient. Réflexe : sujet inanimé qui ne fait pas l'action → passif."
+        "fr": "Le sujet (« *boarding passes* ») **subit** l'action → **passif** : *be* + participe passé, ici au présent (procédure). *Are checking* (actif continu) signifierait que les cartes vérifient. Réflexe : sujet inanimé qui ne fait pas l'action → passif."
       },
       "meta": {
         "author": "hbock",
@@ -2336,7 +2336,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Passif au past simple** : *was* + participe passé, avec repère passé daté (« *yesterday* »). *Has been replaced* est exclu par *yesterday* ; *replaced* seul ferait du pneu l'agent de l'action. Réflexe : *yesterday* → past simple, sujet passif → *was/were* + participe."
+        "fr": "**Passif au past simple** : *was* + participe passé, avec repère passé daté (« *yesterday* »). *Has been replaced* est exclu par *yesterday* ; *replaced* seul ferait du pneu l'agent de l'action. Réflexe : *yesterday* → past simple, sujet passif → *was/were* + participe."
       },
       "meta": {
         "author": "hbock",
@@ -2381,7 +2381,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Le vol ne peut pas annuler lui-même : **passif au present perfect** (*has been* + participe), pour un fait récent au résultat présent. *Has cancelled* est actif. Réflexe : *cancel, delay, divert* avec un vol comme sujet → presque toujours au passif."
+        "fr": "Le vol ne peut pas annuler lui-même : **passif au present perfect** (*has been* + participe), pour un fait récent au résultat présent. *Has cancelled* est actif. Réflexe : *cancel, delay, divert* avec un vol comme sujet → presque toujours au passif."
       },
       "meta": {
         "author": "hbock",
@@ -2426,7 +2426,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Action **en cours** (« *at the moment* ») subie par le sujet → **passif au present continuous** : *is being* + participe passé. *Is renovated* décrirait un état général ; *is renovating* est actif. Réflexe : passif progressif = *be* + *being* + participe."
+        "fr": "Action **en cours** (« *at the moment* ») subie par le sujet → **passif au present continuous** : *is being* + participe passé. *Is renovated* décrirait un état général ; *is renovating* est actif. Réflexe : passif progressif = *be* + *being* + participe."
       },
       "meta": {
         "author": "hbock",
@@ -2471,7 +2471,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Les équipages **reçoivent** l'uniforme (ils ne l'émettent pas) → **passif au futur** : *will be* + participe passé. Le verbe *issue* garde son complément (*issue sb sth*), d'où la construction *be issued a uniform*. Réflexe : identifier qui agit réellement avant de choisir actif/passif."
+        "fr": "Les équipages **reçoivent** l'uniforme (ils ne l'émettent pas) → **passif au futur** : *will be* + participe passé. Le verbe *issue* garde son complément (*issue sb sth*), d'où la construction *be issued a uniform*. Réflexe : identifier qui agit réellement avant de choisir actif/passif."
       },
       "meta": {
         "author": "hbock",
@@ -2516,7 +2516,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Causatif** *have something done* = faire faire quelque chose par quelqu'un. Avec « *before every rotation* » (habitude) → present simple *have*. *Make* et *let* ne se construisent pas avec un participe passé. Réflexe : *have/get + objet + participe passé*."
+        "fr": "**Causatif** *have something done* = faire faire quelque chose par quelqu'un. Avec « *before every rotation* » (habitude) → present simple *have*. *Make* et *let* ne se construisent pas avec un participe passé. Réflexe : *have/get + objet + participe passé*."
       },
       "meta": {
         "author": "hbock",
@@ -2561,7 +2561,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Passif impersonnel** *is said / is believed / is thought* + *to* + infinitif = « on dit que ». La compagnie est l'objet des rumeurs, pas leur auteur. Réflexe : *It is said that X…* ↔ *X is said to…*."
+        "fr": "**Passif impersonnel** *is said / is believed / is thought* + *to* + infinitif = « on dit que ». La compagnie est l'objet des rumeurs, pas leur auteur. Réflexe : *It is said that X…* ↔ *X is said to…*."
       },
       "meta": {
         "author": "hbock",
@@ -2606,7 +2606,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Get + participe passé** = passif d'événement, courant pour *injured, hurt, lost, fired*. Le repère passé (« *when… hit* ») impose le past simple *got* ; sans auxiliaire, « *two passengers injured* » n'est qu'un titre de presse, pas une phrase complète. Réflexe : accident subi → *get injured / get hurt*."
+        "fr": "**Get + participe passé** = passif d'événement, courant pour *injured, hurt, lost, fired*. Le repère passé (« *when… hit* ») impose le past simple *got* ; sans auxiliaire, « *two passengers injured* » n'est qu'un titre de presse, pas une phrase complète. Réflexe : accident subi → *get injured / get hurt*."
       },
       "meta": {
         "author": "hbock",
@@ -2651,7 +2651,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Passif au past perfect** : antériorité par rapport à un fait passé (« *by the time… arrived* ») → *had been* + participe passé. *Was digitised* ne marque pas l'antériorité ; *had digitised* serait actif. Réflexe : *by the time* + passé → *had been* + participe pour un sujet passif."
+        "fr": "**Passif au past perfect** : antériorité par rapport à un fait passé (« *by the time… arrived* ») → *had been* + participe passé. *Was digitised* ne marque pas l'antériorité ; *had digitised* serait actif. Réflexe : *by the time* + passé → *had been* + participe pour un sujet passif."
       },
       "meta": {
         "author": "hbock",
@@ -2696,7 +2696,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Be allowed to** est le seul passif possible ici : *let* n'a **pas de forme passive** (« *be let to* » n'existe pas), et *permitted for* / *authorised of* sont des calques fautifs. Réflexe : permission au passif → *be allowed / be permitted to*, jamais *be let*."
+        "fr": "**Be allowed to** est le seul passif possible ici : *let* n'a **pas de forme passive** (« *be let to* » n'existe pas), et *permitted for* / *authorised of* sont des calques fautifs. Réflexe : permission au passif → *be allowed / be permitted to*, jamais *be let*."
       },
       "meta": {
         "author": "hbock",
@@ -2741,7 +2741,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "« À **quelle** heure » → **What time**. *When* seul se construit sans le nom *time* (*When does the bus leave?*). *How* interrogerait sur la manière. Réflexe : *what time* = *at what hour*."
+        "fr": "« À **quelle** heure » → **What time**. *When* seul se construit sans le nom *time* (*When does the bus leave ?*). *How* interrogerait sur la manière. Réflexe : *what time* = *at what hour*."
       },
       "meta": {
         "author": "hbock",
@@ -2786,7 +2786,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Question sur le sujet** : *Who* est lui-même le sujet de *signed*, donc **aucun auxiliaire** *do/did*. « *Who did signed* » est une faute classique (double marque du passé) ; *was signed* changerait le sens (passif). Réflexe : si la réponse est « X signed », pas de *did* dans la question."
+        "fr": "**Question sur le sujet** : *Who* est lui-même le sujet de *signed*, donc **aucun auxiliaire** *do/did*. « *Who did signed* » est une faute classique (double marque du passé) ; *was signed* changerait le sens (passif). Réflexe : si la réponse est « X signed », pas de *did* dans la question."
       },
       "meta": {
         "author": "hbock",
@@ -2831,7 +2831,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Question tag** : phrase négative → tag **positif**, avec le même auxiliaire (*have*) et le même sujet (*they*). *Isn't it* est un calque du français « n'est-ce pas » qui ne fonctionne pas en anglais. Réflexe : négatif → tag positif, même auxiliaire."
+        "fr": "**Question tag** : phrase négative → tag **positif**, avec le même auxiliaire (*have*) et le même sujet (*they*). *Isn't it* est un calque du français « n'est-ce pas » qui ne fonctionne pas en anglais. Réflexe : négatif → tag positif, même auxiliaire."
       },
       "meta": {
         "author": "hbock",
@@ -2876,7 +2876,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Question indirecte** : après *Could you tell me*, on garde l'ordre **sujet + verbe** (*where the office is*), sans inversion ni auxiliaire. *Where is the office* serait la question directe. Réflexe : *I wonder / Do you know / Could you tell me* + ordre affirmatif."
+        "fr": "**Question indirecte** : après *Could you tell me*, on garde l'ordre **sujet + verbe** (*where the office is*), sans inversion ni auxiliaire. *Where is the office* serait la question directe. Réflexe : *I wonder / Do you know / Could you tell me* + ordre affirmatif."
       },
       "meta": {
         "author": "hbock",
@@ -2921,7 +2921,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Après **Let's**, le tag est toujours **shall we?**. *Will we* et *don't we* ne s'emploient pas après une suggestion. Réflexe : *Let's… , shall we?* — expression figée."
+        "fr": "Après **Let's**, le tag est toujours **shall we ?**. *Will we* et *don't we* ne s'emploient pas après une suggestion. Réflexe : *Let's… , shall we ?* — expression figée."
       },
       "meta": {
         "author": "hbock",
@@ -2966,7 +2966,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**How long** interroge sur la **durée** avec un present perfect continuous. *How long time* est un calque fautif ; *since when* existe mais reste rare et souvent ironique. Réflexe : durée → *how long* ; point de départ → *since when* (peu naturel en question)."
+        "fr": "**How long** interroge sur la **durée** avec un present perfect continuous. *How long time* est un calque fautif ; *since when* existe mais reste rare et souvent ironique. Réflexe : durée → *how long* ; point de départ → *since when* (peu naturel en question)."
       },
       "meta": {
         "author": "hbock",
@@ -3011,7 +3011,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Inversion après une expression négative en tête de phrase** (*Not only*) : l'auxiliaire ou le verbe *be* passe **avant** le sujet. *The flight was* garderait l'ordre affirmatif, incorrect ici. Réflexe : *Not only / Never / Rarely / Seldom* + inversion."
+        "fr": "**Inversion après une expression négative en tête de phrase** (*Not only*) : l'auxiliaire ou le verbe *be* passe **avant** le sujet. *The flight was* garderait l'ordre affirmatif, incorrect ici. Réflexe : *Not only / Never / Rarely / Seldom* + inversion."
       },
       "meta": {
         "author": "hbock",
@@ -3056,7 +3056,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Inversion après *Rarely*** en tête de phrase : auxiliaire *have* + sujet + participe. *I have seen* sans inversion est fautif après un adverbe restrictif initial ; *did I have seen* cumule deux auxiliaires. Réflexe : *Rarely / Seldom / Hardly ever* en tête → inversion."
+        "fr": "**Inversion après *Rarely*** en tête de phrase : auxiliaire *have* + sujet + participe. *I have seen* sans inversion est fautif après un adverbe restrictif initial ; *did I have seen* cumule deux auxiliaires. Réflexe : *Rarely / Seldom / Hardly ever* en tête → inversion."
       },
       "meta": {
         "author": "hbock",
@@ -3101,7 +3101,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Question indirecte fermée** (oui/non) → **whether** (ou *if*). *Whether* est préféré devant une alternative (« *before or after* ») ; *if or not* n'existe pas (*whether or not* si). Réflexe : alternative explicite → *whether… or…*."
+        "fr": "**Question indirecte fermée** (oui/non) → **whether** (ou *if*). *Whether* est préféré devant une alternative (« *before or after* ») ; *if or not* n'existe pas (*whether or not* si). Réflexe : alternative explicite → *whether… or…*."
       },
       "meta": {
         "author": "hbock",
@@ -3146,7 +3146,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Inversion après une locution négative** placée en tête (*Under no circumstances*) : le modal **must** précède le sujet *the cargo door*. Sans inversion, la phrase est incorrecte ; *should have* + *be opened* est incohérent (règle présente). Réflexe : *Under no circumstances / On no account* + modal + sujet."
+        "fr": "**Inversion après une locution négative** placée en tête (*Under no circumstances*) : le modal **must** précède le sujet *the cargo door*. Sans inversion, la phrase est incorrecte ; *should have* + *be opened* est incohérent (règle présente). Réflexe : *Under no circumstances / On no account* + modal + sujet."
       },
       "meta": {
         "author": "hbock",
@@ -3191,7 +3191,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Enjoy** est toujours suivi d'un verbe en **-ing** (comme *avoid, mind, finish, suggest*). *To train* est le piège du français « aime former ». Réflexe : *enjoy / avoid / mind / finish / suggest* + -ing."
+        "fr": "**Enjoy** est toujours suivi d'un verbe en **-ing** (comme *avoid, mind, finish, suggest*). *To train* est le piège du français « aime former ». Réflexe : *enjoy / avoid / mind / finish / suggest* + -ing."
       },
       "meta": {
         "author": "hbock",
@@ -3236,7 +3236,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Let + complément + base verbale**, sans *to* (comme *make*, et *help* en anglais courant). *Let me to fly* est le calque de « m'a laissé voler » ; *for / of* n'ont aucun rôle ici. Réflexe : *let / make + sb + verbe nu* — mais *allow sb to*."
+        "fr": "**Let + complément + base verbale**, sans *to* (comme *make*, et *help* en anglais courant). *Let me to fly* est le calque de « m'a laissé voler » ; *for / of* n'ont aucun rôle ici. Réflexe : *let / make + sb + verbe nu* — mais *allow sb to*."
       },
       "meta": {
         "author": "hbock",
@@ -3281,7 +3281,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Un verbe en position de **sujet** prend la forme **-ing** (gérondif nominal). *To get* est aussi possible mais plus formel ; *get* et *got* ne peuvent pas être sujets. Réflexe : « le fait de + verbe » en début de phrase → -ing."
+        "fr": "Un verbe en position de **sujet** prend la forme **-ing** (gérondif nominal). *To get* est aussi possible mais plus formel ; *get* et *got* ne peuvent pas être sujets. Réflexe : « le fait de + verbe » en début de phrase → -ing."
       },
       "meta": {
         "author": "hbock",
@@ -3326,7 +3326,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Remember to do** = penser à faire (obligation future, « *it's on the checklist* »). *Remember doing* = se souvenir d'avoir fait (souvenir du passé). Réflexe : *remember / forget + to* → tâche à faire ; *+ -ing* → souvenir."
+        "fr": "**Remember to do** = penser à faire (obligation future, « *it's on the checklist* »). *Remember doing* = se souvenir d'avoir fait (souvenir du passé). Réflexe : *remember / forget + to* → tâche à faire ; *+ -ing* → souvenir."
       },
       "meta": {
         "author": "hbock",
@@ -3371,7 +3371,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Remember + -ing** = se **souvenir d'avoir fait** quelque chose (le fait est passé, « *before I left* »). *Remember to set* signifierait « penser à mettre » (action à venir). Réflexe : souvenir → -ing ; chose à faire → *to*."
+        "fr": "**Remember + -ing** = se **souvenir d'avoir fait** quelque chose (le fait est passé, « *before I left* »). *Remember to set* signifierait « penser à mettre » (action à venir). Réflexe : souvenir → -ing ; chose à faire → *to*."
       },
       "meta": {
         "author": "hbock",
@@ -3416,7 +3416,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Stop to do** = s'arrêter **pour** faire quelque chose (but). *Stop doing* = cesser une activité, ce qui donnerait « nous avons arrêté de ravitailler », absurde ici. Réflexe : *stop + to* = but ; *stop + -ing* = arrêt de l'action."
+        "fr": "**Stop to do** = s'arrêter **pour** faire quelque chose (but). *Stop doing* = cesser une activité, ce qui donnerait « nous avons arrêté de ravitailler », absurde ici. Réflexe : *stop + to* = but ; *stop + -ing* = arrêt de l'action."
       },
       "meta": {
         "author": "hbock",
@@ -3461,7 +3461,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Used to + base verbale** = habitude **passée** qui n'existe plus (« *before she moved* »). *Be used to* + -ing signifierait « être habitué à », et se construirait avec *flying*. Réflexe : *used to + infinitif* = « avant, je… » ; *be/get used to + -ing* = « être habitué à »."
+        "fr": "**Used to + base verbale** = habitude **passée** qui n'existe plus (« *before she moved* »). *Be used to* + -ing signifierait « être habitué à », et se construirait avec *flying*. Réflexe : *used to + infinitif* = « avant, je… » ; *be/get used to + -ing* = « être habitué à »."
       },
       "meta": {
         "author": "hbock",
@@ -3506,7 +3506,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Be used to + -ing** = être habitué à. Ici *to* est une **préposition**, d'où le -ing qui suit. *Used to wake up* décrirait une habitude passée révolue, incompatible avec « *finally* ». Réflexe : après *be/get used to*, toujours -ing (ou un nom)."
+        "fr": "**Be used to + -ing** = être habitué à. Ici *to* est une **préposition**, d'où le -ing qui suit. *Used to wake up* décrirait une habitude passée révolue, incompatible avec « *finally* ». Réflexe : après *be/get used to*, toujours -ing (ou un nom)."
       },
       "meta": {
         "author": "hbock",
@@ -3551,7 +3551,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Suggest** est suivi de **-ing** (ou de *that* + sujet + base verbale), jamais de *to* + infinitif ni de *suggest someone to do*. *Us to start* est le calque de « nous a suggéré de ». Réflexe : *suggest / recommend + -ing* ou *+ that-clause*."
+        "fr": "**Suggest** est suivi de **-ing** (ou de *that* + sujet + base verbale), jamais de *to* + infinitif ni de *suggest someone to do*. *Us to start* est le calque de « nous a suggéré de ». Réflexe : *suggest / recommend + -ing* ou *+ that-clause*."
       },
       "meta": {
         "author": "hbock",
@@ -3596,7 +3596,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**Regret + -ing** (ici au gérondif passé *having monitored*) = regretter d'avoir (ou de ne pas avoir) fait. *Regret to + infinitif* n'existe que dans les formules d'annonce (*we regret to inform you*). La négation se place **devant** le gérondif : *not having*. Réflexe : regret sur le passé → *regret (not) having done*."
+        "fr": "**Regret + -ing** (ici au gérondif passé *having monitored*) = regretter d'avoir (ou de ne pas avoir) fait. *Regret to + infinitif* n'existe que dans les formules d'annonce (*we regret to inform you*). La négation se place **devant** le gérondif : *not having*. Réflexe : regret sur le passé → *regret (not) having done*."
       },
       "meta": {
         "author": "hbock",

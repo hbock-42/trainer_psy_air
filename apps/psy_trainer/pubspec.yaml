@@ -131,13 +131,16 @@ flutter:
     - assets/content/psy0/lessons/verbal_boxes/
     - assets/content/psy0/logic_dominos/
     - assets/content/psy0/logic_dominos/decks/
+    - assets/content/psy0/logic_dominos/items/
     - assets/content/psy0/memory_nback/
     - assets/content/psy0/memory_nback/decks/
     - assets/content/psy0/multitask_psychomotor/
     - assets/content/psy0/planning_tubes/
     - assets/content/psy0/spatial_cubes/
+    - assets/content/psy0/spatial_cubes/items/
     - assets/content/psy0/spatial_overlay/
     - assets/content/psy0/spatial_viewpoint/
+    - assets/content/psy0/spatial_viewpoint/items/
     - assets/content/psy0/verbal_boxes/
     - assets/content/psy0/verbal_boxes/lexical_fields/
   # END content assets

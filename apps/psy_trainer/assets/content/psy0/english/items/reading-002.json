@@ -175,7 +175,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Question de **détail** : repérer le mot-clé « packed ». Paragraphe 1 : « every desk must be packed by 2 p.m. that day », et « that day » renvoie à « Thursday afternoon », le jour où les déménageurs ramassent les caisses. Vendredi (dans l'objet du mail) est la date limite globale, pas l'heure de l'emballage."
+        "fr": "Question de **détail** : repérer le mot-clé « packed ». Paragraphe 1 : « every desk must be packed by 2 p.m. that day », et « that day » renvoie à « Thursday afternoon », le jour où les déménageurs ramassent les caisses. Vendredi (dans l'objet du mail) est la date limite globale, pas l'heure de l'emballage."
       },
       "meta": {
         "author": "hbock",
@@ -222,7 +222,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Paragraphe 2 : « Monitors and docking stations will be moved by the IT team; do not disconnect them yourselves ». Il faut donc les laisser en place. Piège : les caisses étiquetées concernent les objets personnels, pas les écrans."
+        "fr": "Paragraphe 2 : « Monitors and docking stations will be moved by the IT team ; do not disconnect them yourselves ». Il faut donc les laisser en place. Piège : les caisses étiquetées concernent les objets personnels, pas les écrans."
       },
       "meta": {
         "author": "hbock",
@@ -269,7 +269,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Question d'**inférence** : « only forty spaces, so we encourage you to use the tram » — le mot « only » et la recommandation du tram impliquent qu'il n'y a pas assez de places pour tout le monde. Rien n'est dit sur la gratuité ni sur la date d'ouverture : éliminer ce que le texte ne permet pas de conclure."
+        "fr": "Question d'**inférence** : « only forty spaces, so we encourage you to use the tram » — le mot « only » et la recommandation du tram impliquent qu'il n'y a pas assez de places pour tout le monde. Rien n'est dit sur la gratuité ni sur la date d'ouverture : éliminer ce que le texte ne permet pas de conclure."
       },
       "meta": {
         "author": "hbock",
@@ -316,7 +316,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Méthode « NOT mentioned » : vérifier chaque option dans le texte. La date (3 April), le plan des places (« attached to this message ») et l'horaire des badges (« between 8 and 9.30 ») sont tous présents ; le prix du tram n'apparaît nulle part."
+        "fr": "Méthode « NOT mentioned » : vérifier chaque option dans le texte. La date (3 April), le plan des places (« attached to this message ») et l'horaire des badges (« between 8 and 9.30 ») sont tous présents ; le prix du tram n'apparaît nulle part."
       },
       "meta": {
         "author": "hbock",
@@ -363,7 +363,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Question d'**idée principale** : le titre (« Planned lift maintenance ») et le premier paragraphe donnent le sujet — l'arrêt temporaire des ascenseurs. Le test d'alarme, les livraisons et les économies d'énergie sont des détails secondaires, pas l'objet de l'avis."
+        "fr": "Question d'**idée principale** : le titre (« Planned lift maintenance ») et le premier paragraphe donnent le sujet — l'arrêt temporaire des ascenseurs. Le test d'alarme, les livraisons et les économies d'énergie sont des détails secondaires, pas l'objet de l'avis."
       },
       "meta": {
         "author": "hbock",
@@ -410,7 +410,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Mot-clé « goods lift » : « It is operated by a member of the security team ». Les locataires peuvent l'**utiliser** (« may be used by anyone… ») mais ne le **font pas fonctionner** eux-mêmes — attention à la nuance entre « use » et « operate »."
+        "fr": "Mot-clé « goods lift » : « It is operated by a member of the security team ». Les locataires peuvent l'**utiliser** (« may be used by anyone… ») mais ne le **font pas fonctionner** eux-mêmes — attention à la nuance entre « use » et « operate »."
       },
       "meta": {
         "author": "hbock",
@@ -457,7 +457,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Question d'**inférence** avec deux conditions à croiser : l'alarme est testée « each morning at 7.15 » et il ne faut évacuer que si elle sonne « longer than thirty seconds ». Quinze secondes à 7 h 15 = un test, donc pas d'évacuation. Le piège est de réagir au mot « alarm » sans lire la condition."
+        "fr": "Question d'**inférence** avec deux conditions à croiser : l'alarme est testée « each morning at 7.15 » et il ne faut évacuer que si elle sonne « longer than thirty seconds ». Quinze secondes à 7 h 15 = un test, donc pas d'évacuation. Le piège est de réagir au mot « alarm » sans lire la condition."
       },
       "meta": {
         "author": "hbock",
@@ -504,7 +504,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Dernier paragraphe : « run around 30 % faster and use significantly less energy ». Seule la consommation d'énergie figure dans les options ; capacité, bruit et étages desservis ne sont pas évoqués. Méthode : ne retenir que ce qui est **écrit**, pas ce qui semble logique."
+        "fr": "Dernier paragraphe : « run around 30 % faster and use significantly less energy ». Seule la consommation d'énergie figure dans les options ; capacité, bruit et étages desservis ne sont pas évoqués. Méthode : ne retenir que ce qui est **écrit**, pas ce qui semble logique."
       },
       "meta": {
         "author": "hbock",
@@ -551,7 +551,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Idée principale : les résultats « suggest the opposite » de la baisse prédite — production +4 %, absences −20 %, turnover en baisse. Les réserves (retail, deux abandons) nuancent mais ne renversent pas le message. Méthode : chercher la phrase qui résume le paragraphe 1, puis vérifier que les autres paragraphes ne la contredisent pas."
+        "fr": "Idée principale : les résultats « suggest the opposite » de la baisse prédite — production +4 %, absences −20 %, turnover en baisse. Les réserves (retail, deux abandons) nuancent mais ne renversent pas le message. Méthode : chercher la phrase qui résume le paragraphe 1, puis vérifier que les autres paragraphes ne la contredisent pas."
       },
       "meta": {
         "author": "hbock",
@@ -598,7 +598,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "« sick leave fell by a fifth » : un cinquième = 20 %. Les 4 % concernent la production, et les trois quarts (75 %) désignent la proportion d'entreprises où le turnover a baissé. Piège classique : les fractions écrites en toutes lettres (« a fifth », « three quarters »)."
+        "fr": "« sick leave fell by a fifth » : un cinquième = 20 %. Les 4 % concernent la production, et les trois quarts (75 %) désignent la proportion d'entreprises où le turnover a baissé. Piège classique : les fractions écrites en toutes lettres (« a fifth », « three quarters »)."
       },
       "meta": {
         "author": "hbock",
@@ -645,7 +645,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Dernier paragraphe : « the novelty of a free day may itself have boosted motivation » — l'effet de nouveauté pourrait expliquer une partie des gains, d'où la prudence et l'étude de suivi. Les autres options ne sont pas dans le texte. Méthode : le mot « cautions » signale la réserve ; lire la phrase qui le suit."
+        "fr": "Dernier paragraphe : « the novelty of a free day may itself have boosted motivation » — l'effet de nouveauté pourrait expliquer une partie des gains, d'où la prudence et l'étude de suivi. Les autres options ne sont pas dans le texte. Méthode : le mot « cautions » signale la réserve ; lire la phrase qui le suit."
       },
       "meta": {
         "author": "hbock",
@@ -692,7 +692,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Vocabulaire en contexte** : « two companies withdrew from the trial after three months » — « withdraw from » = se retirer de, quitter. Le contexte (« The picture is not uniform, however ») annonce une difficulté, donc un sens négatif : éliminer « joined » et « expanded »."
+        "fr": "**Vocabulaire en contexte** : « two companies withdrew from the trial after three months » — « withdraw from » = se retirer de, quitter. Le contexte (« The picture is not uniform, however ») annonce une difficulté, donc un sens négatif : éliminer « joined » et « expanded »."
       },
       "meta": {
         "author": "hbock",
@@ -739,7 +739,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Inférence à partir d'une citation : le modèle marche « where work can be organised around tasks rather than opening hours ». Une équipe qui livre des projets travaille par tâches ; restaurant, magasin et réception d'hôtel dépendent d'horaires d'ouverture, exactement les secteurs (« retail and hospitality ») cités comme difficiles."
+        "fr": "Inférence à partir d'une citation : le modèle marche « where work can be organised around tasks rather than opening hours ». Une équipe qui livre des projets travaille par tâches ; restaurant, magasin et réception d'hôtel dépendent d'horaires d'ouverture, exactement les secteurs (« retail and hospitality ») cités comme difficiles."
       },
       "meta": {
         "author": "hbock",
@@ -786,7 +786,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Question de **détail** : « In the first quarter, shops led with 2,400 units » — « led » = étaient en tête. Le site web (1,800) et les magasins phares (900) suivent. Sur un graphique décrit en texte, cherchez d'abord la période demandée, puis comparez les chiffres."
+        "fr": "Question de **détail** : « In the first quarter, shops led with 2,400 units » — « led » = étaient en tête. Le site web (1,800) et les magasins phares (900) suivent. Sur un graphique décrit en texte, cherchez d'abord la période demandée, puis comparez les chiffres."
       },
       "meta": {
         "author": "hbock",
@@ -833,7 +833,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "« reaching 3,100 units in the fourth quarter, when they overtook shops for the first time ». Le pic des magasins au deuxième trimestre est un distracteur : c'est le moment où les boutiques sont au plus haut, pas celui où le site les dépasse."
+        "fr": "« reaching 3,100 units in the fourth quarter, when they overtook shops for the first time ». Le pic des magasins au deuxième trimestre est un distracteur : c'est le moment où les boutiques sont au plus haut, pas celui où le site les dépasse."
       },
       "meta": {
         "author": "hbock",
@@ -880,7 +880,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Inférence : la hausse « coinciding with the summer promotion » — le texte associe explicitement le pic des magasins phares à la promotion d'été. La livraison gratuite explique la croissance **en ligne**, pas celle des magasins physiques. Repère : « coinciding with » relie une cause à un effet."
+        "fr": "Inférence : la hausse « coinciding with the summer promotion » — le texte associe explicitement le pic des magasins phares à la promotion d'été. La livraison gratuite explique la croissance **en ligne**, pas celle des magasins physiques. Repère : « coinciding with » relie une cause à un effet."
       },
       "meta": {
         "author": "hbock",
@@ -927,7 +927,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Calcul à partir du texte : 26,400 unités en 2025 représentent « 12 % more than in 2024 », donc 2024 = 26,400 ÷ 1,12 ≈ 23,570. Piège : ajouter 12 % (≈ 29,600) au lieu de diviser. Sur ce type de question, écrivez la relation avant de calculer : **2025 = 2024 × 1,12**."
+        "fr": "Calcul à partir du texte : 26,400 unités en 2025 représentent « 12 % more than in 2024 », donc 2024 = 26,400 ÷ 1,12 ≈ 23,570. Piège : ajouter 12 % (≈ 29,600) au lieu de diviser. Sur ce type de question, écrivez la relation avant de calculer : **2025 = 2024 × 1,12**."
       },
       "meta": {
         "author": "hbock",
@@ -974,7 +974,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Vérification option par option : Halden et Port Ross (villes), la livraison gratuite (raison de la croissance en ligne) et 26,400 unités (total annuel) sont cités. Aucun prix de vélo n'apparaît — le texte parle d'unités, jamais de montants."
+        "fr": "Vérification option par option : Halden et Port Ross (villes), la livraison gratuite (raison de la croissance en ligne) et 26,400 unités (total annuel) sont cités. Aucun prix de vélo n'apparaît — le texte parle d'unités, jamais de montants."
       },
       "meta": {
         "author": "hbock",
@@ -1021,7 +1021,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Lecture de tableau : colonne « Group discount », ligne « Excel for Analysts » → « none ». Méthode : identifier la colonne demandée, puis balayer les lignes — ne lisez pas tout le tableau."
+        "fr": "Lecture de tableau : colonne « Group discount », ligne « Excel for Analysts » → « none ». Méthode : identifier la colonne demandée, puis balayer les lignes — ne lisez pas tout le tableau."
       },
       "meta": {
         "author": "hbock",
@@ -1068,7 +1068,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Six personnes ≥ 5 → la remise de groupe de 15 % s'applique : 6 × 640 = 3,840, puis 3,840 × 0,85 = **3,264**. Le piège est d'oublier la remise (3,840) ou d'appliquer 10 % (3,456). Vérifiez toujours la condition (« 5+ ») avant d'appliquer un pourcentage."
+        "fr": "Six personnes ≥ 5 → la remise de groupe de 15 % s'applique : 6 × 640 = 3,840, puis 3,840 × 0,85 = **3,264**. Le piège est d'oublier la remise (3,840) ou d'appliquer 10 % (3,456). Vérifiez toujours la condition (« 5+ ») avant d'appliquer un pourcentage."
       },
       "meta": {
         "author": "hbock",
@@ -1115,7 +1115,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "« Live online courses … are recorded; recordings remain available for 60 days » — la séance manquée peut être revue. Riverside n'accueille que les cours en présentiel, et les six mois concernent le cours en autonomie (Excel). Méthode : associer chaque règle au **format** de cours concerné."
+        "fr": "« Live online courses … are recorded ; recordings remain available for 60 days » — la séance manquée peut être revue. Riverside n'accueille que les cours en présentiel, et les six mois concernent le cours en autonomie (Excel). Méthode : associer chaque règle au **format** de cours concerné."
       },
       "meta": {
         "author": "hbock",
@@ -1162,7 +1162,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Dix jours < 14 jours, donc pas de remboursement intégral (« more than 14 days before »). Pour les annulations tardives, le texte prévoit une seule possibilité : « transferred to a colleague free of charge ». Aucun remboursement partiel n'est mentionné."
+        "fr": "Dix jours < 14 jours, donc pas de remboursement intégral (« more than 14 days before »). Pour les annulations tardives, le texte prévoit une seule possibilité : « transferred to a colleague free of charge ». Aucun remboursement partiel n'est mentionné."
       },
       "meta": {
         "author": "hbock",
@@ -1209,7 +1209,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "« through the app, where a return costs 14.00 ». Le tarif de 16.00 est le prix du retour acheté auprès du chauffeur. Méthode : quand deux prix existent, vérifiez la **condition** attachée à chacun (canal d'achat, âge, validité)."
+        "fr": "« through the app, where a return costs 14.00 ». Le tarif de 16.00 est le prix du retour acheté auprès du chauffeur. Méthode : quand deux prix existent, vérifiez la **condition** attachée à chacun (canal d'achat, âge, validité)."
       },
       "meta": {
         "author": "hbock",
@@ -1256,7 +1256,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Colonne « Days » : seule la ligne 06:30 indique « Mon–Fri » ; toutes les autres sont « Daily ». Un tableau horaire se lit par la dernière colonne quand la question porte sur les jours."
+        "fr": "Colonne « Days » : seule la ligne 06:30 indique « Mon–Fri » ; toutes les autres sont « Daily ». Un tableau horaire se lit par la dernière colonne quand la question porte sur les jours."
       },
       "meta": {
         "author": "hbock",
@@ -1303,7 +1303,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Inférence : le vol part avant 9 h, et le texte dit « passengers with flights before 9 a.m. are advised to take the 05:30 service » à cause du trafic de semaine. Le 06:30 arrive à 07:20 sur le papier, mais le paragraphe prévient que les trajets 06:30–09:00 sont plus longs — c'est le piège."
+        "fr": "Inférence : le vol part avant 9 h, et le texte dit « passengers with flights before 9 a.m. are advised to take the 05:30 service » à cause du trafic de semaine. Le 06:30 arrive à 07:20 sur le papier, mais le paragraphe prévient que les trajets 06:30–09:00 sont plus longs — c'est le piège."
       },
       "meta": {
         "author": "hbock",
@@ -1350,7 +1350,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "« bought from the driver by card only » — le mot « only » exclut les espèces. L'application est l'autre moyen d'achat, mais à l'avance, pas auprès du chauffeur. Repère : « only » restreint toujours la réponse."
+        "fr": "« bought from the driver by card only » — le mot « only » exclut les espèces. L'application est l'autre moyen d'achat, mais à l'avance, pas auprès du chauffeur. Repère : « only » restreint toujours la réponse."
       },
       "meta": {
         "author": "hbock",
@@ -1397,7 +1397,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Point 1 : « The daily allowance rises from 45 to 55 euros ». 45 est l'ancien montant et 20 le seuil sous lequel le reçu n'est plus exigé. Avec « from X to Y », la **nouvelle** valeur est toujours Y."
+        "fr": "Point 1 : « The daily allowance rises from 45 to 55 euros ». 45 est l'ancien montant et 20 le seuil sous lequel le reçu n'est plus exigé. Avec « from X to Y », la **nouvelle** valeur est toujours Y."
       },
       "meta": {
         "author": "hbock",
@@ -1444,7 +1444,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Point 3 : « require written approval from a director **before** booking, not after ». La précision « not after » exclut toute validation a posteriori. Les quatre heures concernent le choix train/avion, pas la classe affaires."
+        "fr": "Point 3 : « require written approval from a director **before** booking, not after ». La précision « not after » exclut toute validation a posteriori. Les quatre heures concernent le choix train/avion, pas la classe affaires."
       },
       "meta": {
         "author": "hbock",
@@ -1491,7 +1491,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Point 2 : les hôtels réservés hors portail sont remboursés « only up to the portal rate » → 140 euros, le reste (40) restant à la charge de l'employé. Le texte ne prévoit pas de refus total : éliminer « Nothing ». Méthode : « up to » = plafond."
+        "fr": "Point 2 : les hôtels réservés hors portail sont remboursés « only up to the portal rate » → 140 euros, le reste (40) restant à la charge de l'employé. Le texte ne prévoit pas de refus total : éliminer « Nothing ». Méthode : « up to » = plafond."
       },
       "meta": {
         "author": "hbock",
@@ -1538,7 +1538,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Point 4 : les demandes tardives sont payées avec l'accord du chef de service « and never after 90 days ». 100 jours dépassent cette limite absolue, donc aucun paiement, même approuvé. Le piège est de s'arrêter à la première partie de la phrase."
+        "fr": "Point 4 : les demandes tardives sont payées avec l'accord du chef de service « and never after 90 days ». 100 jours dépassent cette limite absolue, donc aucun paiement, même approuvé. Le piège est de s'arrêter à la première partie de la phrase."
       },
       "meta": {
         "author": "hbock",
@@ -1585,7 +1585,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Paragraphe 2 : le forfait « includes room hire, three coffee breaks, a two-course lunch… ». La nuit et le petit-déjeuner sont un **supplément** (« for an additional 95 euros ») et la réception du soir est une offre conditionnelle. Méthode : lister ce qui suit « includes »."
+        "fr": "Paragraphe 2 : le forfait « includes room hire, three coffee breaks, a two-course lunch… ». La nuit et le petit-déjeuner sont un **supplément** (« for an additional 95 euros ») et la réception du soir est une offre conditionnelle. Méthode : lister ce qui suit « includes »."
       },
       "meta": {
         "author": "hbock",
@@ -1632,7 +1632,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Deux conditions cumulées : « any event of 30 delegates or more » **et** « before 31 January ». Les autres options ne remplissent qu'une condition ou aucune. Piège : « complimentary » = offert, gratuit (pas « qui fait des compliments »)."
+        "fr": "Deux conditions cumulées : « any event of 30 delegates or more » **et** « before 31 January ». Les autres options ne remplissent qu'une condition ou aucune. Piège : « complimentary » = offert, gratuit (pas « qui fait des compliments »)."
       },
       "meta": {
         "author": "hbock",
@@ -1679,7 +1679,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Inférence : 20 délégués < 30 et mars > 31 janvier, donc pas de réception. En revanche, « Charity and educational organisations enjoy a 10 % reduction all year round » s'applique sans condition de date ni de taille. Méthode : tester chaque offre contre les données du cas."
+        "fr": "Inférence : 20 délégués < 30 et mars > 31 janvier, donc pas de réception. En revanche, « Charity and educational organisations enjoy a 10 % reduction all year round » s'applique sans condition de date ni de taille. Méthode : tester chaque offre contre les données du cas."
       },
       "meta": {
         "author": "hbock",
@@ -1726,7 +1726,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Vérification : « ten minutes from Westbridge station », « 8 to 180 delegates », « Parking for 60 cars » sont tous cités. L'annonce mentionne un « event coordinator » mais jamais le nombre d'employés de l'hôtel."
+        "fr": "Vérification : « ten minutes from Westbridge station », « 8 to 180 delegates », « Parking for 60 cars » sont tous cités. L'annonce mentionne un « event coordinator » mais jamais le nombre d'employés de l'hôtel."
       },
       "meta": {
         "author": "hbock",
@@ -1773,7 +1773,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Idée générale : la note 3,5/5, la structure « The good / The less good » et la conclusion (« Probably, for a short period ») dessinent un avis nuancé et plutôt positif. Les options extrêmes (« not recommended », « ideal ») ne correspondent pas au ton mesuré du texte."
+        "fr": "Idée générale : la note 3,5/5, la structure « The good / The less good » et la conclusion (« Probably, for a short period ») dessinent un avis nuancé et plutôt positif. Les options extrêmes (« not recommended », « ideal ») ne correspondent pas au ton mesuré du texte."
       },
       "meta": {
         "author": "hbock",
@@ -1820,7 +1820,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Première phrase : « while my company's office was being renovated ». La base permanente est évoquée seulement en conclusion, comme hypothèse future. Méthode : la raison d'une situation est souvent dans la phrase d'ouverture."
+        "fr": "Première phrase : « while my company's office was being renovated ». La base permanente est évoquée seulement en conclusion, comme hypothèse future. Méthode : la raison d'une situation est souvent dans la phrase d'ouverture."
       },
       "meta": {
         "author": "hbock",
@@ -1867,7 +1867,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Vocabulaire en contexte** : « the internet never dropped once » figure dans la liste des points positifs ; « drop » pour une connexion = se couper, tomber en panne. Le prix et la chute physique n'ont pas de sens ici — le contexte (liste d'avantages) décide."
+        "fr": "**Vocabulaire en contexte** : « the internet never dropped once » figure dans la liste des points positifs ; « drop » pour une connexion = se couper, tomber en panne. Le prix et la chute physique n'ont pas de sens ici — le contexte (liste d'avantages) décide."
       },
       "meta": {
         "author": "hbock",
@@ -1914,7 +1914,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Deux informations à combiner : bureau flexible « 290 euros a month » et bureau fixe « 120 euros more » → 290 + 120 = **410**. Piège : lire 120 comme le prix du bureau fixe, alors que « more » indique un supplément."
+        "fr": "Deux informations à combiner : bureau flexible « 290 euros a month » et bureau fixe « 120 euros more » → 290 + 120 = **410**. Piège : lire 120 comme le prix du bureau fixe, alors que « more » indique un supplément."
       },
       "meta": {
         "author": "hbock",
@@ -1961,7 +1961,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Les plaintes sont dans « The less good » : prix (« not cheap »), cuisine (« too small »), chauffage (« unreliable »), impression. L'internet est au contraire un point fort (« never dropped once »). Méthode : localiser le paragraphe des critiques et cocher les options."
+        "fr": "Les plaintes sont dans « The less good » : prix (« not cheap »), cuisine (« too small »), chauffage (« unreliable »), impression. L'internet est au contraire un point fort (« never dropped once »). Méthode : localiser le paragraphe des critiques et cocher les options."
       },
       "meta": {
         "author": "hbock",
@@ -2008,7 +2008,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Section B, entre parenthèses : « Model number (on the label inside the door) ». Sur un formulaire, les indications entre parenthèses ou en petits caractères sont souvent la cible des questions de détail."
+        "fr": "Section B, entre parenthèses : « Model number (on the label inside the door) ». Sur un formulaire, les indications entre parenthèses ou en petits caractères sont souvent la cible des questions de détail."
       },
       "meta": {
         "author": "hbock",
@@ -2055,7 +2055,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Conditions : « covers manufacturing defects for 24 months from the date of purchase ». Les dix jours ouvrés sont le délai de première réponse et 40 est la distance en km — des chiffres présents dans le texte, mais avec un autre sens. Toujours vérifier l'**unité**."
+        "fr": "Conditions : « covers manufacturing defects for 24 months from the date of purchase ». Les dix jours ouvrés sont le délai de première réponse et 40 est la distance en km — des chiffres présents dans le texte, mais avec un autre sens. Toujours vérifier l'**unité**."
       },
       "meta": {
         "author": "hbock",
@@ -2149,7 +2149,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Les exclusions sont explicites : « damage caused by incorrect installation, misuse or normal wear ». Seule la mauvaise installation figure parmi les options ; les autres cas sont des pannes dans les 24 mois, a priori couvertes. Méthode : chercher la phrase des **exclusions** (« does not cover ») et comparer."
+        "fr": "Les exclusions sont explicites : « damage caused by incorrect installation, misuse or normal wear ». Seule la mauvaise installation figure parmi les options ; les autres cas sont des pannes dans les 24 mois, a priori couvertes. Méthode : chercher la phrase des **exclusions** (« does not cover ») et comparer."
       },
       "meta": {
         "author": "hbock",
@@ -2196,7 +2196,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Première réponse : « Reports made after leaving the airport must be submitted online within 7 days ». 48 heures est le délai habituel pour retrouver un sac, 21 jours celui après lequel il est déclaré perdu. Quatre durées dans le texte : associer chacune à sa règle."
+        "fr": "Première réponse : « Reports made after leaving the airport must be submitted online within 7 days ». 48 heures est le délai habituel pour retrouver un sac, 21 jours celui après lequel il est déclaré perdu. Quatre durées dans le texte : associer chacune à sa règle."
       },
       "meta": {
         "author": "hbock",
@@ -2243,7 +2243,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Deux règles : les achats essentiels sont acceptés pour un retard « of more than 24 hours » (30 h > 24 h, condition remplie) et « Luxury items are not reimbursed ». La brosse à dents est un article de toilette (essentiel), la veste de créateur un article de luxe. Les 48 heures ne sont pas un seuil de remboursement."
+        "fr": "Deux règles : les achats essentiels sont acceptés pour un retard « of more than 24 hours » (30 h > 24 h, condition remplie) et « Luxury items are not reimbursed ». La brosse à dents est un article de toilette (essentiel), la veste de créateur un article de luxe. Les 48 heures ne sont pas un seuil de remboursement."
       },
       "meta": {
         "author": "hbock",
@@ -2290,7 +2290,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "« Minor scratches and wheel wear are considered normal and are not covered » — l'usure des roulettes est exclue. Poignée, doublure et coque relèvent des dommages réparables ou indemnisables. Repère : « not covered » signale l'exclusion."
+        "fr": "« Minor scratches and wheel wear are considered normal and are not covered » — l'usure des roulettes est exclue. Poignée, doublure et coque relèvent des dommages réparables ou indemnisables. Repère : « not covered » signale l'exclusion."
       },
       "meta": {
         "author": "hbock",
@@ -2337,7 +2337,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**Vocabulaire en contexte** : « we treat it as lost » = nous le considérons comme perdu. « Treat … as » a le sens de « regard … as », pas celui de soigner ni de récompenser. Le complément « as lost » impose ce sens."
+        "fr": "**Vocabulaire en contexte** : « we treat it as lost » = nous le considérons comme perdu. « Treat … as » a le sens de « regard … as », pas celui de soigner ni de récompenser. Le complément « as lost » impose ce sens."
       },
       "meta": {
         "author": "hbock",
@@ -2384,7 +2384,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Idée principale : « Thank you for your letter of 3 May concerning… » puis « I have looked into the matter » — c'est une réponse à une réclamation. Le paiement de 30 euros est versé **au** client, pas réclamé. Méthode : la première phrase d'une lettre formelle en donne presque toujours l'objet."
+        "fr": "Idée principale : « Thank you for your letter of 3 May concerning… » puis « I have looked into the matter » — c'est une réponse à une réclamation. Le paiement de 30 euros est versé **au** client, pas réclamé. Méthode : la première phrase d'une lettre formelle en donne presque toujours l'objet."
       },
       "meta": {
         "author": "hbock",
@@ -2431,7 +2431,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Il faut relier deux phrases : la coupure a duré « just over twelve hours » et la garantie couvre « any unplanned interruption longer than twelve hours ». L'état de la route est traité séparément et ne donne lieu à aucun paiement. Repère : « entitles the customer to » = donne droit à."
+        "fr": "Il faut relier deux phrases : la coupure a duré « just over twelve hours » et la garantie couvre « any unplanned interruption longer than twelve hours ». L'état de la route est traité séparément et ne donne lieu à aucun paiement. Repère : « entitles the customer to » = donne droit à."
       },
       "meta": {
         "author": "hbock",
@@ -2478,7 +2478,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Paragraphe 3 : « the temporary repair is the responsibility of our contractor, who is required to complete a permanent repair within 28 days ». Les ingénieurs ont réparé la conduite, pas la chaussée ; l'Ombudsman est un recours, pas un réparateur."
+        "fr": "Paragraphe 3 : « the temporary repair is the responsibility of our contractor, who is required to complete a permanent repair within 28 days ». Les ingénieurs ont réparé la conduite, pas la chaussée ; l'Ombudsman est un recours, pas un réparateur."
       },
       "meta": {
         "author": "hbock",
@@ -2525,7 +2525,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Inférence fine : « I apologise that this was not applied automatically » — l'entreprise reconnaît que le paiement aurait dû être fait d'office. Il sera « credited to your next bill », donc ni en espèces ni par chèque, et l'Ombudsman n'intervient qu'en cas d'insatisfaction. Méthode : une excuse révèle ce qui **aurait dû** se passer."
+        "fr": "Inférence fine : « I apologise that this was not applied automatically » — l'entreprise reconnaît que le paiement aurait dû être fait d'office. Il sera « credited to your next bill », donc ni en espèces ni par chèque, et l'Ombudsman n'intervient qu'en cas d'insatisfaction. Méthode : une excuse révèle ce qui **aurait dû** se passer."
       },
       "meta": {
         "author": "hbock",
@@ -2572,7 +2572,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Étape 3 : « the six-digit code sent to your personal email address ». La réception n'intervient que si le code a **expiré** (« ask reception to issue a new one ») — c'est le distracteur. Méthode : distinguer la règle générale du cas particulier."
+        "fr": "Étape 3 : « the six-digit code sent to your personal email address ». La réception n'intervient que si le code a **expiré** (« ask reception to issue a new one ») — c'est le distracteur. Méthode : distinguer la règle générale du cas particulier."
       },
       "meta": {
         "author": "hbock",
@@ -2619,7 +2619,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Étape 4 : le PIN sert pour « the server room, the print room and any door after 8 p.m. ». Il n'est donc pas demandé à chaque porte ni à l'activation (qui utilise le code à six chiffres). Attention à ne pas confondre **code** (six chiffres, activation) et **PIN** (quatre chiffres, accès)."
+        "fr": "Étape 4 : le PIN sert pour « the server room, the print room and any door after 8 p.m. ». Il n'est donc pas demandé à chaque porte ni à l'activation (qui utilise le code à six chiffres). Attention à ne pas confondre **code** (six chiffres, activation) et **PIN** (quatre chiffres, accès)."
       },
       "meta": {
         "author": "hbock",
@@ -2666,7 +2666,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Dernière phrase : « Replacement badges cost 15 euros, except in cases of theft reported to the police ». Seul le vol **déclaré à la police** est exempté ; une perte ou une dégradation reste payante. Repère : « except » introduit l'unique exception."
+        "fr": "Dernière phrase : « Replacement badges cost 15 euros, except in cases of theft reported to the police ». Seul le vol **déclaré à la police** est exempté ; une perte ou une dégradation reste payante. Repère : « except » introduit l'unique exception."
       },
       "meta": {
         "author": "hbock",
@@ -2713,7 +2713,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Étape 5 : « If it is refused, wait two minutes and try again — activation can take a short time to reach every reader ». L'extension 2200 est réservée aux badges perdus ou volés, et un nouveau code ne sert que si le premier a expiré. Méthode : associer chaque action à la **situation** décrite."
+        "fr": "Étape 5 : « If it is refused, wait two minutes and try again — activation can take a short time to reach every reader ». L'extension 2200 est réservée aux badges perdus ou volés, et un nouveau code ne sert que si le premier a expiré. Méthode : associer chaque action à la **situation** décrite."
       },
       "meta": {
         "author": "hbock",

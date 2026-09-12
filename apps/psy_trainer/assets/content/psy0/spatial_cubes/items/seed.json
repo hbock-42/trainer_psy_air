@@ -1,0 +1,327 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "spatial_cubes",
+  "items": [
+    {
+      "id": "spatial_cubes.letters.gen.0001",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 1,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 100000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 2 missing face(s) out of 6, 4 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0002",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 1,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 100001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 2 missing face(s) out of 6, 4 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0003",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 2,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 200000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 2 missing face(s) out of 6, 4 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0004",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 2,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 200001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 2 missing face(s) out of 6, 4 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0005",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 2,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 200002,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 2 missing face(s) out of 6, 4 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0006",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 2,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 200003,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 2 missing face(s) out of 6, 4 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0007",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 2,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 200004,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 2 missing face(s) out of 6, 4 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0008",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 3,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 300000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 missing face(s) out of 6, 5 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0009",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 3,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 300001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 missing face(s) out of 6, 5 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0010",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 3,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 300002,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 missing face(s) out of 6, 5 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0011",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 3,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 300003,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 missing face(s) out of 6, 5 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0012",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 3,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 300004,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 missing face(s) out of 6, 5 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0013",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 3,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 300005,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 missing face(s) out of 6, 5 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0014",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 3,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 300006,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 missing face(s) out of 6, 5 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0015",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 4,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 400000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 4 missing face(s) out of 6, 6 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0016",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 4,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 400001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 4 missing face(s) out of 6, 6 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0017",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 4,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 400002,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 4 missing face(s) out of 6, 6 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0018",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 4,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 400003,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 4 missing face(s) out of 6, 6 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0019",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 5,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 500000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 5 missing face(s) out of 6, 7 tray tiles. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_cubes.letters.gen.0020",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_cubes",
+      "difficulty": 5,
+      "tags": [
+        "spatial.cube_net",
+        "spatial.cube_net.letters"
+      ],
+      "generatorId": "cube_net",
+      "seed": 500001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 5 missing face(s) out of 6, 7 tray tiles. Real-test defaults (no params override)."
+      }
+    }
+  ]
+}
