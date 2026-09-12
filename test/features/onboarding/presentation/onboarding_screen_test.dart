@@ -13,6 +13,7 @@ import 'package:psy_trainer/features/onboarding/presentation/widgets/accept_togg
 import 'package:psy_trainer/features/onboarding/presentation/widgets/exam_date_step.dart';
 import 'package:psy_trainer/features/onboarding/presentation/widgets/target_stage_step.dart';
 
+import '../../../helpers/content_ready_fakes.dart';
 import '../../../helpers/onboarding_fakes.dart';
 
 /// End to end on a fresh install: the router lands on onboarding, the flow
@@ -25,7 +26,10 @@ void main() {
     final repository = fakeProgressRepository(completed: false);
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [progressRepositoryOverride(repository: repository)],
+        overrides: [
+          progressRepositoryOverride(repository: repository),
+          contentReadyOverride(),
+        ],
         child: const PsyTrainerApp(),
       ),
     );

@@ -7,6 +7,7 @@ import 'package:psy_trainer/core/repositories/repository_providers.dart';
 import 'package:psy_trainer/core/theme/app_theme.dart';
 import 'package:psy_trainer/features/learn/presentation/learn_screen.dart';
 
+import 'helpers/content_ready_fakes.dart';
 import 'helpers/onboarding_fakes.dart';
 import 'helpers/psy0_families.dart';
 
@@ -19,6 +20,7 @@ void main() {
         overrides: [
           contentRepositoryProvider.overrideWithValue(psy0ContentRepository()),
           progressRepositoryOverride(),
+          contentReadyOverride(),
         ],
         child: const PsyTrainerApp(),
       ),

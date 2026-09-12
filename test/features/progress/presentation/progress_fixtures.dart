@@ -18,7 +18,7 @@ TestFamily family(String id, int order, String name, {String? shortName}) =>
       name: LocalizedText(fr: name),
       shortName: shortName == null ? null : LocalizedText(fr: shortName),
       description: const LocalizedText(fr: 'x'),
-      engineType: EngineType.mcqBank,
+      engineType: EngineType.cultureAero,
       answerFormat: AnswerFormat.mcq,
       defaultDurationSec: 600,
       defaultItemCount: 20,
@@ -46,10 +46,11 @@ final ExamBlueprint blueprint = ExamBlueprint(
       ExamSection(
         id: 'section-${f.id}',
         familyId: f.id,
-        durationSec: 60,
+        sectionTimeSec: 60,
         itemCount: 10,
         itemSelection: const ItemSelection.generated(
-          generatorId: 'g',
+          generatorId: GeneratorId.nback,
+          params: GeneratorParams.nback(),
           difficulty: DifficultyRange(min: 1, max: 5),
         ),
         confidence: Confidence.reported,

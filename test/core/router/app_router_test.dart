@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:psy_trainer/app.dart';
+import 'package:psy_trainer/core/l10n/strings.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/core/router/app_page.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
@@ -21,6 +22,7 @@ import 'package:psy_trainer/features/settings/presentation/settings_screen.dart'
 import 'package:psy_trainer/features/train/presentation/train_screen.dart';
 import 'package:psy_trainer/features/train/presentation/train_session_screen.dart';
 
+import '../../helpers/content_ready_fakes.dart';
 import '../../helpers/onboarding_fakes.dart';
 import '../../helpers/psy0_families.dart';
 
@@ -41,6 +43,7 @@ Future<ProviderContainer> pumpApp(
         repository: repository,
         completed: onboardingDone,
       ),
+      contentReadyOverride(),
     ],
   );
   addTearDown(container.dispose);
@@ -217,9 +220,9 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(ErrorScreen), findsOneWidget);
-    expect(find.text('Something went wrong'), findsOneWidget);
+    expect(find.text(AppStrings.errorTitle), findsOneWidget);
 
-    await tester.tap(find.text('Back to home'));
+    await tester.tap(find.text(AppStrings.errorBackHome));
     await tester.pumpAndSettle();
     expect(find.byType(LearnScreen), findsOneWidget);
   });

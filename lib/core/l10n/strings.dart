@@ -42,6 +42,13 @@ abstract final class AppStrings {
   static const String actionSkip = 'Passer';
   static const String actionFinish = 'Terminer';
   static const String actionSave = 'Enregistrer';
+  static const String actionRetry = 'Réessayer';
+
+  // Startup (US-013) and error screen.
+  static const String startupLoadingContent = 'Chargement du contenu…';
+  static const String errorTitle = 'Une erreur est survenue';
+  static const String errorUnknown = 'Erreur inconnue';
+  static const String errorBackHome = 'Retour à l\'accueil';
 
   // Onboarding (US-090).
   static const String onboardingTitle = 'Bienvenue';

@@ -12,6 +12,7 @@ import 'package:psy_trainer/features/settings/presentation/edit_profile_screen.d
 import 'package:psy_trainer/features/settings/presentation/settings_screen.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
 
+import '../../../helpers/content_ready_fakes.dart';
 import '../../../helpers/onboarding_fakes.dart';
 
 Finder _pressable(String label) => find.byWidgetPredicate(
@@ -27,7 +28,10 @@ void main() {
     addTearDown(tester.view.reset);
     repository = fakeProgressRepository();
     final container = ProviderContainer(
-      overrides: [progressRepositoryOverride(repository: repository)],
+      overrides: [
+        progressRepositoryOverride(repository: repository),
+        contentReadyOverride(),
+      ],
     );
     addTearDown(container.dispose);
     await tester.pumpWidget(
