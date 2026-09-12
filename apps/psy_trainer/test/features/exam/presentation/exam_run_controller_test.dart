@@ -23,6 +23,7 @@ ExamSection _section({
   required GeneratorId generatorId,
   int itemCount = 2,
   int breakAfterSec = 0,
+  int? sectionTimeSec,
 }) => ExamSection(
   id: id,
   familyId: familyId,
@@ -34,6 +35,7 @@ ExamSection _section({
   ),
   confidence: Confidence.assumed,
   breakAfterSec: breakAfterSec,
+  sectionTimeSec: sectionTimeSec,
 );
 
 ExamBlueprint _blueprint(List<ExamSection> sections, {String id = 'bp.test'}) =>
@@ -231,4 +233,160 @@ void main() {
       expect(container.read(provider), isA<ExamRunUnavailable>());
     },
   );
+
+  test(
+    'resumes an interrupted exam at the right section, replaying its '
+    'outcomes and reducing the section time already spent (US-064)',
+    () async {
+      final blueprint = _blueprint([
+        _section(id: 's0', familyId: 'fam_a', generatorId: GeneratorId.dominos),
+        _section(
+          id: 's1',
+          familyId: 'fam_b',
+          generatorId: GeneratorId.tubes,
+          itemCount: 3,
+          sectionTimeSec: 120,
+        ),
+      ]);
+      container = buildContainer(blueprint);
+      final provider = examRunControllerProvider(blueprint.id);
+      container.listen(provider, (_, _) {}, fireImmediately: true);
+      await _pump();
+
+      // Finish section 0 entirely, then answer one of the three items of
+      // section 1 -- 3 seconds pass before that answer, so `resume` has to
+      // shorten the section limit by that much.
+      await completeRunningSection(blueprint.id);
+      final running1 = container.read(provider) as ExamRunRunning;
+      expect(running1.planIndex, 1);
+      final firstAttemptController = container.read(
+        activitySessionControllerProvider(running1.request).notifier,
+      );
+      firstAttemptController.start();
+      clock.elapse(const Duration(seconds: 3));
+      firstAttemptController.answer(const Answer.choice(0));
+      await _pump();
+
+      final sessionId = progress.sessionsById.keys.single;
+      expect(
+        progress.sessionsById[sessionId]!.status,
+        SessionStatus.inProgress,
+      );
+
+      // Simulate the app being killed and reopened: a second container
+      // shares the same repository but knows nothing of the first one's
+      // still-running controller (never disposed, so nothing there marked
+      // the session abandoned).
+      final container2 = ProviderContainer.test(
+        overrides: [
+          contentRepositoryProvider.overrideWithValue(
+            InMemoryContentRepository(blueprints: [blueprint]),
+          ),
+          progressRepositoryProvider.overrideWithValue(progress),
+          engineRegistryProvider.overrideWithValue(
+            EngineRegistry([
+              FakeEngine(familyId: 'fam_a'),
+              FakeEngine(familyId: 'fam_b', generatorId: GeneratorId.tubes),
+            ]),
+          ),
+          engineClockProvider.overrideWithValue(clock),
+        ],
+      );
+      final provider2 = examRunControllerProvider(blueprint.id);
+      container2.listen(provider2, (_, _) {}, fireImmediately: true);
+      await _pump();
+
+      final resumed = container2.read(provider2);
+      expect(resumed, isA<ExamRunRunning>());
+      final resumedRunning = resumed as ExamRunRunning;
+      expect(resumedRunning.planIndex, 1);
+      expect(resumedRunning.request, isA<ResumeSessionRequest>());
+
+      final resumedSessionProvider = activitySessionControllerProvider(
+        resumedRunning.request,
+      );
+      final resumedController = container2.read(
+        resumedSessionProvider.notifier,
+      );
+      resumedController.start();
+      final resumedState =
+          container2.read(resumedSessionProvider) as ActivityRunning;
+      // Item 0 of the section was already answered before the "crash": the
+      // resumed run starts at item 1, not item 0.
+      expect(resumedState.itemIndex, 1);
+      expect(
+        resumedState.sectionRemaining(clock.now()),
+        const Duration(seconds: 117),
+      );
+
+      // Finish the remaining two items of the resumed section.
+      resumedController.answer(const Answer.choice(0));
+      resumedController.answer(const Answer.choice(0));
+      final finished =
+          container2.read(resumedSessionProvider) as ActivityFinished;
+      await container2
+          .read(provider2.notifier)
+          .handleSectionFinished(finished.result);
+      await _pump();
+      expect(container2.read(provider2), isA<ExamRunDone>());
+
+      // Still one session (resumed, not recreated), now completed with
+      // every attempt of both sections.
+      expect(progress.sessionsById.length, 1);
+      expect(progress.sessionsById[sessionId]!.status, SessionStatus.completed);
+      final bySection = <int, List<Attempt>>{};
+      for (final a in progress.attempts) {
+        bySection.putIfAbsent(a.sectionIndex!, () => []).add(a);
+      }
+      expect(bySection[0], hasLength(2));
+      expect(bySection[1], hasLength(3));
+    },
+  );
+
+  test('an interrupted exam older than 10 minutes since its last attempt is '
+      'abandoned instead of resumed (US-064)', () async {
+    final blueprint = _blueprint([
+      _section(id: 's0', familyId: 'fam_a', generatorId: GeneratorId.dominos),
+    ]);
+    container = buildContainer(blueprint);
+    final provider = examRunControllerProvider(blueprint.id);
+    container.listen(provider, (_, _) {}, fireImmediately: true);
+    await _pump();
+
+    final running = container.read(provider) as ExamRunRunning;
+    final firstController = container.read(
+      activitySessionControllerProvider(running.request).notifier,
+    );
+    firstController.start();
+    firstController.answer(const Answer.choice(0));
+    await _pump();
+
+    final staleSessionId = progress.sessionsById.keys.single;
+    clock.elapse(const Duration(minutes: 11));
+
+    final container2 = ProviderContainer.test(
+      overrides: [
+        contentRepositoryProvider.overrideWithValue(
+          InMemoryContentRepository(blueprints: [blueprint]),
+        ),
+        progressRepositoryProvider.overrideWithValue(progress),
+        engineRegistryProvider.overrideWithValue(
+          EngineRegistry([FakeEngine(familyId: 'fam_a')]),
+        ),
+        engineClockProvider.overrideWithValue(clock),
+      ],
+    );
+    final provider2 = examRunControllerProvider(blueprint.id);
+    container2.listen(provider2, (_, _) {}, fireImmediately: true);
+    await _pump();
+
+    // Too old to resume: a brand-new session starts instead, and the
+    // stale one is now abandoned.
+    expect(container2.read(provider2), isA<ExamRunRunning>());
+    expect(
+      progress.sessionsById[staleSessionId]!.status,
+      SessionStatus.abandoned,
+    );
+    expect(progress.sessionsById.length, 2);
+  });
 }

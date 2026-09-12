@@ -110,6 +110,12 @@ class InMemoryProgressRepository implements ProgressRepository {
     return limit == null ? result : result.take(limit).toList();
   }
 
+  @override
+  Future<void> deleteSession(String sessionId) async {
+    sessionsById.remove(sessionId);
+    attempts.removeWhere((a) => a.sessionId == sessionId);
+  }
+
   // --- Attempts -------------------------------------------------------------
 
   @override

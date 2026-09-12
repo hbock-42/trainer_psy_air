@@ -115,6 +115,12 @@ class LocalProgressRepository implements ProgressRepository {
     return [for (final row in rows) _session(row)];
   }
 
+  @override
+  Future<void> deleteSession(String sessionId) => _db.transaction(() async {
+    await _db.attemptsDao.deleteBySession(sessionId);
+    await _db.sessionsDao.deleteById(sessionId);
+  });
+
   // --- Attempts -------------------------------------------------------------
 
   @override

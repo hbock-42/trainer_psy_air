@@ -4,7 +4,7 @@ issue: 49
 title: "Exam history and resume of interrupted exams"
 type: story
 epic: EPIC-06
-status: backlog
+status: review
 priority: P1
 size: S
 lane: exam-ui
@@ -14,6 +14,6 @@ labels: [exam]
 
 # US-064 — Exam history and resume of interrupted exams
 
-- [ ] List of past simulations (date, blueprint, score, duration) → opens report
-- [ ] An interrupted exam can be resumed once within 10 minutes (timer continued), otherwise marked aborted
-- [ ] Delete a simulation
+- [x] List of past simulations (date, blueprint, score, duration) → opens report
+- [x] An interrupted exam can be resumed once within 10 minutes (timer continued), otherwise marked aborted
+- [x] Delete a simulation

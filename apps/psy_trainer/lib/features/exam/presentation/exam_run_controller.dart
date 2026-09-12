@@ -2,12 +2,16 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:psy_content/psy_content.dart';
 
 import '../../../core/repositories/model/session.dart';
+import '../../../core/repositories/progress_repository.dart';
 import '../../../core/repositories/repository_providers.dart';
 import '../../train/domain/engine/engine.dart';
 import '../../train/presentation/engine/activity_session_controller.dart';
 import '../../train/presentation/engine/engine_registry_provider.dart';
+import '../domain/exam_resume.dart';
+import '../domain/exam_review.dart';
 import '../domain/exam_section_planner.dart';
 import 'exam_run_state.dart';
 
@@ -21,6 +25,13 @@ import 'exam_run_state.dart';
 /// `SessionHost`. Between sections it inserts an optional break
 /// (`ExamSection.breakAfterSec`); any section that ends aborted (the
 /// candidate quit) abandons the whole exam.
+///
+/// Before starting fresh, `_load` looks for an interrupted `inProgress`
+/// exam session of this same blueprint still worth resuming
+/// (`findResumableExamSession`, US-064: within 10 minutes of its last
+/// attempt) and, when there is one, rebuilds the plan from its stored
+/// section configs and resumes the section it was on instead -- older
+/// leftovers are marked abandoned in the same pass.
 ///
 /// Auto-disposed like `activitySessionControllerProvider`: leaving mid-exam
 /// marks the session abandoned.
@@ -37,6 +48,12 @@ class ExamRunController extends Notifier<ExamRunState> {
   String? _sessionId;
   int _planIndex = 0;
   late EngineClock _clock;
+
+  // Read once in `build()`, not through `ref` again later: `_onDispose`
+  // (and the `_abandon` it kicks off) runs during the provider's own
+  // teardown, where reading another provider is invalid.
+  late ProgressRepository _progress;
+
   ScheduledTask? _breakTask;
   DateTime? _breakDeadline;
   bool _finished = false;
@@ -44,6 +61,7 @@ class ExamRunController extends Notifier<ExamRunState> {
   @override
   ExamRunState build() {
     _clock = ref.watch(engineClockProvider);
+    _progress = ref.read(progressRepositoryProvider);
     ref.onDispose(_onDispose);
     unawaited(_load());
     return const ExamRunState.loading();
@@ -51,12 +69,26 @@ class ExamRunController extends Notifier<ExamRunState> {
 
   Future<void> _load() async {
     final content = ref.read(contentRepositoryProvider);
-    final progress = ref.read(progressRepositoryProvider);
+    final progress = _progress;
     final engines = ref.read(engineRegistryProvider);
 
     final blueprint = await content.blueprintById(blueprintId);
     if (blueprint == null) {
       state = const ExamRunState.error('blueprint introuvable');
+      return;
+    }
+
+    final inProgress = await progress.sessions(
+      mode: SessionMode.exam,
+      status: SessionStatus.inProgress,
+    );
+    final resumable = await findResumableExamSession(
+      sessions: inProgress.where((s) => s.blueprintId == blueprintId).toList(),
+      progress: progress,
+      now: _clock.now(),
+    );
+    if (resumable != null) {
+      _resumeFrom(resumable, blueprint);
       return;
     }
 
@@ -104,6 +136,45 @@ class ExamRunController extends Notifier<ExamRunState> {
       planIndex: _planIndex,
       totalSections: _sections.length,
       request: ActivitySessionRequest.fresh(planned.config),
+    );
+  }
+
+  /// Rebuilds the plan from [candidate]'s stored section configs (the same
+  /// ones `_load` would compute fresh, `sectionConfigsOf` reads them back)
+  /// and resumes at `candidate.sectionIndex`: the rest of the exam continues
+  /// exactly as a fresh run would once that section reports back through
+  /// `handleSectionFinished`.
+  void _resumeFrom(ExamResumeCandidate candidate, ExamBlueprint blueprint) {
+    final session = candidate.session;
+    final configs = [
+      for (final config in sectionConfigsOf(session))
+        config.copyWith(sessionId: session.id),
+    ];
+    _sections = [
+      for (final config in configs)
+        PlannedExamSection(
+          sectionIndex: config.sectionIndex!,
+          section: blueprint.sections[config.sectionIndex!],
+          config: config,
+        ),
+    ];
+    _sessionId = session.id;
+    _planIndex = _sections.indexWhere(
+      (p) => p.sectionIndex == candidate.sectionIndex,
+    );
+    if (_planIndex < 0) _planIndex = 0;
+
+    final resumingConfig = _sections[_planIndex].config;
+    state = ExamRunState.running(
+      planIndex: _planIndex,
+      totalSections: _sections.length,
+      request: ActivitySessionRequest.resume(
+        // `ActivitySession.resume` decodes `session.config` as one
+        // `ActivitySessionConfig` (unlike the stored `{'sections': [...]}`
+        // wrapper): hand it the resuming section's own config instead.
+        session: session.copyWith(config: resumingConfig.toJson()),
+        attempts: candidate.attempts,
+      ),
     );
   }
 
@@ -180,8 +251,7 @@ class ExamRunController extends Notifier<ExamRunState> {
       state = const ExamRunState.aborted();
       return;
     }
-    final progress = ref.read(progressRepositoryProvider);
-    await progress.finishSession(
+    await _progress.finishSession(
       sessionId,
       status: status,
       score: status == SessionStatus.completed ? _score() : null,
@@ -216,9 +286,8 @@ class ExamRunController extends Notifier<ExamRunState> {
   }
 
   Future<void> _abandon(String sessionId) async {
-    final progress = ref.read(progressRepositoryProvider);
     try {
-      await progress.finishSession(sessionId, status: SessionStatus.abandoned);
+      await _progress.finishSession(sessionId, status: SessionStatus.abandoned);
     } on Object {
       // Best-effort: the container may already be torn down.
     }
