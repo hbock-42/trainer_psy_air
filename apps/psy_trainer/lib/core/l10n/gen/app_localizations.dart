@@ -3515,6 +3515,48 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Appuyez sur F quand le calcul encadré, en bas, est faux.'**
   String get multitaskExampleCalc;
+
+  /// No description provided for @p1CubeRotationReferenceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cube de référence'**
+  String get p1CubeRotationReferenceLabel;
+
+  /// No description provided for @p1CubeRotationCandidateLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cube candidat'**
+  String get p1CubeRotationCandidateLabel;
+
+  /// No description provided for @p1CubeRotationQuestion.
+  ///
+  /// In fr, this message translates to:
+  /// **'Est-ce le même cube, tourné ?'**
+  String get p1CubeRotationQuestion;
+
+  /// No description provided for @p1CubeRotationSameAnswer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Même cube, tourné'**
+  String get p1CubeRotationSameAnswer;
+
+  /// No description provided for @p1CubeRotationAlteredAnswer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modifié'**
+  String get p1CubeRotationAlteredAnswer;
+
+  /// No description provided for @p1CubeRotationExplanationSame.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le cube candidat est bien le cube de référence, vu sous un autre angle.'**
+  String get p1CubeRotationExplanationSame;
+
+  /// No description provided for @p1CubeRotationExplanationAltered.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le cube candidat a été modifié (faces échangées ou face inversée) : ce n\'est pas une simple rotation.'**
+  String get p1CubeRotationExplanationAltered;
 }
 
 class _AppLocalizationsDelegate

@@ -1453,5 +1453,12 @@
   "multitaskCalcButtonLabel": "F",
   "multitaskExampleTracking": "Maintenez la flèche du clavier dans la direction où se déplace le cercle.",
   "multitaskExampleShape": "Appuyez sur Espace quand la forme dans le cercle est identique à la forme de référence (en haut à gauche).",
-  "multitaskExampleCalc": "Appuyez sur F quand le calcul encadré, en bas, est faux."
+  "multitaskExampleCalc": "Appuyez sur F quand le calcul encadré, en bas, est faux.",
+  "p1CubeRotationReferenceLabel": "Cube de référence",
+  "p1CubeRotationCandidateLabel": "Cube candidat",
+  "p1CubeRotationQuestion": "Est-ce le même cube, tourné ?",
+  "p1CubeRotationSameAnswer": "Même cube, tourné",
+  "p1CubeRotationAlteredAnswer": "Modifié",
+  "p1CubeRotationExplanationSame": "Le cube candidat est bien le cube de référence, vu sous un autre angle.",
+  "p1CubeRotationExplanationAltered": "Le cube candidat a été modifié (faces échangées ou face inversée) : ce n'est pas une simple rotation."
 }
