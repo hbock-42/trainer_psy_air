@@ -296,7 +296,7 @@ Decisions:
   without their `cause` so they cross the isolate boundary); the SQL runs on the database
   isolate (`NativeDatabase.createInBackground`). Tests inject an inline parse function.
 - **Performance.** `content_seeder_test.dart` seeds the real bundle into an in-memory database
-  and asserts `elapsed < 2 s`, printing the measurement (about 0.4 s for 270 items and 16
+  and asserts `elapsed < 2 s`, printing the measurement (about 0.35 s for 594 items and 16
   lessons on a laptop, isolate spawn included).
 - **Errors.** A corrupt file surfaces as the parser's `ContentParseException` (file and entity
   named); nothing is written (the transaction never starts). The startup gate shows it on

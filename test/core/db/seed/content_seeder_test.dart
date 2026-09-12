@@ -26,6 +26,15 @@ int bankItemCount(String family) {
   return count;
 }
 
+/// Items of every PSY0 bank file, as seeded.
+int totalBankItemCount() => Directory('assets/content/psy0')
+    .listSync()
+    .whereType<Directory>()
+    .map(
+      (d) => bankItemCount(d.uri.pathSegments.lastWhere((s) => s.isNotEmpty)),
+    )
+    .fold(0, (sum, n) => sum + n);
+
 /// A private copy of `assets/content/` under a temp directory, so a test can
 /// mutate files (bump the version, corrupt a bank) without touching the repo.
 class BundleCopy {
@@ -127,7 +136,9 @@ void main() {
       final english = await content.items(familyId: 'english', shuffle: false);
       expect(english, hasLength(bankItemCount('english')));
       expect(english.map((i) => i.familyId).toSet(), {'english'});
-      expect(result.itemCount, english.length);
+      final culture = await content.items(familyId: 'culture_aero');
+      expect(culture, hasLength(bankItemCount('culture_aero')));
+      expect(result.itemCount, totalBankItemCount());
       expect(await content.items(familyId: 'english_speaking'), isEmpty);
 
       final lessons = await content.lessons(moduleId: ModuleId.psy0);

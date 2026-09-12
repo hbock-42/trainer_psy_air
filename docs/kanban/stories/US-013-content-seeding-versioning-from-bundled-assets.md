@@ -19,7 +19,7 @@ labels: [db,content]
 ## Acceptance criteria
 - [x] Content lives in `assets/content/<module>/<family>/*.json` + `lessons/*.md` + images
 - [x] On first launch or when bundled `contentVersion` > stored one, content is (re)seeded in a transaction; user data untouched
-- [x] Seeding runs off the UI thread with a splash/progress indicator; < 2 s for ~1 000 items on a mid-range phone (measured: ~0.4 s for the 270-item bundle on a laptop test VM, `content_seeder_test.dart` asserts < 2 s)
+- [x] Seeding runs off the UI thread with a splash/progress indicator; < 2 s for ~1 000 items on a mid-range phone (measured: ~0.35 s for the 594-item bundle on a laptop test VM, `content_seeder_test.dart` asserts < 2 s)
 - [x] Integration test: seed → query → bump version → re-seed keeps `attempts`
 
 ## Implementation notes (PR)
