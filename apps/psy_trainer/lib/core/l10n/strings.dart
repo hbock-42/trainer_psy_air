@@ -529,4 +529,11 @@ abstract final class AppStrings {
   static String examSectionValue(int correct, int attempts, int percent) =>
       '$correct/$attempts · $percent %';
   static const String examSectionNotReached = 'non atteinte';
+
+  // Pair / impair (attention_parity, US-031).
+  static const String attentionParityStartLabel = 'DÉPART';
+  static const String attentionParityEndLabel = 'ARRIVÉE';
+  static String attentionParityNumberSemantics(int value) => 'Nombre $value';
+  static String attentionParityRestartCount(int count) =>
+      count == 1 ? '1 redémarrage' : '$count redémarrages';
 }
