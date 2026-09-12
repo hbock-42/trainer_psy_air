@@ -566,4 +566,11 @@ abstract final class AppStrings {
   static String trainSessionSummaryItemCount(int count) => 'Questions : $count';
   static const String trainSessionSummaryTimed = 'Chronométré';
   static const String trainSessionSummaryUntimed = 'Libre';
+
+  // Pair / impair (attention_parity, US-031).
+  static const String attentionParityStartLabel = 'DÉPART';
+  static const String attentionParityEndLabel = 'ARRIVÉE';
+  static String attentionParityNumberSemantics(int value) => 'Nombre $value';
+  static String attentionParityRestartCount(int count) =>
+      count == 1 ? '1 redémarrage' : '$count redémarrages';
 }
