@@ -416,6 +416,19 @@ abstract final class AppStrings {
   static const String weakReasonNegativeTrend = 'en baisse';
   static String weakAreaDetail(int accuracyPercent, int attempts) =>
       '$accuracyPercent % de réussite sur $attempts réponses';
+
+  // "Train next" (US-072): TrainNextCard replaces WeakAreasPreview.
+  static const String trainNextTitle = 'À faire ensuite';
+  static const String trainNextSubtitle =
+      'Ce qui fera le plus progresser ta préparation';
+  static const String trainNextEmpty =
+      'Rien à recommander pour le moment : continue à t\'entraîner '
+      'régulièrement.';
+  static const String trainNextActionFamily = 'S\'entraîner';
+  static const String trainNextActionExam = 'Simuler l\'examen';
+  static const String trainNextActionLesson = 'Lire la leçon';
+  static const String trainNextActionFlashcards = 'Réviser';
+
   static const String recentActivityTitle = 'Activité récente';
   static const String recentActivitySubtitle = 'Exercices et simulations';
   static const String recentActivityNone = 'Aucune session terminée.';
@@ -713,6 +726,17 @@ abstract final class AppStrings {
   static const String summaryReviewExpected = 'Réponse attendue';
   static const String summaryReviewRawAnswer = 'Réponse enregistrée';
 
+  // planning_tubes (US-035): tube diagrams and the "Voir la solution" replay.
+  static const String tubesStartLabel = 'Départ';
+  static const String tubesTargetLabel = 'Cible';
+  static const String tubesShowSolutionAction = 'Voir la solution';
+  static const String tubesHideSolutionAction = 'Masquer la solution';
+  static String tubesSolutionStepLabel(int step, int total) =>
+      step == 0 ? 'Configuration de départ' : 'Étape $step / $total';
+  static String tubesSolutionMoveLabel(String from, String to) =>
+      'Bille du tube $from vers le tube $to';
+  static const String tubesSolutionPreviousStep = 'Étape précédente';
+  static const String tubesSolutionNextStep = 'Étape suivante';
   // 3-D viewpoint engine / "Objets 3D" (US-034, spatial_viewpoint).
   static String viewpointPositionSemantics(int azimuth) =>
       'Point de vue $azimuth';
@@ -821,4 +845,18 @@ abstract final class AppStrings {
   static const String wordBoxesMissedTitle = 'Mots mal classés';
   static String wordBoxesMissedWord(String word, String fieldName) =>
       '$word → $fieldName';
+  // spatial_cubes (US-025): cube-net renderer.
+  static const String cubeNetReferenceLabel = 'Patron de référence';
+  static const String cubeNetTargetLabel = 'Patron à compléter';
+  static const String cubeNetTrayLabel = 'Faces à placer';
+  static const String cubeNetTapToRotateHint =
+      'Touchez une face pour la faire pivoter.';
+  static String cubeNetSlotEmptySemantics(int index) => 'Case $index, vide';
+  static String cubeNetSlotFilledSemantics(int index, String value) =>
+      'Case $index, face $value';
+  static String cubeNetTileSemantics(String value, int rotation) =>
+      'Face $value, rotation $rotation degrés';
+  static const String cubeNetExplanationTitle = 'Le cube reconstitué';
+  static String cubeNetCorrectFaces(int correct, int total) =>
+      '$correct/$total faces correctement placées';
 }

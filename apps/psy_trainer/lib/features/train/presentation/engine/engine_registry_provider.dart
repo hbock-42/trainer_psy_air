@@ -14,6 +14,10 @@ import '../../../engines/logic_dominos/domain/dominos_engine.dart';
 import '../../../engines/logic_dominos/presentation/dominos_renderer.dart';
 import '../../../engines/memory_nback/domain/nback_engine.dart';
 import '../../../engines/memory_nback/presentation/nback_renderer.dart';
+import '../../../engines/planning_tubes/domain/tubes_engine.dart';
+import '../../../engines/planning_tubes/presentation/tubes_renderer.dart';
+import '../../../engines/spatial_cubes/domain/cube_net_engine.dart';
+import '../../../engines/spatial_cubes/presentation/cube_net_renderer.dart';
 import '../../../engines/spatial_viewpoint/domain/viewpoint_engine.dart';
 import '../../../engines/spatial_viewpoint/presentation/viewpoint_renderer.dart';
 import '../../../engines/verbal_boxes/domain/word_boxes_engine.dart';
@@ -43,6 +47,8 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const DominosEngine(),
         const EnglishEngine(),
         const NbackEngine(),
+        const TubesEngine(),
+        const CubeNetEngine(),
         const ViewpointEngine(),
         WordBoxesEngine(ref.read(lexicalFieldCatalogueProvider)),
       ]),
@@ -67,6 +73,8 @@ final Provider<RendererRegistry> rendererRegistryProvider =
               ref.read(englishPassageCacheProvider).get(id),
         ),
         const NbackRenderer(),
+        const TubesRenderer(),
+        const CubeNetRenderer(),
         const ViewpointRenderer(),
         WordBoxesRenderer(ref.read(lexicalFieldCatalogueProvider)),
       ]),
