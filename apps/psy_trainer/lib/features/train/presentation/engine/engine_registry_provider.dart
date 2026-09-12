@@ -30,14 +30,14 @@ import 'activity_renderer.dart';
 final Provider<EngineRegistry> engineRegistryProvider =
     Provider<EngineRegistry>(
       (ref) => EngineRegistry(const <ActivityEngine>[
-    // US-021..036: add one line per engine (alphabetical by family id).
-    ArithmeticGridEngine(),
-    AttentionParityEngine(),
-    AttentionRulesEngine(),
-    CultureAeroEngine(),
-    DominosEngine(),
-    EnglishEngine(),
-    NbackEngine(),
+        // US-021..036: add one line per engine (alphabetical by family id).
+        ArithmeticGridEngine(),
+        AttentionParityEngine(),
+        AttentionRulesEngine(),
+        CultureAeroEngine(),
+        DominosEngine(),
+        EnglishEngine(),
+        NbackEngine(),
       ]),
     );
 
@@ -45,26 +45,21 @@ final Provider<EngineRegistry> engineRegistryProvider =
 final Provider<RendererRegistry> rendererRegistryProvider =
     Provider<RendererRegistry>(
       (ref) => RendererRegistry(<ActivityRenderer>[
-        // US-021..036: add renderers here, one line each (alphabetical by
-        // family id).
+        // US-021..036: add one line per engine (alphabetical by family id).
         const ArithmeticGridRenderer(),
         const AttentionParityRenderer(),
         const AttentionRulesRenderer(),
+        const DominosRenderer(),
+        const McqRenderer(
+          familyId: 'culture_aero',
+          explanationFooter: cultureAeroExplanationFooter,
+        ),
         McqRenderer(
           familyId: 'english',
           passageResolver: (id) =>
               ref.read(englishPassageCacheProvider).get(id),
         ),
         const NbackRenderer(),
-        // US-021..036: add renderers here, one line each.
-      (ref) => RendererRegistry(const <ActivityRenderer>[
-    // US-021..036: add one line per engine (alphabetical by family id).
-    ArithmeticGridRenderer(),
-    AttentionParityRenderer(),
-    AttentionRulesRenderer(),
-    DominosRenderer(),
-    McqRenderer( familyId: 'culture_aero', explanationFooter: cultureAeroExplanationFooter, ),
-    NbackRenderer(),
       ]),
     );
 
