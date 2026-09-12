@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'core/l10n/strings.dart';
 import 'core/router/app_router.dart';
+import 'core/router/startup_gate.dart';
 import 'core/theme/app_theme.dart';
 
 /// Root of the application.
@@ -32,11 +33,13 @@ class PsyTrainerApp extends ConsumerWidget {
         final theme = AppTheme.forBrightness(
           MediaQuery.platformBrightnessOf(context),
         );
+        // StartupGate keeps the Router (child) unmounted until the content
+        // is seeded and the onboarding flag is known (US-013).
         return AppThemeScope(
           theme: theme,
           child: ColoredBox(
             color: theme.colors.background,
-            child: child ?? const SizedBox.shrink(),
+            child: StartupGate(child: child ?? const SizedBox.shrink()),
           ),
         );
       },

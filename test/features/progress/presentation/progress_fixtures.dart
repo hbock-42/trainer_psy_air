@@ -48,7 +48,11 @@ final ExamBlueprint blueprint = ExamBlueprint(
         familyId: f.id,
         sectionTimeSec: 60,
         itemCount: 10,
-        itemSelection: const ItemSelection.bank(),
+        itemSelection: const ItemSelection.generated(
+          generatorId: GeneratorId.nback,
+          params: GeneratorParams.nback(),
+          difficulty: DifficultyRange(min: 1, max: 5),
+        ),
         confidence: Confidence.reported,
       ),
   ],
