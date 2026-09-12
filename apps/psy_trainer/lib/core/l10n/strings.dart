@@ -552,6 +552,34 @@ abstract final class AppStrings {
       '$correct/$attempts · $percent %';
   static const String examSectionNotReached = 'non atteinte';
 
+  // Dominos (US-024, spec §2.4-G).
+  static const String actionValidate = 'Valider';
+  static const String dominoTopLabel = 'Haut';
+  static const String dominoBottomLabel = 'Bas';
+  static const String dominoMissingSemantics = 'Domino manquant';
+  static String dominoSelectorSemantics(String half, int value) =>
+      '$half : $value';
+  static String dominoAnswerSummary(int top, int bottom) =>
+      'Réponse : $top | $bottom';
+  static const String dominoRuleLinearEachHalf =
+      'Une moitié avance de façon régulière (+k modulo 7).';
+  static const String dominoRuleAlternatingTopBottom =
+      'Les moitiés haute et basse avancent chacune leur tour (+k modulo 7).';
+  static const String dominoRuleMirroredHalves =
+      'La moitié basse est le miroir de la moitié haute (leur somme fait 6).';
+  static const String dominoRuleConstantSum =
+      'La somme des deux moitiés reste la même sur toute la série.';
+  static const String dominoRuleInterleavedSeries =
+      'Deux séries s\'entrelacent : une pour les positions paires, une pour '
+      'les impaires.';
+  // Memory N-back (US-026).
+  static const String nbackYes = 'Oui';
+  static const String nbackNo = 'Non';
+  static String nbackYesSemantics(String shortcut) => 'Oui ($shortcut)';
+  static String nbackNoSemantics(String shortcut) => 'Non ($shortcut)';
+  static const String nbackPrimerLabel = 'Amorce — pas de réponse attendue';
+  static const String nbackHistoryStripLabel = 'Repère (derniers stimuli)';
+  static String nbackStimulusSemantics(int index) => 'Stimulus $index';
   // Formes et couleurs (US-029, attention_rules).
   static const String attentionRulesTouchFallback =
       'Touches non représentatives : le jour J, utilisez le clavier.';
