@@ -4,7 +4,7 @@ issue: 89
 title: "Content contract v2: interactive activities, cadence, scoring policy"
 type: story
 epic: EPIC-02
-status: review
+status: done
 priority: P0
 size: S
 lane: core

@@ -4,7 +4,7 @@ issue: 112
 title: "Monorepo layout with pub workspaces"
 type: story
 epic: EPIC-01
-status: review
+status: done
 priority: P0
 size: M
 lane: core

@@ -3,7 +3,7 @@ id: EPIC-12
 issue: 12
 title: "Quality & release"
 type: epic
-status: backlog
+status: done
 priority: P1
 lane: core
 ---

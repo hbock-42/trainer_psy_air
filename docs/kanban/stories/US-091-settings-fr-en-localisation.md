@@ -4,7 +4,7 @@ issue: 65
 title: "Settings & FR/EN localisation"
 type: story
 epic: EPIC-09
-status: review
+status: done
 priority: P1
 size: M
 lane: misc

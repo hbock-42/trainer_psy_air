@@ -4,7 +4,7 @@ issue: 36
 title: "Lesson viewer (markdown) with tips and strategies"
 type: story
 epic: EPIC-04
-status: review
+status: done
 priority: P0
 size: M
 lane: learn-ui

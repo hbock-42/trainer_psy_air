@@ -4,7 +4,7 @@ issue: 34
 title: "Word-box categorisation engine (Boîte à mots)"
 type: story
 epic: EPIC-03
-status: review
+status: done
 priority: P1
 size: M
 lane: engines

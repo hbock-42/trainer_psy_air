@@ -4,7 +4,7 @@ issue: 37
 title: "Flashcards with spaced repetition"
 type: story
 epic: EPIC-04
-status: review
+status: done
 priority: P1
 size: M
 lane: learn-ui

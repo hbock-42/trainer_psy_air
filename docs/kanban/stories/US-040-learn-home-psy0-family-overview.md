@@ -4,7 +4,7 @@ issue: 35
 title: "Learn home: PSY0 family overview"
 type: story
 epic: EPIC-04
-status: review
+status: done
 priority: P0
 size: S
 lane: learn-ui

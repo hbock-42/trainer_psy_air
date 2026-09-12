@@ -4,7 +4,7 @@ issue: 95
 title: "Multitask psychomotor engine (keyboard)"
 type: story
 epic: EPIC-03
-status: review
+status: done
 priority: P1
 size: L
 lane: engines

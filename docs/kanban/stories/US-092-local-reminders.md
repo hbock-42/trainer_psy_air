@@ -4,7 +4,7 @@ issue: 66
 title: "Local reminders"
 type: story
 epic: EPIC-09
-status: review
+status: done
 priority: P2
 size: S
 lane: misc

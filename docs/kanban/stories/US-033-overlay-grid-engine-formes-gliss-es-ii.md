@@ -4,7 +4,7 @@ issue: 92
 title: "Overlay-grid engine (Formes glissées II)"
 type: story
 epic: EPIC-03
-status: review
+status: done
 priority: P1
 size: L
 lane: engines

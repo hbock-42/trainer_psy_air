@@ -4,7 +4,7 @@ issue: 51
 title: "Score-over-time charts"
 type: story
 epic: EPIC-07
-status: review
+status: done
 priority: P0
 size: M
 lane: analytics

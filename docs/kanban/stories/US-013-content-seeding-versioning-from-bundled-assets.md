@@ -4,7 +4,7 @@ issue: 22
 title: "Content seeding & versioning from bundled assets"
 type: story
 epic: EPIC-02
-status: review
+status: done
 priority: P0
 size: M
 lane: core

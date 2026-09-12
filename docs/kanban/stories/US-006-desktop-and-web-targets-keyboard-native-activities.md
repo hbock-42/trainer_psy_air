@@ -4,7 +4,7 @@ issue: 88
 title: "Desktop and web targets (keyboard-native activities)"
 type: story
 epic: EPIC-01
-status: review
+status: done
 priority: P0
 size: S
 lane: core

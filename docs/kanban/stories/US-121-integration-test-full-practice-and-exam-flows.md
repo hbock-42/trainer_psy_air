@@ -4,7 +4,7 @@ issue: 76
 title: "Integration test: full practice and exam flows"
 type: story
 epic: EPIC-12
-status: review
+status: done
 priority: P1
 size: M
 lane: core

@@ -4,7 +4,7 @@ issue: 59
 title: "Author aeronautical culture item bank"
 type: story
 epic: EPIC-08
-status: review
+status: done
 priority: P0
 size: L
 lane: content

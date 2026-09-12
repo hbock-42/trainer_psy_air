@@ -4,7 +4,7 @@ issue: 23
 title: "Content validator script (used by authors and CI)"
 type: story
 epic: EPIC-02
-status: review
+status: done
 priority: P1
 size: S
 lane: content-tooling

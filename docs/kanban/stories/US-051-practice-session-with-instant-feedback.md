@@ -4,7 +4,7 @@ issue: 41
 title: "Practice session with instant feedback"
 type: story
 epic: EPIC-05
-status: review
+status: done
 priority: P0
 size: M
 lane: train-ui

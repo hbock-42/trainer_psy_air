@@ -4,7 +4,7 @@ issue: 90
 title: "Parity-sequence engine (Pair / impair)"
 type: story
 epic: EPIC-03
-status: review
+status: done
 priority: P0
 size: M
 lane: engines

@@ -4,7 +4,7 @@ issue: 38
 title: "Worked examples per family"
 type: story
 epic: EPIC-04
-status: review
+status: done
 priority: P1
 size: S
 lane: learn-ui

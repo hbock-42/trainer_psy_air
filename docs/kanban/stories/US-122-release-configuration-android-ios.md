@@ -4,7 +4,7 @@ issue: 77
 title: "Release configuration (Android / iOS)"
 type: story
 epic: EPIC-12
-status: review
+status: done
 priority: P1
 size: S
 lane: core

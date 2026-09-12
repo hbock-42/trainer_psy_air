@@ -4,7 +4,7 @@ issue: 54
 title: "Backup export / import (JSON)"
 type: story
 epic: EPIC-07
-status: review
+status: done
 priority: P2
 size: S
 lane: analytics

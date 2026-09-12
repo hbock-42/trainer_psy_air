@@ -4,7 +4,7 @@ issue: 32
 title: "Aeronautical culture engine (Culture générale aéronautique)"
 type: story
 epic: EPIC-03
-status: review
+status: done
 priority: P0
 size: S
 lane: engines

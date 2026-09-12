@@ -3,7 +3,7 @@ id: EPIC-07
 issue: 7
 title: "Progress tracking & analytics"
 type: epic
-status: backlog
+status: done
 priority: P0
 lane: analytics
 ---

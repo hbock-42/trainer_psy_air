@@ -3,7 +3,7 @@ id: EPIC-13
 issue: 13
 title: "Remote sync (future)"
 type: epic
-status: backlog
+status: done
 priority: P3
 lane: core
 ---

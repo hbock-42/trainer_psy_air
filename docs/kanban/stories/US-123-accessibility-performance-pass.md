@@ -4,7 +4,7 @@ issue: 78
 title: "Accessibility & performance pass"
 type: story
 epic: EPIC-12
-status: review
+status: done
 priority: P2
 size: M
 lane: design

@@ -3,7 +3,7 @@ id: EPIC-01
 issue: 1
 title: "Foundation & architecture"
 type: epic
-status: backlog
+status: done
 priority: P0
 lane: core
 ---

@@ -3,7 +3,7 @@ id: EPIC-04
 issue: 4
 title: "Learn mode (PSY0)"
 type: epic
-status: backlog
+status: done
 priority: P0
 lane: learn-ui
 ---
