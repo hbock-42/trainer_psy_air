@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/l10n/l10n_extensions.dart';
+import '../../../core/repositories/repository_providers.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
 import 'providers/package_info_provider.dart';
@@ -17,6 +18,7 @@ class AboutScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = AppTheme.of(context);
     final packageInfo = ref.watch(packageInfoProvider);
+    final storageInfo = ref.watch(storageInfoProvider);
 
     return AppScaffold(
       title: context.l10n.aboutTitle,
@@ -29,6 +31,21 @@ class AboutScreen extends ConsumerWidget {
             '${packageInfo.value?.version ?? context.l10n.aboutVersionUnknown}',
             style: theme.textStyles.bodyStrong,
           ),
+          SizedBox(height: theme.spacing.xs),
+          Text(
+            '${context.l10n.aboutStorageLabel}: '
+            '${_storageLabel(context, storageInfo.value)}',
+            style: theme.textStyles.body,
+          ),
+          if (storageInfo.value != null && !storageInfo.value!.persistent) ...[
+            SizedBox(height: theme.spacing.xs),
+            Text(
+              context.l10n.aboutStorageNotPersistentWarning,
+              style: theme.textStyles.caption.copyWith(
+                color: theme.colors.error,
+              ),
+            ),
+          ],
           SizedBox(height: theme.spacing.xl),
           SectionHeader(title: context.l10n.disclaimerTitle),
           SizedBox(height: theme.spacing.sm),
@@ -58,5 +75,18 @@ class AboutScreen extends ConsumerWidget {
         ],
       ),
     );
+  }
+
+  /// "OPFS" / "IndexedDB" / "mémoire (non persistant)" on web, "fichier
+  /// local" on native, "…" while [storageInfoProvider] is still resolving
+  /// (US-016).
+  String _storageLabel(BuildContext context, StorageInfo? info) {
+    if (info == null) return context.l10n.aboutStorageUnknown;
+    return switch (info.kind) {
+      StorageKind.native => context.l10n.aboutStorageLocalFile,
+      StorageKind.opfs => context.l10n.aboutStorageOpfs,
+      StorageKind.indexedDb => context.l10n.aboutStorageIndexedDb,
+      StorageKind.inMemory => context.l10n.aboutStorageMemory,
+    };
   }
 }
