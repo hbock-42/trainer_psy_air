@@ -99,6 +99,24 @@ void runContentRepositoryContract({
     expect(await repo.itemsByIds([]), isEmpty);
   });
 
+  test('passages round-trip and are found by id', () async {
+    expect(content.passages, isNotEmpty, reason: 'fixture must carry one');
+    final passage = content.passages.single;
+    expect(await repo.passage(passage.id), passage);
+    expect(await repo.passage('nope'), isNull);
+    expect(await repo.passagesByIds([passage.id, 'nope']), [passage]);
+    expect(await repo.passagesByIds([]), isEmpty);
+
+    final reading = (await repo.items(
+      familyId: 'english',
+      shuffle: false,
+    )).whereType<McqItem>().where((i) => i.passageId != null);
+    expect(reading, isNotEmpty, reason: 'fixture must link an item to it');
+    for (final item in reading) {
+      expect(item.passageId, passage.id);
+    }
+  });
+
   test('lessons filter by module and family', () async {
     final lesson = content.lessons.single;
     expect(await repo.lessons(), [lesson]);

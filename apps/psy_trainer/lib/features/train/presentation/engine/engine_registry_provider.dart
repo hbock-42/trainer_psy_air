@@ -6,7 +6,10 @@ import '../../../engines/attention_parity/domain/attention_parity_engine.dart';
 import '../../../engines/attention_parity/presentation/attention_parity_renderer.dart';
 import '../../../engines/attention_rules/domain/attention_rules_engine.dart';
 import '../../../engines/attention_rules/presentation/attention_rules_renderer.dart';
+import '../../../engines/english/domain/english_engine.dart';
+import '../../../engines/english/presentation/english_passage_cache.dart';
 import '../../domain/engine/engine.dart';
+import '../renderers/mcq_renderer.dart';
 import 'activity_renderer.dart';
 
 // Composition root of the activity engines (EPIC-03). Each engine story adds
@@ -27,6 +30,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         // US-021..036: add engines here, one line each.
         AttentionParityEngine(),
         AttentionRulesEngine(),
+        EnglishEngine(),
         // US-021..036: add engines here, one line each.
       ]),
     );
@@ -34,13 +38,18 @@ final Provider<EngineRegistry> engineRegistryProvider =
 /// The widgets of every activity.
 final Provider<RendererRegistry> rendererRegistryProvider =
     Provider<RendererRegistry>(
-      (ref) => RendererRegistry(const <ActivityRenderer>[
+      (ref) => RendererRegistry(<ActivityRenderer>[
         // US-021..036: add renderers here, one line each (alphabetical by
         // family id).
-        ArithmeticGridRenderer(),
+        const ArithmeticGridRenderer(),
         // US-021..036: add renderers here, one line each.
-        AttentionParityRenderer(),
-        AttentionRulesRenderer(),
+        const AttentionParityRenderer(),
+        const AttentionRulesRenderer(),
+        McqRenderer(
+          familyId: 'english',
+          passageResolver: (id) =>
+              ref.read(englishPassageCacheProvider).get(id),
+        ),
         // US-021..036: add renderers here, one line each.
       ]),
     );

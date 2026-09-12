@@ -91,6 +91,16 @@ class Flashcards extends Table with AuditedTable {
   TextColumn get json => text().map(const JsonMapConverter())();
 }
 
+/// Mirror of the reading passages authored inline in `<family>/items/*.json`
+/// bank files (`ItemBank.passages`, US-027). Keyed by the passage's own id
+/// (already globally unique by authoring convention, e.g.
+/// `english.reading.p001`), so an `McqItem.passageId` resolves here directly
+/// without going through a family.
+@DataClassName('PassageRow')
+class Passages extends Table with AuditedTable {
+  TextColumn get json => text().map(const JsonMapConverter())();
+}
+
 /// Mirror of `<module>/blueprints/*.json`.
 @DataClassName('BlueprintRow')
 @TableIndex(name: 'blueprints_module', columns: {#moduleId})

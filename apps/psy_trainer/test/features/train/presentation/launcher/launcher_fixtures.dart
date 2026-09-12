@@ -25,6 +25,24 @@ TestFamily bankFamily({
   confidence: Confidence.confirmed,
 );
 
+/// The `english` family: same shape as [bankFamily], but with the real
+/// `engineType`/id so the passage-aware sampler (keyed by family id) kicks
+/// in.
+TestFamily englishFamily({int order = 14}) => TestFamily(
+  id: 'english',
+  moduleId: ModuleId.psy0,
+  version: 1,
+  order: order,
+  name: const LocalizedText(fr: 'Anglais'),
+  description: const LocalizedText(fr: 'Ce qui est évalué.'),
+  engineType: EngineType.englishReading,
+  answerFormat: AnswerFormat.mcq,
+  defaultDurationSec: 1800,
+  defaultItemCount: 45,
+  defaultPerItemTimeSec: 40,
+  confidence: Confidence.reported,
+);
+
 /// A generator-driven family.
 TestFamily generatorFamily({
   String id = 'memory_nback',
@@ -53,12 +71,14 @@ McqItem bankItem({
   required String familyId,
   String tag = 'default',
   int difficulty = 3,
+  String? passageId,
 }) => McqItem(
   id: id,
   version: 1,
   familyId: familyId,
   difficulty: difficulty,
   tags: [tag],
+  passageId: passageId,
   stem: LocalizedText(fr: 'Question $id'),
   options: const [
     McqOption(text: LocalizedText(fr: 'A')),

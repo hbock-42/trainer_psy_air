@@ -13,6 +13,7 @@ class InMemoryContentRepository implements ContentRepository {
     Iterable<Module> modules = const [],
     Iterable<TestFamily> families = const [],
     Iterable<Item> items = const [],
+    Iterable<Passage> passages = const [],
     Iterable<Lesson> lessons = const [],
     Iterable<Deck> decks = const [],
     Iterable<ExamBlueprint> blueprints = const [],
@@ -21,6 +22,7 @@ class InMemoryContentRepository implements ContentRepository {
     _modules.addAll(modules);
     _families.addAll(families);
     _items.addAll(items);
+    _passages.addAll(passages);
     _lessons.addAll(lessons);
     _decks.addAll(decks);
     _blueprints.addAll(blueprints);
@@ -30,6 +32,7 @@ class InMemoryContentRepository implements ContentRepository {
   final List<Module> _modules = [];
   final List<TestFamily> _families = [];
   final List<Item> _items = [];
+  final List<Passage> _passages = [];
   final List<Lesson> _lessons = [];
   final List<Deck> _decks = [];
   final List<ExamBlueprint> _blueprints = [];
@@ -38,6 +41,7 @@ class InMemoryContentRepository implements ContentRepository {
   void addModule(Module module) => _modules.add(module);
   void addFamily(TestFamily family) => _families.add(family);
   void addItems(Iterable<Item> items) => _items.addAll(items);
+  void addPassage(Passage passage) => _passages.add(passage);
   void addLesson(Lesson lesson) => _lessons.add(lesson);
   void addDeck(Deck deck) => _decks.add(deck);
   void addBlueprint(ExamBlueprint blueprint) => _blueprints.add(blueprint);
@@ -96,6 +100,16 @@ class InMemoryContentRepository implements ContentRepository {
   @override
   Future<List<Item>> itemsByIds(Iterable<String> ids) async {
     final byId = {for (final i in _items) i.id: i};
+    return [for (final id in ids) ?byId[id]];
+  }
+
+  @override
+  Future<Passage?> passage(String id) async =>
+      _passages.where((p) => p.id == id).firstOrNull;
+
+  @override
+  Future<List<Passage>> passagesByIds(Iterable<String> ids) async {
+    final byId = {for (final p in _passages) p.id: p};
     return [for (final id in ids) ?byId[id]];
   }
 
