@@ -20,6 +20,8 @@ import '../../../engines/planning_tubes/domain/tubes_engine.dart';
 import '../../../engines/planning_tubes/presentation/tubes_renderer.dart';
 import '../../../engines/spatial_cubes/domain/cube_net_engine.dart';
 import '../../../engines/spatial_cubes/presentation/cube_net_renderer.dart';
+import '../../../engines/spatial_overlay/domain/overlay_grid_engine.dart';
+import '../../../engines/spatial_overlay/presentation/overlay_grid_renderer.dart';
 import '../../../engines/spatial_viewpoint/domain/viewpoint_engine.dart';
 import '../../../engines/spatial_viewpoint/presentation/viewpoint_renderer.dart';
 import '../../../engines/verbal_boxes/domain/word_boxes_engine.dart';
@@ -46,12 +48,13 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const AirwaysEngine(),
         const AttentionParityEngine(),
         const AttentionRulesEngine(),
+        const CubeNetEngine(),
         const CultureAeroEngine(),
         const DominosEngine(),
         const EnglishEngine(),
         const NbackEngine(),
+        const OverlayGridEngine(),
         const TubesEngine(),
-        const CubeNetEngine(),
         const ViewpointEngine(),
         WordBoxesEngine(ref.read(lexicalFieldCatalogueProvider)),
       ]),
@@ -66,6 +69,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const AirwaysRenderer(),
         const AttentionParityRenderer(),
         const AttentionRulesRenderer(),
+        const CubeNetRenderer(),
         const DominosRenderer(),
         const McqRenderer(
           familyId: 'culture_aero',
@@ -77,8 +81,8 @@ final Provider<RendererRegistry> rendererRegistryProvider =
               ref.read(englishPassageCacheProvider).get(id),
         ),
         const NbackRenderer(),
+        const OverlayGridRenderer(),
         const TubesRenderer(),
-        const CubeNetRenderer(),
         const ViewpointRenderer(),
         WordBoxesRenderer(ref.read(lexicalFieldCatalogueProvider)),
       ]),
