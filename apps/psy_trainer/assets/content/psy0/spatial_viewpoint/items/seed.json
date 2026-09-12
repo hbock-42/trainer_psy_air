@@ -1,0 +1,327 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "spatial_viewpoint",
+  "items": [
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0001",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 1,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 100000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 objects, correct azimuth 5/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0002",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 1,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 100001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 objects, correct azimuth 7/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0003",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 2,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 200000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 objects, correct azimuth 7/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0004",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 2,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 200001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 objects, correct azimuth 3/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0005",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 2,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 200002,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 objects, correct azimuth 4/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0006",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 2,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 200003,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 objects, correct azimuth 4/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0007",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 2,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 200004,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 3 objects, correct azimuth 5/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0008",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 3,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 300000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 4 objects, correct azimuth 5/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0009",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 3,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 300001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 4 objects, correct azimuth 6/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0010",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 3,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 300002,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 4 objects, correct azimuth 5/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0011",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 3,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 300003,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 4 objects, correct azimuth 1/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0012",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 3,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 300004,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 4 objects, correct azimuth 1/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0013",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 3,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 300005,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 4 objects, correct azimuth 7/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0014",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 3,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 300006,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 4 objects, correct azimuth 7/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0015",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 4,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 400000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 5 objects, correct azimuth 8/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0016",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 4,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 400001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 5 objects, correct azimuth 2/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0017",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 4,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 400002,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 5 objects, correct azimuth 2/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0018",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 4,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 400003,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 5 objects, correct azimuth 6/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0019",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 5,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 500000,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 6 objects, correct azimuth 4/8. Real-test defaults (no params override)."
+      }
+    },
+    {
+      "id": "spatial_viewpoint.azimuth.gen.0020",
+      "type": "generated",
+      "version": 1,
+      "familyId": "spatial_viewpoint",
+      "difficulty": 5,
+      "tags": [
+        "spatial.viewpoint",
+        "spatial.viewpoint.azimuth"
+      ],
+      "generatorId": "viewpoint",
+      "seed": 500001,
+      "meta": {
+        "notes": "Calibration seed (US-084/US-086): 6 objects, correct azimuth 7/8. Real-test defaults (no params override)."
+      }
+    }
+  ]
+}
