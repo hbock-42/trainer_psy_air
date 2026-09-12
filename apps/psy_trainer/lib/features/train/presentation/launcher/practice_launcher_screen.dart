@@ -9,6 +9,9 @@ import '../../../../core/repositories/repository_providers.dart';
 import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
+import '../../domain/engine/timing_policy.dart';
+import '../../domain/mistakes/mistake_pool.dart';
+import '../../domain/mistakes/mistake_session_builder.dart';
 import '../engine/engine_registry_provider.dart';
 import 'practice_config.dart';
 import 'practice_launcher_provider.dart';
@@ -64,6 +67,28 @@ class _LauncherBody extends ConsumerWidget {
       family: family,
       config: config,
       contentRepository: ref.read(contentRepositoryProvider),
+    );
+    if (!context.mounted) return;
+    unawaited(
+      context.push(AppRoutes.trainSession('new'), extra: activityConfig),
+    );
+  }
+
+  /// "Reprendre mes erreurs" (US-054): a practice session over the family's
+  /// mistake pool, capped at the launcher's chosen item count.
+  Future<void> _startRetry(
+    BuildContext context,
+    WidgetRef ref,
+    MistakePool pool,
+    PracticeConfig config,
+  ) async {
+    final family = ref.read(practiceLauncherProvider(familyId)).family!;
+    final activityConfig = await buildMistakeSessionConfig(
+      familyId: family.id,
+      pool: pool.capped(config.itemCount),
+      contentRepository: ref.read(contentRepositoryProvider),
+      timing: TimingPolicy.forPractice(family, timed: config.timed),
+      title: family.name,
     );
     if (!context.mounted) return;
     unawaited(
@@ -190,8 +215,17 @@ class _LauncherBody extends ConsumerWidget {
                 : null,
           ),
           SizedBox(height: theme.spacing.lg),
-          // US-054 hook: re-drilling failed items lands here once it ships.
-          const SecondaryButton(label: AppStrings.practiceRetryMistakesSoon),
+          SecondaryButton(
+            key: const Key('practice_launcher.retry_mistakes'),
+            label: state.mistakePool.isEmpty
+                ? AppStrings.practiceRetryMistakesEmpty
+                : AppStrings.practiceRetryMistakesAction(
+                    state.mistakePool.length,
+                  ),
+            onPressed: available && state.mistakePool.isNotEmpty
+                ? () => _startRetry(context, ref, state.mistakePool, config)
+                : null,
+          ),
           SizedBox(height: theme.spacing.xxl),
           Text(
             family.description.resolve(AppStrings.locale),

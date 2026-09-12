@@ -23,6 +23,10 @@ ItemSource _$ItemSourceFromJson(
           return GeneratorSource.fromJson(
             json
           );
+                case 'replay':
+          return ReplaySource.fromJson(
+            json
+          );
         
           default:
             throw CheckedFromJsonException(
@@ -81,12 +85,13 @@ extension ItemSourcePatterns on ItemSource {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( BankSource value)?  bank,TResult Function( GeneratorSource value)?  generator,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( BankSource value)?  bank,TResult Function( GeneratorSource value)?  generator,TResult Function( ReplaySource value)?  replay,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case BankSource() when bank != null:
 return bank(_that);case GeneratorSource() when generator != null:
-return generator(_that);case _:
+return generator(_that);case ReplaySource() when replay != null:
+return replay(_that);case _:
   return orElse();
 
 }
@@ -104,12 +109,13 @@ return generator(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( BankSource value)  bank,required TResult Function( GeneratorSource value)  generator,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( BankSource value)  bank,required TResult Function( GeneratorSource value)  generator,required TResult Function( ReplaySource value)  replay,}){
 final _that = this;
 switch (_that) {
 case BankSource():
 return bank(_that);case GeneratorSource():
-return generator(_that);}
+return generator(_that);case ReplaySource():
+return replay(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -123,12 +129,13 @@ return generator(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( BankSource value)?  bank,TResult? Function( GeneratorSource value)?  generator,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( BankSource value)?  bank,TResult? Function( GeneratorSource value)?  generator,TResult? Function( ReplaySource value)?  replay,}){
 final _that = this;
 switch (_that) {
 case BankSource() when bank != null:
 return bank(_that);case GeneratorSource() when generator != null:
-return generator(_that);case _:
+return generator(_that);case ReplaySource() when replay != null:
+return replay(_that);case _:
   return null;
 
 }
@@ -145,11 +152,12 @@ return generator(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( List<Item> items)?  bank,TResult Function( GeneratorId generatorId,  int seed, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)  GeneratorParams params,  int count,  DifficultyRange difficulty)?  generator,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( List<Item> items)?  bank,TResult Function( GeneratorId generatorId,  int seed, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)  GeneratorParams params,  int count,  DifficultyRange difficulty)?  generator,TResult Function( List<AttemptOrigin> origins)?  replay,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case BankSource() when bank != null:
 return bank(_that.items);case GeneratorSource() when generator != null:
-return generator(_that.generatorId,_that.seed,_that.params,_that.count,_that.difficulty);case _:
+return generator(_that.generatorId,_that.seed,_that.params,_that.count,_that.difficulty);case ReplaySource() when replay != null:
+return replay(_that.origins);case _:
   return orElse();
 
 }
@@ -167,11 +175,12 @@ return generator(_that.generatorId,_that.seed,_that.params,_that.count,_that.dif
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( List<Item> items)  bank,required TResult Function( GeneratorId generatorId,  int seed, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)  GeneratorParams params,  int count,  DifficultyRange difficulty)  generator,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( List<Item> items)  bank,required TResult Function( GeneratorId generatorId,  int seed, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)  GeneratorParams params,  int count,  DifficultyRange difficulty)  generator,required TResult Function( List<AttemptOrigin> origins)  replay,}) {final _that = this;
 switch (_that) {
 case BankSource():
 return bank(_that.items);case GeneratorSource():
-return generator(_that.generatorId,_that.seed,_that.params,_that.count,_that.difficulty);}
+return generator(_that.generatorId,_that.seed,_that.params,_that.count,_that.difficulty);case ReplaySource():
+return replay(_that.origins);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -185,11 +194,12 @@ return generator(_that.generatorId,_that.seed,_that.params,_that.count,_that.dif
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( List<Item> items)?  bank,TResult? Function( GeneratorId generatorId,  int seed, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)  GeneratorParams params,  int count,  DifficultyRange difficulty)?  generator,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( List<Item> items)?  bank,TResult? Function( GeneratorId generatorId,  int seed, @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)  GeneratorParams params,  int count,  DifficultyRange difficulty)?  generator,TResult? Function( List<AttemptOrigin> origins)?  replay,}) {final _that = this;
 switch (_that) {
 case BankSource() when bank != null:
 return bank(_that.items);case GeneratorSource() when generator != null:
-return generator(_that.generatorId,_that.seed,_that.params,_that.count,_that.difficulty);case _:
+return generator(_that.generatorId,_that.seed,_that.params,_that.count,_that.difficulty);case ReplaySource() when replay != null:
+return replay(_that.origins);case _:
   return null;
 
 }
@@ -373,6 +383,85 @@ $DifficultyRangeCopyWith<$Res> get difficulty {
     return _then(_self.copyWith(difficulty: value));
   });
 }
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class ReplaySource extends ItemSource {
+  const ReplaySource(final  List<AttemptOrigin> origins, {final  String? $type}): _origins = origins,$type = $type ?? 'replay',super._();
+  factory ReplaySource.fromJson(Map<String, dynamic> json) => _$ReplaySourceFromJson(json);
+
+ final  List<AttemptOrigin> _origins;
+ List<AttemptOrigin> get origins {
+  if (_origins is EqualUnmodifiableListView) return _origins;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_origins);
+}
+
+
+@JsonKey(name: 'kind')
+final String $type;
+
+
+/// Create a copy of ItemSource
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ReplaySourceCopyWith<ReplaySource> get copyWith => _$ReplaySourceCopyWithImpl<ReplaySource>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ReplaySourceToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ReplaySource&&const DeepCollectionEquality().equals(other._origins, _origins));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_origins));
+
+@override
+String toString() {
+  return 'ItemSource.replay(origins: $origins)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ReplaySourceCopyWith<$Res> implements $ItemSourceCopyWith<$Res> {
+  factory $ReplaySourceCopyWith(ReplaySource value, $Res Function(ReplaySource) _then) = _$ReplaySourceCopyWithImpl;
+@useResult
+$Res call({
+ List<AttemptOrigin> origins
+});
+
+
+
+
+}
+/// @nodoc
+class _$ReplaySourceCopyWithImpl<$Res>
+    implements $ReplaySourceCopyWith<$Res> {
+  _$ReplaySourceCopyWithImpl(this._self, this._then);
+
+  final ReplaySource _self;
+  final $Res Function(ReplaySource) _then;
+
+/// Create a copy of ItemSource
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? origins = null,}) {
+  return _then(ReplaySource(
+null == origins ? _self._origins : origins // ignore: cast_nullable_to_non_nullable
+as List<AttemptOrigin>,
+  ));
+}
+
+
 }
 
 // dart format on

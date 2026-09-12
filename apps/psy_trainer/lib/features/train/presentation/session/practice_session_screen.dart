@@ -1,11 +1,16 @@
+import 'dart:async';
+
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/l10n/strings.dart';
+import '../../../../core/repositories/repository_providers.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
+import '../../domain/mistakes/mistake_pool.dart';
+import '../../domain/mistakes/mistake_session_builder.dart';
 import '../engine/engine_ui.dart';
 import '../summary/session_summary_screen.dart';
 import 'reseed.dart';
@@ -112,7 +117,9 @@ class _PracticeSessionScreenState extends ConsumerState<PracticeSessionScreen> {
         config: _config,
         onRestart: _restart,
         onBack: () => context.pop(),
-        onRetryMistakes: hasMistakes ? _retryMistakesStub : null,
+        onRetryMistakes: hasMistakes
+            ? () => unawaited(_retryMistakes(result))
+            : null,
       );
     }
 
@@ -136,9 +143,34 @@ class _PracticeSessionScreenState extends ConsumerState<PracticeSessionScreen> {
     );
   }
 
-  /// US-054 hook: this is where re-drilling the wrong items of *this*
-  /// session lands once it ships; nothing to wire up yet.
-  void _retryMistakesStub() {}
+  /// "Refaire les erreurs" (US-054): a fresh session over the items [result]
+  /// got wrong, timed out on or skipped, same family/timing/title as this
+  /// one. [MistakePool.fromSessionOutcomes] needs the session's own
+  /// `GeneratorParams` for a generated family (the concrete `Item` only
+  /// carries its `generatorId`/`seed`, not the params that produced it).
+  Future<void> _retryMistakes(SessionResult result) async {
+    final config = _config;
+    final pool = MistakePool.fromSessionOutcomes(
+      result.outcomes,
+      sessionParams: switch (config.source) {
+        GeneratorSource(:final params) => params,
+        _ => null,
+      },
+    );
+    if (pool.isEmpty) return;
+    final retryConfig = await buildMistakeSessionConfig(
+      familyId: config.familyId,
+      pool: pool,
+      contentRepository: ref.read(contentRepositoryProvider),
+      timing: config.timing,
+      title: config.title,
+    );
+    if (!mounted) return;
+    setState(() {
+      _request = ActivitySessionRequest.fresh(retryConfig);
+      _result = null;
+    });
+  }
 }
 
 class _QuitConfirmOverlay extends StatelessWidget {

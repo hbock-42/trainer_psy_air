@@ -34,6 +34,17 @@ sealed class ItemSource with _$ItemSource {
     @Default(DifficultyRange(min: 3, max: 3)) DifficultyRange difficulty,
   }) = GeneratorSource;
 
+  /// Replays generated items from their stored [AttemptOrigin]s (US-054
+  /// "retry my mistakes"): each origin carries everything
+  /// `ActivityEngine.generate` needs (`generatorId`, `seed`, `params`,
+  /// `difficulty`) to reproduce the exact same item, so a session can be
+  /// built over past mistakes without keeping the items themselves around.
+  /// Every origin must be for the engine's own generator (checked in
+  /// [materialise]). Minimal, additive runtime addition; not stored in
+  /// `TrainingSession.config` today (a retry session starts fresh each
+  /// time), so it has no JSON union value.
+  const factory ItemSource.replay(List<AttemptOrigin> origins) = ReplaySource;
+
   factory ItemSource.fromJson(Map<String, Object?> json) =>
       _$ItemSourceFromJson(json);
 
@@ -41,6 +52,7 @@ sealed class ItemSource with _$ItemSource {
   int get itemCount => switch (this) {
     BankSource(:final items) => items.length,
     GeneratorSource(:final count) => count,
+    ReplaySource(:final origins) => origins.length,
   };
 
   /// Builds the concrete items with [engine]. Deterministic.
@@ -56,7 +68,31 @@ sealed class ItemSource with _$ItemSource {
       :final difficulty,
     ) =>
       _generate(engine, generatorId, seed, params, count, difficulty),
+    ReplaySource(:final origins) => [
+      for (final origin in origins) _replay(engine, origin),
+    ],
   };
+
+  static SessionItem _replay(ActivityEngine engine, AttemptOrigin origin) {
+    final generatorId = engine.generatorId;
+    if (generatorId == null || generatorId.jsonName != origin.generatorId) {
+      throw ArgumentError.value(
+        origin.generatorId,
+        'origin.generatorId',
+        'does not match ${engine.familyId}\'s generator',
+      );
+    }
+    final params = GeneratorParams.fromJson({
+      ...origin.params,
+      generatorParamsUnionKey: origin.generatorId,
+    });
+    final item = engine.generate(
+      params: params,
+      seed: origin.seed,
+      difficulty: origin.difficulty,
+    );
+    return SessionItem(item: item, origin: origin);
+  }
 
   static List<SessionItem> _generate(
     ActivityEngine engine,
@@ -84,6 +120,7 @@ sealed class ItemSource with _$ItemSource {
               generatorId: generatorId.jsonName,
               seed: itemSeed,
               params: generatorParamsToJson(params),
+              difficulty: level,
             ),
           );
         }(),
@@ -111,6 +148,7 @@ class SessionItem {
           generatorId: generatorId.jsonName,
           seed: seed,
           params: generatorParamsToJson(params),
+          difficulty: source.difficulty,
         ),
       ),
     _ => SessionItem(item: item, itemId: source.id),

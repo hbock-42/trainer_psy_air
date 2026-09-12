@@ -28,6 +28,26 @@ class AttemptsDao extends DatabaseAccessor<AppDatabase>
             ..orderBy([(t) => OrderingTerm.asc(t.position)]))
           .get();
 
+  /// Attempts of one family answered within `[from, to]` (inclusive, both
+  /// optional), oldest first (the order "retry my mistakes" folds streaks
+  /// in, US-054). Uses the `attempts_family_answered_at` index.
+  Future<List<AttemptRow>> byFamily({
+    required String familyId,
+    DateTime? from,
+    DateTime? to,
+  }) {
+    final query = select(attempts)
+      ..where((t) => t.familyId.equals(familyId))
+      ..orderBy([(t) => OrderingTerm.asc(t.answeredAt)]);
+    if (from != null) {
+      query.where((t) => t.answeredAt.isBiggerOrEqualValue(from));
+    }
+    if (to != null) {
+      query.where((t) => t.answeredAt.isSmallerOrEqualValue(to));
+    }
+    return query.get();
+  }
+
   Future<int> countBySession(String sessionId) async {
     final count = attempts.id.count();
     final query = selectOnly(attempts)

@@ -651,6 +651,12 @@ abstract final class AppStrings {
   static const String practiceQuick5Action = 'Démarrage rapide (5 questions)';
   static const String practiceRetryMistakesSoon =
       'Reprendre mes erreurs (bientôt)';
+  // US-054: family-scoped retry, replaces practiceRetryMistakesSoon above
+  // once a family has a non-empty mistake pool.
+  static String practiceRetryMistakesAction(int count) =>
+      'Reprendre mes erreurs ($count)';
+  static const String practiceRetryMistakesEmpty =
+      'Aucune erreur à reprendre pour le moment.';
 
   static const String trainSessionPlaceholderTitle = 'Session (US-051)';
   static String trainSessionSummaryFamily(String name) => 'Famille : $name';

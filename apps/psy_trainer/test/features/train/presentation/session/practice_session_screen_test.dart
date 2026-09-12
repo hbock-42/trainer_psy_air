@@ -37,6 +37,9 @@ void main() {
     PracticeSessionScreen(request: request),
     overrides: [
       progressRepositoryProvider.overrideWithValue(repo),
+      contentRepositoryProvider.overrideWithValue(
+        InMemoryContentRepository(items: fakeBank(3)),
+      ),
       engineRegistryProvider.overrideWithValue(EngineRegistry([FakeEngine()])),
       rendererRegistryProvider.overrideWithValue(
         RendererRegistry([const FakeRenderer()]),
@@ -141,4 +144,35 @@ void main() {
     expect(find.byType(SessionHost), findsOneWidget);
     expect(find.byKey(SessionHost.startKey), findsOneWidget);
   });
+
+  testWidgets(
+    '"Refaire les erreurs" starts a fresh session over the wrong items only',
+    (tester) async {
+      await pumpScreen(tester, ActivitySessionRequest.fresh(config()));
+      await tester.tap(find.byKey(SessionHost.startKey));
+      await tester.pump();
+      await answer(tester, 0); // q1: correct
+      await answer(tester, 2); // q2: wrong
+      await answer(tester, 2); // q3: wrong
+      await tester.pump();
+      expect(find.text(AppStrings.summaryTitle), findsOneWidget);
+
+      await tester.ensureVisible(
+        find.byKey(SessionSummaryScreen.retryMistakesKey),
+      );
+      await tester.tap(find.byKey(SessionSummaryScreen.retryMistakesKey));
+      await tester.pump();
+
+      expect(find.byType(SessionHost), findsOneWidget);
+      await tester.tap(find.byKey(SessionHost.startKey));
+      await tester.pump();
+      // Only the two wrong items (q2, q3) are played, not q1.
+      expect(find.text('Question 2'), findsOneWidget);
+      await answer(tester, 0);
+      expect(find.text('Question 3'), findsOneWidget);
+      await answer(tester, 0);
+      await tester.pump();
+      expect(find.text(AppStrings.summaryScoreFraction(2, 2)), findsOneWidget);
+    },
+  );
 }
