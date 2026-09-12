@@ -44,7 +44,8 @@ extension L10nComposed on AppLocalizations {
   }
 
   /// `72 %` for a mastery ratio in `[0, 1]`.
-  String masteryPercentText(double ratio) => masteryPercent((ratio * 100).round());
+  String masteryPercentText(double ratio) =>
+      masteryPercent((ratio * 100).round());
 
   /// `1,2 s` (fr) / `1.2 s` (en): a response time in seconds with one
   /// decimal, using the locale's decimal separator. The unit itself ("s")

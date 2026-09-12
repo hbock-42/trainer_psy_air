@@ -37,7 +37,10 @@ class FamilyLevelsChart extends StatelessWidget {
     final practised = families.where((f) => f.hasData).toList();
 
     if (practised.isEmpty) {
-      return Text(context.l10n.familyLevelsNone, style: theme.textStyles.caption);
+      return Text(
+        context.l10n.familyLevelsNone,
+        style: theme.textStyles.caption,
+      );
     }
 
     final Widget chart;
@@ -105,8 +108,7 @@ class FamilyLevelsChart extends StatelessWidget {
     );
   }
 
-  static String _levelLabel(BuildContext context, FamilyProgress f) =>
-      f.hasData
+  static String _levelLabel(BuildContext context, FamilyProgress f) => f.hasData
       ? context.l10n.familyLevel(f.level)
       : context.l10n.familyNotPractised;
 }

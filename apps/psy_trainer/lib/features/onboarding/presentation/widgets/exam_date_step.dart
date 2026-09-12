@@ -100,6 +100,6 @@ class ExamDateStep extends StatelessWidget {
 
   static String _message(BuildContext context, ExamDateError error) =>
       switch (error) {
-    ExamDateError.inThePast => context.l10n.onboardingExamDateInThePast,
-  };
+        ExamDateError.inThePast => context.l10n.onboardingExamDateInThePast,
+      };
 }

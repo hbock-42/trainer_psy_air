@@ -44,7 +44,9 @@ class HowItWorksScreen extends StatelessWidget {
                 SizedBox(height: theme.spacing.xl),
                 SectionHeader(title: context.l10n.howItWorksStagesTitle),
                 SizedBox(height: theme.spacing.md),
-                for (final (i, stage) in selectionStagesOf(context).indexed) ...[
+                for (final (i, stage) in selectionStagesOf(
+                  context,
+                ).indexed) ...[
                   if (i > 0) SizedBox(height: theme.spacing.md),
                   SelectionStageCard(stage: stage, index: i + 1),
                 ],

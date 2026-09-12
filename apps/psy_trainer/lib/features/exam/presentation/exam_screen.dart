@@ -137,7 +137,8 @@ class _SectionRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
-    final label = section.title?.resolve(context.l10n.localeName) ?? section.familyId;
+    final label =
+        section.title?.resolve(context.l10n.localeName) ?? section.familyId;
 
     return Padding(
       padding: EdgeInsets.symmetric(vertical: theme.spacing.xs),

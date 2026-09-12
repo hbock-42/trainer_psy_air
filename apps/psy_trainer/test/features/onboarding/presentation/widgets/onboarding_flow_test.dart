@@ -82,10 +82,7 @@ void main() {
       expect(find.byType(WelcomeStep), findsOneWidget);
       expect(find.text(l10nFr.disclaimerTitle), findsOneWidget);
       expect(find.text(l10nFr.disclaimerParagraph1), findsOneWidget);
-      expect(
-        find.text(l10nFr.onboardingDisclaimerRequired),
-        findsOneWidget,
-      );
+      expect(find.text(l10nFr.onboardingDisclaimerRequired), findsOneWidget);
       expect(primaryAction(tester, l10nFr.actionContinue), isNull);
       // No skip and no back on the first step of a first run.
       expect(find.text(l10nFr.actionSkip), findsNothing);

@@ -44,10 +44,7 @@ void main() {
     final deck = flashcardsDeckFixture(familyId: 'culture_aero');
     await pumpFlashcards(tester, deck: deck);
 
-    expect(
-      find.text(l10nFr.flashcardsDeckSummary(3, 3)),
-      findsOneWidget,
-    );
+    expect(find.text(l10nFr.flashcardsDeckSummary(3, 3)), findsOneWidget);
     expect(find.byType(PrimaryButton), findsOneWidget);
 
     await tester.tap(

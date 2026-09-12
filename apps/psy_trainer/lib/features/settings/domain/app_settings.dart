@@ -35,7 +35,8 @@ enum LanguagePreference {
       LanguagePreference.values.firstWhere(
         (v) => v.key == key,
         // Legacy rows (pre-US-091) and new ones without a profile yet: FR,
-        // matching the previous hard-coded `AppStrings.locale`.
+        // matching the previous hard-coded default (`AppStrings`' locale
+        // constant, before ARB-based i18n replaced it).
         orElse: () => LanguagePreference.fr,
       );
 }

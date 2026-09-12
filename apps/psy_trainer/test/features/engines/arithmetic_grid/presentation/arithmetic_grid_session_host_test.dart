@@ -103,9 +103,7 @@ void main() {
     expect(find.text(l10nFr.sessionFeedbackWrong), findsOneWidget);
     expect(
       find.text(
-        l10nFr.arithmeticGridCorrectValue(
-          grid.cells[wrongIndex].correctValue,
-        ),
+        l10nFr.arithmeticGridCorrectValue(grid.cells[wrongIndex].correctValue),
       ),
       findsOneWidget,
     );

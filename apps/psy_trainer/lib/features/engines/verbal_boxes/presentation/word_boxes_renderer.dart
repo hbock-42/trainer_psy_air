@@ -246,7 +246,10 @@ class _WordBoxesViewState extends State<_WordBoxesView> {
         ),
         if (missed.isNotEmpty) ...[
           SizedBox(height: theme.spacing.md),
-          Text(context.l10n.wordBoxesMissedTitle, style: theme.textStyles.label),
+          Text(
+            context.l10n.wordBoxesMissedTitle,
+            style: theme.textStyles.label,
+          ),
           SizedBox(height: theme.spacing.xs),
           for (final event in missed)
             Text(

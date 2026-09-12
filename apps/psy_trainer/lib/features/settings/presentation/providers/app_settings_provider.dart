@@ -16,10 +16,10 @@ import '../../domain/app_settings.dart';
 /// Same hydration shape as `OnboardingCompletedNotifier`
 /// (`features/onboarding/presentation/providers/`): a private
 /// `Completer`-backed hydration the first read waits on, then plain state.
-final NotifierProvider<AppSettingsController, AppSettings>
-appSettingsProvider = NotifierProvider<AppSettingsController, AppSettings>(
-  AppSettingsController.new,
-);
+final NotifierProvider<AppSettingsController, AppSettings> appSettingsProvider =
+    NotifierProvider<AppSettingsController, AppSettings>(
+      AppSettingsController.new,
+    );
 
 class AppSettingsController extends Notifier<AppSettings> {
   Completer<AppSettings>? _hydration;
@@ -50,9 +50,8 @@ class AppSettingsController extends Notifier<AppSettings> {
 
   /// `state` once hydrated: synchronously if already known, otherwise a
   /// future that completes with the first value read from the database.
-  FutureOr<AppSettings> whenHydrated() => _hydration?.isCompleted ?? true
-      ? state
-      : _hydration!.future;
+  FutureOr<AppSettings> whenHydrated() =>
+      _hydration?.isCompleted ?? true ? state : _hydration!.future;
 
   Future<void> setThemeMode(ThemeModePreference value) =>
       _update((s) => s.copyWith(themeMode: value));

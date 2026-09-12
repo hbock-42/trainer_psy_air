@@ -70,7 +70,10 @@ class _ExamReportScreenState extends ConsumerState<ExamReportScreen> {
                       setState(() => _reviewing = (sectionIndex, itemIndex)),
                 ),
         AsyncError() => Center(
-          child: Text(context.l10n.examReportError, style: theme.textStyles.body),
+          child: Text(
+            context.l10n.examReportError,
+            style: theme.textStyles.body,
+          ),
         ),
         _ => Center(child: Text(context.l10n.examReportLoading)),
       },
@@ -113,8 +116,12 @@ class _ReportBody extends StatelessWidget {
             title: context.l10n.examReportGlobalScoreLabel,
             value: '${summary.percent} %',
             subtitle: passed
-                ? context.l10n.examReportEstimatedPass((threshold * 100).round())
-                : context.l10n.examReportEstimatedFail((threshold * 100).round()),
+                ? context.l10n.examReportEstimatedPass(
+                    (threshold * 100).round(),
+                  )
+                : context.l10n.examReportEstimatedFail(
+                    (threshold * 100).round(),
+                  ),
             delta: summary.deltaVsPrevious == null
                 ? null
                 : summary.deltaVsPrevious! * 100,
@@ -134,7 +141,10 @@ class _ReportBody extends StatelessWidget {
             SizedBox(height: theme.spacing.sm),
           ],
           SizedBox(height: theme.spacing.lg),
-          Text(context.l10n.examReportReviewTitle, style: theme.textStyles.title),
+          Text(
+            context.l10n.examReportReviewTitle,
+            style: theme.textStyles.title,
+          ),
           SizedBox(height: theme.spacing.sm),
           for (final section in report.reviewSections)
             if (section.outcomes.isNotEmpty) ...[
@@ -282,9 +292,15 @@ class _ReviewPanel extends StatelessWidget {
           SizedBox(height: theme.spacing.md),
           Text(text.stem, style: theme.textStyles.body),
           SizedBox(height: theme.spacing.lg),
-          _Field(label: context.l10n.summaryReviewMyAnswer, value: text.myAnswer),
+          _Field(
+            label: context.l10n.summaryReviewMyAnswer,
+            value: text.myAnswer,
+          ),
           SizedBox(height: theme.spacing.sm),
-          _Field(label: context.l10n.summaryReviewExpected, value: text.expected),
+          _Field(
+            label: context.l10n.summaryReviewExpected,
+            value: text.expected,
+          ),
           if (text.explanation != null) ...[
             SizedBox(height: theme.spacing.lg),
             AppCard(

@@ -94,10 +94,7 @@ void main() {
       findsOneWidget,
     );
     expect(
-      find.widgetWithText(
-        SecondaryButton,
-        l10nFr.trainNextActionFlashcards,
-      ),
+      find.widgetWithText(SecondaryButton, l10nFr.trainNextActionFlashcards),
       findsOneWidget,
     );
   });

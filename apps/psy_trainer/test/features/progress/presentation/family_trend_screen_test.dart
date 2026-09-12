@@ -94,7 +94,10 @@ void main() {
     expect(accuracy.value, 'de 40 % à 90 % sur 5 sessions');
     final speed = chartNode(tester, index: 1);
     expect(speed.label, l10nFr.trendSpeedTitle);
-    expect(speed.value, l10nFr.trendSpeedSummary(5, l10nFr.seconds(0.8), l10nFr.seconds(0.8)));
+    expect(
+      speed.value,
+      l10nFr.trendSpeedSummary(5, l10nFr.seconds(0.8), l10nFr.seconds(0.8)),
+    );
     expect(speed.value, 'de 0,8 s à 0,8 s sur 5 sessions');
     handle.dispose();
   });
@@ -217,31 +220,25 @@ void main() {
     expect(find.byType(TrendTooltip), findsOneWidget);
     expect(find.text(FamilyTrendCharts.longDate(now)), findsOneWidget);
     expect(find.text(l10nFr.activityPractice), findsOneWidget);
+    expect(find.text(l10nFr.trendTooltipAccuracy(9, 10, 90)), findsOneWidget);
+    expect(find.text('Réussite : 9/10 (90 %)'), findsOneWidget);
     expect(
-      find.text(l10nFr.trendTooltipAccuracy(9, 10, 90)),
+      find.text(l10nFr.trendTooltipSpeed(l10nFr.seconds(0.8))),
       findsOneWidget,
     );
-    expect(find.text('Réussite : 9/10 (90 %)'), findsOneWidget);
-    expect(find.text(l10nFr.trendTooltipSpeed(l10nFr.seconds(0.8))), findsOneWidget);
     expect(find.text('Temps : 0,8 s'), findsOneWidget);
 
     // Left edge: the oldest session in range, the simulation is second.
     await gesture.moveTo(Offset(chart.left + 40, chart.center.dy));
     await tester.pumpAndSettle();
-    expect(
-      find.text(l10nFr.trendTooltipAccuracy(4, 10, 40)),
-      findsOneWidget,
-    );
+    expect(find.text(l10nFr.trendTooltipAccuracy(4, 10, 40)), findsOneWidget);
 
     // Point of the exam session (index 3 of 5).
     final plotX = chart.left + 40 + (chart.right - 2 - chart.left - 40) * 3 / 4;
     await gesture.moveTo(Offset(plotX, chart.center.dy));
     await tester.pumpAndSettle();
     expect(find.text(l10nFr.activityExam), findsOneWidget);
-    expect(
-      find.text(l10nFr.trendTooltipAccuracy(6, 10, 60)),
-      findsOneWidget,
-    );
+    expect(find.text(l10nFr.trendTooltipAccuracy(6, 10, 60)), findsOneWidget);
   });
 
   testWidgets('phone width at 1.3x in dark mode does not overflow', (
@@ -300,7 +297,10 @@ void main() {
     test('summaries and formats', () {
       expect(l10nFr.seconds(1.25), '1,3 s');
       expect(l10nFr.trendAccuracySummary(1, 70, 40), '70 % sur 1 session');
-      expect(l10nFr.trendSpeedSummary(1, l10nFr.seconds(0.9), l10nFr.seconds(1)), '0,9 s sur 1 session');
+      expect(
+        l10nFr.trendSpeedSummary(1, l10nFr.seconds(0.9), l10nFr.seconds(1)),
+        '0,9 s sur 1 session',
+      );
       expect(TrendRange.all.from(now), isNull);
       expect(TrendRange.week.from(now), now.subtract(const Duration(days: 7)));
       expect(

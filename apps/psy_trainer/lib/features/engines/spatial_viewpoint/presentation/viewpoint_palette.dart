@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 
 /// Colour-blind-safe (Okabe-Ito) palette a scene's solids are drawn in, one
 /// entry per `ViewpointObject.colorIndex` (US-034: "distinct colours"); the
-/// order and the hues match `AppStrings.viewpointColorName` so the practice
+/// order and the hues match `AppStrings`' `viewpointColorName` so the practice
 /// explanation always names the colour actually on screen.
 const List<Color> viewpointPalette = [
   Color(0xFFE69F00), // orange

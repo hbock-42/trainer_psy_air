@@ -96,7 +96,8 @@ class _Briefing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
-    final title = config.title?.resolve(context.l10n.localeName) ?? config.familyId;
+    final title =
+        config.title?.resolve(context.l10n.localeName) ?? config.familyId;
     final briefing =
         config.briefing?.resolve(context.l10n.localeName) ??
         context.l10n.sessionBriefingDefault;

@@ -28,7 +28,10 @@ void main() {
     expect(find.textContaining('1.2.3'), findsOneWidget);
     expect(find.text(l10nFr.disclaimerParagraph1), findsOneWidget);
     expect(find.text(l10nFr.disclaimerParagraph2), findsOneWidget);
-    expect(find.textContaining(l10nFr.aboutSourceAirFranceCorporate), findsOneWidget);
+    expect(
+      find.textContaining(l10nFr.aboutSourceAirFranceCorporate),
+      findsOneWidget,
+    );
     expect(
       find.textContaining(l10nFr.aboutSourceAirFranceRecruitment),
       findsOneWidget,

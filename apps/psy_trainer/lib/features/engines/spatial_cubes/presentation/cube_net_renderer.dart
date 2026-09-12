@@ -229,7 +229,10 @@ class _CubeNetViewState extends State<_CubeNetView> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(context.l10n.cubeNetReferenceLabel, style: theme.textStyles.label),
+          Text(
+            context.l10n.cubeNetReferenceLabel,
+            style: theme.textStyles.label,
+          ),
           SizedBox(height: theme.spacing.xs),
           Center(
             child: _NetGrid(

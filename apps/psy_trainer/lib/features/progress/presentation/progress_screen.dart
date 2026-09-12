@@ -75,7 +75,10 @@ class ProgressScreen extends ConsumerWidget {
           context.l10n.progressError,
           style: theme.textStyles.body.copyWith(color: theme.colors.error),
         ),
-        _ => _Message(context.l10n.progressLoading, style: theme.textStyles.body),
+        _ => _Message(
+          context.l10n.progressLoading,
+          style: theme.textStyles.body,
+        ),
       },
     );
   }

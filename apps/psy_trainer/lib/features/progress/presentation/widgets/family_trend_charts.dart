@@ -40,12 +40,14 @@ class FamilyTrendCharts extends StatelessWidget {
 
   /// "de 40 % à 70 % sur 6 sessions", the semantics summary of the
   /// accuracy chart.
-  static String describeAccuracy(BuildContext context, List<TrendPoint> points) =>
-      context.l10n.trendAccuracySummary(
-        points.length,
-        percent(points.last.accuracy),
-        percent(points.first.accuracy),
-      );
+  static String describeAccuracy(
+    BuildContext context,
+    List<TrendPoint> points,
+  ) => context.l10n.trendAccuracySummary(
+    points.length,
+    percent(points.last.accuracy),
+    percent(points.first.accuracy),
+  );
 
   /// "de 1,4 s à 0,9 s sur 6 sessions", the summary of the speed chart.
   static String describeSpeed(BuildContext context, List<TrendPoint> points) =>

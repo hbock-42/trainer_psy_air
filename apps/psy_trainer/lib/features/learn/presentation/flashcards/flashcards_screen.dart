@@ -42,9 +42,7 @@ class FlashcardsScreen extends ConsumerWidget {
               familyId: familyId,
               total: q.total,
             ),
-            AsyncError() => Center(
-              child: Text(context.l10n.flashcardsError),
-            ),
+            AsyncError() => Center(child: Text(context.l10n.flashcardsError)),
             _ => Center(child: Text(context.l10n.flashcardsLoading)),
           },
         ),

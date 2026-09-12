@@ -204,9 +204,6 @@ void main() {
       ExamScoreChartCard.completedOldestFirst(history).map((e) => e.sessionId),
       ['a', 'c'],
     );
-    expect(
-      l10nFr.examChartSummary(1, 50, 50),
-      '50 % sur 1 simulation',
-    );
+    expect(l10nFr.examChartSummary(1, 50, 50), '50 % sur 1 simulation');
   });
 }

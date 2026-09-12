@@ -78,10 +78,7 @@ void main() {
     await tester.tap(find.byKey(SessionHost.startKey));
     await tester.pump();
 
-    expect(
-      find.text(l10nFr.attentionParityRestartCount(0)),
-      findsOneWidget,
-    );
+    expect(find.text(l10nFr.attentionParityRestartCount(0)), findsOneWidget);
 
     for (final value in expectedPath()) {
       await tapNumber(tester, value);
@@ -111,10 +108,7 @@ void main() {
     // Tapping the second element first is always wrong: the path must
     // start with path[0].
     await tapNumber(tester, path[1]);
-    expect(
-      find.text(l10nFr.attentionParityRestartCount(1)),
-      findsOneWidget,
-    );
+    expect(find.text(l10nFr.attentionParityRestartCount(1)), findsOneWidget);
 
     for (final value in path) {
       await tapNumber(tester, value);

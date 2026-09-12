@@ -423,10 +423,7 @@ void main() {
         container.read(appRouterProvider).state.uri.toString(),
         AppRoutes.learnCards,
       );
-      expect(
-        find.text(l10nFr.flashcardsDeckSummary(4, 4)),
-        findsOneWidget,
-      );
+      expect(find.text(l10nFr.flashcardsDeckSummary(4, 4)), findsOneWidget);
     });
   });
 }

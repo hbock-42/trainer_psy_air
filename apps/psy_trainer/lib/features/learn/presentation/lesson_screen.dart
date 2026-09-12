@@ -156,7 +156,9 @@ class _LessonBody extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = AppTheme.of(context);
-    final blocks = parseMarkdown(lesson.body?.resolve(context.l10n.localeName) ?? '');
+    final blocks = parseMarkdown(
+      lesson.body?.resolve(context.l10n.localeName) ?? '',
+    );
     final headings = extractHeadings(blocks);
     final read = ref.watch(lessonReadProvider(lesson.id));
     final isRead = read.value ?? false;

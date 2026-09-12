@@ -372,7 +372,10 @@ class _ViewpointExample extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(context.l10n.viewpointExampleCaption, style: theme.textStyles.body),
+        Text(
+          context.l10n.viewpointExampleCaption,
+          style: theme.textStyles.body,
+        ),
         SizedBox(height: theme.spacing.md),
         const SizedBox(
           height: 120,

@@ -72,9 +72,10 @@ class ItemReviewText {
     Item item,
     String locale,
   ) => switch (answer) {
-    ChoiceAnswer(:final index) => item is McqItem
-        ? _optionLabel(item.options, index, locale)
-        : '#${index + 1}',
+    ChoiceAnswer(:final index) =>
+      item is McqItem
+          ? _optionLabel(item.options, index, locale)
+          : '#${index + 1}',
     NumericAnswer(:final value) => '$value',
     MultiSelectAnswer(:final indices) =>
       indices.map((i) => '#${i + 1}').join(', '),

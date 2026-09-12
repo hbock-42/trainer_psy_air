@@ -54,9 +54,7 @@ void main() {
     await pumpSettings(tester);
 
     expect(
-      find.textContaining(
-        l10nFr.formatLongDate(completedAnswers.examDate!),
-      ),
+      find.textContaining(l10nFr.formatLongDate(completedAnswers.examDate!)),
       findsOneWidget,
     );
     expect(find.textContaining('PSY0'), findsOneWidget);
@@ -118,12 +116,18 @@ void main() {
     tester,
   ) async {
     await pumpSettings(tester);
-    expect(AppTheme.of(tester.element(find.byType(SettingsScreen))).isDark, isFalse);
+    expect(
+      AppTheme.of(tester.element(find.byType(SettingsScreen))).isDark,
+      isFalse,
+    );
 
     await tester.tap(find.text(l10nFr.settingsThemeDark));
     await tester.pumpAndSettle();
 
-    expect(AppTheme.of(tester.element(find.byType(SettingsScreen))).isDark, isTrue);
+    expect(
+      AppTheme.of(tester.element(find.byType(SettingsScreen))).isDark,
+      isTrue,
+    );
     expect(repository.storedProfile?.settings['themeMode'], 'dark');
   });
 

@@ -276,9 +276,15 @@ class _ReviewPanel extends StatelessWidget {
           SizedBox(height: theme.spacing.md),
           Text(text.stem, style: theme.textStyles.body),
           SizedBox(height: theme.spacing.lg),
-          _Field(label: context.l10n.summaryReviewMyAnswer, value: text.myAnswer),
+          _Field(
+            label: context.l10n.summaryReviewMyAnswer,
+            value: text.myAnswer,
+          ),
           SizedBox(height: theme.spacing.sm),
-          _Field(label: context.l10n.summaryReviewExpected, value: text.expected),
+          _Field(
+            label: context.l10n.summaryReviewExpected,
+            value: text.expected,
+          ),
           if (text.explanation != null) ...[
             SizedBox(height: theme.spacing.lg),
             AppCard(

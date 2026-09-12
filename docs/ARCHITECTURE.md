@@ -78,7 +78,10 @@ lib/
     repositories/            # ContentRepository / ProgressRepository interfaces, domain
                              # models, Riverpod providers, in_memory/ fakes (US-012)
     errors/                  # logError + global error hooks
-    l10n/                    # AppStrings (FR constants until ARB i18n, US-091)
+    l10n/                    # ARB-based i18n (US-091): app_fr.arb (source)/app_en.arb,
+                             # gen/ (generated AppLocalizations, `flutter gen-l10n`),
+                             # l10n_extensions.dart (context.l10n + composed strings),
+                             # strings.dart (AppStrings: two domain-only FR exceptions)
     router/                  # go_router config, AppPage, AppRoutes, redirect, shell,
                              # error screen + startup gate (the only UI allowed in core/)
   shared/                    # reusable UI + small helpers used by several features:
@@ -170,10 +173,23 @@ What this implies in practice:
   every route is wrapped in `core/router/app_page.dart` (`AppPage`), a `Page` whose route is a
   small `PageRoute` subclass with a fade + slide transition. Never use `GoRoute.builder` (go_router
   would pick a platform page type); always `pageBuilder` returning an `AppPage`.
-- **Localization.** `WidgetsApp` already installs `DefaultWidgetsLocalizations`; add
-  `flutter_localizations` delegates for our ARB strings only (not the Material/Cupertino ones).
-  Until US-091, user-facing copy is French constants in `core/l10n/strings.dart` (`AppStrings`);
-  no literal strings in screens or widgets.
+- **Localization (US-091).** `WidgetsApp` already installs `DefaultWidgetsLocalizations`;
+  `lib/app.dart` adds `AppLocalizations.localizationsDelegates`/`.supportedLocales` (our ARB
+  strings only, never the Material/Cupertino ones) and passes `ref.watch(localeProvider)` as
+  `WidgetsApp.router`'s `locale` (`null` follows the system locale). Source-of-truth copy lives
+  in `lib/core/l10n/app_fr.arb` (FR) with `app_en.arb` (EN translations); `flutter gen-l10n`
+  (run automatically before build/analyze/test, `generate: true` in `pubspec.yaml`, config in
+  `l10n.yaml`) generates `AppLocalizations` under `lib/core/l10n/gen/`. Every widget reads its
+  copy through `context.l10n` (the `L10nX` extension in `lib/core/l10n/l10n_extensions.dart`);
+  the same file's `L10nComposed` extension holds the handful of strings built from real Dart
+  logic (pluralisation across parts, locale-aware date/number formatting) rather than a single
+  ICU message. `AppStrings` (`core/l10n/strings.dart`, the pre-US-091 FR-only constants) is kept
+  only for two pure-Dart `domain/` files with no `BuildContext`
+  (`logic_dominos/domain/domino_explanation.dart`,
+  `spatial_viewpoint/domain/viewpoint_explanation.dart`); everywhere else is enforced by
+  `test/architecture/no_app_strings_in_features_test.dart`. No literal strings in screens or
+  widgets. Content language (`LocalizedText.resolve`) is a separate axis from the UI language:
+  screens pass `context.l10n.localeName`, not a hard-coded code.
 - **Tests.** `tester.pumpWidget` must wrap the widget under test in the same root context the app
   uses (a `WidgetsApp` or at least `Directionality` + `DefaultTextStyle`); use the `pumpApp`
   helper in `test/helpers/pump_app.dart` (see `docs/TESTING.md`).
@@ -265,7 +281,7 @@ Schema v1 (every table has `id TEXT PRIMARY KEY`, `created_at`, `updated_at`):
 | `item_stats` | itemId (unique), familyId, seen, correct, totalResponseMs, lastCorrect, lastSeenAt | maintained by `INSERT ... ON CONFLICT DO UPDATE` |
 | `flashcard_reviews` | flashcardId (unique), deckId, box, reviews, lapses, lastReviewedAt?, nextReviewAt | index `(deck_id, next_review_at)` |
 | `lesson_progress` | lessonId (unique), readAt | |
-| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`). Onboarding (US-090) keeps its two flags in `settings`: `onboardingCompleted` (bool) and `disclaimerAcceptedAt` (ISO-8601 UTC); the mapping lives in `features/onboarding/domain/onboarding_answers.dart` |
+| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`). Onboarding (US-090) keeps its two flags in `settings`: `onboardingCompleted` (bool) and `disclaimerAcceptedAt` (ISO-8601 UTC); the mapping lives in `features/onboarding/domain/onboarding_answers.dart`. Settings (US-091) use `locale` for the UI language (`'system' \| 'fr' \| 'en'`, see `LanguagePreference`) and three more `settings` keys: `themeMode` (`'system' \| 'light' \| 'dark'`), `soundEnabled` (bool) and `keypadLayout` (`'phone' \| 'calculator'`) — mapping in `features/settings/domain/app_settings.dart` (`AppSettings`), read through `appSettingsProvider` (`features/settings/presentation/providers/`) |
 
 Design decisions:
 
@@ -758,6 +774,7 @@ StatefulShellRoute.indexedStack      AppShell; one branch (own Navigator) per ta
     family/:familyId                 nested -> /progress/family/:familyId (US-071 family charts)
   /settings                          branch 4
     profile                          nested -> /settings/profile (edit the onboarding answers)
+    about                            nested -> /settings/about (US-091: version, disclaimer, sources)
 ```
 
 - **Adding a tab route:** add the constant to `AppRoutes` (and `AppRoutes.tabs`, whose order is

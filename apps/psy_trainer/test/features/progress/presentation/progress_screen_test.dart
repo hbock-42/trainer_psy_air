@@ -292,9 +292,7 @@ void main() {
     expect(list, findsOneWidget);
     final english = find.text('${l10nFr.activityPractice} · Anglais');
     final exam = find.text('${l10nFr.activityExam} · PSY0 complet');
-    final calcul = find.text(
-      '${l10nFr.activityPractice} · Grilles de calcul',
-    );
+    final calcul = find.text('${l10nFr.activityPractice} · Grilles de calcul');
     expect(english, findsOneWidget);
     expect(exam, findsOneWidget);
     expect(calcul, findsOneWidget);
@@ -315,10 +313,7 @@ void main() {
     expect(find.text(l10nFr.scorePercent(80)), findsOneWidget);
     // Abandoned sessions say so, next to the date.
     final date = RecentActivityList.formatDate(daysAgo(1));
-    expect(
-      find.text('$date · ${l10nFr.activityAbandoned}'),
-      findsOneWidget,
-    );
+    expect(find.text('$date · ${l10nFr.activityAbandoned}'), findsOneWidget);
   });
 
   testWidgets('bumping the progress version refreshes the dashboard', (

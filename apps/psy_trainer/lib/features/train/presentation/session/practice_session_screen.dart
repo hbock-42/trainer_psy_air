@@ -125,7 +125,8 @@ class _PracticeSessionScreenState extends ConsumerState<PracticeSessionScreen> {
     }
 
     final theme = AppTheme.of(context);
-    final title = _config.title?.resolve(context.l10n.localeName) ?? _config.familyId;
+    final title =
+        _config.title?.resolve(context.l10n.localeName) ?? _config.familyId;
 
     return Stack(
       children: [
