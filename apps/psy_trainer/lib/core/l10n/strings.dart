@@ -416,6 +416,19 @@ abstract final class AppStrings {
   static const String weakReasonNegativeTrend = 'en baisse';
   static String weakAreaDetail(int accuracyPercent, int attempts) =>
       '$accuracyPercent % de réussite sur $attempts réponses';
+
+  // "Train next" (US-072): TrainNextCard replaces WeakAreasPreview.
+  static const String trainNextTitle = 'À faire ensuite';
+  static const String trainNextSubtitle =
+      'Ce qui fera le plus progresser ta préparation';
+  static const String trainNextEmpty =
+      'Rien à recommander pour le moment : continue à t\'entraîner '
+      'régulièrement.';
+  static const String trainNextActionFamily = 'S\'entraîner';
+  static const String trainNextActionExam = 'Simuler l\'examen';
+  static const String trainNextActionLesson = 'Lire la leçon';
+  static const String trainNextActionFlashcards = 'Réviser';
+
   static const String recentActivityTitle = 'Activité récente';
   static const String recentActivitySubtitle = 'Exercices et simulations';
   static const String recentActivityNone = 'Aucune session terminée.';
@@ -713,6 +726,46 @@ abstract final class AppStrings {
   static const String summaryReviewExpected = 'Réponse attendue';
   static const String summaryReviewRawAnswer = 'Réponse enregistrée';
 
+  // planning_tubes (US-035): tube diagrams and the "Voir la solution" replay.
+  static const String tubesStartLabel = 'Départ';
+  static const String tubesTargetLabel = 'Cible';
+  static const String tubesShowSolutionAction = 'Voir la solution';
+  static const String tubesHideSolutionAction = 'Masquer la solution';
+  static String tubesSolutionStepLabel(int step, int total) =>
+      step == 0 ? 'Configuration de départ' : 'Étape $step / $total';
+  static String tubesSolutionMoveLabel(String from, String to) =>
+      'Bille du tube $from vers le tube $to';
+  static const String tubesSolutionPreviousStep = 'Étape précédente';
+  static const String tubesSolutionNextStep = 'Étape suivante';
+  // 3-D viewpoint engine / "Objets 3D" (US-034, spatial_viewpoint).
+  static String viewpointPositionSemantics(int azimuth) =>
+      'Point de vue $azimuth';
+  static const String viewpointMapSemanticsLabel =
+      'Carte : 8 points de vue autour de la scène';
+  static String viewpointExplanation(int azimuth, String left, String right) =>
+      'Vu depuis la position $azimuth : l\'objet $left est à gauche de '
+      'l\'objet $right.';
+  static const String viewpointExampleCaption =
+      'Cliquez le point de vue depuis lequel la scène a été photographiée.';
+
+  /// Article-free noun, meant to follow "l'objet " (`viewpointExplanation`)
+  /// so the sentence never has to agree a gender.
+  static String viewpointSolidName(SolidKind kind) => switch (kind) {
+    SolidKind.cube => 'cube',
+    SolidKind.cylinder => 'cylindre',
+    SolidKind.cone => 'cône',
+    SolidKind.sphere => 'sphère',
+    SolidKind.pyramid => 'pyramide',
+  };
+
+  static String viewpointColorName(int colorIndex) => switch (colorIndex % 6) {
+    0 => 'orange',
+    1 => 'bleu ciel',
+    2 => 'vert',
+    3 => 'jaune',
+    4 => 'bleu',
+    _ => 'vermillon',
+  };
   // Exam home (US-060/061).
   static const String examHomeSubtitle =
       'Simulations chronométrées, dans l\'ordre du vrai test';
@@ -761,6 +814,20 @@ abstract final class AppStrings {
   static const String examHistoryStatusCompleted = 'Terminée';
   static const String examHistoryStatusAbandoned = 'Abandonnée';
   static const String examHistoryStatusInProgress = 'En cours';
+  static String examHistoryDuration(int minutes) =>
+      minutes < 1 ? '< 1 min' : '$minutes min';
+  static const String examHistoryDeleteAction = 'Supprimer';
+  static const String examHistoryDeleteConfirmTitle =
+      'Supprimer cette simulation ?';
+  static const String examHistoryDeleteConfirmBody =
+      'Cette action est définitive : la simulation et ses réponses seront '
+      'supprimées.';
+
+  // Exam resume (US-064): "Reprendre" card on the Exam home.
+  static const String examResumeCardTitle = 'Reprendre la simulation';
+  static String examResumeCardSubtitle(String blueprintName) =>
+      'Simulation en cours : $blueprintName';
+  static const String examResumeCardAction = 'Reprendre';
 
   // Exam report (US-062).
   static const String examReportTitle = 'Rapport de simulation';
@@ -790,4 +857,18 @@ abstract final class AppStrings {
       'Solution : emplacement de chaque pièce.';
   static const String overlayGridExampleCaption =
       'Glissez les pièces sur la grille centrale pour reproduire la cible.';
+  // spatial_cubes (US-025): cube-net renderer.
+  static const String cubeNetReferenceLabel = 'Patron de référence';
+  static const String cubeNetTargetLabel = 'Patron à compléter';
+  static const String cubeNetTrayLabel = 'Faces à placer';
+  static const String cubeNetTapToRotateHint =
+      'Touchez une face pour la faire pivoter.';
+  static String cubeNetSlotEmptySemantics(int index) => 'Case $index, vide';
+  static String cubeNetSlotFilledSemantics(int index, String value) =>
+      'Case $index, face $value';
+  static String cubeNetTileSemantics(String value, int rotation) =>
+      'Face $value, rotation $rotation degrés';
+  static const String cubeNetExplanationTitle = 'Le cube reconstitué';
+  static String cubeNetCorrectFaces(int correct, int total) =>
+      '$correct/$total faces correctement placées';
 }

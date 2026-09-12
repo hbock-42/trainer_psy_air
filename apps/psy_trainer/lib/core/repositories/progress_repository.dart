@@ -44,6 +44,12 @@ abstract interface class ProgressRepository {
     int? limit,
   });
 
+  /// Permanently deletes a session and every attempt recorded under it
+  /// (US-064 "delete a simulation"). A no-op when the session is unknown.
+  /// Per-item [ItemStat] aggregates are left as they are: rolling them back
+  /// would need to replay every other attempt of the item.
+  Future<void> deleteSession(String sessionId);
+
   // --- Attempts -------------------------------------------------------------
 
   /// Stores one attempt and, for bank items, updates its [ItemStat].

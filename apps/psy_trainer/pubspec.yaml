@@ -137,6 +137,7 @@ flutter:
     - assets/content/psy0/spatial_overlay/
     - assets/content/psy0/spatial_viewpoint/
     - assets/content/psy0/verbal_boxes/
+    - assets/content/psy0/verbal_boxes/lexical_fields/
   # END content assets
 
   # An image asset can refer to one or more resolution-specific "variants", see

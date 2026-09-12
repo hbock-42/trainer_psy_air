@@ -48,6 +48,12 @@ class AttemptsDao extends DatabaseAccessor<AppDatabase>
     return query.get();
   }
 
+  /// Deletes every attempt of one session (US-064 "delete a simulation",
+  /// cascading manually: the `Attempts.sessionId` reference has no
+  /// `onDelete` clause). Returns the number of rows removed.
+  Future<int> deleteBySession(String sessionId) =>
+      (delete(attempts)..where((t) => t.sessionId.equals(sessionId))).go();
+
   Future<int> countBySession(String sessionId) async {
     final count = attempts.id.count();
     final query = selectOnly(attempts)
