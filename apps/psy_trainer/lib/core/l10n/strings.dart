@@ -706,4 +706,16 @@ abstract final class AppStrings {
   static const String summaryReviewMyAnswer = 'Ma réponse';
   static const String summaryReviewExpected = 'Réponse attendue';
   static const String summaryReviewRawAnswer = 'Réponse enregistrée';
+
+  // planning_tubes (US-035): tube diagrams and the "Voir la solution" replay.
+  static const String tubesStartLabel = 'Départ';
+  static const String tubesTargetLabel = 'Cible';
+  static const String tubesShowSolutionAction = 'Voir la solution';
+  static const String tubesHideSolutionAction = 'Masquer la solution';
+  static String tubesSolutionStepLabel(int step, int total) =>
+      step == 0 ? 'Configuration de départ' : 'Étape $step / $total';
+  static String tubesSolutionMoveLabel(String from, String to) =>
+      'Bille du tube $from vers le tube $to';
+  static const String tubesSolutionPreviousStep = 'Étape précédente';
+  static const String tubesSolutionNextStep = 'Étape suivante';
 }

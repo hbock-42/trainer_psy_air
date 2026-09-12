@@ -7,9 +7,24 @@ import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../engine/engine_ui.dart';
 
+/// Builds an optional widget shown above the stem of a [NumericRenderer],
+/// e.g. a `CustomPainter` diagram the family-specific answer depends on
+/// (`planning_tubes`'s tube diagrams, `tubes_renderer.dart`). Generic: any
+/// numeric family can pass one. Gets the full [ActivityRenderContext] (not
+/// just the item) so it can react to [ActivityRenderContext.isAnswered] /
+/// `.feedback` (a post-answer reveal) without the family reimplementing the
+/// whole renderer.
+typedef NumericHeaderBuilder =
+    Widget Function(
+      BuildContext context,
+      ActivityRenderContext render,
+      NumericItem item,
+    );
+
 /// [ActivityRenderer] for [NumericItem], reusable by every numeric-answer
 /// family (`planning_tubes`, mental arithmetic drills) by registering
-/// `NumericRenderer(familyId: '...')`.
+/// `NumericRenderer(familyId: '...')`, or subclassing it and passing
+/// [header] when the family needs a custom illustration above the stem.
 ///
 /// A custom on-screen keypad (digits, `.`, `-`, backspace, Valider) — never
 /// the system keyboard, so `EditableText`/`TextField` are not used (see
@@ -17,10 +32,15 @@ import '../engine/engine_ui.dart';
 /// physical-keyboard digits and Enter. Tolerance is handled by the default
 /// `Scorer.scoreItem`; the runtime measures response time.
 class NumericRenderer extends ActivityRenderer {
-  const NumericRenderer({required this.familyId});
+  const NumericRenderer({required this.familyId, this.header});
 
   @override
   final String familyId;
+
+  /// Optional widget drawn above the stem (and the answer field), rebuilt
+  /// on every state change like the rest of the item; null shows the stem
+  /// only (the previous, still-default behaviour).
+  final NumericHeaderBuilder? header;
 
   @override
   Widget build(BuildContext context, ActivityRenderContext render) {
@@ -28,6 +48,7 @@ class NumericRenderer extends ActivityRenderer {
       key: ValueKey(render.item.id),
       item: render.item as NumericItem,
       render: render,
+      header: header,
     );
   }
 
@@ -37,10 +58,16 @@ class NumericRenderer extends ActivityRenderer {
 }
 
 class _NumericView extends StatefulWidget {
-  const _NumericView({required this.item, required this.render, super.key});
+  const _NumericView({
+    required this.item,
+    required this.render,
+    this.header,
+    super.key,
+  });
 
   final NumericItem item;
   final ActivityRenderContext render;
+  final NumericHeaderBuilder? header;
 
   @override
   State<_NumericView> createState() => _NumericViewState();
@@ -174,6 +201,10 @@ class _NumericViewState extends State<_NumericView> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  if (widget.header != null) ...[
+                    widget.header!(context, widget.render, item),
+                    SizedBox(height: theme.spacing.lg),
+                  ],
                   MarkdownView(item.stem.resolve(locale)),
                   SizedBox(height: theme.spacing.lg),
                   _AnswerField(
