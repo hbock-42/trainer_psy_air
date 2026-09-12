@@ -847,6 +847,24 @@ abstract final class AppStrings {
     int unanswered,
   ) => '$correct/$attempts correctes · $unanswered sans réponse';
 
+  // Multitâche psychomoteur (US-036, multitask_psychomotor).
+  static const String multitaskTouchFallback =
+      'Touches non représentatives : le jour J, utilisez le clavier.';
+  static const String multitaskExamKeyboardRequired =
+      'Cette activité nécessite un clavier physique. Aucun clavier n\'a été '
+      'détecté : cette épreuve ne peut pas être passée de façon '
+      'représentative sur cet appareil.';
+  static const String multitaskShapeButtonLabel = 'Espace';
+  static const String multitaskCalcButtonLabel = 'F';
+  static const String multitaskExampleTracking =
+      'Maintenez la flèche du clavier dans la direction où se déplace le '
+      'cercle.';
+  static const String multitaskExampleShape =
+      'Appuyez sur Espace quand la forme dans le cercle est identique à la '
+      'forme de référence (en haut à gauche).';
+  static const String multitaskExampleCalc =
+      'Appuyez sur F quand le calcul encadré, en bas, est faux.';
+
   // spatial_cubes (US-025): cube-net renderer.
   static const String cubeNetReferenceLabel = 'Patron de référence';
   static const String cubeNetTargetLabel = 'Patron à compléter';
