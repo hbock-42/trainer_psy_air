@@ -4,6 +4,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/exam/presentation/exam_history_screen.dart';
+import '../../features/exam/presentation/exam_report_screen.dart';
+import '../../features/exam/presentation/exam_run_screen.dart';
 import '../../features/exam/presentation/exam_screen.dart';
 import '../../features/learn/presentation/family_screen.dart';
 import '../../features/learn/presentation/flashcards/flashcards_screen.dart';
@@ -66,6 +69,9 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
 ///     family/:familyId              (nested: /train/family/:familyId, US-050)
 ///     session/:sessionId            (nested: /train/session/:sessionId)
 ///   /exam
+///     run/:blueprintId              (nested: /exam/run/:blueprintId, US-061)
+///     history                       (nested: /exam/history, US-064)
+///     report/:sessionId             (nested: /exam/report/:sessionId, US-062)
 ///   /progress
 ///     family/:familyId             (nested: /progress/family/:familyId)
 ///   /settings
@@ -215,6 +221,36 @@ GoRouter createAppRouter({
                 path: AppRoutes.exam,
                 pageBuilder: (context, state) =>
                     _page(state, const ExamScreen()),
+                routes: [
+                  // Exam runner (US-061): one blueprint end to end.
+                  GoRoute(
+                    path: AppRoutes.examRunSegment,
+                    pageBuilder: (context, state) => _page(
+                      state,
+                      ExamRunScreen(
+                        blueprintId:
+                            state.pathParameters[AppRoutes.blueprintIdParam]!,
+                      ),
+                    ),
+                  ),
+                  // Past simulations (US-064).
+                  GoRoute(
+                    path: AppRoutes.examHistorySegment,
+                    pageBuilder: (context, state) =>
+                        _page(state, const ExamHistoryScreen()),
+                  ),
+                  // One simulation's detailed report (US-062).
+                  GoRoute(
+                    path: AppRoutes.examReportSegment,
+                    pageBuilder: (context, state) => _page(
+                      state,
+                      ExamReportScreen(
+                        sessionId:
+                            state.pathParameters[AppRoutes.sessionIdParam]!,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

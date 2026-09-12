@@ -75,3 +75,23 @@ const _$GeneratorIdEnumMap = {
   GeneratorId.cubeNet: 'cube_net',
   GeneratorId.multitask: 'multitask',
 };
+
+ReplaySource _$ReplaySourceFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('ReplaySource', json, ($checkedConvert) {
+      final val = ReplaySource(
+        $checkedConvert(
+          'origins',
+          (v) => (v as List<dynamic>)
+              .map((e) => AttemptOrigin.fromJson(e as Map<String, dynamic>))
+              .toList(),
+        ),
+        $type: $checkedConvert('kind', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {r'$type': 'kind'});
+
+Map<String, dynamic> _$ReplaySourceToJson(ReplaySource instance) =>
+    <String, dynamic>{
+      'origins': instance.origins.map((e) => e.toJson()).toList(),
+      'kind': instance.$type,
+    };

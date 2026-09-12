@@ -4,14 +4,21 @@ part 'attempt.freezed.dart';
 part 'attempt.g.dart';
 
 /// Where a generated stimulus came from. Same `generatorId` + `seed` +
-/// `params` reproduces the item, so an attempt can be replayed or reviewed
-/// without storing the item itself.
+/// `params` + `difficulty` reproduces the item (`ActivityEngine.generate`
+/// takes `difficulty` too, and some generators use it to shape the content,
+/// not just to tag it), so an attempt can be replayed or reviewed without
+/// storing the item itself (US-054 "retry my mistakes").
+///
+/// [difficulty] defaults to 3 (the mid-range level) for attempts recorded
+/// before this field existed; a handful of pre-US-054 rows may therefore
+/// replay at a slightly different difficulty than the one originally drawn.
 @freezed
 abstract class AttemptOrigin with _$AttemptOrigin {
   const factory AttemptOrigin({
     required String generatorId,
     required int seed,
     @Default(<String, Object?>{}) Map<String, Object?> params,
+    @Default(3) int difficulty,
   }) = _AttemptOrigin;
 
   factory AttemptOrigin.fromJson(Map<String, Object?> json) =>
