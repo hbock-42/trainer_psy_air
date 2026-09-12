@@ -1,3 +1,5 @@
+import 'package:psy_content/psy_content.dart';
+
 /// User-facing strings, French only for now.
 ///
 /// Interim solution until US-091 introduces ARB-based localisation: every
@@ -339,6 +341,21 @@ abstract final class AppStrings {
   static String sessionResumeHint(int next, int total) =>
       'Reprise à la question $next sur $total';
 
+  // Item renderers (US-021 MCQ, US-022 numeric).
+  static const String activityValidate = 'Valider';
+  static const String activityExplanationTitle = 'Explication';
+  static const String mcqSkipOption = 'Je ne sais pas';
+  static const String mcqPassageDefaultTitle = 'Texte de référence';
+  static const String mcqPassageShow = 'Afficher le texte';
+  static const String mcqPassageHide = 'Masquer le texte';
+  static const String mcqExampleStem = 'Quelle est la capitale de la France ?';
+  static const String mcqExampleOptionCorrect = 'Paris';
+  static const String mcqExampleOptionWrong1 = 'Lyon';
+  static const String mcqExampleOptionWrong2 = 'Marseille';
+  static const String numericAnswerSemanticsLabel = 'Réponse';
+  static const String numericBackspaceSemanticsLabel = 'Effacer';
+  static const String numericExampleStem = 'Combien font 8 × 6 ?';
+
   // Progress dashboard (US-070).
   static const String progressTitle = 'Progrès';
   static const String progressLoading = 'Calcul en cours…';
@@ -538,6 +555,88 @@ abstract final class AppStrings {
   static const String nbackPrimerLabel = 'Amorce — pas de réponse attendue';
   static const String nbackHistoryStripLabel = 'Repère (derniers stimuli)';
   static String nbackStimulusSemantics(int index) => 'Stimulus $index';
+  // Formes et couleurs (US-029, attention_rules).
+  static const String attentionRulesTouchFallback =
+      'Touches non représentatives : le jour J, utilisez le clavier.';
+
+  static String attentionRulesExampleFilled(
+    StimulusShape shapeA,
+    String keyA,
+    StimulusShape shapeB,
+    String keyB,
+  ) =>
+      'Forme pleine : ${_shapeName(shapeA)} → ${keyA.toUpperCase()}, '
+      '${_shapeName(shapeB)} → ${keyB.toUpperCase()}';
+
+  static String attentionRulesExampleEmpty(
+    StimulusColour colourA,
+    String keyA,
+    StimulusColour colourB,
+    String keyB,
+  ) =>
+      'Forme vide : ${_colourName(colourA)} → ${keyA.toUpperCase()}, '
+      '${_colourName(colourB)} → ${keyB.toUpperCase()}';
+
+  static String _shapeName(StimulusShape shape) => switch (shape) {
+    StimulusShape.square => 'carré',
+    StimulusShape.triangle => 'triangle',
+    StimulusShape.circle => 'cercle',
+    StimulusShape.diamond => 'losange',
+    StimulusShape.star => 'étoile',
+  };
+
+  static String _colourName(StimulusColour colour) => switch (colour) {
+    StimulusColour.blue => 'bleu',
+    StimulusColour.orange => 'orange',
+    StimulusColour.green => 'vert',
+    StimulusColour.pink => 'rose',
+    StimulusColour.red => 'rouge',
+    StimulusColour.yellow => 'jaune',
+  };
+  // Arithmetic grid engine (US-023).
+  static const String arithmeticGridValidate = 'Valider';
+  static String arithmeticGridCellSemantics(int index, String label) =>
+      'Égalité $index, $label';
+  static String arithmeticGridCorrectValue(int value) => 'Correct : $value';
+  static const String arithmeticGridExampleCaption =
+      'Touchez les égalités fausses (en rouge) puis Valider. Les autres '
+      'sont justes, ne les touchez pas.';
+  // Train home and practice launcher (US-050).
+  static const String trainFamiliesSubtitle = 'Choisis une activité';
+  static const String trainFamiliesLoading = 'Chargement des activités…';
+  static const String trainFamiliesError =
+      'Impossible de charger les activités.';
+  static const String trainFamiliesEmpty =
+      'Aucune activité disponible pour le moment.';
+  static const String trainFamilyComingSoon = 'Bientôt';
+  static String trainFamilyComingSoonHint(String name) =>
+      '$name arrive bientôt.';
+  static String trainFamilyOpenSemantics(String name) => 'S\'entraîner : $name';
+  static const String trainQuick5Label = 'Rapide (5)';
+  static String trainQuick5Semantics(String name) =>
+      'Démarrage rapide : 5 questions sur $name';
+
+  static const String practiceLauncherNotFound = 'Activité introuvable.';
+  static const String practiceEngineComingSoon =
+      'Cette activité arrive bientôt : son moteur n\'est pas encore prêt.';
+  static const String practiceItemCountLabel = 'Nombre de questions';
+  static String practiceItemCountOption(int count) => '$count';
+  static const String practiceDifficultyLabel = 'Difficulté';
+  static const String practiceDifficultyAuto = 'Auto';
+  static String practiceDifficultyLevel(int level) => 'Niveau $level';
+  static const String practiceTimingLabel = 'Chronométrage';
+  static const String practiceTimedOn = 'Chronométré';
+  static const String practiceTimedOff = 'Libre';
+  static const String practiceStartAction = 'Commencer';
+  static const String practiceQuick5Action = 'Démarrage rapide (5 questions)';
+  static const String practiceRetryMistakesSoon =
+      'Reprendre mes erreurs (bientôt)';
+
+  static const String trainSessionPlaceholderTitle = 'Session (US-051)';
+  static String trainSessionSummaryFamily(String name) => 'Famille : $name';
+  static String trainSessionSummaryItemCount(int count) => 'Questions : $count';
+  static const String trainSessionSummaryTimed = 'Chronométré';
+  static const String trainSessionSummaryUntimed = 'Libre';
 
   // Pair / impair (attention_parity, US-031).
   static const String attentionParityStartLabel = 'DÉPART';

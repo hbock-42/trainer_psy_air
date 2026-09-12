@@ -1,9 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../engines/arithmetic_grid/domain/arithmetic_grid_engine.dart';
+import '../../../engines/arithmetic_grid/presentation/arithmetic_grid_renderer.dart';
 import '../../../engines/attention_parity/domain/attention_parity_engine.dart';
 import '../../../engines/attention_parity/presentation/attention_parity_renderer.dart';
 import '../../../engines/memory_nback/domain/nback_engine.dart';
 import '../../../engines/memory_nback/presentation/nback_renderer.dart';
+import '../../../engines/attention_rules/domain/attention_rules_engine.dart';
+import '../../../engines/attention_rules/presentation/attention_rules_renderer.dart';
 import '../../domain/engine/engine.dart';
 import 'activity_renderer.dart';
 
@@ -23,6 +27,11 @@ final Provider<EngineRegistry> engineRegistryProvider =
         // family id).
         AttentionParityEngine(),
         NbackEngine(),
+        ArithmeticGridEngine(),
+        // US-021..036: add engines here, one line each.
+        AttentionParityEngine(),
+        AttentionRulesEngine(),
+        // US-021..036: add engines here, one line each.
       ]),
     );
 
@@ -34,6 +43,11 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         // family id).
         AttentionParityRenderer(),
         NbackRenderer(),
+        ArithmeticGridRenderer(),
+        // US-021..036: add renderers here, one line each.
+        AttentionParityRenderer(),
+        AttentionRulesRenderer(),
+        // US-021..036: add renderers here, one line each.
       ]),
     );
 
