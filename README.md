@@ -1,6 +1,9 @@
 # PSY Trainer
 
 [![CI](https://github.com/hbock-42/trainer_psy_air/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/hbock-42/trainer_psy_air/actions/workflows/ci.yml)
+[![Pages](https://github.com/hbock-42/trainer_psy_air/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/hbock-42/trainer_psy_air/actions/workflows/pages.yml)
+
+**Try it live:** [hbock-42.github.io/trainer_psy_air](https://hbock-42.github.io/trainer_psy_air/)
 
 Unofficial app to prepare for the psychometric tests of the Air France cadet pilot selection
 (PSY0 first, then PSY1 and PSY2): lessons, timed drills, mock exams and progress tracking, all
@@ -78,6 +81,13 @@ Pushing a `v*` tag runs [`.github/workflows/release.yml`](.github/workflows/rele
 release APK/AAB (Android) and a web build, attached as artifacts and to a draft GitHub
 Release. See [docs/RELEASE.md](docs/RELEASE.md) for the full process — version bump script,
 Android signing secrets, and the manual Play internal testing / TestFlight steps.
+
+## Web (GitHub Pages)
+
+Every push to `main` runs [`.github/workflows/pages.yml`](.github/workflows/pages.yml), which
+builds the web target and deploys it to GitHub Pages:
+**https://hbock-42.github.io/trainer_psy_air/**. See "Web (GitHub Pages)" in
+[docs/RELEASE.md](docs/RELEASE.md) for how it works and how deep links are handled.
 
 ## Conventions
 

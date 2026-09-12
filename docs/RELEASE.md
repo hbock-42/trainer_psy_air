@@ -136,6 +136,42 @@ Until it is:
 Automating this later needs a Play service account JSON (e.g. via
 `r0adkll/upload-google-play`) as another repository secret — out of scope for this story.
 
+## Web (GitHub Pages)
+
+The web build is deployed continuously, independently of tagged releases (US-124): every push
+to `main` runs [`.github/workflows/pages.yml`](../.github/workflows/pages.yml) (also runnable
+on demand from Actions -> Pages -> Run workflow), which builds and deploys the site to
+**https://hbock-42.github.io/trainer_psy_air/**.
+
+- **Build**: `flutter build web --release --base-href "/${{ github.event.repository.name }}/"`
+  in `apps/psy_trainer`, so the app's assets resolve under the project-site sub-path GitHub
+  Pages serves it from (a user/org site would be root-served instead, needing no `--base-href`).
+  The `web/index.html`/`manifest.json` in the repo use relative asset URIs (the default
+  `flutter create` template), so nothing else needed changing for the sub-path.
+- **Deploy**: `actions/configure-pages@v5` + `actions/upload-pages-artifact@v3` (uploading
+  `apps/psy_trainer/build/web`) + `actions/deploy-pages@v4`, the standard "deploy with GitHub
+  Actions" trio, under the `github-pages` environment with `permissions: pages: write,
+  id-token: write`.
+- **Deep links**: GitHub Pages has no server-side rewrite, so a reload on a path route like
+  `/learn/family/x` would 404 under Flutter's default path-based URL strategy. Rather than
+  adding a `404.html` SPA-redirect trick, the app sets the **hash URL strategy**
+  (`setUrlStrategy(HashUrlStrategy())` from `package:flutter_web_plugins`, compiled for
+  the web only through the conditional import in `lib/core/router/url_strategy.dart` —
+  the package needs `dart:ui_web`, which mobile and desktop builds do not have) so every
+  route lives after the `#` (e.g.
+  `https://hbock-42.github.io/trainer_psy_air/#/learn/family/x`), which GitHub Pages always
+  serves as `index.html` regardless of the fragment. Simpler to maintain than a redirect page:
+  no extra file to keep in sync with the router, and it degrades the same way locally
+  (`make run-web`) as it does deployed.
+- **Service worker / caching**: no `--pwa-strategy` override — the `flutter build web` default
+  (`offline-first`) is used, matching the release build in `release.yml`.
+- **Pages source**: set once via `gh api -X POST repos/hbock-42/trainer_psy_air/pages -f
+  build_type=workflow` (idempotent; a 409 means it's already set). If that ever needs doing by
+  hand instead: repo Settings -> Pages -> Build and deployment -> Source -> "GitHub Actions".
+- **Verifying a deploy**: open the URL above, complete onboarding, run a practice session,
+  reload the page and confirm progress persisted (Drift/IndexedDB via US-016), and exercise a
+  keyboard-native activity in Chrome.
+
 ## Branding (icon + splash)
 
 The app icon and splash screen are generated from one design, drawn programmatically rather
