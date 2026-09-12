@@ -1347,6 +1347,42 @@
   "settingsKeypadLabel": "Disposition du clavier numérique",
   "settingsKeypadPhone": "Téléphone",
   "settingsKeypadCalculator": "Calculatrice",
+  "settingsSectionReminders": "Rappels",
+  "settingsReminderLabel": "Rappel quotidien",
+  "settingsReminderOn": "Rappel activé",
+  "settingsReminderOff": "Rappel désactivé",
+  "settingsReminderTimeLabel": "Heure du rappel",
+  "settingsReminderHour": "Heures",
+  "settingsReminderMinute": "Minutes",
+  "settingsReminderUnsupported": "Les rappels ne sont pas disponibles sur cet appareil ; ils fonctionnent sur téléphone (Android/iOS).",
+  "settingsReminderPermissionDenied": "Notifications refusées : active-les dans les réglages du système pour recevoir le rappel.",
+  "reminderNotificationTitle": "PSY Trainer",
+  "reminderFlashcardsDue": "{count, plural, =1{1 carte à réviser} other{{count} cartes à réviser}}",
+  "@reminderFlashcardsDue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderWeakestFamily": "Point faible : {family}",
+  "@reminderWeakestFamily": {
+    "placeholders": {
+      "family": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderExamToday": "L'examen est aujourd'hui",
+  "reminderExamCountdown": "{days, plural, =1{Examen dans 1 jour} other{Examen dans {days} jours}}",
+  "@reminderExamCountdown": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderFallback": "Un peu d'entraînement aujourd'hui ?",
   "settingsSectionData": "Données",
   "settingsResetAction": "Réinitialiser toutes les données",
   "settingsResetConfirm1Title": "Réinitialiser toutes les données ?",

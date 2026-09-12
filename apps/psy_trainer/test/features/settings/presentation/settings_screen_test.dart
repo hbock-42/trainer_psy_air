@@ -3,12 +3,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_trainer/app.dart';
 import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
+import 'package:psy_trainer/core/notifications/in_memory_reminder_scheduler.dart';
+import 'package:psy_trainer/core/notifications/reminder_scheduler_provider.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
 import 'package:psy_trainer/core/router/app_routes.dart';
 import 'package:psy_trainer/core/theme/app_theme.dart';
 import 'package:psy_trainer/features/onboarding/domain/onboarding_answers.dart';
 import 'package:psy_trainer/features/onboarding/presentation/widgets/onboarding_flow.dart';
+import 'package:psy_trainer/features/settings/domain/reminder_settings.dart';
 import 'package:psy_trainer/features/settings/presentation/edit_profile_screen.dart';
 import 'package:psy_trainer/features/settings/presentation/settings_screen.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
@@ -30,6 +33,7 @@ void main() {
     WidgetTester tester, {
     Size size = const Size(390, 844),
     double textScale = 1.0,
+    InMemoryReminderScheduler? scheduler,
   }) async {
     tester.view.physicalSize = size;
     tester.view.devicePixelRatio = 1;
@@ -41,6 +45,9 @@ void main() {
       overrides: [
         progressRepositoryOverride(repository: repository),
         contentReadyOverride(),
+        reminderSchedulerProvider.overrideWithValue(
+          scheduler ?? InMemoryReminderScheduler(),
+        ),
       ],
     );
     addTearDown(container.dispose);
@@ -157,19 +164,25 @@ void main() {
     'reset all data needs two confirmations, then re-runs onboarding',
     (tester) async {
       await pumpSettings(tester);
+      // The backup section's paste field (US-074) is an `EditableText`,
+      // which owns its own inner `Scrollable`; disambiguate against the
+      // screen's outer list.
+      final outerScrollable = find
+          .descendant(
+            of: find.byKey(SettingsScreen.scrollKey),
+            matching: find.byType(Scrollable),
+          )
+          .first;
       await tester.scrollUntilVisible(
         find.byKey(SettingsScreen.resetActionKey),
         200,
-        // The backup section's paste field (US-074) is an `EditableText`,
-        // which owns its own inner `Scrollable`; disambiguate against the
-        // screen's outer list.
-        scrollable: find
-            .descendant(
-              of: find.byKey(SettingsScreen.scrollKey),
-              matching: find.byType(Scrollable),
-            )
-            .first,
+        scrollable: outerScrollable,
       );
+      // US-092 added a Reminders section above, pushing this button close
+      // to the bottom edge (where a tap sometimes lands on the shell's
+      // overlay instead): scroll a little further so it sits mid-viewport.
+      await tester.drag(outerScrollable, const Offset(0, -100));
+      await tester.pumpAndSettle();
 
       await tester.tap(find.byKey(SettingsScreen.resetActionKey));
       await tester.pumpAndSettle();
@@ -227,5 +240,68 @@ void main() {
     await pumpSettings(tester, size: const Size(360, 780), textScale: 1.3);
 
     expect(tester.takeException(), isNull);
+  });
+
+  group('reminders section (US-092)', () {
+    testWidgets(
+      'enabling requests permission and reveals the time picker, persisted',
+      (tester) async {
+        final scheduler = InMemoryReminderScheduler();
+        await pumpSettings(tester, scheduler: scheduler);
+        await tester.scrollUntilVisible(
+          find.text(l10nFr.settingsSectionReminders),
+          200,
+        );
+
+        expect(find.text(l10nFr.settingsReminderTimeLabel), findsNothing);
+
+        await tester.tap(find.text(l10nFr.settingsReminderOn));
+        await tester.pumpAndSettle();
+
+        expect(scheduler.permissionRequests, 1);
+        expect(find.text(l10nFr.settingsReminderTimeLabel), findsOneWidget);
+        expect(
+          ReminderSettings.fromProfile(repository.storedProfile).enabled,
+          isTrue,
+        );
+      },
+    );
+
+    testWidgets('stepping the hour persists the new time', (tester) async {
+      await pumpSettings(tester);
+      await tester.scrollUntilVisible(
+        find.text(l10nFr.settingsSectionReminders),
+        200,
+      );
+      await tester.tap(find.text(l10nFr.settingsReminderOn));
+      await tester.pumpAndSettle();
+
+      final before = ReminderSettings.fromProfile(repository.storedProfile);
+      await tester.tap(
+        _pressable(
+          '${l10nFr.settingsReminderHour}, ${l10nFr.dateFieldIncrement}',
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      final after = ReminderSettings.fromProfile(repository.storedProfile);
+      expect(after.hour, (before.hour + 1) % 24);
+    });
+
+    testWidgets('unsupported platform shows an explanation, no controls', (
+      tester,
+    ) async {
+      await pumpSettings(
+        tester,
+        scheduler: InMemoryReminderScheduler(isSupported: false),
+      );
+      await tester.scrollUntilVisible(
+        find.text(l10nFr.settingsSectionReminders),
+        200,
+      );
+
+      expect(find.text(l10nFr.settingsReminderUnsupported), findsOneWidget);
+      expect(find.text(l10nFr.settingsReminderLabel), findsNothing);
+    });
   });
 }

@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/l10n/l10n_extensions.dart';
+import '../../../core/notifications/reminder_scheduler_provider.dart';
 import '../../../core/repositories/repositories.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
@@ -16,7 +17,9 @@ import '../../progress/domain/daily_goal.dart';
 import '../../progress/presentation/providers/daily_goal_provider.dart';
 import '../domain/app_settings.dart';
 import 'providers/app_settings_provider.dart';
+import 'providers/reminder_settings_provider.dart';
 import 'widgets/backup_section.dart';
+import 'widgets/time_stepper_field.dart';
 
 /// The Settings tab (US-091): profile summary, appearance (theme/language),
 /// sound, keypad layout, "reset all data" (double confirmation) and About.
@@ -169,6 +172,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   ],
                 ),
               ),
+              SizedBox(height: theme.spacing.xl),
+              const _ReminderSection(),
               SizedBox(height: theme.spacing.xl),
               SectionHeader(title: context.l10n.settingsSectionGoal),
               SizedBox(height: theme.spacing.sm),
@@ -357,6 +362,72 @@ class _ResetConfirmOverlay extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// "Reminders" section (US-092): on/off + time when the platform supports
+/// scheduled notifications (`ReminderScheduler.isSupported`), otherwise an
+/// explanation in place of the controls (desktop/web, `docs/ARCHITECTURE.md`
+/// "Platforms").
+class _ReminderSection extends ConsumerWidget {
+  const _ReminderSection();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = AppTheme.of(context);
+    final scheduler = ref.watch(reminderSchedulerProvider);
+    final settings = ref.watch(reminderSettingsProvider);
+    final controller = ref.read(reminderSettingsProvider.notifier);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SectionHeader(title: context.l10n.settingsSectionReminders),
+        SizedBox(height: theme.spacing.sm),
+        if (!scheduler.isSupported)
+          Text(
+            context.l10n.settingsReminderUnsupported,
+            style: theme.textStyles.body.copyWith(
+              color: theme.colors.textSecondary,
+            ),
+          )
+        else ...[
+          _SettingRow(
+            label: context.l10n.settingsReminderLabel,
+            child: SegmentedChoice<bool>(
+              semanticsLabel: context.l10n.settingsReminderLabel,
+              selected: settings.enabled,
+              onSelected: (enabled) async {
+                if (enabled) await scheduler.requestPermission();
+                await controller.setEnabled(enabled: enabled);
+              },
+              options: [
+                SegmentedOption(
+                  value: true,
+                  label: context.l10n.settingsReminderOn,
+                ),
+                SegmentedOption(
+                  value: false,
+                  label: context.l10n.settingsReminderOff,
+                ),
+              ],
+            ),
+          ),
+          if (settings.enabled) ...[
+            SizedBox(height: theme.spacing.md),
+            _SettingRow(
+              label: context.l10n.settingsReminderTimeLabel,
+              child: TimeStepperField(
+                hour: settings.hour,
+                minute: settings.minute,
+                onChanged: (hour, minute) =>
+                    unawaited(controller.setTime(hour: hour, minute: minute)),
+              ),
+            ),
+          ],
+        ],
+      ],
     );
   }
 }
