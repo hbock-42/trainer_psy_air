@@ -89,13 +89,13 @@ class _McqViewState extends State<_McqView> {
 
   void _choose(int selection) {
     if (!_acceptsInput) return;
-    final answer = selection == _skipSelection
-        ? const Answer.skip()
-        : Answer.choice(selection);
-    if (_isExam) {
-      setState(() => _selection = selection);
-    } else {
-      widget.render.onAnswer(answer);
+    setState(() => _selection = selection);
+    if (!_isExam) {
+      widget.render.onAnswer(
+        selection == _skipSelection
+            ? const Answer.skip()
+            : Answer.choice(selection),
+      );
     }
   }
 
@@ -166,7 +166,7 @@ class _McqViewState extends State<_McqView> {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final item = widget.item;
-    final locale = AppStrings.locale;
+    const locale = AppStrings.locale;
 
     return KeyboardListener(
       focusNode: _focusNode,
@@ -257,8 +257,9 @@ class _PassagePanel extends StatelessWidget {
     final passage = this.passage;
     if (passage == null) return const SizedBox.shrink();
     final theme = AppTheme.of(context);
-    final locale = AppStrings.locale;
-    final title = passage.title?.resolve(locale) ?? AppStrings.mcqPassageDefaultTitle;
+    const locale = AppStrings.locale;
+    final title =
+        passage.title?.resolve(locale) ?? AppStrings.mcqPassageDefaultTitle;
 
     return AppCard(
       child: Column(
@@ -266,9 +267,7 @@ class _PassagePanel extends StatelessWidget {
         children: [
           Row(
             children: [
-              Expanded(
-                child: Text(title, style: theme.textStyles.bodyStrong),
-              ),
+              Expanded(child: Text(title, style: theme.textStyles.bodyStrong)),
               SecondaryButton(
                 label: expanded
                     ? AppStrings.mcqPassageHide
@@ -295,7 +294,9 @@ class _MediaPlaceholder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
-    final label = media.alt?.resolve(AppStrings.locale) ?? AppStrings.lessonImagePlaceholder;
+    final label =
+        media.alt?.resolve(AppStrings.locale) ??
+        AppStrings.lessonImagePlaceholder;
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(theme.spacing.md),
@@ -346,19 +347,19 @@ class _McqExample extends StatelessWidget {
       children: [
         Text(AppStrings.mcqExampleStem, style: theme.textStyles.body),
         SizedBox(height: theme.spacing.md),
-        AnswerOptionTile(
+        const AnswerOptionTile(
           index: 1,
           label: AppStrings.mcqExampleOptionCorrect,
           state: AnswerOptionState.correct,
         ),
         SizedBox(height: theme.spacing.sm),
-        AnswerOptionTile(
+        const AnswerOptionTile(
           index: 2,
           label: AppStrings.mcqExampleOptionWrong1,
           state: AnswerOptionState.disabled,
         ),
         SizedBox(height: theme.spacing.sm),
-        AnswerOptionTile(
+        const AnswerOptionTile(
           index: 3,
           label: AppStrings.mcqExampleOptionWrong2,
           state: AnswerOptionState.disabled,

@@ -116,7 +116,8 @@ class _NumericViewState extends State<_NumericView> {
       _backspace();
       return;
     }
-    if (key == LogicalKeyboardKey.enter || key == LogicalKeyboardKey.numpadEnter) {
+    if (key == LogicalKeyboardKey.enter ||
+        key == LogicalKeyboardKey.numpadEnter) {
       _validate();
     }
   }
@@ -157,7 +158,7 @@ class _NumericViewState extends State<_NumericView> {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final item = widget.item;
-    final locale = AppStrings.locale;
+    const locale = AppStrings.locale;
     final canValidate = _acceptsInput && _value != null;
 
     return KeyboardListener(
@@ -175,6 +176,7 @@ class _NumericViewState extends State<_NumericView> {
                   MarkdownView(item.stem.resolve(locale)),
                   SizedBox(height: theme.spacing.lg),
                   _AnswerField(
+                    key: const ValueKey('numeric_answer_field'),
                     text: _input,
                     unit: item.unit,
                     highlight: _answered
@@ -221,6 +223,7 @@ class _AnswerField extends StatelessWidget {
     required this.text,
     required this.unit,
     required this.highlight,
+    super.key,
   });
 
   final String text;
@@ -393,7 +396,11 @@ class _NumericExample extends StatelessWidget {
       children: [
         Text(AppStrings.numericExampleStem, style: theme.textStyles.body),
         SizedBox(height: theme.spacing.md),
-        const _AnswerField(text: '48', unit: null, highlight: _FieldHighlight.none),
+        const _AnswerField(
+          text: '48',
+          unit: null,
+          highlight: _FieldHighlight.none,
+        ),
         SizedBox(height: theme.spacing.md),
         _Keypad(
           allowsDecimal: true,

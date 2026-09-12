@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:psy_content/psy_content.dart';
@@ -8,16 +9,14 @@ import 'package:psy_trainer/features/train/presentation/engine/engine_ui.dart';
 import 'package:psy_trainer/features/train/presentation/renderers/mcq_renderer.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
 
-import '../../../../../helpers/pump_app.dart';
+import '../../../../helpers/pump_app.dart';
 
 /// A minimal bank-only engine (US-021/022 renderers do not register in the
 /// runtime's registries; US-027/028 will). The default `Scorer.scoreItem`
 /// handles `McqItem` / `NumericItem` on its own.
 class _BankEngine extends ActivityEngine {
-  _BankEngine({this.familyId = 'mcq_family'});
-
   @override
-  final String familyId;
+  final String familyId = 'mcq_family';
 }
 
 McqItem _mcq({
@@ -62,7 +61,6 @@ void main() {
     familyId: 'mcq_family',
     mode: mode,
     source: ItemSource.bank(items),
-    timing: TimingPolicy.none,
     liveFeedback: liveFeedback,
   );
 
@@ -80,15 +78,10 @@ void main() {
     textScale: textScale,
     overrides: [
       progressRepositoryProvider.overrideWithValue(repo),
-      engineRegistryProvider.overrideWithValue(
-        EngineRegistry([_BankEngine()]),
-      ),
+      engineRegistryProvider.overrideWithValue(EngineRegistry([_BankEngine()])),
       rendererRegistryProvider.overrideWithValue(
         RendererRegistry([
-          McqRenderer(
-            familyId: 'mcq_family',
-            passageResolver: passageResolver,
-          ),
+          McqRenderer(familyId: 'mcq_family', passageResolver: passageResolver),
         ]),
       ),
       engineClockProvider.overrideWithValue(clock),
@@ -110,7 +103,7 @@ void main() {
 
   testWidgets('practice: tapping an option answers immediately and shows '
       'correct feedback plus the explanation', (tester) async {
-    await pumpHost(tester, config(items: [_mcq(stem: 'Question 1')]));
+    await pumpHost(tester, config(items: [_mcq()]));
     await start(tester);
 
     expect(find.text('Question 1', findRichText: true), findsOneWidget);
@@ -121,10 +114,7 @@ void main() {
     await tester.pump();
 
     expect(find.text(AppStrings.sessionFeedbackCorrect), findsOneWidget);
-    expect(
-      find.text('Parce que voilà.', findRichText: true),
-      findsOneWidget,
-    );
+    expect(find.text('Parce que voilà.', findRichText: true), findsOneWidget);
     final tile = tester.widget<AnswerOptionTile>(
       find.byKey(const ValueKey('mcq_option_0')),
     );
@@ -143,17 +133,13 @@ void main() {
     expect(find.text(AppStrings.sessionFeedbackWrong), findsOneWidget);
     expect(
       tester
-          .widget<AnswerOptionTile>(
-            find.byKey(const ValueKey('mcq_option_0')),
-          )
+          .widget<AnswerOptionTile>(find.byKey(const ValueKey('mcq_option_0')))
           .state,
       AnswerOptionState.wrong,
     );
     expect(
       tester
-          .widget<AnswerOptionTile>(
-            find.byKey(const ValueKey('mcq_option_2')),
-          )
+          .widget<AnswerOptionTile>(find.byKey(const ValueKey('mcq_option_2')))
           .state,
       AnswerOptionState.correct,
     );
@@ -163,7 +149,13 @@ void main() {
       'shown', (tester) async {
     await pumpHost(
       tester,
-      config(items: [_mcq(), _mcq(id: 'q2')], mode: SessionMode.exam),
+      config(
+        items: [
+          _mcq(),
+          _mcq(id: 'q2'),
+        ],
+        mode: SessionMode.exam,
+      ),
     );
     await start(tester);
 
@@ -177,9 +169,7 @@ void main() {
     await tester.pump();
     expect(
       tester
-          .widget<AnswerOptionTile>(
-            find.byKey(const ValueKey('mcq_option_1')),
-          )
+          .widget<AnswerOptionTile>(find.byKey(const ValueKey('mcq_option_1')))
           .state,
       AnswerOptionState.selected,
     );
@@ -232,9 +222,7 @@ void main() {
     await tester.pump();
     expect(
       tester
-          .widget<AnswerOptionTile>(
-            find.byKey(const ValueKey('mcq_option_1')),
-          )
+          .widget<AnswerOptionTile>(find.byKey(const ValueKey('mcq_option_1')))
           .state,
       AnswerOptionState.selected,
     );
@@ -285,7 +273,8 @@ void main() {
     );
     await start(tester);
     expect(find.text('Question 1', findRichText: true), findsOneWidget);
-    expect(find.byType(SecondaryButton), findsNothing);
+    expect(find.text(AppStrings.mcqPassageShow), findsNothing);
+    expect(find.text(AppStrings.mcqPassageHide), findsNothing);
   });
 
   testWidgets('survives a 1.3x text scale without overflow', (tester) async {
