@@ -23,11 +23,11 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Suite : 3, 10, 17, 24, ... ? (pas constant)",
+        "fr": "Suite : 3, 10, 17, 24, ... ? (pas constant)",
         "en": "Sequence: 3, 10, 17, 24, ... ? (constant step)"
       },
       "back": {
-        "fr": "**31** (chaque terme = précédent + 7 ; motif modulo 7).",
+        "fr": "**31** (chaque terme = précédent + 7 ; motif modulo 7).",
         "en": "**31** (each term = previous + 7; modulo-7 pattern)."
       },
       "difficulty": 2,
@@ -40,11 +40,11 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Suite : 2, 9, 16, 23, 30, ... ? (pas constant)",
+        "fr": "Suite : 2, 9, 16, 23, 30, ... ? (pas constant)",
         "en": "Sequence: 2, 9, 16, 23, 30, ... ? (constant step)"
       },
       "back": {
-        "fr": "**37** (chaque terme = précédent + 7 ; motif modulo 7).",
+        "fr": "**37** (chaque terme = précédent + 7 ; motif modulo 7).",
         "en": "**37** (each term = previous + 7; modulo-7 pattern)."
       },
       "difficulty": 2,
@@ -57,11 +57,11 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Suite : 1, 8, 15, 22, 29, 36, ... ? (pas constant)",
+        "fr": "Suite : 1, 8, 15, 22, 29, 36, ... ? (pas constant)",
         "en": "Sequence: 1, 8, 15, 22, 29, 36, ... ? (constant step)"
       },
       "back": {
-        "fr": "**43** (chaque terme = précédent + 7 ; motif modulo 7).",
+        "fr": "**43** (chaque terme = précédent + 7 ; motif modulo 7).",
         "en": "**43** (each term = previous + 7; modulo-7 pattern)."
       },
       "difficulty": 2,
@@ -74,11 +74,11 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Suite : 5, 12, 19, ... ? (pas constant)",
+        "fr": "Suite : 5, 12, 19, ... ? (pas constant)",
         "en": "Sequence: 5, 12, 19, ... ? (constant step)"
       },
       "back": {
-        "fr": "**26** (chaque terme = précédent + 7 ; motif modulo 7).",
+        "fr": "**26** (chaque terme = précédent + 7 ; motif modulo 7).",
         "en": "**26** (each term = previous + 7; modulo-7 pattern)."
       },
       "difficulty": 2,
@@ -91,11 +91,11 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Suite : 6, 13, ... ? (pas constant)",
+        "fr": "Suite : 6, 13, ... ? (pas constant)",
         "en": "Sequence: 6, 13, ... ? (constant step)"
       },
       "back": {
-        "fr": "**20** (chaque terme = précédent + 7 ; motif modulo 7).",
+        "fr": "**20** (chaque terme = précédent + 7 ; motif modulo 7).",
         "en": "**20** (each term = previous + 7; modulo-7 pattern)."
       },
       "difficulty": 2,
@@ -108,7 +108,7 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Suite décroissante : 30, 23, 16, 9, ... ?",
+        "fr": "Suite décroissante : 30, 23, 16, 9, ... ?",
         "en": "Decreasing sequence: 30, 23, 16, 9, ... ?"
       },
       "back": {
@@ -125,7 +125,7 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Suite décroissante : 28, 21, 14, ... ?",
+        "fr": "Suite décroissante : 28, 21, 14, ... ?",
         "en": "Decreasing sequence: 28, 21, 14, ... ?"
       },
       "back": {
@@ -142,7 +142,7 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Suite décroissante : 35, 28, 21, 14, ... ?",
+        "fr": "Suite décroissante : 35, 28, 21, 14, ... ?",
         "en": "Decreasing sequence: 35, 28, 21, 14, ... ?"
       },
       "back": {
@@ -159,7 +159,7 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Quel est le reste de 23 divisé par 7 ?",
+        "fr": "Quel est le reste de 23 divisé par 7 ?",
         "en": "What is the remainder of 23 divided by 7?"
       },
       "back": {
@@ -176,7 +176,7 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Quel est le reste de 30 divisé par 7 ?",
+        "fr": "Quel est le reste de 30 divisé par 7 ?",
         "en": "What is the remainder of 30 divided by 7?"
       },
       "back": {
@@ -193,7 +193,7 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Quel est le reste de 45 divisé par 7 ?",
+        "fr": "Quel est le reste de 45 divisé par 7 ?",
         "en": "What is the remainder of 45 divided by 7?"
       },
       "back": {
@@ -210,7 +210,7 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Quel est le reste de 50 divisé par 7 ?",
+        "fr": "Quel est le reste de 50 divisé par 7 ?",
         "en": "What is the remainder of 50 divided by 7?"
       },
       "back": {
@@ -227,7 +227,7 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Quel est le reste de 61 divisé par 7 ?",
+        "fr": "Quel est le reste de 61 divisé par 7 ?",
         "en": "What is the remainder of 61 divided by 7?"
       },
       "back": {
@@ -244,7 +244,7 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Quel est le reste de 69 divisé par 7 ?",
+        "fr": "Quel est le reste de 69 divisé par 7 ?",
         "en": "What is the remainder of 69 divided by 7?"
       },
       "back": {
@@ -261,11 +261,11 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Méthode dominos : comment repérer le motif d'une rangée ?",
+        "fr": "Méthode dominos : comment repérer le motif d'une rangée ?",
         "en": "Domino method: how to spot a row's pattern?"
       },
       "back": {
-        "fr": "Calcule la **différence entre chaque case adjacente** ; si elle est constante (souvent liée à 7), la case manquante suit la même règle.",
+        "fr": "Calcule la **différence entre chaque case adjacente** ; si elle est constante (souvent liée à 7), la case manquante suit la même règle.",
         "en": "Compute the **difference between adjacent cells**; if constant (often tied to 7), the missing cell follows the same rule."
       },
       "difficulty": 2,
@@ -278,11 +278,11 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Méthode dominos : que faire si la différence change de signe ?",
+        "fr": "Méthode dominos : que faire si la différence change de signe ?",
         "en": "Domino method: what if the difference changes sign?"
       },
       "back": {
-        "fr": "Vérifie une alternance (+7 puis −7, ou ×2 puis −7) : les dominos combinent parfois deux règles simples.",
+        "fr": "Vérifie une alternance (+7 puis −7, ou ×2 puis −7) : les dominos combinent parfois deux règles simples.",
         "en": "Check for alternation (+7 then −7, or ×2 then −7): dominoes sometimes combine two simple rules."
       },
       "difficulty": 2,
@@ -295,11 +295,11 @@
       "version": 1,
       "deckId": "logic_dominos.deck.modulo7",
       "front": {
-        "fr": "Astuce modulo 7 : pourquoi ce nombre revient-il souvent dans les dominos ?",
+        "fr": "Astuce modulo 7 : pourquoi ce nombre revient-il souvent dans les dominos ?",
         "en": "Modulo-7 trick: why does 7 recur in domino puzzles?"
       },
       "back": {
-        "fr": "7 est le nombre de points maximum par moitié de domino classique : les motifs \"bouclent\" naturellement modulo 7.",
+        "fr": "7 est le nombre de points maximum par moitié de domino classique : les motifs « bouclent » naturellement modulo 7.",
         "en": "7 is the max pip count per half of a classic domino: patterns naturally \"wrap\" modulo 7."
       },
       "difficulty": 2,

@@ -15,7 +15,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Dans la sélection Cadets Air France, que désigne la phase « PSY0 » ?"
+        "fr": "Dans la sélection Cadets Air France, que désigne la phase « PSY0 » ?"
       },
       "options": [
         {
@@ -41,7 +41,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**PSY0** est la pré-sélection : une épreuve **en ligne et à distance**, le premier week-end de septembre, mêlant logique, raisonnement, culture générale aéronautique et anglais renforcé ; elle produit un **classement** des candidats invités à la suite. PSY1 = psychotechnique/psychomoteur, PSY2 = personnalité, groupe et entretien."
+        "fr": "**PSY0** est la pré-sélection : une épreuve **en ligne et à distance**, le premier week-end de septembre, mêlant logique, raisonnement, culture générale aéronautique et anglais renforcé ; elle produit un **classement** des candidats invités à la suite. PSY1 = psychotechnique/psychomoteur, PSY2 = personnalité, groupe et entretien."
       },
       "validAsOf": "2026-09-11",
       "meta": {
@@ -68,7 +68,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Où et quand se déroule la phase PSY1 de la sélection Cadets ?"
+        "fr": "Où et quand se déroule la phase PSY1 de la sélection Cadets ?"
       },
       "options": [
         {
@@ -121,7 +121,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "De quoi se compose la phase PSY2 de la sélection Cadets Air France ?"
+        "fr": "De quoi se compose la phase PSY2 de la sélection Cadets Air France ?"
       },
       "options": [
         {
@@ -147,7 +147,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**PSY2** se tient à Roissy-CDG : **deux inventaires de personnalité, une épreuve de groupe** (sous charte de confidentialité) et **un entretien individuel** avec psychologues et pilotes. Une commission de recrutement statue ensuite sur la réussite ou l'ajournement."
+        "fr": "**PSY2** se tient à Roissy-CDG : **deux inventaires de personnalité, une épreuve de groupe** (sous charte de confidentialité) et **un entretien individuel** avec psychologues et pilotes. Une commission de recrutement statue ensuite sur la réussite ou l'ajournement."
       },
       "validAsOf": "2026-09-11",
       "meta": {
@@ -174,7 +174,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Combien d'échecs en PSY0 entraînent l'élimination définitive de la filière Cadet Air France ?"
+        "fr": "Combien d'échecs en PSY0 entraînent l'élimination définitive de la filière Cadet Air France ?"
       },
       "options": [
         {
@@ -200,7 +200,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Règles d'élimination de la filière Cadet : **3 échecs en PSY0** ou **2 échecs en PSY1** ferment définitivement cette filière (la filière Pilote professionnel reste accessible). Un ajournement en PSY2 permet une nouvelle présentation après un ou deux ans selon la commission."
+        "fr": "Règles d'élimination de la filière Cadet : **3 échecs en PSY0** ou **2 échecs en PSY1** ferment définitivement cette filière (la filière Pilote professionnel reste accessible). Un ajournement en PSY2 permet une nouvelle présentation après un ou deux ans selon la commission."
       },
       "validAsOf": "2026-09-11",
       "meta": {
@@ -227,7 +227,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quelle licence un candidat ne doit-il PAS détenir à la clôture des inscriptions Cadets Air France ?"
+        "fr": "Quelle licence un candidat ne doit-il PAS détenir à la clôture des inscriptions Cadets Air France ?"
       },
       "options": [
         {
@@ -253,7 +253,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "La filière Cadet vise des candidats **peu ou pas expérimentés** : seuls le **PPL** et/ou l'**ATPL théorique** sont acceptés ; un titulaire de **CPL(A)** à la clôture des inscriptions est exclu (il relève de la filière Pilote professionnel, comme les pilotes militaires brevetés)."
+        "fr": "La filière Cadet vise des candidats **peu ou pas expérimentés** : seuls le **PPL** et/ou l'**ATPL théorique** sont acceptés ; un titulaire de **CPL(A)** à la clôture des inscriptions est exclu (il relève de la filière Pilote professionnel, comme les pilotes militaires brevetés)."
       },
       "validAsOf": "2026-09-11",
       "meta": {
@@ -280,7 +280,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quel certificat médical est exigé au moment du dépôt de candidature Cadets, et lequel avant l'entrée en formation ?"
+        "fr": "Quel certificat médical est exigé au moment du dépôt de candidature Cadets, et lequel avant l'entrée en formation ?"
       },
       "options": [
         {
@@ -306,7 +306,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Au dépôt du dossier, une aptitude de **classe 2** en cours de validité suffit (une classe 1 est acceptée) ; la **classe 1**, obligatoire pour le transport commercial, est exigée **avant l'entrée en école**. Réflexe : classe 2 pour candidater, classe 1 pour voler pro."
+        "fr": "Au dépôt du dossier, une aptitude de **classe 2** en cours de validité suffit (une classe 1 est acceptée) ; la **classe 1**, obligatoire pour le transport commercial, est exigée **avant l'entrée en école**. Réflexe : classe 2 pour candidater, classe 1 pour voler pro."
       },
       "validAsOf": "2026-09-11",
       "meta": {
@@ -333,7 +333,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Depuis la campagne Cadets 2026, comment le niveau d'anglais des candidats est-il évalué ?"
+        "fr": "Depuis la campagne Cadets 2026, comment le niveau d'anglais des candidats est-il évalué ?"
       },
       "options": [
         {
@@ -359,7 +359,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "À partir de l'offre 2026, le **TOEIC n'est plus exigé** : une épreuve d'**anglais renforcé** intégrée au PSY0 évalue *listening*, *reading* et *speaking*, pour tous les candidats. Le TOEIC ≥ 850 reste un critère de la filière Pilote professionnel."
+        "fr": "À partir de l'offre 2026, le **TOEIC n'est plus exigé** : une épreuve d'**anglais renforcé** intégrée au PSY0 évalue *listening*, *reading* et *speaking*, pour tous les candidats. Le TOEIC ≥ 850 reste un critère de la filière Pilote professionnel."
       },
       "validAsOf": "2026-09-11",
       "meta": {
@@ -386,7 +386,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Comment se structure la formation d'un cadet Air France en école partenaire ?"
+        "fr": "Comment se structure la formation d'un cadet Air France en école partenaire ?"
       },
       "options": [
         {
@@ -412,7 +412,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "La formation dure **2 à 2,5 ans à temps complet** : **9 mois de théorie ATPL** puis **15 à 21 mois** de vol et simulateur (CPL, IR/ME, MCC), soit environ **150 h de vol et 80 h de simulateur**. L'école (ATO) est choisie par Air France."
+        "fr": "La formation dure **2 à 2,5 ans à temps complet** : **9 mois de théorie ATPL** puis **15 à 21 mois** de vol et simulateur (CPL, IR/ME, MCC), soit environ **150 h de vol et 80 h de simulateur**. L'école (ATO) est choisie par Air France."
       },
       "validAsOf": "2026-09-11",
       "meta": {
@@ -439,7 +439,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quel statut contractuel et quelle rémunération sont prévus pour un cadet Air France pendant sa formation ?"
+        "fr": "Quel statut contractuel et quelle rémunération sont prévus pour un cadet Air France pendant sa formation ?"
       },
       "options": [
         {
@@ -465,7 +465,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Le cadet signe un **contrat de professionnalisation en CDI** : formation entièrement financée, rémunération de **65 % du SMIC (moins de 21 ans), 80 % (21-26 ans), 100 % (plus de 26 ans)**, logement assuré en école, 5 semaines de congés par an. En cas d'échec (≈ 5 % des cas), aucun remboursement n'est exigé."
+        "fr": "Le cadet signe un **contrat de professionnalisation en CDI** : formation entièrement financée, rémunération de **65 % du SMIC (moins de 21 ans), 80 % (21-26 ans), 100 % (plus de 26 ans)**, logement assuré en école, 5 semaines de congés par an. En cas d'échec (≈ 5 % des cas), aucun remboursement n'est exigé."
       },
       "validAsOf": "2026-09-11",
       "meta": {
@@ -492,7 +492,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "À l'issue de sa formation, sur quels avions un cadet Air France peut-il être affecté ?"
+        "fr": "À l'issue de sa formation, sur quels avions un cadet Air France peut-il être affecté ?"
       },
       "options": [
         {
@@ -518,7 +518,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Les jeunes pilotes débutent en **moyen-courrier** : sous contrat Air France sur **A220/A320**, ou détachés chez **Transavia** sur **737/A320neo**. L'affectation et le type avion **ne se choisissent pas** ; la carrière AF/Transavia est gérée sur une **liste unique**. HOP! recrute séparément."
+        "fr": "Les jeunes pilotes débutent en **moyen-courrier** : sous contrat Air France sur **A220/A320**, ou détachés chez **Transavia** sur **737/A320neo**. L'affectation et le type avion **ne se choisissent pas** ; la carrière AF/Transavia est gérée sur une **liste unique**. HOP! recrute séparément."
       },
       "validAsOf": "2026-09-11",
       "meta": {
@@ -545,7 +545,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quel est l'ordre classique de progression d'un pilote entrant chez Air France ?"
+        "fr": "Quel est l'ordre classique de progression d'un pilote entrant chez Air France ?"
       },
       "options": [
         {
@@ -598,7 +598,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Que signifie l'expression « ATPL frozen » pour un jeune copilote ?"
+        "fr": "Que signifie l'expression « ATPL frozen » pour un jeune copilote ?"
       },
       "options": [
         {
@@ -624,7 +624,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Le parcours de licences : PPL → CPL → IR → ME → MCC, avec l'**ATPL théorique** validée. Le pilote est alors « **ATPL frozen** » : il peut voler copilote ; l'ATPL devient « unfrozen » (délivrée) à **1 500 h** de vol dont des heures en équipage et de nuit, condition pour être commandant de bord."
+        "fr": "Le parcours de licences : PPL → CPL → IR → ME → MCC, avec l'**ATPL théorique** validée. Le pilote est alors « **ATPL frozen** » : il peut voler copilote ; l'ATPL devient « unfrozen » (délivrée) à **1 500 h** de vol dont des heures en équipage et de nuit, condition pour être commandant de bord."
       },
       "meta": {
         "author": "hbock",
@@ -643,7 +643,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quelle est la durée de validité d'un certificat médical de classe 1 pour un pilote de ligne de moins de 40 ans ?"
+        "fr": "Quelle est la durée de validité d'un certificat médical de classe 1 pour un pilote de ligne de moins de 40 ans ?"
       },
       "options": [
         {
@@ -669,7 +669,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "La **classe 1** est valable **12 mois**, ramenés à **6 mois** après 60 ans (et après 40 ans en exploitation monopilote commerciale). La classe 2, pour le vol privé, vaut 60 mois avant 40 ans. Réflexe : classe 1 = visite annuelle."
+        "fr": "La **classe 1** est valable **12 mois**, ramenés à **6 mois** après 60 ans (et après 40 ans en exploitation monopilote commerciale). La classe 2, pour le vol privé, vaut 60 mois avant 40 ans. Réflexe : classe 1 = visite annuelle."
       },
       "meta": {
         "author": "hbock",
@@ -688,7 +688,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Sur l'échelle OACI de compétence linguistique (FCL .055), quel niveau dispense de tout renouvellement ?"
+        "fr": "Sur l'échelle OACI de compétence linguistique (FCL .055), quel niveau dispense de tout renouvellement ?"
       },
       "options": [
         {
@@ -714,7 +714,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "L'échelle va de 1 à 6 ; le **niveau 4** (opérationnel) est le minimum pour voler en radio anglaise et se renouvelle tous les **4 ans**, le **niveau 5** tous les **6 ans**, le **niveau 6** (expert) est **permanent**. Air France exige au moins le niveau 5 pour sa filière Pilote professionnel."
+        "fr": "L'échelle va de 1 à 6 ; le **niveau 4** (opérationnel) est le minimum pour voler en radio anglaise et se renouvelle tous les **4 ans**, le **niveau 5** tous les **6 ans**, le **niveau 6** (expert) est **permanent**. Air France exige au moins le niveau 5 pour sa filière Pilote professionnel."
       },
       "meta": {
         "author": "hbock",
@@ -733,7 +733,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Qui détient l'autorité finale sur l'équipage et les passagers pendant un vol commercial ?"
+        "fr": "Qui détient l'autorité finale sur l'équipage et les passagers pendant un vol commercial ?"
       },
       "options": [
         {
@@ -759,7 +759,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Le **commandant de bord** a autorité sur l'ensemble de l'équipage et des passagers et prend toutes les décisions, de la préparation à la clôture du vol ; sa priorité est la sécurité et la sûreté. L'**Officier Pilote de Ligne** (copilote) est le second dans l'ordre hiérarchique."
+        "fr": "Le **commandant de bord** a autorité sur l'ensemble de l'équipage et des passagers et prend toutes les décisions, de la préparation à la clôture du vol ; sa priorité est la sécurité et la sûreté. L'**Officier Pilote de Ligne** (copilote) est le second dans l'ordre hiérarchique."
       },
       "meta": {
         "author": "hbock",
@@ -778,7 +778,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Selon les limitations européennes de temps de vol (FTL), quel est le maximum d'heures de vol d'un pilote de ligne par année civile ?"
+        "fr": "Selon les limitations européennes de temps de vol (FTL), quel est le maximum d'heures de vol d'un pilote de ligne par année civile ?"
       },
       "options": [
         {
@@ -823,7 +823,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Depuis la relance du programme Cadets en 2018, combien de jeunes pilotes Air France a-t-elle formés ?"
+        "fr": "Depuis la relance du programme Cadets en 2018, combien de jeunes pilotes Air France a-t-elle formés ?"
       },
       "options": [
         {
@@ -849,7 +849,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Air France communique sur **plus de 300 cadets formés depuis 2018**, à raison de quelques dizaines à une centaine par campagne, et **25 % de femmes** parmi les cadets sélectionnés en 2025. Réflexe : ordre de grandeur « quelques centaines », pas des milliers."
+        "fr": "Air France communique sur **plus de 300 cadets formés depuis 2018**, à raison de quelques dizaines à une centaine par campagne, et **25 % de femmes** parmi les cadets sélectionnés en 2025. Réflexe : ordre de grandeur « quelques centaines », pas des milliers."
       },
       "validAsOf": "2026-09-11",
       "meta": {
@@ -876,7 +876,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quelle affirmation sur les conditions d'accès à la sélection Cadets Air France est exacte ?"
+        "fr": "Quelle affirmation sur les conditions d'accès à la sélection Cadets Air France est exacte ?"
       },
       "options": [
         {
@@ -902,7 +902,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Conditions : nationalité **EEE ou suisse**, français courant, **casier judiciaire vierge**, diplôme requis (bac + ATPL théorique, CPGE, bac+2 scientifique ou M1), classe 2 au dossier, **pas de CPL**. Il n'y a **pas de limite d'âge** (Air France signale seulement des difficultés statistiquement plus fréquentes après 35 ans) ; les frais de 200 € se règlent en ligne, les boursiers étant exonérés."
+        "fr": "Conditions : nationalité **EEE ou suisse**, français courant, **casier judiciaire vierge**, diplôme requis (bac + ATPL théorique, CPGE, bac+2 scientifique ou M1), classe 2 au dossier, **pas de CPL**. Il n'y a **pas de limite d'âge** (Air France signale seulement des difficultés statistiquement plus fréquentes après 35 ans) ; les frais de 200 € se règlent en ligne, les boursiers étant exonérés."
       },
       "validAsOf": "2026-09-11",
       "meta": {

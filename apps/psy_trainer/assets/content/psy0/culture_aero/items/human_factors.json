@@ -15,7 +15,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "L'hypoxie d'altitude est due :"
+        "fr": "L'hypoxie d'altitude est due :"
       },
       "options": [
         {
@@ -41,7 +41,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "L'air contient toujours ≈ 21 % d'oxygène, mais la pression totale chute avec l'altitude : la **pression partielle** d'O₂ ne suffit plus à saturer le sang. Réflexe : c'est la pression, pas la proportion, qui manque."
+        "fr": "L'air contient toujours ≈ 21 % d'oxygène, mais la pression totale chute avec l'altitude : la **pression partielle** d'O₂ ne suffit plus à saturer le sang. Réflexe : c'est la pression, pas la proportion, qui manque."
       },
       "meta": {
         "author": "hbock",
@@ -60,7 +60,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Après une dépressurisation à 35 000 ft, le temps de conscience utile sans oxygène est de l'ordre de :"
+        "fr": "Après une dépressurisation à 35 000 ft, le temps de conscience utile sans oxygène est de l'ordre de :"
       },
       "options": [
         {
@@ -86,7 +86,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Repères de temps de conscience utile : ≈ 20–30 min à 18 000 ft, 3–5 min à 25 000 ft, **30 s à 1 min à 35 000 ft**, 15 s ou moins à 40 000 ft et plus. D'où le geste réflexe : masque d'abord, puis descente d'urgence."
+        "fr": "Repères de temps de conscience utile : ≈ 20–30 min à 18 000 ft, 3–5 min à 25 000 ft, **30 s à 1 min à 35 000 ft**, 15 s ou moins à 40 000 ft et plus. D'où le geste réflexe : masque d'abord, puis descente d'urgence."
       },
       "meta": {
         "author": "hbock",
@@ -105,7 +105,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Pourquoi l'hypoxie est-elle particulièrement dangereuse pour un pilote ?"
+        "fr": "Pourquoi l'hypoxie est-elle particulièrement dangereuse pour un pilote ?"
       },
       "options": [
         {
@@ -120,7 +120,7 @@
         },
         {
           "text": {
-            "fr": "Ses premiers signes sont insidieux : euphorie, confiance excessive, jugement dégradé"
+            "fr": "Ses premiers signes sont insidieux : euphorie, confiance excessive, jugement dégradé"
           }
         },
         {
@@ -131,7 +131,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "La victime ne se sent pas mal : euphorie, cyanose des lèvres et ongles, vision qui se rétrécit, calculs qui se dégradent. Le pilote peut s'en persuader que tout va bien. En Europe, l'oxygène est requis pour l'équipage au-delà de 10 000 ft en cabine non pressurisée pendant plus de 30 min, et toujours au-dessus de 13 000 ft."
+        "fr": "La victime ne se sent pas mal : euphorie, cyanose des lèvres et ongles, vision qui se rétrécit, calculs qui se dégradent. Le pilote peut s'en persuader que tout va bien. En Europe, l'oxygène est requis pour l'équipage au-delà de 10 000 ft en cabine non pressurisée pendant plus de 30 min, et toujours au-dessus de 13 000 ft."
       },
       "meta": {
         "author": "hbock",
@@ -150,7 +150,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "L'hyperventilation, souvent liée au stress, provoque :"
+        "fr": "L'hyperventilation, souvent liée au stress, provoque :"
       },
       "options": [
         {
@@ -176,7 +176,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Respirer trop vite chasse le CO₂ (hypocapnie) : fourmillements des extrémités, vertiges, spasmes, jusqu'à la syncope. Les symptômes ressemblent à l'hypoxie ; le remède est inverse : ralentir volontairement la respiration, parler, se calmer. En doute en altitude, on met quand même l'oxygène."
+        "fr": "Respirer trop vite chasse le CO₂ (hypocapnie) : fourmillements des extrémités, vertiges, spasmes, jusqu'à la syncope. Les symptômes ressemblent à l'hypoxie ; le remède est inverse : ralentir volontairement la respiration, parler, se calmer. En doute en altitude, on met quand même l'oxygène."
       },
       "meta": {
         "author": "hbock",
@@ -195,7 +195,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "L'illusion somatogravique se produit typiquement :"
+        "fr": "L'illusion somatogravique se produit typiquement :"
       },
       "options": [
         {
@@ -221,7 +221,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "L'oreille interne confond accélération linéaire et inclinaison : à la mise de puissance de nuit ou en IMC, le pilote se sent cabrer et pousse sur le manche — vers le sol. Parade : **croire les instruments**, pas les sensations. Le mouvement de tête en virage, lui, donne l'illusion de Coriolis ; le virage prolongé, les « leans »."
+        "fr": "L'oreille interne confond accélération linéaire et inclinaison : à la mise de puissance de nuit ou en IMC, le pilote se sent cabrer et pousse sur le manche — vers le sol. Parade : **croire les instruments**, pas les sensations. Le mouvement de tête en virage, lui, donne l'illusion de Coriolis ; le virage prolongé, les « leans »."
       },
       "meta": {
         "author": "hbock",
@@ -240,7 +240,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Après un virage prolongé en IMC, un pilote qui remet les ailes à plat a l'impression de virer de l'autre côté. C'est :"
+        "fr": "Après un virage prolongé en IMC, un pilote qui remet les ailes à plat a l'impression de virer de l'autre côté. C'est :"
       },
       "options": [
         {
@@ -266,7 +266,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Les canaux semi-circulaires ne détectent que les **variations** de rotation : après 20 s de virage constant, le liquide se stabilise et le cerveau croit l'avion à plat ; le retour à l'horizontale est alors perçu comme un virage inverse. Le pilote a tendance à se pencher (« lean ») du côté du virage initial."
+        "fr": "Les canaux semi-circulaires ne détectent que les **variations** de rotation : après 20 s de virage constant, le liquide se stabilise et le cerveau croit l'avion à plat ; le retour à l'horizontale est alors perçu comme un virage inverse. Le pilote a tendance à se pencher (« lean ») du côté du virage initial."
       },
       "meta": {
         "author": "hbock",
@@ -285,7 +285,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "En approche sur une piste plus étroite que celles habituelles, le pilote a tendance à :"
+        "fr": "En approche sur une piste plus étroite que celles habituelles, le pilote a tendance à :"
       },
       "options": [
         {
@@ -311,7 +311,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Une piste étroite paraît plus loin, donc l'avion semble plus haut : le pilote descend sous le plan, avec un risque d'atterrissage court. Une piste large produit l'inverse. Même logique pour une piste en montée (on se croit haut). Parade : suivre le PAPI ou le plan de descente calculé."
+        "fr": "Une piste étroite paraît plus loin, donc l'avion semble plus haut : le pilote descend sous le plan, avec un risque d'atterrissage court. Une piste large produit l'inverse. Même logique pour une piste en montée (on se croit haut). Parade : suivre le PAPI ou le plan de descente calculé."
       },
       "meta": {
         "author": "hbock",
@@ -330,7 +330,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "En croisière, l'altitude-cabine d'un avion de ligne pressurisé est maintenue vers :"
+        "fr": "En croisière, l'altitude-cabine d'un avion de ligne pressurisé est maintenue vers :"
       },
       "options": [
         {
@@ -356,7 +356,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "La pressurisation maintient une pression équivalente à **6 000–8 000 ft** (les cellules composites A350/787 descendent vers 6 000 ft) : compromis entre confort et contraintes structurelles sur le fuselage. C'est pour cela que les oreilles se bouchent et que l'on se déshydrate."
+        "fr": "La pressurisation maintient une pression équivalente à **6 000–8 000 ft** (les cellules composites A350/787 descendent vers 6 000 ft) : compromis entre confort et contraintes structurelles sur le fuselage. C'est pour cela que les oreilles se bouchent et que l'on se déshydrate."
       },
       "meta": {
         "author": "hbock",
@@ -375,7 +375,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Les masques à oxygène passagers tombent automatiquement lorsque l'altitude-cabine dépasse environ :"
+        "fr": "Les masques à oxygène passagers tombent automatiquement lorsque l'altitude-cabine dépasse environ :"
       },
       "options": [
         {
@@ -420,7 +420,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Le creux de vigilance lié au rythme circadien se situe surtout :"
+        "fr": "Le creux de vigilance lié au rythme circadien se situe surtout :"
       },
       "options": [
         {
@@ -446,7 +446,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "L'horloge interne impose un creux nocturne majeur (≈ 2 h–6 h) et un creux secondaire en début d'après-midi. Un vol de nuit place l'équipage en plein creux, d'où les règles de temps de vol (FTL) et le repos contrôlé en croisière. Réflexe : la fatigue se gère avant le vol, pas au café."
+        "fr": "L'horloge interne impose un creux nocturne majeur (≈ 2 h–6 h) et un creux secondaire en début d'après-midi. Un vol de nuit place l'équipage en plein creux, d'où les règles de temps de vol (FTL) et le repos contrôlé en croisière. Réflexe : la fatigue se gère avant le vol, pas au café."
       },
       "meta": {
         "author": "hbock",
@@ -465,7 +465,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "En France, le taux d'alcool maximal autorisé pour un pilote est de :"
+        "fr": "En France, le taux d'alcool maximal autorisé pour un pilote est de :"
       },
       "options": [
         {
@@ -491,7 +491,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "La réglementation européenne (EASA) et le Code des transports fixent **0,2 g/L** de sang, soit pratiquement zéro. Règle pratique complémentaire : pas d'alcool dans les 8 h précédant le vol, et bien plus après une soirée arrosée — l'alcool s'élimine à ≈ 0,1–0,15 g/L par heure."
+        "fr": "La réglementation européenne (EASA) et le Code des transports fixent **0,2 g/L** de sang, soit pratiquement zéro. Règle pratique complémentaire : pas d'alcool dans les 8 h précédant le vol, et bien plus après une soirée arrosée — l'alcool s'élimine à ≈ 0,1–0,15 g/L par heure."
       },
       "meta": {
         "author": "hbock",
@@ -510,7 +510,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Le CRM (Crew Resource Management) est né à la fin des années 1970 pour :"
+        "fr": "Le CRM (Crew Resource Management) est né à la fin des années 1970 pour :"
       },
       "options": [
         {
@@ -536,7 +536,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Des accidents d'avions parfaitement en état (Tenerife 1977, Portland 1978) ont montré que la hiérarchie trop rigide et la mauvaise communication tuaient. Le CRM apprend à utiliser toutes les ressources : équipage, ATC, procédures. Idée clé : le copilote doit pouvoir contester le commandant."
+        "fr": "Des accidents d'avions parfaitement en état (Tenerife 1977, Portland 1978) ont montré que la hiérarchie trop rigide et la mauvaise communication tuaient. Le CRM apprend à utiliser toutes les ressources : équipage, ATC, procédures. Idée clé : le copilote doit pouvoir contester le commandant."
       },
       "meta": {
         "author": "hbock",
@@ -555,7 +555,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Le modèle du « fromage suisse » de James Reason illustre que :"
+        "fr": "Le modèle du « fromage suisse » de James Reason illustre que :"
       },
       "options": [
         {
@@ -581,7 +581,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Chaque tranche (réglementation, formation, procédures, équipage) a des trous ; l'accident passe quand les trous s'alignent. D'où la logique de **barrières multiples** et l'analyse des causes latentes (organisation) plutôt que du seul dernier acteur."
+        "fr": "Chaque tranche (réglementation, formation, procédures, équipage) a des trous ; l'accident passe quand les trous s'alignent. D'où la logique de **barrières multiples** et l'analyse des causes latentes (organisation) plutôt que du seul dernier acteur."
       },
       "meta": {
         "author": "hbock",
@@ -600,7 +600,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Dans le modèle TEM (Threat and Error Management), une « menace » est :"
+        "fr": "Dans le modèle TEM (Threat and Error Management), une « menace » est :"
       },
       "options": [
         {
@@ -626,7 +626,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "TEM distingue trois niveaux : la **menace** (externe, à anticiper au briefing), l'**erreur** (de l'équipage, à détecter et corriger) et l'**état indésirable** de l'avion (à récupérer avant l'accident). Réflexe : anticiper les menaces au briefing, c'est déjà de la sécurité."
+        "fr": "TEM distingue trois niveaux : la **menace** (externe, à anticiper au briefing), l'**erreur** (de l'équipage, à détecter et corriger) et l'**état indésirable** de l'avion (à récupérer avant l'accident). Réflexe : anticiper les menaces au briefing, c'est déjà de la sécurité."
       },
       "meta": {
         "author": "hbock",
@@ -645,7 +645,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "La règle du « cockpit stérile » interdit les conversations non essentielles :"
+        "fr": "La règle du « cockpit stérile » interdit les conversations non essentielles :"
       },
       "options": [
         {
@@ -671,7 +671,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Roulage, décollage, montée initiale, approche et atterrissage concentrent la charge de travail et la majorité des accidents : sous **10 000 ft**, on ne parle que du vol, et la cabine ne contacte le cockpit qu'en cas de sécurité. Née aux États-Unis en 1981 après plusieurs accidents dus à la distraction."
+        "fr": "Roulage, décollage, montée initiale, approche et atterrissage concentrent la charge de travail et la majorité des accidents : sous **10 000 ft**, on ne parle que du vol, et la cabine ne contacte le cockpit qu'en cas de sécurité. Née aux États-Unis en 1981 après plusieurs accidents dus à la distraction."
       },
       "meta": {
         "author": "hbock",
@@ -690,7 +690,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Après une plongée sous-marine avec paliers, le délai recommandé avant de voler est d'au moins :"
+        "fr": "Après une plongée sous-marine avec paliers, le délai recommandé avant de voler est d'au moins :"
       },
       "options": [
         {
@@ -716,7 +716,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "L'azote dissous pendant la plongée peut former des bulles quand la pression baisse en altitude (accident de décompression). Repères usuels : 12 h après une plongée sans palier, **24 h** après une plongée avec paliers ou des plongées répétées. Une cabine à 8 000 ft suffit à déclencher le problème."
+        "fr": "L'azote dissous pendant la plongée peut former des bulles quand la pression baisse en altitude (accident de décompression). Repères usuels : 12 h après une plongée sans palier, **24 h** après une plongée avec paliers ou des plongées répétées. Une cabine à 8 000 ft suffit à déclencher le problème."
       },
       "meta": {
         "author": "hbock",
@@ -735,7 +735,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "L'adaptation complète de l'œil à l'obscurité (vision nocturne) demande environ :"
+        "fr": "L'adaptation complète de l'œil à l'obscurité (vision nocturne) demande environ :"
       },
       "options": [
         {
@@ -761,7 +761,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Les bâtonnets atteignent leur sensibilité maximale après ≈ **30 min** d'obscurité, mais un éclair lumineux la détruit en quelques secondes. D'où l'éclairage rouge ou tamisé du cockpit de nuit. Autre piège nocturne : la tache aveugle centrale — on voit mieux une lumière faible en regardant légèrement à côté."
+        "fr": "Les bâtonnets atteignent leur sensibilité maximale après ≈ **30 min** d'obscurité, mais un éclair lumineux la détruit en quelques secondes. D'où l'éclairage rouge ou tamisé du cockpit de nuit. Autre piège nocturne : la tache aveugle centrale — on voit mieux une lumière faible en regardant légèrement à côté."
       },
       "meta": {
         "author": "hbock",
@@ -780,7 +780,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Sous facteur de charge positif élevé, le pilote subit dans l'ordre :"
+        "fr": "Sous facteur de charge positif élevé, le pilote subit dans l'ordre :"
       },
       "options": [
         {
@@ -806,7 +806,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Les G positifs chassent le sang vers les jambes : la rétine est privée en premier (**voile gris** : couleurs qui s'effacent, puis **voile noir** : vision perdue), puis le cerveau (**G-LOC**). Le voile rouge correspond aux G négatifs (sang vers la tête). Parade : contraction musculaire et respiration forcée, combinaison anti-G."
+        "fr": "Les G positifs chassent le sang vers les jambes : la rétine est privée en premier (**voile gris** : couleurs qui s'effacent, puis **voile noir** : vision perdue), puis le cerveau (**G-LOC**). Le voile rouge correspond aux G négatifs (sang vers la tête). Parade : contraction musculaire et respiration forcée, combinaison anti-G."
       },
       "meta": {
         "author": "hbock",
