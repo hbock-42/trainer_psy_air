@@ -3,6 +3,7 @@ import 'dart:async';
 import '../../../../core/repositories/model/attempt.dart';
 import '../../../../core/repositories/model/session.dart';
 import '../../../../core/repositories/progress_repository.dart';
+import '../adaptive/adaptive_difficulty_policy.dart';
 import 'activity_engine.dart';
 import 'activity_session_config.dart';
 import 'activity_session_state.dart';
@@ -98,7 +99,13 @@ class ActivitySession {
        _clock = clock,
        _onPersistenceError = onPersistenceError,
        _sessionId = config.sessionId {
-    _items = config.source.materialise(_engine);
+    final source = config.source;
+    if (source is AdaptiveSource) {
+      _items = List<SessionItem?>.filled(source.count, null);
+      _adaptiveState = source.policy.initial(source.initialDifficulty);
+    } else {
+      _items = List<SessionItem?>.of(source.materialise(_engine));
+    }
     _restore(attempts);
     _state = ActivitySessionState.briefing(
       itemCount: _items.length,
@@ -125,8 +132,16 @@ class ActivitySession {
   final EngineClock _clock;
   final PersistenceErrorHandler? _onPersistenceError;
 
-  late final List<SessionItem> _items;
+  /// Materialised on construction for every source but `ItemSource
+  /// .adaptive`, whose items are null until [_itemAt] materialises them
+  /// (lazily, item by item, once their difficulty is known).
+  late final List<SessionItem?> _items;
   final List<ItemOutcome> _outcomes = [];
+
+  /// Non-null only for an `ItemSource.adaptive` source; the current level
+  /// and streaks (US-053).
+  AdaptiveDifficultyState? _adaptiveState;
+  final List<LevelChange> _levelChanges = [];
   final StreamController<ActivitySessionState> _states =
       StreamController<ActivitySessionState>.broadcast(sync: true);
   late ActivitySessionState _state;
@@ -159,8 +174,12 @@ class ActivitySession {
   /// Every state change after the current [state].
   Stream<ActivitySessionState> get states => _states.stream;
 
-  /// The materialised items, in play order.
-  List<SessionItem> get items => List.unmodifiable(_items);
+  /// The items materialised so far, in play order. For every source but
+  /// `ItemSource.adaptive` this is every item, from construction; an
+  /// adaptive source only ever has the items shown up to now (later ones
+  /// depend on answers not yet given) — `state.itemCount` is the total.
+  List<SessionItem> get items =>
+      List.unmodifiable(_items.whereType<SessionItem>());
 
   /// Outcomes recorded so far, in play order.
   List<ItemOutcome> get outcomes => List.unmodifiable(_outcomes);
@@ -217,7 +236,7 @@ class ActivitySession {
       );
     }
     if (_disposed || !_state.isRunning || _answered) return;
-    final result = _engine.score(_items[_index].item, answer);
+    final result = _engine.score(_itemAt(_index).item, answer);
     _record(answer, result, _elapsedOnItemMs());
     _afterAnswer(result);
   }
@@ -320,13 +339,51 @@ class ActivitySession {
       ActivitySessionState.running(
         itemIndex: index,
         itemCount: _items.length,
-        item: _items[index].item,
+        item: _itemAt(index).item,
         phase: stimulus != null ? ItemPhase.stimulus : ItemPhase.answer,
         itemStartedAt: now,
         itemDeadline: _itemDeadline,
         sectionDeadline: _sectionDeadline,
+        level: _adaptiveState?.level,
       ),
     );
+  }
+
+  /// The item at [index], materialising it first if it is an as-yet-unshown
+  /// item of an `ItemSource.adaptive` source (at the adaptive state's
+  /// current level, the one this constructor or the last recorded answer
+  /// left it at).
+  SessionItem _itemAt(int index) {
+    final existing = _items[index];
+    if (existing != null) return existing;
+    final item = config.source.materialiseAdaptive(
+      _engine,
+      index,
+      _adaptiveState!.level,
+    );
+    _items[index] = item;
+    return item;
+  }
+
+  /// Folds one answered item into the adaptive state, recording a
+  /// [LevelChange] when the level moves. No-op for any other source.
+  void _applyAdaptive(int index, ItemResult result, int responseMs) {
+    final state = _adaptiveState;
+    if (state == null) return;
+    final source = config.source as AdaptiveSource;
+    final next = source.policy.update(
+      state,
+      correct: result.correct,
+      responseMs: responseMs,
+      fastThresholdMs: source.fastThresholdMs,
+      itemLimitMs: config.timing.itemLimit?.inMilliseconds,
+    );
+    if (next.level != state.level) {
+      _levelChanges.add(
+        LevelChange(atItemIndex: index + 1, from: state.level, to: next.level),
+      );
+    }
+    _adaptiveState = next;
   }
 
   void _afterAnswer(ItemResult result) {
@@ -401,6 +458,7 @@ class ActivitySession {
       ),
       sessionId: _sessionId,
       sectionIndex: config.sectionIndex,
+      levelChanges: List.unmodifiable(_levelChanges),
     );
     final started = _sessionId != null || !_state.isBriefing;
     if (config.ownsSession && started) {
@@ -424,7 +482,7 @@ class ActivitySession {
   // --- Recording -------------------------------------------------------------
 
   void _record(Answer answer, ItemResult result, int responseMs) {
-    final entry = _items[_index];
+    final entry = _itemAt(_index);
     final outcome = ItemOutcome(
       index: _index,
       item: entry.item,
@@ -433,6 +491,7 @@ class ActivitySession {
       responseMs: responseMs,
     );
     _outcomes.add(outcome);
+    _applyAdaptive(_index, result, responseMs);
     final answeredAt = _clock.now();
     _enqueue(() async {
       final id = _sessionId;
@@ -470,21 +529,49 @@ class ActivitySession {
       final answer = json == null
           ? const Answer.timeout()
           : Answer.fromJson(json);
+      final result = ItemResult(
+        correct: attempt.isCorrect,
+        timedOut: answer.isTimeout,
+        skipped: answer.isSkip,
+      );
       _outcomes.add(
         ItemOutcome(
           index: index,
-          item: _items[index].item,
+          item: _restoredItemAt(index, attempt).item,
           answer: answer,
-          result: ItemResult(
-            correct: attempt.isCorrect,
-            timedOut: answer.isTimeout,
-            skipped: answer.isSkip,
-          ),
+          result: result,
           responseMs: attempt.responseMs,
         ),
       );
+      // Already-played items of an adaptive source are read back from their
+      // own attempt (their difficulty was decided by the policy when they
+      // were shown); the policy itself is replayed forward the same way it
+      // ran the first time, so the level resumes exactly where it left off.
+      _applyAdaptive(index, result, attempt.responseMs);
       _sectionSpentMs += attempt.responseMs;
     }
+  }
+
+  /// The item at [index] for [_restore]: already materialised for every
+  /// non-adaptive source; for `ItemSource.adaptive`, rebuilt from the
+  /// attempt's own [Attempt.origin] (the difficulty it was actually shown
+  /// at), not from the adaptive state (which has not replayed this far yet).
+  SessionItem _restoredItemAt(int index, Attempt attempt) {
+    final existing = _items[index];
+    if (existing != null) return existing;
+    final source = config.source as AdaptiveSource;
+    final origin = attempt.origin!;
+    final item = SessionItem(
+      item: ItemSource.itemFromOrigin(
+        _engine,
+        origin,
+        index: index,
+        runSeed: source.runSeed,
+      ),
+      origin: origin,
+    );
+    _items[index] = item;
+    return item;
   }
 
   void _enqueue(Future<void> Function() write) {

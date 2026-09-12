@@ -103,6 +103,97 @@ void main() {
     });
   });
 
+  group('AdaptiveSource', () {
+    const source = AdaptiveSource(
+      generatorId: GeneratorId.dominos,
+      runSeed: 2026,
+      params: GeneratorParams.dominos(),
+      count: 5,
+      initialDifficulty: 3,
+    );
+
+    test('itemCount is count; materialise throws (no fixed item list)', () {
+      expect(source.itemCount, 5);
+      expect(source.isAdaptive, isTrue);
+      expect(() => source.materialise(engine), throwsUnsupportedError);
+    });
+
+    test(
+      'materialiseAdaptive at a given index/difficulty is deterministic',
+      () {
+        final a = source.materialiseAdaptive(engine, 2, 4);
+        final b = source.materialiseAdaptive(engine, 2, 4);
+        expect(a.item, b.item);
+        expect(a.origin, b.origin);
+        expect(a.origin!.difficulty, 4);
+      },
+    );
+
+    test('the same index always draws the same seed, whatever order '
+        'indices are materialised in', () {
+      // Index 3 materialised right away...
+      final direct = source.materialiseAdaptive(engine, 3, 2);
+      // ...or only after 0, 1 and 2 were: same result either way (US-053's
+      // "materialises item k at the time it is shown" must not depend on
+      // call order, since a resumed session re-derives earlier items from
+      // their stored attempts, not by replaying every index in sequence).
+      source.materialiseAdaptive(engine, 0, 1);
+      source.materialiseAdaptive(engine, 1, 1);
+      source.materialiseAdaptive(engine, 2, 1);
+      final afterOthers = source.materialiseAdaptive(engine, 3, 2);
+      expect(afterOthers.origin!.seed, direct.origin!.seed);
+      expect(afterOthers.item, direct.item);
+    });
+
+    test('different indices draw different seeds', () {
+      final seeds = [
+        for (var i = 0; i < 5; i++)
+          source.materialiseAdaptive(engine, i, 3).origin!.seed,
+      ];
+      expect(seeds.toSet(), hasLength(5));
+    });
+
+    test('a different runSeed draws different items at the same index', () {
+      final a = source.materialiseAdaptive(engine, 0, 3);
+      final b = source.copyWith(runSeed: 7).materialiseAdaptive(engine, 0, 3);
+      expect(a.item, isNot(equals(b.item)));
+    });
+
+    test('difficulty changes the item without changing its seed', () {
+      final low = source.materialiseAdaptive(engine, 0, 1);
+      final high = source.materialiseAdaptive(engine, 0, 5);
+      expect(low.origin!.seed, high.origin!.seed);
+      expect(low.item.difficulty, 1);
+      expect(high.item.difficulty, 5);
+    });
+
+    test('rejects an engine for the wrong generator via itemFromOrigin', () {
+      const origin = AttemptOrigin(generatorId: 'nback', seed: 1);
+      expect(
+        () => ItemSource.itemFromOrigin(engine, origin),
+        throwsArgumentError,
+      );
+    });
+
+    test('itemFromOrigin reproduces an item materialiseAdaptive produced', () {
+      final produced = source.materialiseAdaptive(engine, 1, 4);
+      final rebuilt = ItemSource.itemFromOrigin(
+        engine,
+        produced.origin!,
+        index: 1,
+        runSeed: source.runSeed,
+      );
+      expect(rebuilt, produced.item);
+    });
+
+    test('round-trips through JSON with typed params', () {
+      final json = source.toJson();
+      expect(json['kind'], 'adaptive');
+      expect(json['generatorId'], 'dominos');
+      expect(ItemSource.fromJson(json), source);
+    });
+  });
+
   test('a bank source round-trips through JSON', () {
     final source = ItemSource.bank(fakeBank(2));
     expect(ItemSource.fromJson(source.toJson()), source);

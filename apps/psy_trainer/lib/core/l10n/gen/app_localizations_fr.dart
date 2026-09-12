@@ -489,6 +489,63 @@ class AppLocalizationsFr extends AppLocalizations {
       'Familles pratiquées, leçons lues et simulations comptent.';
 
   @override
+  String get streakCardTitle => 'Série';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count jours',
+      one: '1 jour',
+      zero: 'Aucun jour',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String streakBest(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count jours',
+      one: '1 jour',
+      zero: '—',
+    );
+    return 'Record : $_temp0';
+  }
+
+  @override
+  String streakGoalItems(int done, int target) {
+    return '$done/$target éléments aujourd\'hui';
+  }
+
+  @override
+  String streakGoalMinutes(int done, int target) {
+    return '$done/$target min aujourd\'hui';
+  }
+
+  @override
+  String get streakGoalMet => 'Objectif atteint !';
+
+  @override
+  String get streakSemanticsLabel => 'Série d\'entraînement';
+
+  @override
+  String streakSemanticsValue(int current, int best, String goal) {
+    return '$current jours de série, record $best jours, $goal';
+  }
+
+  @override
+  String get activityHeatmapSemanticsLabel =>
+      'Calendrier d\'activité, 12 dernières semaines';
+
+  @override
+  String activityHeatmapSemanticsValue(int active, int total) {
+    return '$active/$total jours actifs sur les 12 dernières semaines';
+  }
+
+  @override
   String get examDateSemanticsLabel => 'Examen';
 
   @override
@@ -904,6 +961,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get summaryTitle => 'Résumé';
+
+  @override
+  String summaryLevelChangeLabel(int from, int to) {
+    return 'Niveau $from → $to';
+  }
 
   @override
   String get summaryAccuracyLabel => 'Précision';
@@ -1925,6 +1987,84 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsResetCancelAction => 'Annuler';
+
+  @override
+  String get settingsSectionGoal => 'Objectif quotidien';
+
+  @override
+  String get settingsGoalTargetLabel => 'Cible';
+
+  @override
+  String get settingsGoalUnitLabel => 'Unité';
+
+  @override
+  String get settingsGoalUnitItems => 'Éléments';
+
+  @override
+  String get settingsGoalUnitMinutes => 'Minutes';
+
+  @override
+  String get settingsSectionBackup => 'Sauvegarde';
+
+  @override
+  String get backupExportAction => 'Exporter mes données';
+
+  @override
+  String get backupExportHint =>
+      'Génère un fichier JSON avec vos sessions, statistiques et réglages, à partager ou conserver.';
+
+  @override
+  String get backupExportSuccess => 'Sauvegarde partagée.';
+
+  @override
+  String get backupExportCancelled => 'Partage annulé.';
+
+  @override
+  String get backupExportError => 'Échec de l\'export.';
+
+  @override
+  String get backupImportTitle => 'Importer une sauvegarde';
+
+  @override
+  String get backupImportHint =>
+      'Collez ici le contenu d\'un fichier de sauvegarde JSON.';
+
+  @override
+  String get backupImportAction => 'Importer';
+
+  @override
+  String get backupImportEmpty =>
+      'Collez d\'abord le contenu d\'une sauvegarde.';
+
+  @override
+  String backupImportSuccess(int inserted, int updated, int skipped) {
+    return '$inserted ajout(s), $updated mise(s) à jour, $skipped ignoré(s).';
+  }
+
+  @override
+  String get backupErrorInvalidJson => 'Le texte n\'est pas un JSON valide.';
+
+  @override
+  String get backupErrorNotAnObject => 'Le document doit être un objet JSON.';
+
+  @override
+  String get backupErrorWrongFormat =>
+      'Ce fichier n\'est pas une sauvegarde PSY Trainer.';
+
+  @override
+  String get backupErrorUnsupportedVersion =>
+      'Cette sauvegarde vient d\'une version plus récente de l\'application.';
+
+  @override
+  String get backupErrorMissingData =>
+      'La sauvegarde est incomplète (section « data » manquante).';
+
+  @override
+  String get backupErrorInvalidRow =>
+      'La sauvegarde contient une entrée invalide.';
+
+  @override
+  String get backupErrorGeneric => 'Sauvegarde invalide.';
 
   @override
   String get settingsAboutAction => 'À propos';

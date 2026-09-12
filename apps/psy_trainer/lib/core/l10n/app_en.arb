@@ -149,6 +149,73 @@
   "readinessTrendFlat": "Stable",
   "readinessTrendDown": "Declining",
   "readinessHint": "Families practised, lessons read and simulations count.",
+  "streakCardTitle": "Streak",
+  "streakDays": "{count, plural, =0{No streak} =1{1 day} other{{count} days}}",
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "streakBest": "Best: {count, plural, =0{—} =1{1 day} other{{count} days}}",
+  "@streakBest": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "streakGoalItems": "{done}/{target} items today",
+  "@streakGoalItems": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "streakGoalMinutes": "{done}/{target} min today",
+  "@streakGoalMinutes": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "streakGoalMet": "Goal reached!",
+  "streakSemanticsLabel": "Training streak",
+  "streakSemanticsValue": "{current} day streak, best {best} days, {goal}",
+  "@streakSemanticsValue": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "best": {
+        "type": "int"
+      },
+      "goal": {
+        "type": "String"
+      }
+    }
+  },
+  "activityHeatmapSemanticsLabel": "Activity calendar, last 12 weeks",
+  "activityHeatmapSemanticsValue": "{active}/{total} active days over the last 12 weeks",
+  "@activityHeatmapSemanticsValue": {
+    "placeholders": {
+      "active": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "examDateSemanticsLabel": "Exam",
   "examDatePassed": "Exam date passed",
   "familyLevelsTitle": "Levels per family",
@@ -283,6 +350,17 @@
   "sessionResumeCardTitle": "Resume the session",
   "sessionResumeCardAction": "Resume the session",
   "summaryTitle": "Summary",
+  "summaryLevelChangeLabel": "Level {from} → {to}",
+  "@summaryLevelChangeLabel": {
+    "placeholders": {
+      "from": {
+        "type": "int"
+      },
+      "to": {
+        "type": "int"
+      }
+    }
+  },
   "summaryAccuracyLabel": "Accuracy",
   "summaryMeanRtLabel": "Mean time",
   "summaryMedianRtLabel": "Median time",
@@ -1313,6 +1391,42 @@
   "settingsResetConfirm2Body": "Last confirmation: there is no way to recover this data.",
   "settingsResetConfirmAction": "Erase permanently",
   "settingsResetCancelAction": "Cancel",
+  "settingsSectionGoal": "Daily goal",
+  "settingsGoalTargetLabel": "Target",
+  "settingsGoalUnitLabel": "Unit",
+  "settingsGoalUnitItems": "Items",
+  "settingsGoalUnitMinutes": "Minutes",
+  "settingsSectionBackup": "Backup",
+  "backupExportAction": "Export my data",
+  "backupExportHint": "Generates a JSON file with your sessions, stats and settings, to share or keep.",
+  "backupExportSuccess": "Backup shared.",
+  "backupExportCancelled": "Share cancelled.",
+  "backupExportError": "Export failed.",
+  "backupImportTitle": "Import a backup",
+  "backupImportHint": "Paste the content of a backup JSON file here.",
+  "backupImportAction": "Import",
+  "backupImportEmpty": "Paste a backup's content first.",
+  "backupImportSuccess": "{inserted} inserted, {updated} updated, {skipped} skipped.",
+  "@backupImportSuccess": {
+    "placeholders": {
+      "inserted": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "backupErrorInvalidJson": "The text is not valid JSON.",
+  "backupErrorNotAnObject": "The document must be a JSON object.",
+  "backupErrorWrongFormat": "This file is not a PSY Trainer backup.",
+  "backupErrorUnsupportedVersion": "This backup comes from a newer version of the app.",
+  "backupErrorMissingData": "The backup is incomplete (missing \"data\" section).",
+  "backupErrorInvalidRow": "The backup contains an invalid entry.",
+  "backupErrorGeneric": "Invalid backup.",
   "settingsAboutAction": "About",
   "aboutTitle": "About",
   "aboutVersionLabel": "Version",

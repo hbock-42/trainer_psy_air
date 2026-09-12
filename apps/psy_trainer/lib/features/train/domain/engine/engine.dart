@@ -5,6 +5,7 @@
 /// `docs/ARCHITECTURE.md#engine`.
 library;
 
+export '../adaptive/adaptive_difficulty_policy.dart';
 export 'activity_engine.dart';
 export 'activity_session.dart';
 export 'activity_session_config.dart';
