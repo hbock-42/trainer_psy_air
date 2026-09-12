@@ -1,0 +1,19 @@
+# Android release signing config (US-122).
+#
+# Copy this file to android/key.properties (same directory, gitignored — see
+# the root .gitignore) and fill in the real values. Never commit the real
+# file or the keystore it points to.
+#
+# storeFile is resolved relative to android/app/, so a keystore kept at
+# android/app/upload-keystore.jks is just "upload-keystore.jks" below; an
+# absolute path also works (e.g. for a keystore kept outside the repo).
+#
+# See docs/RELEASE.md for how to generate a keystore (keytool) and for the
+# CI secret names (ANDROID_KEYSTORE_BASE64, ANDROID_KEY_PROPERTIES) that let
+# .github/workflows/release.yml produce a signed release build without this
+# file ever touching the repo.
+
+storeFile=upload-keystore.jks
+storePassword=changeme
+keyAlias=upload
+keyPassword=changeme
