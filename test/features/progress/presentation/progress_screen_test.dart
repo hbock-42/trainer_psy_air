@@ -18,6 +18,7 @@ import 'package:psy_trainer/features/progress/presentation/widgets/weak_areas_pr
 import 'package:psy_trainer/features/train/presentation/train_screen.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
 
+import '../../../helpers/onboarding_fakes.dart';
 import '../../../helpers/pump_app.dart';
 import 'progress_fixtures.dart';
 
@@ -345,6 +346,8 @@ void main() {
 
   group('inside the app', () {
     Future<ProviderContainer> pumpTheApp(WidgetTester tester) async {
+      // The router's guard sends fresh installs to onboarding (US-090).
+      fixture.progress.storedProfile = completedAnswers.applyTo(null);
       final appContainer = ProviderContainer(overrides: fixture.overrides);
       addTearDown(appContainer.dispose);
       await tester.pumpWidget(

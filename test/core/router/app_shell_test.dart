@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:psy_trainer/app.dart';
 import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/repositories/repository_providers.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
 import 'package:psy_trainer/core/router/app_routes.dart';
 import 'package:psy_trainer/core/router/app_shell.dart';
@@ -14,6 +15,9 @@ import 'package:psy_trainer/features/settings/presentation/settings_screen.dart'
 import 'package:psy_trainer/features/train/presentation/train_screen.dart';
 import 'package:psy_trainer/features/train/presentation/train_session_screen.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
+
+import '../../helpers/onboarding_fakes.dart';
+import '../../helpers/psy0_families.dart';
 
 const Size _phone = Size(390, 844);
 const Size _desktop = Size(1280, 800);
@@ -26,7 +30,12 @@ Future<ProviderContainer> pumpShell(
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.reset);
 
-  final ProviderContainer container = ProviderContainer();
+  final ProviderContainer container = ProviderContainer(
+    overrides: [
+      contentRepositoryProvider.overrideWithValue(psy0ContentRepository()),
+      progressRepositoryOverride(),
+    ],
+  );
   addTearDown(container.dispose);
   await tester.pumpWidget(
     UncontrolledProviderScope(
@@ -38,9 +47,15 @@ Future<ProviderContainer> pumpShell(
   return container;
 }
 
-/// The tab pressable labelled [label].
-Finder _tab(String label) =>
-    find.ancestor(of: find.text(label), matching: find.byType(AppPressable));
+/// The tab pressable labelled [label] (scoped to the bar: the Learn home has
+/// "Apprendre" buttons of its own).
+Finder _tab(String label) => find.descendant(
+  of: find.byType(AppTabBar),
+  matching: find.ancestor(
+    of: find.text(label),
+    matching: find.byType(AppPressable),
+  ),
+);
 
 void main() {
   testWidgets('shows five tabs in AppRoutes.tabs order', (tester) async {
@@ -98,6 +113,9 @@ void main() {
 
     expect(find.text(AppStrings.appName), findsOneWidget);
     expect(find.text(AppStrings.disclaimerShort), findsOneWidget);
+    // The full text sits behind the "read the full disclaimer" link (US-040).
+    await tester.tap(find.text(AppStrings.learnDisclaimerExpand));
+    await tester.pumpAndSettle();
     expect(find.text(AppStrings.disclaimerTitle), findsOneWidget);
     expect(find.text(AppStrings.disclaimerParagraph1), findsOneWidget);
     expect(find.text(AppStrings.disclaimerParagraph2), findsOneWidget);
