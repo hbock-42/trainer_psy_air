@@ -4,7 +4,7 @@ issue: 72
 title: "Research and document the PSY2 stage"
 type: story
 epic: EPIC-11
-status: backlog
+status: review
 priority: P2
 size: S
 lane: content
@@ -14,4 +14,4 @@ labels: [research]
 
 # US-110 — Research and document the PSY2 stage
 
-- [ ] `docs/content/psy2-spec.md`: group exercise format, interview themes, evaluation criteria (reported)
+- [x] `docs/content/psy2-spec.md`: group exercise format, interview themes, evaluation criteria (reported)
