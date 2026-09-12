@@ -570,4 +570,11 @@ abstract final class AppStrings {
     StimulusColour.red => 'rouge',
     StimulusColour.yellow => 'jaune',
   };
+
+  // Pair / impair (attention_parity, US-031).
+  static const String attentionParityStartLabel = 'DÉPART';
+  static const String attentionParityEndLabel = 'ARRIVÉE';
+  static String attentionParityNumberSemantics(int value) => 'Nombre $value';
+  static String attentionParityRestartCount(int count) =>
+      count == 1 ? '1 redémarrage' : '$count redémarrages';
 }
