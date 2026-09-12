@@ -545,6 +545,14 @@ abstract final class AppStrings {
       '$correct/$attempts · $percent %';
   static const String examSectionNotReached = 'non atteinte';
 
+  // Arithmetic grid engine (US-023).
+  static const String arithmeticGridValidate = 'Valider';
+  static String arithmeticGridCellSemantics(int index, String label) =>
+      'Égalité $index, $label';
+  static String arithmeticGridCorrectValue(int value) => 'Correct : $value';
+  static const String arithmeticGridExampleCaption =
+      'Touchez les égalités fausses (en rouge) puis Valider. Les autres '
+      'sont justes, ne les touchez pas.';
   // Train home and practice launcher (US-050).
   static const String trainFamiliesSubtitle = 'Choisis une activité';
   static const String trainFamiliesLoading = 'Chargement des activités…';

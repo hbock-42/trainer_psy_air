@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../engines/arithmetic_grid/domain/arithmetic_grid_engine.dart';
+import '../../../engines/arithmetic_grid/presentation/arithmetic_grid_renderer.dart';
 import '../../../engines/attention_parity/domain/attention_parity_engine.dart';
 import '../../../engines/attention_parity/presentation/attention_parity_renderer.dart';
 import '../../domain/engine/engine.dart';
@@ -17,6 +19,9 @@ import 'activity_renderer.dart';
 final Provider<EngineRegistry> engineRegistryProvider =
     Provider<EngineRegistry>(
       (ref) => EngineRegistry(const <ActivityEngine>[
+        // US-021..036: add engines here, one line each (alphabetical by
+        // family id).
+        ArithmeticGridEngine(),
         // US-021..036: add engines here, one line each.
         AttentionParityEngine(),
       ]),
@@ -26,6 +31,9 @@ final Provider<EngineRegistry> engineRegistryProvider =
 final Provider<RendererRegistry> rendererRegistryProvider =
     Provider<RendererRegistry>(
       (ref) => RendererRegistry(const <ActivityRenderer>[
+        // US-021..036: add renderers here, one line each (alphabetical by
+        // family id).
+        ArithmeticGridRenderer(),
         // US-021..036: add renderers here, one line each.
         AttentionParityRenderer(),
       ]),
