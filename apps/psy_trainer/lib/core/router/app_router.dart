@@ -16,6 +16,8 @@ import '../../features/progress/presentation/family_trend_screen.dart';
 import '../../features/progress/presentation/progress_screen.dart';
 import '../../features/settings/presentation/edit_profile_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
+import '../../features/train/domain/engine/activity_session_config.dart';
+import '../../features/train/presentation/launcher/practice_launcher_screen.dart';
 import '../../features/train/presentation/train_screen.dart';
 import '../../features/train/presentation/train_session_screen.dart';
 import 'app_page.dart';
@@ -59,6 +61,7 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
 ///     how-it-works                 (nested: /learn/how-it-works)
 ///     cards                        (nested: /learn/cards, "review today", US-042)
 ///   /train
+///     family/:familyId              (nested: /train/family/:familyId, US-050)
 ///     session/:sessionId            (nested: /train/session/:sessionId)
 ///   /exam
 ///   /progress
@@ -159,8 +162,23 @@ GoRouter createAppRouter({
                 pageBuilder: (context, state) =>
                     _page(state, const TrainScreen()),
                 routes: [
+                  // Practice launcher (US-050): number of items, difficulty,
+                  // timed on/off for one family.
+                  GoRoute(
+                    path: AppRoutes.trainFamilySegment,
+                    pageBuilder: (context, state) => _page(
+                      state,
+                      PracticeLauncherScreen(
+                        familyId:
+                            state.pathParameters[AppRoutes.familyIdParam]!,
+                      ),
+                    ),
+                  ),
                   // Nested route pattern: relative path, pushed inside the
-                  // Train tab's navigator so the tab stays selected.
+                  // Train tab's navigator so the tab stays selected. The
+                  // launcher passes the built `ActivitySessionConfig` as
+                  // `extra` (US-051 replaces this screen with the real
+                  // runner).
                   GoRoute(
                     path: AppRoutes.trainSessionSegment,
                     pageBuilder: (context, state) => _page(
@@ -168,6 +186,7 @@ GoRouter createAppRouter({
                       TrainSessionScreen(
                         sessionId:
                             state.pathParameters[AppRoutes.sessionIdParam]!,
+                        config: state.extra as ActivitySessionConfig?,
                       ),
                     ),
                   ),
