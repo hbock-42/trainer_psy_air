@@ -4,7 +4,7 @@ issue: 66
 title: "Local reminders"
 type: story
 epic: EPIC-09
-status: backlog
+status: review
 priority: P2
 size: S
 lane: misc
@@ -14,5 +14,5 @@ labels: [notifications]
 
 # US-092 — Local reminders
 
-- [ ] Daily training reminder at a chosen time (`flutter_local_notifications`), permission handling
-- [ ] Reminder content adapts: due flashcards, weak area, "exam in N days"
+- [x] Daily training reminder at a chosen time (`flutter_local_notifications`), permission handling
+- [x] Reminder content adapts: due flashcards, weak area, "exam in N days"

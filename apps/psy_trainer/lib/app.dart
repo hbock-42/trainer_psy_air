@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'core/l10n/l10n_extensions.dart';
+import 'core/notifications/reminder_coordinator_provider.dart';
 import 'core/router/app_router.dart';
 import 'core/router/startup_gate.dart';
 import 'core/theme/app_theme.dart';
@@ -23,6 +24,10 @@ class PsyTrainerApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeModeProvider);
+    // (Re)schedules the daily reminder (US-092) once at app start and again
+    // whenever its inputs change; nothing reads the value, only the side
+    // effect matters (see `reminder_coordinator_provider.dart`).
+    ref.watch(reminderCoordinatorProvider);
     return WidgetsApp.router(
       title: 'PSY Trainer',
       color: AppColors.light.background,

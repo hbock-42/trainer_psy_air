@@ -1898,6 +1898,71 @@ class AppLocalizationsFr extends AppLocalizations {
   String get settingsKeypadCalculator => 'Calculatrice';
 
   @override
+  String get settingsSectionReminders => 'Rappels';
+
+  @override
+  String get settingsReminderLabel => 'Rappel quotidien';
+
+  @override
+  String get settingsReminderOn => 'Rappel activé';
+
+  @override
+  String get settingsReminderOff => 'Rappel désactivé';
+
+  @override
+  String get settingsReminderTimeLabel => 'Heure du rappel';
+
+  @override
+  String get settingsReminderHour => 'Heures';
+
+  @override
+  String get settingsReminderMinute => 'Minutes';
+
+  @override
+  String get settingsReminderUnsupported =>
+      'Les rappels ne sont pas disponibles sur cet appareil ; ils fonctionnent sur téléphone (Android/iOS).';
+
+  @override
+  String get settingsReminderPermissionDenied =>
+      'Notifications refusées : active-les dans les réglages du système pour recevoir le rappel.';
+
+  @override
+  String get reminderNotificationTitle => 'PSY Trainer';
+
+  @override
+  String reminderFlashcardsDue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cartes à réviser',
+      one: '1 carte à réviser',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String reminderWeakestFamily(String family) {
+    return 'Point faible : $family';
+  }
+
+  @override
+  String get reminderExamToday => 'L\'examen est aujourd\'hui';
+
+  @override
+  String reminderExamCountdown(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'Examen dans $days jours',
+      one: 'Examen dans 1 jour',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reminderFallback => 'Un peu d\'entraînement aujourd\'hui ?';
+
+  @override
   String get settingsSectionData => 'Données';
 
   @override
