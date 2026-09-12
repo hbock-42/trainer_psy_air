@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/exam/presentation/exam_screen.dart';
 import '../../features/learn/presentation/family_screen.dart';
+import '../../features/learn/presentation/flashcards/flashcards_screen.dart';
 import '../../features/learn/presentation/how_it_works_screen.dart';
 import '../../features/learn/presentation/learn_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
@@ -52,7 +53,9 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
 /// StatefulShellRoute.indexedStack   (AppShell; one branch per tab)
 ///   /learn
 ///     family/:familyId             (nested: /learn/family/:familyId)
+///       cards                      (nested: /learn/family/:familyId/cards, US-042)
 ///     how-it-works                 (nested: /learn/how-it-works)
+///     cards                        (nested: /learn/cards, "review today", US-042)
 ///   /train
 ///     session/:sessionId            (nested: /train/session/:sessionId)
 ///   /exam
@@ -108,11 +111,28 @@ GoRouter createAppRouter({
                             state.pathParameters[AppRoutes.familyIdParam]!,
                       ),
                     ),
+                    routes: [
+                      GoRoute(
+                        path: AppRoutes.learnFamilyCardsSegment,
+                        pageBuilder: (context, state) => _page(
+                          state,
+                          FlashcardsScreen(
+                            familyId:
+                                state.pathParameters[AppRoutes.familyIdParam]!,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   GoRoute(
                     path: AppRoutes.learnHowItWorksSegment,
                     pageBuilder: (context, state) =>
                         _page(state, const HowItWorksScreen()),
+                  ),
+                  GoRoute(
+                    path: AppRoutes.learnCardsSegment,
+                    pageBuilder: (context, state) =>
+                        _page(state, const FlashcardsScreen()),
                   ),
                 ],
               ),

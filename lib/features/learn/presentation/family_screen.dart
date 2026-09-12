@@ -11,6 +11,7 @@ import 'learn_screen.dart';
 import 'providers/family_lessons_provider.dart';
 import 'providers/family_mastery_provider.dart';
 import 'providers/family_provider.dart';
+import 'providers/flashcards_queue_provider.dart';
 import 'widgets/confidence_chip.dart';
 
 /// Family page (`/learn/family/:familyId`): what the activity evaluates, its
@@ -67,6 +68,11 @@ class _FamilyBody extends ConsumerWidget {
     final theme = AppTheme.of(context);
     final lessons = ref.watch(familyLessonsProvider(family.id));
     final mastery = ref.watch(familyMasteryProvider(family.id));
+    final hasDeck = ref.watch(
+      flashcardsQueueProvider(
+        family.id,
+      ).select((a) => (a.value?.total ?? 0) > 0),
+    );
     final masteryText = switch (mastery) {
       AsyncData(:final value?) => AppStrings.masteryPercent(value),
       _ => AppStrings.familyMasteryUnknown,
@@ -117,7 +123,12 @@ class _FamilyBody extends ConsumerWidget {
                 icon: AppIconGlyph.target,
                 onPressed: () => context.go(AppRoutes.train),
               ),
-              const SecondaryButton(label: AppStrings.familyActionCards),
+              SecondaryButton(
+                label: AppStrings.familyActionCards,
+                onPressed: hasDeck
+                    ? () => context.push(AppRoutes.learnFamilyCards(family.id))
+                    : null,
+              ),
             ],
           ),
           SizedBox(height: theme.spacing.xl),
