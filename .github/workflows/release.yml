@@ -1,0 +1,157 @@
+name: Release
+
+# US-122: builds release artifacts and drafts a GitHub Release when a
+# `v*` tag is pushed (e.g. `v1.0.0+1`, matching apps/psy_trainer/pubspec.yaml
+# via tools/bump_version.dart). Does not run `check` from ci.yml again —
+# tag pushes are expected to come from a commit that already passed CI on
+# main; this workflow only builds and packages.
+#
+# Android: builds a signed release APK/AAB when the ANDROID_KEYSTORE_BASE64
+# and ANDROID_KEY_PROPERTIES repo secrets are both set, otherwise falls back
+# to an unsigned release build (android/app/build.gradle.kts uses the debug
+# signing config when android/key.properties is absent). See docs/RELEASE.md
+# for the secret format and how to generate them.
+#
+# iOS/TestFlight: no Apple Developer secrets exist for this project, so
+# there is no iOS job here. docs/RELEASE.md documents the manual Xcode
+# archive + TestFlight upload using apps/psy_trainer/ios/ExportOptions.plist.example.
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+env:
+  FLUTTER_VERSION: 3.41.6
+
+jobs:
+  build-android:
+    name: build-android
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+          pub-cache-key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
+
+      - name: Fetch packages (whole workspace)
+        run: dart pub get
+
+      - name: Code generation
+        run: dart run build_runner build --delete-conflicting-outputs
+        working-directory: apps/psy_trainer
+
+      # Present only when both ANDROID_KEYSTORE_BASE64 and
+      # ANDROID_KEY_PROPERTIES repo secrets are configured (Settings ->
+      # Secrets and variables -> Actions). See docs/RELEASE.md for how to
+      # produce both from a local keystore + key.properties.
+      - name: Restore signing config
+        if: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' && secrets.ANDROID_KEY_PROPERTIES != '' }}
+        working-directory: apps/psy_trainer/android
+        run: |
+          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > app/upload-keystore.jks
+          cat > key.properties <<'EOF'
+          ${{ secrets.ANDROID_KEY_PROPERTIES }}
+          EOF
+
+      - name: Build release APK
+        run: flutter build apk --release
+        working-directory: apps/psy_trainer
+
+      - name: Build release App Bundle
+        run: flutter build appbundle --release
+        working-directory: apps/psy_trainer
+
+      - name: Remove signing config
+        if: always()
+        working-directory: apps/psy_trainer/android
+        run: rm -f key.properties app/upload-keystore.jks
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-apk
+          path: apps/psy_trainer/build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 90
+
+      - name: Upload App Bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-aab
+          path: apps/psy_trainer/build/app/outputs/bundle/release/app-release.aab
+          retention-days: 90
+
+  build-web:
+    name: build-web
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+          pub-cache-key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
+
+      - name: Fetch packages (whole workspace)
+        run: dart pub get
+
+      - name: Code generation
+        run: dart run build_runner build --delete-conflicting-outputs
+        working-directory: apps/psy_trainer
+
+      - name: Build web (release)
+        run: flutter build web --release
+        working-directory: apps/psy_trainer
+
+      - name: Archive web build
+        run: tar -czf web-release.tar.gz -C apps/psy_trainer/build/web .
+
+      - name: Upload web build
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-release
+          path: web-release.tar.gz
+          retention-days: 90
+
+  draft-release:
+    name: draft-release
+    needs: [build-android, build-web]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create draft GitHub Release with artifacts
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          name: ${{ github.ref_name }}
+          generate_release_notes: true
+          files: |
+            artifacts/app-release-apk/app-release.apk
+            artifacts/app-release-aab/app-release.aab
+            artifacts/web-release/web-release.tar.gz

@@ -828,3 +828,7 @@ build), and `main` is protected so that `check` must be green to merge. A debug 
 (`apps/psy_trainer`) and uploaded as an artifact on pushes to `main` and on PRs labelled
 `build`. Coverage is gated with `make coverage` (see `docs/TESTING.md`). Format with `dart
 format .` in each member (or `melos run format` / `make format` from the root).
+
+Release builds are a separate workflow (US-122, `.github/workflows/release.yml`) triggered by
+pushing a `v*` tag rather than by `check` — see `docs/RELEASE.md` for the version bump script,
+Android signing, and the manual Play/TestFlight steps.

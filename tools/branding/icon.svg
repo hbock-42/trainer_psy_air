@@ -1,0 +1,43 @@
+<!--
+  PSY Trainer app icon — source of truth (US-122).
+
+  Deep-blue background (#0B1D3A, the app's `textPrimary` / dark `background`
+  design token, see apps/psy_trainer/lib/core/theme/app_colors.dart) with a
+  stylised aircraft climbing through a target ring in the app's accent
+  orange (#E08A1E) — cadet selection ("target") plus the aircraft the
+  Air France PSY0 test is training towards.
+
+  This file is the readable reference. `generate_icon.dart` in this folder
+  draws the same shapes with package:image (no SVG rasteriser is available
+  in CI/sandboxes) and writes tools/branding/out/icon_1024.png, which is
+  the actual input to flutter_launcher_icons / flutter_native_splash.
+  Keep the two in sync by hand if you change the design.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <rect width="1024" height="1024" fill="#0B1D3A"/>
+  <circle cx="512" cy="512" r="360" fill="none" stroke="#E08A1E" stroke-width="28"/>
+  <circle cx="512" cy="512" r="250" fill="none" stroke="#E08A1E" stroke-width="16" opacity="0.55"/>
+  <!-- Aircraft silhouette: fuselage + swept wings + tail, nose pointing up-right (climbing). -->
+  <g fill="#F5F7FA">
+    <polygon points="
+      512,180
+      560,330
+      560,520
+      760,660
+      760,720
+      562,650
+      548,800
+      610,860
+      610,900
+      512,868
+      414,900
+      414,860
+      476,800
+      462,650
+      264,720
+      264,660
+      464,520
+      464,330
+    "/>
+  </g>
+</svg>
