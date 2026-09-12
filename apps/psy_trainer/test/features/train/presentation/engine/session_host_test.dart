@@ -43,9 +43,14 @@ void main() {
     WidgetTester tester,
     ActivitySessionRequest request, {
     FakeRenderer renderer = const FakeRenderer(),
+    TimingDisplay timingDisplay = TimingDisplay.visible,
   }) => pumpApp(
     tester,
-    SessionHost(request: request, onFinished: finished.add),
+    SessionHost(
+      request: request,
+      onFinished: finished.add,
+      timingDisplay: timingDisplay,
+    ),
     overrides: [
       progressRepositoryProvider.overrideWithValue(repo),
       engineRegistryProvider.overrideWithValue(EngineRegistry([FakeEngine()])),
@@ -249,5 +254,79 @@ void main() {
       find.byKey(SessionHost.itemTimerKey),
     );
     expect(bar.showLabel, isFalse);
+  });
+
+  group('US-063 TimingDisplay', () {
+    testWidgets('hidden never shows the countdown bars, however much time '
+        'is left', (tester) async {
+      await pumpHost(
+        tester,
+        ActivitySessionRequest.fresh(
+          config(
+            mode: SessionMode.exam,
+            timing: const TimingPolicy(perItemMs: 10000, sectionMs: 60000),
+          ),
+        ),
+        timingDisplay: TimingDisplay.hidden,
+      );
+      await tester.tap(find.byKey(SessionHost.startKey));
+      await tester.pump();
+      expect(find.byKey(SessionHost.itemTimerKey), findsNothing);
+      expect(find.byKey(SessionHost.sectionTimerKey), findsNothing);
+
+      clock.elapse(const Duration(seconds: 9));
+      await tester.pump(const Duration(milliseconds: 100));
+      expect(find.byKey(SessionHost.itemTimerKey), findsNothing);
+      expect(find.byKey(SessionHost.sectionTimerKey), findsNothing);
+    });
+
+    testWidgets(
+      'hiddenUntilLastMinute hides the bars until under a minute is left, '
+      'then shows them',
+      (tester) async {
+        await pumpHost(
+          tester,
+          ActivitySessionRequest.fresh(
+            config(
+              mode: SessionMode.exam,
+              timing: const TimingPolicy(perItemMs: 90000),
+            ),
+          ),
+          timingDisplay: TimingDisplay.hiddenUntilLastMinute,
+        );
+        await tester.tap(find.byKey(SessionHost.startKey));
+        await tester.pump();
+        expect(find.byKey(SessionHost.itemTimerKey), findsNothing);
+
+        // 70 s left on a 90 s limit: still over a minute, still hidden.
+        clock.elapse(const Duration(seconds: 20));
+        await tester.pump(const Duration(milliseconds: 100));
+        expect(find.byKey(SessionHost.itemTimerKey), findsNothing);
+
+        // 30 s left: under a minute, now shown.
+        clock.elapse(const Duration(seconds: 40));
+        await tester.pump(const Duration(milliseconds: 100));
+        expect(find.byKey(SessionHost.itemTimerKey), findsOneWidget);
+        final bar = tester.widget<CountdownTimerBar>(
+          find.byKey(SessionHost.itemTimerKey),
+        );
+        expect(bar.remaining, const Duration(seconds: 30));
+      },
+    );
+
+    testWidgets('visible (the default) always shows the bars', (tester) async {
+      await pumpHost(
+        tester,
+        ActivitySessionRequest.fresh(
+          config(
+            mode: SessionMode.exam,
+            timing: const TimingPolicy(perItemMs: 90000),
+          ),
+        ),
+      );
+      await tester.tap(find.byKey(SessionHost.startKey));
+      await tester.pump();
+      expect(find.byKey(SessionHost.itemTimerKey), findsOneWidget);
+    });
   });
 }

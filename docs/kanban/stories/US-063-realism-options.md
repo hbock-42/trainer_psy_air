@@ -4,7 +4,7 @@ issue: 48
 title: "Realism options"
 type: story
 epic: EPIC-06
-status: backlog
+status: review
 priority: P2
 size: S
 lane: exam-ui
@@ -15,6 +15,6 @@ labels: [exam]
 # US-063 — Realism options
 
 From spec §4.2-10:
-- [ ] Negative marking + "Je ne sais pas" on culture (+3/−1/0), hide timer in English, randomise shapes/colours/keys of rule-based activities, allow/deny pause between sections
-- [ ] Hide remaining time (show only at 1 min left), full-screen immersive, orientation lock, sound cues toggle
-- [ ] "Real conditions" preset in the exam launcher; "desktop only" warning for keyboard activities on touch devices
+- [x] Negative marking + "Je ne sais pas" on culture (+3/−1/0), hide timer in English, randomise shapes/colours/keys of rule-based activities, allow/deny pause between sections
+- [x] Hide remaining time (show only at 1 min left), full-screen immersive, orientation lock, sound cues toggle
+- [x] "Real conditions" preset in the exam launcher; "desktop only" warning for keyboard activities on touch devices

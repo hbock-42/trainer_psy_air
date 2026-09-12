@@ -2,11 +2,24 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
+import 'package:psy_trainer/features/exam/domain/exam_realism_options.dart';
 import 'package:psy_trainer/features/exam/presentation/exam_run_controller.dart';
 import 'package:psy_trainer/features/exam/presentation/exam_run_state.dart';
+import 'package:psy_trainer/features/exam/presentation/providers/exam_realism_options_provider.dart';
 import 'package:psy_trainer/features/train/presentation/engine/engine_ui.dart';
 
 import '../../../helpers/fake_engine.dart';
+
+/// Fixes `examRealismOptionsProvider` at [options] without touching the
+/// repository, so a test can control the realism panel deterministically.
+class _FixedRealismOptions extends ExamRealismOptionsController {
+  _FixedRealismOptions(this._options);
+
+  final ExamRealismOptions _options;
+
+  @override
+  ExamRealismOptions build() => _options;
+}
 
 extension on ActivitySessionRequest {
   ActivitySessionConfig get config => switch (this) {
@@ -65,6 +78,7 @@ void main() {
   ProviderContainer buildContainer(
     ExamBlueprint blueprint, {
     List<ActivityEngine>? engineList,
+    ExamRealismOptions realism = ExamRealismOptions.defaults,
   }) {
     clock = ManualClock(start);
     progress = InMemoryProgressRepository(clock: clock.now);
@@ -84,6 +98,9 @@ void main() {
           ),
         ),
         engineClockProvider.overrideWithValue(clock),
+        examRealismOptionsProvider.overrideWith(
+          () => _FixedRealismOptions(realism),
+        ),
       ],
     );
   }
@@ -388,5 +405,59 @@ void main() {
       SessionStatus.abandoned,
     );
     expect(progress.sessionsById.length, 2);
+  });
+
+  group('US-063 allowPauseBetweenSections', () {
+    ExamBlueprint twoSections({int breakAfterSec = 5}) => _blueprint([
+      _section(
+        id: 's0',
+        familyId: 'fam_a',
+        generatorId: GeneratorId.dominos,
+        breakAfterSec: breakAfterSec,
+      ),
+      _section(id: 's1', familyId: 'fam_b', generatorId: GeneratorId.tubes),
+    ]);
+
+    test('on (default): "Continuer" ends the break early, before '
+        'breakAfterSec elapses', () async {
+      final blueprint = twoSections();
+      container = buildContainer(blueprint);
+      final provider = examRunControllerProvider(blueprint.id);
+      container.listen(provider, (_, _) {}, fireImmediately: true);
+      await _pump();
+
+      await completeRunningSection(blueprint.id);
+      expect(container.read(provider), isA<ExamRunOnBreak>());
+      final controller = container.read(provider.notifier);
+      expect(controller.allowsSkippingBreak, isTrue);
+
+      controller.skipBreak();
+      expect(container.read(provider), isA<ExamRunRunning>());
+    });
+
+    test('off: skipBreak is a no-op, only the auto-continue timer advances '
+        'the exam', () async {
+      final blueprint = twoSections();
+      container = buildContainer(
+        blueprint,
+        realism: const ExamRealismOptions(allowPauseBetweenSections: false),
+      );
+      final provider = examRunControllerProvider(blueprint.id);
+      container.listen(provider, (_, _) {}, fireImmediately: true);
+      await _pump();
+
+      await completeRunningSection(blueprint.id);
+      expect(container.read(provider), isA<ExamRunOnBreak>());
+      final controller = container.read(provider.notifier);
+      expect(controller.allowsSkippingBreak, isFalse);
+
+      // "Continuer" (or a stray key event reaching it) has no effect.
+      controller.skipBreak();
+      expect(container.read(provider), isA<ExamRunOnBreak>());
+
+      // The break still auto-continues after breakAfterSec.
+      clock.elapse(const Duration(seconds: 5));
+      expect(container.read(provider), isA<ExamRunRunning>());
+    });
   });
 }
