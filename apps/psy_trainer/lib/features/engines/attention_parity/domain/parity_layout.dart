@@ -179,7 +179,9 @@ class ParityLayout {
         margin + random.nextDouble() * span,
         margin + random.nextDouble() * span,
       );
-      final farEnough = points.every((p) => _distance(p, candidate) >= effective);
+      final farEnough = points.every(
+        (p) => _distance(p, candidate) >= effective,
+      );
       if (farEnough) {
         points.add(candidate);
         attempts = 0;

@@ -33,7 +33,6 @@ void main() {
       seed: 123,
       params: params,
       count: 1,
-      difficulty: DifficultyRange(min: 3, max: 3),
     ),
   );
 

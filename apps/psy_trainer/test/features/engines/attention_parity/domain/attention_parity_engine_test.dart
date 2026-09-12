@@ -18,7 +18,10 @@ void main() {
     expect(a, isA<GeneratedItem>());
     expect(a, b);
     expect((a as GeneratedItem).id, 'gen.parity_sequence.5');
-    expect(a.origin, ItemOrigin(generatorId: GeneratorId.paritySequence, seed: 5));
+    expect(
+      a.origin,
+      const ItemOrigin(generatorId: GeneratorId.paritySequence, seed: 5),
+    );
   });
 
   group('score', () {
@@ -35,22 +38,33 @@ void main() {
     test('the exact expected path is correct', () {
       final result = engine.score(
         item,
-        Answer.raw({'path': expectedPath, 'restarts': 0, 'totalTaps': expectedPath.length}),
+        Answer.raw({
+          'path': expectedPath,
+          'restarts': 0,
+          'totalTaps': expectedPath.length,
+        }),
       );
       expect(result.correct, isTrue);
       expect(result.metrics['restarts'], 0);
       expect(result.metrics['totalTaps'], expectedPath.length);
     });
 
-    test('restarts and totalTaps are carried into the metrics even when correct', () {
-      final result = engine.score(
-        item,
-        Answer.raw({'path': expectedPath, 'restarts': 3, 'totalTaps': expectedPath.length + 6}),
-      );
-      expect(result.correct, isTrue);
-      expect(result.metrics['restarts'], 3);
-      expect(result.metrics['totalTaps'], expectedPath.length + 6);
-    });
+    test(
+      'restarts and totalTaps are carried into the metrics even when correct',
+      () {
+        final result = engine.score(
+          item,
+          Answer.raw({
+            'path': expectedPath,
+            'restarts': 3,
+            'totalTaps': expectedPath.length + 6,
+          }),
+        );
+        expect(result.correct, isTrue);
+        expect(result.metrics['restarts'], 3);
+        expect(result.metrics['totalTaps'], expectedPath.length + 6);
+      },
+    );
 
     test('a reordered path is wrong', () {
       final shuffled = expectedPath.reversed.toList();

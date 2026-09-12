@@ -11,61 +11,58 @@ void main() {
       ParityLayout.build(params: params, seed: seed, difficulty: difficulty);
 
   group('determinism', () {
-    test('the same (params, seed, difficulty) always yields the same layout', () {
-      final a = build(seed: 42, difficulty: 4);
-      final b = build(seed: 42, difficulty: 4);
-      expect(a.path, b.path);
-      expect(a.numbers, b.numbers);
-    });
+    test(
+      'the same (params, seed, difficulty) always yields the same layout',
+      () {
+        final a = build(seed: 42, difficulty: 4);
+        final b = build(seed: 42, difficulty: 4);
+        expect(a.path, b.path);
+        expect(a.numbers, b.numbers);
+      },
+    );
 
     test('a different seed yields a different path', () {
-      final a = build(seed: 1);
+      final a = build();
       final b = build(seed: 2);
       expect(a.path, isNot(b.path));
     });
   });
 
   group('the path', () {
-    test(
-      'each category stays ascending, and once alternation breaks (one '
-      'category exhausted) every later step shares that same parity',
-      () {
-        for (var seed = 0; seed < 200; seed++) {
-          final layout = build(seed: seed, difficulty: seed % 5 + 1);
-          final path = layout.path;
-          final evens = path.where((v) => v.isEven).toList();
-          final odds = path.where((v) => v.isOdd).toList();
-          expect(evens, orderedEquals([...evens]..sort()), reason: 'seed $seed');
-          expect(odds, orderedEquals([...odds]..sort()), reason: 'seed $seed');
+    test('each category stays ascending, and once alternation breaks (one '
+        'category exhausted) every later step shares that same parity', () {
+      for (var seed = 0; seed < 200; seed++) {
+        final layout = build(seed: seed, difficulty: seed % 5 + 1);
+        final path = layout.path;
+        final evens = path.where((v) => v.isEven).toList();
+        final odds = path.where((v) => v.isOdd).toList();
+        expect(evens, orderedEquals([...evens]..sort()), reason: 'seed $seed');
+        expect(odds, orderedEquals([...odds]..sort()), reason: 'seed $seed');
 
-          var brokenAt = -1;
-          for (var i = 1; i < path.length; i++) {
-            if (path[i].isEven == path[i - 1].isEven) {
-              brokenAt = i;
-              break;
-            }
-          }
-          if (brokenAt != -1) {
-            final tailParity = path[brokenAt].isEven;
-            for (var i = brokenAt; i < path.length; i++) {
-              expect(
-                path[i].isEven,
-                tailParity,
-                reason: 'seed $seed: tail must stay same-parity once broken',
-              );
-            }
+        var brokenAt = -1;
+        for (var i = 1; i < path.length; i++) {
+          if (path[i].isEven == path[i - 1].isEven) {
+            brokenAt = i;
+            break;
           }
         }
-      },
-    );
+        if (brokenAt != -1) {
+          final tailParity = path[brokenAt].isEven;
+          for (var i = brokenAt; i < path.length; i++) {
+            expect(
+              path[i].isEven,
+              tailParity,
+              reason: 'seed $seed: tail must stay same-parity once broken',
+            );
+          }
+        }
+      }
+    });
 
     test('every path value is unique and matches the bubble set', () {
       final layout = build(seed: 7);
       expect(layout.path.toSet(), hasLength(layout.path.length));
-      expect(
-        layout.numbers.map((n) => n.value).toSet(),
-        layout.path.toSet(),
-      );
+      expect(layout.numbers.map((n) => n.value).toSet(), layout.path.toSet());
     });
 
     test('start is the lowest number and end is the last of the path', () {
@@ -110,7 +107,8 @@ void main() {
             expect(
               distance,
               greaterThanOrEqualTo(ParityLayout.minSeparation - 1e-9),
-              reason: 'seed $seed, bubbles ${numbers[i].value}/${numbers[j].value}',
+              reason:
+                  'seed $seed, bubbles ${numbers[i].value}/${numbers[j].value}',
             );
           }
         }
