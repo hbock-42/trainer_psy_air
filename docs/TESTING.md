@@ -17,7 +17,7 @@ everything.
 | **Unit** | `domain/` state machines, test generators, scoring, blueprints, repository interfaces; pure Dart, no Flutter | `test/features/<feature>/domain/` | `flutter_test` (`test()`), `fake_async` for time |
 | **DAO / data** | Drift DAOs and repository implementations against an **in-memory** database; JSON loaders and mappers against fixture files | `test/features/<feature>/data/`, `test/core/db/` | `NativeDatabase.memory()` from `drift/native.dart` |
 | **Widget** | `presentation/` screens and `shared/` widgets: rendering, interaction, provider wiring, goldens for key screens | `test/features/<feature>/presentation/`, `test/shared/` | `testWidgets` + `pumpApp` helper, goldens via `golden_config.dart` |
-| **Integration** | End-to-end flows on a device/emulator: run a practice session, sit an exam, see the summary | `integration_test/` (US-121) | `integration_test` package |
+| **Integration** | End-to-end flows over the real seeded content and engines: onboarding, a lesson, a practice drill, an exam simulation and its report, the dashboard, a setting | `integration_test/` (US-121) | `integration_test` package, `IntegrationTestWidgetsFlutterBinding` |
 | **Architecture** | Rules about the codebase itself (no Material/Cupertino, layer dependencies) | `test/architecture/` | plain `test()` scanning `lib/` |
 
 Most tests should be unit tests: the engines and state machines are where the product risk
@@ -38,7 +38,7 @@ test/
   fixtures/                           # shared data files (JSON content samples, lcov...)
   goldens/                            # committed golden PNGs
   tool/                               # tests for scripts under tool/
-integration_test/                     # device-driven flow tests (US-121)
+integration_test/                     # end-to-end flow test (US-121)
 ```
 
 - A test file mirrors the path of the file it covers and is named `<file>_test.dart`
@@ -61,13 +61,52 @@ integration_test/                     # device-driven flow tests (US-121)
 make test            # flutter test
 make test-watch      # re-run on change (needs entr or fswatch)
 make coverage        # flutter test --coverage + coverage gate (see below)
+make integration     # flutter test integration_test -d flutter-tester (see below)
 flutter test test/features/train              # one folder
 flutter test --name 'advances to'             # by test name
 flutter test --update-goldens test/app_golden_test.dart   # regenerate goldens
 ```
 
 `make lint` and `make test` must be green before opening a PR; CI runs them plus
-`make coverage`.
+`make coverage` and `make integration` (a separate `integration` job, see below).
+
+## Integration test
+
+`integration_test/app_flows_test.dart` (US-121) is the one end-to-end test: fresh install ->
+onboarding (accept the disclaimer, skip the exam date, keep PSY0) -> Learn (every seeded PSY0
+family, a lesson marked read) -> Train (Quick 5 on `arithmetic_grid`, answered through its real
+grid UI) -> Exam (the `psy0.blueprint.short` blueprint run section by section) -> its report ->
+the Progress dashboard (readiness, recent activity) -> Settings (switch the language to English,
+a label changes).
+
+Unlike every other layer above, it runs over the **real** seeded content and the **real**
+engines, not fakes:
+
+- `contentReadyProvider` seeds for real, from the actual `assets/content/` bundle on disk
+  (`FileAssetReader`, see `test/helpers/file_asset_reader.dart` — the same reader
+  `content_seeder_test.dart` / `content_ready_provider_test.dart` use — not `rootBundle`, which
+  `flutter test` does not reliably serve) into a fresh `AppDatabase(openInMemoryExecutor())`
+  (`appDatabaseProvider` overridden with that instance; `contentRepositoryProvider` and
+  `progressRepositoryProvider` are left at their real Drift-backed bindings).
+- `engineRegistryProvider` / `rendererRegistryProvider` are left at their real bindings too: the
+  test drives the real `arithmetic_grid` renderer and every engine the `psy0_short` blueprint's
+  nine sections use.
+- Only `engineClockProvider` is overridden, with a `ManualClock` the test elapses by hand so
+  cadences, per-item limits and section timeouts resolve immediately instead of over real
+  wall-clock minutes (see "Testing time" below); the exam is driven by a small state machine that
+  taps "Start"/"Next" as they appear and otherwise elapses the clock, so it needs no per-family
+  knowledge of which sections are cadence-driven, timed or untimed.
+
+Assertions are on structure read back from the seeded content (family/section counts, item
+counts) rather than hard-coded numbers, so a content edit does not make this test flaky.
+
+Runs headlessly, no device or emulator: `flutter_tester` (`-d flutter-tester`), the same
+windowless host Flutter uses to run plain `flutter test` — this app has no platform channel
+besides the asset bundle, which the test bypasses with `FileAssetReader` anyway, so a real
+Linux/Chrome/Android target buys nothing over the same assertions for a heavier, more brittle CI
+job. `make integration` runs it locally; CI runs the identical command in the `integration` job
+(`.github/workflows/ci.yml`, `needs: check`, not gated behind the `build` label). Avoid
+`flutter test integration_test -d macos` locally: with a real device flag it opens a window.
 
 ## Coverage gate
 

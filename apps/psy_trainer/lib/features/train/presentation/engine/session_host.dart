@@ -266,23 +266,33 @@ class _Running extends ConsumerWidget {
             ),
           ],
           SizedBox(height: theme.spacing.lg),
-          Row(
+          // Three buttons and their localized labels do not always fit one
+          // row on narrow phones (or wider platform fonts): wrap instead of
+          // overflowing, keeping "next" on the trailing edge.
+          Wrap(
+            spacing: theme.spacing.sm,
+            runSpacing: theme.spacing.sm,
+            alignment: WrapAlignment.spaceBetween,
+            crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              SecondaryButton(
-                key: SessionHost.quitKey,
-                label: context.l10n.sessionQuit,
-                onPressed: controller.abort,
+              Wrap(
+                spacing: theme.spacing.sm,
+                runSpacing: theme.spacing.sm,
+                children: [
+                  SecondaryButton(
+                    key: SessionHost.quitKey,
+                    label: context.l10n.sessionQuit,
+                    onPressed: controller.abort,
+                  ),
+                  if (config.canPause)
+                    SecondaryButton(
+                      key: SessionHost.pauseKey,
+                      label: context.l10n.sessionPause,
+                      icon: AppIconGlyph.pause,
+                      onPressed: controller.pause,
+                    ),
+                ],
               ),
-              if (config.canPause) ...[
-                SizedBox(width: theme.spacing.sm),
-                SecondaryButton(
-                  key: SessionHost.pauseKey,
-                  label: context.l10n.sessionPause,
-                  icon: AppIconGlyph.pause,
-                  onPressed: controller.pause,
-                ),
-              ],
-              const Spacer(),
               if (running.awaitsNext)
                 PrimaryButton(
                   key: SessionHost.nextKey,
