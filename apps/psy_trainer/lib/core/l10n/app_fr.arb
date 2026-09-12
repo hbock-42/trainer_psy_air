@@ -1454,5 +1454,38 @@
   "multitaskExampleTracking": "Maintenez la flèche du clavier dans la direction où se déplace le cercle.",
   "multitaskExampleShape": "Appuyez sur Espace quand la forme dans le cercle est identique à la forme de référence (en haut à gauche).",
   "multitaskExampleCalc": "Appuyez sur F quand le calcul encadré, en bas, est faux.",
+  "p1AnglesExampleCaption": "Parmi les valeurs proposées, touchez celles qui correspondent à un angle dessiné (A, B...), puis Valider.",
+  "p1AnglesCandidateSemantics": "Valeur {index}, {value} degrés",
+  "@p1AnglesCandidateSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "mentalArithmeticAllIntervalsPrompt": "Sélectionnez tous les intervalles qui contiennent la valeur exacte.",
+  "mentalArithmeticTrueValue": "Valeur exacte : {value}",
+  "@mentalArithmeticTrueValue": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "mentalArithmeticIntervalSemantics": "Intervalle {index}, {label}",
+  "@mentalArithmeticIntervalSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "mentalArithmeticAllIntervalsExampleCaption": "Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider.",
   "p1CountersExampleCaption": "Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée."
 }
