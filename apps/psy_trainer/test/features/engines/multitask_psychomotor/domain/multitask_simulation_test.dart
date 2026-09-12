@@ -6,7 +6,11 @@ void main() {
   const params = MultitaskParams(durationSec: 20);
 
   MultitaskSimulation build({int seed = 1, int difficulty = 3}) =>
-      MultitaskSimulation.build(seed: seed, params: params, difficulty: difficulty);
+      MultitaskSimulation.build(
+        seed: seed,
+        params: params,
+        difficulty: difficulty,
+      );
 
   group('determinism', () {
     test('same (seed, params, difficulty) yields the exact same timeline', () {
@@ -39,7 +43,7 @@ void main() {
     });
 
     test('a different seed yields a different timeline', () {
-      final a = build(seed: 1);
+      final a = build();
       final b = build(seed: 2);
       final differs =
           a.referenceShape != b.referenceShape ||
@@ -103,7 +107,7 @@ void main() {
         'long run', () {
       final sim = MultitaskSimulation.build(
         seed: 7,
-        params: const MultitaskParams(durationSec: 3000, shapeTargetRatio: 0.3),
+        params: const MultitaskParams(durationSec: 3000),
         difficulty: 3,
       );
       final targets = sim.shapeEvents.where((e) => e.isTarget).length;
@@ -111,16 +115,19 @@ void main() {
       expect(ratio, closeTo(0.3, 0.1));
     });
 
-    test('calc wrong ratio is roughly params.calcWrongRatio over a long run', () {
-      final sim = MultitaskSimulation.build(
-        seed: 7,
-        params: const MultitaskParams(durationSec: 3000, calcWrongRatio: 0.4),
-        difficulty: 3,
-      );
-      final wrong = sim.calcEvents.where((e) => e.isWrong).length;
-      final ratio = wrong / sim.calcEvents.length;
-      expect(ratio, closeTo(0.4, 0.1));
-    });
+    test(
+      'calc wrong ratio is roughly params.calcWrongRatio over a long run',
+      () {
+        final sim = MultitaskSimulation.build(
+          seed: 7,
+          params: const MultitaskParams(durationSec: 3000),
+          difficulty: 3,
+        );
+        final wrong = sim.calcEvents.where((e) => e.isWrong).length;
+        final ratio = wrong / sim.calcEvents.length;
+        expect(ratio, closeTo(0.4, 0.1));
+      },
+    );
 
     test('a wrong calc event shows a different result than the real one', () {
       final sim = build();

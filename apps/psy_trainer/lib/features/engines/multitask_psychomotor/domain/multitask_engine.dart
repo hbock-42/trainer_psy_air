@@ -42,7 +42,11 @@ class MultitaskEngine extends ActivityEngine {
     final typed = params as MultitaskParams;
     // Built once so a malformed recipe (e.g. a 0 s run) fails fast instead
     // of surfacing only when the renderer starts.
-    MultitaskSimulation.build(seed: seed, params: typed, difficulty: difficulty);
+    MultitaskSimulation.build(
+      seed: seed,
+      params: typed,
+      difficulty: difficulty,
+    );
     return GeneratedItem(
       id: ActivityEngine.generatedItemId(GeneratorId.multitask, seed),
       version: 1,

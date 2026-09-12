@@ -67,7 +67,8 @@ class MultitaskMetrics {
   /// happened (no target shapes and no false alarms, which cannot happen
   /// with `shapeTargetRatio > 0` over a real run, but keeps the metric
   /// defined for a degenerate/test one).
-  double get shapeAccuracy => _accuracy(shapeHits, shapeMisses, shapeFalseAlarms);
+  double get shapeAccuracy =>
+      _accuracy(shapeHits, shapeMisses, shapeFalseAlarms);
 
   double get calcAccuracy => _accuracy(calcHits, calcMisses, calcFalseAlarms);
 
@@ -195,13 +196,20 @@ abstract final class MultitaskScoring {
   ) {
     final boundaries = <int>{0, simulation.durationMs};
     for (final segment in simulation.directions) {
-      boundaries..add(segment.startMs)..add(segment.endMs);
+      boundaries
+        ..add(segment.startMs)
+        ..add(segment.endMs);
     }
     for (final held in heldIntervals) {
-      boundaries..add(held.startMs)..add(held.endMs);
+      boundaries
+        ..add(held.startMs)
+        ..add(held.endMs);
     }
-    final sorted = boundaries.where((ms) => ms >= 0 && ms <= simulation.durationMs).toList()
-      ..sort();
+    final sorted =
+        boundaries
+            .where((ms) => ms >= 0 && ms <= simulation.durationMs)
+            .toList()
+          ..sort();
     var errorMs = 0;
     for (var i = 0; i + 1 < sorted.length; i++) {
       final start = sorted[i];

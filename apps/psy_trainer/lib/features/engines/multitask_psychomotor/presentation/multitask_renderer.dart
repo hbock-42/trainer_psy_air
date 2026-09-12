@@ -221,8 +221,7 @@ class _MultitaskViewState extends State<_MultitaskView>
 
     final theme = AppTheme.of(context);
     final simulation = widget.simulation;
-    final showsTouchFallback =
-        !_keyboardConfirmed && !widget.render.isExam;
+    final showsTouchFallback = !_keyboardConfirmed && !widget.render.isExam;
 
     return Focus(
       focusNode: _focusNode,
@@ -538,18 +537,25 @@ class _MultitaskPainter extends CustomPainter {
     final path = switch (shape) {
       StimulusShape.square => Path()..addRect(rect),
       StimulusShape.circle => Path()..addOval(rect),
-      StimulusShape.triangle => Path()
-        ..moveTo(cx, rect.top)
-        ..lineTo(rect.right, rect.bottom)
-        ..lineTo(rect.left, rect.bottom)
-        ..close(),
-      StimulusShape.diamond => Path()
-        ..moveTo(cx, rect.top)
-        ..lineTo(rect.right, cy)
-        ..lineTo(cx, rect.bottom)
-        ..lineTo(rect.left, cy)
-        ..close(),
-      StimulusShape.star => _starPath(cx, cy, math.min(w, h) / 2, math.min(w, h) / 4),
+      StimulusShape.triangle =>
+        Path()
+          ..moveTo(cx, rect.top)
+          ..lineTo(rect.right, rect.bottom)
+          ..lineTo(rect.left, rect.bottom)
+          ..close(),
+      StimulusShape.diamond =>
+        Path()
+          ..moveTo(cx, rect.top)
+          ..lineTo(rect.right, cy)
+          ..lineTo(cx, rect.bottom)
+          ..lineTo(rect.left, cy)
+          ..close(),
+      StimulusShape.star => _starPath(
+        cx,
+        cy,
+        math.min(w, h) / 2,
+        math.min(w, h) / 4,
+      ),
     };
     canvas.drawPath(path, paint);
   }

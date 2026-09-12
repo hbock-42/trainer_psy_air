@@ -72,7 +72,10 @@ void main() {
         await tester.tap(find.byKey(SessionHost.startKey));
         await tester.pump();
 
-        expect(find.byKey(const Key('multitask.touch_dpad.up')), findsOneWidget);
+        expect(
+          find.byKey(const Key('multitask.touch_dpad.up')),
+          findsOneWidget,
+        );
         expect(find.byKey(const Key('multitask.touch_shape')), findsOneWidget);
         expect(find.byKey(const Key('multitask.touch_calc')), findsOneWidget);
 

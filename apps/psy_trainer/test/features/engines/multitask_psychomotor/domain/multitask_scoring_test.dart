@@ -71,7 +71,11 @@ void main() {
       // A combined score sitting exactly at the threshold counts as correct.
       final atThreshold = MultitaskMetrics(
         totalMs: 1000,
-        trackingErrorMs: (1000 * (1 - MultitaskScoring.correctThreshold) * (1 - MultitaskScoring.correctThreshold)).round(),
+        trackingErrorMs:
+            (1000 *
+                    (1 - MultitaskScoring.correctThreshold) *
+                    (1 - MultitaskScoring.correctThreshold))
+                .round(),
         shapeHits: 0,
         shapeMisses: 0,
         shapeFalseAlarms: 0,
@@ -91,17 +95,31 @@ void main() {
 
   group('MultitaskScoring.evaluate (event windows)', () {
     const params = MultitaskParams(durationSec: 90);
-    final sim = MultitaskSimulation.build(seed: 42, params: params, difficulty: 3);
+    final sim = MultitaskSimulation.build(
+      seed: 42,
+      params: params,
+      difficulty: 3,
+    );
 
-    test('holding the exact target direction the whole run scores 0 tracking error', () {
-      final heldIntervals = [
-        for (final seg in sim.directions)
-          HeldInterval(startMs: seg.startMs, endMs: seg.endMs, direction: seg.direction),
-      ];
-      final metrics = MultitaskScoring.evaluate(sim, heldIntervals: heldIntervals);
-      expect(metrics.trackingErrorMs, 0);
-      expect(metrics.trackingRmsError, 0);
-    });
+    test(
+      'holding the exact target direction the whole run scores 0 tracking error',
+      () {
+        final heldIntervals = [
+          for (final seg in sim.directions)
+            HeldInterval(
+              startMs: seg.startMs,
+              endMs: seg.endMs,
+              direction: seg.direction,
+            ),
+        ];
+        final metrics = MultitaskScoring.evaluate(
+          sim,
+          heldIntervals: heldIntervals,
+        );
+        expect(metrics.trackingErrorMs, 0);
+        expect(metrics.trackingRmsError, 0);
+      },
+    );
 
     test('never holding any direction scores maximal tracking error', () {
       final metrics = MultitaskScoring.evaluate(sim);
@@ -109,16 +127,28 @@ void main() {
       expect(metrics.trackingRmsError, 1.0);
     });
 
-    test('a press inside a target shape\'s window is a hit, outside it is a miss', () {
-      final target = sim.shapeEvents.firstWhere((e) => e.isTarget);
-      final hit = MultitaskScoring.evaluate(sim, shapePressMs: [target.startMs]);
-      expect(hit.shapeHits, 1);
-      expect(hit.shapeMisses, sim.shapeEvents.where((e) => e.isTarget).length - 1);
+    test(
+      'a press inside a target shape\'s window is a hit, outside it is a miss',
+      () {
+        final target = sim.shapeEvents.firstWhere((e) => e.isTarget);
+        final hit = MultitaskScoring.evaluate(
+          sim,
+          shapePressMs: [target.startMs],
+        );
+        expect(hit.shapeHits, 1);
+        expect(
+          hit.shapeMisses,
+          sim.shapeEvents.where((e) => e.isTarget).length - 1,
+        );
 
-      final miss = MultitaskScoring.evaluate(sim);
-      expect(miss.shapeHits, 0);
-      expect(miss.shapeMisses, sim.shapeEvents.where((e) => e.isTarget).length);
-    });
+        final miss = MultitaskScoring.evaluate(sim);
+        expect(miss.shapeHits, 0);
+        expect(
+          miss.shapeMisses,
+          sim.shapeEvents.where((e) => e.isTarget).length,
+        );
+      },
+    );
 
     test('a press inside a non-target shape\'s window is a false alarm', () {
       final distractor = sim.shapeEvents.firstWhere((e) => !e.isTarget);
@@ -140,15 +170,24 @@ void main() {
 
     test('an F press inside a wrong calculation\'s window is a hit', () {
       final wrong = sim.calcEvents.firstWhere((e) => e.isWrong);
-      final metrics = MultitaskScoring.evaluate(sim, calcPressMs: [wrong.startMs]);
+      final metrics = MultitaskScoring.evaluate(
+        sim,
+        calcPressMs: [wrong.startMs],
+      );
       expect(metrics.calcHits, 1);
     });
 
-    test('an F press inside a correct calculation\'s window is a false alarm', () {
-      final correct = sim.calcEvents.firstWhere((e) => !e.isWrong);
-      final metrics = MultitaskScoring.evaluate(sim, calcPressMs: [correct.startMs]);
-      expect(metrics.calcFalseAlarms, 1);
-    });
+    test(
+      'an F press inside a correct calculation\'s window is a false alarm',
+      () {
+        final correct = sim.calcEvents.firstWhere((e) => !e.isWrong);
+        final metrics = MultitaskScoring.evaluate(
+          sim,
+          calcPressMs: [correct.startMs],
+        );
+        expect(metrics.calcFalseAlarms, 1);
+      },
+    );
 
     test('evaluate is deterministic for the same input log', () {
       final a = MultitaskScoring.evaluate(sim, shapePressMs: [100, 5000]);

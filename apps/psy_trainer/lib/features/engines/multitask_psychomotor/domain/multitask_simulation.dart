@@ -217,7 +217,9 @@ class MultitaskSimulation {
           : dir.others()[rng.nextInt(3)];
     }
     if (segments.isEmpty) {
-      segments.add(DirectionSegment(startMs: 0, endMs: durationMs, direction: dir));
+      segments.add(
+        DirectionSegment(startMs: 0, endMs: durationMs, direction: dir),
+      );
     }
     return segments;
   }
@@ -302,7 +304,9 @@ class MultitaskSimulation {
         _ => a * b,
       };
       final isWrong = rng.nextDouble() < wrongRatio;
-      final delta = isWrong ? (1 + rng.nextInt(3)) * (rng.nextBool() ? 1 : -1) : 0;
+      final delta = isWrong
+          ? (1 + rng.nextInt(3)) * (rng.nextBool() ? 1 : -1)
+          : 0;
       events.add(
         CalcEvent(
           startMs: t,
