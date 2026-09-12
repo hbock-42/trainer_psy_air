@@ -1958,6 +1958,66 @@ abstract class AppLocalizations {
   /// **'Commencer'**
   String get examStartAction;
 
+  /// No description provided for @examRealismTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conditions de l\'examen'**
+  String get examRealismTitle;
+
+  /// No description provided for @examRealismSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Personnalisez le réalisme de la simulation avant de commencer.'**
+  String get examRealismSubtitle;
+
+  /// No description provided for @examRealismPresetAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conditions réelles'**
+  String get examRealismPresetAction;
+
+  /// No description provided for @examRealismNegativeMarkingLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Points négatifs (culture générale)'**
+  String get examRealismNegativeMarkingLabel;
+
+  /// No description provided for @examRealismHideRemainingTimeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Masquer le temps restant'**
+  String get examRealismHideRemainingTimeLabel;
+
+  /// No description provided for @examRealismHideTimerEnglishLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Masquer le chronomètre en anglais'**
+  String get examRealismHideTimerEnglishLabel;
+
+  /// No description provided for @examRealismRandomizeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Formes/couleurs/touches aléatoires'**
+  String get examRealismRandomizeLabel;
+
+  /// No description provided for @examRealismAllowPauseLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Autoriser la pause entre les sections'**
+  String get examRealismAllowPauseLabel;
+
+  /// No description provided for @examRealismImmersiveLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plein écran immersif et orientation verrouillée'**
+  String get examRealismImmersiveLabel;
+
+  /// No description provided for @examRealismSoundCuesLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signaux sonores (début/fin de section)'**
+  String get examRealismSoundCuesLabel;
+
   /// No description provided for @examRunnerTitle.
   ///
   /// In fr, this message translates to:

@@ -137,11 +137,11 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  loading,TResult Function( int planIndex,  int totalSections,  ActivitySessionRequest request)?  running,TResult Function( int nextPlanIndex,  int totalSections)?  onBreak,TResult Function()?  finishing,TResult Function( String sessionId)?  done,TResult Function()?  aborted,TResult Function()?  unavailable,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  loading,TResult Function( int planIndex,  int totalSections,  ActivitySessionRequest request,  String familyId)?  running,TResult Function( int nextPlanIndex,  int totalSections)?  onBreak,TResult Function()?  finishing,TResult Function( String sessionId)?  done,TResult Function()?  aborted,TResult Function()?  unavailable,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case ExamRunLoading() when loading != null:
 return loading();case ExamRunRunning() when running != null:
-return running(_that.planIndex,_that.totalSections,_that.request);case ExamRunOnBreak() when onBreak != null:
+return running(_that.planIndex,_that.totalSections,_that.request,_that.familyId);case ExamRunOnBreak() when onBreak != null:
 return onBreak(_that.nextPlanIndex,_that.totalSections);case ExamRunFinishing() when finishing != null:
 return finishing();case ExamRunDone() when done != null:
 return done(_that.sessionId);case ExamRunAborted() when aborted != null:
@@ -165,11 +165,11 @@ return error(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  loading,required TResult Function( int planIndex,  int totalSections,  ActivitySessionRequest request)  running,required TResult Function( int nextPlanIndex,  int totalSections)  onBreak,required TResult Function()  finishing,required TResult Function( String sessionId)  done,required TResult Function()  aborted,required TResult Function()  unavailable,required TResult Function( String message)  error,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  loading,required TResult Function( int planIndex,  int totalSections,  ActivitySessionRequest request,  String familyId)  running,required TResult Function( int nextPlanIndex,  int totalSections)  onBreak,required TResult Function()  finishing,required TResult Function( String sessionId)  done,required TResult Function()  aborted,required TResult Function()  unavailable,required TResult Function( String message)  error,}) {final _that = this;
 switch (_that) {
 case ExamRunLoading():
 return loading();case ExamRunRunning():
-return running(_that.planIndex,_that.totalSections,_that.request);case ExamRunOnBreak():
+return running(_that.planIndex,_that.totalSections,_that.request,_that.familyId);case ExamRunOnBreak():
 return onBreak(_that.nextPlanIndex,_that.totalSections);case ExamRunFinishing():
 return finishing();case ExamRunDone():
 return done(_that.sessionId);case ExamRunAborted():
@@ -189,11 +189,11 @@ return error(_that.message);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  loading,TResult? Function( int planIndex,  int totalSections,  ActivitySessionRequest request)?  running,TResult? Function( int nextPlanIndex,  int totalSections)?  onBreak,TResult? Function()?  finishing,TResult? Function( String sessionId)?  done,TResult? Function()?  aborted,TResult? Function()?  unavailable,TResult? Function( String message)?  error,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  loading,TResult? Function( int planIndex,  int totalSections,  ActivitySessionRequest request,  String familyId)?  running,TResult? Function( int nextPlanIndex,  int totalSections)?  onBreak,TResult? Function()?  finishing,TResult? Function( String sessionId)?  done,TResult? Function()?  aborted,TResult? Function()?  unavailable,TResult? Function( String message)?  error,}) {final _that = this;
 switch (_that) {
 case ExamRunLoading() when loading != null:
 return loading();case ExamRunRunning() when running != null:
-return running(_that.planIndex,_that.totalSections,_that.request);case ExamRunOnBreak() when onBreak != null:
+return running(_that.planIndex,_that.totalSections,_that.request,_that.familyId);case ExamRunOnBreak() when onBreak != null:
 return onBreak(_that.nextPlanIndex,_that.totalSections);case ExamRunFinishing() when finishing != null:
 return finishing();case ExamRunDone() when done != null:
 return done(_that.sessionId);case ExamRunAborted() when aborted != null:
@@ -243,12 +243,13 @@ String toString() {
 
 
 class ExamRunRunning implements ExamRunState {
-  const ExamRunRunning({required this.planIndex, required this.totalSections, required this.request});
+  const ExamRunRunning({required this.planIndex, required this.totalSections, required this.request, required this.familyId});
   
 
  final  int planIndex;
  final  int totalSections;
  final  ActivitySessionRequest request;
+ final  String familyId;
 
 /// Create a copy of ExamRunState
 /// with the given fields replaced by the non-null parameter values.
@@ -260,16 +261,16 @@ $ExamRunRunningCopyWith<ExamRunRunning> get copyWith => _$ExamRunRunningCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExamRunRunning&&(identical(other.planIndex, planIndex) || other.planIndex == planIndex)&&(identical(other.totalSections, totalSections) || other.totalSections == totalSections)&&(identical(other.request, request) || other.request == request));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExamRunRunning&&(identical(other.planIndex, planIndex) || other.planIndex == planIndex)&&(identical(other.totalSections, totalSections) || other.totalSections == totalSections)&&(identical(other.request, request) || other.request == request)&&(identical(other.familyId, familyId) || other.familyId == familyId));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,planIndex,totalSections,request);
+int get hashCode => Object.hash(runtimeType,planIndex,totalSections,request,familyId);
 
 @override
 String toString() {
-  return 'ExamRunState.running(planIndex: $planIndex, totalSections: $totalSections, request: $request)';
+  return 'ExamRunState.running(planIndex: $planIndex, totalSections: $totalSections, request: $request, familyId: $familyId)';
 }
 
 
@@ -280,7 +281,7 @@ abstract mixin class $ExamRunRunningCopyWith<$Res> implements $ExamRunStateCopyW
   factory $ExamRunRunningCopyWith(ExamRunRunning value, $Res Function(ExamRunRunning) _then) = _$ExamRunRunningCopyWithImpl;
 @useResult
 $Res call({
- int planIndex, int totalSections, ActivitySessionRequest request
+ int planIndex, int totalSections, ActivitySessionRequest request, String familyId
 });
 
 
@@ -297,12 +298,13 @@ class _$ExamRunRunningCopyWithImpl<$Res>
 
 /// Create a copy of ExamRunState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? planIndex = null,Object? totalSections = null,Object? request = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? planIndex = null,Object? totalSections = null,Object? request = null,Object? familyId = null,}) {
   return _then(ExamRunRunning(
 planIndex: null == planIndex ? _self.planIndex : planIndex // ignore: cast_nullable_to_non_nullable
 as int,totalSections: null == totalSections ? _self.totalSections : totalSections // ignore: cast_nullable_to_non_nullable
 as int,request: null == request ? _self.request : request // ignore: cast_nullable_to_non_nullable
-as ActivitySessionRequest,
+as ActivitySessionRequest,familyId: null == familyId ? _self.familyId : familyId // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 

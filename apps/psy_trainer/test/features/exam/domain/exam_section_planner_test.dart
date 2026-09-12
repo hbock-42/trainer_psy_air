@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
+import 'package:psy_trainer/features/exam/domain/exam_realism_options.dart';
 import 'package:psy_trainer/features/exam/domain/exam_section_planner.dart';
 import 'package:psy_trainer/features/train/domain/engine/engine.dart';
 
@@ -187,4 +190,76 @@ void main() {
     final source = planned.single.config.source as BankSource;
     expect(source.items.map((i) => i.id), ['b']);
   });
+
+  test('US-063: negativeMarkingCulture overrides the culture section scoring '
+      'policy and every item allowSkip', () async {
+    content.addItems([item('a'), item('b')]);
+    final blueprint = blueprintOf([bankSection(itemCount: 5)]);
+    final planned = await planExamSections(
+      blueprint: blueprint,
+      engines: EngineRegistry([FakeEngine(familyId: 'culture_aero')]),
+      content: content,
+      progress: progress,
+      sessionId: 's',
+      options: const ExamRealismOptions(negativeMarkingCulture: true),
+    );
+    final config = planned.single.config;
+    expect(config.scoringPolicy, negativeMarkingScoringPolicy);
+    expect(config.scoringPolicy.correct, 3);
+    expect(config.scoringPolicy.wrong, -1);
+    final source = config.source as BankSource;
+    expect(source.items, isNotEmpty);
+    expect(source.items.every((i) => (i as McqItem).allowSkip), isTrue);
+  });
+
+  test('US-063: negativeMarkingCulture leaves every other family untouched, '
+      'even when on', () async {
+    final blueprint = blueprintOf([generatedSection()]);
+    final planned = await planExamSections(
+      blueprint: blueprint,
+      engines: engines,
+      content: content,
+      progress: progress,
+      sessionId: 's',
+      options: const ExamRealismOptions(negativeMarkingCulture: true),
+    );
+    expect(planned.single.config.scoringPolicy, const ScoringPolicy());
+  });
+
+  test(
+    'US-063: randomizeGenerated off fixes the seed to the canonical value',
+    () async {
+      final blueprint = blueprintOf([generatedSection()]);
+      final planned = await planExamSections(
+        blueprint: blueprint,
+        engines: engines,
+        content: content,
+        progress: progress,
+        sessionId: 's',
+        random: Random(1),
+        options: const ExamRealismOptions(randomizeGenerated: false),
+      );
+      final source = planned.single.config.source as GeneratorSource;
+      expect(source.seed, ExamRealismOptions.canonicalSeed);
+    },
+  );
+
+  test(
+    'US-063: randomizeGenerated on (default) draws from the given random',
+    () async {
+      final blueprint = blueprintOf([generatedSection()]);
+      final expectedSeed = Random(1).nextInt(1 << 31);
+      final planned = await planExamSections(
+        blueprint: blueprint,
+        engines: engines,
+        content: content,
+        progress: progress,
+        sessionId: 's',
+        random: Random(1),
+      );
+      final source = planned.single.config.source as GeneratorSource;
+      expect(source.seed, expectedSeed);
+      expect(source.seed, isNot(ExamRealismOptions.canonicalSeed));
+    },
+  );
 }

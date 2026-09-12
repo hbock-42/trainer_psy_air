@@ -281,7 +281,7 @@ Schema v1 (every table has `id TEXT PRIMARY KEY`, `created_at`, `updated_at`):
 | `item_stats` | itemId (unique), familyId, seen, correct, totalResponseMs, lastCorrect, lastSeenAt | maintained by `INSERT ... ON CONFLICT DO UPDATE` |
 | `flashcard_reviews` | flashcardId (unique), deckId, box, reviews, lapses, lastReviewedAt?, nextReviewAt | index `(deck_id, next_review_at)` |
 | `lesson_progress` | lessonId (unique), readAt | |
-| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`). Onboarding (US-090) keeps its two flags in `settings`: `onboardingCompleted` (bool) and `disclaimerAcceptedAt` (ISO-8601 UTC); the mapping lives in `features/onboarding/domain/onboarding_answers.dart`. Settings (US-091) use `locale` for the UI language (`'system' \| 'fr' \| 'en'`, see `LanguagePreference`) and three more `settings` keys: `themeMode` (`'system' \| 'light' \| 'dark'`), `soundEnabled` (bool) and `keypadLayout` (`'phone' \| 'calculator'`) — mapping in `features/settings/domain/app_settings.dart` (`AppSettings`), read through `appSettingsProvider` (`features/settings/presentation/providers/`) |
+| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`). Onboarding (US-090) keeps its two flags in `settings`: `onboardingCompleted` (bool) and `disclaimerAcceptedAt` (ISO-8601 UTC); the mapping lives in `features/onboarding/domain/onboarding_answers.dart`. Settings (US-091) use `locale` for the UI language (`'system' \| 'fr' \| 'en'`, see `LanguagePreference`) and three more `settings` keys: `themeMode` (`'system' \| 'light' \| 'dark'`), `soundEnabled` (bool) and `keypadLayout` (`'phone' \| 'calculator'`) — mapping in `features/settings/domain/app_settings.dart` (`AppSettings`), read through `appSettingsProvider` (`features/settings/presentation/providers/`). Exam realism options (US-063) are one more nested `settings` key, `exam.realism`, holding a JSON object of seven booleans (`negativeMarkingCulture`, `hideRemainingTime`, `hideTimerEnglish`, `randomizeGenerated`, `allowPauseBetweenSections`, `immersiveFullScreen`, `soundCuesEnabled`) — mapping in `features/exam/domain/exam_realism_options.dart` (`ExamRealismOptions`), read through `examRealismOptionsProvider` (`features/exam/presentation/providers/`); see "Exam realism options (US-063)" below |
 
 Design decisions:
 
@@ -756,6 +756,63 @@ and the scorer in `test/features/engines/<family>/domain/`; run a full session w
 `ActivitySession` + `ManualClock` + `InMemoryProgressRepository` for cadence or timing
 behaviour; widget-test the renderer through `SessionHost` with the engine registered
 (`test/features/train/presentation/engine/session_host_test.dart` is the template).
+
+### Exam realism options (US-063)
+
+The real PSY0 session's exact conditions are only partly known
+(`docs/content/psy0-spec.md` §2.1/§2.2: negative marking on culture aéro was removed at some
+point but is documented as configurable; whether the app allows pausing between activities is
+an open question); a panel on the exam launcher (`features/exam/presentation/exam_screen.dart`,
+`_RealismOptionsPanel`, above the blueprint list) lets a candidate dial the simulation closer to
+or further from those conditions instead of the app guessing:
+
+```
+features/exam/
+  domain/exam_realism_options.dart          ExamRealismOptions (7 bools, see the `user_profile`
+                                             table above), .defaults, .realConditions preset,
+                                             fromProfile/applyTo (settings key 'exam.realism')
+  presentation/
+    providers/exam_realism_options_provider.dart  examRealismOptionsProvider
+                                             (ExamRealismOptionsController): hydrates once from
+                                             the profile then holds state synchronously, same
+                                             shape as `AppSettingsController`
+    exam_screen.dart                        _RealismOptionsPanel: seven toggles + "Conditions
+                                             réelles" (applies every option's strictest value)
+```
+
+Applied where each condition actually lives:
+
+- **Negative marking + "Je ne sais pas" on culture aéro** (`negativeMarkingCulture`):
+  `exam_section_planner.dart`'s `planExamSections` overrides the culture aéro section's
+  `scoringPolicy` to `+3`/`-1`/`0` (`negativeMarkingScoringPolicy`) and every one of its bank
+  items' `McqItem.allowSkip` to `true` (already rendered as "Je ne sais pas" by `McqRenderer`).
+  No other family is affected.
+- **Randomise shapes/colours/keys of rule-based activities** (`randomizeGenerated`): generated
+  sections already draw a fresh `runSeed` per run (US-037); off fixes every generated section's
+  seed to `ExamRealismOptions.canonicalSeed` instead, so a run replays identically.
+- **Hide remaining time** (`hideRemainingTime`) and **hide the timer in English**
+  (`hideTimerEnglish`, family `english`): `SessionHost` takes a `timingDisplay:
+  TimingDisplay` parameter (`visible` default, `hiddenUntilLastMinute`, `hidden`) that only
+  changes what its countdown bars draw, never the timing itself (`ActivitySessionConfig.timing`
+  keeps running underneath). `ExamRunScreen` computes it per section from the realism options
+  and the running section's `familyId` (carried on `ExamRunState.running` for this reason).
+- **Allow/deny pause between sections** (`allowPauseBetweenSections`): the break screen always
+  auto-continues after `ExamSection.breakAfterSec` (`ExamRunController._startBreak`); on top of
+  that, "Continuer" (`ExamRunController.skipBreak`) ends it early. Off,
+  `ExamRunController.allowsSkippingBreak` is false, `ExamRunScreen` does not render the
+  "Continuer" button, and `skipBreak()` is a no-op — only the timer can advance the exam.
+- **Full-screen immersive + orientation lock on mobile** (`immersiveFullScreen`): `ExamRunScreen`
+  calls `SystemChrome.setEnabledSystemUIMode`/`setPreferredOrientations`
+  (`package:flutter/services.dart`, not Material) on Android/iOS only, and restores the defaults
+  on dispose.
+- **Sound cues** (`soundCuesEnabled`): a `SystemSound.play` click at the start/end of each
+  section, gated on both this toggle and the existing `soundEnabledProvider` mute
+  (`features/settings/`) — the widgets layer has no other audio API, so this is the whole cue.
+- **"Conditions réelles" preset**: `ExamRealismOptionsController.applyRealConditionsPreset()`
+  sets every option above to `ExamRealismOptions.realConditions` in one call.
+- **Keyboard-native warning on touch devices** (already existed, US-061/062): unaffected by this
+  panel — `exam_section_planner.dart`'s `_briefingText` appends it to the briefing whenever
+  `ExamSection.inputRequirement == InputRequirement.keyboard`.
 
 ## State and DI (Riverpod)
 
