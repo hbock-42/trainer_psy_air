@@ -30,6 +30,9 @@ lib/
       domain/                # entities/value objects (freezed), repository interfaces,
                              # pure logic (test generators, scoring)
       presentation/          # screens, widgets, Riverpod providers/notifiers, routes
+    train/domain/engine/     # US-020 activity runtime (pure Dart), see "Engine"
+    train/presentation/engine/ # its widget half: renderer contract, controller, SessionHost
+    engines/<family_id>/     # one activity engine per EPIC-03 story (domain + presentation)
 test/                        # see docs/TESTING.md
   architecture/              # rules about the codebase itself (e.g. no Material)
   features/<feature>/...     # mirrors lib/features; unit + widget tests
@@ -142,7 +145,7 @@ macOS is run locally with `make run-macos`, web with `make run-web` / `make buil
 and `flutter test`; never `flutter run` in automation (CI, scripts, agents). `make run-*` targets
 are for a person at the keyboard.
 
-Notes for engine authors (EPIC-03):
+Notes for engine authors (EPIC-03; the runtime and the 5-step recipe are in "Engine" below):
 
 - **Keyboard input comes from the widgets layer.** Wrap the activity in a `Focus` (or
   `FocusableActionDetector`) node that requests focus when the item appears, and read keys with
@@ -453,6 +456,31 @@ Presentation-only rules (the formulas above stay in the service):
 - **Days until exam** are whole local calendar days (`daysUntil`), computed against the
   snapshot's `computedAt` so tests with a fixed clock are deterministic.
 
+### Score-over-time charts (US-071)
+
+```
+family_trend_screen.dart             FamilyTrendScreen (/progress/family/:familyId), TrendRange
+widgets/
+  family_trend_charts.dart           FamilyTrendCharts: accuracy + median RT LineCharts, TrendTooltip
+  exam_score_chart_card.dart         ExamScoreChartCard / ExamScoreChart / ExamSectionBreakdown
+  segmented_choice.dart              SegmentedChoice: the range and mode pills
+  family_levels_chart.dart           + FamilyChip row (onFamilySelected) opening the family page
+```
+
+- The chart primitive is `LineChart` (`shared/widgets/line_chart.dart`, see
+  `docs/DESIGN_SYSTEM.md`); the feature only maps `TrendPoint`s / `ExamSummary`s to
+  `LineChartPoint`s and writes the tooltips and semantics summaries.
+- **Family page**: `familyTimeSeriesProvider((familyId, from, to, mode))` with
+  `from = now - TrendRange.window` (`StatsService.shortWindow` / `longWindow`, null for `Tout`)
+  and `mode` null / practice / exam. `now` is read once per screen (`statsServiceProvider`,
+  fixed in tests) so the query record, and the cached provider instance, stay stable across
+  rebuilds. `x` = session index (oldest first), `y` = accuracy (0..1, fixed axis) or median
+  response time in seconds (0..ceil(max)); ticks under the baseline carry `dd/MM` dates.
+- **Exam chart**: `examHistoryProvider` filtered to `completed`, oldest first; `y` = `score`.
+  The selected attempt is kept by session id so a refresh keeps the breakdown open. Sections are
+  `HorizontalBarChart` entries in `sectionIndex` order, painted in the readiness bands
+  (`ProgressBands.score`), "non atteinte" when `attempts == 0`.
+
 ### Caching and invalidation
 
 `progressSnapshotProvider`, `examHistoryProvider` and `familyTimeSeriesProvider` are
@@ -469,6 +497,131 @@ their writes. `familyTimeSeriesProvider` takes a record `(familyId, from, to, mo
 chart queries share one result and is `autoDispose` so ranges nobody watches are dropped.
 Tests override `statsServiceProvider` with a fixed clock and the two repository providers with
 the in-memory fakes.
+
+## Engine
+
+The generic activity runtime (US-020) runs every PSY0 activity of EPIC-03 in practice and
+exam mode. An activity engine only implements **a generator, a scorer and a renderer**; the
+runtime sequences the items, runs the timers and the cadence, records the attempts, scores the
+section and exposes the state to the screens.
+
+```
+features/train/
+  domain/engine/                      pure Dart (no Flutter), barrel engine.dart
+    activity_engine.dart              ActivityEngine (familyId, generatorId, generate, score, materialise),
+                                      EngineRegistry, EngineNotFoundError, GeneratorId.jsonName
+    activity_session.dart             ActivitySession: the state machine (start/answer/next/pause/resume/abort,
+                                      resume from attempts), persistence through ProgressRepository
+    activity_session_config.dart      ActivitySessionConfig (family, mode, source, timing, scoring, liveFeedback,
+                                      sessionId/ownsSession/sectionIndex/positionOffset for the exam runner), JSON
+    activity_session_state.dart       ActivitySessionState = briefing | running | paused | finished; ItemPhase
+    answer.dart                       Answer = choice | numeric | multiSelect | key | sequence | skip | timeout | raw
+    item_result.dart                  ItemResult (correct, timedOut, skipped, metrics), ItemOutcome (+ responseMs)
+    item_source.dart                  ItemSource = bank(items) | generator(generatorId, seed, params, count, difficulty),
+                                      SessionItem (item + itemId | AttemptOrigin)
+    timing_policy.dart                TimingPolicy (perItemMs, sectionMs, cadence; fromSection, forPractice)
+    scorer.dart                       Scorer.scoreItem (mcq / numeric / sequence defaults), Scorer.section
+    session_result.dart               SectionResult (accuracy, RT, timeouts, points), SessionResult, FinishReason
+    engine_clock.dart                 EngineClock, SystemClock, ManualClock (tests)
+  presentation/engine/                widgets + Riverpod, barrel engine_ui.dart (re-exports the domain barrel)
+    activity_renderer.dart            ActivityRenderer (build, buildExample), ActivityRenderContext,
+                                      ActivityWidgetBuilder, FunctionRenderer, RendererRegistry
+    engine_registry_provider.dart     engineRegistryProvider, rendererRegistryProvider, engineClockProvider
+                                      = the composition root where engines are registered
+    activity_session_controller.dart  activitySessionControllerProvider (autoDispose family Notifier),
+                                      ActivitySessionRequest = fresh(config) | resume(session, attempts)
+    session_host.dart                 SessionHost: briefing -> renderer + countdown bars -> onFinished
+```
+
+`presentation/engine/` is the one presentation folder other features may import: the exam
+runner (US-061) and every engine's renderer depend on it, exactly as they depend on
+`domain/engine/`. Engines live in `lib/features/engines/<family_id>/{domain,presentation}/`
+(one folder per EPIC-03 story) and never import each other.
+
+### Runtime behaviour
+
+- **State machine.** `briefing -> running(itemIndex) -> finished`, with `paused` reachable from
+  `running` in practice only. Items are built in the constructor (a generator source with a
+  seed always yields the same run); `start()` opens the `TrainingSession` (unless the config
+  attaches to one) and shows item 0. `answer()` scores through the engine and records the
+  attempt at once; `next()` moves on after feedback; `abort()` ends as `aborted`. Commands
+  that do not apply to the current state are ignored (a second answer on the same item,
+  `next()` without feedback), except `pause()` in exam mode and a `TimeoutAnswer`, which are
+  programming errors and throw.
+- **Feedback policy.** `config.showsFeedback` = practice, or exam with `liveFeedback` (from
+  `TestFamily.liveFeedback` / `ExamSection.liveFeedback`: rules S-R, parity restart). When
+  shown, `ActivityRunning.feedback` carries the verdict and the item waits for `next()`
+  (`awaitsNext`); when hidden, `feedback` stays null and the session advances at once. The
+  renderer never decides this.
+- **Timing** (`TimingPolicy`, from `ExamSection` or the family defaults): a per-item limit
+  records a `TimeoutAnswer` (stored as `answer = null`, which the stats service counts as a
+  timeout) and advances (or shows the timeout feedback in practice); a section limit ends the
+  session as `sectionTimeout`, recording the open item as a timeout and leaving the rest
+  unplayed; a **cadence** (`stimulusMs` + `answerWindowMs`) shows `ItemPhase.stimulus` then
+  `answer`, accepts an answer during both, and advances at the end of the window whether or
+  not an answer came, so the rhythm never slips. Cadence wins over the per-item limit. Pause
+  freezes every timer and is excluded from response times.
+- **Persistence.** `startSession` when the first item appears, `recordAttempt` per item (bank
+  `itemId` or `AttemptOrigin{generatorId, seed, params}`, `position = positionOffset + index`,
+  `sectionIndex`), `finishSession(completed | abandoned, score = accuracy)` at the end when
+  the config `ownsSession`. Writes are chained and never block the state machine; `idle`
+  completes when they settled; failures go to `onPersistenceError` (the controller logs them).
+  The exam runner creates one `TrainingSession`, runs each section with
+  `sessionId`, `ownsSession: false`, `sectionIndex` and `positionOffset`, then finishes it.
+- **Resume.** `ActivitySession.resume(session:, attempts:)` rebuilds the config from
+  `TrainingSession.config` (the runtime stored `ActivitySessionConfig.toJson()` there), replays
+  the attempts of its section into outcomes, starts at the next item (`ActivityBriefing.startIndex`)
+  and shortens a section limit by the response time already spent. US-051/US-064 decide when
+  to offer it (`sessions(status: inProgress)`).
+- **Time.** Everything goes through `EngineClock`; `SystemClock` uses `Timer`s (fake-able with
+  `fakeAsync`), `ManualClock.elapse()` steps time by hand in unit and widget tests.
+- **Controller.** `activitySessionControllerProvider(request)` builds the session over
+  `engineRegistryProvider`, `progressRepositoryProvider` and `engineClockProvider`, mirrors its
+  states, forwards the commands and bumps `progressVersionProvider` once the finished session
+  is persisted. Auto-dispose aborts a session still running (a screen that leaves = quit).
+
+### Adding an activity engine in 5 steps
+
+1. **Generator** (`lib/features/engines/<family>/domain/<family>_engine.dart`): subclass
+   `ActivityEngine`, return `familyId` (= `TestFamily.engineType`, e.g. `memory_nback`) and
+   `generatorId` (`GeneratorId.nback`), and implement
+   `generate({params, seed, difficulty})` with `Random(seed)` only: same inputs, same item.
+   Cast the typed params (`params as NbackParams`, or `switch`), give the item the id
+   `ActivityEngine.generatedItemId(generatorId, seed)` and `origin: ItemOrigin(generatorId,
+   seed)`. Return an `McqItem` / `NumericItem` when the activity is one (dominos, viewpoint,
+   tubes); for interactive activities return a `GeneratedItem` whose `params` carry what the
+   renderer needs, or keep the stimulus in engine-owned data derived again from the seed.
+   Bank-driven engines (culture, English) skip this step: `generatorId` stays null.
+2. **Scorer**: override `score(Item, Answer)` when the default (`Scorer.scoreItem`: MCQ choice,
+   numeric with tolerance, sequence recall) does not apply. Return `ItemResult(correct:,
+   metrics: {...})`; the metrics are summed into `SectionResult.metricTotals` for the engine's
+   summary and analytics (hits/misses, restarts, precision/recall). Never handle
+   `TimeoutAnswer`, the runtime does. Pick the `Answer` case that fits (`key` for key presses,
+   `multiSelect` for grids, `sequence` for click paths, `raw` for anything else).
+3. **Renderer** (`lib/features/engines/<family>/presentation/<family>_renderer.dart`): subclass
+   `ActivityRenderer` with the same `familyId`; `build(context, render)` draws
+   `render.item` for `render.phase`, calls `render.onAnswer(answer)` once, and shows
+   `render.feedback` when non-null (the runtime already applied the practice/exam policy).
+   Widgets layer only (no Material); keyboard input through `Focus` + `KeyboardListener`, with
+   the touch fallback labelled non-representative when `inputRequirement == keyboard`. Do not
+   run your own timers for the runtime's limits: `SessionHost` draws the countdown bars from
+   `render.itemDeadline`; the cadence phases arrive through `render.phase`. Optionally override
+   `buildExample` for the briefing screen.
+4. **Register**: add the engine to `engineRegistryProvider` and the renderer to
+   `rendererRegistryProvider` in `features/train/presentation/engine/engine_registry_provider.dart`
+   (one line each). Tests override both providers with `FakeEngine` / `FakeRenderer`
+   (`test/helpers/`).
+5. **Blueprint family**: check `assets/content/psy0/<family>/family.json` (`engineType`,
+   `generatorId`, `defaultCadence`, `defaultPerItemTimeSec`, `liveFeedback`) and the sections of
+   `assets/content/psy0/blueprints/*.json` (`itemSelection.generated.params`, `cadence`,
+   `scoringPolicy`) match what the generator expects; new params keys are a contract change
+   (CONTRACT.md §3, US-015).
+
+Tests: unit-test the generator (determinism per seed, announced counts, no ambiguous items)
+and the scorer in `test/features/engines/<family>/domain/`; run a full session with
+`ActivitySession` + `ManualClock` + `InMemoryProgressRepository` for cadence or timing
+behaviour; widget-test the renderer through `SessionHost` with the engine registered
+(`test/features/train/presentation/engine/session_host_test.dart` is the template).
 
 ## State and DI (Riverpod)
 
@@ -515,6 +668,7 @@ StatefulShellRoute.indexedStack      AppShell; one branch (own Navigator) per ta
     session/:sessionId               nested -> /train/session/:sessionId (pushed inside the tab)
   /exam                              branch 2
   /progress                          branch 3
+    family/:familyId                 nested -> /progress/family/:familyId (US-071 family charts)
   /settings                          branch 4
     profile                          nested -> /settings/profile (edit the onboarding answers)
 ```

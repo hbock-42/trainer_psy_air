@@ -72,6 +72,13 @@ abstract final class AppRoutes {
   /// this becomes the single place that changes.
   static String trainFamily(String familyId) => train;
 
+  /// Relative path of the family score-over-time page (nested under
+  /// [progress], US-071).
+  static const String progressFamilySegment = 'family/:$familyIdParam';
+
+  /// Full location of a family's score-over-time charts.
+  static String progressFamily(String familyId) => '$progress/family/$familyId';
+
   /// The tab routes, in bottom-navigation order. The index in this list is the
   /// `StatefulShellRoute` branch index.
   static const List<String> tabs = [learn, train, exam, progress, settings];

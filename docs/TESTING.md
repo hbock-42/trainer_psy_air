@@ -154,6 +154,11 @@ countdowns) must not call `DateTime.now()` or `Timer` directly.
   from `package:fake_async`. `flutter_test` already runs `testWidgets` inside a `FakeAsync`
   zone; use `tester.pump(const Duration(seconds: 1))` there instead.
 - Never `await Future.delayed` in a test to "wait for" something.
+- **Activity runtime.** `ActivitySession` takes an `EngineClock`; tests pass a `ManualClock`
+  and call `clock.elapse(...)` to fire item, cadence and section timers deterministically (in
+  `testWidgets` too, by overriding `engineClockProvider`). `SystemClock(now:
+  async.getClock(start).now)` works under `fakeAsync` when a test wants real `Timer`s.
+  `test/helpers/fake_engine.dart` / `fake_renderer.dart` give a registered fake activity.
 
 ## DAO tests
 

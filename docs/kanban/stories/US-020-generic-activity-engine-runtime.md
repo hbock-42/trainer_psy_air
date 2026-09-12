@@ -4,7 +4,7 @@ issue: 24
 title: "Generic activity engine runtime"
 type: story
 epic: EPIC-03
-status: backlog
+status: review
 priority: P0
 size: M
 lane: engines
@@ -26,7 +26,7 @@ labels: [engine,blocking]
 - Emits `Attempt`s to `ProgressRepository` as they happen (crash-safe, resume).
 
 ## Acceptance criteria
-- [ ] Pure Dart in `lib/features/train/domain/` (no Flutter imports); state machine 100 % unit-tested (timeouts, cadence, pause, abort, finish, live-feedback flag)
-- [ ] `ActivityEngine` + registry + a fake engine used in tests
-- [ ] Clock injected (`fake_async` friendly)
-- [ ] Documented in `docs/ARCHITECTURE.md#engine`
+- [x] Pure Dart in `lib/features/train/domain/` (no Flutter imports); state machine 100 % unit-tested (timeouts, cadence, pause, abort, finish, live-feedback flag)
+- [x] `ActivityEngine` + registry + a fake engine used in tests
+- [x] Clock injected (`fake_async` friendly)
+- [x] Documented in `docs/ARCHITECTURE.md#engine`
