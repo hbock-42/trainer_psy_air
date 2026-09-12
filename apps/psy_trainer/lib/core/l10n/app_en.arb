@@ -1453,5 +1453,17 @@
   "multitaskCalcButtonLabel": "F",
   "multitaskExampleTracking": "Keep the keyboard arrow in the direction the circle is moving.",
   "multitaskExampleShape": "Press Space when the shape in the circle matches the reference shape (top left).",
-  "multitaskExampleCalc": "Press F when the boxed calculation, at the bottom, is wrong."
+  "multitaskExampleCalc": "Press F when the boxed calculation, at the bottom, is wrong.",
+  "p1AnglesExampleCaption": "Among the candidate values, tap the ones matching a drawn angle (A, B...), then Confirm.",
+  "p1AnglesCandidateSemantics": "Value {index}, {value} degrees",
+  "@p1AnglesCandidateSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "value": {
+        "type": "int"
+      }
+    }
+  }
 }

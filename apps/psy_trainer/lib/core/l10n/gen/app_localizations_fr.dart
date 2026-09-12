@@ -2156,4 +2156,13 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get multitaskExampleCalc =>
       'Appuyez sur F quand le calcul encadré, en bas, est faux.';
+
+  @override
+  String get p1AnglesExampleCaption =>
+      'Parmi les valeurs proposées, touchez celles qui correspondent à un angle dessiné (A, B...), puis Valider.';
+
+  @override
+  String p1AnglesCandidateSemantics(int index, int value) {
+    return 'Valeur $index, $value degrés';
+  }
 }
