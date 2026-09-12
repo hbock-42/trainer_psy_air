@@ -3515,6 +3515,48 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Appuyez sur F quand le calcul encadré, en bas, est faux.'**
   String get multitaskExampleCalc;
+
+  /// No description provided for @reverseSpanDigitSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Chiffre {shown} sur {total}'**
+  String reverseSpanDigitSemantics(int shown, int total);
+
+  /// No description provided for @reverseSpanTypeInstructions.
+  ///
+  /// In fr, this message translates to:
+  /// **'Retapez la séquence à l\'envers'**
+  String get reverseSpanTypeInstructions;
+
+  /// No description provided for @reverseSpanExampleShown.
+  ///
+  /// In fr, this message translates to:
+  /// **'La séquence affichée, chiffre par chiffre :'**
+  String get reverseSpanExampleShown;
+
+  /// No description provided for @reverseSpanExampleExpected.
+  ///
+  /// In fr, this message translates to:
+  /// **'Retapez-la à l\'envers :'**
+  String get reverseSpanExampleExpected;
+
+  /// No description provided for @calcBackStageLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Étape {stage} sur {stageCount}'**
+  String calcBackStageLabel(int stage, int stageCount);
+
+  /// No description provided for @calcBackStemSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajoutez au résultat obtenu il y a {stage} calcul(s)'**
+  String calcBackStemSemantics(int stage);
+
+  /// No description provided for @calcBackExampleStage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Étape 2 : combinez le nombre affiché avec le résultat obtenu il y a deux calculs.'**
+  String get calcBackExampleStage;
 }
 
 class _AppLocalizationsDelegate

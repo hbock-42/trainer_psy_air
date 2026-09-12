@@ -1453,5 +1453,29 @@
   "multitaskCalcButtonLabel": "F",
   "multitaskExampleTracking": "Keep the keyboard arrow in the direction the circle is moving.",
   "multitaskExampleShape": "Press Space when the shape in the circle matches the reference shape (top left).",
-  "multitaskExampleCalc": "Press F when the boxed calculation, at the bottom, is wrong."
+  "multitaskExampleCalc": "Press F when the boxed calculation, at the bottom, is wrong.",
+  "reverseSpanDigitSemantics": "Digit {shown} of {total}",
+  "@reverseSpanDigitSemantics": {
+    "placeholders": {
+      "shown": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "reverseSpanTypeInstructions": "Type the sequence back in reverse",
+  "reverseSpanExampleShown": "The sequence shown, one digit at a time:",
+  "reverseSpanExampleExpected": "Type it back in reverse:",
+  "calcBackStageLabel": "Stage {stage} of {stageCount}",
+  "@calcBackStageLabel": {
+    "placeholders": {
+      "stage": { "type": "int" },
+      "stageCount": { "type": "int" }
+    }
+  },
+  "calcBackStemSemantics": "Add to the result from {stage} calculation(s) ago",
+  "@calcBackStemSemantics": {
+    "placeholders": {
+      "stage": { "type": "int" }
+    }
+  },
+  "calcBackExampleStage": "Stage 2: combine the shown number with the result from two calculations ago."
 }

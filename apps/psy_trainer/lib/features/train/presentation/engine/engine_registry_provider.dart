@@ -18,6 +18,10 @@ import '../../../engines/memory_nback/domain/nback_engine.dart';
 import '../../../engines/memory_nback/presentation/nback_renderer.dart';
 import '../../../engines/multitask_psychomotor/domain/multitask_engine.dart';
 import '../../../engines/multitask_psychomotor/presentation/multitask_renderer.dart';
+import '../../../engines/p1_wm_calc_back/domain/calc_back_engine.dart';
+import '../../../engines/p1_wm_calc_back/presentation/calc_back_renderer.dart';
+import '../../../engines/p1_wm_reverse_span/domain/reverse_span_engine.dart';
+import '../../../engines/p1_wm_reverse_span/presentation/reverse_span_renderer.dart';
 import '../../../engines/planning_tubes/domain/tubes_engine.dart';
 import '../../../engines/planning_tubes/presentation/tubes_renderer.dart';
 import '../../../engines/spatial_cubes/domain/cube_net_engine.dart';
@@ -57,6 +61,8 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const MultitaskEngine(),
         const NbackEngine(),
         const OverlayGridEngine(),
+        const CalcBackEngine(),
+        const ReverseSpanEngine(),
         const TubesEngine(),
         const ViewpointEngine(),
         WordBoxesEngine(ref.read(lexicalFieldCatalogueProvider)),
@@ -86,6 +92,8 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const MultitaskRenderer(),
         const NbackRenderer(),
         const OverlayGridRenderer(),
+        const CalcBackRenderer(),
+        const ReverseSpanRenderer(),
         const TubesRenderer(),
         const ViewpointRenderer(),
         WordBoxesRenderer(ref.read(lexicalFieldCatalogueProvider)),
