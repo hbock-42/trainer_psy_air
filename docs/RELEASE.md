@@ -155,9 +155,10 @@ on demand from Actions -> Pages -> Run workflow), which builds and deploys the s
 - **Deep links**: GitHub Pages has no server-side rewrite, so a reload on a path route like
   `/learn/family/x` would 404 under Flutter's default path-based URL strategy. Rather than
   adding a `404.html` SPA-redirect trick, the app sets the **hash URL strategy**
-  (`setUrlStrategy(HashUrlStrategy())` from `package:flutter_web_plugins`, called
-  unconditionally in `apps/psy_trainer/lib/main.dart` — it is a documented no-op on non-web
-  platforms) so every route lives after the `#` (e.g.
+  (`setUrlStrategy(HashUrlStrategy())` from `package:flutter_web_plugins`, compiled for
+  the web only through the conditional import in `lib/core/router/url_strategy.dart` —
+  the package needs `dart:ui_web`, which mobile and desktop builds do not have) so every
+  route lives after the `#` (e.g.
   `https://hbock-42.github.io/trainer_psy_air/#/learn/family/x`), which GitHub Pages always
   serves as `index.html` regardless of the fragment. Simpler to maintain than a redirect page:
   no extra file to keep in sync with the router, and it degrades the same way locally
