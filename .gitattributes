@@ -1,3 +1,2 @@
 docs/kanban/BOARD.md merge=ours
-apps/psy_trainer/lib/features/train/presentation/engine/engine_registry_provider.dart merge=union
 apps/psy_trainer/lib/core/l10n/strings.dart merge=union
