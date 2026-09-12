@@ -78,9 +78,46 @@ void main() {
       expect(entries[0].summary.sessionId, newer.id);
       expect(entries[0].summary.status, SessionStatus.abandoned);
       expect(entries[0].blueprintName, 'PSY0 — test');
+      expect(entries[0].duration, const Duration(hours: 1));
       expect(entries[1].summary.sessionId, older.id);
       expect(entries[1].summary.status, SessionStatus.completed);
       expect(entries[1].blueprintName, 'PSY0 — test');
+      expect(entries[1].duration, const Duration(hours: 1));
     },
   );
+
+  test('an exam interrupted for more than 10 minutes shows as abandoned '
+      '(US-064)', () async {
+    final now = DateTime.utc(2026, 9, 10);
+    final progress = InMemoryProgressRepository(clock: () => now);
+    final content = InMemoryContentRepository(blueprints: [_blueprint()]);
+
+    final stale = await progress.startSession(
+      mode: SessionMode.exam,
+      blueprintId: 'bp.test',
+      startedAt: now.subtract(const Duration(hours: 1)),
+    );
+    await progress.recordAttempt(
+      NewAttempt(
+        sessionId: stale.id,
+        familyId: 'fam_a',
+        isCorrect: true,
+        responseMs: 500,
+        position: 0,
+        itemId: 'q1',
+        answeredAt: now.subtract(const Duration(minutes: 30)),
+      ),
+    );
+
+    final container = ProviderContainer.test(
+      overrides: [
+        contentRepositoryProvider.overrideWithValue(content),
+        progressRepositoryProvider.overrideWithValue(progress),
+      ],
+    );
+
+    final entries = await container.read(examHistoryProvider.future);
+    expect(entries, hasLength(1));
+    expect(entries.single.summary.status, SessionStatus.abandoned);
+  });
 }
