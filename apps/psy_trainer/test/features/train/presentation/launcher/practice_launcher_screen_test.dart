@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
@@ -5,6 +6,7 @@ import 'package:psy_trainer/app.dart';
 import 'package:psy_trainer/core/l10n/strings.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_content_repository.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_progress_repository.dart';
+import 'package:psy_trainer/core/repositories/model/attempt.dart';
 import 'package:psy_trainer/core/repositories/repository_providers.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
 import 'package:psy_trainer/core/router/app_routes.dart';
@@ -182,6 +184,118 @@ void main() {
       final source = config.source as GeneratorSource;
       expect(source.count, 5);
       expect(source.difficulty, const DifficultyRange(min: 1, max: 5));
+    });
+
+    testWidgets('"Reprendre mes erreurs" is disabled with an empty pool', (
+      tester,
+    ) async {
+      await pumpLauncher(tester, familyId: bankFamily().id);
+      await tester.pumpAndSettle();
+
+      expect(find.text(AppStrings.practiceRetryMistakesEmpty), findsOneWidget);
+      final button = tester.widget<SecondaryButton>(
+        find.byKey(const Key('practice_launcher.retry_mistakes')),
+      );
+      expect(button.onPressed, isNull);
+    });
+
+    testWidgets(
+      '"Reprendre mes erreurs" shows the pool count and starts a session '
+      'over it',
+      (tester) async {
+        final family = bankFamily();
+        final progress = fakeProgressRepository();
+        final aWhileAgo = DateTime.now().subtract(const Duration(days: 1));
+        for (var i = 0; i < 5; i++) {
+          progress.attempts.add(
+            Attempt(
+              id: 'attempt-$i',
+              sessionId: 'session-x',
+              familyId: family.id,
+              itemId: 'item-$i',
+              isCorrect: false,
+              responseMs: 500,
+              position: i,
+              answeredAt: aWhileAgo,
+            ),
+          );
+        }
+
+        await pumpLauncher(tester, familyId: family.id, progress: progress);
+        await tester.pumpAndSettle();
+
+        expect(
+          find.text(AppStrings.practiceRetryMistakesAction(5)),
+          findsOneWidget,
+        );
+
+        await tester.ensureVisible(
+          find.text(AppStrings.practiceRetryMistakesAction(5)),
+        );
+        await tester.tap(find.text(AppStrings.practiceRetryMistakesAction(5)));
+        await tester.pumpAndSettle();
+
+        expect(find.byType(PracticeSessionScreen), findsOneWidget);
+        final config =
+            (tester
+                        .widget<PracticeSessionScreen>(
+                          find.byType(PracticeSessionScreen),
+                        )
+                        .request
+                    as FreshSessionRequest)
+                .config;
+        expect((config.source as BankSource).items.map((i) => i.id).toSet(), {
+          'item-0',
+          'item-1',
+          'item-2',
+          'item-3',
+          'item-4',
+        });
+      },
+    );
+
+    testWidgets('the retry session is capped at the chosen item count', (
+      tester,
+    ) async {
+      final family = bankFamily();
+      final progress = fakeProgressRepository();
+      final aWhileAgo = DateTime.now().subtract(const Duration(days: 1));
+      for (var i = 0; i < 8; i++) {
+        progress.attempts.add(
+          Attempt(
+            id: 'attempt-$i',
+            sessionId: 'session-x',
+            familyId: family.id,
+            itemId: 'item-$i',
+            isCorrect: false,
+            responseMs: 500,
+            position: i,
+            answeredAt: aWhileAgo,
+          ),
+        );
+      }
+
+      await pumpLauncher(tester, familyId: family.id, progress: progress);
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(AppStrings.practiceItemCountOption(5)));
+      await tester.pumpAndSettle();
+
+      await tester.ensureVisible(
+        find.text(AppStrings.practiceRetryMistakesAction(8)),
+      );
+      await tester.tap(find.text(AppStrings.practiceRetryMistakesAction(8)));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(PracticeSessionScreen), findsOneWidget);
+      final config =
+          (tester
+                      .widget<PracticeSessionScreen>(
+                        find.byType(PracticeSessionScreen),
+                      )
+                      .request
+                  as FreshSessionRequest)
+              .config;
+      expect((config.source as BankSource).items.length, 5);
     });
   });
 }
