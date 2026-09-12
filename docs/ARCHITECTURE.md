@@ -68,7 +68,7 @@ imports go through a `domain` interface, not into another feature's `presentatio
 | Models         | `freezed` + `json_serializable` | Immutable entities, `copyWith`, JSON for content files |
 | Local database | `drift` on `package:sqlite3` 3.x | `sqlite3` bundles the native library through Dart hooks, so `sqlite3_flutter_libs` (now discontinued) is not needed. Schema: see "Data layer" |
 | IDs / paths    | `uuid`, `path`, `path_provider` | |
-| Charts         | not decided                     | `fl_chart` was proposed but its widgets build on Material; to be checked in US-07x (either confirm it works without a Material ancestor or draw with `CustomPainter`) |
+| Charts         | our own `CustomPainter`s        | `fl_chart` builds on Material, so US-070 draws with `CustomPaint`: `ArcGauge`, `RadarChart`, `HorizontalBarChart` in `shared/widgets/` (see `docs/DESIGN_SYSTEM.md`) |
 | Lints          | `flutter_lints` + stricter rules in `analysis_options.yaml` | `custom_lint` was dropped: its analyzer pin conflicts with `drift_dev` |
 
 Versions are pinned with caret constraints in `pubspec.yaml` and locked in `pubspec.lock`
@@ -419,6 +419,39 @@ grows with sessions, not attempts) and derives every family from them.
 
 Every constant lives in `StatsConfig` (`statsConfigProvider`); change it there, not in the
 service, and update this section.
+
+### Dashboard (US-070)
+
+`features/progress/presentation/` renders the snapshot:
+
+```
+progress_screen.dart                 ProgressScreen: loading / error / empty state / dashboard
+providers/
+  exam_date_provider.dart            examDateProvider (UserProfile.examDate), daysUntil()
+  dashboard_labels_provider.dart     dashboardLabelsProvider: family / blueprint names by id
+  recent_activity_provider.dart      recentActivityProvider: last 10 finished sessions + score
+widgets/
+  readiness_card.dart                ArcGauge of the readiness, trend arrow, ExamCountdownChip
+  family_levels_chart.dart           RadarChart (>= 3 practised families) or HorizontalBarChart
+  weak_areas_preview.dart            top 3 WeakAreas with a "train" action (-> /train until US-072)
+  recent_activity_list.dart          sessions and sims, newest first
+  progress_empty_state.dart          no data yet -> first drill
+  progress_bands.dart                success / warning / error thresholds, overallTrend()
+```
+
+Presentation-only rules (the formulas above stay in the service):
+
+- **Bands**: readiness `< 40` error, `< 70` warning, else success; level `1..2` error, `3`
+  warning, `4..5` success; a session score uses the readiness thresholds (`ProgressBands`).
+- **Overall trend arrow** = majority of the 30-day `TrendDirection` over families with data
+  (`up` when more families improve than decline, `down` in the opposite case, else `flat`).
+- **Recent activity score** = the `ExamSummary.score` for a simulation, else
+  `TrainingSession.score` when the runner stored one, else `correct / attempts` over the
+  session's `sessionFamilyStats` rows; null (shown as `—`) when nothing was answered.
+- **Chart choice**: the radar shows every content family in `order` (level 1 = centre) once at
+  least three have data; below that, horizontal bars of the practised families only.
+- **Days until exam** are whole local calendar days (`daysUntil`), computed against the
+  snapshot's `computedAt` so tests with a fixed clock are deterministic.
 
 ### Caching and invalidation
 

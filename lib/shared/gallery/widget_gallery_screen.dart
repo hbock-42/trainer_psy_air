@@ -413,6 +413,65 @@ class _WidgetGalleryScreenState extends State<WidgetGalleryScreen> {
                 ],
               ),
               _Section(
+                title: 'Charts',
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ArcGauge(
+                        value: 0.62,
+                        size: 140,
+                        color: theme.colors.warning,
+                        semanticsLabel: 'Readiness',
+                        semanticsValue: '62 out of 100',
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text('62', style: theme.textStyles.display),
+                              Text('/ 100', style: theme.textStyles.caption),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: theme.spacing.lg),
+                      Expanded(
+                        child: HorizontalBarChart(
+                          semanticsLabel: 'Levels',
+                          entries: [
+                            BarChartEntry(
+                              label: 'Arithmetic',
+                              value: 0.8,
+                              valueLabel: 'level 4 / 5',
+                              color: theme.colors.success,
+                            ),
+                            BarChartEntry(
+                              label: 'English',
+                              value: 0.4,
+                              valueLabel: 'level 2 / 5',
+                              color: theme.colors.error,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: theme.spacing.lg),
+                  const RadarChart(
+                    semanticsLabel: 'Levels',
+                    maxSize: 280,
+                    axes: [
+                      RadarChartAxis(label: 'Arithmetic', value: 1),
+                      RadarChartAxis(label: 'Dominoes', value: 0.5),
+                      RadarChartAxis(label: 'N-back', value: 0.25),
+                      RadarChartAxis(label: 'Rules', value: 0.75),
+                      RadarChartAxis(label: 'English', value: 0),
+                    ],
+                  ),
+                ],
+              ),
+              _Section(
                 title: 'Tab bar',
                 children: [
                   AppTabBar(
