@@ -779,4 +779,15 @@ abstract final class AppStrings {
     int attempts,
     int unanswered,
   ) => '$correct/$attempts correctes · $unanswered sans réponse';
+
+  // Overlay grid engine (US-033, spec §2.4-E).
+  static const String overlayGridResetAction = 'Réinitialiser';
+  static const String overlayGridTargetLabel = 'Grille cible';
+  static const String overlayGridWorkingLabel = 'Votre grille';
+  static const String overlayGridTrayLabel = 'Pièces à glisser';
+  static String overlayGridTileSemantics(int index) => 'Pièce ${index + 1}';
+  static const String overlayGridSolutionCaption =
+      'Solution : emplacement de chaque pièce.';
+  static const String overlayGridExampleCaption =
+      'Glissez les pièces sur la grille centrale pour reproduire la cible.';
 }
