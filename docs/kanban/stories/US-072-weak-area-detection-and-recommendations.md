@@ -4,7 +4,7 @@ issue: 52
 title: "Weak-area detection and recommendations"
 type: story
 epic: EPIC-07
-status: backlog
+status: review
 priority: P1
 size: M
 lane: analytics
@@ -14,6 +14,6 @@ labels: [analytics]
 
 # US-072 — Weak-area detection and recommendations
 
-- [ ] "Train next" section on the dashboard: top 3 families/tags by weakness, with a one-tap drill launch
-- [ ] Explanation of why ("accuracy 62 % on percentages, trending down")
-- [ ] Suggests the exam sim when no sim in the last 7 days and readiness > 50
+- [x] "Train next" section on the dashboard: top 3 families/tags by weakness, with a one-tap drill launch
+- [x] Explanation of why ("accuracy 62 % on percentages, trending down")
+- [x] Suggests the exam sim when no sim in the last 7 days and readiness > 50

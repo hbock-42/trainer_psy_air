@@ -4,7 +4,7 @@ issue: 93
 title: "3-D viewpoint engine (Objets 3D)"
 type: story
 epic: EPIC-03
-status: backlog
+status: review
 priority: P1
 size: M
 lane: engines
@@ -19,7 +19,7 @@ labels: [engine,generator]
 Real test (spec §2.4-K): a 3-D scene + 8 numbered viewpoints around a circle; click the right one; 10 items, ~10–15 s each.
 
 ## Acceptance criteria
-- [ ] Scene generator: 3–6 simple coloured solids (cubes, cylinders, cones) on a grid; deterministic per seed
-- [ ] Renderer: minimal 2.5-D / isometric projection with `CustomPainter` from any of the 8 azimuths (no 3D engine, no assets); MCQ of 8 numbered positions on a circle
-- [ ] Difficulty: object count, symmetric arrangements
-- [ ] Unit tests on the projection (left/right ordering from each azimuth)
+- [x] Scene generator: 3–6 simple coloured solids (cubes, cylinders, cones) on a grid; deterministic per seed
+- [x] Renderer: minimal 2.5-D / isometric projection with `CustomPainter` from any of the 8 azimuths (no 3D engine, no assets); MCQ of 8 numbered positions on a circle
+- [x] Difficulty: object count, symmetric arrangements
+- [x] Unit tests on the projection (left/right ordering from each azimuth)
