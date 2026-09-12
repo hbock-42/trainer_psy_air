@@ -20,36 +20,30 @@ import 'activity_renderer.dart';
 // Registration order does not matter; the registries key by family id.
 
 /// The generators and scorers of every activity.
-final Provider<EngineRegistry> engineRegistryProvider =
-    Provider<EngineRegistry>(
-      (ref) => EngineRegistry(const <ActivityEngine>[
-        // US-021..036: add engines here, one line each (alphabetical by
-        // family id).
-        AttentionParityEngine(),
-        NbackEngine(),
-        ArithmeticGridEngine(),
-        // US-021..036: add engines here, one line each.
-        AttentionParityEngine(),
-        AttentionRulesEngine(),
-        // US-021..036: add engines here, one line each.
-      ]),
-    );
+final Provider<EngineRegistry>
+engineRegistryProvider = Provider<EngineRegistry>(
+  (ref) => EngineRegistry(const <ActivityEngine>[
+    // US-021..036: add engines/renderers here, one line each (alphabetical by
+    // family id).
+    ArithmeticGridEngine(),
+    AttentionParityEngine(),
+    AttentionRulesEngine(),
+    NbackEngine(),
+  ]),
+);
 
 /// The widgets of every activity.
-final Provider<RendererRegistry> rendererRegistryProvider =
-    Provider<RendererRegistry>(
-      (ref) => RendererRegistry(const <ActivityRenderer>[
-        // US-021..036: add renderers here, one line each (alphabetical by
-        // family id).
-        AttentionParityRenderer(),
-        NbackRenderer(),
-        ArithmeticGridRenderer(),
-        // US-021..036: add renderers here, one line each.
-        AttentionParityRenderer(),
-        AttentionRulesRenderer(),
-        // US-021..036: add renderers here, one line each.
-      ]),
-    );
+final Provider<RendererRegistry>
+rendererRegistryProvider = Provider<RendererRegistry>(
+  (ref) => RendererRegistry(const <ActivityRenderer>[
+    // US-021..036: add engines/renderers here, one line each (alphabetical by
+    // family id).
+    ArithmeticGridRenderer(),
+    AttentionParityRenderer(),
+    AttentionRulesRenderer(),
+    NbackRenderer(),
+  ]),
+);
 
 /// Time source of every session. Widget tests override it with a
 /// `ManualClock` to step timers by hand.
