@@ -29,7 +29,12 @@ abstract final class AppRoutes {
   /// Relative path of the training session route (nested under [train]).
   static const String trainSessionSegment = 'session/:$sessionIdParam';
 
-  /// Full location of a training session screen.
+  /// Full location of a training session screen. The practice launcher
+  /// (US-050) has no session id yet when it navigates here (the session is
+  /// only created once the runner starts, US-051): it passes `'new'` and
+  /// hands the built `ActivitySessionConfig` through `context.push`'s
+  /// `extra`, which `TrainSessionScreen` reads to show a placeholder
+  /// summary until US-051 replaces it.
   static String trainSession(String sessionId) => '$train/session/$sessionId';
 
   /// Relative path of the "edit my profile" screen (nested under
@@ -65,12 +70,12 @@ abstract final class AppRoutes {
   static String learnLesson(String familyId, String lessonId) =>
       '${learnFamily(familyId)}/lesson/$lessonId';
 
-  /// Where the "Essayer" / "S'entraîner" action of a family or lesson goes.
-  ///
-  /// Placeholder until a per-family practice launcher exists: it always
-  /// resolves to [train] today (see US-041's card); once US-051 adds one,
-  /// this becomes the single place that changes.
-  static String trainFamily(String familyId) => train;
+  /// Relative path of the practice launcher (nested under [train], US-050).
+  static const String trainFamilySegment = 'family/:$familyIdParam';
+
+  /// Where the "Essayer" / "S'entraîner" action of a family or lesson goes:
+  /// that family's practice launcher.
+  static String trainFamily(String familyId) => '$train/family/$familyId';
 
   /// Relative path of a family's flashcards screen (nested under
   /// [learnFamilySegment], US-042).
