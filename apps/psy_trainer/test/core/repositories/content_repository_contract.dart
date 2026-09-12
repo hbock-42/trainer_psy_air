@@ -117,6 +117,23 @@ void runContentRepositoryContract({
     }
   });
 
+  test('lexical fields round-trip and are found by id', () async {
+    expect(
+      content.lexicalFields,
+      isNotEmpty,
+      reason: 'fixture must carry some',
+    );
+    final expected = content.lexicalFields.toList()
+      ..sort((a, b) => a.id.compareTo(b.id));
+    expect(await repo.lexicalFields(), expected);
+    expect(await repo.lexicalFields(familyId: 'verbal_boxes'), expected);
+    expect(await repo.lexicalFields(familyId: 'nope'), isEmpty);
+
+    final field = expected.first;
+    expect(await repo.lexicalField(field.id), field);
+    expect(await repo.lexicalField('nope'), isNull);
+  });
+
   test('lessons filter by module and family', () async {
     final lesson = content.lessons.single;
     expect(await repo.lessons(), [lesson]);

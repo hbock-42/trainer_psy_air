@@ -109,3 +109,22 @@ class Blueprints extends Table with AuditedTable {
   IntColumn get version => integer()();
   TextColumn get json => text().map(const JsonMapConverter())();
 }
+
+/// Mirror of the French lexical fields authored under
+/// `verbal_boxes/lexical_fields/*.json` (`LexicalFieldBank.fields`,
+/// US-030/US-085): the semantic categories the `word_boxes` generator draws
+/// from to build a *Boîte à mots* series. Keyed by the field's own id
+/// (`verbal_boxes.field.<slug>`); `familyId` is always `verbal_boxes` today
+/// but is kept as a real column (like the other mirrors) rather than
+/// hard-coded, in case a later module reuses the kind.
+@DataClassName('LexicalFieldRow')
+@TableIndex(
+  name: 'lexical_fields_family_difficulty',
+  columns: {#familyId, #difficulty},
+)
+class LexicalFields extends Table with AuditedTable {
+  TextColumn get familyId => text()();
+  IntColumn get difficulty => integer()();
+  IntColumn get version => integer()();
+  TextColumn get json => text().map(const JsonMapConverter())();
+}

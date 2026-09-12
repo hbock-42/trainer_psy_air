@@ -111,6 +111,19 @@ abstract final class ContentRows {
       ),
   ];
 
+  static LexicalFieldsCompanion lexicalField(
+    LexicalField field, {
+    required DateTime seededAt,
+  }) => LexicalFieldsCompanion.insert(
+    id: field.id,
+    familyId: field.familyId,
+    difficulty: field.difficulty,
+    version: field.version,
+    json: field.toJson(),
+    createdAt: seededAt,
+    updatedAt: seededAt,
+  );
+
   static BlueprintsCompanion blueprint(
     ExamBlueprint blueprint, {
     required DateTime seededAt,

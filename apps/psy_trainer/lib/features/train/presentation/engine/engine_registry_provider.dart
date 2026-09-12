@@ -22,6 +22,9 @@ import '../../../engines/spatial_cubes/domain/cube_net_engine.dart';
 import '../../../engines/spatial_cubes/presentation/cube_net_renderer.dart';
 import '../../../engines/spatial_viewpoint/domain/viewpoint_engine.dart';
 import '../../../engines/spatial_viewpoint/presentation/viewpoint_renderer.dart';
+import '../../../engines/verbal_boxes/domain/word_boxes_engine.dart';
+import '../../../engines/verbal_boxes/presentation/lexical_field_catalogue.dart';
+import '../../../engines/verbal_boxes/presentation/word_boxes_renderer.dart';
 import '../../domain/engine/engine.dart';
 import '../renderers/mcq_renderer.dart';
 import 'activity_renderer.dart';
@@ -37,19 +40,20 @@ import 'activity_renderer.dart';
 /// The generators and scorers of every activity.
 final Provider<EngineRegistry> engineRegistryProvider =
     Provider<EngineRegistry>(
-      (ref) => EngineRegistry(const <ActivityEngine>[
+      (ref) => EngineRegistry(<ActivityEngine>[
         // US-021..036: add one line per engine (alphabetical by family id).
-        ArithmeticGridEngine(),
-        AirwaysEngine(),
-        AttentionParityEngine(),
-        AttentionRulesEngine(),
-        CultureAeroEngine(),
-        DominosEngine(),
-        EnglishEngine(),
-        NbackEngine(),
-        TubesEngine(),
-        CubeNetEngine(),
-        ViewpointEngine(),
+        const ArithmeticGridEngine(),
+        const AirwaysEngine(),
+        const AttentionParityEngine(),
+        const AttentionRulesEngine(),
+        const CultureAeroEngine(),
+        const DominosEngine(),
+        const EnglishEngine(),
+        const NbackEngine(),
+        const TubesEngine(),
+        const CubeNetEngine(),
+        const ViewpointEngine(),
+        WordBoxesEngine(ref.read(lexicalFieldCatalogueProvider)),
       ]),
     );
 
@@ -76,6 +80,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const TubesRenderer(),
         const CubeNetRenderer(),
         const ViewpointRenderer(),
+        WordBoxesRenderer(ref.read(lexicalFieldCatalogueProvider)),
       ]),
     );
 

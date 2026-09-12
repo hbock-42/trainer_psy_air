@@ -20,6 +20,7 @@ void main() {
         lessons: content.lessons,
         decks: content.decks,
         blueprints: content.blueprints,
+        lexicalFields: content.lexicalFields,
       ),
       dispose: () async {},
     );

@@ -56,8 +56,9 @@ class LoadedContentBundle {
   final List<Deck> decks;
   final List<ExamBlueprint> blueprints;
 
-  /// Parsed for validation only: there is no table for them until the
-  /// `word_boxes` generator (US-085) needs one.
+  /// The *Boîte à mots* semantic categories (US-030/US-085), mirrored into
+  /// the `lexical_fields` table so `ContentRepository.lexicalFields`/
+  /// `lexicalField` can serve them to the `word_boxes` generator.
   final List<LexicalField> lexicalFields;
 
   int get flashcardCount =>

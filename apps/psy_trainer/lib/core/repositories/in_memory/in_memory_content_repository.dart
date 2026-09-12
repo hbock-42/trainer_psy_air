@@ -17,6 +17,7 @@ class InMemoryContentRepository implements ContentRepository {
     Iterable<Lesson> lessons = const [],
     Iterable<Deck> decks = const [],
     Iterable<ExamBlueprint> blueprints = const [],
+    Iterable<LexicalField> lexicalFields = const [],
     Random? random,
   }) : _random = random ?? Random() {
     _modules.addAll(modules);
@@ -26,6 +27,7 @@ class InMemoryContentRepository implements ContentRepository {
     _lessons.addAll(lessons);
     _decks.addAll(decks);
     _blueprints.addAll(blueprints);
+    _lexicalFields.addAll(lexicalFields);
   }
 
   ContentInfo? info;
@@ -36,6 +38,7 @@ class InMemoryContentRepository implements ContentRepository {
   final List<Lesson> _lessons = [];
   final List<Deck> _decks = [];
   final List<ExamBlueprint> _blueprints = [];
+  final List<LexicalField> _lexicalFields = [];
   final Random _random;
 
   void addModule(Module module) => _modules.add(module);
@@ -45,6 +48,7 @@ class InMemoryContentRepository implements ContentRepository {
   void addLesson(Lesson lesson) => _lessons.add(lesson);
   void addDeck(Deck deck) => _decks.add(deck);
   void addBlueprint(ExamBlueprint blueprint) => _blueprints.add(blueprint);
+  void addLexicalField(LexicalField field) => _lexicalFields.add(field);
 
   @override
   Future<ContentInfo?> contentInfo() async => info;
@@ -161,6 +165,17 @@ class InMemoryContentRepository implements ContentRepository {
   @override
   Future<ExamBlueprint?> blueprintById(String id) async =>
       _blueprints.where((b) => b.id == id).firstOrNull;
+
+  @override
+  Future<List<LexicalField>> lexicalFields({String? familyId}) async =>
+      _lexicalFields
+          .where((f) => familyId == null || f.familyId == familyId)
+          .toList()
+        ..sort((a, b) => a.id.compareTo(b.id));
+
+  @override
+  Future<LexicalField?> lexicalField(String id) async =>
+      _lexicalFields.where((f) => f.id == id).firstOrNull;
 
   static List<T> _sorted<T>(Iterable<T> source, int Function(T) key) =>
       source.toList()..sort((a, b) => key(a).compareTo(key(b)));

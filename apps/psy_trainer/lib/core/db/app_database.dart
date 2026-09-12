@@ -57,6 +57,7 @@ part 'app_database.g.dart';
     Decks,
     Flashcards,
     Blueprints,
+    LexicalFields,
     Sessions,
     Attempts,
     ItemStats,
@@ -78,7 +79,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase(super.executor);
 
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => 3;
 
   /// v2 (US-027): added `passages` (mirror of `ItemBank.passages`, so a
   /// running session can resolve the `Passage` an `McqItem.passageId`
@@ -86,6 +87,12 @@ class AppDatabase extends _$AppDatabase {
   /// content mirror, re-seeded from assets like every other one (see
   /// "Content seeding" in ARCHITECTURE.md), so the upgrade only has to
   /// create the table; the seeder fills it on the next run.
+  ///
+  /// v3 (US-030/US-085): added `lexical_fields` (mirror of
+  /// `LexicalFieldBank.fields`, the *Boîte à mots* semantic categories the
+  /// `word_boxes` generator draws from — see
+  /// `ContentRepository.lexicalFields`/`lexicalField`). Same story: a
+  /// content mirror, so the upgrade only creates the table.
 
   /// Datetimes are stored as ISO-8601 text (UTC, millisecond precision), not
   /// unix seconds: cadence-driven activities record several attempts per
@@ -100,6 +107,9 @@ class AppDatabase extends _$AppDatabase {
     onUpgrade: (m, from, to) async {
       if (from < 2) {
         await m.createTable(passages);
+      }
+      if (from < 3) {
+        await m.createTable(lexicalFields);
       }
     },
     beforeOpen: (details) async {
