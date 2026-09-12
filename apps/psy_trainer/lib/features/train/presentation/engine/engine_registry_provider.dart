@@ -6,6 +6,8 @@ import '../../../engines/attention_parity/domain/attention_parity_engine.dart';
 import '../../../engines/attention_parity/presentation/attention_parity_renderer.dart';
 import '../../../engines/logic_dominos/domain/dominos_engine.dart';
 import '../../../engines/logic_dominos/presentation/dominos_renderer.dart';
+import '../../../engines/attention_rules/domain/attention_rules_engine.dart';
+import '../../../engines/attention_rules/presentation/attention_rules_renderer.dart';
 import '../../domain/engine/engine.dart';
 import 'activity_renderer.dart';
 
@@ -27,6 +29,8 @@ final Provider<EngineRegistry> engineRegistryProvider =
         // US-021..036: add engines here, one line each.
         DominosEngine(),
         AttentionParityEngine(),
+        AttentionRulesEngine(),
+        // US-021..036: add engines here, one line each.
       ]),
     );
 
@@ -40,6 +44,8 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         // US-021..036: add renderers here, one line each.
         DominosRenderer(),
         AttentionParityRenderer(),
+        AttentionRulesRenderer(),
+        // US-021..036: add renderers here, one line each.
       ]),
     );
 
