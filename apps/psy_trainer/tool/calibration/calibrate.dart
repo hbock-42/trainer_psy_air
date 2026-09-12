@@ -25,10 +25,7 @@
 // Run (needs `dart pub get` at the repo root first):
 //   cd apps/psy_trainer && dart run tool/calibration/calibrate.dart
 //
-// `multitask_psychomotor` and `verbal_boxes` are not covered here:
-// - `multitask_psychomotor`'s engine (US-036) is not implemented yet (no
-//   `lib/features/engines/multitask_psychomotor/` folder); nothing to
-//   calibrate.
+// `verbal_boxes` is not covered here:
 // - `verbal_boxes`'s generator needs the authored lexical-field catalogue
 //   (US-085, `assets/content/psy0/verbal_boxes/lexical_fields/core.json`)
 //   loaded from disk and parsed into `LexicalField`s before `buildSeries`
@@ -43,6 +40,7 @@ import 'package:psy_trainer/features/engines/arithmetic_grid/domain/arithmetic_g
 import 'package:psy_trainer/features/engines/attention_airways/domain/airways_simulation.dart';
 import 'package:psy_trainer/features/engines/attention_parity/domain/parity_layout.dart';
 import 'package:psy_trainer/features/engines/logic_dominos/domain/domino_board.dart';
+import 'package:psy_trainer/features/engines/multitask_psychomotor/domain/multitask_simulation.dart';
 import 'package:psy_trainer/features/engines/planning_tubes/domain/tubes_puzzle.dart';
 import 'package:psy_trainer/features/engines/spatial_cubes/domain/cube_net_puzzle.dart';
 import 'package:psy_trainer/features/engines/spatial_overlay/domain/overlay_board.dart';
@@ -88,6 +86,7 @@ void main() {
     _calibrateAirways(),
     _calibrateNback(),
     _calibrateAttentionRules(),
+    _calibrateMultitask(),
   ];
 
   for (final r in reports) {
@@ -480,6 +479,56 @@ GeneratorReport _calibrateAttentionRules() {
   );
 }
 
+// --- multitask_psychomotor ----------------------------------------------------
+
+GeneratorReport _calibrateMultitask() {
+  const params = MultitaskParams();
+  final scale = <int, double>{};
+  final shapeEvents = <int, double>{};
+  final calcEvents = <int, double>{};
+  for (final d in difficulties) {
+    scale[d] = MultitaskSimulation.scaleFor(d);
+    final shapes = <int>[];
+    final calcs = <int>[];
+    for (var seed = 0; seed < sampleSize; seed++) {
+      final sim = MultitaskSimulation.build(
+        seed: seed,
+        params: params,
+        difficulty: d,
+      );
+      shapes.add(sim.shapeEvents.length);
+      calcs.add(sim.calcEvents.length);
+    }
+    shapeEvents[d] = _avg(shapes);
+    calcEvents[d] = _avg(calcs);
+  }
+  return GeneratorReport(
+    generatorId: 'multitask',
+    family: 'multitask_psychomotor',
+    specNote:
+        '§2.4-M: continuous ~5 min, tracking + shape-match + calc-check '
+        'simultaneously; "tracking target reported plus erratique que '
+        'Pilotest".',
+    metrics: [
+      Metric('tracking scale', scale),
+      Metric('shape events', shapeEvents),
+      Metric('calc events', calcEvents),
+    ],
+    realTestLevel: 3,
+    recommendation:
+        'Tracking noise/speed and shape/calc event *rate* all scale with the '
+        'same `scaleFor(difficulty) = 1 + 0.15*(difficulty-3)` factor '
+        '(0.7x..1.3x): higher difficulty shortens the average shape/calc '
+        'interval, so event counts climb with difficulty too, as the table '
+        'shows. This is already the engine\'s own explicit design '
+        '(`MultitaskSimulation`\'s doc comment: difficulty 3 = the family\'s '
+        'documented defaults, "not spec\'d, the real test\'s difficulty curve '
+        'is undocumented"). No change: matches this harness\'s numbers and '
+        'is already flagged by the engine\'s own author as awaiting '
+        'real-test data.',
+  );
+}
+
 // --- Doc output --------------------------------------------------------------
 
 void _writeDoc(List<GeneratorReport> reports) {
@@ -511,11 +560,6 @@ void _writeDoc(List<GeneratorReport> reports) {
   buf.writeln();
   buf.writeln('## Not covered by this pass');
   buf.writeln();
-  buf.writeln(
-    '- `multitask_psychomotor` (`multitask` generator): no engine '
-    'implementation yet (`lib/features/engines/multitask_psychomotor/` '
-    'does not exist). Nothing to calibrate.',
-  );
   buf.writeln(
     '- `verbal_boxes` (`word_boxes` generator): needs the US-085 lexical-'
     'field bank loaded from JSON before `WordBoxSeries.build` can run. Out '
