@@ -10,7 +10,7 @@ CONTENT := packages/psy_content
 # melos.yaml for the same commands as Melos scripts (`melos run <name>`) if
 # you'd rather use that.
 
-.PHONY: help deps gen gen-watch lint format test test-watch coverage content-check content-assets run run-macos run-web build-macos build-web clean board
+.PHONY: help deps gen gen-watch lint format test test-watch coverage integration content-check content-assets run run-macos run-web build-macos build-web clean board
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-12s %s\n", $$1, $$2}'
@@ -28,11 +28,11 @@ gen-watch: deps ## Run code generation in watch mode for the app
 lint: deps ## Static analysis and formatting check, every package
 	(cd $(APP) && $(FLUTTER) analyze --fatal-infos)
 	(cd $(CONTENT) && $(DART) analyze --fatal-infos)
-	$(DART) format --output=none --set-exit-if-changed $(APP)/lib $(APP)/test tools
+	$(DART) format --output=none --set-exit-if-changed $(APP)/lib $(APP)/test $(APP)/integration_test tools
 	$(DART) format --output=none --set-exit-if-changed $(CONTENT)/lib $(CONTENT)/test $(CONTENT)/bin
 
 format: ## Format Dart sources in every package
-	$(DART) format $(APP)/lib $(APP)/test tools
+	$(DART) format $(APP)/lib $(APP)/test $(APP)/integration_test tools
 	$(DART) format $(CONTENT)/lib $(CONTENT)/test $(CONTENT)/bin
 
 test: deps ## Run every package's tests (app, psy_content, tools/test)
@@ -52,6 +52,9 @@ test-watch: deps ## Re-run the app's tests whenever a Dart file changes (needs f
 coverage: deps ## Run the app's tests with coverage and enforce the 70 % gate on domain/data/core
 	(cd $(APP) && $(FLUTTER) test --coverage)
 	$(DART) run tools/coverage_gate.dart --file $(APP)/coverage/lcov.info --min 70
+
+integration: deps ## Run the end-to-end flow test (integration_test/, US-121), headless (flutter_tester, no device)
+	(cd $(APP) && $(FLUTTER) test integration_test -d flutter-tester)
 
 content-check: deps ## Validate the content bundle (PATHS=<files or dirs>, default the app's assets/content)
 	$(DART) run --verbosity=error psy_content:validate_content $(if $(PATHS),$(PATHS),$(APP)/assets/content)

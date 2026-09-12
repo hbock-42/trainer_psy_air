@@ -48,7 +48,7 @@ jobs:
       - name: Format check
         # Same scope as `make lint`; generated files are emitted formatted.
         run: |
-          dart format --output=none --set-exit-if-changed apps/psy_trainer/lib apps/psy_trainer/test tools
+          dart format --output=none --set-exit-if-changed apps/psy_trainer/lib apps/psy_trainer/test apps/psy_trainer/integration_test tools
           dart format --output=none --set-exit-if-changed packages/psy_content/lib packages/psy_content/test packages/psy_content/bin
 
       - name: Analyze
@@ -92,6 +92,44 @@ jobs:
           path: apps/psy_trainer/coverage/lcov.info
           if-no-files-found: warn
           retention-days: 14
+
+  integration:
+    name: integration
+    needs: check
+    continue-on-error: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+          pub-cache-key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
+
+      - name: Fetch packages (whole workspace)
+        run: dart pub get
+
+      - name: Code generation
+        run: |
+          (cd apps/psy_trainer && dart run build_runner build --delete-conflicting-outputs)
+          (cd packages/psy_content && dart run build_runner build --delete-conflicting-outputs)
+
+      # US-121: the full practice/exam flow against the real seeded content
+      # (an in-memory Drift database, real assets read from disk) and the
+      # real engines. Run through `flutter_tester` (`-d flutter-tester`), the
+      # same headless, windowless host Flutter uses for `flutter test`: this
+      # widgets-only app (no Material/Cupertino, no platform channel besides
+      # the asset bundle, which the test bypasses with a `FileAssetReader`
+      # over `assets/content/` on disk) needs no real device or `Xvfb` to
+      # exercise every screen the same way a Linux desktop or Chrome run
+      # would, for a much lighter and less brittle job.
+      - name: Integration test
+        run: cd apps/psy_trainer && flutter test integration_test -d flutter-tester
 
   build-android:
     name: build-android
