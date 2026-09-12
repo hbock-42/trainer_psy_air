@@ -32,6 +32,11 @@ jobs:
     name: build-android
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    # `secrets` cannot be referenced from `if:` expressions; expose them as
+    # job env so the signing step can test for their presence.
+    env:
+      ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      ANDROID_KEY_PROPERTIES: ${{ secrets.ANDROID_KEY_PROPERTIES }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -62,13 +67,11 @@ jobs:
       # Secrets and variables -> Actions). See docs/RELEASE.md for how to
       # produce both from a local keystore + key.properties.
       - name: Restore signing config
-        if: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' && secrets.ANDROID_KEY_PROPERTIES != '' }}
+        if: ${{ env.ANDROID_KEYSTORE_BASE64 != '' && env.ANDROID_KEY_PROPERTIES != '' }}
         working-directory: apps/psy_trainer/android
         run: |
-          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > app/upload-keystore.jks
-          cat > key.properties <<'EOF'
-          ${{ secrets.ANDROID_KEY_PROPERTIES }}
-          EOF
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > app/upload-keystore.jks
+          printf '%s\n' "$ANDROID_KEY_PROPERTIES" > key.properties
 
       - name: Build release APK
         run: flutter build apk --release
