@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:psy_content/psy_content.dart';
 import '../../../../core/repositories/content_repository.dart';
+import '../../../../core/repositories/model/session.dart';
 import '../../domain/engine/activity_session_config.dart';
 import '../../domain/engine/item_source.dart';
 import '../../domain/engine/timing_policy.dart';

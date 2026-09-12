@@ -107,7 +107,7 @@ class PracticeLauncherNotifier extends Notifier<PracticeLauncherState> {
     unawaited(_apply(current.copyWith(difficulty: () => difficulty)));
   }
 
-  void setTimed(bool timed) {
+  void setTimed({required bool timed}) {
     final current = state.config;
     if (current == null) return;
     unawaited(_apply(current.copyWith(timed: timed)));

@@ -34,7 +34,8 @@ class PracticeConfig {
   factory PracticeConfig.defaultsFor(TestFamily family) => PracticeConfig(
     itemCount: 10,
     difficulty: null,
-    timed: family.defaultPerItemTimeSec != null || family.defaultCadence != null,
+    timed:
+        family.defaultPerItemTimeSec != null || family.defaultCadence != null,
   );
 
   /// "Quick 5": same as [defaultsFor] but always 5 items, whatever the
@@ -51,11 +52,13 @@ class PracticeConfig {
   ) {
     final fallback = PracticeConfig.defaultsFor(family);
     final rawItemCount = json['itemCount'];
-    final itemCount = rawItemCount is int && itemCountChoices.contains(rawItemCount)
+    final itemCount =
+        rawItemCount is int && itemCountChoices.contains(rawItemCount)
         ? rawItemCount
         : fallback.itemCount;
     final rawDifficulty = json['difficulty'];
-    final difficulty = rawDifficulty is int && rawDifficulty >= 1 && rawDifficulty <= 5
+    final difficulty =
+        rawDifficulty is int && rawDifficulty >= 1 && rawDifficulty <= 5
         ? rawDifficulty
         : null;
     final rawTimed = json['timed'];

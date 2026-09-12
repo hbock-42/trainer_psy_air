@@ -529,4 +529,41 @@ abstract final class AppStrings {
   static String examSectionValue(int correct, int attempts, int percent) =>
       '$correct/$attempts · $percent %';
   static const String examSectionNotReached = 'non atteinte';
+
+  // Train home and practice launcher (US-050).
+  static const String trainFamiliesSubtitle = 'Choisis une activité';
+  static const String trainFamiliesLoading = 'Chargement des activités…';
+  static const String trainFamiliesError =
+      'Impossible de charger les activités.';
+  static const String trainFamiliesEmpty =
+      'Aucune activité disponible pour le moment.';
+  static const String trainFamilyComingSoon = 'Bientôt';
+  static String trainFamilyComingSoonHint(String name) =>
+      '$name arrive bientôt.';
+  static String trainFamilyOpenSemantics(String name) => 'S\'entraîner : $name';
+  static const String trainQuick5Label = 'Rapide (5)';
+  static String trainQuick5Semantics(String name) =>
+      'Démarrage rapide : 5 questions sur $name';
+
+  static const String practiceLauncherNotFound = 'Activité introuvable.';
+  static const String practiceEngineComingSoon =
+      'Cette activité arrive bientôt : son moteur n\'est pas encore prêt.';
+  static const String practiceItemCountLabel = 'Nombre de questions';
+  static String practiceItemCountOption(int count) => '$count';
+  static const String practiceDifficultyLabel = 'Difficulté';
+  static const String practiceDifficultyAuto = 'Auto';
+  static String practiceDifficultyLevel(int level) => 'Niveau $level';
+  static const String practiceTimingLabel = 'Chronométrage';
+  static const String practiceTimedOn = 'Chronométré';
+  static const String practiceTimedOff = 'Libre';
+  static const String practiceStartAction = 'Commencer';
+  static const String practiceQuick5Action = 'Démarrage rapide (5 questions)';
+  static const String practiceRetryMistakesSoon =
+      'Reprendre mes erreurs (bientôt)';
+
+  static const String trainSessionPlaceholderTitle = 'Session (US-051)';
+  static String trainSessionSummaryFamily(String name) => 'Famille : $name';
+  static String trainSessionSummaryItemCount(int count) => 'Questions : $count';
+  static const String trainSessionSummaryTimed = 'Chronométré';
+  static const String trainSessionSummaryUntimed = 'Libre';
 }
