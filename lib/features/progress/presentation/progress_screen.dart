@@ -12,6 +12,7 @@ import 'providers/dashboard_labels_provider.dart';
 import 'providers/exam_date_provider.dart';
 import 'providers/progress_snapshot_provider.dart';
 import 'providers/recent_activity_provider.dart';
+import 'widgets/exam_score_chart_card.dart';
 import 'widgets/family_levels_chart.dart';
 import 'widgets/progress_bands.dart';
 import 'widgets/progress_empty_state.dart';
@@ -122,9 +123,13 @@ class _Dashboard extends ConsumerWidget {
                   child: FamilyLevelsChart(
                     families: snapshot.families,
                     labels: labels,
+                    onFamilySelected: (id) =>
+                        GoRouter.of(context).go(AppRoutes.progressFamily(id)),
                   ),
                 ),
                 SizedBox(height: theme.spacing.xl),
+                // Hidden (header included) until a simulation is completed.
+                ExamScoreChartCard(labels: labels),
                 const SectionHeader(
                   title: AppStrings.weakAreasTitle,
                   subtitle: AppStrings.weakAreasSubtitle,

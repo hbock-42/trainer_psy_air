@@ -11,6 +11,7 @@ import '../../features/learn/presentation/how_it_works_screen.dart';
 import '../../features/learn/presentation/learn_screen.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/onboarding/presentation/providers/onboarding_completed_provider.dart';
+import '../../features/progress/presentation/family_trend_screen.dart';
 import '../../features/progress/presentation/progress_screen.dart';
 import '../../features/settings/presentation/edit_profile_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
@@ -59,6 +60,7 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
 ///     session/:sessionId            (nested: /train/session/:sessionId)
 ///   /exam
 ///   /progress
+///     family/:familyId             (nested: /progress/family/:familyId)
 ///   /settings
 ///     profile                       (nested: /settings/profile, edit onboarding)
 /// ```
@@ -174,6 +176,19 @@ GoRouter createAppRouter({
                 path: AppRoutes.progress,
                 pageBuilder: (context, state) =>
                     _page(state, const ProgressScreen()),
+                routes: [
+                  // Score-over-time charts of one family (US-071).
+                  GoRoute(
+                    path: AppRoutes.progressFamilySegment,
+                    pageBuilder: (context, state) => _page(
+                      state,
+                      FamilyTrendScreen(
+                        familyId:
+                            state.pathParameters[AppRoutes.familyIdParam]!,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

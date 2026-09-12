@@ -14,6 +14,7 @@ export 'app_top_bar.dart';
 export 'arc_gauge.dart';
 export 'countdown_timer_bar.dart';
 export 'horizontal_bar_chart.dart';
+export 'line_chart.dart';
 export 'primary_button.dart';
 export 'progress_dots.dart';
 export 'radar_chart.dart';

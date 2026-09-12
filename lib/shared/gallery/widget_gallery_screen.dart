@@ -469,6 +469,72 @@ class _WidgetGalleryScreenState extends State<WidgetGalleryScreen> {
                       RadarChartAxis(label: 'English', value: 0),
                     ],
                   ),
+                  SizedBox(height: theme.spacing.lg),
+                  LineChart(
+                    semanticsLabel: 'Accuracy',
+                    semanticsValue: 'from 40 % to 85 % over 6 sessions',
+                    yMin: 0,
+                    yMax: 1,
+                    yTicks: LineChart.evenTicks(
+                      0,
+                      1,
+                      count: 3,
+                      format: (v) => '${(v * 100).round()} %',
+                    ),
+                    xTicks: const [
+                      LineChartTick(0, '01/09'),
+                      LineChartTick(5, '12/09'),
+                    ],
+                    formatX: (x) => 'Session ${x.round() + 1}',
+                    formatY: (y) => '${(y * 100).round()} %',
+                    selectedX: 3,
+                    series: const [
+                      LineChartSeries(
+                        label: 'Accuracy',
+                        points: [
+                          LineChartPoint(0, 0.4),
+                          LineChartPoint(1, 0.55),
+                          LineChartPoint(2, 0.5),
+                          LineChartPoint(3, 0.7),
+                          LineChartPoint(4, 0.65),
+                          LineChartPoint(5, 0.85),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: theme.spacing.lg),
+                  LineChart(
+                    semanticsLabel: 'Two series',
+                    semanticsValue: 'practice and exam accuracy',
+                    height: 160,
+                    yMin: 0,
+                    yMax: 1,
+                    yTicks: LineChart.evenTicks(
+                      0,
+                      1,
+                      count: 3,
+                      format: (v) => '${(v * 100).round()} %',
+                    ),
+                    formatY: (y) => '${(y * 100).round()} %',
+                    series: const [
+                      LineChartSeries(
+                        label: 'Practice',
+                        points: [
+                          LineChartPoint(0, 0.3),
+                          LineChartPoint(1, 0.5),
+                          LineChartPoint(2, 0.6),
+                          LineChartPoint(3, 0.8),
+                        ],
+                      ),
+                      LineChartSeries(
+                        label: 'Exam',
+                        points: [
+                          LineChartPoint(1, 0.4),
+                          LineChartPoint(3, 0.7),
+                        ],
+                      ),
+                    ],
+                  ),
                 ],
               ),
               _Section(
