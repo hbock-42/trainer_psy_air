@@ -339,6 +339,21 @@ abstract final class AppStrings {
   static String sessionResumeHint(int next, int total) =>
       'Reprise à la question $next sur $total';
 
+  // Item renderers (US-021 MCQ, US-022 numeric).
+  static const String activityValidate = 'Valider';
+  static const String activityExplanationTitle = 'Explication';
+  static const String mcqSkipOption = 'Je ne sais pas';
+  static const String mcqPassageDefaultTitle = 'Texte de référence';
+  static const String mcqPassageShow = 'Afficher le texte';
+  static const String mcqPassageHide = 'Masquer le texte';
+  static const String mcqExampleStem = 'Quelle est la capitale de la France ?';
+  static const String mcqExampleOptionCorrect = 'Paris';
+  static const String mcqExampleOptionWrong1 = 'Lyon';
+  static const String mcqExampleOptionWrong2 = 'Marseille';
+  static const String numericAnswerSemanticsLabel = 'Réponse';
+  static const String numericBackspaceSemanticsLabel = 'Effacer';
+  static const String numericExampleStem = 'Combien font 8 × 6 ?';
+
   // Progress dashboard (US-070).
   static const String progressTitle = 'Progrès';
   static const String progressLoading = 'Calcul en cours…';
