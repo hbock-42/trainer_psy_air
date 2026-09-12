@@ -234,14 +234,16 @@ class _MultitaskViewState extends State<_MultitaskView>
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: CustomPaint(
-              painter: _MultitaskPainter(
-                simulation: simulation,
-                elapsedMs: _elapsedMs,
-                theme: theme,
-                heldDirection: _heldDirection,
+            child: RepaintBoundary(
+              child: CustomPaint(
+                painter: _MultitaskPainter(
+                  simulation: simulation,
+                  elapsedMs: _elapsedMs,
+                  theme: theme,
+                  heldDirection: _heldDirection,
+                ),
+                child: const SizedBox.expand(),
               ),
-              child: const SizedBox.expand(),
             ),
           ),
           if (showsTouchFallback) ...[
@@ -402,20 +404,26 @@ class _DirectionKey extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
-    return Listener(
-      onPointerDown: enabled ? (_) => onDown(direction) : null,
-      onPointerUp: enabled ? (_) => onUp(direction) : null,
-      onPointerCancel: enabled ? (_) => onUp(direction) : null,
-      child: Container(
-        width: 48,
-        height: 48,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: theme.colors.surface,
-          border: Border.all(color: theme.colors.border),
-          borderRadius: theme.radii.smAll,
+    return Semantics(
+      button: true,
+      enabled: enabled,
+      label: label,
+      excludeSemantics: true,
+      child: Listener(
+        onPointerDown: enabled ? (_) => onDown(direction) : null,
+        onPointerUp: enabled ? (_) => onUp(direction) : null,
+        onPointerCancel: enabled ? (_) => onUp(direction) : null,
+        child: Container(
+          width: 48,
+          height: 48,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: theme.colors.surface,
+            border: Border.all(color: theme.colors.border),
+            borderRadius: theme.radii.smAll,
+          ),
+          child: Text(label, style: theme.textStyles.bodyStrong),
         ),
-        child: Text(label, style: theme.textStyles.bodyStrong),
       ),
     );
   }

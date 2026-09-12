@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show listEquals;
 import 'package:flutter/widgets.dart';
 
 import '../../../../core/theme/app_theme.dart';
@@ -55,14 +56,16 @@ class ActivityHeatmap extends StatelessWidget {
         child: SizedBox(
           width: width,
           height: height,
-          child: CustomPaint(
-            painter: _ActivityHeatmapPainter(
-              days: days,
-              cellSize: cellSize,
-              cellGap: cellGap,
-              emptyColor: theme.colors.border,
-              activeColor: theme.colors.accent,
-              subtleColor: theme.colors.accentSubtle,
+          child: RepaintBoundary(
+            child: CustomPaint(
+              painter: _ActivityHeatmapPainter(
+                days: days,
+                cellSize: cellSize,
+                cellGap: cellGap,
+                emptyColor: theme.colors.border,
+                activeColor: theme.colors.accent,
+                subtleColor: theme.colors.accentSubtle,
+              ),
             ),
           ),
         ),
@@ -113,7 +116,7 @@ class _ActivityHeatmapPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(_ActivityHeatmapPainter oldDelegate) =>
-      days != oldDelegate.days ||
+      !listEquals(days, oldDelegate.days) ||
       cellSize != oldDelegate.cellSize ||
       cellGap != oldDelegate.cellGap ||
       emptyColor != oldDelegate.emptyColor ||

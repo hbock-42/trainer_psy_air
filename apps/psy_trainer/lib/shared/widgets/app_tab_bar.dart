@@ -167,6 +167,14 @@ class _Tab extends StatelessWidget {
             : state.hovered || state.pressed
             ? colors.textPrimary
             : colors.textSecondary;
+        // The icon sits on `indicator` (`accentSubtle`) where `accent`
+        // reads fine, but the label below sits directly on the tab bar's
+        // `surface`: `accent`-on-`surface` text falls well short of the
+        // WCAG AA ratio (2.68:1; `textContrastGuideline` caught it,
+        // US-123) -- `textPrimary` (already used for hover/press) keeps
+        // the selected tab distinguishable via the indicator pill and bold
+        // weight instead of colour alone.
+        final labelForeground = selected ? colors.textPrimary : foreground;
         var background = const Color(0x00000000);
         if (state.pressed) {
           background = colors.surfaceRaised.shifted(theme, 0.08);
@@ -209,7 +217,7 @@ class _Tab extends StatelessWidget {
                 SizedBox(height: theme.spacing.xs),
                 Text(
                   item.label,
-                  style: labelStyle.copyWith(color: foreground),
+                  style: labelStyle.copyWith(color: labelForeground),
                   textAlign: TextAlign.center,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,

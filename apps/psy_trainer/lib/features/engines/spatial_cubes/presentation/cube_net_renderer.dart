@@ -365,6 +365,7 @@ class _CubeNetViewState extends State<_CubeNetView> {
       final tile = widget.puzzle.trayTiles[placedTileIndex];
       final rotation = _tileRotation[placedTileIndex]!;
       final content = Semantics(
+        button: true,
         label: context.l10n.cubeNetSlotFilledSemantics(index, tile.value),
         child: GestureDetector(
           onTap: () => _rotateTile(placedTileIndex),
@@ -460,6 +461,7 @@ class _Tray extends StatelessWidget {
     final tile = tiles[index];
     final rotation = rotationOf(index);
     final content = Semantics(
+      button: true,
       label: context.l10n.cubeNetTileSemantics(tile.value, rotation),
       child: GestureDetector(
         key: ValueKey('cube_net.tray.$index'),

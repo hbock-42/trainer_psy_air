@@ -124,37 +124,49 @@ class _TrainFamilyTile extends ConsumerWidget {
           : context.l10n.trainFamilyComingSoonHint(name),
       child: Padding(
         padding: EdgeInsets.all(theme.spacing.lg),
-        child: Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            _IndexBadge(index: index, dim: !entry.available),
-            SizedBox(width: theme.spacing.md),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    name,
-                    style: theme.textStyles.bodyStrong.copyWith(
-                      color: entry.available
-                          ? colors.textPrimary
-                          : colors.textMuted,
-                    ),
+            Row(
+              children: [
+                _IndexBadge(index: index, dim: !entry.available),
+                SizedBox(width: theme.spacing.md),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        name,
+                        style: theme.textStyles.bodyStrong.copyWith(
+                          color: entry.available
+                              ? colors.textPrimary
+                              : colors.textMuted,
+                        ),
+                      ),
+                      if (!entry.available) ...[
+                        SizedBox(height: theme.spacing.xs),
+                        Text(
+                          context.l10n.trainFamilyComingSoon,
+                          style: theme.textStyles.caption,
+                        ),
+                      ],
+                    ],
                   ),
-                  if (!entry.available) ...[
-                    SizedBox(height: theme.spacing.xs),
-                    Text(
-                      context.l10n.trainFamilyComingSoon,
-                      style: theme.textStyles.caption,
-                    ),
-                  ],
-                ],
-              ),
+                ),
+              ],
             ),
+            // A row of its own (rather than beside the name) so a long,
+            // localized family name never has to share width with the
+            // button: at 360 dp and 1.3x text scale the two used to
+            // overflow the card (US-123).
             if (entry.available) ...[
-              SizedBox(width: theme.spacing.sm),
-              SecondaryButton(
-                label: context.l10n.trainQuick5Label,
-                onPressed: () => _quick5(context, ref),
+              SizedBox(height: theme.spacing.sm),
+              Align(
+                alignment: Alignment.centerRight,
+                child: SecondaryButton(
+                  label: context.l10n.trainQuick5Label,
+                  onPressed: () => _quick5(context, ref),
+                ),
               ),
             ],
           ],
@@ -186,7 +198,10 @@ class _IndexBadge extends StatelessWidget {
       child: Text(
         '$index',
         style: theme.textStyles.label.copyWith(
-          color: dim ? theme.colors.textMuted : theme.colors.textPrimary,
+          // `textMuted` on the faded badge background falls just short of
+          // the WCAG AA 4.5:1 ratio (4.12:1; `textContrastGuideline`
+          // caught it, US-123) -- `textSecondary` clears it comfortably.
+          color: dim ? theme.colors.textSecondary : theme.colors.textPrimary,
         ),
       ),
     );

@@ -282,7 +282,7 @@ Schema v1 (every table has `id TEXT PRIMARY KEY`, `created_at`, `updated_at`):
 | `item_stats` | itemId (unique), familyId, seen, correct, totalResponseMs, lastCorrect, lastSeenAt | maintained by `INSERT ... ON CONFLICT DO UPDATE` |
 | `flashcard_reviews` | flashcardId (unique), deckId, box, reviews, lapses, lastReviewedAt?, nextReviewAt | index `(deck_id, next_review_at)` |
 | `lesson_progress` | lessonId (unique), readAt | |
-| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`). Onboarding (US-090) keeps its two flags in `settings`: `onboardingCompleted` (bool) and `disclaimerAcceptedAt` (ISO-8601 UTC); the mapping lives in `features/onboarding/domain/onboarding_answers.dart`. Settings (US-091) use `locale` for the UI language (`'system' \| 'fr' \| 'en'`, see `LanguagePreference`) and three more `settings` keys: `themeMode` (`'system' \| 'light' \| 'dark'`), `soundEnabled` (bool) and `keypadLayout` (`'phone' \| 'calculator'`) — mapping in `features/settings/domain/app_settings.dart` (`AppSettings`), read through `appSettingsProvider` (`features/settings/presentation/providers/`). Exam realism options (US-063) are one more nested `settings` key, `exam.realism`, holding a JSON object of seven booleans (`negativeMarkingCulture`, `hideRemainingTime`, `hideTimerEnglish`, `randomizeGenerated`, `allowPauseBetweenSections`, `immersiveFullScreen`, `soundCuesEnabled`) — mapping in `features/exam/domain/exam_realism_options.dart` (`ExamRealismOptions`), read through `examRealismOptionsProvider` (`features/exam/presentation/providers/`); see "Exam realism options (US-063)" below. US-073 adds a `goal` key: `{'target': int, 'unit': 'items' \| 'minutes'}` (default `{target: 20, unit: 'items'}`) — mapping in `features/progress/domain/daily_goal.dart` (`DailyGoal`), read through `dailyGoalProvider` (`features/progress/presentation/providers/`) |
+| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`). Onboarding (US-090) keeps its two flags in `settings`: `onboardingCompleted` (bool) and `disclaimerAcceptedAt` (ISO-8601 UTC); the mapping lives in `features/onboarding/domain/onboarding_answers.dart`. Settings (US-091) use `locale` for the UI language (`'system' \| 'fr' \| 'en'`, see `LanguagePreference`) and three more `settings` keys: `themeMode` (`'system' \| 'light' \| 'dark'`), `soundEnabled` (bool) and `keypadLayout` (`'phone' \| 'calculator'`) — mapping in `features/settings/domain/app_settings.dart` (`AppSettings`), read through `appSettingsProvider` (`features/settings/presentation/providers/`). Exam realism options (US-063) are one more nested `settings` key, `exam.realism`, holding a JSON object of seven booleans (`negativeMarkingCulture`, `hideRemainingTime`, `hideTimerEnglish`, `randomizeGenerated`, `allowPauseBetweenSections`, `immersiveFullScreen`, `soundCuesEnabled`) — mapping in `features/exam/domain/exam_realism_options.dart` (`ExamRealismOptions`), read through `examRealismOptionsProvider` (`features/exam/presentation/providers/`); see "Exam realism options (US-063)" below. Local reminders (US-092) are one more nested `settings` key, `reminder`, holding `{enabled: bool, hour: int, minute: int}` — mapping in `features/settings/domain/reminder_settings.dart` (`ReminderSettings`), read through `reminderSettingsProvider` (`features/settings/presentation/providers/`); see "Local reminders (US-092)" below. US-073 adds a `goal` key: `{'target': int, 'unit': 'items' \| 'minutes'}` (default `{target: 20, unit: 'items'}`) — mapping in `features/progress/domain/daily_goal.dart` (`DailyGoal`), read through `dailyGoalProvider` (`features/progress/presentation/providers/`) |
 
 Design decisions:
 
@@ -923,6 +923,54 @@ Applied where each condition actually lives:
   panel — `exam_section_planner.dart`'s `_briefingText` appends it to the briefing whenever
   `ExamSection.inputRequirement == InputRequirement.keyboard`.
 
+### Local reminders (US-092)
+
+A single daily notification, on/off + time (Settings, `_ReminderSection`), whose *content* is
+recomputed every time it is (re)scheduled rather than baked in once:
+
+```
+core/notifications/
+  reminder_scheduler.dart               ReminderScheduler interface, ReminderContent,
+                                         nextDailyFireTime (pure, unit-tested)
+  reminder_content.dart                 ReminderContentInputs, ReminderLines,
+                                         ReminderContentBuilder: which lines apply, pure Dart
+  reminder_scheduler_plugin.dart        PluginReminderScheduler (Android/iOS,
+                                         flutter_local_notifications + zonedSchedule)
+  unsupported_reminder_scheduler.dart   UnsupportedReminderScheduler: no-op, isSupported=false
+                                         (macOS, Windows, web — see "Platforms" above)
+  in_memory_reminder_scheduler.dart     InMemoryReminderScheduler: fake for tests, records calls
+  reminder_scheduler_provider.dart      reminderSchedulerProvider: picks the impl for this
+                                         platform (kIsWeb / defaultTargetPlatform)
+  reminder_coordinator_provider.dart    reminderCoordinatorProvider: composes the content
+                                         (due flashcards, weakest family, exam countdown) and
+                                         calls scheduler.scheduleDaily/.cancel
+features/settings/
+  domain/reminder_settings.dart         ReminderSettings (enabled, hour, minute; settings key
+                                         'reminder', see the `user_profile` table above)
+  presentation/
+    providers/reminder_settings_provider.dart  reminderSettingsProvider
+                                         (ReminderSettingsController): same hydration shape as
+                                         AppSettingsController
+    widgets/time_stepper_field.dart      TimeStepperField: hour/minute steppers, same pattern as
+                                         `onboarding`'s `DateStepperField`
+```
+
+`reminderCoordinatorProvider` is watched once from `PsyTrainerApp` (`lib/app.dart`) purely for
+its side effect, so it runs once at app start and again whenever any of its inputs changes
+(`reminderSettingsProvider`, `examDateProvider`, `flashcardsDueTodayProvider`,
+`recommendationsProvider` — the last three already react to `progressVersionProvider`, so a new
+attempt reschedules the reminder with fresh content next time the provider rebuilds). It loads
+`AppLocalizations` directly (`AppLocalizations.delegate.load`) instead of through a
+`BuildContext`, since it runs outside the widget tree; the resolved language follows
+`localeProvider` ('system' falls back to `PlatformDispatcher.instance.locale`, clamped to a
+supported language, else French).
+
+`nextDailyFireTime` (platform-free) picks today if the target hour:minute has not passed yet,
+tomorrow otherwise; `PluginReminderScheduler.scheduleDaily` builds the `zonedSchedule` instant
+from it with `matchDateTimeComponents: DateTimeComponents.time` so the OS re-fires it daily
+without the app rescheduling every day by itself (the app still reschedules on every start /
+settings change, which simply replaces the same notification id, `reminderNotificationId`).
+
 ## State and DI (Riverpod)
 
 - `main.dart` wraps the app in a `ProviderScope`; `PsyTrainerApp` is a `ConsumerWidget`.
@@ -1019,6 +1067,61 @@ StatefulShellRoute.indexedStack      AppShell; one branch (own Navigator) per ta
 - Tests: `<file>_test.dart` mirroring the `lib/` path; test names are sentences describing the
   behaviour.
 - Strings: prefer single quotes; no `print` (use the logger in `core/`).
+
+## Performance notes (US-123)
+
+Findings and fixes from the accessibility & performance pass. Add to this section rather than
+starting a new one when the next perf pass finds something.
+
+**Chart painters (`shared/widgets/`, `features/progress/presentation/widgets/activity_heatmap.dart`).**
+`ArcGauge`, `RadarChart`, `HorizontalBarChart`, `LineChart` and `ActivityHeatmap` each own a
+`CustomPainter` with a `shouldRepaint` that compares fields instead of defaulting to `true`.
+Three of them were comparing a `List` field (`RadarChart`'s `axes`, `LineChart`'s
+`series`/`colors`/`xTicks`/`yTicks`, `ActivityHeatmap`'s `days`) with `!=`, which is reference
+equality on the list itself — every rebuild passes a freshly built `List` literal, so the
+comparison was `true` (repaint) even when every element was unchanged. Fixed with `listEquals`
+(and an `==`/`hashCode` override on `LineChartSeries`/`RadarChartAxis`/`DailyActivity`, whose own
+equality `listEquals` needs). `ArcGauge` and `HorizontalBarChart` only ever compared scalar
+fields and were already correct. Each chart's `CustomPaint` is now also wrapped in its own
+`RepaintBoundary`, so a repaint (hover, a changed value) rasterises just that chart's layer
+instead of the screen around it.
+
+**Ticker-driven engine scenes.** `attention_airways` and `multitask_psychomotor` run a
+widget-layer `Ticker` at 60 fps (`_onTick` -> `_sim.advance(...)` -> `setState(() {})`); the scene
+genuinely changes every frame, so `AirwaysPainter.shouldRepaint` correctly always returns `true`
+(a deep comparison would still be `true` almost every tick and cost more than it saves) — the
+`_MultitaskPainter` one already compared its scalar fields. What was missing was a
+`RepaintBoundary` around each `CustomPaint`: the `setState` per tick still rebuilds the whole
+`_AirwaysView`/`_MultitaskView` subtree (counters, buttons) since the ticker lives in that
+`State`, but without a boundary the *repaint* (rasterisation) wasn't isolated to the animated
+canvas either, so every tick re-painted layers above it too. `memory_nback`'s stimulus runs on the
+runtime's item/cadence timers, not a widget-layer ticker (see its class doc), so there is no
+per-frame `setState` there; its `CustomPaint` (`NbackGlyphPainter`) got a `RepaintBoundary` anyway
+for the same isolation, at negligible cost.
+
+**`progress_analytics.dart`: one N+1 found and fixed.** `_examHistory` looped over every distinct
+`blueprintId` seen in the exam history and called `ContentRepository.blueprintById(id)` once per
+id — a query per blueprint, right next to `_tagAccuracy`'s correct batched `itemsByIds` call three
+lines above. Replaced with one `_content.blueprints()` call filtered to the ids actually seen.
+Every other query in `snapshot()`/`familyProgress()`/`examHistory()` is already a single aggregate
+call per collection (the file's own doc comment: "every query is an SQL aggregate... attempts
+themselves are never loaded"), so no other change was needed there.
+
+**Dashboard/progress providers already cache correctly.** `progressSnapshotProvider`,
+`familyTimeSeriesProvider`, `examHistoryProvider` and `recentActivityProvider`
+(`features/progress/presentation/providers/`) are `FutureProvider`s keyed off
+`progressVersionProvider` (bumped explicitly after a session/lesson changes something, see that
+provider's doc comment) or `.autoDispose.family` on the query — Riverpod caches the result and
+never re-runs the DB query on an unrelated rebuild or every frame. No change needed.
+
+**`setState` outside painters.** Searched `lib/features/**/presentation` and
+`lib/shared/widgets` for `setState` reachable from a `Timer`/`Ticker`/`AnimationController`
+callback: only the two ticker-driven engines above call it per frame (addressed with
+`RepaintBoundary`, not a `setState` change — the rebuild is legitimate, only the paint needed
+isolating). `SessionHost`'s countdown (`_Countdowns`, `Timer.periodic` at 100 ms) and
+`word_boxes_renderer.dart`/`exam_run_screen.dart`'s own periodic timers all run at ≤10 Hz, well
+under the 60 fps threshold this pass was scoped to, and each is a small, dedicated `State` (not
+the whole screen), so they were left alone.
 
 ## Code generation
 

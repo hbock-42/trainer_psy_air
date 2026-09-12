@@ -15,12 +15,18 @@ import 'package:psy_trainer/features/learn/presentation/how_it_works_screen.dart
 import 'package:psy_trainer/features/learn/presentation/learn_screen.dart';
 import 'package:psy_trainer/features/learn/presentation/providers/family_mastery_provider.dart';
 import 'package:psy_trainer/features/learn/presentation/widgets/family_card.dart';
+import 'package:psy_trainer/features/onboarding/domain/onboarding_answers.dart';
+import 'package:psy_trainer/features/onboarding/domain/target_stage.dart';
+import 'package:psy_trainer/features/progress/presentation/widgets/readiness_card.dart'
+    show ExamCountdownChip;
+import 'package:psy_trainer/features/settings/presentation/edit_profile_screen.dart';
 import 'package:psy_trainer/features/train/presentation/train_screen.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
 
 import '../../../helpers/content_ready_fakes.dart';
 import '../../../helpers/flashcards_fixtures.dart';
-import '../../../helpers/onboarding_fakes.dart' show progressRepositoryOverride;
+import '../../../helpers/onboarding_fakes.dart'
+    show fakeProgressRepository, progressRepositoryOverride;
 import '../../../helpers/psy0_families.dart';
 import '../../../helpers/pump_app.dart';
 
@@ -334,12 +340,12 @@ void main() {
     ) async {
       final container = await pumpFullApp(tester);
 
-      await tester.tap(
-        find.descendant(
-          of: find.byType(FamilyCard).first,
-          matching: find.text(l10nFr.familyActionLearn),
-        ),
+      final learnAction = find.descendant(
+        of: find.byType(FamilyCard).first,
+        matching: find.text(l10nFr.familyActionLearn),
       );
+      await tester.ensureVisible(learnAction);
+      await tester.tap(learnAction);
       await tester.pumpAndSettle();
 
       expect(find.byType(FamilyScreen), findsOneWidget);
@@ -380,12 +386,12 @@ void main() {
     testWidgets('"S\'entraîner" switches to the Train tab', (tester) async {
       await pumpFullApp(tester);
 
-      await tester.tap(
-        find.descendant(
-          of: find.byType(FamilyCard).first,
-          matching: find.text(l10nFr.familyActionTrain),
-        ),
+      final trainAction = find.descendant(
+        of: find.byType(FamilyCard).first,
+        matching: find.text(l10nFr.familyActionTrain),
       );
+      await tester.ensureVisible(trainAction);
+      await tester.tap(trainAction);
       await tester.pumpAndSettle();
 
       expect(find.byType(TrainScreen), findsOneWidget);
@@ -424,6 +430,57 @@ void main() {
         AppRoutes.learnCards,
       );
       expect(find.text(l10nFr.flashcardsDeckSummary(4, 4)), findsOneWidget);
+    });
+  });
+
+  group('accessibility', () {
+    testWidgets('meets accessibility guidelines', (tester) async {
+      final handle = tester.ensureSemantics();
+      await pumpLearn(tester);
+
+      await expectLater(tester, meetsGuideline(textContrastGuideline));
+      await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+      await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+      handle.dispose();
+    });
+  });
+
+  group('exam countdown chip (US-093)', () {
+    testWidgets('shown when an exam date is set, tap opens the profile edit', (
+      tester,
+    ) async {
+      final container = await pumpFullApp(tester);
+
+      expect(
+        find.byWidgetPredicate((w) => w is ExamCountdownChip),
+        findsOneWidget,
+      );
+
+      await tester.tap(find.byKey(const Key('learn.exam_countdown_chip')));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(EditProfileScreen), findsOneWidget);
+      expect(
+        container.read(appRouterProvider).state.uri.toString(),
+        AppRoutes.settingsProfile,
+      );
+    });
+
+    testWidgets('hidden when no exam date is set', (tester) async {
+      await pumpLearn(
+        tester,
+        progress: fakeProgressRepository(
+          answers: OnboardingAnswers(
+            disclaimerAcceptedAt: DateTime.utc(2026, 9, 1, 9),
+            targetStage: TargetStage.psy0,
+          ),
+        ),
+      );
+
+      expect(
+        find.byWidgetPredicate((w) => w is ExamCountdownChip),
+        findsNothing,
+      );
     });
   });
 }

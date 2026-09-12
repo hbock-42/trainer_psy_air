@@ -1347,6 +1347,42 @@
   "settingsKeypadLabel": "Numeric keypad layout",
   "settingsKeypadPhone": "Phone",
   "settingsKeypadCalculator": "Calculator",
+  "settingsSectionReminders": "Reminders",
+  "settingsReminderLabel": "Daily reminder",
+  "settingsReminderOn": "Reminder on",
+  "settingsReminderOff": "Reminder off",
+  "settingsReminderTimeLabel": "Reminder time",
+  "settingsReminderHour": "Hour",
+  "settingsReminderMinute": "Minute",
+  "settingsReminderUnsupported": "Reminders are not available on this device; they work on phone (Android/iOS).",
+  "settingsReminderPermissionDenied": "Notifications denied: enable them in your system settings to receive the reminder.",
+  "reminderNotificationTitle": "PSY Trainer",
+  "reminderFlashcardsDue": "{count, plural, =1{1 flashcard to review} other{{count} flashcards to review}}",
+  "@reminderFlashcardsDue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderWeakestFamily": "Weak spot: {family}",
+  "@reminderWeakestFamily": {
+    "placeholders": {
+      "family": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderExamToday": "The exam is today",
+  "reminderExamCountdown": "{days, plural, =1{Exam in 1 day} other{Exam in {days} days}}",
+  "@reminderExamCountdown": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderFallback": "A little practice today?",
   "settingsSectionData": "Data",
   "settingsResetAction": "Reset all data",
   "settingsResetConfirm1Title": "Reset all data?",

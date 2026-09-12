@@ -209,15 +209,24 @@ class _CardReview extends ConsumerWidget {
         SizedBox(height: theme.spacing.lg),
         Expanded(
           child: Center(
-            child: GestureDetector(
-              onTap: notifier.flip,
-              child: FlipCard(
-                flipped: session.flipped,
-                front: _CardFace(
-                  text: entry.card.front.resolve(locale),
-                  hint: context.l10n.flashcardsFlipHint,
+            child: Semantics(
+              button: true,
+              label: context.l10n.flashcardsFlipHint,
+              value: session.flipped
+                  ? entry.card.back.resolve(locale)
+                  : entry.card.front.resolve(locale),
+              toggled: session.flipped,
+              excludeSemantics: true,
+              child: GestureDetector(
+                onTap: notifier.flip,
+                child: FlipCard(
+                  flipped: session.flipped,
+                  front: _CardFace(
+                    text: entry.card.front.resolve(locale),
+                    hint: context.l10n.flashcardsFlipHint,
+                  ),
+                  back: _CardFace(text: entry.card.back.resolve(locale)),
                 ),
-                back: _CardFace(text: entry.card.back.resolve(locale)),
               ),
             ),
           ),

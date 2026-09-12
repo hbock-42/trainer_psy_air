@@ -241,10 +241,12 @@ class _StimulusPatch extends StatelessWidget {
         child: SizedBox(
           width: size,
           height: size,
-          child: CustomPaint(
-            painter: NbackGlyphPainter(
-              glyph: nbackGlyphOf(value),
-              color: theme.colors.onAccent,
+          child: RepaintBoundary(
+            child: CustomPaint(
+              painter: NbackGlyphPainter(
+                glyph: nbackGlyphOf(value),
+                color: theme.colors.onAccent,
+              ),
             ),
           ),
         ),

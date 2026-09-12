@@ -7,6 +7,9 @@ import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
+import '../../progress/presentation/providers/exam_date_provider.dart';
+import '../../progress/presentation/widgets/readiness_card.dart'
+    show ExamCountdownChip;
 import 'providers/flashcards_queue_provider.dart';
 import 'providers/psy0_families_provider.dart';
 import 'widgets/family_card.dart';
@@ -47,11 +50,17 @@ class _LearnScreenState extends ConsumerState<LearnScreen> {
 
   void _openCards() => context.push(AppRoutes.learnCards);
 
+  void _openProfile() => context.push(AppRoutes.settingsProfile);
+
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final families = ref.watch(psy0FamiliesProvider);
     final dueToday = ref.watch(flashcardsDueTodayProvider).value ?? 0;
+    final examDate = ref.watch(examDateProvider).value;
+    final examDaysLeft = examDate == null
+        ? null
+        : daysUntil(examDate, DateTime.now());
     final twoColumns =
         MediaQuery.sizeOf(context).width >= LearnScreen.twoColumnBreakpoint;
 
@@ -74,6 +83,8 @@ class _LearnScreenState extends ConsumerState<LearnScreen> {
                   onToggle: () => setState(
                     () => _disclaimerExpanded = !_disclaimerExpanded,
                   ),
+                  examDaysLeft: examDaysLeft,
+                  onExamTap: _openProfile,
                 ),
                 SizedBox(height: theme.spacing.xl),
                 _HowItWorksCard(onPressed: _openHowItWorks),
@@ -110,10 +121,21 @@ class _LearnScreenState extends ConsumerState<LearnScreen> {
 
 /// App name, short disclaimer and the expandable full disclaimer (spec §7).
 class _Header extends StatelessWidget {
-  const _Header({required this.expanded, required this.onToggle});
+  const _Header({
+    required this.expanded,
+    required this.onToggle,
+    required this.examDaysLeft,
+    required this.onExamTap,
+  });
 
   final bool expanded;
   final VoidCallback onToggle;
+
+  /// Whole days until the exam date, or `null` to hide the countdown chip
+  /// (US-093; reuses `examDateProvider`/`daysUntil`, same as the dashboard's
+  /// `ReadinessCard`).
+  final int? examDaysLeft;
+  final VoidCallback onExamTap;
 
   @override
   Widget build(BuildContext context) {
@@ -121,9 +143,29 @@ class _Header extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Semantics(
-          header: true,
-          child: Text(context.l10n.appName, style: theme.textStyles.headline),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Semantics(
+                header: true,
+                child: Text(
+                  context.l10n.appName,
+                  style: theme.textStyles.headline,
+                ),
+              ),
+            ),
+            if (examDaysLeft != null) ...[
+              SizedBox(width: theme.spacing.sm),
+              AppPressable(
+                key: const Key('learn.exam_countdown_chip'),
+                onPressed: onExamTap,
+                semanticsLabel: context.l10n.examDateSemanticsLabel,
+                builder: (context, state) =>
+                    ExamCountdownChip(daysLeft: examDaysLeft!),
+              ),
+            ],
+          ],
         ),
         SizedBox(height: theme.spacing.sm),
         Text(context.l10n.disclaimerShort, style: theme.textStyles.caption),
@@ -173,7 +215,10 @@ class _LinkButton extends StatelessWidget {
         onPressed: onPressed,
         semanticsLabel: label,
         excludeSemantics: true,
-        minSize: 0,
+        // No `minSize: 0` override: the design system's own rule is a
+        // 48x48 minimum hit target for every interactive widget
+        // (`androidTapTargetGuideline` caught the 26 dp-tall link, US-123).
+        // The extra hit area is invisible padding, not a visual change.
         builder: (context, state) => AppFocusRing(
           visible: state.focused,
           borderRadius: theme.radii.smAll,

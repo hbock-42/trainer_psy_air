@@ -139,32 +139,40 @@ void main() {
     handle.dispose();
   });
 
-  testWidgets('selected tab is drawn in the accent, others are not', (
-    tester,
-  ) async {
-    await tester.pumpApp(
-      AppTabBar(items: _items, selectedIndex: 3, onSelected: (_) {}),
-      align: false,
-    );
+  testWidgets(
+    'selected tab shows the accent on its icon pill, not its label text',
+    (tester) async {
+      await tester.pumpApp(
+        AppTabBar(items: _items, selectedIndex: 3, onSelected: (_) {}),
+        align: false,
+      );
 
-    Color? colorOf(String label) =>
-        tester.widget<Text>(find.text(label)).style?.color;
-    expect(colorOf('Progrès'), light.colors.accent);
-    expect(colorOf('Apprendre'), light.colors.textSecondary);
-    // Selected glyph sits on the accent pill.
-    final pill = tester.widget<AnimatedContainer>(
-      find
-          .descendant(
-            of: _tab('Progrès'),
-            matching: find.byType(AnimatedContainer),
-          )
-          .last,
-    );
-    expect(
-      (pill.decoration as BoxDecoration?)?.color,
-      light.colors.accentSubtle,
-    );
-  });
+      Color? colorOf(String label) =>
+          tester.widget<Text>(find.text(label)).style?.color;
+      // The label sits directly on the bar's `surface`, where `accent`
+      // text falls short of the WCAG contrast ratio (US-123); `accent`
+      // is reserved for the icon, which sits on the `accentSubtle` pill.
+      expect(colorOf('Progrès'), light.colors.textPrimary);
+      expect(colorOf('Apprendre'), light.colors.textSecondary);
+      final icon = tester.widget<AppIcon>(
+        find.descendant(of: _tab('Progrès'), matching: find.byType(AppIcon)),
+      );
+      expect(icon.color, light.colors.accent);
+      // Selected glyph sits on the accent pill.
+      final pill = tester.widget<AnimatedContainer>(
+        find
+            .descendant(
+              of: _tab('Progrès'),
+              matching: find.byType(AnimatedContainer),
+            )
+            .last,
+      );
+      expect(
+        (pill.decoration as BoxDecoration?)?.color,
+        light.colors.accentSubtle,
+      );
+    },
+  );
 
   testWidgets('hover and press tint the tab, focus shows the ring', (
     tester,
