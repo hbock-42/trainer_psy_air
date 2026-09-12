@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/repositories/repository_providers.dart';
 import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_theme.dart';
@@ -37,15 +37,15 @@ class PracticeLauncherScreen extends ConsumerWidget {
 
     return AppScaffold(
       onBack: context.pop,
-      title: state.family?.name.resolve(AppStrings.locale),
+      title: state.family?.name.resolve(context.l10n.localeName),
       body: switch (state.status) {
         PracticeLauncherStatus.notFound => Padding(
           padding: EdgeInsets.all(theme.spacing.lg),
-          child: const Text(AppStrings.practiceLauncherNotFound),
+          child: Text(context.l10n.practiceLauncherNotFound),
         ),
         PracticeLauncherStatus.loading => Padding(
           padding: EdgeInsets.all(theme.spacing.lg),
-          child: const Text(AppStrings.trainFamiliesLoading),
+          child: Text(context.l10n.trainFamiliesLoading),
         ),
         PracticeLauncherStatus.ready => _LauncherBody(familyId: familyId),
       },
@@ -118,7 +118,7 @@ class _LauncherBody extends ConsumerWidget {
           if (!available) ...[
             AppCard(
               child: Text(
-                AppStrings.practiceEngineComingSoon,
+                context.l10n.practiceEngineComingSoon,
                 style: theme.textStyles.body.copyWith(
                   color: theme.colors.textSecondary,
                 ),
@@ -127,7 +127,7 @@ class _LauncherBody extends ConsumerWidget {
             SizedBox(height: theme.spacing.lg),
           ],
           Text(
-            AppStrings.practiceItemCountLabel,
+            context.l10n.practiceItemCountLabel,
             style: theme.textStyles.title,
           ),
           SizedBox(height: theme.spacing.sm),
@@ -138,7 +138,7 @@ class _LauncherBody extends ConsumerWidget {
               for (final choice in PracticeConfig.itemCountChoices)
                 _OptionChip(
                   key: ValueKey('item-count-$choice'),
-                  label: AppStrings.practiceItemCountOption(choice),
+                  label: context.l10n.practiceItemCountOption(choice),
                   selected: config.itemCount == choice,
                   onPressed: available
                       ? () => notifier.setItemCount(choice)
@@ -148,7 +148,7 @@ class _LauncherBody extends ConsumerWidget {
           ),
           SizedBox(height: theme.spacing.lg),
           Text(
-            AppStrings.practiceDifficultyLabel,
+            context.l10n.practiceDifficultyLabel,
             style: theme.textStyles.title,
           ),
           SizedBox(height: theme.spacing.sm),
@@ -158,7 +158,7 @@ class _LauncherBody extends ConsumerWidget {
             children: [
               _OptionChip(
                 key: const ValueKey('difficulty-auto'),
-                label: AppStrings.practiceDifficultyAuto,
+                label: context.l10n.practiceDifficultyAuto,
                 selected: config.difficulty == null,
                 onPressed: available
                     ? () => notifier.setDifficulty(null)
@@ -167,7 +167,7 @@ class _LauncherBody extends ConsumerWidget {
               for (var level = 1; level <= 5; level++)
                 _OptionChip(
                   key: ValueKey('difficulty-$level'),
-                  label: AppStrings.practiceDifficultyLevel(level),
+                  label: context.l10n.practiceDifficultyLevel(level),
                   selected: config.difficulty == level,
                   onPressed: available
                       ? () => notifier.setDifficulty(level)
@@ -176,7 +176,7 @@ class _LauncherBody extends ConsumerWidget {
             ],
           ),
           SizedBox(height: theme.spacing.lg),
-          Text(AppStrings.practiceTimingLabel, style: theme.textStyles.title),
+          Text(context.l10n.practiceTimingLabel, style: theme.textStyles.title),
           SizedBox(height: theme.spacing.sm),
           Wrap(
             spacing: theme.spacing.sm,
@@ -184,7 +184,7 @@ class _LauncherBody extends ConsumerWidget {
             children: [
               _OptionChip(
                 key: const ValueKey('timing-on'),
-                label: AppStrings.practiceTimedOn,
+                label: context.l10n.practiceTimedOn,
                 selected: config.timed,
                 onPressed: available
                     ? () => notifier.setTimed(timed: true)
@@ -192,7 +192,7 @@ class _LauncherBody extends ConsumerWidget {
               ),
               _OptionChip(
                 key: const ValueKey('timing-off'),
-                label: AppStrings.practiceTimedOff,
+                label: context.l10n.practiceTimedOff,
                 selected: !config.timed,
                 onPressed: available
                     ? () => notifier.setTimed(timed: false)
@@ -202,12 +202,12 @@ class _LauncherBody extends ConsumerWidget {
           ),
           SizedBox(height: theme.spacing.xl),
           PrimaryButton(
-            label: AppStrings.practiceStartAction,
+            label: context.l10n.practiceStartAction,
             onPressed: available ? () => _start(context, ref, config) : null,
           ),
           SizedBox(height: theme.spacing.sm),
           SecondaryButton(
-            label: AppStrings.practiceQuick5Action,
+            label: context.l10n.practiceQuick5Action,
             onPressed: available
                 ? () async {
                     final quick5 = await notifier.applyQuick5();
@@ -221,8 +221,8 @@ class _LauncherBody extends ConsumerWidget {
           SecondaryButton(
             key: const Key('practice_launcher.retry_mistakes'),
             label: state.mistakePool.isEmpty
-                ? AppStrings.practiceRetryMistakesEmpty
-                : AppStrings.practiceRetryMistakesAction(
+                ? context.l10n.practiceRetryMistakesEmpty
+                : context.l10n.practiceRetryMistakesAction(
                     state.mistakePool.length,
                   ),
             onPressed: available && state.mistakePool.isNotEmpty
@@ -231,7 +231,7 @@ class _LauncherBody extends ConsumerWidget {
           ),
           SizedBox(height: theme.spacing.xxl),
           Text(
-            family.description.resolve(AppStrings.locale),
+            family.description.resolve(context.l10n.localeName),
             style: theme.textStyles.caption,
           ),
         ],

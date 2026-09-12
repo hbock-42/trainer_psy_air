@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../domain/leitner_scheduler.dart';
@@ -29,7 +29,7 @@ class FlashcardsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final queue = ref.watch(flashcardsQueueProvider(familyId));
     return AppScaffold(
-      title: AppStrings.flashcardsTitle,
+      title: context.l10n.flashcardsTitle,
       onBack: context.pop,
       bodyPadding: EdgeInsets.all(AppTheme.of(context).spacing.lg),
       body: Center(
@@ -42,10 +42,10 @@ class FlashcardsScreen extends ConsumerWidget {
               familyId: familyId,
               total: q.total,
             ),
-            AsyncError() => const Center(
-              child: Text(AppStrings.flashcardsError),
+            AsyncError() => Center(
+              child: Text(context.l10n.flashcardsError),
             ),
-            _ => const Center(child: Text(AppStrings.flashcardsLoading)),
+            _ => Center(child: Text(context.l10n.flashcardsLoading)),
           },
         ),
       ),
@@ -109,7 +109,7 @@ class _FlashcardsBodyState extends ConsumerState<_FlashcardsBody> {
 
     final session = ref.watch(flashcardsSessionProvider(widget.familyId));
     if (session.isLoading) {
-      return const Center(child: Text(AppStrings.flashcardsLoading));
+      return Center(child: Text(context.l10n.flashcardsLoading));
     }
     if (session.isDone) {
       return _SessionSummary(
@@ -153,13 +153,13 @@ class _DeckSummary extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppStrings.flashcardsDeckSummary(due: due, total: total),
+                context.l10n.flashcardsDeckSummary(due, total),
                 style: theme.textStyles.title,
               ),
               if (due == 0) ...[
                 SizedBox(height: theme.spacing.sm),
                 Text(
-                  AppStrings.flashcardsEmptyBody,
+                  context.l10n.flashcardsEmptyBody,
                   style: theme.textStyles.body.copyWith(
                     color: theme.colors.textSecondary,
                   ),
@@ -170,10 +170,10 @@ class _DeckSummary extends StatelessWidget {
         ),
         SizedBox(height: theme.spacing.lg),
         if (due > 0)
-          PrimaryButton(label: AppStrings.flashcardsStart, onPressed: onStart)
+          PrimaryButton(label: context.l10n.flashcardsStart, onPressed: onStart)
         else
           Text(
-            AppStrings.flashcardsEmptyTitle,
+            context.l10n.flashcardsEmptyTitle,
             style: theme.textStyles.body.copyWith(
               color: theme.colors.textSecondary,
             ),
@@ -195,13 +195,13 @@ class _CardReview extends ConsumerWidget {
     final theme = AppTheme.of(context);
     final entry = session.current!;
     final notifier = ref.read(flashcardsSessionProvider(familyId).notifier);
-    const locale = AppStrings.locale;
+    final locale = context.l10n.localeName;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          AppStrings.flashcardsProgress(
+          context.l10n.flashcardsProgress(
             session.index + 1,
             session.queue.length,
           ),
@@ -217,7 +217,7 @@ class _CardReview extends ConsumerWidget {
                 flipped: session.flipped,
                 front: _CardFace(
                   text: entry.card.front.resolve(locale),
-                  hint: AppStrings.flashcardsFlipHint,
+                  hint: context.l10n.flashcardsFlipHint,
                 ),
                 back: _CardFace(text: entry.card.back.resolve(locale)),
               ),
@@ -230,21 +230,21 @@ class _CardReview extends ConsumerWidget {
             children: [
               Expanded(
                 child: SecondaryButton(
-                  label: AppStrings.flashcardsAgain,
+                  label: context.l10n.flashcardsAgain,
                   onPressed: () => notifier.grade(FlashcardGrade.again),
                 ),
               ),
               SizedBox(width: theme.spacing.sm),
               Expanded(
                 child: SecondaryButton(
-                  label: AppStrings.flashcardsHard,
+                  label: context.l10n.flashcardsHard,
                   onPressed: () => notifier.grade(FlashcardGrade.hard),
                 ),
               ),
               SizedBox(width: theme.spacing.sm),
               Expanded(
                 child: PrimaryButton(
-                  label: AppStrings.flashcardsGood,
+                  label: context.l10n.flashcardsGood,
                   onPressed: () => notifier.grade(FlashcardGrade.good),
                 ),
               ),
@@ -252,7 +252,7 @@ class _CardReview extends ConsumerWidget {
           )
         else
           SecondaryButton(
-            label: AppStrings.flashcardsFlipHint,
+            label: context.l10n.flashcardsFlipHint,
             onPressed: notifier.flip,
             expand: true,
           ),
@@ -319,13 +319,13 @@ class _SessionSummary extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          AppStrings.flashcardsSummaryTitle,
+          context.l10n.flashcardsSummaryTitle,
           style: theme.textStyles.headline,
           textAlign: TextAlign.center,
         ),
         SizedBox(height: theme.spacing.sm),
         Text(
-          AppStrings.flashcardsSummaryBody(
+          context.l10n.flashcardsSummaryBody(
             again: again,
             hard: hard,
             good: good,
@@ -337,7 +337,7 @@ class _SessionSummary extends StatelessWidget {
         ),
         SizedBox(height: theme.spacing.xl),
         PrimaryButton(
-          label: AppStrings.flashcardsSummaryDone,
+          label: context.l10n.flashcardsSummaryDone,
           onPressed: onDone,
         ),
       ],

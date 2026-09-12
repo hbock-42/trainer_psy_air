@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../domain/engine/engine.dart';
@@ -48,7 +48,7 @@ class _SessionSummaryScreenState extends State<SessionSummaryScreen> {
     final theme = AppTheme.of(context);
     final reviewing = _reviewing;
     final title =
-        widget.config.title?.resolve(AppStrings.locale) ??
+        widget.config.title?.resolve(context.l10n.localeName) ??
         widget.config.familyId;
 
     if (reviewing != null) {
@@ -66,7 +66,7 @@ class _SessionSummaryScreenState extends State<SessionSummaryScreen> {
     }
 
     return AppScaffold(
-      title: AppStrings.summaryTitle,
+      title: context.l10n.summaryTitle,
       onBack: widget.onBack,
       body: SingleChildScrollView(
         padding: EdgeInsets.all(theme.spacing.lg),
@@ -77,7 +77,7 @@ class _SessionSummaryScreenState extends State<SessionSummaryScreen> {
             SizedBox(height: theme.spacing.lg),
             _MetricGrid(result: widget.result),
             SizedBox(height: theme.spacing.lg),
-            Text(AppStrings.summaryItemsTitle, style: theme.textStyles.title),
+            Text(context.l10n.summaryItemsTitle, style: theme.textStyles.title),
             SizedBox(height: theme.spacing.sm),
             for (final outcome in widget.result.outcomes) ...[
               if (outcome.index > 0) SizedBox(height: theme.spacing.sm),
@@ -89,21 +89,21 @@ class _SessionSummaryScreenState extends State<SessionSummaryScreen> {
             SizedBox(height: theme.spacing.xl),
             PrimaryButton(
               key: SessionSummaryScreen.restartKey,
-              label: AppStrings.summaryRestartAction,
+              label: context.l10n.summaryRestartAction,
               expand: true,
               onPressed: widget.onRestart,
             ),
             SizedBox(height: theme.spacing.sm),
             SecondaryButton(
               key: SessionSummaryScreen.retryMistakesKey,
-              label: AppStrings.summaryRetryMistakesAction,
+              label: context.l10n.summaryRetryMistakesAction,
               expand: true,
               onPressed: widget.onRetryMistakes,
             ),
             SizedBox(height: theme.spacing.sm),
             SecondaryButton(
               key: SessionSummaryScreen.backKey,
-              label: AppStrings.summaryBackAction,
+              label: context.l10n.summaryBackAction,
               expand: true,
               onPressed: widget.onBack,
             ),
@@ -135,9 +135,9 @@ class _MetricGrid extends StatelessWidget {
             SizedBox(
               width: 160,
               child: ScoreCard(
-                title: AppStrings.summaryAccuracyLabel,
+                title: context.l10n.summaryAccuracyLabel,
                 value: '${(section.accuracy * 100).round()} %',
-                subtitle: AppStrings.summaryScoreFraction(
+                subtitle: context.l10n.summaryScoreFraction(
                   section.correct,
                   section.played,
                 ),
@@ -146,21 +146,21 @@ class _MetricGrid extends StatelessWidget {
             SizedBox(
               width: 160,
               child: ScoreCard(
-                title: AppStrings.summaryMeanRtLabel,
+                title: context.l10n.summaryMeanRtLabel,
                 value: _formatMs(section.meanResponseMs),
               ),
             ),
             SizedBox(
               width: 160,
               child: ScoreCard(
-                title: AppStrings.summaryMedianRtLabel,
+                title: context.l10n.summaryMedianRtLabel,
                 value: _formatMs(section.medianResponseMs),
               ),
             ),
             SizedBox(
               width: 160,
               child: ScoreCard(
-                title: AppStrings.summaryTimeoutsLabel,
+                title: context.l10n.summaryTimeoutsLabel,
                 value: '${section.timeouts}',
               ),
             ),
@@ -170,12 +170,12 @@ class _MetricGrid extends StatelessWidget {
           SizedBox(height: theme.spacing.sm),
           if (highlights.best != null)
             Text(
-              AppStrings.summaryBestItemLabel(highlights.best!.index + 1),
+              context.l10n.summaryBestItemLabel(highlights.best!.index + 1),
               style: theme.textStyles.caption,
             ),
           if (highlights.worst != null)
             Text(
-              AppStrings.summaryWorstItemLabel(highlights.worst!.index + 1),
+              context.l10n.summaryWorstItemLabel(highlights.worst!.index + 1),
               style: theme.textStyles.caption,
             ),
         ],
@@ -229,8 +229,8 @@ class _ItemRow extends StatelessWidget {
     final colors = theme.colors;
     final ok = outcome.isCorrect;
     final label = ok
-        ? AppStrings.summaryItemCorrectSemantics(outcome.index + 1)
-        : AppStrings.summaryItemWrongSemantics(outcome.index + 1);
+        ? context.l10n.summaryItemCorrectSemantics(outcome.index + 1)
+        : context.l10n.summaryItemWrongSemantics(outcome.index + 1);
 
     return AppCard(
       key: SessionSummaryScreen.itemKey(outcome.index),
@@ -240,7 +240,7 @@ class _ItemRow extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              AppStrings.summaryItemLabel(outcome.index + 1),
+              context.l10n.summaryItemLabel(outcome.index + 1),
               style: theme.textStyles.body,
             ),
           ),
@@ -263,22 +263,22 @@ class _ReviewPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
-    final text = ItemReviewText.of(outcome);
+    final text = ItemReviewText.of(context, outcome);
 
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            AppStrings.summaryItemLabel(index + 1),
+            context.l10n.summaryItemLabel(index + 1),
             style: theme.textStyles.title,
           ),
           SizedBox(height: theme.spacing.md),
           Text(text.stem, style: theme.textStyles.body),
           SizedBox(height: theme.spacing.lg),
-          _Field(label: AppStrings.summaryReviewMyAnswer, value: text.myAnswer),
+          _Field(label: context.l10n.summaryReviewMyAnswer, value: text.myAnswer),
           SizedBox(height: theme.spacing.sm),
-          _Field(label: AppStrings.summaryReviewExpected, value: text.expected),
+          _Field(label: context.l10n.summaryReviewExpected, value: text.expected),
           if (text.explanation != null) ...[
             SizedBox(height: theme.spacing.lg),
             AppCard(
@@ -286,7 +286,7 @@ class _ReviewPanel extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    AppStrings.activityExplanationTitle,
+                    context.l10n.activityExplanationTitle,
                     style: theme.textStyles.label,
                   ),
                   SizedBox(height: theme.spacing.xs),

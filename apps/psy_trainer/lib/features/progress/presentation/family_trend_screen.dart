@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/errors/error_logger.dart';
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/repositories/model/session.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
@@ -59,19 +59,19 @@ class _FamilyTrendScreenState extends ConsumerState<FamilyTrendScreen> {
   /// (and a new provider instance) each frame.
   late final DateTime _now = ref.read(statsServiceProvider).now;
 
-  static const List<SegmentedOption<TrendRange>> _ranges = [
-    SegmentedOption(value: TrendRange.week, label: AppStrings.trendRange7d),
-    SegmentedOption(value: TrendRange.month, label: AppStrings.trendRange30d),
-    SegmentedOption(value: TrendRange.all, label: AppStrings.trendRangeAll),
+  List<SegmentedOption<TrendRange>> _ranges(BuildContext context) => [
+    SegmentedOption(value: TrendRange.week, label: context.l10n.trendRange7d),
+    SegmentedOption(value: TrendRange.month, label: context.l10n.trendRange30d),
+    SegmentedOption(value: TrendRange.all, label: context.l10n.trendRangeAll),
   ];
 
-  static const List<SegmentedOption<SessionMode?>> _modes = [
-    SegmentedOption(value: null, label: AppStrings.trendModeAll),
+  List<SegmentedOption<SessionMode?>> _modes(BuildContext context) => [
+    SegmentedOption(value: null, label: context.l10n.trendModeAll),
     SegmentedOption(
       value: SessionMode.practice,
-      label: AppStrings.trendModePractice,
+      label: context.l10n.trendModePractice,
     ),
-    SegmentedOption(value: SessionMode.exam, label: AppStrings.trendModeExam),
+    SegmentedOption(value: SessionMode.exam, label: context.l10n.trendModeExam),
   ];
 
   @override
@@ -96,7 +96,7 @@ class _FamilyTrendScreenState extends ConsumerState<FamilyTrendScreen> {
     return AppScaffold(
       title: labels.families.containsKey(widget.familyId)
           ? labels.familyName(widget.familyId, locale: locale, short: false)
-          : AppStrings.familyTrendTitle,
+          : context.l10n.familyTrendTitle,
       onBack: context.pop,
       body: ListView(
         padding: EdgeInsets.all(theme.spacing.lg),
@@ -110,20 +110,20 @@ class _FamilyTrendScreenState extends ConsumerState<FamilyTrendScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   _FilterRow(
-                    label: AppStrings.trendRangeLabel,
+                    label: context.l10n.trendRangeLabel,
                     child: SegmentedChoice<TrendRange>(
-                      semanticsLabel: AppStrings.trendRangeLabel,
-                      options: _ranges,
+                      semanticsLabel: context.l10n.trendRangeLabel,
+                      options: _ranges(context),
                       selected: _range,
                       onSelected: (r) => setState(() => _range = r),
                     ),
                   ),
                   SizedBox(height: theme.spacing.md),
                   _FilterRow(
-                    label: AppStrings.trendModeLabel,
+                    label: context.l10n.trendModeLabel,
                     child: SegmentedChoice<SessionMode?>(
-                      semanticsLabel: AppStrings.trendModeLabel,
-                      options: _modes,
+                      semanticsLabel: context.l10n.trendModeLabel,
+                      options: _modes(context),
                       selected: _mode,
                       onSelected: (m) => setState(() => _mode = m),
                     ),
@@ -132,13 +132,13 @@ class _FamilyTrendScreenState extends ConsumerState<FamilyTrendScreen> {
                   switch (series) {
                     AsyncData(:final value) => FamilyTrendCharts(series: value),
                     AsyncError() => Text(
-                      AppStrings.progressError,
+                      context.l10n.progressError,
                       style: theme.textStyles.body.copyWith(
                         color: theme.colors.error,
                       ),
                     ),
                     _ => Text(
-                      AppStrings.trendLoading,
+                      context.l10n.trendLoading,
                       style: theme.textStyles.caption,
                     ),
                   },

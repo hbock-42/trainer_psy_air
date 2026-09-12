@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../domain/family_progress.dart';
@@ -37,8 +37,9 @@ class ReadinessCard extends StatelessWidget {
     final gauge = ArcGauge(
       value: readiness.value / 100,
       color: band,
-      semanticsLabel: AppStrings.readinessSemanticsLabel,
-      semanticsValue: '$value ${AppStrings.readinessOutOf}, ${_trendText()}',
+      semanticsLabel: context.l10n.readinessSemanticsLabel,
+      semanticsValue:
+          '$value ${context.l10n.readinessOutOf}, ${_trendText(context)}',
       // Scales down rather than overflowing at large text scales.
       child: FittedBox(
         fit: BoxFit.scaleDown,
@@ -50,7 +51,7 @@ class ReadinessCard extends StatelessWidget {
               style: theme.textStyles.display.copyWith(color: band),
               maxLines: 1,
             ),
-            Text(AppStrings.readinessOutOf, style: theme.textStyles.caption),
+            Text(context.l10n.readinessOutOf, style: theme.textStyles.caption),
           ],
         ),
       ),
@@ -63,21 +64,21 @@ class ReadinessCard extends StatelessWidget {
         _TrendLine(trend: trend),
         SizedBox(height: theme.spacing.sm),
         Text(
-          AppStrings.readinessFamilies(
+          context.l10n.readinessFamilies(
             readiness.familiesPractised,
             readiness.familiesTotal,
           ),
           style: theme.textStyles.caption,
         ),
         Text(
-          AppStrings.readinessLessons(
+          context.l10n.readinessLessons(
             readiness.lessonsRead,
             readiness.lessonsTotal,
           ),
           style: theme.textStyles.caption,
         ),
         Text(
-          AppStrings.readinessExams(readiness.examsCounted),
+          context.l10n.readinessExams(readiness.examsCounted),
           style: theme.textStyles.caption,
         ),
       ],
@@ -93,7 +94,7 @@ class ReadinessCard extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  AppStrings.readinessTitle.toUpperCase(),
+                  context.l10n.readinessTitle.toUpperCase(),
                   style: theme.textStyles.label.copyWith(
                     color: colors.textSecondary,
                     letterSpacing: 0.8,
@@ -130,16 +131,16 @@ class ReadinessCard extends StatelessWidget {
             },
           ),
           SizedBox(height: theme.spacing.md),
-          Text(AppStrings.readinessHint, style: theme.textStyles.caption),
+          Text(context.l10n.readinessHint, style: theme.textStyles.caption),
         ],
       ),
     );
   }
 
-  String _trendText() => switch (trend) {
-    TrendDirection.up => AppStrings.readinessTrendUp,
-    TrendDirection.flat => AppStrings.readinessTrendFlat,
-    TrendDirection.down => AppStrings.readinessTrendDown,
+  String _trendText(BuildContext context) => switch (trend) {
+    TrendDirection.up => context.l10n.readinessTrendUp,
+    TrendDirection.flat => context.l10n.readinessTrendFlat,
+    TrendDirection.down => context.l10n.readinessTrendDown,
   };
 }
 
@@ -154,17 +155,17 @@ class _TrendLine extends StatelessWidget {
     final (arrow, text, color) = switch (trend) {
       TrendDirection.up => (
         '↗',
-        AppStrings.readinessTrendUp,
+        context.l10n.readinessTrendUp,
         theme.colors.success,
       ),
       TrendDirection.flat => (
         '→',
-        AppStrings.readinessTrendFlat,
+        context.l10n.readinessTrendFlat,
         theme.colors.textSecondary,
       ),
       TrendDirection.down => (
         '↘',
-        AppStrings.readinessTrendDown,
+        context.l10n.readinessTrendDown,
         theme.colors.error,
       ),
     };
@@ -198,15 +199,15 @@ class ExamCountdownChip extends StatelessWidget {
     final colors = theme.colors;
     final passed = daysLeft < 0;
     final text = passed
-        ? AppStrings.examDatePassed
-        : AppStrings.examDaysLeft(daysLeft);
+        ? context.l10n.examDatePassed
+        : context.l10n.examDaysLeft(daysLeft);
     final long = passed
-        ? AppStrings.examDatePassed
-        : AppStrings.examDaysLeftLong(daysLeft);
+        ? context.l10n.examDatePassed
+        : context.l10n.examDaysLeftLong(daysLeft);
     final background = passed ? colors.surfaceRaised : colors.accentSubtle;
     final foreground = passed ? colors.textSecondary : colors.textPrimary;
     return Semantics(
-      label: AppStrings.examDateSemanticsLabel,
+      label: context.l10n.examDateSemanticsLabel,
       value: long,
       child: ExcludeSemantics(
         child: DecoratedBox(

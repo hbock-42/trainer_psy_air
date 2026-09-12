@@ -3,7 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:psy_content/psy_content.dart';
-import 'package:psy_trainer/core/l10n/strings.dart';
+import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/theme/app_theme.dart';
 import 'package:psy_trainer/features/engines/attention_rules/domain/attention_rules_engine.dart';
 import 'package:psy_trainer/features/engines/attention_rules/domain/stimulus_rule_set.dart';
@@ -48,7 +48,7 @@ class AttentionRulesRenderer extends ActivityRenderer {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          AppStrings.attentionRulesExampleFilled(
+          context.l10n.attentionRulesExampleShapes(
             ruleSet.shapeA,
             ruleSet.keyA,
             ruleSet.shapeB,
@@ -74,7 +74,7 @@ class AttentionRulesRenderer extends ActivityRenderer {
         ),
         SizedBox(height: theme.spacing.md),
         Text(
-          AppStrings.attentionRulesExampleEmpty(
+          context.l10n.attentionRulesExampleColours(
             ruleSet.colourA,
             ruleSet.keyA,
             ruleSet.colourB,
@@ -237,7 +237,7 @@ class _StimulusViewState extends State<_StimulusView> {
           ),
           SizedBox(height: theme.spacing.lg),
           Text(
-            AppStrings.attentionRulesTouchFallback,
+            context.l10n.attentionRulesTouchFallback,
             textAlign: TextAlign.center,
             style: theme.textStyles.caption,
           ),

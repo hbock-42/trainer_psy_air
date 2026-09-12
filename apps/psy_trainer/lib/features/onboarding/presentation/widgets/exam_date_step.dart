@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../domain/exam_date_rules.dart';
@@ -43,15 +43,15 @@ class ExamDateStep extends StatelessWidget {
     final suggestion = nextPsy0Date(now);
 
     return OnboardingStepLayout(
-      headline: AppStrings.onboardingExamDateHeadline,
-      intro: AppStrings.onboardingExamDateIntro,
+      headline: context.l10n.onboardingExamDateHeadline,
+      intro: context.l10n.onboardingExamDateIntro,
       content: [
         Text.rich(
           TextSpan(
-            text: AppStrings.onboardingExamDateSuggestion,
+            text: context.l10n.onboardingExamDateSuggestion,
             children: [
               TextSpan(
-                text: AppStrings.formatLongDate(suggestion),
+                text: context.l10n.formatLongDate(suggestion),
                 style: theme.textStyles.bodyStrong,
               ),
             ],
@@ -67,7 +67,7 @@ class ExamDateStep extends StatelessWidget {
         ),
         SizedBox(height: spacing.md),
         Text(
-          AppStrings.formatLongDate(date),
+          context.l10n.formatLongDate(date),
           style: theme.textStyles.bodyStrong,
           textAlign: TextAlign.center,
         ),
@@ -76,7 +76,7 @@ class ExamDateStep extends StatelessWidget {
           Semantics(
             liveRegion: true,
             child: Text(
-              _message(error),
+              _message(context, error),
               style: theme.textStyles.label.copyWith(color: theme.colors.error),
               textAlign: TextAlign.center,
             ),
@@ -85,12 +85,12 @@ class ExamDateStep extends StatelessWidget {
       ],
       actions: [
         PrimaryButton(
-          label: AppStrings.actionContinue,
+          label: context.l10n.actionContinue,
           expand: true,
           onPressed: error == null ? () => onContinue(date) : null,
         ),
         SecondaryButton(
-          label: AppStrings.onboardingExamDateUnknown,
+          label: context.l10n.onboardingExamDateUnknown,
           expand: true,
           onPressed: onUnknown,
         ),
@@ -98,7 +98,8 @@ class ExamDateStep extends StatelessWidget {
     );
   }
 
-  static String _message(ExamDateError error) => switch (error) {
-    ExamDateError.inThePast => AppStrings.onboardingExamDateInThePast,
+  static String _message(BuildContext context, ExamDateError error) =>
+      switch (error) {
+    ExamDateError.inThePast => context.l10n.onboardingExamDateInThePast,
   };
 }

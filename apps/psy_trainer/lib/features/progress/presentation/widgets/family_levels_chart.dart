@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../domain/family_progress.dart';
@@ -37,27 +37,27 @@ class FamilyLevelsChart extends StatelessWidget {
     final practised = families.where((f) => f.hasData).toList();
 
     if (practised.isEmpty) {
-      return Text(AppStrings.familyLevelsNone, style: theme.textStyles.caption);
+      return Text(context.l10n.familyLevelsNone, style: theme.textStyles.caption);
     }
 
     final Widget chart;
     if (practised.length >= RadarChart.minAxes) {
       chart = Center(
         child: RadarChart(
-          semanticsLabel: AppStrings.familyLevelsSemanticsLabel,
+          semanticsLabel: context.l10n.familyLevelsSemanticsLabel,
           axes: [
             for (final f in families)
               RadarChartAxis(
                 label: labels.familyName(f.familyId, locale: locale),
                 value: f.levelFraction,
-                valueLabel: _levelLabel(f),
+                valueLabel: _levelLabel(context, f),
               ),
           ],
         ),
       );
     } else {
       chart = HorizontalBarChart(
-        semanticsLabel: AppStrings.familyLevelsSemanticsLabel,
+        semanticsLabel: context.l10n.familyLevelsSemanticsLabel,
         entries: [
           for (final f in practised)
             BarChartEntry(
@@ -69,7 +69,7 @@ class FamilyLevelsChart extends StatelessWidget {
               // Level 1 still shows a bar (one fifth), unlike the radar where
               // it sits at the centre.
               value: f.level / FamilyProgress.maxLevel,
-              valueLabel: _levelLabel(f),
+              valueLabel: _levelLabel(context, f),
               color: ProgressBands.level(theme, f.level),
             ),
         ],
@@ -84,7 +84,7 @@ class FamilyLevelsChart extends StatelessWidget {
       children: [
         chart,
         SizedBox(height: theme.spacing.lg),
-        Text(AppStrings.familyDetailsHint, style: theme.textStyles.caption),
+        Text(context.l10n.familyDetailsHint, style: theme.textStyles.caption),
         SizedBox(height: theme.spacing.sm),
         Wrap(
           spacing: theme.spacing.xs,
@@ -93,7 +93,7 @@ class FamilyLevelsChart extends StatelessWidget {
             for (final f in practised)
               FamilyChip(
                 label: labels.familyName(f.familyId, locale: locale),
-                semanticsLabel: AppStrings.familyTrendOpenSemantics(
+                semanticsLabel: context.l10n.familyTrendOpenSemantics(
                   labels.familyName(f.familyId, locale: locale, short: false),
                 ),
                 color: ProgressBands.level(theme, f.level),
@@ -105,9 +105,10 @@ class FamilyLevelsChart extends StatelessWidget {
     );
   }
 
-  static String _levelLabel(FamilyProgress f) => f.hasData
-      ? AppStrings.familyLevel(f.level)
-      : AppStrings.familyNotPractised;
+  static String _levelLabel(BuildContext context, FamilyProgress f) =>
+      f.hasData
+      ? context.l10n.familyLevel(f.level)
+      : context.l10n.familyNotPractised;
 }
 
 /// A pill with a level-band dot that opens a family's charts.

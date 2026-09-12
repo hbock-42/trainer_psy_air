@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../../train/domain/engine/engine.dart';
@@ -179,7 +179,7 @@ class _WordBoxesViewState extends State<_WordBoxesView> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            AppStrings.wordBoxesErrorCount(_errors),
+            context.l10n.wordBoxesErrorCount(_errors),
             style: theme.textStyles.label,
           ),
           SizedBox(height: theme.spacing.sm),
@@ -209,7 +209,7 @@ class _WordBoxesViewState extends State<_WordBoxesView> {
                   child: AppKeypadButton(
                     key: ValueKey('word-box-$i'),
                     label: _boxLabel(i),
-                    semanticsLabel: AppStrings.wordBoxesBoxSemantics(
+                    semanticsLabel: context.l10n.wordBoxesBoxSemantics(
                       i + 1,
                       _boxLabel(i),
                     ),
@@ -226,7 +226,7 @@ class _WordBoxesViewState extends State<_WordBoxesView> {
   String _boxLabel(int i) {
     final claimedAt = _claimedAt(i);
     if (claimedAt == null || claimedAt > _index) {
-      return AppStrings.wordBoxesEmptyBox;
+      return context.l10n.wordBoxesEmptyBox;
     }
     return _series.events[claimedAt].word;
   }
@@ -241,16 +241,16 @@ class _WordBoxesViewState extends State<_WordBoxesView> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          AppStrings.wordBoxesResultSummary(_errors, _series.events.length),
+          context.l10n.wordBoxesResultSummary(_errors, _series.events.length),
           style: theme.textStyles.bodyStrong,
         ),
         if (missed.isNotEmpty) ...[
           SizedBox(height: theme.spacing.md),
-          Text(AppStrings.wordBoxesMissedTitle, style: theme.textStyles.label),
+          Text(context.l10n.wordBoxesMissedTitle, style: theme.textStyles.label),
           SizedBox(height: theme.spacing.xs),
           for (final event in missed)
             Text(
-              AppStrings.wordBoxesMissedWord(
+              context.l10n.wordBoxesMissedWord(
                 event.word,
                 _series.fields[event.fieldIndex].name.fr,
               ),

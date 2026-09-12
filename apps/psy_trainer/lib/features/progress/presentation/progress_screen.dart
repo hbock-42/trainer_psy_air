@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/errors/error_logger.dart';
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
@@ -62,7 +62,7 @@ class ProgressScreen extends ConsumerWidget {
     });
     final snapshot = ref.watch(progressSnapshotProvider);
     return AppScaffold(
-      title: AppStrings.progressTitle,
+      title: context.l10n.progressTitle,
       body: switch (snapshot) {
         AsyncData(:final value) when value.isEmpty => ProgressEmptyState(
           onStart: () => _goTrain(context),
@@ -72,10 +72,10 @@ class ProgressScreen extends ConsumerWidget {
           onRecommendation: (rec) => _onRecommendation(context, rec),
         ),
         AsyncError() => _Message(
-          AppStrings.progressError,
+          context.l10n.progressError,
           style: theme.textStyles.body.copyWith(color: theme.colors.error),
         ),
-        _ => _Message(AppStrings.progressLoading, style: theme.textStyles.body),
+        _ => _Message(context.l10n.progressLoading, style: theme.textStyles.body),
       },
     );
   }
@@ -136,9 +136,9 @@ class _Dashboard extends ConsumerWidget {
                       : daysUntil(examDate, snapshot.computedAt),
                 ),
                 SizedBox(height: theme.spacing.xl),
-                const SectionHeader(
-                  title: AppStrings.familyLevelsTitle,
-                  subtitle: AppStrings.familyLevelsSubtitle,
+                SectionHeader(
+                  title: context.l10n.familyLevelsTitle,
+                  subtitle: context.l10n.familyLevelsSubtitle,
                 ),
                 SizedBox(height: theme.spacing.md),
                 AppCard(
@@ -152,9 +152,9 @@ class _Dashboard extends ConsumerWidget {
                 SizedBox(height: theme.spacing.xl),
                 // Hidden (header included) until a simulation is completed.
                 ExamScoreChartCard(labels: labels),
-                const SectionHeader(
-                  title: AppStrings.trainNextTitle,
-                  subtitle: AppStrings.trainNextSubtitle,
+                SectionHeader(
+                  title: context.l10n.trainNextTitle,
+                  subtitle: context.l10n.trainNextSubtitle,
                 ),
                 SizedBox(height: theme.spacing.md),
                 TrainNextCard(
@@ -162,9 +162,9 @@ class _Dashboard extends ConsumerWidget {
                   onAction: onRecommendation,
                 ),
                 SizedBox(height: theme.spacing.xl),
-                const SectionHeader(
-                  title: AppStrings.recentActivityTitle,
-                  subtitle: AppStrings.recentActivitySubtitle,
+                SectionHeader(
+                  title: context.l10n.recentActivityTitle,
+                  subtitle: context.l10n.recentActivitySubtitle,
                 ),
                 SizedBox(height: theme.spacing.md),
                 RecentActivityList(activities: activities, labels: labels),

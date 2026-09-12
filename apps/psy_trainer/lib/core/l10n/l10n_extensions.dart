@@ -10,7 +10,7 @@ export 'gen/app_localizations.dart';
 /// screen/widget under `lib/features/**` and `lib/shared/**` reads its
 /// strings from here instead of the old `AppStrings` constants.
 extension L10nX on BuildContext {
-  AppLocalizations get l10n => AppLocalizations.of(this)!;
+  AppLocalizations get l10n => AppLocalizations.of(this);
 }
 
 /// Composed strings that need real Dart logic (pluralisation across several
@@ -43,6 +43,9 @@ extension L10nComposed on AppLocalizations {
     return parts.join(' · ');
   }
 
+  /// `72 %` for a mastery ratio in `[0, 1]`.
+  String masteryPercentText(double ratio) => masteryPercent((ratio * 100).round());
+
   /// `1,2 s` (fr) / `1.2 s` (en): a response time in seconds with one
   /// decimal, using the locale's decimal separator. The unit itself ("s")
   /// is the same abbreviation in both supported locales.
@@ -56,6 +59,10 @@ extension L10nComposed on AppLocalizations {
     final pattern = localeName == 'fr' ? 'EEEE d MMMM y' : 'EEEE, MMMM d, y';
     return DateFormat(pattern, localeName).format(date);
   }
+
+  /// `janv.`/`Jan` for the date stepper's month column (1..12).
+  String monthShort(int month) =>
+      DateFormat('MMM', localeName).format(DateTime(2000, month));
 
   /// culture_aero (US-028): perishable-fact footer for `McqItem.validAsOf`.
   /// "Donnée valable au 1 septembre 2026." / "Valid as of September 1, 2026."

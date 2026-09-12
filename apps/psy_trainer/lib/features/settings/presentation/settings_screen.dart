@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
@@ -20,7 +20,7 @@ class SettingsScreen extends ConsumerWidget {
     final answers = ref.watch(onboardingAnswersProvider);
 
     return AppScaffold(
-      title: AppStrings.tabSettings,
+      title: context.l10n.tabSettings,
       bodyPadding: EdgeInsets.all(theme.spacing.lg),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -28,7 +28,7 @@ class SettingsScreen extends ConsumerWidget {
           _ProfileSummary(answers: answers.value),
           SizedBox(height: theme.spacing.md),
           SecondaryButton(
-            label: AppStrings.settingsEditProfile,
+            label: context.l10n.settingsEditProfile,
             expand: true,
             onPressed: () => context.go(AppRoutes.settingsProfile),
           ),
@@ -49,19 +49,19 @@ class _ProfileSummary extends StatelessWidget {
     final examDate = answers?.examDate;
     final stage = answers?.targetStage;
     final examDateText = examDate == null
-        ? AppStrings.settingsProfileSummaryNoExamDate
-        : AppStrings.formatLongDate(examDate);
+        ? context.l10n.settingsProfileSummaryNoExamDate
+        : context.l10n.formatLongDate(examDate);
     return AppCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(AppStrings.onboardingEditTitle, style: theme.textStyles.title),
+          Text(context.l10n.onboardingEditTitle, style: theme.textStyles.title),
           SizedBox(height: theme.spacing.sm),
-          Text('${AppStrings.settingsProfileSummaryExamDate}$examDateText'),
+          Text('${context.l10n.settingsProfileSummaryExamDate}$examDateText'),
           if (stage != null) ...[
             SizedBox(height: theme.spacing.xs),
             Text(
-              '${AppStrings.settingsProfileSummaryStage}'
+              '${context.l10n.settingsProfileSummaryStage}'
               '${stage.key.toUpperCase()}',
             ),
           ],

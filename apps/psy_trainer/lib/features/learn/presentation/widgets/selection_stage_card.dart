@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../domain/selection_stage.dart';
@@ -65,7 +65,7 @@ class SelectionStageCard extends StatelessWidget {
                     if (stage.eliminatory)
                       ConfidenceChip(
                         confidence: stage.confidence,
-                        text: AppStrings.howItWorksEliminatory,
+                        text: context.l10n.howItWorksEliminatory,
                       ),
                     for (final fact in stage.facts)
                       ConfidenceChip(

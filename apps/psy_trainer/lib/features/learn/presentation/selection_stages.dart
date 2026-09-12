@@ -1,70 +1,71 @@
+import 'package:flutter/widgets.dart';
 import 'package:psy_content/psy_content.dart';
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../domain/selection_stage.dart';
 
 /// The selection process as documented in `docs/content/psy0-spec.md` §1,
 /// in chronological order. Confidence tags follow the spec's own tagging:
 /// stage existence and rules are official (`confirmed`), venues, rates and
 /// activity counts come from candidate debriefs (`reported`).
-const List<SelectionStage> selectionStages = [
+List<SelectionStage> selectionStagesOf(BuildContext context) => [
   SelectionStage(
-    title: AppStrings.stageDossierTitle,
-    when: AppStrings.stageDossierWhen,
-    body: AppStrings.stageDossierBody,
+    title: context.l10n.stageDossierTitle,
+    when: context.l10n.stageDossierWhen,
+    body: context.l10n.stageDossierBody,
     confidence: Confidence.confirmed,
-    facts: [StageFact(AppStrings.stageDossierFactFee, Confidence.confirmed)],
+    facts: [StageFact(context.l10n.stageDossierFactFee, Confidence.confirmed)],
   ),
   SelectionStage(
-    title: AppStrings.stagePsy0Title,
-    when: AppStrings.stagePsy0When,
-    body: AppStrings.stagePsy0Body,
+    title: context.l10n.stagePsy0Title,
+    when: context.l10n.stagePsy0When,
+    body: context.l10n.stagePsy0Body,
     confidence: Confidence.confirmed,
     isTarget: true,
     facts: [
-      StageFact(AppStrings.stagePsy0FactDuration, Confidence.confirmed),
-      StageFact(AppStrings.stagePsy0FactActivities, Confidence.reported),
-      StageFact(AppStrings.stagePsy0FactWaitlist, Confidence.reported),
+      StageFact(context.l10n.stagePsy0FactDuration, Confidence.confirmed),
+      StageFact(context.l10n.stagePsy0FactActivities, Confidence.reported),
+      StageFact(context.l10n.stagePsy0FactWaitlist, Confidence.reported),
     ],
   ),
   SelectionStage(
-    title: AppStrings.stagePsy1Title,
-    when: AppStrings.stagePsy1When,
-    body: AppStrings.stagePsy1Body,
+    title: context.l10n.stagePsy1Title,
+    when: context.l10n.stagePsy1When,
+    body: context.l10n.stagePsy1Body,
     confidence: Confidence.confirmed,
     facts: [
-      StageFact(AppStrings.stagePsy1FactDay, Confidence.confirmed),
-      StageFact(AppStrings.stagePsy1FactVenue, Confidence.reported),
-      StageFact(AppStrings.stagePsy1FactRate, Confidence.reported),
+      StageFact(context.l10n.stagePsy1FactDay, Confidence.confirmed),
+      StageFact(context.l10n.stagePsy1FactVenue, Confidence.reported),
+      StageFact(context.l10n.stagePsy1FactRate, Confidence.reported),
     ],
   ),
   SelectionStage(
-    title: AppStrings.stagePsy2Title,
-    when: AppStrings.stagePsy2When,
-    body: AppStrings.stagePsy2Body,
+    title: context.l10n.stagePsy2Title,
+    when: context.l10n.stagePsy2When,
+    body: context.l10n.stagePsy2Body,
     confidence: Confidence.confirmed,
     facts: [
-      StageFact(AppStrings.stagePsy2FactContent, Confidence.confirmed),
-      StageFact(AppStrings.stagePsy2FactCoaching, Confidence.confirmed),
+      StageFact(context.l10n.stagePsy2FactContent, Confidence.confirmed),
+      StageFact(context.l10n.stagePsy2FactCoaching, Confidence.confirmed),
     ],
   ),
   SelectionStage(
-    title: AppStrings.stageMedicalTitle,
-    when: AppStrings.stageMedicalWhen,
-    body: AppStrings.stageMedicalBody,
+    title: context.l10n.stageMedicalTitle,
+    when: context.l10n.stageMedicalWhen,
+    body: context.l10n.stageMedicalBody,
     confidence: Confidence.confirmed,
     facts: [
-      StageFact(AppStrings.stageMedicalFactClass2, Confidence.confirmed),
-      StageFact(AppStrings.stageMedicalFactClass1, Confidence.confirmed),
+      StageFact(context.l10n.stageMedicalFactClass2, Confidence.confirmed),
+      StageFact(context.l10n.stageMedicalFactClass1, Confidence.confirmed),
     ],
   ),
   SelectionStage(
-    title: AppStrings.stageTrainingTitle,
-    when: AppStrings.stageTrainingWhen,
-    body: AppStrings.stageTrainingBody,
+    title: context.l10n.stageTrainingTitle,
+    when: context.l10n.stageTrainingWhen,
+    body: context.l10n.stageTrainingBody,
     confidence: Confidence.confirmed,
     eliminatory: false,
     facts: [
-      StageFact(AppStrings.stageTrainingFactDuration, Confidence.confirmed),
+      StageFact(context.l10n.stageTrainingFactDuration, Confidence.confirmed),
     ],
   ),
 ];

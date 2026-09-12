@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../domain/exam_date_rules.dart';
@@ -135,8 +135,8 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
         onSelected: (stage) => setState(() => _stage = stage),
         onFinish: _submitting ? null : _finish,
         finishLabel: widget.isEditing
-            ? AppStrings.actionSave
-            : AppStrings.actionFinish,
+            ? context.l10n.actionSave
+            : context.l10n.actionFinish,
       ),
     };
 
@@ -144,15 +144,15 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
       title:
           widget.title ??
           (widget.isEditing
-              ? AppStrings.onboardingEditTitle
-              : AppStrings.onboardingTitle),
+              ? context.l10n.onboardingEditTitle
+              : context.l10n.onboardingTitle),
       onBack: _onBack,
       actions: [
         if (!widget.isEditing && _step > 0)
           Padding(
             padding: EdgeInsets.only(right: theme.spacing.sm),
             child: SecondaryButton(
-              label: AppStrings.actionSkip,
+              label: context.l10n.actionSkip,
               onPressed: _submitting ? null : _skip,
             ),
           ),
@@ -163,7 +163,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
           Padding(
             padding: EdgeInsets.symmetric(vertical: theme.spacing.sm),
             child: Semantics(
-              label: AppStrings.onboardingStepLabel(
+              label: context.l10n.onboardingStepLabel(
                 _step + 1,
                 OnboardingFlow.stepCount,
               ),

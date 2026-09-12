@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../shared/widgets/primary_button.dart';
 import '../../shared/widgets/secondary_button.dart';
-import '../l10n/strings.dart';
+import '../l10n/l10n_extensions.dart';
 import '../theme/app_theme.dart';
 import 'app_routes.dart';
 
@@ -40,13 +40,13 @@ class ErrorScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    AppStrings.errorTitle,
+                    context.l10n.errorTitle,
                     style: theme.textStyles.headline,
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: theme.spacing.md),
                   Text(
-                    error?.toString() ?? AppStrings.errorUnknown,
+                    error?.toString() ?? context.l10n.errorUnknown,
                     style: theme.textStyles.body.copyWith(
                       color: theme.colors.textSecondary,
                     ),
@@ -55,14 +55,14 @@ class ErrorScreen extends StatelessWidget {
                   SizedBox(height: theme.spacing.xl),
                   if (onRetry != null)
                     PrimaryButton(
-                      label: AppStrings.actionRetry,
+                      label: context.l10n.actionRetry,
                       onPressed: onRetry,
                     ),
                   if (onRetry != null && router != null)
                     SizedBox(height: theme.spacing.sm),
                   if (router != null)
                     SecondaryButton(
-                      label: AppStrings.errorBackHome,
+                      label: context.l10n.errorBackHome,
                       onPressed: () => router.go(AppRoutes.initial),
                     ),
                 ],

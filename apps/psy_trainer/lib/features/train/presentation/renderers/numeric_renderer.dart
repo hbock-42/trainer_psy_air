@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../engine/engine_ui.dart';
@@ -186,7 +186,7 @@ class _NumericViewState extends State<_NumericView> {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final item = widget.item;
-    const locale = AppStrings.locale;
+    final locale = context.l10n.localeName;
     final canValidate = _acceptsInput && _value != null;
 
     return KeyboardListener(
@@ -275,7 +275,7 @@ class _AnswerField extends StatelessWidget {
     final label = unit == null ? display : '$display $unit';
 
     return Semantics(
-      label: AppStrings.numericAnswerSemanticsLabel,
+      label: context.l10n.numericAnswerSemanticsLabel,
       value: display,
       child: Container(
         width: double.infinity,
@@ -319,7 +319,7 @@ class _Explanation extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            AppStrings.activityExplanationTitle,
+            context.l10n.activityExplanationTitle,
             style: theme.textStyles.label,
           ),
           SizedBox(height: theme.spacing.xs),
@@ -401,12 +401,12 @@ class _Keypad extends StatelessWidget {
           AppKeypadButton(
             key: const ValueKey('numeric_key_backspace'),
             label: '⌫',
-            semanticsLabel: AppStrings.numericBackspaceSemanticsLabel,
+            semanticsLabel: context.l10n.numericBackspaceSemanticsLabel,
             onPressed: enabled ? onBackspace : null,
           ),
           AppKeypadButton(
             key: const ValueKey('numeric_key_validate'),
-            label: AppStrings.activityValidate,
+            label: context.l10n.activityValidate,
             emphasized: true,
             onPressed: canValidate ? onValidate : null,
           ),
@@ -426,7 +426,7 @@ class _NumericExample extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(AppStrings.numericExampleStem, style: theme.textStyles.body),
+        Text(context.l10n.numericExampleStem, style: theme.textStyles.body),
         SizedBox(height: theme.spacing.md),
         const _AnswerField(
           text: '48',

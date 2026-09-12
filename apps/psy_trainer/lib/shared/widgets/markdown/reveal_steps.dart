@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/theme/app_theme.dart';
 import '../primary_button.dart';
 import '../secondary_button.dart';
@@ -88,12 +88,12 @@ class _RevealStepsState extends State<RevealSteps> {
               runSpacing: theme.spacing.sm,
               children: [
                 PrimaryButton(
-                  label: AppStrings.lessonRevealNextStep,
+                  label: context.l10n.lessonRevealNextStep,
                   onPressed: () => setState(() => _revealed++),
                 ),
                 if (total - _revealed > 1)
                   SecondaryButton(
-                    label: AppStrings.lessonRevealAllSteps,
+                    label: context.l10n.lessonRevealAllSteps,
                     onPressed: () => setState(() => _revealed = total),
                   ),
               ],

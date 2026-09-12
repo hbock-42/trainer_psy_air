@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/l10n/strings.dart';
+import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/repositories/model/session.dart';
 import '../../../core/repositories/repository_providers.dart';
 import '../../../core/router/app_routes.dart';
@@ -53,13 +53,13 @@ class _ExamHistoryScreenState extends ConsumerState<ExamHistoryScreen> {
     return Stack(
       children: [
         AppScaffold(
-          title: AppStrings.examHistoryTitle,
+          title: context.l10n.examHistoryTitle,
           onBack: () => context.pop(),
           body: SingleChildScrollView(
             padding: EdgeInsets.all(theme.spacing.lg),
             child: switch (history) {
               AsyncData(value: final list) when list.isEmpty => Text(
-                AppStrings.examHistoryEmpty,
+                context.l10n.examHistoryEmpty,
                 style: theme.textStyles.body.copyWith(
                   color: theme.colors.textSecondary,
                 ),
@@ -77,13 +77,13 @@ class _ExamHistoryScreenState extends ConsumerState<ExamHistoryScreen> {
                 ],
               ),
               AsyncError() => Text(
-                AppStrings.examHistoryError,
+                context.l10n.examHistoryError,
                 style: theme.textStyles.body.copyWith(
                   color: theme.colors.textSecondary,
                 ),
               ),
               _ => Text(
-                AppStrings.examHistoryLoading,
+                context.l10n.examHistoryLoading,
                 style: theme.textStyles.body.copyWith(
                   color: theme.colors.textSecondary,
                 ),
@@ -115,15 +115,15 @@ class _HistoryRow extends StatelessWidget {
     final name = entry.blueprintName ?? summary.blueprintId ?? '?';
     final canOpen = summary.status != SessionStatus.inProgress;
     final statusLabel = switch (summary.status) {
-      SessionStatus.completed => AppStrings.examHistoryStatusCompleted,
-      SessionStatus.abandoned => AppStrings.examHistoryStatusAbandoned,
-      SessionStatus.inProgress => AppStrings.examHistoryStatusInProgress,
+      SessionStatus.completed => context.l10n.examHistoryStatusCompleted,
+      SessionStatus.abandoned => context.l10n.examHistoryStatusAbandoned,
+      SessionStatus.inProgress => context.l10n.examHistoryStatusInProgress,
     };
     final duration = entry.duration;
     final metaParts = [
       RecentActivityList.formatDate(summary.startedAt),
       if (duration != null)
-        AppStrings.examHistoryDuration((duration.inSeconds / 60).round()),
+        context.l10n.examHistoryDuration((duration.inSeconds / 60).round()),
       statusLabel,
     ];
 
@@ -185,27 +185,27 @@ class _DeleteConfirmOverlay extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
-                      AppStrings.examHistoryDeleteConfirmTitle,
+                      context.l10n.examHistoryDeleteConfirmTitle,
                       style: theme.textStyles.title,
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: theme.spacing.sm),
                     Text(
-                      AppStrings.examHistoryDeleteConfirmBody,
+                      context.l10n.examHistoryDeleteConfirmBody,
                       style: theme.textStyles.body,
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: theme.spacing.lg),
                     PrimaryButton(
                       key: ExamHistoryScreen.deleteConfirmKey,
-                      label: AppStrings.examHistoryDeleteAction,
+                      label: context.l10n.examHistoryDeleteAction,
                       expand: true,
                       onPressed: onConfirm,
                     ),
                     SizedBox(height: theme.spacing.sm),
                     SecondaryButton(
                       key: ExamHistoryScreen.deleteCancelKey,
-                      label: AppStrings.sessionQuitCancelAction,
+                      label: context.l10n.sessionQuitCancelAction,
                       expand: true,
                       onPressed: onCancel,
                     ),

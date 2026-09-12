@@ -3,7 +3,7 @@ import 'package:flutter/services.dart'
 import 'package:flutter/widgets.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../../train/presentation/engine/engine_ui.dart';
@@ -130,7 +130,7 @@ class _ArithmeticGridBoardState extends State<_ArithmeticGridBoard> {
           SizedBox(height: theme.spacing.lg),
           PrimaryButton(
             key: ArithmeticGridRenderer.validateKey,
-            label: AppStrings.arithmeticGridValidate,
+            label: context.l10n.arithmeticGridValidate,
             expand: true,
             onPressed: render.acceptsInput ? _submit : null,
           ),
@@ -232,7 +232,7 @@ class _Cell extends StatelessWidget {
     return AppPressable(
       key: ArithmeticGridRenderer.cellKey(index),
       onPressed: acceptsInput ? () => onToggle(index) : null,
-      semanticsLabel: AppStrings.arithmeticGridCellSemantics(
+      semanticsLabel: context.l10n.arithmeticGridCellSemantics(
         index + 1,
         cell.label,
       ),
@@ -264,7 +264,7 @@ class _Cell extends StatelessWidget {
               if (showsFeedback && cell.isWrong) ...[
                 SizedBox(height: theme.spacing.xs),
                 Text(
-                  AppStrings.arithmeticGridCorrectValue(cell.correctValue),
+                  context.l10n.arithmeticGridCorrectValue(cell.correctValue),
                   textAlign: TextAlign.center,
                   style: theme.textStyles.caption.copyWith(
                     color: colors.textPrimary,
@@ -350,7 +350,7 @@ class _ArithmeticGridExample extends StatelessWidget {
           ),
         SizedBox(height: theme.spacing.sm),
         Text(
-          AppStrings.arithmeticGridExampleCaption,
+          context.l10n.arithmeticGridExampleCaption,
           style: theme.textStyles.caption,
         ),
       ],

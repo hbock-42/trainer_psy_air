@@ -2,7 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/repositories/model/session.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
@@ -40,19 +40,19 @@ class FamilyTrendCharts extends StatelessWidget {
 
   /// "de 40 % à 70 % sur 6 sessions", the semantics summary of the
   /// accuracy chart.
-  static String describeAccuracy(List<TrendPoint> points) =>
-      AppStrings.trendAccuracySummary(
-        percent(points.first.accuracy),
-        percent(points.last.accuracy),
+  static String describeAccuracy(BuildContext context, List<TrendPoint> points) =>
+      context.l10n.trendAccuracySummary(
         points.length,
+        percent(points.last.accuracy),
+        percent(points.first.accuracy),
       );
 
   /// "de 1,4 s à 0,9 s sur 6 sessions", the summary of the speed chart.
-  static String describeSpeed(List<TrendPoint> points) =>
-      AppStrings.trendSpeedSummary(
-        seconds(points.first.medianResponseMs),
-        seconds(points.last.medianResponseMs),
+  static String describeSpeed(BuildContext context, List<TrendPoint> points) =>
+      context.l10n.trendSpeedSummary(
         points.length,
+        context.l10n.seconds(seconds(points.last.medianResponseMs)),
+        context.l10n.seconds(seconds(points.first.medianResponseMs)),
       );
 
   /// Up to [max] date ticks spread over the session indices, always the
@@ -86,7 +86,7 @@ class FamilyTrendCharts extends StatelessWidget {
     final theme = AppTheme.of(context);
     final points = series.points;
     if (points.isEmpty) {
-      return Text(AppStrings.trendEmpty, style: theme.textStyles.caption);
+      return Text(context.l10n.trendEmpty, style: theme.textStyles.caption);
     }
     final xTicks = dateTicks(points);
     final ceiling = speedCeiling(points);
@@ -95,27 +95,27 @@ class FamilyTrendCharts extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.min,
       children: [
-        const SectionHeader(
-          title: AppStrings.trendAccuracyTitle,
-          subtitle: AppStrings.trendAccuracySubtitle,
+        SectionHeader(
+          title: context.l10n.trendAccuracyTitle,
+          subtitle: context.l10n.trendAccuracySubtitle,
         ),
         SizedBox(height: theme.spacing.md),
         AppCard(
           child: LineChart(
-            semanticsLabel: AppStrings.trendAccuracyTitle,
-            semanticsValue: describeAccuracy(points),
+            semanticsLabel: context.l10n.trendAccuracyTitle,
+            semanticsValue: describeAccuracy(context, points),
             yMin: 0,
             yMax: 1,
             yTicks: LineChart.evenTicks(
               0,
               1,
               count: 3,
-              format: (v) => AppStrings.scorePercent(percent(v)),
+              format: (v) => context.l10n.scorePercent(percent(v)),
             ),
             xTicks: xTicks,
             series: [
               LineChartSeries(
-                label: AppStrings.trendAccuracyLabel,
+                label: context.l10n.trendAccuracyLabel,
                 points: [
                   for (final (i, p) in points.indexed)
                     LineChartPoint(i.toDouble(), p.accuracy),
@@ -127,27 +127,27 @@ class FamilyTrendCharts extends StatelessWidget {
           ),
         ),
         SizedBox(height: theme.spacing.xl),
-        const SectionHeader(
-          title: AppStrings.trendSpeedTitle,
-          subtitle: AppStrings.trendSpeedSubtitle,
+        SectionHeader(
+          title: context.l10n.trendSpeedTitle,
+          subtitle: context.l10n.trendSpeedSubtitle,
         ),
         SizedBox(height: theme.spacing.md),
         AppCard(
           child: LineChart(
-            semanticsLabel: AppStrings.trendSpeedTitle,
-            semanticsValue: describeSpeed(points),
+            semanticsLabel: context.l10n.trendSpeedTitle,
+            semanticsValue: describeSpeed(context, points),
             yMin: 0,
             yMax: ceiling,
             yTicks: LineChart.evenTicks(
               0,
               ceiling,
               count: 3,
-              format: AppStrings.seconds,
+              format: (v) => context.l10n.seconds(v),
             ),
             xTicks: xTicks,
             series: [
               LineChartSeries(
-                label: AppStrings.trendSpeedLabel,
+                label: context.l10n.trendSpeedLabel,
                 color: theme.colors.warning,
                 points: [
                   for (final (i, p) in points.indexed)
@@ -175,8 +175,8 @@ class TrendTooltip extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final kind = point.mode == SessionMode.exam
-        ? AppStrings.activityExam
-        : AppStrings.activityPractice;
+        ? context.l10n.activityExam
+        : context.l10n.activityPractice;
     return LineChartTooltip(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -188,7 +188,7 @@ class TrendTooltip extends StatelessWidget {
           ),
           Text(kind, style: theme.textStyles.caption),
           Text(
-            AppStrings.trendTooltipAccuracy(
+            context.l10n.trendTooltipAccuracy(
               point.correct,
               point.attempts,
               FamilyTrendCharts.percent(point.accuracy),
@@ -198,8 +198,10 @@ class TrendTooltip extends StatelessWidget {
             ),
           ),
           Text(
-            AppStrings.trendTooltipSpeed(
-              FamilyTrendCharts.seconds(point.medianResponseMs),
+            context.l10n.trendTooltipSpeed(
+              context.l10n.seconds(
+                FamilyTrendCharts.seconds(point.medianResponseMs),
+              ),
             ),
             style: theme.textStyles.caption.copyWith(
               color: theme.colors.textPrimary,

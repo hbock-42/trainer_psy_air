@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../domain/target_stage.dart';
@@ -32,8 +32,8 @@ class TargetStageStep extends StatelessWidget {
     final spacing = theme.spacing;
 
     return OnboardingStepLayout(
-      headline: AppStrings.onboardingStageHeadline,
-      intro: AppStrings.onboardingStageIntro,
+      headline: context.l10n.onboardingStageHeadline,
+      intro: context.l10n.onboardingStageIntro,
       content: [
         for (final stage in TargetStage.values) ...[
           if (stage != TargetStage.values.first) SizedBox(height: spacing.sm),
@@ -66,13 +66,13 @@ class _StageTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final title = switch (stage) {
-      TargetStage.psy0 => AppStrings.stagePsy0Title,
-      TargetStage.psy1 => AppStrings.stagePsy1Title,
-      TargetStage.psy2 => AppStrings.stagePsy2Title,
+      TargetStage.psy0 => context.l10n.stagePsy0Title,
+      TargetStage.psy1 => context.l10n.stagePsy1Title,
+      TargetStage.psy2 => context.l10n.stagePsy2Title,
     };
     final subtitle = stage.isAvailable
-        ? AppStrings.stagePsy0Subtitle
-        : AppStrings.stageComingSoon;
+        ? context.l10n.stagePsy0Subtitle
+        : context.l10n.stageComingSoon;
     final state = !stage.isAvailable
         ? AnswerOptionState.disabled
         : selected

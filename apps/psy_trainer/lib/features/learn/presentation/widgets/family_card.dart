@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../providers/family_lesson_progress_provider.dart';
@@ -39,17 +39,17 @@ class FamilyCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = AppTheme.of(context);
     final colors = theme.colors;
-    final name = family.name.resolve(AppStrings.locale);
+    final name = family.name.resolve(context.l10n.localeName);
     final mastery = ref.watch(familyMasteryProvider(family.id));
     final lessonProgress = ref.watch(familyLessonProgressProvider(family.id));
     // While there is no mastery yet (no attempt, US-075 not wired), show
     // lesson-read progress in the same slot rather than a bare "—" (US-044).
     final masteryText = switch (mastery) {
-      AsyncData(:final value?) => AppStrings.masteryPercent(value),
+      AsyncData(:final value?) => context.l10n.masteryPercentText(value),
       _ => switch (lessonProgress) {
         AsyncData(:final value) when value.total > 0 =>
-          AppStrings.familyLessonsProgress(value.read, value.total),
-        _ => AppStrings.familyMasteryUnknown,
+          context.l10n.familyLessonsProgress(value.read, value.total),
+        _ => context.l10n.familyMasteryUnknown,
       },
     };
 
@@ -60,7 +60,7 @@ class FamilyCard extends ConsumerWidget {
         children: [
           AppPressable(
             onPressed: onLearn,
-            semanticsLabel: AppStrings.familyOpenSemantics(name),
+            semanticsLabel: context.l10n.familyOpenSemantics(name),
             excludeSemantics: true,
             builder: (context, state) => AnimatedContainer(
               duration: theme.durations.fast,
@@ -88,7 +88,7 @@ class FamilyCard extends ConsumerWidget {
                         Text(name, style: theme.textStyles.title),
                         SizedBox(height: theme.spacing.xs),
                         Text(
-                          family.description.resolve(AppStrings.locale),
+                          family.description.resolve(context.l10n.localeName),
                           style: theme.textStyles.body.copyWith(
                             color: colors.textSecondary,
                           ),
@@ -124,8 +124,8 @@ class FamilyCard extends ConsumerWidget {
                   crossAxisAlignment: WrapCrossAlignment.end,
                   children: [
                     _Detail(
-                      label: AppStrings.familyFormatLabel,
-                      value: AppStrings.familyFormat(
+                      label: context.l10n.familyFormatLabel,
+                      value: context.l10n.familyFormat(
                         itemCount: family.defaultItemCount,
                         durationSec: family.defaultDurationSec,
                         perItemSec: family.defaultPerItemTimeSec,
@@ -133,7 +133,7 @@ class FamilyCard extends ConsumerWidget {
                     ),
                     ConfidenceChip(confidence: family.confidence),
                     _Detail(
-                      label: AppStrings.familyMasteryLabel,
+                      label: context.l10n.familyMasteryLabel,
                       value: masteryText,
                     ),
                   ],
@@ -144,17 +144,17 @@ class FamilyCard extends ConsumerWidget {
                   runSpacing: theme.spacing.sm,
                   children: [
                     SecondaryButton(
-                      label: AppStrings.familyActionLearn,
+                      label: context.l10n.familyActionLearn,
                       icon: AppIconGlyph.book,
                       onPressed: onLearn,
                     ),
                     SecondaryButton(
-                      label: AppStrings.familyActionTrain,
+                      label: context.l10n.familyActionTrain,
                       icon: AppIconGlyph.target,
                       onPressed: onTrain,
                     ),
                     SecondaryButton(
-                      label: AppStrings.familyActionCards,
+                      label: context.l10n.familyActionCards,
                       onPressed: onCards,
                     ),
                   ],

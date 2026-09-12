@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 
@@ -35,14 +35,14 @@ class ProgressEmptyState extends StatelessWidget {
               Semantics(
                 header: true,
                 child: Text(
-                  AppStrings.progressEmptyTitle,
+                  context.l10n.progressEmptyTitle,
                   style: theme.textStyles.title,
                   textAlign: TextAlign.center,
                 ),
               ),
               SizedBox(height: theme.spacing.sm),
               Text(
-                AppStrings.progressEmptyBody,
+                context.l10n.progressEmptyBody,
                 style: theme.textStyles.body.copyWith(
                   color: theme.colors.textSecondary,
                 ),
@@ -50,7 +50,7 @@ class ProgressEmptyState extends StatelessWidget {
               ),
               SizedBox(height: theme.spacing.xl),
               PrimaryButton(
-                label: AppStrings.progressEmptyAction,
+                label: context.l10n.progressEmptyAction,
                 icon: AppIconGlyph.play,
                 onPressed: onStart,
               ),

@@ -1,5 +1,6 @@
+import 'package:flutter/widgets.dart';
 import 'package:psy_content/psy_content.dart';
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../domain/engine/engine.dart';
 
 /// Renders one played item as plain text for the summary review (US-052):
@@ -19,12 +20,12 @@ class ItemReviewText {
     this.explanation,
   });
 
-  factory ItemReviewText.of(ItemOutcome outcome) {
-    const locale = AppStrings.locale;
+  factory ItemReviewText.of(BuildContext context, ItemOutcome outcome) {
+    final locale = context.l10n.localeName;
     final item = outcome.item;
     return ItemReviewText(
       stem: _stem(item, locale),
-      myAnswer: _answerText(outcome.answer, item, locale),
+      myAnswer: _answerText(context, outcome.answer, item, locale),
       expected: _expected(item, locale),
       explanation: _explanation(item, locale),
     );
@@ -65,21 +66,24 @@ class ItemReviewText {
     GeneratedItem() => null,
   };
 
-  static String _answerText(Answer answer, Item item, String locale) =>
-      switch (answer) {
-        ChoiceAnswer(:final index) =>
-          item is McqItem
-              ? _optionLabel(item.options, index, locale)
-              : '#${index + 1}',
-        NumericAnswer(:final value) => '$value',
-        MultiSelectAnswer(:final indices) =>
-          indices.map((i) => '#${i + 1}').join(', '),
-        KeyAnswer(:final key) => key,
-        SequenceAnswer(:final values) => values.join(' '),
-        SkipAnswer() => AppStrings.sessionFeedbackSkipped,
-        TimeoutAnswer() => AppStrings.sessionFeedbackTimeout,
-        RawAnswer() => AppStrings.summaryReviewRawAnswer,
-      };
+  static String _answerText(
+    BuildContext context,
+    Answer answer,
+    Item item,
+    String locale,
+  ) => switch (answer) {
+    ChoiceAnswer(:final index) => item is McqItem
+        ? _optionLabel(item.options, index, locale)
+        : '#${index + 1}',
+    NumericAnswer(:final value) => '$value',
+    MultiSelectAnswer(:final indices) =>
+      indices.map((i) => '#${i + 1}').join(', '),
+    KeyAnswer(:final key) => key,
+    SequenceAnswer(:final values) => values.join(' '),
+    SkipAnswer() => context.l10n.sessionFeedbackSkipped,
+    TimeoutAnswer() => context.l10n.sessionFeedbackTimeout,
+    RawAnswer() => context.l10n.summaryReviewRawAnswer,
+  };
 
   static String _optionLabel(
     List<McqOption> options,

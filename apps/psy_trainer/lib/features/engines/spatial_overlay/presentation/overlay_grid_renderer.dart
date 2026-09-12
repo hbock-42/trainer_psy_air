@@ -3,7 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/widgets.dart';
 
 import 'package:psy_content/psy_content.dart';
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
 import '../../../train/presentation/engine/engine_ui.dart';
@@ -145,7 +145,7 @@ class _OverlayGridBoardState extends State<_OverlayGridBoard> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          AppStrings.overlayGridTargetLabel,
+          context.l10n.overlayGridTargetLabel,
           style: theme.textStyles.caption,
         ),
         SizedBox(height: theme.spacing.xs),
@@ -166,8 +166,8 @@ class _OverlayGridBoardState extends State<_OverlayGridBoard> {
         SizedBox(height: theme.spacing.md),
         Text(
           showsSolution
-              ? AppStrings.overlayGridSolutionCaption
-              : AppStrings.overlayGridWorkingLabel,
+              ? context.l10n.overlayGridSolutionCaption
+              : context.l10n.overlayGridWorkingLabel,
           style: theme.textStyles.caption,
         ),
         SizedBox(height: theme.spacing.xs),
@@ -185,7 +185,7 @@ class _OverlayGridBoardState extends State<_OverlayGridBoard> {
         if (!showsSolution) ...[
           SizedBox(height: theme.spacing.md),
           Text(
-            AppStrings.overlayGridTrayLabel,
+            context.l10n.overlayGridTrayLabel,
             style: theme.textStyles.caption,
           ),
           SizedBox(height: theme.spacing.xs),
@@ -197,7 +197,7 @@ class _OverlayGridBoardState extends State<_OverlayGridBoard> {
           SizedBox(height: theme.spacing.md),
           SecondaryButton(
             key: OverlayGridRenderer.resetKey,
-            label: AppStrings.overlayGridResetAction,
+            label: context.l10n.overlayGridResetAction,
             onPressed: render.acceptsInput ? _reset : null,
           ),
         ],
@@ -408,7 +408,7 @@ class _DraggableTileVisual extends StatelessWidget {
         feedback: Opacity(opacity: 0.85, child: dragVisual),
         childWhenDragging: Opacity(opacity: 0.25, child: dragVisual),
         child: Semantics(
-          label: AppStrings.overlayGridTileSemantics(tileIndex),
+          label: context.l10n.overlayGridTileSemantics(tileIndex + 1),
           child: resting,
         ),
       ),
@@ -585,7 +585,7 @@ class _Tray extends StatelessWidget {
                           ),
                         ),
                         child: Semantics(
-                          label: AppStrings.overlayGridTileSemantics(i),
+                          label: context.l10n.overlayGridTileSemantics(i + 1),
                           child: _TileShapeVisual(
                             tile: board.tiles[i],
                             cellSize: _trayCellSize,
@@ -690,7 +690,7 @@ class _OverlayGridExample extends StatelessWidget {
         ),
         SizedBox(height: theme.spacing.sm),
         Text(
-          AppStrings.overlayGridExampleCaption,
+          context.l10n.overlayGridExampleCaption,
           style: theme.textStyles.caption,
         ),
       ],

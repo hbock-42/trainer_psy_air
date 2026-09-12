@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/l10n/strings.dart';
+import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/repositories/model/session.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
@@ -33,7 +33,7 @@ class RecentActivityList extends StatelessWidget {
     final theme = AppTheme.of(context);
     if (activities.isEmpty) {
       return Text(
-        AppStrings.recentActivityNone,
+        context.l10n.recentActivityNone,
         style: theme.textStyles.caption,
       );
     }
@@ -72,8 +72,8 @@ class _ActivityTile extends StatelessWidget {
     final colors = theme.colors;
 
     final kind = activity.isExam
-        ? AppStrings.activityExam
-        : AppStrings.activityPractice;
+        ? context.l10n.activityExam
+        : context.l10n.activityPractice;
     final subject = activity.isExam
         ? (activity.blueprintId == null
               ? null
@@ -88,13 +88,13 @@ class _ActivityTile extends StatelessWidget {
     final title = subject == null ? kind : '$kind · $subject';
     final date = RecentActivityList.formatDate(activity.startedAt);
     final status = activity.status == SessionStatus.abandoned
-        ? AppStrings.activityAbandoned
+        ? context.l10n.activityAbandoned
         : null;
     final meta = status == null ? date : '$date · $status';
     final percent = activity.percent;
     final scoreText = percent == null
-        ? AppStrings.scoreUnknown
-        : AppStrings.scorePercent(percent);
+        ? context.l10n.scoreUnknown
+        : context.l10n.scorePercent(percent);
     final scoreColor = activity.score == null
         ? colors.textMuted
         : ProgressBands.score(theme, activity.score!);
