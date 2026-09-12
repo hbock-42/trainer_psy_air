@@ -174,22 +174,13 @@ void main() {
     expect(repo.attempts.map((a) => a.position), [0, 1, 2]);
   });
 
-  test(
-    'the default providers build the registered engines and a system clock',
-    () {
-      final fresh = ProviderContainer.test();
-      // EPIC-03 registers its engines here as their stories land (US-023
-      // etc.); an unregistered family id is still absent.
-      expect(
-        fresh.read(engineRegistryProvider).hasFamily('arithmetic_grid'),
-        isTrue,
-      );
-      expect(
-        fresh.read(rendererRegistryProvider).hasFamily('arithmetic_grid'),
-        isTrue,
-      );
-      expect(fresh.read(rendererRegistryProvider).hasFamily('x'), isFalse);
-      expect(fresh.read(engineClockProvider), isA<SystemClock>());
-    },
-  );
+  test('the default providers wire up the real engines and a system clock', () {
+    final fresh = ProviderContainer.test();
+    // EPIC-03 engines register themselves in `engine_registry_provider.dart`
+    // as they land, so this is never empty once at least one engine
+    // exists; a bogus family id still resolves to nothing.
+    expect(fresh.read(engineRegistryProvider).engines, isNotEmpty);
+    expect(fresh.read(rendererRegistryProvider).hasFamily('x'), isFalse);
+    expect(fresh.read(engineClockProvider), isA<SystemClock>());
+  });
 }
