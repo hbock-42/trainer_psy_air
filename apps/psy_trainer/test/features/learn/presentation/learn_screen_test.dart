@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart';
@@ -481,6 +482,45 @@ void main() {
         find.byWidgetPredicate((w) => w is ExamCountdownChip),
         findsNothing,
       );
+    });
+  });
+
+  group('wide window', () {
+    testWidgets('scrolls from the margins beside the capped content', (
+      tester,
+    ) async {
+      // Desktop-sized window: the rail is shown and the 1100 dp content
+      // column leaves wide margins on both sides.
+      setViewSize(tester, const Size(1600, 700));
+      await pumpFullApp(tester);
+
+      final scrollable = find.descendant(
+        of: find.byType(LearnScreen),
+        matching: find.byType(Scrollable),
+      );
+      expect(scrollable, findsOneWidget);
+      final position = tester.state<ScrollableState>(scrollable).position;
+      expect(position.pixels, 0);
+
+      // The first family card's left edge is well inside the window: drag
+      // from the empty margin between the rail and the content.
+      final cardLeft = tester.getTopLeft(allCards().first).dx;
+      final learnLeft = tester.getTopLeft(find.byType(LearnScreen)).dx;
+      expect(cardLeft - learnLeft, greaterThan(100));
+      final marginX = learnLeft + (cardLeft - learnLeft) / 2;
+
+      await tester.dragFrom(Offset(marginX, 500), const Offset(0, -300));
+      await tester.pumpAndSettle();
+
+      expect(position.pixels, greaterThan(100));
+
+      // Mouse-wheel scrolling over the margin works too.
+      final before = position.pixels;
+      final pointer = TestPointer(1, PointerDeviceKind.mouse);
+      pointer.hover(Offset(marginX, 500));
+      await tester.sendEventToBinding(pointer.scroll(const Offset(0, 120)));
+      await tester.pumpAndSettle();
+      expect(position.pixels, greaterThan(before));
     });
   });
 }

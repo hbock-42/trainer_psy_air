@@ -202,4 +202,23 @@ void main() {
 
     expect(find.byType(LessonScreen), findsOneWidget);
   });
+
+  testWidgets('scrolls from the margins beside the capped content on a wide '
+      'window', (tester) async {
+    tester.view.physicalSize = const Size(1600, 500);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    await pumpFamily(tester, 'memory_nback');
+
+    final scrollable = find.byType(Scrollable);
+    expect(scrollable, findsOneWidget);
+    final position = tester.state<ScrollableState>(scrollable).position;
+    expect(position.maxScrollExtent, greaterThan(0));
+
+    // Drag in the left margin, outside the 1100 dp content column.
+    await tester.dragFrom(const Offset(60, 300), const Offset(0, -200));
+    await tester.pumpAndSettle();
+
+    expect(position.pixels, greaterThan(50));
+  });
 }

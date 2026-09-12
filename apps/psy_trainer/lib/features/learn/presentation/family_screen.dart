@@ -36,24 +36,17 @@ class FamilyScreen extends ConsumerWidget {
         _ => context.l10n.tabLearn,
       },
       onBack: context.pop,
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxWidth: LearnScreen.maxContentWidth,
-          ),
-          child: switch (family) {
-            AsyncData(value: final f?) => _FamilyBody(family: f),
-            AsyncData() || AsyncError() => Padding(
-              padding: EdgeInsets.all(theme.spacing.lg),
-              child: Text(context.l10n.familyNotFound),
-            ),
-            _ => Padding(
-              padding: EdgeInsets.all(theme.spacing.lg),
-              child: Text(context.l10n.familyLoading),
-            ),
-          },
+      body: switch (family) {
+        AsyncData(value: final f?) => _FamilyBody(family: f),
+        AsyncData() || AsyncError() => Padding(
+          padding: EdgeInsets.all(theme.spacing.lg),
+          child: Text(context.l10n.familyNotFound),
         ),
-      ),
+        _ => Padding(
+          padding: EdgeInsets.all(theme.spacing.lg),
+          child: Text(context.l10n.familyLoading),
+        ),
+      },
     );
   }
 }
@@ -81,83 +74,94 @@ class _FamilyBody extends ConsumerWidget {
       color: theme.colors.textSecondary,
     );
 
+    // Scroll view outermost, width cap inside: the margins of a wide window
+    // scroll the page too.
     return SingleChildScrollView(
       padding: EdgeInsets.all(theme.spacing.lg),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            context.l10n.familyEvaluatedLabel,
-            style: theme.textStyles.caption,
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            maxWidth: LearnScreen.maxContentWidth,
           ),
-          SizedBox(height: theme.spacing.xs),
-          Text(family.description.resolve(context.l10n.localeName)),
-          SizedBox(height: theme.spacing.lg),
-          Wrap(
-            spacing: theme.spacing.md,
-            runSpacing: theme.spacing.sm,
-            crossAxisAlignment: WrapCrossAlignment.center,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              ScoreCard(
-                title: context.l10n.familyFormatLabel,
-                value: context.l10n.familyFormat(
-                  itemCount: family.defaultItemCount,
-                  durationSec: family.defaultDurationSec,
-                  perItemSec: family.defaultPerItemTimeSec,
-                ),
+              Text(
+                context.l10n.familyEvaluatedLabel,
+                style: theme.textStyles.caption,
               ),
-              ScoreCard(
-                title: context.l10n.familyMasteryLabel,
-                value: masteryText,
-              ),
-              ConfidenceChip(confidence: family.confidence),
-            ],
-          ),
-          SizedBox(height: theme.spacing.lg),
-          Wrap(
-            spacing: theme.spacing.sm,
-            runSpacing: theme.spacing.sm,
-            children: [
-              PrimaryButton(
-                label: context.l10n.familyActionTrain,
-                icon: AppIconGlyph.target,
-                onPressed: () => context.go(AppRoutes.train),
-              ),
-              SecondaryButton(
-                label: context.l10n.familyActionCards,
-                onPressed: hasDeck
-                    ? () => context.push(AppRoutes.learnFamilyCards(family.id))
-                    : null,
-              ),
-            ],
-          ),
-          SizedBox(height: theme.spacing.xl),
-          SectionHeader(
-            title: context.l10n.familyLessonsTitle,
-            trailing: _LessonProgressRing(familyId: family.id),
-          ),
-          SizedBox(height: theme.spacing.md),
-          switch (lessons) {
-            AsyncData(value: final list) when list.isEmpty => Text(
-              context.l10n.familyLessonsEmpty,
-              style: secondary,
-            ),
-            AsyncData(value: final list) => Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                for (final (i, lesson) in list.indexed) ...[
-                  if (i > 0) SizedBox(height: theme.spacing.sm),
-                  _LessonTile(familyId: family.id, lesson: lesson),
+              SizedBox(height: theme.spacing.xs),
+              Text(family.description.resolve(context.l10n.localeName)),
+              SizedBox(height: theme.spacing.lg),
+              Wrap(
+                spacing: theme.spacing.md,
+                runSpacing: theme.spacing.sm,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: [
+                  ScoreCard(
+                    title: context.l10n.familyFormatLabel,
+                    value: context.l10n.familyFormat(
+                      itemCount: family.defaultItemCount,
+                      durationSec: family.defaultDurationSec,
+                      perItemSec: family.defaultPerItemTimeSec,
+                    ),
+                  ),
+                  ScoreCard(
+                    title: context.l10n.familyMasteryLabel,
+                    value: masteryText,
+                  ),
+                  ConfidenceChip(confidence: family.confidence),
                 ],
-              ],
-            ),
-            AsyncError() => Text(
-              context.l10n.learnFamiliesError,
-              style: secondary,
-            ),
-            _ => Text(context.l10n.familyLoading, style: secondary),
-          },
-        ],
+              ),
+              SizedBox(height: theme.spacing.lg),
+              Wrap(
+                spacing: theme.spacing.sm,
+                runSpacing: theme.spacing.sm,
+                children: [
+                  PrimaryButton(
+                    label: context.l10n.familyActionTrain,
+                    icon: AppIconGlyph.target,
+                    onPressed: () => context.go(AppRoutes.train),
+                  ),
+                  SecondaryButton(
+                    label: context.l10n.familyActionCards,
+                    onPressed: hasDeck
+                        ? () => context.push(
+                            AppRoutes.learnFamilyCards(family.id),
+                          )
+                        : null,
+                  ),
+                ],
+              ),
+              SizedBox(height: theme.spacing.xl),
+              SectionHeader(
+                title: context.l10n.familyLessonsTitle,
+                trailing: _LessonProgressRing(familyId: family.id),
+              ),
+              SizedBox(height: theme.spacing.md),
+              switch (lessons) {
+                AsyncData(value: final list) when list.isEmpty => Text(
+                  context.l10n.familyLessonsEmpty,
+                  style: secondary,
+                ),
+                AsyncData(value: final list) => Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    for (final (i, lesson) in list.indexed) ...[
+                      if (i > 0) SizedBox(height: theme.spacing.sm),
+                      _LessonTile(familyId: family.id, lesson: lesson),
+                    ],
+                  ],
+                ),
+                AsyncError() => Text(
+                  context.l10n.learnFamiliesError,
+                  style: secondary,
+                ),
+                _ => Text(context.l10n.familyLoading, style: secondary),
+              },
+            ],
+          ),
+        ),
       ),
     );
   }
