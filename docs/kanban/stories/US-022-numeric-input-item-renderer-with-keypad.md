@@ -4,7 +4,7 @@ issue: 26
 title: "Numeric input item renderer with keypad"
 type: story
 epic: EPIC-03
-status: backlog
+status: review
 priority: P0
 size: S
 lane: engines
@@ -17,7 +17,7 @@ labels: [engine,ui]
 **As a** user **I want** to type numeric answers fast on a custom keypad **so that** mental arithmetic feels like the real test.
 
 ## Acceptance criteria
-- [ ] On-screen keypad (0–9, `.`, `-`, backspace, validate), no system keyboard
-- [ ] Tolerance and unit support from `NumericItem`
-- [ ] Response time measured from item display to validate
-- [ ] Widget tests
+- [x] On-screen keypad (0–9, `.`, `-`, backspace, validate), no system keyboard
+- [x] Tolerance and unit support from `NumericItem`
+- [x] Response time measured from item display to validate
+- [x] Widget tests
