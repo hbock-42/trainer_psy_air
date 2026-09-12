@@ -529,4 +529,13 @@ abstract final class AppStrings {
   static String examSectionValue(int correct, int attempts, int percent) =>
       '$correct/$attempts · $percent %';
   static const String examSectionNotReached = 'non atteinte';
+
+  // Arithmetic grid engine (US-023).
+  static const String arithmeticGridValidate = 'Valider';
+  static String arithmeticGridCellSemantics(int index, String label) =>
+      'Égalité $index, $label';
+  static String arithmeticGridCorrectValue(int value) => 'Correct : $value';
+  static const String arithmeticGridExampleCaption =
+      'Touchez les égalités fausses (en rouge) puis Valider. Les autres '
+      'sont justes, ne les touchez pas.';
 }
