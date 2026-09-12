@@ -1453,5 +1453,26 @@
   "multitaskCalcButtonLabel": "F",
   "multitaskExampleTracking": "Maintenez la flèche du clavier dans la direction où se déplace le cercle.",
   "multitaskExampleShape": "Appuyez sur Espace quand la forme dans le cercle est identique à la forme de référence (en haut à gauche).",
-  "multitaskExampleCalc": "Appuyez sur F quand le calcul encadré, en bas, est faux."
+  "multitaskExampleCalc": "Appuyez sur F quand le calcul encadré, en bas, est faux.",
+  "mentalArithmeticAllIntervalsPrompt": "Sélectionnez tous les intervalles qui contiennent la valeur exacte.",
+  "mentalArithmeticTrueValue": "Valeur exacte : {value}",
+  "@mentalArithmeticTrueValue": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "mentalArithmeticIntervalSemantics": "Intervalle {index}, {label}",
+  "@mentalArithmeticIntervalSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "mentalArithmeticAllIntervalsExampleCaption": "Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider."
 }

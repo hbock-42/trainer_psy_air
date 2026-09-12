@@ -2141,4 +2141,22 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get multitaskExampleCalc =>
       'Press F when the boxed calculation, at the bottom, is wrong.';
+
+  @override
+  String get mentalArithmeticAllIntervalsPrompt =>
+      'Select every interval that contains the exact value.';
+
+  @override
+  String mentalArithmeticTrueValue(int value) {
+    return 'Exact value: $value';
+  }
+
+  @override
+  String mentalArithmeticIntervalSemantics(int index, String label) {
+    return 'Interval $index, $label';
+  }
+
+  @override
+  String get mentalArithmeticAllIntervalsExampleCaption =>
+      'Work out the exact value, then tap every interval that contains it before Confirm.';
 }

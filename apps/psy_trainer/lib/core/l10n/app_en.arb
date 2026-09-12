@@ -1453,5 +1453,26 @@
   "multitaskCalcButtonLabel": "F",
   "multitaskExampleTracking": "Keep the keyboard arrow in the direction the circle is moving.",
   "multitaskExampleShape": "Press Space when the shape in the circle matches the reference shape (top left).",
-  "multitaskExampleCalc": "Press F when the boxed calculation, at the bottom, is wrong."
+  "multitaskExampleCalc": "Press F when the boxed calculation, at the bottom, is wrong.",
+  "mentalArithmeticAllIntervalsPrompt": "Select every interval that contains the exact value.",
+  "mentalArithmeticTrueValue": "Exact value: {value}",
+  "@mentalArithmeticTrueValue": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "mentalArithmeticIntervalSemantics": "Interval {index}, {label}",
+  "@mentalArithmeticIntervalSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "mentalArithmeticAllIntervalsExampleCaption": "Work out the exact value, then tap every interval that contains it before Confirm."
 }

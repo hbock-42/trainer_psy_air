@@ -3515,6 +3515,30 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Appuyez sur F quand le calcul encadré, en bas, est faux.'**
   String get multitaskExampleCalc;
+
+  /// No description provided for @mentalArithmeticAllIntervalsPrompt.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sélectionnez tous les intervalles qui contiennent la valeur exacte.'**
+  String get mentalArithmeticAllIntervalsPrompt;
+
+  /// No description provided for @mentalArithmeticTrueValue.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeur exacte : {value}'**
+  String mentalArithmeticTrueValue(int value);
+
+  /// No description provided for @mentalArithmeticIntervalSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Intervalle {index}, {label}'**
+  String mentalArithmeticIntervalSemantics(int index, String label);
+
+  /// No description provided for @mentalArithmeticAllIntervalsExampleCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider.'**
+  String get mentalArithmeticAllIntervalsExampleCaption;
 }
 
 class _AppLocalizationsDelegate
