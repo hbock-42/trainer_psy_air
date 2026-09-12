@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/misc.dart';
 import 'package:psy_content/psy_content.dart';
 import '../../../../core/repositories/model/learning.dart';
 import '../../../../core/repositories/repository_providers.dart';
+import '../../../home/presentation/providers/active_module_provider.dart';
 import '../../domain/mistakes/mistake_pool.dart';
 import 'practice_config.dart';
 
@@ -87,6 +88,14 @@ class PracticeLauncherNotifier extends Notifier<PracticeLauncherState> {
         .read(contentRepositoryProvider)
         .familyById(familyId);
     if (family == null) {
+      state = const PracticeLauncherState.notFound();
+      return;
+    }
+    // US-101: the launcher only opens on the active module's own families
+    // (e.g. a PSY1 family while PSY0 is selected never runs, even by direct
+    // navigation to its route).
+    final active = await ref.read(activeModuleProvider.notifier).whenHydrated();
+    if (family.moduleId != active.moduleId) {
       state = const PracticeLauncherState.notFound();
       return;
     }

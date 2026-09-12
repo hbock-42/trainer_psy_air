@@ -8,10 +8,10 @@ void main() {
   final examDate = DateTime.utc(2027, 9, 4);
 
   group('TargetStage', () {
-    test('only PSY0 is available and is the default', () {
+    test('PSY0 and PSY1 are available (US-101), PSY0 is the default', () {
       expect(TargetStage.defaultStage, TargetStage.psy0);
       expect(TargetStage.psy0.isAvailable, isTrue);
-      expect(TargetStage.psy1.isAvailable, isFalse);
+      expect(TargetStage.psy1.isAvailable, isTrue);
       expect(TargetStage.psy2.isAvailable, isFalse);
     });
 

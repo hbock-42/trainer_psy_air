@@ -30,6 +30,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tabBarLabel => 'Main navigation';
 
   @override
+  String get moduleSwitchSemanticsLabel => 'Active module';
+
+  @override
+  String get moduleSwitchPsy0 => 'PSY0';
+
+  @override
+  String get moduleSwitchPsy1 => 'PSY1';
+
+  @override
+  String get moduleSwitchPsy2 => 'PSY2';
+
+  @override
   String get disclaimerShort =>
       'Independent, unofficial trainer — no affiliation with Air France.';
 
@@ -136,6 +148,10 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get stagePsy0Subtitle =>
       'Cognitive tests, aviation knowledge and English, remote.';
+
+  @override
+  String get stagePsy1Subtitle =>
+      'Psychotechnical and psychomotor tests, one day in person.';
 
   @override
   String get stageComingSoon => 'Coming soon';

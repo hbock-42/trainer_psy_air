@@ -7,6 +7,7 @@ import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
+import '../../home/presentation/providers/active_module_provider.dart';
 import '../../progress/presentation/providers/exam_date_provider.dart';
 import '../../progress/presentation/widgets/readiness_card.dart'
     show ExamCountdownChip;
@@ -56,6 +57,7 @@ class _LearnScreenState extends ConsumerState<LearnScreen> {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final families = ref.watch(psy0FamiliesProvider);
+    final activeModule = ref.watch(activeModuleProvider);
     final dueToday = ref.watch(flashcardsDueTodayProvider).value ?? 0;
     final examDate = ref.watch(examDateProvider).value;
     final examDaysLeft = examDate == null
@@ -87,6 +89,14 @@ class _LearnScreenState extends ConsumerState<LearnScreen> {
                   ),
                   examDaysLeft: examDaysLeft,
                   onExamTap: _openProfile,
+                ),
+                SizedBox(height: theme.spacing.lg),
+                ModuleSwitch(
+                  available: activeModule.available,
+                  selected: activeModule.moduleId,
+                  onSelected: (moduleId) => ref
+                      .read(activeModuleProvider.notifier)
+                      .setModule(moduleId),
                 ),
                 SizedBox(height: theme.spacing.xl),
                 _HowItWorksCard(onPressed: _openHowItWorks),

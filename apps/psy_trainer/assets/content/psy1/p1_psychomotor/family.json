@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "p1_psychomotor",
+  "moduleId": "psy1",
+  "version": 1,
+  "order": 13,
+  "name": { "fr": "Psychomoteur", "en": "Psychomotor" },
+  "shortName": { "fr": "Psychomoteur", "en": "Psychomotor" },
+  "description": {
+    "fr": "Test final de la journée : attention divisée continue sur 4 canaux simultanés (poursuite à deux axes, remise à zéro de jauges, annulation de lettres cibles, arithmétique chronométrée). Nécessite deux joysticks physiques ; toute adaptation clavier/tactile n'est pas représentative (US-102). Si un sous-tâche entre en zone rouge, le score total tombe instantanément à 0.",
+    "en": "Final test of the day: continuous divided attention across 4 simultaneous channels (dual-axis tracking, gauge-nulling, target-letter cancellation, timed arithmetic). Needs two physical joysticks; any keyboard/touch adaptation is non-representative (US-102). Any sub-task entering its red zone instantly zeroes the whole score."
+  },
+  "engineType": "p1_psychomotor",
+  "generatorId": "p1_psychomotor",
+  "answerFormat": "simulation",
+  "inputRequirement": "keyboard",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 1080,
+  "defaultItemCount": 6,
+  "confidence": "reported",
+  "tags": ["psychomotor"],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §2.3 row 13, §4.1 row 13 (6 x 3 min phases, 18 min total; hardware/structure reported, detailed and consistent). Needs the joystick input abstraction of §3 (US-102); this contract only sizes the phases."
+  }
+}

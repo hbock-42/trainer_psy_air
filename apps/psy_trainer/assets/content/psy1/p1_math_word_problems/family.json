@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "p1_math_word_problems",
+  "moduleId": "psy1",
+  "version": 1,
+  "order": 1,
+  "name": { "fr": "Mathématiques", "en": "Mathematics" },
+  "shortName": { "fr": "Maths", "en": "Maths" },
+  "description": {
+    "fr": "Des problèmes de mathématiques à énoncé, plus exigeants que les grilles de calcul de PSY0. Le brouillon est autorisé sur le vrai test.",
+    "en": "Word-problem style mathematics, more demanding than PSY0's arithmetic grids. Scratch paper is allowed on the real test."
+  },
+  "engineType": "p1_math_word_problems",
+  "generatorId": "p1_math_word_problems",
+  "answerFormat": "mcq",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 2100,
+  "defaultItemCount": 30,
+  "confidence": "reported",
+  "tags": ["numerical"],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §2.3 row 1, §4.1 row 1 (30 q / 35 min, 2024 debrief)"
+  }
+}

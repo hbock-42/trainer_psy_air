@@ -28,10 +28,19 @@ class ProgressAnalytics {
 
   StatsService get stats => _stats;
 
-  /// The dashboard snapshot: every content family (plus any family seen in
-  /// attempts but not in content), readiness, weak areas, exam history.
-  Future<ProgressSnapshot> snapshot() async {
-    final contentFamilies = await _content.families();
+  /// The dashboard snapshot: every content family of [moduleId] (plus any
+  /// family seen in attempts but not in that module's content), readiness,
+  /// weak areas, exam history. `moduleId` null keeps the historical
+  /// unfiltered behaviour (every module); the dashboard (US-101 module
+  /// switch) always passes `activeModuleProvider`'s module.
+  Future<ProgressSnapshot> snapshot({ModuleId? moduleId}) async {
+    final contentFamilies = await _content.families(moduleId: moduleId);
+    // Every family id known to any module, so a family only practised under
+    // another module (e.g. PSY0 attempts while the PSY1 dashboard is shown)
+    // is not mistaken for an "orphaned" family of *this* module below.
+    final allKnownFamilyIds = moduleId == null
+        ? contentFamilies.map((f) => f.id).toSet()
+        : (await _content.families()).map((f) => f.id).toSet();
     final lifetime = {
       for (final s in await _progress.familyStats()) s.familyId: s,
     };
@@ -39,9 +48,7 @@ class ProgressAnalytics {
 
     final familyIds = <String>[
       for (final f in contentFamilies) f.id,
-      ...(lifetime.keys.toSet()..removeAll(contentFamilies.map((f) => f.id)))
-          .toList()
-        ..sort(),
+      ...(lifetime.keys.toSet()..removeAll(allKnownFamilyIds)).toList()..sort(),
     ];
     final families = [
       for (final id in familyIds)
@@ -57,7 +64,7 @@ class ProgressAnalytics {
     );
 
     final lessonsRead = (await _progress.lessonsRead()).length;
-    final lessonsTotal = (await _content.lessons()).length;
+    final lessonsTotal = (await _content.lessons(moduleId: moduleId)).length;
 
     final readiness = _stats.readiness(
       families: families,

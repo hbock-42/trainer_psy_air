@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:psy_content/psy_content.dart';
 import '../../../../core/repositories/repository_providers.dart';
+import '../../../home/presentation/providers/active_module_provider.dart';
 import '../engine/engine_registry_provider.dart';
 
 /// One PSY0 family on the Train home (US-050): the family itself plus
@@ -20,14 +21,14 @@ class TrainFamilyEntry {
   final bool available;
 }
 
-/// The PSY0 test families in real-test order (`TestFamily.order`), each
-/// flagged with engine availability. Empty until the bundle is seeded
-/// (US-013).
+/// The active module's test families in real-test order (`TestFamily.order`),
+/// each flagged with engine availability. Empty until the bundle is seeded
+/// (US-013). Filtered by `activeModuleProvider` (US-101 module switch).
 final FutureProvider<List<TrainFamilyEntry>> trainFamiliesProvider =
     FutureProvider<List<TrainFamilyEntry>>((ref) async {
       final families = await ref
           .watch(contentRepositoryProvider)
-          .families(moduleId: ModuleId.psy0);
+          .families(moduleId: ref.watch(activeModuleProvider).moduleId);
       final registry = ref.watch(engineRegistryProvider);
       return [
         for (final family in families)

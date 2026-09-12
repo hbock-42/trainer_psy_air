@@ -9,6 +9,7 @@ import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
+import '../../home/presentation/providers/active_module_provider.dart';
 import 'exam_resume_card.dart';
 import 'providers/exam_blueprints_provider.dart';
 import 'providers/exam_realism_options_provider.dart';
@@ -27,6 +28,7 @@ class ExamScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = AppTheme.of(context);
     final blueprints = ref.watch(examBlueprintsProvider);
+    final activeModule = ref.watch(activeModuleProvider);
 
     return AppScaffold(
       body: SingleChildScrollView(
@@ -42,6 +44,13 @@ class ExamScreen extends ConsumerWidget {
                 label: context.l10n.examHistoryAction,
                 onPressed: () => context.push(AppRoutes.examHistory),
               ),
+            ),
+            SizedBox(height: theme.spacing.md),
+            ModuleSwitch(
+              available: activeModule.available,
+              selected: activeModule.moduleId,
+              onSelected: (moduleId) =>
+                  ref.read(activeModuleProvider.notifier).setModule(moduleId),
             ),
             SizedBox(height: theme.spacing.lg),
             const ExamResumeCard(),

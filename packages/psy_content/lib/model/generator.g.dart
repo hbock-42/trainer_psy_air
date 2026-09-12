@@ -542,3 +542,371 @@ Map<String, dynamic> _$MultitaskParamsToJson(MultitaskParams instance) =>
       'calcKey': instance.calcKey,
       'generatorId': instance.$type,
     };
+
+P1MathWordProblemsParams _$P1MathWordProblemsParamsFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('P1MathWordProblemsParams', json, ($checkedConvert) {
+  final val = P1MathWordProblemsParams(
+    count: $checkedConvert('count', (v) => (v as num?)?.toInt() ?? 30),
+    answerMode: $checkedConvert(
+      'answerMode',
+      (v) => $enumDecodeNullable(_$P1AnswerModeEnumMap, v) ?? P1AnswerMode.mcq,
+    ),
+    maxSteps: $checkedConvert('maxSteps', (v) => (v as num?)?.toInt() ?? 3),
+    maxOperand: $checkedConvert(
+      'maxOperand',
+      (v) => (v as num?)?.toInt() ?? 100,
+    ),
+    $type: $checkedConvert('generatorId', (v) => v as String?),
+  );
+  return val;
+}, fieldKeyMap: const {r'$type': 'generatorId'});
+
+Map<String, dynamic> _$P1MathWordProblemsParamsToJson(
+  P1MathWordProblemsParams instance,
+) => <String, dynamic>{
+  'count': instance.count,
+  'answerMode': _$P1AnswerModeEnumMap[instance.answerMode]!,
+  'maxSteps': instance.maxSteps,
+  'maxOperand': instance.maxOperand,
+  'generatorId': instance.$type,
+};
+
+const _$P1AnswerModeEnumMap = {
+  P1AnswerMode.mcq: 'mcq',
+  P1AnswerMode.numeric: 'numeric',
+};
+
+P1TangramParams _$P1TangramParamsFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('P1TangramParams', json, ($checkedConvert) {
+  final val = P1TangramParams(
+    count: $checkedConvert('count', (v) => (v as num?)?.toInt() ?? 24),
+    pieceCount: $checkedConvert('pieceCount', (v) => (v as num?)?.toInt() ?? 7),
+    mode: $checkedConvert(
+      'mode',
+      (v) =>
+          $enumDecodeNullable(_$TangramModeEnumMap, v) ?? TangramMode.compose,
+    ),
+    $type: $checkedConvert('generatorId', (v) => v as String?),
+  );
+  return val;
+}, fieldKeyMap: const {r'$type': 'generatorId'});
+
+Map<String, dynamic> _$P1TangramParamsToJson(P1TangramParams instance) =>
+    <String, dynamic>{
+      'count': instance.count,
+      'pieceCount': instance.pieceCount,
+      'mode': _$TangramModeEnumMap[instance.mode]!,
+      'generatorId': instance.$type,
+    };
+
+const _$TangramModeEnumMap = {
+  TangramMode.compose: 'compose',
+  TangramMode.countOccurrences: 'count_occurrences',
+};
+
+P1AttentionSustainedParams _$P1AttentionSustainedParamsFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('P1AttentionSustainedParams', json, ($checkedConvert) {
+  final val = P1AttentionSustainedParams(
+    seriesCount: $checkedConvert(
+      'seriesCount',
+      (v) => (v as num?)?.toInt() ?? 3,
+    ),
+    itemsPerSeries: $checkedConvert(
+      'itemsPerSeries',
+      (v) => (v as num?)?.toInt() ?? 5,
+    ),
+    stimulusMs: $checkedConvert(
+      'stimulusMs',
+      (v) => (v as num?)?.toInt() ?? 500,
+    ),
+    answerWindowMs: $checkedConvert(
+      'answerWindowMs',
+      (v) => (v as num?)?.toInt() ?? 3000,
+    ),
+    $type: $checkedConvert('generatorId', (v) => v as String?),
+  );
+  return val;
+}, fieldKeyMap: const {r'$type': 'generatorId'});
+
+Map<String, dynamic> _$P1AttentionSustainedParamsToJson(
+  P1AttentionSustainedParams instance,
+) => <String, dynamic>{
+  'seriesCount': instance.seriesCount,
+  'itemsPerSeries': instance.itemsPerSeries,
+  'stimulusMs': instance.stimulusMs,
+  'answerWindowMs': instance.answerWindowMs,
+  'generatorId': instance.$type,
+};
+
+P1ReadingFrParams _$P1ReadingFrParamsFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('P1ReadingFrParams', json, ($checkedConvert) {
+      final val = P1ReadingFrParams(
+        passageCount: $checkedConvert(
+          'passageCount',
+          (v) => (v as num?)?.toInt() ?? 10,
+        ),
+        questionsPerPassage: $checkedConvert(
+          'questionsPerPassage',
+          (v) => (v as num?)?.toInt() ?? 1,
+        ),
+        $type: $checkedConvert('generatorId', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {r'$type': 'generatorId'});
+
+Map<String, dynamic> _$P1ReadingFrParamsToJson(P1ReadingFrParams instance) =>
+    <String, dynamic>{
+      'passageCount': instance.passageCount,
+      'questionsPerPassage': instance.questionsPerPassage,
+      'generatorId': instance.$type,
+    };
+
+P1AnglesParams _$P1AnglesParamsFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('P1AnglesParams', json, ($checkedConvert) {
+      final val = P1AnglesParams(
+        setCount: $checkedConvert('setCount', (v) => (v as num?)?.toInt() ?? 3),
+        optionCount: $checkedConvert(
+          'optionCount',
+          (v) => (v as num?)?.toInt() ?? 9,
+        ),
+        maxCorrect: $checkedConvert(
+          'maxCorrect',
+          (v) => (v as num?)?.toInt() ?? 4,
+        ),
+        $type: $checkedConvert('generatorId', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {r'$type': 'generatorId'});
+
+Map<String, dynamic> _$P1AnglesParamsToJson(P1AnglesParams instance) =>
+    <String, dynamic>{
+      'setCount': instance.setCount,
+      'optionCount': instance.optionCount,
+      'maxCorrect': instance.maxCorrect,
+      'generatorId': instance.$type,
+    };
+
+P1GeneralEfficiencyParams _$P1GeneralEfficiencyParamsFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('P1GeneralEfficiencyParams', json, ($checkedConvert) {
+  final val = P1GeneralEfficiencyParams(
+    count: $checkedConvert('count', (v) => (v as num?)?.toInt() ?? 35),
+    $type: $checkedConvert('generatorId', (v) => v as String?),
+  );
+  return val;
+}, fieldKeyMap: const {r'$type': 'generatorId'});
+
+Map<String, dynamic> _$P1GeneralEfficiencyParamsToJson(
+  P1GeneralEfficiencyParams instance,
+) => <String, dynamic>{'count': instance.count, 'generatorId': instance.$type};
+
+P1CountersParams _$P1CountersParamsFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('P1CountersParams', json, ($checkedConvert) {
+      final val = P1CountersParams(
+        count: $checkedConvert('count', (v) => (v as num?)?.toInt() ?? 10),
+        dialsPerItem: $checkedConvert(
+          'dialsPerItem',
+          (v) => (v as num?)?.toInt() ?? 3,
+        ),
+        $type: $checkedConvert('generatorId', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {r'$type': 'generatorId'});
+
+Map<String, dynamic> _$P1CountersParamsToJson(P1CountersParams instance) =>
+    <String, dynamic>{
+      'count': instance.count,
+      'dialsPerItem': instance.dialsPerItem,
+      'generatorId': instance.$type,
+    };
+
+P1CubeNetsParams _$P1CubeNetsParamsFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('P1CubeNetsParams', json, ($checkedConvert) {
+      final val = P1CubeNetsParams(
+        phaseCount: $checkedConvert(
+          'phaseCount',
+          (v) => (v as num?)?.toInt() ?? 2,
+        ),
+        netsPerPhase: $checkedConvert(
+          'netsPerPhase',
+          (v) => (v as num?)?.toInt() ?? 10,
+        ),
+        alphabet: $checkedConvert(
+          'alphabet',
+          (v) =>
+              $enumDecodeNullable(_$CubeNetAlphabetEnumMap, v) ??
+              CubeNetAlphabet.latin,
+        ),
+        missingFaces: $checkedConvert(
+          'missingFaces',
+          (v) => (v as num?)?.toInt() ?? 2,
+        ),
+        includeRotationMatching: $checkedConvert(
+          'includeRotationMatching',
+          (v) => v as bool? ?? false,
+        ),
+        $type: $checkedConvert('generatorId', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {r'$type': 'generatorId'});
+
+Map<String, dynamic> _$P1CubeNetsParamsToJson(P1CubeNetsParams instance) =>
+    <String, dynamic>{
+      'phaseCount': instance.phaseCount,
+      'netsPerPhase': instance.netsPerPhase,
+      'alphabet': _$CubeNetAlphabetEnumMap[instance.alphabet]!,
+      'missingFaces': instance.missingFaces,
+      'includeRotationMatching': instance.includeRotationMatching,
+      'generatorId': instance.$type,
+    };
+
+const _$CubeNetAlphabetEnumMap = {
+  CubeNetAlphabet.latin: 'latin',
+  CubeNetAlphabet.runic: 'runic',
+};
+
+P1WmReverseSpanParams _$P1WmReverseSpanParamsFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('P1WmReverseSpanParams', json, ($checkedConvert) {
+  final val = P1WmReverseSpanParams(
+    count: $checkedConvert('count', (v) => (v as num?)?.toInt() ?? 10),
+    minDigits: $checkedConvert('minDigits', (v) => (v as num?)?.toInt() ?? 4),
+    maxDigits: $checkedConvert('maxDigits', (v) => (v as num?)?.toInt() ?? 9),
+    answerWindowMs: $checkedConvert(
+      'answerWindowMs',
+      (v) => (v as num?)?.toInt() ?? 3500,
+    ),
+    $type: $checkedConvert('generatorId', (v) => v as String?),
+  );
+  return val;
+}, fieldKeyMap: const {r'$type': 'generatorId'});
+
+Map<String, dynamic> _$P1WmReverseSpanParamsToJson(
+  P1WmReverseSpanParams instance,
+) => <String, dynamic>{
+  'count': instance.count,
+  'minDigits': instance.minDigits,
+  'maxDigits': instance.maxDigits,
+  'answerWindowMs': instance.answerWindowMs,
+  'generatorId': instance.$type,
+};
+
+P1WmCalcBackParams _$P1WmCalcBackParamsFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('P1WmCalcBackParams', json, ($checkedConvert) {
+      final val = P1WmCalcBackParams(
+        stageCount: $checkedConvert(
+          'stageCount',
+          (v) => (v as num?)?.toInt() ?? 4,
+        ),
+        calcsPerStage: $checkedConvert(
+          'calcsPerStage',
+          (v) => (v as num?)?.toInt() ?? 20,
+        ),
+        $type: $checkedConvert('generatorId', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {r'$type': 'generatorId'});
+
+Map<String, dynamic> _$P1WmCalcBackParamsToJson(P1WmCalcBackParams instance) =>
+    <String, dynamic>{
+      'stageCount': instance.stageCount,
+      'calcsPerStage': instance.calcsPerStage,
+      'generatorId': instance.$type,
+    };
+
+P1RavenMatricesParams _$P1RavenMatricesParamsFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('P1RavenMatricesParams', json, ($checkedConvert) {
+  final val = P1RavenMatricesParams(
+    count: $checkedConvert('count', (v) => (v as num?)?.toInt() ?? 30),
+    grid: $checkedConvert(
+      'grid',
+      (v) => v == null
+          ? const GridSize(rows: 3, cols: 3)
+          : GridSize.fromJson(v as Map<String, dynamic>),
+    ),
+    optionCount: $checkedConvert(
+      'optionCount',
+      (v) => (v as num?)?.toInt() ?? 6,
+    ),
+    $type: $checkedConvert('generatorId', (v) => v as String?),
+  );
+  return val;
+}, fieldKeyMap: const {r'$type': 'generatorId'});
+
+Map<String, dynamic> _$P1RavenMatricesParamsToJson(
+  P1RavenMatricesParams instance,
+) => <String, dynamic>{
+  'count': instance.count,
+  'grid': instance.grid.toJson(),
+  'optionCount': instance.optionCount,
+  'generatorId': instance.$type,
+};
+
+P1MentalArithmeticParams _$P1MentalArithmeticParamsFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('P1MentalArithmeticParams', json, ($checkedConvert) {
+  final val = P1MentalArithmeticParams(
+    count: $checkedConvert('count', (v) => (v as num?)?.toInt() ?? 10),
+    answerMode: $checkedConvert(
+      'answerMode',
+      (v) =>
+          $enumDecodeNullable(_$MentalArithmeticAnswerModeEnumMap, v) ??
+          MentalArithmeticAnswerMode.freeNumeric,
+    ),
+    maxOperand: $checkedConvert(
+      'maxOperand',
+      (v) => (v as num?)?.toInt() ?? 100,
+    ),
+    $type: $checkedConvert('generatorId', (v) => v as String?),
+  );
+  return val;
+}, fieldKeyMap: const {r'$type': 'generatorId'});
+
+Map<String, dynamic> _$P1MentalArithmeticParamsToJson(
+  P1MentalArithmeticParams instance,
+) => <String, dynamic>{
+  'count': instance.count,
+  'answerMode': _$MentalArithmeticAnswerModeEnumMap[instance.answerMode]!,
+  'maxOperand': instance.maxOperand,
+  'generatorId': instance.$type,
+};
+
+const _$MentalArithmeticAnswerModeEnumMap = {
+  MentalArithmeticAnswerMode.freeNumeric: 'free_numeric',
+  MentalArithmeticAnswerMode.equation: 'equation',
+  MentalArithmeticAnswerMode.smallestInterval: 'smallest_interval',
+  MentalArithmeticAnswerMode.allIntervals: 'all_intervals',
+};
+
+P1PsychomotorParams _$P1PsychomotorParamsFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('P1PsychomotorParams', json, ($checkedConvert) {
+      final val = P1PsychomotorParams(
+        phaseCount: $checkedConvert(
+          'phaseCount',
+          (v) => (v as num?)?.toInt() ?? 6,
+        ),
+        phaseDurationSec: $checkedConvert(
+          'phaseDurationSec',
+          (v) => (v as num?)?.toInt() ?? 180,
+        ),
+        calcIntervalSec: $checkedConvert(
+          'calcIntervalSec',
+          (v) => (v as num?)?.toInt() ?? 12,
+        ),
+        $type: $checkedConvert('generatorId', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {r'$type': 'generatorId'});
+
+Map<String, dynamic> _$P1PsychomotorParamsToJson(
+  P1PsychomotorParams instance,
+) => <String, dynamic>{
+  'phaseCount': instance.phaseCount,
+  'phaseDurationSec': instance.phaseDurationSec,
+  'calcIntervalSec': instance.calcIntervalSec,
+  'generatorId': instance.$type,
+};

@@ -10,6 +10,7 @@ import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
 import '../../engines/english/presentation/english_passage_cache.dart';
+import '../../home/presentation/providers/active_module_provider.dart';
 import 'launcher/practice_config.dart';
 import 'launcher/practice_session_builder.dart';
 import 'providers/train_families_provider.dart';
@@ -29,6 +30,7 @@ class TrainScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = AppTheme.of(context);
     final families = ref.watch(trainFamiliesProvider);
+    final activeModule = ref.watch(activeModuleProvider);
 
     return AppScaffold(
       body: SingleChildScrollView(
@@ -41,6 +43,13 @@ class TrainScreen extends ConsumerWidget {
             Text(
               context.l10n.trainFamiliesSubtitle,
               style: theme.textStyles.caption,
+            ),
+            SizedBox(height: theme.spacing.md),
+            ModuleSwitch(
+              available: activeModule.available,
+              selected: activeModule.moduleId,
+              onSelected: (moduleId) =>
+                  ref.read(activeModuleProvider.notifier).setModule(moduleId),
             ),
             SizedBox(height: theme.spacing.lg),
             const ResumeSessionCard(),

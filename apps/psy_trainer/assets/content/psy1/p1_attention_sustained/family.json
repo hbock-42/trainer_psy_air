@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "p1_attention_sustained",
+  "moduleId": "psy1",
+  "version": 1,
+  "order": 3,
+  "name": { "fr": "Attention soutenue", "en": "Sustained attention" },
+  "shortName": { "fr": "Attention", "en": "Attention" },
+  "description": {
+    "fr": "Attention soutenue sur des séries de stimuli courtes et répétées. Le format exact du vrai test est une **question ouverte** ; cette activité reprend le paradigme à cadence fixe le plus proche (formes/couleurs de PSY0) en attendant un retour plus détaillé.",
+    "en": "Sustained attention over repeated short bursts of stimuli. The real test's exact format is an **open question**; this activity reuses the closest fixed-cadence paradigm (PSY0's shapes/colours) until a fuller debrief exists."
+  },
+  "engineType": "p1_attention_sustained",
+  "generatorId": "p1_attention_sustained",
+  "answerFormat": "key_press",
+  "inputRequirement": "keyboard",
+  "liveFeedback": true,
+  "lang": "fr",
+  "defaultDurationSec": 540,
+  "defaultItemCount": 15,
+  "defaultCadence": { "stimulusMs": 500, "answerWindowMs": 3000 },
+  "confidence": "assumed",
+  "tags": ["attention"],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §2.3 row 3, §4.1 row 3 (3 series of 5, ~9 min; format open question)"
+  }
+}

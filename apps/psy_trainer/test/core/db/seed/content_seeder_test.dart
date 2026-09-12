@@ -129,7 +129,7 @@ void main() {
       expect(info?.seededAt, now);
 
       final modules = await content.modules();
-      expect(modules.map((m) => m.id), [ModuleId.psy0]);
+      expect(modules.map((m) => m.id), [ModuleId.psy0, ModuleId.psy1]);
 
       final families = await content.families(moduleId: ModuleId.psy0);
       expect(families, hasLength(16));
@@ -139,6 +139,24 @@ void main() {
       );
       // Ordered by `order`, not by folder name.
       expect(families.first.id, modules.first.familyIds.first);
+
+      // PSY1 (US-101): 13 families, no engine registered yet, but the
+      // content itself seeds and reads back like any other module.
+      final psy1Module = modules.firstWhere((m) => m.id == ModuleId.psy1);
+      final psy1Families = await content.families(moduleId: ModuleId.psy1);
+      expect(psy1Families, hasLength(13));
+      expect(
+        psy1Families.map((f) => f.id).toSet(),
+        psy1Module.familyIds.toSet(),
+      );
+      expect(psy1Families.first.id, psy1Module.familyIds.first);
+
+      final psy1Blueprints = await content.blueprints(moduleId: ModuleId.psy1);
+      expect(psy1Blueprints.map((b) => b.id), [
+        'psy1.blueprint.full',
+        'psy1.blueprint.short',
+      ]);
+      expect(psy1Blueprints.first.sections, hasLength(13));
 
       final english = await content.items(familyId: 'english', shuffle: false);
       expect(english, hasLength(bankItemCount('english')));
@@ -238,7 +256,8 @@ void main() {
       final info = await content.contentInfo();
       expect(info?.contentVersion, bumped);
       expect(info?.seededAt, later);
-      expect(await content.families(), hasLength(16));
+      expect(await content.families(moduleId: ModuleId.psy0), hasLength(16));
+      expect(await content.families(), hasLength(29));
       expect(await content.itemById(english.single.id), isNotNull);
 
       // User data survived the re-seed.

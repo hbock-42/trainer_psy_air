@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "p1_general_efficiency",
+  "moduleId": "psy1",
+  "version": 1,
+  "order": 6,
+  "name": { "fr": "Efficience générale (EFG)", "en": "General efficiency" },
+  "shortName": { "fr": "EFG", "en": "EFG" },
+  "description": {
+    "fr": "Raisonnement large et rapide, mélangeant contenus numériques, spatiaux et verbaux. Le type d'item exact du vrai test est une **question ouverte**.",
+    "en": "Broad, fast-paced reasoning across numeric, spatial and verbal content. The real test's exact item type is an **open question**."
+  },
+  "engineType": "p1_general_efficiency",
+  "generatorId": "p1_general_efficiency",
+  "answerFormat": "mcq",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 1800,
+  "defaultItemCount": 35,
+  "confidence": "assumed",
+  "tags": ["reasoning"],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §2.3 row 6, §4.1 row 6 (35 q / 30 min, 2024 debrief; exact format open question)"
+  }
+}

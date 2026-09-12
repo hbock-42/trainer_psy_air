@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "p1_wm_reverse_span",
+  "moduleId": "psy1",
+  "version": 1,
+  "order": 9,
+  "name": {
+    "fr": "Mémoire de travail I",
+    "en": "Working memory I"
+  },
+  "shortName": { "fr": "Mém. I", "en": "WM I" },
+  "description": {
+    "fr": "Une séquence de 4 à 9 chiffres est affichée, puis restituée à l'envers dans une fenêtre de réponse de 3 à 4 secondes par item.",
+    "en": "A sequence of 4 to 9 digits is shown, then recalled in reverse within a 3-4 second response window per item."
+  },
+  "engineType": "p1_wm_reverse_span",
+  "generatorId": "p1_wm_reverse_span",
+  "answerFormat": "sequence",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 600,
+  "defaultItemCount": 10,
+  "defaultPerItemTimeSec": 4,
+  "confidence": "reported",
+  "tags": ["memory"],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §2.3 row 9, §4.1 row 9 (4-9 digits, 3-4 s response window [reported]; item count [assumed])"
+  }
+}

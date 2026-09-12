@@ -18,6 +18,7 @@ export 'line_chart.dart';
 export 'markdown/markdown_document.dart';
 export 'markdown/markdown_view.dart';
 export 'markdown/reveal_steps.dart';
+export 'module_switch.dart';
 export 'primary_button.dart';
 export 'progress_dots.dart';
 export 'radar_chart.dart';

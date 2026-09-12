@@ -34,7 +34,20 @@
         "english_reading",
         "english_grammar",
         "english_listening",
-        "english_speaking"
+        "english_speaking",
+        "p1_math_word_problems",
+        "p1_tangram",
+        "p1_attention_sustained",
+        "p1_reading_fr",
+        "p1_angles",
+        "p1_general_efficiency",
+        "p1_counters",
+        "p1_cube_nets",
+        "p1_wm_reverse_span",
+        "p1_wm_calc_back",
+        "p1_raven_matrices",
+        "p1_mental_arithmetic",
+        "p1_psychomotor"
       ]
     },
     "generatorId": { "$ref": "generators.schema.json#/$defs/GeneratorId", "description": "v2: generator the practice launcher uses for this family (omit for bank-driven families)." },

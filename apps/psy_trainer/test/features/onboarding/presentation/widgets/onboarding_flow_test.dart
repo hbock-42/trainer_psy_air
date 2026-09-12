@@ -217,7 +217,35 @@ void main() {
   });
 
   group('step 3 (target stage)', () {
-    testWidgets('PSY0 is selected by default; PSY1/PSY2 are coming soon', (
+    testWidgets(
+      'PSY0 is selected by default; PSY1 selectable (US-101), PSY2 coming soon',
+      (tester) async {
+        final harness = await pumpFlow(tester);
+        await acceptAndContinue(tester);
+        await tester.tap(find.text(l10nFr.onboardingExamDateUnknown));
+        await tester.pumpAndSettle();
+
+        final tiles = tester
+            .widgetList<AnswerOptionTile>(find.byType(AnswerOptionTile))
+            .toList();
+        expect(tiles, hasLength(3));
+        expect(tiles[0].state, AnswerOptionState.selected);
+        expect(tiles[1].state, AnswerOptionState.idle);
+        expect(tiles[2].state, AnswerOptionState.disabled);
+        expect(find.text(l10nFr.stageComingSoon), findsNWidgets(1));
+
+        // PSY1 is now selectable.
+        await tester.tap(find.text(l10nFr.stagePsy1Title));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text(l10nFr.actionFinish));
+        await tester.pumpAndSettle();
+        expect(harness.submitted.single.targetStage, TargetStage.psy1);
+
+        // Tapping the still-disabled PSY2 stage changes nothing.
+      },
+    );
+
+    testWidgets('tapping the disabled PSY2 stage changes nothing', (
       tester,
     ) async {
       final harness = await pumpFlow(tester);
@@ -225,17 +253,7 @@ void main() {
       await tester.tap(find.text(l10nFr.onboardingExamDateUnknown));
       await tester.pumpAndSettle();
 
-      final tiles = tester
-          .widgetList<AnswerOptionTile>(find.byType(AnswerOptionTile))
-          .toList();
-      expect(tiles, hasLength(3));
-      expect(tiles[0].state, AnswerOptionState.selected);
-      expect(tiles[1].state, AnswerOptionState.disabled);
-      expect(tiles[2].state, AnswerOptionState.disabled);
-      expect(find.text(l10nFr.stageComingSoon), findsNWidgets(2));
-
-      // Tapping a disabled stage changes nothing.
-      await tester.tap(find.text(l10nFr.stagePsy1Title));
+      await tester.tap(find.text(l10nFr.stagePsy2Title));
       await tester.pumpAndSettle();
       await tester.tap(find.text(l10nFr.actionFinish));
       await tester.pumpAndSettle();

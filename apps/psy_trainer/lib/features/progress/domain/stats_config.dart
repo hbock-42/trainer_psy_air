@@ -52,6 +52,15 @@ class StatsConfig {
   /// PSY0 families (EPIC-03 ids). The MVP ones weigh 2, the rest 1;
   /// `english` is the current content id of the English bank and is kept
   /// alongside the spec's `english_*` ids.
+  ///
+  /// PSY1 families (EPIC-10, US-101) follow the same "MVP weighs double"
+  /// pattern: the spec (`docs/content/psy1-spec.md`) marks four families as
+  /// highest-stakes for the real test — `p1_psychomotor` (the whole test
+  /// zeroes on one sub-task failure), `p1_cube_nets` (reported negative
+  /// marking, "20 justes > 25 dont 5 fausses"), `p1_mental_arithmetic` and
+  /// `p1_raven_matrices` (both reported harder than prep material and
+  /// central to the "psychotechnique" label) — so those four weigh 2, the
+  /// other 9 `p1_*` families weigh 1, same as `defaultFamilyWeight`.
   static const Map<String, double> defaultFamilyWeights = {
     'memory_nback': 2,
     'attention_rules': 2,
@@ -70,6 +79,19 @@ class StatsConfig {
     'multitask_psychomotor': 1,
     'english_listening': 1,
     'english_speaking': 1,
+    'p1_psychomotor': 2,
+    'p1_cube_nets': 2,
+    'p1_mental_arithmetic': 2,
+    'p1_raven_matrices': 2,
+    'p1_math_word_problems': 1,
+    'p1_tangram': 1,
+    'p1_attention_sustained': 1,
+    'p1_reading_fr': 1,
+    'p1_angles': 1,
+    'p1_general_efficiency': 1,
+    'p1_counters': 1,
+    'p1_wm_reverse_span': 1,
+    'p1_wm_calc_back': 1,
   };
 }
 

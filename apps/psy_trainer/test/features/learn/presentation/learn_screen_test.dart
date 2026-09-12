@@ -373,12 +373,15 @@ void main() {
     ) async {
       await pumpFullApp(tester);
 
-      await tester.tap(
-        find.descendant(
-          of: find.byType(FamilyCard).first,
-          matching: find.text('Mémoire N-back'),
-        ),
+      final header = find.descendant(
+        of: find.byType(FamilyCard).first,
+        matching: find.text('Mémoire N-back'),
       );
+      // The ModuleSwitch (US-101) pushes the family list further down, so
+      // the first card is no longer guaranteed to be within the initial
+      // viewport.
+      await tester.ensureVisible(header);
+      await tester.tap(header);
       await tester.pumpAndSettle();
 
       expect(find.byType(FamilyScreen), findsOneWidget);

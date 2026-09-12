@@ -283,7 +283,7 @@ Schema v1 (every table has `id TEXT PRIMARY KEY`, `created_at`, `updated_at`):
 | `item_stats` | itemId (unique), familyId, seen, correct, totalResponseMs, lastCorrect, lastSeenAt | maintained by `INSERT ... ON CONFLICT DO UPDATE` |
 | `flashcard_reviews` | flashcardId (unique), deckId, box, reviews, lapses, lastReviewedAt?, nextReviewAt | index `(deck_id, next_review_at)` |
 | `lesson_progress` | lessonId (unique), readAt | |
-| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`). Onboarding (US-090) keeps its two flags in `settings`: `onboardingCompleted` (bool) and `disclaimerAcceptedAt` (ISO-8601 UTC); the mapping lives in `features/onboarding/domain/onboarding_answers.dart`. Settings (US-091) use `locale` for the UI language (`'system' \| 'fr' \| 'en'`, see `LanguagePreference`) and three more `settings` keys: `themeMode` (`'system' \| 'light' \| 'dark'`), `soundEnabled` (bool) and `keypadLayout` (`'phone' \| 'calculator'`) — mapping in `features/settings/domain/app_settings.dart` (`AppSettings`), read through `appSettingsProvider` (`features/settings/presentation/providers/`). Exam realism options (US-063) are one more nested `settings` key, `exam.realism`, holding a JSON object of seven booleans (`negativeMarkingCulture`, `hideRemainingTime`, `hideTimerEnglish`, `randomizeGenerated`, `allowPauseBetweenSections`, `immersiveFullScreen`, `soundCuesEnabled`) — mapping in `features/exam/domain/exam_realism_options.dart` (`ExamRealismOptions`), read through `examRealismOptionsProvider` (`features/exam/presentation/providers/`); see "Exam realism options (US-063)" below. Local reminders (US-092) are one more nested `settings` key, `reminder`, holding `{enabled: bool, hour: int, minute: int}` — mapping in `features/settings/domain/reminder_settings.dart` (`ReminderSettings`), read through `reminderSettingsProvider` (`features/settings/presentation/providers/`); see "Local reminders (US-092)" below. US-073 adds a `goal` key: `{'target': int, 'unit': 'items' \| 'minutes'}` (default `{target: 20, unit: 'items'}`) — mapping in `features/progress/domain/daily_goal.dart` (`DailyGoal`), read through `dailyGoalProvider` (`features/progress/presentation/providers/`) |
+| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`). Onboarding (US-090) keeps its two flags in `settings`: `onboardingCompleted` (bool) and `disclaimerAcceptedAt` (ISO-8601 UTC); the mapping lives in `features/onboarding/domain/onboarding_answers.dart`. Settings (US-091) use `locale` for the UI language (`'system' \| 'fr' \| 'en'`, see `LanguagePreference`) and three more `settings` keys: `themeMode` (`'system' \| 'light' \| 'dark'`), `soundEnabled` (bool) and `keypadLayout` (`'phone' \| 'calculator'`) — mapping in `features/settings/domain/app_settings.dart` (`AppSettings`), read through `appSettingsProvider` (`features/settings/presentation/providers/`). Exam realism options (US-063) are one more nested `settings` key, `exam.realism`, holding a JSON object of seven booleans (`negativeMarkingCulture`, `hideRemainingTime`, `hideTimerEnglish`, `randomizeGenerated`, `allowPauseBetweenSections`, `immersiveFullScreen`, `soundCuesEnabled`) — mapping in `features/exam/domain/exam_realism_options.dart` (`ExamRealismOptions`), read through `examRealismOptionsProvider` (`features/exam/presentation/providers/`); see "Exam realism options (US-063)" below. Local reminders (US-092) are one more nested `settings` key, `reminder`, holding `{enabled: bool, hour: int, minute: int}` — mapping in `features/settings/domain/reminder_settings.dart` (`ReminderSettings`), read through `reminderSettingsProvider` (`features/settings/presentation/providers/`); see "Local reminders (US-092)" below. US-073 adds a `goal` key: `{'target': int, 'unit': 'items' \| 'minutes'}` (default `{target: 20, unit: 'items'}`) — mapping in `features/progress/domain/daily_goal.dart` (`DailyGoal`), read through `dailyGoalProvider` (`features/progress/presentation/providers/`). US-101 adds a `module` key holding the id of the module (`'psy0' \| 'psy1'`) the `ModuleSwitch` control last selected, overriding `targetStage` for Learn/Train/Exam and the dashboard until switched again — mapping in `features/home/domain/active_module.dart` (`ActiveModule`), read through `activeModuleProvider` (`features/home/presentation/providers/`); see "Module switch (US-101)" below |
 
 Design decisions:
 
@@ -1006,6 +1006,48 @@ tomorrow otherwise; `PluginReminderScheduler.scheduleDaily` builds the `zonedSch
 from it with `matchDateTimeComponents: DateTimeComponents.time` so the OS re-fires it daily
 without the app rescheduling every day by itself (the app still reschedules on every start /
 settings change, which simply replaces the same notification id, `reminderNotificationId`).
+
+### Module switch (US-101)
+
+PSY1 (EPIC-10) plugs into the same runtime as PSY0: same `ContentRepository`/`ProgressRepository`
+interfaces, same `TestFamily`/`ExamBlueprint` models (`ModuleId.psy1`), same Learn/Train/Exam
+screens. What changes is which module's families/blueprints those screens show:
+
+```
+features/home/
+  domain/active_module.dart                 ActiveModule: moduleId + available modules,
+                                             fromProfile/applyTo (settings key 'module')
+  presentation/providers/active_module_provider.dart
+                                             activeModuleProvider (ActiveModuleController):
+                                             same hydration shape as ExamRealismOptionsController
+shared/widgets/module_switch.dart            ModuleSwitch: SegmentedChoice<ModuleId> wrapper,
+                                             hidden when fewer than two modules are available
+```
+
+`ActiveModule.fromProfile` reads the session override in `settings['module']` first (set by the
+last `ModuleSwitch` tap); with none stored it derives the module from `UserProfile.targetStage`
+(set in onboarding / "edit my profile", `TargetStage.isAvailable` gates PSY0 and PSY1 as
+selectable there, PSY2 stays "coming soon" until EPIC-11); with neither, PSY0. `setModule` updates
+`activeModuleProvider`'s state synchronously and persists the override so it survives a restart,
+regardless of `targetStage`.
+
+`LearnScreen`, `TrainScreen` and `ExamScreen` each render a `ModuleSwitch` at the top and their
+family/blueprint providers (`psy0_families_provider.dart`, `train_families_provider.dart`,
+`exam_blueprints_provider.dart` — names kept for git-blame continuity, not PSY0-specific
+anymore) watch `activeModuleProvider` and filter by its `moduleId`. The practice launcher
+(`practice_launcher_provider.dart`) treats a family whose `moduleId` does not match the active
+module the same as an unknown family (`PracticeLauncherStatus.notFound`), so a direct route to a
+PSY1 family while PSY0 is active never opens. The dashboard (`progressSnapshotProvider`) passes
+the active module to `ProgressAnalytics.snapshot(moduleId:)`, which scopes the family/lesson
+components of the readiness score to it (a family only practised under the other module is never
+counted as "orphaned" into the wrong snapshot). `StatsConfig.defaultFamilyWeights` gives PSY1's
+four highest-stakes families (`p1_psychomotor`, `p1_cube_nets`, `p1_mental_arithmetic`,
+`p1_raven_matrices` — the ones `docs/content/psy1-spec.md` calls out as hardest/most consequential)
+weight 2, the other nine PSY1 families weight 1, mirroring PSY0's MVP-family weighting.
+
+Every PSY1 family/section has content (US-101) but no registered engine yet (US-102..116 land
+independently): `TrainScreen`/`ExamScreen` show them "Bientôt", exactly like an unlanded PSY0
+engine.
 
 ## State and DI (Riverpod)
 

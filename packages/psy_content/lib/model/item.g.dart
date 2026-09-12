@@ -153,6 +153,19 @@ const _$GeneratorIdEnumMap = {
   GeneratorId.viewpoint: 'viewpoint',
   GeneratorId.cubeNet: 'cube_net',
   GeneratorId.multitask: 'multitask',
+  GeneratorId.p1MathWordProblems: 'p1_math_word_problems',
+  GeneratorId.p1Tangram: 'p1_tangram',
+  GeneratorId.p1AttentionSustained: 'p1_attention_sustained',
+  GeneratorId.p1ReadingFr: 'p1_reading_fr',
+  GeneratorId.p1Angles: 'p1_angles',
+  GeneratorId.p1GeneralEfficiency: 'p1_general_efficiency',
+  GeneratorId.p1Counters: 'p1_counters',
+  GeneratorId.p1CubeNets: 'p1_cube_nets',
+  GeneratorId.p1WmReverseSpan: 'p1_wm_reverse_span',
+  GeneratorId.p1WmCalcBack: 'p1_wm_calc_back',
+  GeneratorId.p1RavenMatrices: 'p1_raven_matrices',
+  GeneratorId.p1MentalArithmetic: 'p1_mental_arithmetic',
+  GeneratorId.p1Psychomotor: 'p1_psychomotor',
 };
 
 McqItem _$McqItemFromJson(Map<String, dynamic> json) => $checkedCreate(

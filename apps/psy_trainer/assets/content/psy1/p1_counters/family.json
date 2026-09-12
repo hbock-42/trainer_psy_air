@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "p1_counters",
+  "moduleId": "psy1",
+  "version": 1,
+  "order": 7,
+  "name": {
+    "fr": "Lecture de compteurs",
+    "en": "Instrument reading"
+  },
+  "shortName": { "fr": "Compteurs", "en": "Counters" },
+  "description": {
+    "fr": "Lisez rapidement et précisément des cadrans/compteurs analogiques — l'analogue le plus proche d'un balayage d'instruments de vol.",
+    "en": "Read analog dial/counter displays quickly and accurately — the closest PSY1 analogue to a flight-instrument scan."
+  },
+  "engineType": "p1_counters",
+  "generatorId": "p1_counters",
+  "answerFormat": "numeric",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 600,
+  "defaultItemCount": 10,
+  "confidence": "assumed",
+  "tags": ["attention"],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §2.3 row 7, §4.1 row 7 (no timing reported; count/timing [assumed])"
+  }
+}

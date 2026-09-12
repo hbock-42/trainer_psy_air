@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "p1_mental_arithmetic",
+  "moduleId": "psy1",
+  "version": 1,
+  "order": 12,
+  "name": { "fr": "Calcul mental 1-4", "en": "Mental arithmetic 1-4" },
+  "shortName": { "fr": "Calcul mental", "en": "Mental calc" },
+  "description": {
+    "fr": "Calcul mental rapide selon quatre modes de réponse gradués : réponse libre, équation (résoudre x), intervalle le plus étroit, tous les intervalles contenant la valeur.",
+    "en": "Fast mental arithmetic across four graded response modes: free response, equation (solve for x), tightest interval, every interval containing the value."
+  },
+  "engineType": "p1_mental_arithmetic",
+  "generatorId": "p1_mental_arithmetic",
+  "answerFormat": "numeric",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 900,
+  "defaultItemCount": 10,
+  "confidence": "reported",
+  "tags": ["numerical"],
+  "meta": {
+    "source": "docs/content/psy1-spec.md §2.3 row 12, §4.1 row 12 (10 calculations per series, 4 series, ~40 items total)"
+  }
+}

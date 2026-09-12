@@ -19,7 +19,20 @@
         "arithmetic_grid",
         "viewpoint",
         "cube_net",
-        "multitask"
+        "multitask",
+        "p1_math_word_problems",
+        "p1_tangram",
+        "p1_attention_sustained",
+        "p1_reading_fr",
+        "p1_angles",
+        "p1_general_efficiency",
+        "p1_counters",
+        "p1_cube_nets",
+        "p1_wm_reverse_span",
+        "p1_wm_calc_back",
+        "p1_raven_matrices",
+        "p1_mental_arithmetic",
+        "p1_psychomotor"
       ]
     },
     "GeneratedRecipe": {
@@ -46,7 +59,20 @@
         { "if": { "properties": { "generatorId": { "const": "arithmetic_grid" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/ArithmeticGridParams" } } } },
         { "if": { "properties": { "generatorId": { "const": "viewpoint" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/ViewpointParams" } } } },
         { "if": { "properties": { "generatorId": { "const": "cube_net" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/CubeNetParams" } } } },
-        { "if": { "properties": { "generatorId": { "const": "multitask" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/MultitaskParams" } } } }
+        { "if": { "properties": { "generatorId": { "const": "multitask" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/MultitaskParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "p1_math_word_problems" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/P1MathWordProblemsParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "p1_tangram" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/P1TangramParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "p1_attention_sustained" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/P1AttentionSustainedParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "p1_reading_fr" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/P1ReadingFrParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "p1_angles" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/P1AnglesParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "p1_general_efficiency" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/P1GeneralEfficiencyParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "p1_counters" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/P1CountersParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "p1_cube_nets" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/P1CubeNetsParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "p1_wm_reverse_span" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/P1WmReverseSpanParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "p1_wm_calc_back" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/P1WmCalcBackParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "p1_raven_matrices" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/P1RavenMatricesParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "p1_mental_arithmetic" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/P1MentalArithmeticParams" } } } },
+        { "if": { "properties": { "generatorId": { "const": "p1_psychomotor" } }, "required": ["generatorId"] }, "then": { "properties": { "params": { "$ref": "#/$defs/P1PsychomotorParams" } } } }
       ]
     },
 
@@ -198,6 +224,137 @@
         "calcWrongRatio": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.4 },
         "shapeKey": { "type": "string", "minLength": 1, "maxLength": 12, "default": "space" },
         "calcKey": { "type": "string", "minLength": 1, "maxLength": 12, "default": "f" }
+      },
+      "additionalProperties": false
+    },
+
+    "P1MathWordProblemsParams": {
+      "type": "object",
+      "description": "p1_math_word_problems (psy1-spec.md §4.1 row 1). Multi-step word-problem arithmetic, harder than PSY0's arithmetic_grid; scratch paper allowed on the real test. Defaults [estimated] from the 2024 debrief (30 q / 35 min).",
+      "properties": {
+        "count": { "type": "integer", "minimum": 1, "maximum": 200, "default": 30 },
+        "answerMode": { "type": "string", "enum": ["mcq", "numeric"], "default": "mcq" },
+        "maxSteps": { "type": "integer", "minimum": 1, "maximum": 10, "default": 3, "description": "Arithmetic steps chained in one problem." },
+        "maxOperand": { "type": "integer", "minimum": 10, "maximum": 10000, "default": 100 }
+      },
+      "additionalProperties": false
+    },
+    "P1TangramParams": {
+      "type": "object",
+      "description": "p1_tangram (psy1-spec.md §4.1 row 2). Compose a shape from a fixed piece set, or (2024 variant) count how many times a given piece occurs in it. Defaults [estimated] (24 planches / ~20 min).",
+      "properties": {
+        "count": { "type": "integer", "minimum": 1, "maximum": 100, "default": 24 },
+        "pieceCount": { "type": "integer", "minimum": 2, "maximum": 14, "default": 7, "description": "Classic tangram set." },
+        "mode": { "type": "string", "enum": ["compose", "count_occurrences"], "default": "compose" }
+      },
+      "additionalProperties": false
+    },
+    "P1AttentionSustainedParams": {
+      "type": "object",
+      "description": "p1_attention_sustained (psy1-spec.md §4.1 row 3). Format is an [open question]; built against the closest PSY0 paradigm (attention_rules-style cadence) until a fuller debrief exists. Defaults [assumed] (3 series of 5, ~9 min).",
+      "properties": {
+        "seriesCount": { "type": "integer", "minimum": 1, "maximum": 10, "default": 3 },
+        "itemsPerSeries": { "type": "integer", "minimum": 1, "maximum": 50, "default": 5 },
+        "stimulusMs": { "type": "integer", "minimum": 100, "maximum": 5000, "default": 500 },
+        "answerWindowMs": { "type": "integer", "minimum": 200, "maximum": 10000, "default": 3000 }
+      },
+      "additionalProperties": false
+    },
+    "P1ReadingFrParams": {
+      "type": "object",
+      "description": "p1_reading_fr (psy1-spec.md §4.1 row 4). French-language reading comprehension, same MCQ-on-passage shape as PSY0's english bank. Defaults [estimated] (10 texts / 20 min); a bank of authored passages (US-103) feeds it, this only sizes a generated session.",
+      "properties": {
+        "passageCount": { "type": "integer", "minimum": 1, "maximum": 50, "default": 10 },
+        "questionsPerPassage": { "type": "integer", "minimum": 1, "maximum": 10, "default": 1 }
+      },
+      "additionalProperties": false
+    },
+    "P1AnglesParams": {
+      "type": "object",
+      "description": "p1_angles (psy1-spec.md §4.1 row 5). Among optionCount candidate angle values, select up to maxCorrect. optionCount/maxCorrect [reported] (9 possibilités, max 4 bonnes réponses), the rest [assumed].",
+      "properties": {
+        "setCount": { "type": "integer", "minimum": 1, "maximum": 20, "default": 3 },
+        "optionCount": { "type": "integer", "minimum": 2, "maximum": 20, "default": 9 },
+        "maxCorrect": { "type": "integer", "minimum": 1, "maximum": 20, "default": 4 }
+      },
+      "additionalProperties": false
+    },
+    "P1GeneralEfficiencyParams": {
+      "type": "object",
+      "description": "p1_general_efficiency (\"EFG\", psy1-spec.md §4.1 row 6). Mixed-topic reasoning MCQ; exact item type is an [open question]. Defaults [estimated] (35 q / 30 min).",
+      "properties": {
+        "count": { "type": "integer", "minimum": 1, "maximum": 200, "default": 35 }
+      },
+      "additionalProperties": false
+    },
+    "P1CountersParams": {
+      "type": "object",
+      "description": "p1_counters (psy1-spec.md §4.1 row 7). Read values off dial/counter displays. No timing was found for the family; defaults entirely [assumed].",
+      "properties": {
+        "count": { "type": "integer", "minimum": 1, "maximum": 100, "default": 10 },
+        "dialsPerItem": { "type": "integer", "minimum": 1, "maximum": 8, "default": 3 }
+      },
+      "additionalProperties": false
+    },
+    "P1CubeNetsParams": {
+      "type": "object",
+      "description": "p1_cube_nets (psy1-spec.md §4.1 row 8). Net-folding, extending PSY0's spatial_cubes/cube_net with an alphabet parameter (latin vs the invented \"runic\" set) and the rotation-matching sub-variant. phaseCount/netsPerPhase [reported] (2 phases x 10 patrons x 20 min), the rest [assumed].",
+      "properties": {
+        "phaseCount": { "type": "integer", "minimum": 1, "maximum": 5, "default": 2 },
+        "netsPerPhase": { "type": "integer", "minimum": 1, "maximum": 30, "default": 10 },
+        "alphabet": { "type": "string", "enum": ["latin", "runic"], "default": "latin" },
+        "missingFaces": { "type": "integer", "minimum": 1, "maximum": 5, "default": 2 },
+        "includeRotationMatching": { "type": "boolean", "default": false, "description": "Add the rotation-matching sub-variant (view a reference cube, judge whether each candidate is the same object rotated or altered)." }
+      },
+      "additionalProperties": false
+    },
+    "P1WmReverseSpanParams": {
+      "type": "object",
+      "description": "p1_wm_reverse_span (psy1-spec.md §4.1 row 9). Reverse-digit working-memory span; digit-length range [reported], timing [assumed].",
+      "properties": {
+        "count": { "type": "integer", "minimum": 1, "maximum": 50, "default": 10 },
+        "minDigits": { "type": "integer", "minimum": 2, "maximum": 12, "default": 4 },
+        "maxDigits": { "type": "integer", "minimum": 2, "maximum": 12, "default": 9 },
+        "answerWindowMs": { "type": "integer", "minimum": 500, "maximum": 10000, "default": 3500 }
+      },
+      "additionalProperties": false
+    },
+    "P1WmCalcBackParams": {
+      "type": "object",
+      "description": "p1_wm_calc_back (\"calcul memory back\", psy1-spec.md §4.1 row 10). Holds intermediate results in working memory over increasing-load stages. Defaults [reported] (4 stages x 20+ calcs).",
+      "properties": {
+        "stageCount": { "type": "integer", "minimum": 1, "maximum": 10, "default": 4 },
+        "calcsPerStage": { "type": "integer", "minimum": 1, "maximum": 100, "default": 20 }
+      },
+      "additionalProperties": false
+    },
+    "P1RavenMatricesParams": {
+      "type": "object",
+      "description": "p1_raven_matrices (psy1-spec.md §4.1 row 11). Classic Raven-style visual matrix completion. Defaults [estimated] (30 q / 30 min).",
+      "properties": {
+        "count": { "type": "integer", "minimum": 1, "maximum": 100, "default": 30 },
+        "grid": { "$ref": "common.schema.json#/$defs/GridSize", "default": { "rows": 3, "cols": 3 } },
+        "optionCount": { "type": "integer", "minimum": 2, "maximum": 12, "default": 6 }
+      },
+      "additionalProperties": false
+    },
+    "P1MentalArithmeticParams": {
+      "type": "object",
+      "description": "p1_mental_arithmetic (\"Calcul mental 1-4\", psy1-spec.md §4.1 row 12). Same underlying arithmetic generator as PSY0's arithmetic_grid, graded over four answer-format modes. Defaults [estimated] (10 per series, 4 series).",
+      "properties": {
+        "count": { "type": "integer", "minimum": 1, "maximum": 100, "default": 10 },
+        "answerMode": { "type": "string", "enum": ["free_numeric", "equation", "smallest_interval", "all_intervals"], "default": "free_numeric" },
+        "maxOperand": { "type": "integer", "minimum": 10, "maximum": 10000, "default": 100 }
+      },
+      "additionalProperties": false
+    },
+    "P1PsychomotorParams": {
+      "type": "object",
+      "description": "p1_psychomotor (psy1-spec.md §4.1 row 13). Continuous 4-channel multitasking test (dual-axis tracking, gauge-nulling, letter cancellation, timed arithmetic); any sub-task in its \"red zone\" zeroes the whole score. Needs the joystick/gamepad input abstraction (US-102); this contract only sizes the phases. Defaults [reported] (6 x 3 min phases, calc every 12 s).",
+      "properties": {
+        "phaseCount": { "type": "integer", "minimum": 1, "maximum": 12, "default": 6 },
+        "phaseDurationSec": { "type": "integer", "minimum": 30, "maximum": 600, "default": 180 },
+        "calcIntervalSec": { "type": "integer", "minimum": 1, "maximum": 120, "default": 12 }
       },
       "additionalProperties": false
     }

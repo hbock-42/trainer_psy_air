@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:psy_content/psy_content.dart';
 import '../../../../core/repositories/repository_providers.dart';
+import '../../../home/presentation/providers/active_module_provider.dart';
 import '../../../train/presentation/engine/engine_registry_provider.dart';
 
 /// One blueprint on the Exam home (US-060/061): how many of its sections
@@ -38,13 +39,14 @@ class ExamBlueprintEntry {
   }
 }
 
-/// PSY0 exam blueprints (US-060), each flagged with which sections can run
-/// with the engines registered so far.
+/// The active module's exam blueprints (US-060), each flagged with which
+/// sections can run with the engines registered so far. Filtered by
+/// `activeModuleProvider` (US-101 module switch).
 final FutureProvider<List<ExamBlueprintEntry>> examBlueprintsProvider =
     FutureProvider<List<ExamBlueprintEntry>>((ref) async {
       final blueprints = await ref
           .watch(contentRepositoryProvider)
-          .blueprints(moduleId: ModuleId.psy0);
+          .blueprints(moduleId: ref.watch(activeModuleProvider).moduleId);
       final registry = ref.watch(engineRegistryProvider);
       return [
         for (final blueprint in blueprints)

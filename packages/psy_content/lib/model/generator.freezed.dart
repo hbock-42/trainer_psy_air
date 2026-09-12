@@ -63,6 +63,58 @@ GeneratorParams _$GeneratorParamsFromJson(
           return MultitaskParams.fromJson(
             json
           );
+                case 'p1_math_word_problems':
+          return P1MathWordProblemsParams.fromJson(
+            json
+          );
+                case 'p1_tangram':
+          return P1TangramParams.fromJson(
+            json
+          );
+                case 'p1_attention_sustained':
+          return P1AttentionSustainedParams.fromJson(
+            json
+          );
+                case 'p1_reading_fr':
+          return P1ReadingFrParams.fromJson(
+            json
+          );
+                case 'p1_angles':
+          return P1AnglesParams.fromJson(
+            json
+          );
+                case 'p1_general_efficiency':
+          return P1GeneralEfficiencyParams.fromJson(
+            json
+          );
+                case 'p1_counters':
+          return P1CountersParams.fromJson(
+            json
+          );
+                case 'p1_cube_nets':
+          return P1CubeNetsParams.fromJson(
+            json
+          );
+                case 'p1_wm_reverse_span':
+          return P1WmReverseSpanParams.fromJson(
+            json
+          );
+                case 'p1_wm_calc_back':
+          return P1WmCalcBackParams.fromJson(
+            json
+          );
+                case 'p1_raven_matrices':
+          return P1RavenMatricesParams.fromJson(
+            json
+          );
+                case 'p1_mental_arithmetic':
+          return P1MentalArithmeticParams.fromJson(
+            json
+          );
+                case 'p1_psychomotor':
+          return P1PsychomotorParams.fromJson(
+            json
+          );
         
           default:
             throw CheckedFromJsonException(
@@ -121,7 +173,7 @@ extension GeneratorParamsPatterns on GeneratorParams {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( NbackParams value)?  nback,TResult Function( TubesParams value)?  tubes,TResult Function( StimulusResponseParams value)?  stimulusResponse,TResult Function( ParitySequenceParams value)?  paritySequence,TResult Function( OverlayGridParams value)?  overlayGrid,TResult Function( DominosParams value)?  dominos,TResult Function( AirwaysParams value)?  airways,TResult Function( WordBoxesParams value)?  wordBoxes,TResult Function( ArithmeticGridParams value)?  arithmeticGrid,TResult Function( ViewpointParams value)?  viewpoint,TResult Function( CubeNetParams value)?  cubeNet,TResult Function( MultitaskParams value)?  multitask,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( NbackParams value)?  nback,TResult Function( TubesParams value)?  tubes,TResult Function( StimulusResponseParams value)?  stimulusResponse,TResult Function( ParitySequenceParams value)?  paritySequence,TResult Function( OverlayGridParams value)?  overlayGrid,TResult Function( DominosParams value)?  dominos,TResult Function( AirwaysParams value)?  airways,TResult Function( WordBoxesParams value)?  wordBoxes,TResult Function( ArithmeticGridParams value)?  arithmeticGrid,TResult Function( ViewpointParams value)?  viewpoint,TResult Function( CubeNetParams value)?  cubeNet,TResult Function( MultitaskParams value)?  multitask,TResult Function( P1MathWordProblemsParams value)?  p1MathWordProblems,TResult Function( P1TangramParams value)?  p1Tangram,TResult Function( P1AttentionSustainedParams value)?  p1AttentionSustained,TResult Function( P1ReadingFrParams value)?  p1ReadingFr,TResult Function( P1AnglesParams value)?  p1Angles,TResult Function( P1GeneralEfficiencyParams value)?  p1GeneralEfficiency,TResult Function( P1CountersParams value)?  p1Counters,TResult Function( P1CubeNetsParams value)?  p1CubeNets,TResult Function( P1WmReverseSpanParams value)?  p1WmReverseSpan,TResult Function( P1WmCalcBackParams value)?  p1WmCalcBack,TResult Function( P1RavenMatricesParams value)?  p1RavenMatrices,TResult Function( P1MentalArithmeticParams value)?  p1MentalArithmetic,TResult Function( P1PsychomotorParams value)?  p1Psychomotor,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case NbackParams() when nback != null:
@@ -136,7 +188,20 @@ return wordBoxes(_that);case ArithmeticGridParams() when arithmeticGrid != null:
 return arithmeticGrid(_that);case ViewpointParams() when viewpoint != null:
 return viewpoint(_that);case CubeNetParams() when cubeNet != null:
 return cubeNet(_that);case MultitaskParams() when multitask != null:
-return multitask(_that);case _:
+return multitask(_that);case P1MathWordProblemsParams() when p1MathWordProblems != null:
+return p1MathWordProblems(_that);case P1TangramParams() when p1Tangram != null:
+return p1Tangram(_that);case P1AttentionSustainedParams() when p1AttentionSustained != null:
+return p1AttentionSustained(_that);case P1ReadingFrParams() when p1ReadingFr != null:
+return p1ReadingFr(_that);case P1AnglesParams() when p1Angles != null:
+return p1Angles(_that);case P1GeneralEfficiencyParams() when p1GeneralEfficiency != null:
+return p1GeneralEfficiency(_that);case P1CountersParams() when p1Counters != null:
+return p1Counters(_that);case P1CubeNetsParams() when p1CubeNets != null:
+return p1CubeNets(_that);case P1WmReverseSpanParams() when p1WmReverseSpan != null:
+return p1WmReverseSpan(_that);case P1WmCalcBackParams() when p1WmCalcBack != null:
+return p1WmCalcBack(_that);case P1RavenMatricesParams() when p1RavenMatrices != null:
+return p1RavenMatrices(_that);case P1MentalArithmeticParams() when p1MentalArithmetic != null:
+return p1MentalArithmetic(_that);case P1PsychomotorParams() when p1Psychomotor != null:
+return p1Psychomotor(_that);case _:
   return orElse();
 
 }
@@ -154,7 +219,7 @@ return multitask(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( NbackParams value)  nback,required TResult Function( TubesParams value)  tubes,required TResult Function( StimulusResponseParams value)  stimulusResponse,required TResult Function( ParitySequenceParams value)  paritySequence,required TResult Function( OverlayGridParams value)  overlayGrid,required TResult Function( DominosParams value)  dominos,required TResult Function( AirwaysParams value)  airways,required TResult Function( WordBoxesParams value)  wordBoxes,required TResult Function( ArithmeticGridParams value)  arithmeticGrid,required TResult Function( ViewpointParams value)  viewpoint,required TResult Function( CubeNetParams value)  cubeNet,required TResult Function( MultitaskParams value)  multitask,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( NbackParams value)  nback,required TResult Function( TubesParams value)  tubes,required TResult Function( StimulusResponseParams value)  stimulusResponse,required TResult Function( ParitySequenceParams value)  paritySequence,required TResult Function( OverlayGridParams value)  overlayGrid,required TResult Function( DominosParams value)  dominos,required TResult Function( AirwaysParams value)  airways,required TResult Function( WordBoxesParams value)  wordBoxes,required TResult Function( ArithmeticGridParams value)  arithmeticGrid,required TResult Function( ViewpointParams value)  viewpoint,required TResult Function( CubeNetParams value)  cubeNet,required TResult Function( MultitaskParams value)  multitask,required TResult Function( P1MathWordProblemsParams value)  p1MathWordProblems,required TResult Function( P1TangramParams value)  p1Tangram,required TResult Function( P1AttentionSustainedParams value)  p1AttentionSustained,required TResult Function( P1ReadingFrParams value)  p1ReadingFr,required TResult Function( P1AnglesParams value)  p1Angles,required TResult Function( P1GeneralEfficiencyParams value)  p1GeneralEfficiency,required TResult Function( P1CountersParams value)  p1Counters,required TResult Function( P1CubeNetsParams value)  p1CubeNets,required TResult Function( P1WmReverseSpanParams value)  p1WmReverseSpan,required TResult Function( P1WmCalcBackParams value)  p1WmCalcBack,required TResult Function( P1RavenMatricesParams value)  p1RavenMatrices,required TResult Function( P1MentalArithmeticParams value)  p1MentalArithmetic,required TResult Function( P1PsychomotorParams value)  p1Psychomotor,}){
 final _that = this;
 switch (_that) {
 case NbackParams():
@@ -169,7 +234,20 @@ return wordBoxes(_that);case ArithmeticGridParams():
 return arithmeticGrid(_that);case ViewpointParams():
 return viewpoint(_that);case CubeNetParams():
 return cubeNet(_that);case MultitaskParams():
-return multitask(_that);}
+return multitask(_that);case P1MathWordProblemsParams():
+return p1MathWordProblems(_that);case P1TangramParams():
+return p1Tangram(_that);case P1AttentionSustainedParams():
+return p1AttentionSustained(_that);case P1ReadingFrParams():
+return p1ReadingFr(_that);case P1AnglesParams():
+return p1Angles(_that);case P1GeneralEfficiencyParams():
+return p1GeneralEfficiency(_that);case P1CountersParams():
+return p1Counters(_that);case P1CubeNetsParams():
+return p1CubeNets(_that);case P1WmReverseSpanParams():
+return p1WmReverseSpan(_that);case P1WmCalcBackParams():
+return p1WmCalcBack(_that);case P1RavenMatricesParams():
+return p1RavenMatrices(_that);case P1MentalArithmeticParams():
+return p1MentalArithmetic(_that);case P1PsychomotorParams():
+return p1Psychomotor(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -183,7 +261,7 @@ return multitask(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( NbackParams value)?  nback,TResult? Function( TubesParams value)?  tubes,TResult? Function( StimulusResponseParams value)?  stimulusResponse,TResult? Function( ParitySequenceParams value)?  paritySequence,TResult? Function( OverlayGridParams value)?  overlayGrid,TResult? Function( DominosParams value)?  dominos,TResult? Function( AirwaysParams value)?  airways,TResult? Function( WordBoxesParams value)?  wordBoxes,TResult? Function( ArithmeticGridParams value)?  arithmeticGrid,TResult? Function( ViewpointParams value)?  viewpoint,TResult? Function( CubeNetParams value)?  cubeNet,TResult? Function( MultitaskParams value)?  multitask,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( NbackParams value)?  nback,TResult? Function( TubesParams value)?  tubes,TResult? Function( StimulusResponseParams value)?  stimulusResponse,TResult? Function( ParitySequenceParams value)?  paritySequence,TResult? Function( OverlayGridParams value)?  overlayGrid,TResult? Function( DominosParams value)?  dominos,TResult? Function( AirwaysParams value)?  airways,TResult? Function( WordBoxesParams value)?  wordBoxes,TResult? Function( ArithmeticGridParams value)?  arithmeticGrid,TResult? Function( ViewpointParams value)?  viewpoint,TResult? Function( CubeNetParams value)?  cubeNet,TResult? Function( MultitaskParams value)?  multitask,TResult? Function( P1MathWordProblemsParams value)?  p1MathWordProblems,TResult? Function( P1TangramParams value)?  p1Tangram,TResult? Function( P1AttentionSustainedParams value)?  p1AttentionSustained,TResult? Function( P1ReadingFrParams value)?  p1ReadingFr,TResult? Function( P1AnglesParams value)?  p1Angles,TResult? Function( P1GeneralEfficiencyParams value)?  p1GeneralEfficiency,TResult? Function( P1CountersParams value)?  p1Counters,TResult? Function( P1CubeNetsParams value)?  p1CubeNets,TResult? Function( P1WmReverseSpanParams value)?  p1WmReverseSpan,TResult? Function( P1WmCalcBackParams value)?  p1WmCalcBack,TResult? Function( P1RavenMatricesParams value)?  p1RavenMatrices,TResult? Function( P1MentalArithmeticParams value)?  p1MentalArithmetic,TResult? Function( P1PsychomotorParams value)?  p1Psychomotor,}){
 final _that = this;
 switch (_that) {
 case NbackParams() when nback != null:
@@ -198,7 +276,20 @@ return wordBoxes(_that);case ArithmeticGridParams() when arithmeticGrid != null:
 return arithmeticGrid(_that);case ViewpointParams() when viewpoint != null:
 return viewpoint(_that);case CubeNetParams() when cubeNet != null:
 return cubeNet(_that);case MultitaskParams() when multitask != null:
-return multitask(_that);case _:
+return multitask(_that);case P1MathWordProblemsParams() when p1MathWordProblems != null:
+return p1MathWordProblems(_that);case P1TangramParams() when p1Tangram != null:
+return p1Tangram(_that);case P1AttentionSustainedParams() when p1AttentionSustained != null:
+return p1AttentionSustained(_that);case P1ReadingFrParams() when p1ReadingFr != null:
+return p1ReadingFr(_that);case P1AnglesParams() when p1Angles != null:
+return p1Angles(_that);case P1GeneralEfficiencyParams() when p1GeneralEfficiency != null:
+return p1GeneralEfficiency(_that);case P1CountersParams() when p1Counters != null:
+return p1Counters(_that);case P1CubeNetsParams() when p1CubeNets != null:
+return p1CubeNets(_that);case P1WmReverseSpanParams() when p1WmReverseSpan != null:
+return p1WmReverseSpan(_that);case P1WmCalcBackParams() when p1WmCalcBack != null:
+return p1WmCalcBack(_that);case P1RavenMatricesParams() when p1RavenMatrices != null:
+return p1RavenMatrices(_that);case P1MentalArithmeticParams() when p1MentalArithmetic != null:
+return p1MentalArithmetic(_that);case P1PsychomotorParams() when p1Psychomotor != null:
+return p1Psychomotor(_that);case _:
   return null;
 
 }
@@ -215,7 +306,7 @@ return multitask(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( int n,  NbackStimulusKind stimulusKind,  int paletteSize,  int count,  int primers,  int stimulusMs,  int answerWindowMs,  double targetRatio,  double lureRatio)?  nback,TResult Function( List<int> capacities,  int colourCount,  int ballCount,  int minMoves,  int maxMoves)?  tubes,TResult Function( int count,  int stimulusMs,  int answerWindowMs,  List<String> keys,  List<StimulusShape> shapes,  List<StimulusColour> colours,  int ruleDepth)?  stimulusResponse,TResult Function( int numberCount,  int numberMin,  int numberMax,  bool restartOnError,  bool labelEnds)?  paritySequence,TResult Function( GridSize grid,  int tileCount,  bool overlapping,  bool blackCells)?  overlayGrid,TResult Function( int length,  DominoLayout layout,  int ruleCount,  DominoAnswerMode answerMode)?  dominos,TResult Function( int capacity,  int blueCapacity,  int zoneCount,  int routeCount,  int spawnIntervalMs,  int durationSec)?  airways,TResult Function( int boxCount,  int wordCount,  List<String>? fieldIds,  double trapRatio,  int wordTimeMs)?  wordBoxes,TResult Function( GridSize grid,  int wrongMin,  int wrongMax,  List<ArithmeticOperation> operations,  int maxOperand)?  arithmeticGrid,TResult Function( int viewpointCount,  int objectCount,  List<SolidKind> objectKinds,  bool allowSymmetric)?  viewpoint,TResult Function( int missingFaces,  int distractorFaces,  CubeSymbolKind symbolKind,  bool flippable)?  cubeNet,TResult Function( int durationSec,  double trackingSpeed,  double trackingNoise,  int shapeIntervalMs,  int calcIntervalMs,  double shapeTargetRatio,  double calcWrongRatio,  String shapeKey,  String calcKey)?  multitask,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( int n,  NbackStimulusKind stimulusKind,  int paletteSize,  int count,  int primers,  int stimulusMs,  int answerWindowMs,  double targetRatio,  double lureRatio)?  nback,TResult Function( List<int> capacities,  int colourCount,  int ballCount,  int minMoves,  int maxMoves)?  tubes,TResult Function( int count,  int stimulusMs,  int answerWindowMs,  List<String> keys,  List<StimulusShape> shapes,  List<StimulusColour> colours,  int ruleDepth)?  stimulusResponse,TResult Function( int numberCount,  int numberMin,  int numberMax,  bool restartOnError,  bool labelEnds)?  paritySequence,TResult Function( GridSize grid,  int tileCount,  bool overlapping,  bool blackCells)?  overlayGrid,TResult Function( int length,  DominoLayout layout,  int ruleCount,  DominoAnswerMode answerMode)?  dominos,TResult Function( int capacity,  int blueCapacity,  int zoneCount,  int routeCount,  int spawnIntervalMs,  int durationSec)?  airways,TResult Function( int boxCount,  int wordCount,  List<String>? fieldIds,  double trapRatio,  int wordTimeMs)?  wordBoxes,TResult Function( GridSize grid,  int wrongMin,  int wrongMax,  List<ArithmeticOperation> operations,  int maxOperand)?  arithmeticGrid,TResult Function( int viewpointCount,  int objectCount,  List<SolidKind> objectKinds,  bool allowSymmetric)?  viewpoint,TResult Function( int missingFaces,  int distractorFaces,  CubeSymbolKind symbolKind,  bool flippable)?  cubeNet,TResult Function( int durationSec,  double trackingSpeed,  double trackingNoise,  int shapeIntervalMs,  int calcIntervalMs,  double shapeTargetRatio,  double calcWrongRatio,  String shapeKey,  String calcKey)?  multitask,TResult Function( int count,  P1AnswerMode answerMode,  int maxSteps,  int maxOperand)?  p1MathWordProblems,TResult Function( int count,  int pieceCount,  TangramMode mode)?  p1Tangram,TResult Function( int seriesCount,  int itemsPerSeries,  int stimulusMs,  int answerWindowMs)?  p1AttentionSustained,TResult Function( int passageCount,  int questionsPerPassage)?  p1ReadingFr,TResult Function( int setCount,  int optionCount,  int maxCorrect)?  p1Angles,TResult Function( int count)?  p1GeneralEfficiency,TResult Function( int count,  int dialsPerItem)?  p1Counters,TResult Function( int phaseCount,  int netsPerPhase,  CubeNetAlphabet alphabet,  int missingFaces,  bool includeRotationMatching)?  p1CubeNets,TResult Function( int count,  int minDigits,  int maxDigits,  int answerWindowMs)?  p1WmReverseSpan,TResult Function( int stageCount,  int calcsPerStage)?  p1WmCalcBack,TResult Function( int count,  GridSize grid,  int optionCount)?  p1RavenMatrices,TResult Function( int count,  MentalArithmeticAnswerMode answerMode,  int maxOperand)?  p1MentalArithmetic,TResult Function( int phaseCount,  int phaseDurationSec,  int calcIntervalSec)?  p1Psychomotor,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case NbackParams() when nback != null:
 return nback(_that.n,_that.stimulusKind,_that.paletteSize,_that.count,_that.primers,_that.stimulusMs,_that.answerWindowMs,_that.targetRatio,_that.lureRatio);case TubesParams() when tubes != null:
@@ -229,7 +320,20 @@ return wordBoxes(_that.boxCount,_that.wordCount,_that.fieldIds,_that.trapRatio,_
 return arithmeticGrid(_that.grid,_that.wrongMin,_that.wrongMax,_that.operations,_that.maxOperand);case ViewpointParams() when viewpoint != null:
 return viewpoint(_that.viewpointCount,_that.objectCount,_that.objectKinds,_that.allowSymmetric);case CubeNetParams() when cubeNet != null:
 return cubeNet(_that.missingFaces,_that.distractorFaces,_that.symbolKind,_that.flippable);case MultitaskParams() when multitask != null:
-return multitask(_that.durationSec,_that.trackingSpeed,_that.trackingNoise,_that.shapeIntervalMs,_that.calcIntervalMs,_that.shapeTargetRatio,_that.calcWrongRatio,_that.shapeKey,_that.calcKey);case _:
+return multitask(_that.durationSec,_that.trackingSpeed,_that.trackingNoise,_that.shapeIntervalMs,_that.calcIntervalMs,_that.shapeTargetRatio,_that.calcWrongRatio,_that.shapeKey,_that.calcKey);case P1MathWordProblemsParams() when p1MathWordProblems != null:
+return p1MathWordProblems(_that.count,_that.answerMode,_that.maxSteps,_that.maxOperand);case P1TangramParams() when p1Tangram != null:
+return p1Tangram(_that.count,_that.pieceCount,_that.mode);case P1AttentionSustainedParams() when p1AttentionSustained != null:
+return p1AttentionSustained(_that.seriesCount,_that.itemsPerSeries,_that.stimulusMs,_that.answerWindowMs);case P1ReadingFrParams() when p1ReadingFr != null:
+return p1ReadingFr(_that.passageCount,_that.questionsPerPassage);case P1AnglesParams() when p1Angles != null:
+return p1Angles(_that.setCount,_that.optionCount,_that.maxCorrect);case P1GeneralEfficiencyParams() when p1GeneralEfficiency != null:
+return p1GeneralEfficiency(_that.count);case P1CountersParams() when p1Counters != null:
+return p1Counters(_that.count,_that.dialsPerItem);case P1CubeNetsParams() when p1CubeNets != null:
+return p1CubeNets(_that.phaseCount,_that.netsPerPhase,_that.alphabet,_that.missingFaces,_that.includeRotationMatching);case P1WmReverseSpanParams() when p1WmReverseSpan != null:
+return p1WmReverseSpan(_that.count,_that.minDigits,_that.maxDigits,_that.answerWindowMs);case P1WmCalcBackParams() when p1WmCalcBack != null:
+return p1WmCalcBack(_that.stageCount,_that.calcsPerStage);case P1RavenMatricesParams() when p1RavenMatrices != null:
+return p1RavenMatrices(_that.count,_that.grid,_that.optionCount);case P1MentalArithmeticParams() when p1MentalArithmetic != null:
+return p1MentalArithmetic(_that.count,_that.answerMode,_that.maxOperand);case P1PsychomotorParams() when p1Psychomotor != null:
+return p1Psychomotor(_that.phaseCount,_that.phaseDurationSec,_that.calcIntervalSec);case _:
   return orElse();
 
 }
@@ -247,7 +351,7 @@ return multitask(_that.durationSec,_that.trackingSpeed,_that.trackingNoise,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( int n,  NbackStimulusKind stimulusKind,  int paletteSize,  int count,  int primers,  int stimulusMs,  int answerWindowMs,  double targetRatio,  double lureRatio)  nback,required TResult Function( List<int> capacities,  int colourCount,  int ballCount,  int minMoves,  int maxMoves)  tubes,required TResult Function( int count,  int stimulusMs,  int answerWindowMs,  List<String> keys,  List<StimulusShape> shapes,  List<StimulusColour> colours,  int ruleDepth)  stimulusResponse,required TResult Function( int numberCount,  int numberMin,  int numberMax,  bool restartOnError,  bool labelEnds)  paritySequence,required TResult Function( GridSize grid,  int tileCount,  bool overlapping,  bool blackCells)  overlayGrid,required TResult Function( int length,  DominoLayout layout,  int ruleCount,  DominoAnswerMode answerMode)  dominos,required TResult Function( int capacity,  int blueCapacity,  int zoneCount,  int routeCount,  int spawnIntervalMs,  int durationSec)  airways,required TResult Function( int boxCount,  int wordCount,  List<String>? fieldIds,  double trapRatio,  int wordTimeMs)  wordBoxes,required TResult Function( GridSize grid,  int wrongMin,  int wrongMax,  List<ArithmeticOperation> operations,  int maxOperand)  arithmeticGrid,required TResult Function( int viewpointCount,  int objectCount,  List<SolidKind> objectKinds,  bool allowSymmetric)  viewpoint,required TResult Function( int missingFaces,  int distractorFaces,  CubeSymbolKind symbolKind,  bool flippable)  cubeNet,required TResult Function( int durationSec,  double trackingSpeed,  double trackingNoise,  int shapeIntervalMs,  int calcIntervalMs,  double shapeTargetRatio,  double calcWrongRatio,  String shapeKey,  String calcKey)  multitask,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( int n,  NbackStimulusKind stimulusKind,  int paletteSize,  int count,  int primers,  int stimulusMs,  int answerWindowMs,  double targetRatio,  double lureRatio)  nback,required TResult Function( List<int> capacities,  int colourCount,  int ballCount,  int minMoves,  int maxMoves)  tubes,required TResult Function( int count,  int stimulusMs,  int answerWindowMs,  List<String> keys,  List<StimulusShape> shapes,  List<StimulusColour> colours,  int ruleDepth)  stimulusResponse,required TResult Function( int numberCount,  int numberMin,  int numberMax,  bool restartOnError,  bool labelEnds)  paritySequence,required TResult Function( GridSize grid,  int tileCount,  bool overlapping,  bool blackCells)  overlayGrid,required TResult Function( int length,  DominoLayout layout,  int ruleCount,  DominoAnswerMode answerMode)  dominos,required TResult Function( int capacity,  int blueCapacity,  int zoneCount,  int routeCount,  int spawnIntervalMs,  int durationSec)  airways,required TResult Function( int boxCount,  int wordCount,  List<String>? fieldIds,  double trapRatio,  int wordTimeMs)  wordBoxes,required TResult Function( GridSize grid,  int wrongMin,  int wrongMax,  List<ArithmeticOperation> operations,  int maxOperand)  arithmeticGrid,required TResult Function( int viewpointCount,  int objectCount,  List<SolidKind> objectKinds,  bool allowSymmetric)  viewpoint,required TResult Function( int missingFaces,  int distractorFaces,  CubeSymbolKind symbolKind,  bool flippable)  cubeNet,required TResult Function( int durationSec,  double trackingSpeed,  double trackingNoise,  int shapeIntervalMs,  int calcIntervalMs,  double shapeTargetRatio,  double calcWrongRatio,  String shapeKey,  String calcKey)  multitask,required TResult Function( int count,  P1AnswerMode answerMode,  int maxSteps,  int maxOperand)  p1MathWordProblems,required TResult Function( int count,  int pieceCount,  TangramMode mode)  p1Tangram,required TResult Function( int seriesCount,  int itemsPerSeries,  int stimulusMs,  int answerWindowMs)  p1AttentionSustained,required TResult Function( int passageCount,  int questionsPerPassage)  p1ReadingFr,required TResult Function( int setCount,  int optionCount,  int maxCorrect)  p1Angles,required TResult Function( int count)  p1GeneralEfficiency,required TResult Function( int count,  int dialsPerItem)  p1Counters,required TResult Function( int phaseCount,  int netsPerPhase,  CubeNetAlphabet alphabet,  int missingFaces,  bool includeRotationMatching)  p1CubeNets,required TResult Function( int count,  int minDigits,  int maxDigits,  int answerWindowMs)  p1WmReverseSpan,required TResult Function( int stageCount,  int calcsPerStage)  p1WmCalcBack,required TResult Function( int count,  GridSize grid,  int optionCount)  p1RavenMatrices,required TResult Function( int count,  MentalArithmeticAnswerMode answerMode,  int maxOperand)  p1MentalArithmetic,required TResult Function( int phaseCount,  int phaseDurationSec,  int calcIntervalSec)  p1Psychomotor,}) {final _that = this;
 switch (_that) {
 case NbackParams():
 return nback(_that.n,_that.stimulusKind,_that.paletteSize,_that.count,_that.primers,_that.stimulusMs,_that.answerWindowMs,_that.targetRatio,_that.lureRatio);case TubesParams():
@@ -261,7 +365,20 @@ return wordBoxes(_that.boxCount,_that.wordCount,_that.fieldIds,_that.trapRatio,_
 return arithmeticGrid(_that.grid,_that.wrongMin,_that.wrongMax,_that.operations,_that.maxOperand);case ViewpointParams():
 return viewpoint(_that.viewpointCount,_that.objectCount,_that.objectKinds,_that.allowSymmetric);case CubeNetParams():
 return cubeNet(_that.missingFaces,_that.distractorFaces,_that.symbolKind,_that.flippable);case MultitaskParams():
-return multitask(_that.durationSec,_that.trackingSpeed,_that.trackingNoise,_that.shapeIntervalMs,_that.calcIntervalMs,_that.shapeTargetRatio,_that.calcWrongRatio,_that.shapeKey,_that.calcKey);}
+return multitask(_that.durationSec,_that.trackingSpeed,_that.trackingNoise,_that.shapeIntervalMs,_that.calcIntervalMs,_that.shapeTargetRatio,_that.calcWrongRatio,_that.shapeKey,_that.calcKey);case P1MathWordProblemsParams():
+return p1MathWordProblems(_that.count,_that.answerMode,_that.maxSteps,_that.maxOperand);case P1TangramParams():
+return p1Tangram(_that.count,_that.pieceCount,_that.mode);case P1AttentionSustainedParams():
+return p1AttentionSustained(_that.seriesCount,_that.itemsPerSeries,_that.stimulusMs,_that.answerWindowMs);case P1ReadingFrParams():
+return p1ReadingFr(_that.passageCount,_that.questionsPerPassage);case P1AnglesParams():
+return p1Angles(_that.setCount,_that.optionCount,_that.maxCorrect);case P1GeneralEfficiencyParams():
+return p1GeneralEfficiency(_that.count);case P1CountersParams():
+return p1Counters(_that.count,_that.dialsPerItem);case P1CubeNetsParams():
+return p1CubeNets(_that.phaseCount,_that.netsPerPhase,_that.alphabet,_that.missingFaces,_that.includeRotationMatching);case P1WmReverseSpanParams():
+return p1WmReverseSpan(_that.count,_that.minDigits,_that.maxDigits,_that.answerWindowMs);case P1WmCalcBackParams():
+return p1WmCalcBack(_that.stageCount,_that.calcsPerStage);case P1RavenMatricesParams():
+return p1RavenMatrices(_that.count,_that.grid,_that.optionCount);case P1MentalArithmeticParams():
+return p1MentalArithmetic(_that.count,_that.answerMode,_that.maxOperand);case P1PsychomotorParams():
+return p1Psychomotor(_that.phaseCount,_that.phaseDurationSec,_that.calcIntervalSec);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -275,7 +392,7 @@ return multitask(_that.durationSec,_that.trackingSpeed,_that.trackingNoise,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( int n,  NbackStimulusKind stimulusKind,  int paletteSize,  int count,  int primers,  int stimulusMs,  int answerWindowMs,  double targetRatio,  double lureRatio)?  nback,TResult? Function( List<int> capacities,  int colourCount,  int ballCount,  int minMoves,  int maxMoves)?  tubes,TResult? Function( int count,  int stimulusMs,  int answerWindowMs,  List<String> keys,  List<StimulusShape> shapes,  List<StimulusColour> colours,  int ruleDepth)?  stimulusResponse,TResult? Function( int numberCount,  int numberMin,  int numberMax,  bool restartOnError,  bool labelEnds)?  paritySequence,TResult? Function( GridSize grid,  int tileCount,  bool overlapping,  bool blackCells)?  overlayGrid,TResult? Function( int length,  DominoLayout layout,  int ruleCount,  DominoAnswerMode answerMode)?  dominos,TResult? Function( int capacity,  int blueCapacity,  int zoneCount,  int routeCount,  int spawnIntervalMs,  int durationSec)?  airways,TResult? Function( int boxCount,  int wordCount,  List<String>? fieldIds,  double trapRatio,  int wordTimeMs)?  wordBoxes,TResult? Function( GridSize grid,  int wrongMin,  int wrongMax,  List<ArithmeticOperation> operations,  int maxOperand)?  arithmeticGrid,TResult? Function( int viewpointCount,  int objectCount,  List<SolidKind> objectKinds,  bool allowSymmetric)?  viewpoint,TResult? Function( int missingFaces,  int distractorFaces,  CubeSymbolKind symbolKind,  bool flippable)?  cubeNet,TResult? Function( int durationSec,  double trackingSpeed,  double trackingNoise,  int shapeIntervalMs,  int calcIntervalMs,  double shapeTargetRatio,  double calcWrongRatio,  String shapeKey,  String calcKey)?  multitask,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( int n,  NbackStimulusKind stimulusKind,  int paletteSize,  int count,  int primers,  int stimulusMs,  int answerWindowMs,  double targetRatio,  double lureRatio)?  nback,TResult? Function( List<int> capacities,  int colourCount,  int ballCount,  int minMoves,  int maxMoves)?  tubes,TResult? Function( int count,  int stimulusMs,  int answerWindowMs,  List<String> keys,  List<StimulusShape> shapes,  List<StimulusColour> colours,  int ruleDepth)?  stimulusResponse,TResult? Function( int numberCount,  int numberMin,  int numberMax,  bool restartOnError,  bool labelEnds)?  paritySequence,TResult? Function( GridSize grid,  int tileCount,  bool overlapping,  bool blackCells)?  overlayGrid,TResult? Function( int length,  DominoLayout layout,  int ruleCount,  DominoAnswerMode answerMode)?  dominos,TResult? Function( int capacity,  int blueCapacity,  int zoneCount,  int routeCount,  int spawnIntervalMs,  int durationSec)?  airways,TResult? Function( int boxCount,  int wordCount,  List<String>? fieldIds,  double trapRatio,  int wordTimeMs)?  wordBoxes,TResult? Function( GridSize grid,  int wrongMin,  int wrongMax,  List<ArithmeticOperation> operations,  int maxOperand)?  arithmeticGrid,TResult? Function( int viewpointCount,  int objectCount,  List<SolidKind> objectKinds,  bool allowSymmetric)?  viewpoint,TResult? Function( int missingFaces,  int distractorFaces,  CubeSymbolKind symbolKind,  bool flippable)?  cubeNet,TResult? Function( int durationSec,  double trackingSpeed,  double trackingNoise,  int shapeIntervalMs,  int calcIntervalMs,  double shapeTargetRatio,  double calcWrongRatio,  String shapeKey,  String calcKey)?  multitask,TResult? Function( int count,  P1AnswerMode answerMode,  int maxSteps,  int maxOperand)?  p1MathWordProblems,TResult? Function( int count,  int pieceCount,  TangramMode mode)?  p1Tangram,TResult? Function( int seriesCount,  int itemsPerSeries,  int stimulusMs,  int answerWindowMs)?  p1AttentionSustained,TResult? Function( int passageCount,  int questionsPerPassage)?  p1ReadingFr,TResult? Function( int setCount,  int optionCount,  int maxCorrect)?  p1Angles,TResult? Function( int count)?  p1GeneralEfficiency,TResult? Function( int count,  int dialsPerItem)?  p1Counters,TResult? Function( int phaseCount,  int netsPerPhase,  CubeNetAlphabet alphabet,  int missingFaces,  bool includeRotationMatching)?  p1CubeNets,TResult? Function( int count,  int minDigits,  int maxDigits,  int answerWindowMs)?  p1WmReverseSpan,TResult? Function( int stageCount,  int calcsPerStage)?  p1WmCalcBack,TResult? Function( int count,  GridSize grid,  int optionCount)?  p1RavenMatrices,TResult? Function( int count,  MentalArithmeticAnswerMode answerMode,  int maxOperand)?  p1MentalArithmetic,TResult? Function( int phaseCount,  int phaseDurationSec,  int calcIntervalSec)?  p1Psychomotor,}) {final _that = this;
 switch (_that) {
 case NbackParams() when nback != null:
 return nback(_that.n,_that.stimulusKind,_that.paletteSize,_that.count,_that.primers,_that.stimulusMs,_that.answerWindowMs,_that.targetRatio,_that.lureRatio);case TubesParams() when tubes != null:
@@ -289,7 +406,20 @@ return wordBoxes(_that.boxCount,_that.wordCount,_that.fieldIds,_that.trapRatio,_
 return arithmeticGrid(_that.grid,_that.wrongMin,_that.wrongMax,_that.operations,_that.maxOperand);case ViewpointParams() when viewpoint != null:
 return viewpoint(_that.viewpointCount,_that.objectCount,_that.objectKinds,_that.allowSymmetric);case CubeNetParams() when cubeNet != null:
 return cubeNet(_that.missingFaces,_that.distractorFaces,_that.symbolKind,_that.flippable);case MultitaskParams() when multitask != null:
-return multitask(_that.durationSec,_that.trackingSpeed,_that.trackingNoise,_that.shapeIntervalMs,_that.calcIntervalMs,_that.shapeTargetRatio,_that.calcWrongRatio,_that.shapeKey,_that.calcKey);case _:
+return multitask(_that.durationSec,_that.trackingSpeed,_that.trackingNoise,_that.shapeIntervalMs,_that.calcIntervalMs,_that.shapeTargetRatio,_that.calcWrongRatio,_that.shapeKey,_that.calcKey);case P1MathWordProblemsParams() when p1MathWordProblems != null:
+return p1MathWordProblems(_that.count,_that.answerMode,_that.maxSteps,_that.maxOperand);case P1TangramParams() when p1Tangram != null:
+return p1Tangram(_that.count,_that.pieceCount,_that.mode);case P1AttentionSustainedParams() when p1AttentionSustained != null:
+return p1AttentionSustained(_that.seriesCount,_that.itemsPerSeries,_that.stimulusMs,_that.answerWindowMs);case P1ReadingFrParams() when p1ReadingFr != null:
+return p1ReadingFr(_that.passageCount,_that.questionsPerPassage);case P1AnglesParams() when p1Angles != null:
+return p1Angles(_that.setCount,_that.optionCount,_that.maxCorrect);case P1GeneralEfficiencyParams() when p1GeneralEfficiency != null:
+return p1GeneralEfficiency(_that.count);case P1CountersParams() when p1Counters != null:
+return p1Counters(_that.count,_that.dialsPerItem);case P1CubeNetsParams() when p1CubeNets != null:
+return p1CubeNets(_that.phaseCount,_that.netsPerPhase,_that.alphabet,_that.missingFaces,_that.includeRotationMatching);case P1WmReverseSpanParams() when p1WmReverseSpan != null:
+return p1WmReverseSpan(_that.count,_that.minDigits,_that.maxDigits,_that.answerWindowMs);case P1WmCalcBackParams() when p1WmCalcBack != null:
+return p1WmCalcBack(_that.stageCount,_that.calcsPerStage);case P1RavenMatricesParams() when p1RavenMatrices != null:
+return p1RavenMatrices(_that.count,_that.grid,_that.optionCount);case P1MentalArithmeticParams() when p1MentalArithmetic != null:
+return p1MentalArithmetic(_that.count,_that.answerMode,_that.maxOperand);case P1PsychomotorParams() when p1Psychomotor != null:
+return p1Psychomotor(_that.phaseCount,_that.phaseDurationSec,_that.calcIntervalSec);case _:
   return null;
 
 }
@@ -1339,6 +1469,1016 @@ as double,calcWrongRatio: null == calcWrongRatio ? _self.calcWrongRatio : calcWr
 as double,shapeKey: null == shapeKey ? _self.shapeKey : shapeKey // ignore: cast_nullable_to_non_nullable
 as String,calcKey: null == calcKey ? _self.calcKey : calcKey // ignore: cast_nullable_to_non_nullable
 as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class P1MathWordProblemsParams extends GeneratorParams {
+  const P1MathWordProblemsParams({this.count = 30, this.answerMode = P1AnswerMode.mcq, this.maxSteps = 3, this.maxOperand = 100, final  String? $type}): $type = $type ?? 'p1_math_word_problems',super._();
+  factory P1MathWordProblemsParams.fromJson(Map<String, dynamic> json) => _$P1MathWordProblemsParamsFromJson(json);
+
+@JsonKey() final  int count;
+@JsonKey() final  P1AnswerMode answerMode;
+@JsonKey() final  int maxSteps;
+@JsonKey() final  int maxOperand;
+
+@JsonKey(name: 'generatorId')
+final String $type;
+
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$P1MathWordProblemsParamsCopyWith<P1MathWordProblemsParams> get copyWith => _$P1MathWordProblemsParamsCopyWithImpl<P1MathWordProblemsParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$P1MathWordProblemsParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P1MathWordProblemsParams&&(identical(other.count, count) || other.count == count)&&(identical(other.answerMode, answerMode) || other.answerMode == answerMode)&&(identical(other.maxSteps, maxSteps) || other.maxSteps == maxSteps)&&(identical(other.maxOperand, maxOperand) || other.maxOperand == maxOperand));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,count,answerMode,maxSteps,maxOperand);
+
+@override
+String toString() {
+  return 'GeneratorParams.p1MathWordProblems(count: $count, answerMode: $answerMode, maxSteps: $maxSteps, maxOperand: $maxOperand)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $P1MathWordProblemsParamsCopyWith<$Res> implements $GeneratorParamsCopyWith<$Res> {
+  factory $P1MathWordProblemsParamsCopyWith(P1MathWordProblemsParams value, $Res Function(P1MathWordProblemsParams) _then) = _$P1MathWordProblemsParamsCopyWithImpl;
+@useResult
+$Res call({
+ int count, P1AnswerMode answerMode, int maxSteps, int maxOperand
+});
+
+
+
+
+}
+/// @nodoc
+class _$P1MathWordProblemsParamsCopyWithImpl<$Res>
+    implements $P1MathWordProblemsParamsCopyWith<$Res> {
+  _$P1MathWordProblemsParamsCopyWithImpl(this._self, this._then);
+
+  final P1MathWordProblemsParams _self;
+  final $Res Function(P1MathWordProblemsParams) _then;
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? count = null,Object? answerMode = null,Object? maxSteps = null,Object? maxOperand = null,}) {
+  return _then(P1MathWordProblemsParams(
+count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as int,answerMode: null == answerMode ? _self.answerMode : answerMode // ignore: cast_nullable_to_non_nullable
+as P1AnswerMode,maxSteps: null == maxSteps ? _self.maxSteps : maxSteps // ignore: cast_nullable_to_non_nullable
+as int,maxOperand: null == maxOperand ? _self.maxOperand : maxOperand // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class P1TangramParams extends GeneratorParams {
+  const P1TangramParams({this.count = 24, this.pieceCount = 7, this.mode = TangramMode.compose, final  String? $type}): $type = $type ?? 'p1_tangram',super._();
+  factory P1TangramParams.fromJson(Map<String, dynamic> json) => _$P1TangramParamsFromJson(json);
+
+@JsonKey() final  int count;
+@JsonKey() final  int pieceCount;
+@JsonKey() final  TangramMode mode;
+
+@JsonKey(name: 'generatorId')
+final String $type;
+
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$P1TangramParamsCopyWith<P1TangramParams> get copyWith => _$P1TangramParamsCopyWithImpl<P1TangramParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$P1TangramParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P1TangramParams&&(identical(other.count, count) || other.count == count)&&(identical(other.pieceCount, pieceCount) || other.pieceCount == pieceCount)&&(identical(other.mode, mode) || other.mode == mode));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,count,pieceCount,mode);
+
+@override
+String toString() {
+  return 'GeneratorParams.p1Tangram(count: $count, pieceCount: $pieceCount, mode: $mode)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $P1TangramParamsCopyWith<$Res> implements $GeneratorParamsCopyWith<$Res> {
+  factory $P1TangramParamsCopyWith(P1TangramParams value, $Res Function(P1TangramParams) _then) = _$P1TangramParamsCopyWithImpl;
+@useResult
+$Res call({
+ int count, int pieceCount, TangramMode mode
+});
+
+
+
+
+}
+/// @nodoc
+class _$P1TangramParamsCopyWithImpl<$Res>
+    implements $P1TangramParamsCopyWith<$Res> {
+  _$P1TangramParamsCopyWithImpl(this._self, this._then);
+
+  final P1TangramParams _self;
+  final $Res Function(P1TangramParams) _then;
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? count = null,Object? pieceCount = null,Object? mode = null,}) {
+  return _then(P1TangramParams(
+count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as int,pieceCount: null == pieceCount ? _self.pieceCount : pieceCount // ignore: cast_nullable_to_non_nullable
+as int,mode: null == mode ? _self.mode : mode // ignore: cast_nullable_to_non_nullable
+as TangramMode,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class P1AttentionSustainedParams extends GeneratorParams {
+  const P1AttentionSustainedParams({this.seriesCount = 3, this.itemsPerSeries = 5, this.stimulusMs = 500, this.answerWindowMs = 3000, final  String? $type}): $type = $type ?? 'p1_attention_sustained',super._();
+  factory P1AttentionSustainedParams.fromJson(Map<String, dynamic> json) => _$P1AttentionSustainedParamsFromJson(json);
+
+@JsonKey() final  int seriesCount;
+@JsonKey() final  int itemsPerSeries;
+@JsonKey() final  int stimulusMs;
+@JsonKey() final  int answerWindowMs;
+
+@JsonKey(name: 'generatorId')
+final String $type;
+
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$P1AttentionSustainedParamsCopyWith<P1AttentionSustainedParams> get copyWith => _$P1AttentionSustainedParamsCopyWithImpl<P1AttentionSustainedParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$P1AttentionSustainedParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P1AttentionSustainedParams&&(identical(other.seriesCount, seriesCount) || other.seriesCount == seriesCount)&&(identical(other.itemsPerSeries, itemsPerSeries) || other.itemsPerSeries == itemsPerSeries)&&(identical(other.stimulusMs, stimulusMs) || other.stimulusMs == stimulusMs)&&(identical(other.answerWindowMs, answerWindowMs) || other.answerWindowMs == answerWindowMs));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,seriesCount,itemsPerSeries,stimulusMs,answerWindowMs);
+
+@override
+String toString() {
+  return 'GeneratorParams.p1AttentionSustained(seriesCount: $seriesCount, itemsPerSeries: $itemsPerSeries, stimulusMs: $stimulusMs, answerWindowMs: $answerWindowMs)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $P1AttentionSustainedParamsCopyWith<$Res> implements $GeneratorParamsCopyWith<$Res> {
+  factory $P1AttentionSustainedParamsCopyWith(P1AttentionSustainedParams value, $Res Function(P1AttentionSustainedParams) _then) = _$P1AttentionSustainedParamsCopyWithImpl;
+@useResult
+$Res call({
+ int seriesCount, int itemsPerSeries, int stimulusMs, int answerWindowMs
+});
+
+
+
+
+}
+/// @nodoc
+class _$P1AttentionSustainedParamsCopyWithImpl<$Res>
+    implements $P1AttentionSustainedParamsCopyWith<$Res> {
+  _$P1AttentionSustainedParamsCopyWithImpl(this._self, this._then);
+
+  final P1AttentionSustainedParams _self;
+  final $Res Function(P1AttentionSustainedParams) _then;
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? seriesCount = null,Object? itemsPerSeries = null,Object? stimulusMs = null,Object? answerWindowMs = null,}) {
+  return _then(P1AttentionSustainedParams(
+seriesCount: null == seriesCount ? _self.seriesCount : seriesCount // ignore: cast_nullable_to_non_nullable
+as int,itemsPerSeries: null == itemsPerSeries ? _self.itemsPerSeries : itemsPerSeries // ignore: cast_nullable_to_non_nullable
+as int,stimulusMs: null == stimulusMs ? _self.stimulusMs : stimulusMs // ignore: cast_nullable_to_non_nullable
+as int,answerWindowMs: null == answerWindowMs ? _self.answerWindowMs : answerWindowMs // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class P1ReadingFrParams extends GeneratorParams {
+  const P1ReadingFrParams({this.passageCount = 10, this.questionsPerPassage = 1, final  String? $type}): $type = $type ?? 'p1_reading_fr',super._();
+  factory P1ReadingFrParams.fromJson(Map<String, dynamic> json) => _$P1ReadingFrParamsFromJson(json);
+
+@JsonKey() final  int passageCount;
+@JsonKey() final  int questionsPerPassage;
+
+@JsonKey(name: 'generatorId')
+final String $type;
+
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$P1ReadingFrParamsCopyWith<P1ReadingFrParams> get copyWith => _$P1ReadingFrParamsCopyWithImpl<P1ReadingFrParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$P1ReadingFrParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P1ReadingFrParams&&(identical(other.passageCount, passageCount) || other.passageCount == passageCount)&&(identical(other.questionsPerPassage, questionsPerPassage) || other.questionsPerPassage == questionsPerPassage));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,passageCount,questionsPerPassage);
+
+@override
+String toString() {
+  return 'GeneratorParams.p1ReadingFr(passageCount: $passageCount, questionsPerPassage: $questionsPerPassage)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $P1ReadingFrParamsCopyWith<$Res> implements $GeneratorParamsCopyWith<$Res> {
+  factory $P1ReadingFrParamsCopyWith(P1ReadingFrParams value, $Res Function(P1ReadingFrParams) _then) = _$P1ReadingFrParamsCopyWithImpl;
+@useResult
+$Res call({
+ int passageCount, int questionsPerPassage
+});
+
+
+
+
+}
+/// @nodoc
+class _$P1ReadingFrParamsCopyWithImpl<$Res>
+    implements $P1ReadingFrParamsCopyWith<$Res> {
+  _$P1ReadingFrParamsCopyWithImpl(this._self, this._then);
+
+  final P1ReadingFrParams _self;
+  final $Res Function(P1ReadingFrParams) _then;
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? passageCount = null,Object? questionsPerPassage = null,}) {
+  return _then(P1ReadingFrParams(
+passageCount: null == passageCount ? _self.passageCount : passageCount // ignore: cast_nullable_to_non_nullable
+as int,questionsPerPassage: null == questionsPerPassage ? _self.questionsPerPassage : questionsPerPassage // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class P1AnglesParams extends GeneratorParams {
+  const P1AnglesParams({this.setCount = 3, this.optionCount = 9, this.maxCorrect = 4, final  String? $type}): $type = $type ?? 'p1_angles',super._();
+  factory P1AnglesParams.fromJson(Map<String, dynamic> json) => _$P1AnglesParamsFromJson(json);
+
+@JsonKey() final  int setCount;
+@JsonKey() final  int optionCount;
+@JsonKey() final  int maxCorrect;
+
+@JsonKey(name: 'generatorId')
+final String $type;
+
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$P1AnglesParamsCopyWith<P1AnglesParams> get copyWith => _$P1AnglesParamsCopyWithImpl<P1AnglesParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$P1AnglesParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P1AnglesParams&&(identical(other.setCount, setCount) || other.setCount == setCount)&&(identical(other.optionCount, optionCount) || other.optionCount == optionCount)&&(identical(other.maxCorrect, maxCorrect) || other.maxCorrect == maxCorrect));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,setCount,optionCount,maxCorrect);
+
+@override
+String toString() {
+  return 'GeneratorParams.p1Angles(setCount: $setCount, optionCount: $optionCount, maxCorrect: $maxCorrect)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $P1AnglesParamsCopyWith<$Res> implements $GeneratorParamsCopyWith<$Res> {
+  factory $P1AnglesParamsCopyWith(P1AnglesParams value, $Res Function(P1AnglesParams) _then) = _$P1AnglesParamsCopyWithImpl;
+@useResult
+$Res call({
+ int setCount, int optionCount, int maxCorrect
+});
+
+
+
+
+}
+/// @nodoc
+class _$P1AnglesParamsCopyWithImpl<$Res>
+    implements $P1AnglesParamsCopyWith<$Res> {
+  _$P1AnglesParamsCopyWithImpl(this._self, this._then);
+
+  final P1AnglesParams _self;
+  final $Res Function(P1AnglesParams) _then;
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? setCount = null,Object? optionCount = null,Object? maxCorrect = null,}) {
+  return _then(P1AnglesParams(
+setCount: null == setCount ? _self.setCount : setCount // ignore: cast_nullable_to_non_nullable
+as int,optionCount: null == optionCount ? _self.optionCount : optionCount // ignore: cast_nullable_to_non_nullable
+as int,maxCorrect: null == maxCorrect ? _self.maxCorrect : maxCorrect // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class P1GeneralEfficiencyParams extends GeneratorParams {
+  const P1GeneralEfficiencyParams({this.count = 35, final  String? $type}): $type = $type ?? 'p1_general_efficiency',super._();
+  factory P1GeneralEfficiencyParams.fromJson(Map<String, dynamic> json) => _$P1GeneralEfficiencyParamsFromJson(json);
+
+@JsonKey() final  int count;
+
+@JsonKey(name: 'generatorId')
+final String $type;
+
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$P1GeneralEfficiencyParamsCopyWith<P1GeneralEfficiencyParams> get copyWith => _$P1GeneralEfficiencyParamsCopyWithImpl<P1GeneralEfficiencyParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$P1GeneralEfficiencyParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P1GeneralEfficiencyParams&&(identical(other.count, count) || other.count == count));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,count);
+
+@override
+String toString() {
+  return 'GeneratorParams.p1GeneralEfficiency(count: $count)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $P1GeneralEfficiencyParamsCopyWith<$Res> implements $GeneratorParamsCopyWith<$Res> {
+  factory $P1GeneralEfficiencyParamsCopyWith(P1GeneralEfficiencyParams value, $Res Function(P1GeneralEfficiencyParams) _then) = _$P1GeneralEfficiencyParamsCopyWithImpl;
+@useResult
+$Res call({
+ int count
+});
+
+
+
+
+}
+/// @nodoc
+class _$P1GeneralEfficiencyParamsCopyWithImpl<$Res>
+    implements $P1GeneralEfficiencyParamsCopyWith<$Res> {
+  _$P1GeneralEfficiencyParamsCopyWithImpl(this._self, this._then);
+
+  final P1GeneralEfficiencyParams _self;
+  final $Res Function(P1GeneralEfficiencyParams) _then;
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? count = null,}) {
+  return _then(P1GeneralEfficiencyParams(
+count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class P1CountersParams extends GeneratorParams {
+  const P1CountersParams({this.count = 10, this.dialsPerItem = 3, final  String? $type}): $type = $type ?? 'p1_counters',super._();
+  factory P1CountersParams.fromJson(Map<String, dynamic> json) => _$P1CountersParamsFromJson(json);
+
+@JsonKey() final  int count;
+@JsonKey() final  int dialsPerItem;
+
+@JsonKey(name: 'generatorId')
+final String $type;
+
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$P1CountersParamsCopyWith<P1CountersParams> get copyWith => _$P1CountersParamsCopyWithImpl<P1CountersParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$P1CountersParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P1CountersParams&&(identical(other.count, count) || other.count == count)&&(identical(other.dialsPerItem, dialsPerItem) || other.dialsPerItem == dialsPerItem));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,count,dialsPerItem);
+
+@override
+String toString() {
+  return 'GeneratorParams.p1Counters(count: $count, dialsPerItem: $dialsPerItem)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $P1CountersParamsCopyWith<$Res> implements $GeneratorParamsCopyWith<$Res> {
+  factory $P1CountersParamsCopyWith(P1CountersParams value, $Res Function(P1CountersParams) _then) = _$P1CountersParamsCopyWithImpl;
+@useResult
+$Res call({
+ int count, int dialsPerItem
+});
+
+
+
+
+}
+/// @nodoc
+class _$P1CountersParamsCopyWithImpl<$Res>
+    implements $P1CountersParamsCopyWith<$Res> {
+  _$P1CountersParamsCopyWithImpl(this._self, this._then);
+
+  final P1CountersParams _self;
+  final $Res Function(P1CountersParams) _then;
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? count = null,Object? dialsPerItem = null,}) {
+  return _then(P1CountersParams(
+count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as int,dialsPerItem: null == dialsPerItem ? _self.dialsPerItem : dialsPerItem // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class P1CubeNetsParams extends GeneratorParams {
+  const P1CubeNetsParams({this.phaseCount = 2, this.netsPerPhase = 10, this.alphabet = CubeNetAlphabet.latin, this.missingFaces = 2, this.includeRotationMatching = false, final  String? $type}): $type = $type ?? 'p1_cube_nets',super._();
+  factory P1CubeNetsParams.fromJson(Map<String, dynamic> json) => _$P1CubeNetsParamsFromJson(json);
+
+@JsonKey() final  int phaseCount;
+@JsonKey() final  int netsPerPhase;
+@JsonKey() final  CubeNetAlphabet alphabet;
+@JsonKey() final  int missingFaces;
+@JsonKey() final  bool includeRotationMatching;
+
+@JsonKey(name: 'generatorId')
+final String $type;
+
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$P1CubeNetsParamsCopyWith<P1CubeNetsParams> get copyWith => _$P1CubeNetsParamsCopyWithImpl<P1CubeNetsParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$P1CubeNetsParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P1CubeNetsParams&&(identical(other.phaseCount, phaseCount) || other.phaseCount == phaseCount)&&(identical(other.netsPerPhase, netsPerPhase) || other.netsPerPhase == netsPerPhase)&&(identical(other.alphabet, alphabet) || other.alphabet == alphabet)&&(identical(other.missingFaces, missingFaces) || other.missingFaces == missingFaces)&&(identical(other.includeRotationMatching, includeRotationMatching) || other.includeRotationMatching == includeRotationMatching));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,phaseCount,netsPerPhase,alphabet,missingFaces,includeRotationMatching);
+
+@override
+String toString() {
+  return 'GeneratorParams.p1CubeNets(phaseCount: $phaseCount, netsPerPhase: $netsPerPhase, alphabet: $alphabet, missingFaces: $missingFaces, includeRotationMatching: $includeRotationMatching)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $P1CubeNetsParamsCopyWith<$Res> implements $GeneratorParamsCopyWith<$Res> {
+  factory $P1CubeNetsParamsCopyWith(P1CubeNetsParams value, $Res Function(P1CubeNetsParams) _then) = _$P1CubeNetsParamsCopyWithImpl;
+@useResult
+$Res call({
+ int phaseCount, int netsPerPhase, CubeNetAlphabet alphabet, int missingFaces, bool includeRotationMatching
+});
+
+
+
+
+}
+/// @nodoc
+class _$P1CubeNetsParamsCopyWithImpl<$Res>
+    implements $P1CubeNetsParamsCopyWith<$Res> {
+  _$P1CubeNetsParamsCopyWithImpl(this._self, this._then);
+
+  final P1CubeNetsParams _self;
+  final $Res Function(P1CubeNetsParams) _then;
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? phaseCount = null,Object? netsPerPhase = null,Object? alphabet = null,Object? missingFaces = null,Object? includeRotationMatching = null,}) {
+  return _then(P1CubeNetsParams(
+phaseCount: null == phaseCount ? _self.phaseCount : phaseCount // ignore: cast_nullable_to_non_nullable
+as int,netsPerPhase: null == netsPerPhase ? _self.netsPerPhase : netsPerPhase // ignore: cast_nullable_to_non_nullable
+as int,alphabet: null == alphabet ? _self.alphabet : alphabet // ignore: cast_nullable_to_non_nullable
+as CubeNetAlphabet,missingFaces: null == missingFaces ? _self.missingFaces : missingFaces // ignore: cast_nullable_to_non_nullable
+as int,includeRotationMatching: null == includeRotationMatching ? _self.includeRotationMatching : includeRotationMatching // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class P1WmReverseSpanParams extends GeneratorParams {
+  const P1WmReverseSpanParams({this.count = 10, this.minDigits = 4, this.maxDigits = 9, this.answerWindowMs = 3500, final  String? $type}): $type = $type ?? 'p1_wm_reverse_span',super._();
+  factory P1WmReverseSpanParams.fromJson(Map<String, dynamic> json) => _$P1WmReverseSpanParamsFromJson(json);
+
+@JsonKey() final  int count;
+@JsonKey() final  int minDigits;
+@JsonKey() final  int maxDigits;
+@JsonKey() final  int answerWindowMs;
+
+@JsonKey(name: 'generatorId')
+final String $type;
+
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$P1WmReverseSpanParamsCopyWith<P1WmReverseSpanParams> get copyWith => _$P1WmReverseSpanParamsCopyWithImpl<P1WmReverseSpanParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$P1WmReverseSpanParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P1WmReverseSpanParams&&(identical(other.count, count) || other.count == count)&&(identical(other.minDigits, minDigits) || other.minDigits == minDigits)&&(identical(other.maxDigits, maxDigits) || other.maxDigits == maxDigits)&&(identical(other.answerWindowMs, answerWindowMs) || other.answerWindowMs == answerWindowMs));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,count,minDigits,maxDigits,answerWindowMs);
+
+@override
+String toString() {
+  return 'GeneratorParams.p1WmReverseSpan(count: $count, minDigits: $minDigits, maxDigits: $maxDigits, answerWindowMs: $answerWindowMs)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $P1WmReverseSpanParamsCopyWith<$Res> implements $GeneratorParamsCopyWith<$Res> {
+  factory $P1WmReverseSpanParamsCopyWith(P1WmReverseSpanParams value, $Res Function(P1WmReverseSpanParams) _then) = _$P1WmReverseSpanParamsCopyWithImpl;
+@useResult
+$Res call({
+ int count, int minDigits, int maxDigits, int answerWindowMs
+});
+
+
+
+
+}
+/// @nodoc
+class _$P1WmReverseSpanParamsCopyWithImpl<$Res>
+    implements $P1WmReverseSpanParamsCopyWith<$Res> {
+  _$P1WmReverseSpanParamsCopyWithImpl(this._self, this._then);
+
+  final P1WmReverseSpanParams _self;
+  final $Res Function(P1WmReverseSpanParams) _then;
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? count = null,Object? minDigits = null,Object? maxDigits = null,Object? answerWindowMs = null,}) {
+  return _then(P1WmReverseSpanParams(
+count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as int,minDigits: null == minDigits ? _self.minDigits : minDigits // ignore: cast_nullable_to_non_nullable
+as int,maxDigits: null == maxDigits ? _self.maxDigits : maxDigits // ignore: cast_nullable_to_non_nullable
+as int,answerWindowMs: null == answerWindowMs ? _self.answerWindowMs : answerWindowMs // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class P1WmCalcBackParams extends GeneratorParams {
+  const P1WmCalcBackParams({this.stageCount = 4, this.calcsPerStage = 20, final  String? $type}): $type = $type ?? 'p1_wm_calc_back',super._();
+  factory P1WmCalcBackParams.fromJson(Map<String, dynamic> json) => _$P1WmCalcBackParamsFromJson(json);
+
+@JsonKey() final  int stageCount;
+@JsonKey() final  int calcsPerStage;
+
+@JsonKey(name: 'generatorId')
+final String $type;
+
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$P1WmCalcBackParamsCopyWith<P1WmCalcBackParams> get copyWith => _$P1WmCalcBackParamsCopyWithImpl<P1WmCalcBackParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$P1WmCalcBackParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P1WmCalcBackParams&&(identical(other.stageCount, stageCount) || other.stageCount == stageCount)&&(identical(other.calcsPerStage, calcsPerStage) || other.calcsPerStage == calcsPerStage));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,stageCount,calcsPerStage);
+
+@override
+String toString() {
+  return 'GeneratorParams.p1WmCalcBack(stageCount: $stageCount, calcsPerStage: $calcsPerStage)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $P1WmCalcBackParamsCopyWith<$Res> implements $GeneratorParamsCopyWith<$Res> {
+  factory $P1WmCalcBackParamsCopyWith(P1WmCalcBackParams value, $Res Function(P1WmCalcBackParams) _then) = _$P1WmCalcBackParamsCopyWithImpl;
+@useResult
+$Res call({
+ int stageCount, int calcsPerStage
+});
+
+
+
+
+}
+/// @nodoc
+class _$P1WmCalcBackParamsCopyWithImpl<$Res>
+    implements $P1WmCalcBackParamsCopyWith<$Res> {
+  _$P1WmCalcBackParamsCopyWithImpl(this._self, this._then);
+
+  final P1WmCalcBackParams _self;
+  final $Res Function(P1WmCalcBackParams) _then;
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? stageCount = null,Object? calcsPerStage = null,}) {
+  return _then(P1WmCalcBackParams(
+stageCount: null == stageCount ? _self.stageCount : stageCount // ignore: cast_nullable_to_non_nullable
+as int,calcsPerStage: null == calcsPerStage ? _self.calcsPerStage : calcsPerStage // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class P1RavenMatricesParams extends GeneratorParams {
+  const P1RavenMatricesParams({this.count = 30, this.grid = const GridSize(rows: 3, cols: 3), this.optionCount = 6, final  String? $type}): $type = $type ?? 'p1_raven_matrices',super._();
+  factory P1RavenMatricesParams.fromJson(Map<String, dynamic> json) => _$P1RavenMatricesParamsFromJson(json);
+
+@JsonKey() final  int count;
+@JsonKey() final  GridSize grid;
+@JsonKey() final  int optionCount;
+
+@JsonKey(name: 'generatorId')
+final String $type;
+
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$P1RavenMatricesParamsCopyWith<P1RavenMatricesParams> get copyWith => _$P1RavenMatricesParamsCopyWithImpl<P1RavenMatricesParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$P1RavenMatricesParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P1RavenMatricesParams&&(identical(other.count, count) || other.count == count)&&(identical(other.grid, grid) || other.grid == grid)&&(identical(other.optionCount, optionCount) || other.optionCount == optionCount));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,count,grid,optionCount);
+
+@override
+String toString() {
+  return 'GeneratorParams.p1RavenMatrices(count: $count, grid: $grid, optionCount: $optionCount)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $P1RavenMatricesParamsCopyWith<$Res> implements $GeneratorParamsCopyWith<$Res> {
+  factory $P1RavenMatricesParamsCopyWith(P1RavenMatricesParams value, $Res Function(P1RavenMatricesParams) _then) = _$P1RavenMatricesParamsCopyWithImpl;
+@useResult
+$Res call({
+ int count, GridSize grid, int optionCount
+});
+
+
+$GridSizeCopyWith<$Res> get grid;
+
+}
+/// @nodoc
+class _$P1RavenMatricesParamsCopyWithImpl<$Res>
+    implements $P1RavenMatricesParamsCopyWith<$Res> {
+  _$P1RavenMatricesParamsCopyWithImpl(this._self, this._then);
+
+  final P1RavenMatricesParams _self;
+  final $Res Function(P1RavenMatricesParams) _then;
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? count = null,Object? grid = null,Object? optionCount = null,}) {
+  return _then(P1RavenMatricesParams(
+count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as int,grid: null == grid ? _self.grid : grid // ignore: cast_nullable_to_non_nullable
+as GridSize,optionCount: null == optionCount ? _self.optionCount : optionCount // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$GridSizeCopyWith<$Res> get grid {
+  
+  return $GridSizeCopyWith<$Res>(_self.grid, (value) {
+    return _then(_self.copyWith(grid: value));
+  });
+}
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class P1MentalArithmeticParams extends GeneratorParams {
+  const P1MentalArithmeticParams({this.count = 10, this.answerMode = MentalArithmeticAnswerMode.freeNumeric, this.maxOperand = 100, final  String? $type}): $type = $type ?? 'p1_mental_arithmetic',super._();
+  factory P1MentalArithmeticParams.fromJson(Map<String, dynamic> json) => _$P1MentalArithmeticParamsFromJson(json);
+
+@JsonKey() final  int count;
+@JsonKey() final  MentalArithmeticAnswerMode answerMode;
+@JsonKey() final  int maxOperand;
+
+@JsonKey(name: 'generatorId')
+final String $type;
+
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$P1MentalArithmeticParamsCopyWith<P1MentalArithmeticParams> get copyWith => _$P1MentalArithmeticParamsCopyWithImpl<P1MentalArithmeticParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$P1MentalArithmeticParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P1MentalArithmeticParams&&(identical(other.count, count) || other.count == count)&&(identical(other.answerMode, answerMode) || other.answerMode == answerMode)&&(identical(other.maxOperand, maxOperand) || other.maxOperand == maxOperand));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,count,answerMode,maxOperand);
+
+@override
+String toString() {
+  return 'GeneratorParams.p1MentalArithmetic(count: $count, answerMode: $answerMode, maxOperand: $maxOperand)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $P1MentalArithmeticParamsCopyWith<$Res> implements $GeneratorParamsCopyWith<$Res> {
+  factory $P1MentalArithmeticParamsCopyWith(P1MentalArithmeticParams value, $Res Function(P1MentalArithmeticParams) _then) = _$P1MentalArithmeticParamsCopyWithImpl;
+@useResult
+$Res call({
+ int count, MentalArithmeticAnswerMode answerMode, int maxOperand
+});
+
+
+
+
+}
+/// @nodoc
+class _$P1MentalArithmeticParamsCopyWithImpl<$Res>
+    implements $P1MentalArithmeticParamsCopyWith<$Res> {
+  _$P1MentalArithmeticParamsCopyWithImpl(this._self, this._then);
+
+  final P1MentalArithmeticParams _self;
+  final $Res Function(P1MentalArithmeticParams) _then;
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? count = null,Object? answerMode = null,Object? maxOperand = null,}) {
+  return _then(P1MentalArithmeticParams(
+count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as int,answerMode: null == answerMode ? _self.answerMode : answerMode // ignore: cast_nullable_to_non_nullable
+as MentalArithmeticAnswerMode,maxOperand: null == maxOperand ? _self.maxOperand : maxOperand // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class P1PsychomotorParams extends GeneratorParams {
+  const P1PsychomotorParams({this.phaseCount = 6, this.phaseDurationSec = 180, this.calcIntervalSec = 12, final  String? $type}): $type = $type ?? 'p1_psychomotor',super._();
+  factory P1PsychomotorParams.fromJson(Map<String, dynamic> json) => _$P1PsychomotorParamsFromJson(json);
+
+@JsonKey() final  int phaseCount;
+@JsonKey() final  int phaseDurationSec;
+@JsonKey() final  int calcIntervalSec;
+
+@JsonKey(name: 'generatorId')
+final String $type;
+
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$P1PsychomotorParamsCopyWith<P1PsychomotorParams> get copyWith => _$P1PsychomotorParamsCopyWithImpl<P1PsychomotorParams>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$P1PsychomotorParamsToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P1PsychomotorParams&&(identical(other.phaseCount, phaseCount) || other.phaseCount == phaseCount)&&(identical(other.phaseDurationSec, phaseDurationSec) || other.phaseDurationSec == phaseDurationSec)&&(identical(other.calcIntervalSec, calcIntervalSec) || other.calcIntervalSec == calcIntervalSec));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,phaseCount,phaseDurationSec,calcIntervalSec);
+
+@override
+String toString() {
+  return 'GeneratorParams.p1Psychomotor(phaseCount: $phaseCount, phaseDurationSec: $phaseDurationSec, calcIntervalSec: $calcIntervalSec)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $P1PsychomotorParamsCopyWith<$Res> implements $GeneratorParamsCopyWith<$Res> {
+  factory $P1PsychomotorParamsCopyWith(P1PsychomotorParams value, $Res Function(P1PsychomotorParams) _then) = _$P1PsychomotorParamsCopyWithImpl;
+@useResult
+$Res call({
+ int phaseCount, int phaseDurationSec, int calcIntervalSec
+});
+
+
+
+
+}
+/// @nodoc
+class _$P1PsychomotorParamsCopyWithImpl<$Res>
+    implements $P1PsychomotorParamsCopyWith<$Res> {
+  _$P1PsychomotorParamsCopyWithImpl(this._self, this._then);
+
+  final P1PsychomotorParams _self;
+  final $Res Function(P1PsychomotorParams) _then;
+
+/// Create a copy of GeneratorParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? phaseCount = null,Object? phaseDurationSec = null,Object? calcIntervalSec = null,}) {
+  return _then(P1PsychomotorParams(
+phaseCount: null == phaseCount ? _self.phaseCount : phaseCount // ignore: cast_nullable_to_non_nullable
+as int,phaseDurationSec: null == phaseDurationSec ? _self.phaseDurationSec : phaseDurationSec // ignore: cast_nullable_to_non_nullable
+as int,calcIntervalSec: null == calcIntervalSec ? _self.calcIntervalSec : calcIntervalSec // ignore: cast_nullable_to_non_nullable
+as int,
   ));
 }
 
