@@ -2,6 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../engines/arithmetic_grid/domain/arithmetic_grid_engine.dart';
 import '../../../engines/arithmetic_grid/presentation/arithmetic_grid_renderer.dart';
+import '../../../engines/attention_airways/domain/airways_engine.dart';
+import '../../../engines/attention_airways/presentation/airways_renderer.dart';
 import '../../../engines/attention_parity/domain/attention_parity_engine.dart';
 import '../../../engines/attention_parity/presentation/attention_parity_renderer.dart';
 import '../../../engines/attention_rules/domain/attention_rules_engine.dart';
@@ -44,6 +46,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
     Provider<EngineRegistry>(
       (ref) => EngineRegistry(<ActivityEngine>[
         // US-021..036: add one line per engine (alphabetical by family id).
+        const AirwaysEngine(),
         const ArithmeticGridEngine(),
         const AttentionParityEngine(),
         const AttentionRulesEngine(),
@@ -65,6 +68,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
     Provider<RendererRegistry>(
       (ref) => RendererRegistry(<ActivityRenderer>[
         // US-021..036: add one line per engine (alphabetical by family id).
+        const AirwaysRenderer(),
         const ArithmeticGridRenderer(),
         const AttentionParityRenderer(),
         const AttentionRulesRenderer(),

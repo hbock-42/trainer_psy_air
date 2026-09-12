@@ -105,7 +105,7 @@
       "familyId": "attention_airways",
       "itemCount": 10,
       "sectionTimeSec": 300,
-      "perItemTimeSec": 30,
+      "perItemTimeSec": 33,
       "liveFeedback": true,
       "itemSelection": {
         "mode": "generated",
