@@ -44,8 +44,7 @@ class RadarChart extends StatelessWidget {
     this.rings = 4,
     this.maxSize = 320,
     super.key,
-  }) : assert(axes.length >= minAxes, 'A radar chart needs at least 3 axes'),
-       assert(rings >= 1, 'rings must be at least 1');
+  }) : assert(rings >= 1, 'rings must be at least 1');
 
   /// Fewer axes than this do not make a polygon; use a bar chart.
   static const int minAxes = 3;
@@ -65,6 +64,7 @@ class RadarChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    assert(axes.length >= minAxes, 'A radar chart needs at least 3 axes');
     final theme = AppTheme.of(context);
     final textScaler = MediaQuery.textScalerOf(context);
     final labelStyle = theme.textStyles.caption.copyWith(
@@ -80,21 +80,24 @@ class RadarChart extends StatelessWidget {
             final side = constraints.hasBoundedWidth
                 ? math.min(constraints.maxWidth, maxSize)
                 : maxSize;
-            return SizedBox(
-              width: side,
-              height: side,
-              child: CustomPaint(
-                painter: _RadarChartPainter(
-                  axes: axes,
-                  rings: rings,
-                  gridColor: theme.colors.border,
-                  outerRingColor: theme.colors.borderStrong,
-                  fillColor: theme.colors.accent.withValues(alpha: 0.25),
-                  strokeColor: theme.colors.accent,
-                  labelStyle: labelStyle,
-                  textScaler: textScaler,
-                  textDirection: Directionality.of(context),
-                  labelGap: theme.spacing.sm,
+            return Center(
+              heightFactor: 1,
+              child: SizedBox(
+                width: side,
+                height: side,
+                child: CustomPaint(
+                  painter: _RadarChartPainter(
+                    axes: axes,
+                    rings: rings,
+                    gridColor: theme.colors.border,
+                    outerRingColor: theme.colors.borderStrong,
+                    fillColor: theme.colors.accent.withValues(alpha: 0.25),
+                    strokeColor: theme.colors.accent,
+                    labelStyle: labelStyle,
+                    textScaler: textScaler,
+                    textDirection: Directionality.of(context),
+                    labelGap: theme.spacing.sm,
+                  ),
                 ),
               ),
             );

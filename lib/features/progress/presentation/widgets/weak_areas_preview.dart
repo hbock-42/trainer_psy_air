@@ -76,35 +76,56 @@ class _WeakAreaTile extends StatelessWidget {
       (area.accuracy * 100).round(),
       area.attempts,
     );
+    final description = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(name, style: theme.textStyles.bodyStrong),
+        SizedBox(height: theme.spacing.xs),
+        Text(
+          reasons,
+          style: theme.textStyles.caption.copyWith(color: theme.colors.error),
+        ),
+        Text(detail, style: theme.textStyles.caption),
+      ],
+    );
     return AppCard(
       padding: EdgeInsets.all(theme.spacing.md),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          // Narrow phones (and large text): the action goes under the text.
+          if (constraints.maxWidth < _sideBySideMinWidth) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(name, style: theme.textStyles.bodyStrong),
-                SizedBox(height: theme.spacing.xs),
-                Text(
-                  reasons,
-                  style: theme.textStyles.caption.copyWith(
-                    color: theme.colors.error,
-                  ),
+                description,
+                SizedBox(height: theme.spacing.md),
+                SecondaryButton(
+                  label: AppStrings.weakAreaTrain,
+                  icon: AppIconGlyph.target,
+                  expand: true,
+                  onPressed: onTrain,
                 ),
-                Text(detail, style: theme.textStyles.caption),
               ],
-            ),
-          ),
-          SizedBox(width: theme.spacing.md),
-          SecondaryButton(
-            label: AppStrings.weakAreaTrain,
-            icon: AppIconGlyph.target,
-            onPressed: onTrain,
-          ),
-        ],
+            );
+          }
+          return Row(
+            children: [
+              Expanded(child: description),
+              SizedBox(width: theme.spacing.md),
+              SecondaryButton(
+                label: AppStrings.weakAreaTrain,
+                icon: AppIconGlyph.target,
+                onPressed: onTrain,
+              ),
+            ],
+          );
+        },
       ),
     );
   }
+
+  /// Below this width the "train" button sits under the description.
+  static const double _sideBySideMinWidth = 400;
 }

@@ -40,7 +40,7 @@ class HorizontalBarChart extends StatelessWidget {
     required this.semanticsLabel,
     this.barHeight = 12,
     super.key,
-  }) : assert(entries.length > 0, 'A bar chart needs at least one entry');
+  });
 
   final List<BarChartEntry> entries;
   final String semanticsLabel;
@@ -52,6 +52,7 @@ class HorizontalBarChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    assert(entries.isNotEmpty, 'A bar chart needs at least one entry');
     final theme = AppTheme.of(context);
     return Semantics(
       container: true,
@@ -90,13 +91,18 @@ class _BarRow extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
+              flex: 3,
               child: Text(entry.label, style: theme.textStyles.bodyStrong),
             ),
             SizedBox(width: theme.spacing.md),
-            Text(
-              entry.semanticsValue,
-              style: theme.textStyles.caption.copyWith(
-                fontFeatures: const [FontFeature.tabularFigures()],
+            Flexible(
+              flex: 2,
+              child: Text(
+                entry.semanticsValue,
+                textAlign: TextAlign.end,
+                style: theme.textStyles.caption.copyWith(
+                  fontFeatures: const [FontFeature.tabularFigures()],
+                ),
               ),
             ),
           ],

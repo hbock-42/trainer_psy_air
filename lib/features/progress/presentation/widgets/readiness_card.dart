@@ -39,16 +39,20 @@ class ReadinessCard extends StatelessWidget {
       color: band,
       semanticsLabel: AppStrings.readinessSemanticsLabel,
       semanticsValue: '$value ${AppStrings.readinessOutOf}, ${_trendText()}',
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            '$value',
-            style: theme.textStyles.display.copyWith(color: band),
-            maxLines: 1,
-          ),
-          Text(AppStrings.readinessOutOf, style: theme.textStyles.caption),
-        ],
+      // Scales down rather than overflowing at large text scales.
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              '$value',
+              style: theme.textStyles.display.copyWith(color: band),
+              maxLines: 1,
+            ),
+            Text(AppStrings.readinessOutOf, style: theme.textStyles.caption),
+          ],
+        ),
       ),
     );
 
