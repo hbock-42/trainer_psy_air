@@ -2,6 +2,7 @@ import 'package:fake_async/fake_async.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
+import 'package:psy_trainer/features/engines/memory_nback/domain/nback_engine.dart';
 import 'package:psy_trainer/features/train/domain/engine/engine.dart';
 
 import '../../../../helpers/fake_engine.dart';
@@ -891,6 +892,67 @@ void main() {
       expect(s.outcomes, isEmpty);
       s.dispose();
       await expectLater(s.states, emitsDone);
+    });
+  });
+
+  group('run-scoped generation (US-037)', () {
+    ActivitySessionConfig nbackConfig({int count = 4, int seed = 555}) =>
+        ActivitySessionConfig(
+          familyId: 'memory_nback',
+          mode: SessionMode.practice,
+          source: ItemSource.generator(
+            generatorId: GeneratorId.nback,
+            seed: seed,
+            params: const NbackParams(n: 1, count: 4),
+            count: count,
+          ),
+        );
+
+    ActivitySession nbackSession(ActivitySessionConfig config) {
+      final s = ActivitySession(
+        config: config,
+        registry: EngineRegistry(const [NbackEngine()]),
+        repository: repo,
+        clock: clock,
+      );
+      addTearDown(s.dispose);
+      return s;
+    }
+
+    test('runSeed is identical for every item and index matches position', () {
+      final s = nbackSession(nbackConfig());
+      final origins = [
+        for (final item in s.items) (item.item as GeneratedItem).origin!,
+      ];
+      expect(origins.map((o) => o.runSeed).toSet(), {555});
+      expect(origins.map((o) => o.index), [0, 1, 2, 3]);
+    });
+
+    test('the same runSeed reproduces identical items across a fresh session '
+        'and a resumed one', () async {
+      final generatorConfig = nbackConfig();
+      final fresh = nbackSession(generatorConfig);
+      final freshItems = fresh.items.map((s) => s.item).toList();
+
+      // A resumed session rebuilds its config from what the runtime
+      // stored (`ActivitySessionConfig.toJson()`), exactly as a real
+      // crash recovery does (see `ActivitySession.resume`).
+      final stored = await repo.startSession(
+        mode: generatorConfig.mode,
+        familyId: generatorConfig.familyId,
+        config: generatorConfig.toJson(),
+        startedAt: clock.now(),
+      );
+      final resumed = ActivitySession.resume(
+        session: stored,
+        attempts: const [],
+        registry: EngineRegistry(const [NbackEngine()]),
+        repository: repo,
+        clock: clock,
+      );
+      addTearDown(resumed.dispose);
+
+      expect(resumed.items.map((s) => s.item).toList(), freshItems);
     });
   });
 }

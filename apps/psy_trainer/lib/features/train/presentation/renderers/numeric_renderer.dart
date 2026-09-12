@@ -32,7 +32,8 @@ class NumericRenderer extends ActivityRenderer {
   }
 
   @override
-  Widget? buildExample(BuildContext context) => const _NumericExample();
+  Widget? buildExample(BuildContext context, [RunExampleContext? run]) =>
+      const _NumericExample();
 }
 
 class _NumericView extends StatefulWidget {

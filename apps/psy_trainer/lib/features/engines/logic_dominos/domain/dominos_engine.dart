@@ -30,6 +30,8 @@ class DominosEngine extends ActivityEngine {
     required GeneratorParams params,
     required int seed,
     required int difficulty,
+    int index = 0,
+    int? runSeed,
   }) {
     final dominosParams = params as DominosParams;
     // Built once so a malformed recipe fails fast (uniqueness check) instead

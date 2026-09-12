@@ -100,7 +100,11 @@ class _Briefing extends StatelessWidget {
     final briefing =
         config.briefing?.resolve(AppStrings.locale) ??
         AppStrings.sessionBriefingDefault;
-    final example = renderer.buildExample(context);
+    final source = config.source;
+    final runContext = source is GeneratorSource
+        ? RunExampleContext(runSeed: source.seed, params: source.params)
+        : null;
+    final example = renderer.buildExample(context, runContext);
 
     return Padding(
       padding: EdgeInsets.all(theme.spacing.lg),

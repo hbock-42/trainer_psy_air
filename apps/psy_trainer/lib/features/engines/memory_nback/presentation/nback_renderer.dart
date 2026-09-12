@@ -38,11 +38,12 @@ class NbackRenderer extends ActivityRenderer {
       _NbackView(key: ValueKey(render.item.id), render: render);
 
   @override
-  Widget? buildExample(BuildContext context) => const _StimulusPatch(
-    stimulusKind: NbackStimulusKind.colour,
-    value: 0,
-    size: 96,
-  );
+  Widget? buildExample(BuildContext context, [RunExampleContext? run]) =>
+      const _StimulusPatch(
+        stimulusKind: NbackStimulusKind.colour,
+        value: 0,
+        size: 96,
+      );
 }
 
 class _NbackView extends StatefulWidget {

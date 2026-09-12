@@ -145,38 +145,43 @@ void main() {
   });
 
   group('score', () {
-    Item itemFor(int seed) =>
-        engine.generate(params: params, seed: seed, difficulty: 3);
+    // A direct `generate()` call with no `runSeed` falls back to
+    // `runSeed = seed` (see `ActivityEngine.generate`), so the item's own
+    // rule set is `StimulusRuleSet.fromRunSeed(seed, params)` -- not the
+    // canonical `fromParams` (US-037): find the seed through the same
+    // path `engine.score`/`StimulusTrial.forItem` actually uses.
+    GeneratedItem itemFor(int seed) =>
+        engine.generate(params: params, seed: seed, difficulty: 3)
+            as GeneratedItem;
+
+    String correctKeyFor(int seed) =>
+        StimulusTrial.forItem(itemFor(seed)).correctKey;
 
     test('the correct key press scores right', () {
-      // Find a seed whose trial keys off `n` and one off `x`.
-      final ruleSet = StimulusRuleSet.fromParams(params);
       final seed = List.generate(
         200,
         (i) => i,
-      ).firstWhere((s) => ruleSet.trial(s).correctKey == 'n');
+      ).firstWhere((s) => correctKeyFor(s) == 'n');
       final item = itemFor(seed);
       final result = engine.score(item, const Answer.key('n'));
       expect(result.correct, isTrue);
     });
 
     test('the wrong key press scores wrong', () {
-      final ruleSet = StimulusRuleSet.fromParams(params);
       final seed = List.generate(
         200,
         (i) => i,
-      ).firstWhere((s) => ruleSet.trial(s).correctKey == 'n');
+      ).firstWhere((s) => correctKeyFor(s) == 'n');
       final item = itemFor(seed);
       final result = engine.score(item, const Answer.key('x'));
       expect(result.correct, isFalse);
     });
 
     test('key press is case-insensitive', () {
-      final ruleSet = StimulusRuleSet.fromParams(params);
       final seed = List.generate(
         200,
         (i) => i,
-      ).firstWhere((s) => ruleSet.trial(s).correctKey == 'n');
+      ).firstWhere((s) => correctKeyFor(s) == 'n');
       final item = itemFor(seed);
       final result = engine.score(item, const Answer.key('N'));
       expect(result.correct, isTrue);

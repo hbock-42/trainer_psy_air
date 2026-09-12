@@ -99,11 +99,20 @@ abstract class Tolerance with _$Tolerance {
 
 /// Present only on items materialised at runtime by a generator. Same
 /// `generatorId` + `seed` => same item, so an attempt can be replayed.
+///
+/// [runSeed] and [index] are additive (US-037, contract v2, no
+/// `schemaVersion` bump — see `docs/content/CONTRACT.md` §5): [runSeed] is
+/// the seed shared by every item of the run this one belongs to and
+/// [index] its 0-based position in that run. A run-scoped generator (the
+/// n-back stream, the rules engine's rule set) needs both to reconstruct
+/// its state; a stateless generator only needs [seed] and leaves them null.
 @freezed
 abstract class ItemOrigin with _$ItemOrigin {
   const factory ItemOrigin({
     required GeneratorId generatorId,
     required int seed,
+    int? runSeed,
+    int? index,
   }) = _ItemOrigin;
 
   factory ItemOrigin.fromJson(Map<String, Object?> json) =>

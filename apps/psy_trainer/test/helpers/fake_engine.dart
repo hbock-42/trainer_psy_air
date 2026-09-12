@@ -29,6 +29,8 @@ class FakeEngine extends ActivityEngine {
     required GeneratorParams params,
     required int seed,
     required int difficulty,
+    int index = 0,
+    int? runSeed,
   }) => fakeMcq(
     id: ActivityEngine.generatedItemId(generatorId!, seed),
     familyId: familyId,
