@@ -174,10 +174,18 @@ void main() {
     expect(repo.attempts.map((a) => a.position), [0, 1, 2]);
   });
 
-  test('the default providers build empty registries and a system clock', () {
-    final fresh = ProviderContainer.test();
-    expect(fresh.read(engineRegistryProvider).engines, isEmpty);
-    expect(fresh.read(rendererRegistryProvider).hasFamily('x'), isFalse);
-    expect(fresh.read(engineClockProvider), isA<SystemClock>());
-  });
+  test(
+    'the default providers build a system clock and no registry entry for '
+    'an unknown family',
+    () {
+      final fresh = ProviderContainer.test();
+      // Each EPIC-03 story registers its own engine/renderer here (see
+      // engine_registry_provider.dart), so the registries are no longer
+      // empty once any of them has landed; only an unknown family id is
+      // guaranteed absent.
+      expect(fresh.read(engineRegistryProvider).hasFamily('x'), isFalse);
+      expect(fresh.read(rendererRegistryProvider).hasFamily('x'), isFalse);
+      expect(fresh.read(engineClockProvider), isA<SystemClock>());
+    },
+  );
 }

@@ -1,3 +1,5 @@
+import 'package:psy_content/psy_content.dart';
+
 /// User-facing strings, French only for now.
 ///
 /// Interim solution until US-091 introduces ARB-based localisation: every
@@ -529,4 +531,43 @@ abstract final class AppStrings {
   static String examSectionValue(int correct, int attempts, int percent) =>
       '$correct/$attempts · $percent %';
   static const String examSectionNotReached = 'non atteinte';
+
+  // Formes et couleurs (US-029, attention_rules).
+  static const String attentionRulesTouchFallback =
+      'Touches non représentatives : le jour J, utilisez le clavier.';
+
+  static String attentionRulesExampleFilled(
+    StimulusShape shapeA,
+    String keyA,
+    StimulusShape shapeB,
+    String keyB,
+  ) =>
+      'Forme pleine : ${_shapeName(shapeA)} → ${keyA.toUpperCase()}, '
+      '${_shapeName(shapeB)} → ${keyB.toUpperCase()}';
+
+  static String attentionRulesExampleEmpty(
+    StimulusColour colourA,
+    String keyA,
+    StimulusColour colourB,
+    String keyB,
+  ) =>
+      'Forme vide : ${_colourName(colourA)} → ${keyA.toUpperCase()}, '
+      '${_colourName(colourB)} → ${keyB.toUpperCase()}';
+
+  static String _shapeName(StimulusShape shape) => switch (shape) {
+    StimulusShape.square => 'carré',
+    StimulusShape.triangle => 'triangle',
+    StimulusShape.circle => 'cercle',
+    StimulusShape.diamond => 'losange',
+    StimulusShape.star => 'étoile',
+  };
+
+  static String _colourName(StimulusColour colour) => switch (colour) {
+    StimulusColour.blue => 'bleu',
+    StimulusColour.orange => 'orange',
+    StimulusColour.green => 'vert',
+    StimulusColour.pink => 'rose',
+    StimulusColour.red => 'rouge',
+    StimulusColour.yellow => 'jaune',
+  };
 }
