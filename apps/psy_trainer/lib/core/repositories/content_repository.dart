@@ -72,4 +72,11 @@ abstract interface class ContentRepository {
   Future<List<ExamBlueprint>> blueprints({ModuleId? moduleId});
 
   Future<ExamBlueprint?> blueprintById(String id);
+
+  /// Lexical fields (`verbal_boxes.field.<slug>`, US-030/US-085), optionally
+  /// restricted to one family (always `verbal_boxes` today), ordered by id.
+  /// The `word_boxes` generator draws its series from these.
+  Future<List<LexicalField>> lexicalFields({String? familyId});
+
+  Future<LexicalField?> lexicalField(String id);
 }
