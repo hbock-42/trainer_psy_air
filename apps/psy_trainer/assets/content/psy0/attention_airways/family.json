@@ -25,7 +25,7 @@
   "lang": "fr",
   "defaultDurationSec": 300,
   "defaultItemCount": 10,
-  "defaultPerItemTimeSec": 30,
+  "defaultPerItemTimeSec": 33,
   "confidence": "reported",
   "tags": [
     "attention"
