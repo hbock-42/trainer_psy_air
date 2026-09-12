@@ -354,6 +354,11 @@ abstract final class AppStrings {
   static const String mcqExampleOptionWrong2 = 'Marseille';
   static const String numericAnswerSemanticsLabel = 'Réponse';
   static const String numericBackspaceSemanticsLabel = 'Effacer';
+
+  // culture_aero (US-028): perishable-fact footer for `McqItem.validAsOf`.
+  /// "Donnée valable au 1 septembre 2026."
+  static String cultureValidAsOf(DateTime date) =>
+      'Donnée valable au ${date.day} ${monthNames[date.month]} ${date.year}.';
   static const String numericExampleStem = 'Combien font 8 × 6 ?';
 
   // Progress dashboard (US-070).
@@ -547,6 +552,26 @@ abstract final class AppStrings {
       '$correct/$attempts · $percent %';
   static const String examSectionNotReached = 'non atteinte';
 
+  // Dominos (US-024, spec §2.4-G).
+  static const String actionValidate = 'Valider';
+  static const String dominoTopLabel = 'Haut';
+  static const String dominoBottomLabel = 'Bas';
+  static const String dominoMissingSemantics = 'Domino manquant';
+  static String dominoSelectorSemantics(String half, int value) =>
+      '$half : $value';
+  static String dominoAnswerSummary(int top, int bottom) =>
+      'Réponse : $top | $bottom';
+  static const String dominoRuleLinearEachHalf =
+      'Une moitié avance de façon régulière (+k modulo 7).';
+  static const String dominoRuleAlternatingTopBottom =
+      'Les moitiés haute et basse avancent chacune leur tour (+k modulo 7).';
+  static const String dominoRuleMirroredHalves =
+      'La moitié basse est le miroir de la moitié haute (leur somme fait 6).';
+  static const String dominoRuleConstantSum =
+      'La somme des deux moitiés reste la même sur toute la série.';
+  static const String dominoRuleInterleavedSeries =
+      'Deux séries s\'entrelacent : une pour les positions paires, une pour '
+      'les impaires.';
   // Memory N-back (US-026).
   static const String nbackYes = 'Oui';
   static const String nbackNo = 'Non';
@@ -644,4 +669,41 @@ abstract final class AppStrings {
   static String attentionParityNumberSemantics(int value) => 'Nombre $value';
   static String attentionParityRestartCount(int count) =>
       count == 1 ? '1 redémarrage' : '$count redémarrages';
+
+  // Practice session screen (US-051): quit confirmation, resume card.
+  static const String sessionQuitConfirmTitle = 'Quitter la session ?';
+  static const String sessionQuitConfirmBody =
+      'Votre progression sera enregistrée comme abandonnée.';
+  static const String sessionQuitConfirmAction = 'Quitter';
+  static const String sessionQuitCancelAction = 'Annuler';
+
+  static const String sessionResumeCardTitle = 'Reprendre la session';
+  static String sessionResumeCardSubtitle(String familyName) =>
+      'Session en cours : $familyName';
+  static const String sessionResumeCardAction = 'Reprendre la session';
+
+  // Practice session summary & review (US-052).
+  static const String summaryTitle = 'Résumé';
+  static const String summaryAccuracyLabel = 'Précision';
+  static String summaryScoreFraction(int correct, int played) =>
+      '$correct/$played';
+  static const String summaryMeanRtLabel = 'Temps moyen';
+  static const String summaryMedianRtLabel = 'Temps médian';
+  static const String summaryTimeoutsLabel = 'Temps écoulés';
+  static String summaryBestItemLabel(int index) =>
+      'Meilleure réponse : question $index';
+  static String summaryWorstItemLabel(int index) =>
+      'À retravailler : question $index';
+  static const String summaryItemsTitle = 'Détail des questions';
+  static String summaryItemLabel(int index) => 'Question $index';
+  static String summaryItemCorrectSemantics(int index) =>
+      'Question $index, correcte';
+  static String summaryItemWrongSemantics(int index) =>
+      'Question $index, incorrecte';
+  static const String summaryRestartAction = 'Recommencer';
+  static const String summaryRetryMistakesAction = 'Refaire les erreurs';
+  static const String summaryBackAction = 'Retour';
+  static const String summaryReviewMyAnswer = 'Ma réponse';
+  static const String summaryReviewExpected = 'Réponse attendue';
+  static const String summaryReviewRawAnswer = 'Réponse enregistrée';
 }

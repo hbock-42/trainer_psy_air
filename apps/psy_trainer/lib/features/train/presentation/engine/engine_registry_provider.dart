@@ -8,6 +8,10 @@ import '../../../engines/attention_rules/domain/attention_rules_engine.dart';
 import '../../../engines/attention_rules/presentation/attention_rules_renderer.dart';
 import '../../../engines/english/domain/english_engine.dart';
 import '../../../engines/english/presentation/english_passage_cache.dart';
+import '../../../engines/culture_aero/domain/culture_aero_engine.dart';
+import '../../../engines/culture_aero/presentation/culture_aero_explanation.dart';
+import '../../../engines/logic_dominos/domain/dominos_engine.dart';
+import '../../../engines/logic_dominos/presentation/dominos_renderer.dart';
 import '../../../engines/memory_nback/domain/nback_engine.dart';
 import '../../../engines/memory_nback/presentation/nback_renderer.dart';
 import '../../domain/engine/engine.dart';
@@ -32,6 +36,8 @@ final Provider<EngineRegistry> engineRegistryProvider =
         AttentionRulesEngine(),
         EnglishEngine(),
         // US-021..036: add engines here, one line each.
+        CultureAeroEngine(),
+        DominosEngine(),
         NbackEngine(),
       ]),
     );
@@ -52,6 +58,17 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         ),
         const NbackRenderer(),
         // US-021..036: add renderers here, one line each.
+      (ref) => RendererRegistry(const <ActivityRenderer>[
+        // US-021..036: add one line per engine (alphabetical by family id).
+        ArithmeticGridRenderer(),
+        AttentionParityRenderer(),
+        AttentionRulesRenderer(),
+        DominosRenderer(),
+        McqRenderer(
+          familyId: 'culture_aero',
+          explanationFooter: cultureAeroExplanationFooter,
+        ),
+        NbackRenderer(),
       ]),
     );
 
