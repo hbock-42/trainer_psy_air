@@ -25,6 +25,7 @@
   "lang": "fr",
   "defaultDurationSec": 300,
   "defaultItemCount": 1,
+  "defaultPerItemTimeSec": 320,
   "confidence": "reported",
   "tags": [
     "multitask"
