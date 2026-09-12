@@ -380,7 +380,7 @@ abstract final class AppStrings {
   static const String trendRange30d = '30 j';
   static const String trendRangeAll = 'Tout';
   static const String trendModeLabel = 'Mode';
-  static const String trendModeAll = 'Tout';
+  static const String trendModeAll = 'Tous';
   static const String trendModePractice = 'Exercices';
   static const String trendModeExam = 'Simulations';
   static const String trendAccuracyTitle = 'Précision';

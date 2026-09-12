@@ -374,6 +374,31 @@ Presentation-only rules (the formulas above stay in the service):
 - **Days until exam** are whole local calendar days (`daysUntil`), computed against the
   snapshot's `computedAt` so tests with a fixed clock are deterministic.
 
+### Score-over-time charts (US-071)
+
+```
+family_trend_screen.dart             FamilyTrendScreen (/progress/family/:familyId), TrendRange
+widgets/
+  family_trend_charts.dart           FamilyTrendCharts: accuracy + median RT LineCharts, TrendTooltip
+  exam_score_chart_card.dart         ExamScoreChartCard / ExamScoreChart / ExamSectionBreakdown
+  segmented_choice.dart              SegmentedChoice: the range and mode pills
+  family_levels_chart.dart           + FamilyChip row (onFamilySelected) opening the family page
+```
+
+- The chart primitive is `LineChart` (`shared/widgets/line_chart.dart`, see
+  `docs/DESIGN_SYSTEM.md`); the feature only maps `TrendPoint`s / `ExamSummary`s to
+  `LineChartPoint`s and writes the tooltips and semantics summaries.
+- **Family page**: `familyTimeSeriesProvider((familyId, from, to, mode))` with
+  `from = now - TrendRange.window` (`StatsService.shortWindow` / `longWindow`, null for `Tout`)
+  and `mode` null / practice / exam. `now` is read once per screen (`statsServiceProvider`,
+  fixed in tests) so the query record, and the cached provider instance, stay stable across
+  rebuilds. `x` = session index (oldest first), `y` = accuracy (0..1, fixed axis) or median
+  response time in seconds (0..ceil(max)); ticks under the baseline carry `dd/MM` dates.
+- **Exam chart**: `examHistoryProvider` filtered to `completed`, oldest first; `y` = `score`.
+  The selected attempt is kept by session id so a refresh keeps the breakdown open. Sections are
+  `HorizontalBarChart` entries in `sectionIndex` order, painted in the readiness bands
+  (`ProgressBands.score`), "non atteinte" when `attempts == 0`.
+
 ### Caching and invalidation
 
 `progressSnapshotProvider`, `examHistoryProvider` and `familyTimeSeriesProvider` are
@@ -434,6 +459,7 @@ StatefulShellRoute.indexedStack      AppShell; one branch (own Navigator) per ta
     session/:sessionId               nested -> /train/session/:sessionId (pushed inside the tab)
   /exam                              branch 2
   /progress                          branch 3
+    family/:familyId                 nested -> /progress/family/:familyId (US-071 family charts)
   /settings                          branch 4
     profile                          nested -> /settings/profile (edit the onboarding answers)
 ```

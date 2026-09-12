@@ -7,9 +7,11 @@ import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
 import 'package:psy_trainer/core/router/app_routes.dart';
 import 'package:psy_trainer/core/theme/app_theme.dart';
+import 'package:psy_trainer/features/progress/presentation/family_trend_screen.dart';
 import 'package:psy_trainer/features/progress/presentation/progress_screen.dart';
 import 'package:psy_trainer/features/progress/presentation/providers/progress_snapshot_provider.dart';
 import 'package:psy_trainer/features/progress/presentation/providers/progress_version_provider.dart';
+import 'package:psy_trainer/features/progress/presentation/widgets/exam_score_chart_card.dart';
 import 'package:psy_trainer/features/progress/presentation/widgets/family_levels_chart.dart';
 import 'package:psy_trainer/features/progress/presentation/widgets/progress_empty_state.dart';
 import 'package:psy_trainer/features/progress/presentation/widgets/readiness_card.dart';
@@ -387,6 +389,54 @@ void main() {
       await tester.tap(button);
       await tester.pumpAndSettle();
       expect(find.byType(TrainScreen), findsOneWidget);
+    });
+
+    testWidgets('a family chip opens its score-over-time page in the tab', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      await tester.binding.setSurfaceSize(const Size(800, 2400));
+      addTearDown(() => tester.binding.setSurfaceSize(null));
+      await seedThreeFamilies();
+      final appContainer = await pumpTheApp(tester);
+
+      // One chip per practised family, labelled for screen readers.
+      expect(find.byType(FamilyChip), findsNWidgets(3));
+      expect(find.text(AppStrings.familyDetailsHint), findsOneWidget);
+      final chip = find.bySemanticsLabel(
+        AppStrings.familyTrendOpenSemantics('Dominos'),
+      );
+      expect(chip, findsOneWidget);
+      await tester.tap(chip);
+      await tester.pumpAndSettle();
+
+      expect(find.byType(FamilyTrendScreen), findsOneWidget);
+      expect(
+        appContainer.read(appRouterProvider).state.uri.toString(),
+        AppRoutes.progressFamily('logic_dominos'),
+      );
+      // Pushed inside the Progress tab: the dashboard stays below.
+      expect(find.byType(ProgressScreen, skipOffstage: false), findsOneWidget);
+      expect(find.text('Dominos'), findsOneWidget);
+      expect(find.byType(LineChart), findsNWidgets(2));
+      handle.dispose();
+    });
+
+    testWidgets('the exam chart appears once a simulation is completed', (
+      tester,
+    ) async {
+      await tester.binding.setSurfaceSize(const Size(800, 2400));
+      addTearDown(() => tester.binding.setSurfaceSize(null));
+      await seedThreeFamilies();
+      final appContainer = await pumpTheApp(tester);
+      expect(find.byType(ExamScoreChart), findsNothing);
+      expect(find.text(AppStrings.examChartTitle), findsNothing);
+
+      await fixture.exam(daysAgo: 0, correct: 6);
+      appContainer.read(progressVersionProvider.notifier).bump();
+      await tester.pumpAndSettle();
+      expect(find.byType(ExamScoreChart), findsOneWidget);
+      expect(find.text(AppStrings.examChartTitle), findsOneWidget);
     });
   });
 }

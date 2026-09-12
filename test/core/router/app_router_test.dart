@@ -16,6 +16,8 @@ import 'package:psy_trainer/features/learn/presentation/how_it_works_screen.dart
 import 'package:psy_trainer/features/learn/presentation/learn_screen.dart';
 import 'package:psy_trainer/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:psy_trainer/features/onboarding/presentation/providers/onboarding_completed_provider.dart';
+import 'package:psy_trainer/features/progress/presentation/family_trend_screen.dart';
+import 'package:psy_trainer/features/progress/presentation/progress_screen.dart';
 import 'package:psy_trainer/features/settings/presentation/edit_profile_screen.dart';
 import 'package:psy_trainer/features/settings/presentation/settings_screen.dart';
 import 'package:psy_trainer/features/train/presentation/train_screen.dart';
@@ -208,6 +210,28 @@ void main() {
     expect(find.byType(EditProfileScreen), findsOneWidget);
     expect(find.byType(SettingsScreen, skipOffstage: false), findsOneWidget);
     expect(find.byType(AppShell), findsOneWidget);
+  });
+
+  testWidgets('nested route /progress/family/:id opens the family charts', (
+    tester,
+  ) async {
+    final ProviderContainer container = await pumpApp(tester);
+    final GoRouter router = container.read(appRouterProvider);
+
+    router.go(AppRoutes.progressFamily('memory_nback'));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(FamilyTrendScreen), findsOneWidget);
+    expect(
+      tester.widget<FamilyTrendScreen>(find.byType(FamilyTrendScreen)).familyId,
+      'memory_nback',
+    );
+    expect(find.byType(ProgressScreen, skipOffstage: false), findsOneWidget);
+    expect(find.byType(AppShell), findsOneWidget);
+
+    router.pop();
+    await tester.pumpAndSettle();
+    expect(find.byType(ProgressScreen), findsOneWidget);
   });
 
   testWidgets('unknown location shows the ErrorScreen', (tester) async {
