@@ -1,0 +1,1247 @@
+{
+  "@@locale": "fr",
+  "appName": "PSY Trainer",
+  "tabLearn": "Apprendre",
+  "tabTrain": "Pratique",
+  "tabExam": "Examen",
+  "tabProgress": "Progrès",
+  "tabSettings": "Réglages",
+  "tabBarLabel": "Navigation principale",
+  "disclaimerShort": "Entraîneur indépendant et non officiel — aucun lien avec Air France.",
+  "disclaimerTitle": "Application non officielle.",
+  "disclaimerParagraph1": "Cette application est un outil d'entraînement indépendant. Elle n'est ni affiliée à, ni approuvée par Air France, Transavia, l'ENAC ou leurs prestataires. Les marques citées appartiennent à leurs propriétaires et ne sont utilisées que pour décrire le processus de sélection visé.",
+  "disclaimerParagraph2": "Les exercices, questions et durées proposés sont conçus par nous à partir d'informations publiques et de retours de candidats ; ils sont estimatifs et ne reproduisent aucun sujet réel. Le contenu de la sélection réelle évolue chaque année. Aucun résultat obtenu ici ne préjuge de votre réussite à la sélection.",
+  "actionContinue": "Continuer",
+  "actionBack": "Retour",
+  "actionSkip": "Passer",
+  "actionFinish": "Terminer",
+  "actionSave": "Enregistrer",
+  "actionRetry": "Réessayer",
+  "startupLoadingContent": "Chargement du contenu…",
+  "errorTitle": "Une erreur est survenue",
+  "errorUnknown": "Erreur inconnue",
+  "errorBackHome": "Retour à l'accueil",
+  "onboardingTitle": "Bienvenue",
+  "onboardingEditTitle": "Mon profil",
+  "onboardingWelcomeHeadline": "Bienvenue dans PSY Trainer",
+  "onboardingWelcomeIntro": "Entraînez-vous aux activités de la présélection en ligne des cadets Air France (PSY0) : cours, exercices chronométrés et simulation d'examen. Avant de commencer, une précision importante.",
+  "onboardingDisclaimerAccept": "J'ai compris que cette application est un entraîneur indépendant, sans lien avec Air France, et que ses exercices sont estimatifs.",
+  "onboardingDisclaimerRequired": "Acceptez cette mention pour continuer.",
+  "onboardingExamDateHeadline": "Quand passez-vous le PSY0 ?",
+  "onboardingExamDateIntro": "La présélection a lieu le premier week-end de septembre. La date sert à rythmer votre préparation ; vous pourrez la modifier dans les réglages.",
+  "onboardingExamDateSuggestion": "Prochaine session probable : ",
+  "onboardingExamDateUnknown": "Je ne sais pas encore",
+  "onboardingExamDateInThePast": "Cette date est déjà passée. Choisissez une date à venir.",
+  "dateFieldDay": "Jour",
+  "dateFieldMonth": "Mois",
+  "dateFieldYear": "Année",
+  "dateFieldIncrement": "Suivant",
+  "dateFieldDecrement": "Précédent",
+  "onboardingStageHeadline": "Quelle étape préparez-vous ?",
+  "onboardingStageIntro": "Le contenu de l'application suit l'étape choisie. Seul le PSY0 est disponible pour le moment.",
+  "stagePsy0Subtitle": "Tests cognitifs, culture aéronautique et anglais, à distance.",
+  "stageComingSoon": "Bientôt",
+  "settingsEditProfile": "Modifier mon profil",
+  "settingsProfileSummaryExamDate": "Date d'examen : ",
+  "settingsProfileSummaryNoExamDate": "non renseignée",
+  "settingsProfileSummaryStage": "Étape visée : ",
+  "learnDisclaimerExpand": "Lire l'avertissement complet",
+  "learnDisclaimerCollapse": "Réduire l'avertissement",
+  "learnHowItWorksTitle": "Comment se passe la sélection",
+  "learnHowItWorksSubtitle": "Dossier, PSY0, PSY1, PSY2, médical : les étapes, ce qui est éliminatoire et ce que l'on sait vraiment.",
+  "learnHowItWorksSemantics": "Comment se passe la sélection, ouvrir la page",
+  "learnFamiliesTitle": "Les activités du PSY0",
+  "learnFamiliesSubtitle": "Dans l'ordre du test réel, tel que rapporté par les candidats.",
+  "learnFamiliesLoading": "Chargement des activités…",
+  "learnFamiliesError": "Impossible de charger les activités. Relancez l'application ; si le problème persiste, réinstallez-la.",
+  "learnEmptyTitle": "Aucune activité pour le moment",
+  "learnEmptyBody": "Les fiches des activités PSY0 (mémoire, attention, spatial, logique, culture aéronautique, anglais…) apparaîtront ici dès que le contenu sera installé.",
+  "familyMasteryLabel": "Maîtrise",
+  "familyMasteryUnknown": "—",
+  "familyActionLearn": "Apprendre",
+  "familyActionTrain": "S'entraîner",
+  "familyActionCards": "Cartes",
+  "familyLessonsTitle": "Leçons",
+  "familyLessonsEmpty": "Aucune leçon pour cette activité pour le moment.",
+  "familyNotFound": "Activité introuvable.",
+  "familyLoading": "Chargement…",
+  "familyFormatLabel": "Format",
+  "familyEvaluatedLabel": "Ce qui est évalué",
+  "confidenceConfirmed": "confirmé",
+  "confidenceReported": "rapporté",
+  "confidenceAssumed": "estimé",
+  "confidenceLegend": "confirmé = source officielle Air France · rapporté = retours de candidats concordants · estimé = notre meilleure hypothèse",
+  "howItWorksIntro": "La sélection Cadets Air France enchaîne plusieurs étapes, toutes éliminatoires. Cette application prépare le PSY0 ; voici où il se situe.",
+  "howItWorksStagesTitle": "Les étapes",
+  "howItWorksCalendarTitle": "Calendrier 2026",
+  "howItWorksCalendarBody": "Candidatures ~15 juin → 31 juillet · PSY0 4–5 septembre · PSY1 19–30 octobre · PSY2 à partir de janvier 2027.",
+  "howItWorksRetakeTitle": "Règles de repassage",
+  "howItWorksRetakeBody": "3 échecs au PSY0 ou 2 échecs au PSY1 = exclusion définitive de la filière Cadets (la filière « Pilote professionnel » reste ouverte). Un ajournement au PSY2 = une nouvelle tentative après 1 ou 2 ans.",
+  "howItWorksEliminatory": "Éliminatoire",
+  "stageDossierTitle": "Dossier de candidature",
+  "stageDossierWhen": "Juin – juillet, en ligne",
+  "stageDossierBody": "Candidature sur le portail de recrutement Air France. Vérification des prérequis (diplôme, médical classe 2, nationalité) ; frais de 200 €. Seuls les dossiers recevables sont invités au PSY0.",
+  "stageDossierFactFee": "200 € de frais",
+  "stagePsy0Title": "PSY0 — pré-sélection",
+  "stagePsy0When": "Premier week-end de septembre, à distance, logiciel sécurisé + webcam",
+  "stagePsy0Body": "Batterie en ligne d'environ 3 h dans une fenêtre de 36 h : ~14 activités courtes (mémoire, attention, spatial, logique, planification, calcul, multitâche), culture générale aéronautique et anglais renforcé. Produit un classement ; une liste d'attente existe.",
+  "stagePsy0FactDuration": "~3 h, fenêtre de 36 h",
+  "stagePsy0FactActivities": "14 activités",
+  "stagePsy0FactWaitlist": "Liste d'attente",
+  "stagePsy1Title": "PSY1 — tests psychotechniques",
+  "stagePsy1When": "Une journée pendant les vacances de la Toussaint",
+  "stagePsy1Body": "Tests cognitifs et psychomoteurs sur ordinateur : joysticks, double tâche, poursuite de cible, matrices, compteurs… Élimination rapportée autour de 70 %.",
+  "stagePsy1FactDay": "Une journée, Toussaint",
+  "stagePsy1FactVenue": "ENAC Toulouse",
+  "stagePsy1FactRate": "~70 % d'élimination",
+  "stagePsy2Title": "PSY2 — sélection finale",
+  "stagePsy2When": "À partir de janvier, Roissy-CDG, service de sélection Air France",
+  "stagePsy2Body": "Deux inventaires de personnalité, un exercice de groupe (sous confidentialité) et un entretien individuel avec psychologues et pilotes. La commission de recrutement prononce la réussite ou l'ajournement.",
+  "stagePsy2FactContent": "Personnalité, groupe, entretien",
+  "stagePsy2FactCoaching": "Coaching payant : « aucune plus-value » selon Air France",
+  "stageMedicalTitle": "Médical classe 1",
+  "stageMedicalWhen": "Avant l'entrée en formation",
+  "stageMedicalBody": "Un certificat médical de classe 2 est exigé dès la candidature ; la classe 1 est obligatoire avant d'entrer en école de pilotage.",
+  "stageMedicalFactClass2": "Classe 2 à la candidature",
+  "stageMedicalFactClass1": "Classe 1 avant la formation",
+  "stageTrainingTitle": "Formation",
+  "stageTrainingWhen": "24 mois en école partenaire",
+  "stageTrainingBody": "9 mois de théorie ATPL puis 15 à 21 mois de CPL/IR-ME/MCC, logé et rémunéré (contrat de professionnalisation). Affectation Air France ou Transavia, non choisie par le cadet.",
+  "stageTrainingFactDuration": "24 mois, rémunérée",
+  "sessionStart": "Commencer",
+  "sessionNext": "Suivant",
+  "sessionPause": "Pause",
+  "sessionResume": "Reprendre",
+  "sessionQuit": "Quitter",
+  "sessionPausedTitle": "Session en pause",
+  "sessionFinishedTitle": "Activité terminée",
+  "sessionBriefingDefault": "Lisez les consignes, puis appuyez sur Commencer. Le chronomètre démarre avec la première question.",
+  "sessionExamplePlaceholder": "Exemple à venir.",
+  "sessionFeedbackCorrect": "Bonne réponse",
+  "sessionFeedbackWrong": "Mauvaise réponse",
+  "sessionFeedbackTimeout": "Temps écoulé",
+  "sessionFeedbackSkipped": "Question passée",
+  "sessionItemTimerLabel": "Temps pour cette question",
+  "sessionSectionTimerLabel": "Temps restant",
+  "activityValidate": "Valider",
+  "activityExplanationTitle": "Explication",
+  "mcqSkipOption": "Je ne sais pas",
+  "mcqPassageDefaultTitle": "Texte de référence",
+  "mcqPassageShow": "Afficher le texte",
+  "mcqPassageHide": "Masquer le texte",
+  "mcqExampleStem": "Quelle est la capitale de la France ?",
+  "mcqExampleOptionCorrect": "Paris",
+  "mcqExampleOptionWrong1": "Lyon",
+  "mcqExampleOptionWrong2": "Marseille",
+  "numericAnswerSemanticsLabel": "Réponse",
+  "numericBackspaceSemanticsLabel": "Effacer",
+  "numericExampleStem": "Combien font 8 × 6 ?",
+  "progressTitle": "Progrès",
+  "progressLoading": "Calcul en cours…",
+  "progressError": "Impossible de charger tes statistiques.",
+  "progressEmptyTitle": "Aucun entraînement pour l'instant",
+  "progressEmptyBody": "Lance un premier exercice : ton score de préparation, tes niveaux par famille et ton activité apparaîtront ici.",
+  "progressEmptyAction": "Commencer un exercice",
+  "readinessTitle": "Préparation",
+  "readinessSemanticsLabel": "Score de préparation",
+  "readinessOutOf": "sur 100",
+  "readinessTrendUp": "En progression",
+  "readinessTrendFlat": "Stable",
+  "readinessTrendDown": "En baisse",
+  "readinessHint": "Familles pratiquées, leçons lues et simulations comptent.",
+  "examDateSemanticsLabel": "Examen",
+  "examDatePassed": "Examen passé",
+  "familyLevelsTitle": "Niveaux par famille",
+  "familyLevelsSubtitle": "Dans l'ordre du test réel",
+  "familyLevelsSemanticsLabel": "Niveaux par famille",
+  "familyLevelsNone": "Aucune famille pratiquée.",
+  "familyNotPractised": "non pratiquée",
+  "weakAreasTitle": "À travailler",
+  "weakAreasSubtitle": "Tes points faibles du moment",
+  "weakAreasNone": "Rien à signaler : continue à t'entraîner régulièrement.",
+  "weakAreaTrain": "S'entraîner",
+  "weakReasonLowAccuracy": "précision faible",
+  "weakReasonNegativeTrend": "en baisse",
+  "trainNextTitle": "À faire ensuite",
+  "trainNextSubtitle": "Ce qui fera le plus progresser ta préparation",
+  "trainNextEmpty": "Rien à recommander pour le moment : continue à t'entraîner régulièrement.",
+  "trainNextActionFamily": "S'entraîner",
+  "trainNextActionExam": "Simuler l'examen",
+  "trainNextActionLesson": "Lire la leçon",
+  "trainNextActionFlashcards": "Réviser",
+  "recentActivityTitle": "Activité récente",
+  "recentActivitySubtitle": "Exercices et simulations",
+  "recentActivityNone": "Aucune session terminée.",
+  "activityPractice": "Exercice",
+  "activityExam": "Simulation",
+  "activityAbandoned": "abandonnée",
+  "activityInProgress": "en cours",
+  "scoreUnknown": "—",
+  "lessonCalloutTip": "Astuce",
+  "lessonCalloutTrap": "Piège",
+  "lessonCalloutMethod": "Méthode",
+  "lessonCalloutExample": "Exemple",
+  "lessonImagePlaceholder": "Image",
+  "lessonRevealNextStep": "Étape suivante",
+  "lessonRevealAllSteps": "Tout afficher",
+  "lessonTocTitle": "Sommaire",
+  "lessonTocShow": "Afficher le sommaire",
+  "lessonTocHide": "Masquer le sommaire",
+  "lessonTryIt": "Essayer",
+  "lessonPrevious": "Leçon précédente",
+  "lessonNext": "Leçon suivante",
+  "lessonMarkRead": "Marquer comme lue",
+  "lessonMarkedRead": "Lue",
+  "lessonNotFound": "Leçon introuvable.",
+  "lessonLoading": "Chargement…",
+  "flashcardsHomeTitle": "À réviser aujourd'hui",
+  "flashcardsHomeSemantics": "Réviser les cartes du jour, ouvrir la session",
+  "flashcardsTitle": "Cartes",
+  "flashcardsLoading": "Chargement des cartes…",
+  "flashcardsError": "Impossible de charger les cartes.",
+  "flashcardsStart": "Commencer",
+  "flashcardsEmptyTitle": "Rien à réviser",
+  "flashcardsEmptyBody": "Toutes les cartes de ce paquet sont à jour. Reviens plus tard.",
+  "flashcardsFlipHint": "Appuie ou Espace pour retourner",
+  "flashcardsAgain": "À revoir",
+  "flashcardsHard": "Difficile",
+  "flashcardsGood": "Facile",
+  "flashcardsAgainSemantics": "À revoir (touche 1)",
+  "flashcardsHardSemantics": "Difficile (touche 2)",
+  "flashcardsGoodSemantics": "Facile (touche 3)",
+  "flashcardsSummaryTitle": "Session terminée",
+  "flashcardsSummaryDone": "Terminer",
+  "flashcardsBackSemantics": "Retour",
+  "familyDetailsTitle": "Détails par famille",
+  "familyDetailsHint": "Touche une famille pour voir son évolution.",
+  "familyTrendTitle": "Évolution",
+  "trendRangeLabel": "Période",
+  "trendRange7d": "7 j",
+  "trendRange30d": "30 j",
+  "trendRangeAll": "Tout",
+  "trendModeLabel": "Mode",
+  "trendModeAll": "Tous",
+  "trendModePractice": "Exercices",
+  "trendModeExam": "Simulations",
+  "trendAccuracyTitle": "Précision",
+  "trendAccuracySubtitle": "Réussite par session",
+  "trendSpeedTitle": "Vitesse",
+  "trendSpeedSubtitle": "Temps de réponse médian par session",
+  "trendEmpty": "Aucune session sur cette période.",
+  "trendLoading": "Calcul en cours…",
+  "trendAccuracyLabel": "Réussite",
+  "trendSpeedLabel": "Temps",
+  "examChartTitle": "Simulations",
+  "examChartSubtitle": "Score global par simulation",
+  "examChartSemanticsLabel": "Scores des simulations",
+  "examChartHint": "Touche un point pour le détail par section.",
+  "examSectionsSemanticsLabel": "Détail par section",
+  "examSectionNotReached": "non atteinte",
+  "actionValidate": "Valider",
+  "dominoTopLabel": "Haut",
+  "dominoBottomLabel": "Bas",
+  "dominoMissingSemantics": "Domino manquant",
+  "dominoRuleLinearEachHalf": "Une moitié avance de façon régulière (+k modulo 7).",
+  "dominoRuleAlternatingTopBottom": "Les moitiés haute et basse avancent chacune leur tour (+k modulo 7).",
+  "dominoRuleMirroredHalves": "La moitié basse est le miroir de la moitié haute (leur somme fait 6).",
+  "dominoRuleConstantSum": "La somme des deux moitiés reste la même sur toute la série.",
+  "dominoRuleInterleavedSeries": "Deux séries s'entrelacent : une pour les positions paires, une pour les impaires.",
+  "nbackYes": "Oui",
+  "nbackNo": "Non",
+  "nbackPrimerLabel": "Amorce — pas de réponse attendue",
+  "nbackHistoryStripLabel": "Repère (derniers stimuli)",
+  "attentionRulesTouchFallback": "Touches non représentatives : le jour J, utilisez le clavier.",
+  "arithmeticGridValidate": "Valider",
+  "arithmeticGridExampleCaption": "Touchez les égalités fausses (en rouge) puis Valider. Les autres sont justes, ne les touchez pas.",
+  "trainFamiliesSubtitle": "Choisis une activité",
+  "trainFamiliesLoading": "Chargement des activités…",
+  "trainFamiliesError": "Impossible de charger les activités.",
+  "trainFamiliesEmpty": "Aucune activité disponible pour le moment.",
+  "trainFamilyComingSoon": "Bientôt",
+  "trainQuick5Label": "Rapide (5)",
+  "practiceLauncherNotFound": "Activité introuvable.",
+  "practiceEngineComingSoon": "Cette activité arrive bientôt : son moteur n'est pas encore prêt.",
+  "practiceItemCountLabel": "Nombre de questions",
+  "practiceDifficultyLabel": "Difficulté",
+  "practiceDifficultyAuto": "Auto",
+  "practiceTimingLabel": "Chronométrage",
+  "practiceTimedOn": "Chronométré",
+  "practiceTimedOff": "Libre",
+  "practiceStartAction": "Commencer",
+  "practiceQuick5Action": "Démarrage rapide (5 questions)",
+  "practiceRetryMistakesSoon": "Reprendre mes erreurs (bientôt)",
+  "practiceRetryMistakesEmpty": "Aucune erreur à reprendre pour le moment.",
+  "trainSessionPlaceholderTitle": "Session (US-051)",
+  "trainSessionSummaryTimed": "Chronométré",
+  "trainSessionSummaryUntimed": "Libre",
+  "attentionParityStartLabel": "DÉPART",
+  "attentionParityEndLabel": "ARRIVÉE",
+  "sessionQuitConfirmTitle": "Quitter la session ?",
+  "sessionQuitConfirmBody": "Votre progression sera enregistrée comme abandonnée.",
+  "sessionQuitConfirmAction": "Quitter",
+  "sessionQuitCancelAction": "Annuler",
+  "sessionResumeCardTitle": "Reprendre la session",
+  "sessionResumeCardAction": "Reprendre la session",
+  "summaryTitle": "Résumé",
+  "summaryAccuracyLabel": "Précision",
+  "summaryMeanRtLabel": "Temps moyen",
+  "summaryMedianRtLabel": "Temps médian",
+  "summaryTimeoutsLabel": "Temps écoulés",
+  "summaryItemsTitle": "Détail des questions",
+  "summaryRestartAction": "Recommencer",
+  "summaryRetryMistakesAction": "Refaire les erreurs",
+  "summaryBackAction": "Retour",
+  "summaryReviewMyAnswer": "Ma réponse",
+  "summaryReviewExpected": "Réponse attendue",
+  "summaryReviewRawAnswer": "Réponse enregistrée",
+  "tubesStartLabel": "Départ",
+  "tubesTargetLabel": "Cible",
+  "tubesShowSolutionAction": "Voir la solution",
+  "tubesHideSolutionAction": "Masquer la solution",
+  "tubesSolutionPreviousStep": "Étape précédente",
+  "tubesSolutionNextStep": "Étape suivante",
+  "viewpointMapSemanticsLabel": "Carte : 8 points de vue autour de la scène",
+  "viewpointExampleCaption": "Cliquez le point de vue depuis lequel la scène a été photographiée.",
+  "examHomeSubtitle": "Simulations chronométrées, dans l'ordre du vrai test",
+  "examHistoryAction": "Historique",
+  "examEmptyBlueprints": "Aucune simulation disponible pour le moment.",
+  "examBlueprintsError": "Impossible de charger les simulations.",
+  "examBlueprintsLoading": "Chargement des simulations…",
+  "examSectionUnavailable": "non disponible — sera ignorée",
+  "examStartAction": "Commencer",
+  "examRunnerTitle": "Simulation",
+  "examRunnerLoading": "Préparation de la simulation…",
+  "examRunnerFinishing": "Calcul des résultats…",
+  "examRunnerAborted": "Simulation interrompue : elle a été enregistrée comme abandonnée.",
+  "examRunnerUnavailable": "Aucune activité de cette simulation n'est disponible pour le moment.",
+  "examRunnerBackToHome": "Retour",
+  "examRunnerBreakTitle": "Pause",
+  "examQuitConfirmTitle": "Quitter la simulation ?",
+  "examQuitConfirmBody": "La simulation entière sera enregistrée comme abandonnée : elle ne peut pas reprendre en cours.",
+  "examQuitConfirmAction": "Quitter",
+  "examHistoryTitle": "Historique des simulations",
+  "examHistoryEmpty": "Aucune simulation pour le moment.",
+  "examHistoryError": "Impossible de charger l'historique.",
+  "examHistoryLoading": "Chargement de l'historique…",
+  "examHistoryStatusCompleted": "Terminée",
+  "examHistoryStatusAbandoned": "Abandonnée",
+  "examHistoryStatusInProgress": "En cours",
+  "examHistoryDeleteAction": "Supprimer",
+  "examHistoryDeleteConfirmTitle": "Supprimer cette simulation ?",
+  "examHistoryDeleteConfirmBody": "Cette action est définitive : la simulation et ses réponses seront supprimées.",
+  "examResumeCardTitle": "Reprendre la simulation",
+  "examResumeCardAction": "Reprendre",
+  "examReportTitle": "Rapport de simulation",
+  "examReportNotFound": "Rapport introuvable.",
+  "examReportError": "Impossible de charger le rapport.",
+  "examReportLoading": "Chargement du rapport…",
+  "examReportGlobalScoreLabel": "Score global",
+  "examReportSectionsTitle": "Détail par activité",
+  "examReportReviewTitle": "Détail des questions",
+  "overlayGridResetAction": "Réinitialiser",
+  "overlayGridTargetLabel": "Grille cible",
+  "overlayGridWorkingLabel": "Votre grille",
+  "overlayGridTrayLabel": "Pièces à glisser",
+  "overlayGridSolutionCaption": "Solution : emplacement de chaque pièce.",
+  "overlayGridExampleCaption": "Glissez les pièces sur la grille centrale pour reproduire la cible.",
+  "wordBoxesEmptyBox": "—",
+  "wordBoxesMissedTitle": "Mots mal classés",
+  "cubeNetReferenceLabel": "Patron de référence",
+  "cubeNetTargetLabel": "Patron à compléter",
+  "cubeNetTrayLabel": "Faces à placer",
+  "cubeNetTapToRotateHint": "Touchez une face pour la faire pivoter.",
+  "cubeNetExplanationTitle": "Le cube reconstitué",
+  "airwaysExampleLegendTitle": "Un bouton de couleur par ligne",
+  "airwaysExampleBody": "Des avions apparaissent sur chaque ligne et avancent vers leur zone. Touchez le bouton d'une ligne pour dérouter son prochain avion vers une autre zone -- ou laissez-le filer si aucune zone n'est menacée.",
+  "airwaysZoneCountSemanticsLabel": "avions au total sur avions bleus",
+  "airwaysViolationFlash": "CRASH",
+  "onboardingStepLabel": "Étape {current} sur {total}",
+  "@onboardingStepLabel": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "familyOpenSemantics": "{name}, ouvrir la fiche de l'activité",
+  "@familyOpenSemantics": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "lessonReadTime": "{minutes} min de lecture",
+  "@lessonReadTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "sessionResumeHint": "Reprise à la question {next} sur {total}",
+  "@sessionResumeHint": {
+    "placeholders": {
+      "next": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "readinessFamilies": "{practised}/{total} familles pratiquées",
+  "@readinessFamilies": {
+    "placeholders": {
+      "practised": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "readinessLessons": "{read}/{total} leçons lues",
+  "@readinessLessons": {
+    "placeholders": {
+      "read": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "familyLevel": "niveau {level} sur 5",
+  "@familyLevel": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "weakAreaDetail": "{accuracyPercent} % de réussite sur {attempts} réponses",
+  "@weakAreaDetail": {
+    "placeholders": {
+      "accuracyPercent": {
+        "type": "int"
+      },
+      "attempts": {
+        "type": "int"
+      }
+    }
+  },
+  "scorePercent": "{percent} %",
+  "@scorePercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "familyLessonsProgress": "{read}/{total} leçons",
+  "@familyLessonsProgress": {
+    "placeholders": {
+      "read": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "familyLessonsProgressSemantics": "{read} leçons lues sur {total}",
+  "@familyLessonsProgressSemantics": {
+    "placeholders": {
+      "read": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsDeckSummary": "{due} à réviser · {total} au total",
+  "@flashcardsDeckSummary": {
+    "placeholders": {
+      "due": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsProgress": "Carte {index} sur {total}",
+  "@flashcardsProgress": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "familyTrendOpenSemantics": "Voir l'évolution de {name}",
+  "@familyTrendOpenSemantics": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "trendTooltipAccuracy": "Réussite : {correct}/{attempts} ({percent} %)",
+  "@trendTooltipAccuracy": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "attempts": {
+        "type": "int"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "trendTooltipSpeed": "Temps : {value}",
+  "@trendTooltipSpeed": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "examAttempt": "Simulation {number}",
+  "@examAttempt": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "examScoreLine": "Score : {percent} %",
+  "@examScoreLine": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "examSectionsTitle": "Sections du {date}",
+  "@examSectionsTitle": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "examSectionLabel": "{number}. {family}",
+  "@examSectionLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "family": {
+        "type": "String"
+      }
+    }
+  },
+  "examSectionValue": "{correct}/{attempts} · {percent} %",
+  "@examSectionValue": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "attempts": {
+        "type": "int"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "dominoSelectorSemantics": "{half} : {value}",
+  "@dominoSelectorSemantics": {
+    "placeholders": {
+      "half": {
+        "type": "String"
+      },
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "dominoAnswerSummary": "Réponse : {top} | {bottom}",
+  "@dominoAnswerSummary": {
+    "placeholders": {
+      "top": {
+        "type": "int"
+      },
+      "bottom": {
+        "type": "int"
+      }
+    }
+  },
+  "nbackYesSemantics": "Oui ({shortcut})",
+  "@nbackYesSemantics": {
+    "placeholders": {
+      "shortcut": {
+        "type": "String"
+      }
+    }
+  },
+  "nbackNoSemantics": "Non ({shortcut})",
+  "@nbackNoSemantics": {
+    "placeholders": {
+      "shortcut": {
+        "type": "String"
+      }
+    }
+  },
+  "nbackStimulusSemantics": "Stimulus {index}",
+  "@nbackStimulusSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "arithmeticGridCellSemantics": "Égalité {index}, {label}",
+  "@arithmeticGridCellSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "arithmeticGridCorrectValue": "Correct : {value}",
+  "@arithmeticGridCorrectValue": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "trainFamilyComingSoonHint": "{name} arrive bientôt.",
+  "@trainFamilyComingSoonHint": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "trainFamilyOpenSemantics": "S'entraîner : {name}",
+  "@trainFamilyOpenSemantics": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "trainQuick5Semantics": "Démarrage rapide : 5 questions sur {name}",
+  "@trainQuick5Semantics": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "practiceItemCountOption": "{count}",
+  "@practiceItemCountOption": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceDifficultyLevel": "Niveau {level}",
+  "@practiceDifficultyLevel": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceRetryMistakesAction": "Reprendre mes erreurs ({count})",
+  "@practiceRetryMistakesAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "trainSessionSummaryFamily": "Famille : {name}",
+  "@trainSessionSummaryFamily": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "trainSessionSummaryItemCount": "Questions : {count}",
+  "@trainSessionSummaryItemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "attentionParityNumberSemantics": "Nombre {value}",
+  "@attentionParityNumberSemantics": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "sessionResumeCardSubtitle": "Session en cours : {familyName}",
+  "@sessionResumeCardSubtitle": {
+    "placeholders": {
+      "familyName": {
+        "type": "String"
+      }
+    }
+  },
+  "summaryScoreFraction": "{correct}/{played}",
+  "@summaryScoreFraction": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "played": {
+        "type": "int"
+      }
+    }
+  },
+  "summaryBestItemLabel": "Meilleure réponse : question {index}",
+  "@summaryBestItemLabel": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "summaryWorstItemLabel": "À retravailler : question {index}",
+  "@summaryWorstItemLabel": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "summaryItemLabel": "Question {index}",
+  "@summaryItemLabel": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "summaryItemCorrectSemantics": "Question {index}, correcte",
+  "@summaryItemCorrectSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "summaryItemWrongSemantics": "Question {index}, incorrecte",
+  "@summaryItemWrongSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "tubesSolutionMoveLabel": "Bille du tube {from} vers le tube {to}",
+  "@tubesSolutionMoveLabel": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "viewpointPositionSemantics": "Point de vue {azimuth}",
+  "@viewpointPositionSemantics": {
+    "placeholders": {
+      "azimuth": {
+        "type": "int"
+      }
+    }
+  },
+  "examBlueprintMeta": "≈ {minutes} min · {available}/{total} activités disponibles",
+  "@examBlueprintMeta": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "available": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "examRunnerSectionProgress": "Section {current}/{total}",
+  "@examRunnerSectionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "examResumeCardSubtitle": "Simulation en cours : {blueprintName}",
+  "@examResumeCardSubtitle": {
+    "placeholders": {
+      "blueprintName": {
+        "type": "String"
+      }
+    }
+  },
+  "examReportEstimatedPass": "Estimation : admis (seuil estimé {thresholdPercent} %)",
+  "@examReportEstimatedPass": {
+    "placeholders": {
+      "thresholdPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "examReportEstimatedFail": "Estimation : non admis (seuil estimé {thresholdPercent} %)",
+  "@examReportEstimatedFail": {
+    "placeholders": {
+      "thresholdPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "examReportSectionFraction": "{correct}/{attempts} correctes · {unanswered} sans réponse",
+  "@examReportSectionFraction": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "attempts": {
+        "type": "int"
+      },
+      "unanswered": {
+        "type": "int"
+      }
+    }
+  },
+  "overlayGridTileSemantics": "Pièce {number}",
+  "@overlayGridTileSemantics": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "wordBoxesBoxSemantics": "Boîte {boxNumber} : {label}",
+  "@wordBoxesBoxSemantics": {
+    "placeholders": {
+      "boxNumber": {
+        "type": "int"
+      },
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "wordBoxesMissedWord": "{word} → {fieldName}",
+  "@wordBoxesMissedWord": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      },
+      "fieldName": {
+        "type": "String"
+      }
+    }
+  },
+  "cubeNetSlotEmptySemantics": "Case {index}, vide",
+  "@cubeNetSlotEmptySemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "cubeNetSlotFilledSemantics": "Case {index}, face {value}",
+  "@cubeNetSlotFilledSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "cubeNetTileSemantics": "Face {value}, rotation {rotation} degrés",
+  "@cubeNetTileSemantics": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      },
+      "rotation": {
+        "type": "int"
+      }
+    }
+  },
+  "cubeNetCorrectFaces": "{correct}/{total} faces correctement placées",
+  "@cubeNetCorrectFaces": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "airwaysExampleCapacity": "Gardez au plus {capacity} avions -- et au plus {blueCapacity} avions bleus -- dans chaque zone grise.",
+  "@airwaysExampleCapacity": {
+    "placeholders": {
+      "capacity": {
+        "type": "int"
+      },
+      "blueCapacity": {
+        "type": "int"
+      }
+    }
+  },
+  "airwaysExampleButtonLabel": "Ligne {number}",
+  "@airwaysExampleButtonLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "airwaysZoneCount": "{total}/{blue}",
+  "@airwaysZoneCount": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "blue": {
+        "type": "int"
+      }
+    }
+  },
+  "airwaysReroutesCounter": "Déroutements : {count}",
+  "@airwaysReroutesCounter": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "airwaysViolationsCounter": "Violations : {count}",
+  "@airwaysViolationsCounter": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "airwaysRouteButtonSemantics": "Dérouter la ligne {number}",
+  "@airwaysRouteButtonSemantics": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "airwaysSummaryWithViolations": "{violations} violation(s), {reroutes} déroutement(s).",
+  "@airwaysSummaryWithViolations": {
+    "placeholders": {
+      "violations": {
+        "type": "int"
+      },
+      "reroutes": {
+        "type": "int"
+      }
+    }
+  },
+  "masteryPercent": "{percent} %",
+  "@masteryPercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "examRunnerBreakContinue": "Continuer",
+  "shapeSquare": "carré",
+  "shapeTriangle": "triangle",
+  "shapeCircle": "cercle",
+  "shapeDiamond": "losange",
+  "shapeStar": "étoile",
+  "colourBlue": "bleu",
+  "colourOrange": "orange",
+  "colourGreen": "vert",
+  "colourPink": "rose",
+  "colourRed": "rouge",
+  "colourYellow": "jaune",
+  "attentionRulesExampleFilled": "Forme pleine : {shapeA} → {keyA}, {shapeB} → {keyB}",
+  "@attentionRulesExampleFilled": {
+    "placeholders": {
+      "shapeA": {
+        "type": "String"
+      },
+      "keyA": {
+        "type": "String"
+      },
+      "shapeB": {
+        "type": "String"
+      },
+      "keyB": {
+        "type": "String"
+      }
+    }
+  },
+  "attentionRulesExampleEmpty": "Forme vide : {colourA} → {keyA}, {colourB} → {keyB}",
+  "@attentionRulesExampleEmpty": {
+    "placeholders": {
+      "colourA": {
+        "type": "String"
+      },
+      "keyA": {
+        "type": "String"
+      },
+      "colourB": {
+        "type": "String"
+      },
+      "keyB": {
+        "type": "String"
+      }
+    }
+  },
+  "durationSecondsOnly": "{seconds} s",
+  "@durationSecondsOnly": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "durationMinutesOnly": "{minutes} min",
+  "@durationMinutesOnly": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "durationMinutesSeconds": "{minutes} min {seconds} s",
+  "@durationMinutesSeconds": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "familyPerItemSuffix": "~{duration} par item",
+  "@familyPerItemSuffix": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsSummaryAgain": "{count} à revoir",
+  "@flashcardsSummaryAgain": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sessionItemCount": "{count, plural, one{1 question} other{{count} questions}}",
+  "@sessionItemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "readinessExams": "{count, plural, =0{Aucune simulation} =1{1 simulation} other{{count} simulations}}",
+  "@readinessExams": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examDaysLeft": "{days, plural, =0{Jour J} =1{J-1} other{J-{days}}}",
+  "@examDaysLeft": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "examDaysLeftLong": "{days, plural, =0{L'examen est aujourd'hui} =1{Examen dans 1 jour} other{Examen dans {days} jours}}",
+  "@examDaysLeftLong": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsHomeCount": "{count, plural, =0{Aucune carte à réviser} =1{1 carte à réviser} other{{count} cartes à réviser}}",
+  "@flashcardsHomeCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sessionsCount": "{count, plural, one{1 session} other{{count} sessions}}",
+  "@sessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "attentionParityRestartCount": "{count, plural, one{1 redémarrage} other{{count} redémarrages}}",
+  "@attentionParityRestartCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examHistoryDuration": "{minutes, plural, =0{< 1 min} other{{minutes} min}}",
+  "@examHistoryDuration": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "tubesSolutionStepLabel": "{step, plural, =0{Configuration de départ} other{Étape {step} / {total}}}",
+  "@tubesSolutionStepLabel": {
+    "placeholders": {
+      "step": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "wordBoxesErrorCount": "{errors, plural, =0{Aucune erreur} one{{errors} erreur} other{{errors} erreurs}}",
+  "@wordBoxesErrorCount": {
+    "placeholders": {
+      "errors": {
+        "type": "int"
+      }
+    }
+  },
+  "wordBoxesResultSummary": "{errors, plural, =0{Série réussie sans erreur ({wordCount} mots)} one{{errors} erreur sur {wordCount} mots} other{{errors} erreurs sur {wordCount} mots}}",
+  "@wordBoxesResultSummary": {
+    "placeholders": {
+      "errors": {
+        "type": "int"
+      },
+      "wordCount": {
+        "type": "int"
+      }
+    }
+  },
+  "airwaysSummaryClean": "{reroutes, plural, =0{Aucune violation, aucun déroutement.} other{Aucune violation, {reroutes} déroutement(s).}}",
+  "@airwaysSummaryClean": {
+    "placeholders": {
+      "reroutes": {
+        "type": "int"
+      }
+    }
+  },
+  "examChartSummary": "{n, plural, =1{{toPercent} % sur 1 simulation} other{de {fromPercent} % à {toPercent} % sur {n} simulations}}",
+  "@examChartSummary": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "toPercent": {
+        "type": "int"
+      },
+      "fromPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "trendAccuracySummary": "{n, plural, =1{{toPercent} % sur 1 session} other{de {fromPercent} % à {toPercent} % sur {n} sessions}}",
+  "@trendAccuracySummary": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "toPercent": {
+        "type": "int"
+      },
+      "fromPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "trendSpeedSummary": "{n, plural, =1{{toSec} sur 1 session} other{de {fromSec} à {toSec} sur {n} sessions}}",
+  "@trendSpeedSummary": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "toSec": {
+        "type": "String"
+      },
+      "fromSec": {
+        "type": "String"
+      }
+    }
+  },
+  "flashcardsSummaryGood": "{count, plural, one{{count} facile} other{{count} faciles}}",
+  "@flashcardsSummaryGood": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "flashcardsSummaryHard": "{count, plural, one{{count} difficile} other{{count} difficiles}}",
+  "@flashcardsSummaryHard": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "familyItemsCount": "{count, plural, one{{count} item} other{{count} items}}",
+  "@familyItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
+}

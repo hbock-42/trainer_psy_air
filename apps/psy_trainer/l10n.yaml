@@ -1,0 +1,10 @@
+# Config for `flutter gen-l10n` (US-091). Source-of-truth ARB is French
+# (`app_fr.arb`); English translations live in `app_en.arb`. Regenerate with
+# `flutter gen-l10n` (or `flutter pub get` / any `flutter build`/`flutter test`
+# run, which triggers it via the `generate: true` flag in pubspec.yaml).
+arb-dir: lib/core/l10n
+template-arb-file: app_fr.arb
+output-localization-file: app_localizations.dart
+output-class: AppLocalizations
+output-dir: lib/core/l10n/gen
+nullable-getter: false

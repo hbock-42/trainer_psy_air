@@ -36,6 +36,19 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # ARB-based i18n (US-091): `flutter_localizations` gives the
+  # `GlobalWidgetsLocalizations`/`GlobalCupertinoLocalizations`-free base
+  # locale delegates `WidgetsApp` needs; `intl` is pinned to the version
+  # `flutter_localizations` depends on so `flutter gen-l10n`'s generated
+  # `AppLocalizations` (lib/core/l10n/gen/) compiles. See l10n.yaml.
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+
+  # App version for the About page (US-091). Pure Dart platform channel
+  # calls only: no Material/Cupertino dependency.
+  package_info_plus: ^8.3.1
+
   # Content models, parser and validator (US-007): packages/psy_content.
   psy_content:
     path: ../../packages/psy_content
@@ -78,6 +91,10 @@ flutter:
 
   # No Material or Cupertino in this project: do not bundle the Material icon font.
   uses-material-design: false
+
+  # ARB-based i18n (US-091): runs `flutter gen-l10n` (config in l10n.yaml)
+  # before every build/test, regenerating lib/core/l10n/gen/app_localizations*.
+  generate: true
 
   # Content bundle (US-013). Flutter registers assets per directory, not
   # recursively, so every folder holding content files must be listed here
