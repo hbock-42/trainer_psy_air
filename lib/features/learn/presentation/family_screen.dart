@@ -8,18 +8,18 @@ import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
 import 'learn_screen.dart';
+import 'providers/family_lesson_progress_provider.dart';
 import 'providers/family_lessons_provider.dart';
 import 'providers/family_mastery_provider.dart';
 import 'providers/family_provider.dart';
 import 'providers/flashcards_queue_provider.dart';
+import 'providers/lesson_read_provider.dart';
 import 'widgets/confidence_chip.dart';
 
 /// Family page (`/learn/family/:familyId`): what the activity evaluates, its
-/// format, mastery, quick actions and the list of its lessons.
-///
-/// Placeholder scope for US-040: lessons are listed by title only; US-041
-/// makes them open in the lesson viewer, US-042 enables the flashcards
-/// action.
+/// format, mastery, quick actions and the list of its lessons (US-041 opens
+/// them in the lesson viewer; US-044 shows the read/total ring; US-042 will
+/// enable the flashcards action).
 class FamilyScreen extends ConsumerWidget {
   const FamilyScreen({required this.familyId, super.key});
 
@@ -132,7 +132,10 @@ class _FamilyBody extends ConsumerWidget {
             ],
           ),
           SizedBox(height: theme.spacing.xl),
-          const SectionHeader(title: AppStrings.familyLessonsTitle),
+          SectionHeader(
+            title: AppStrings.familyLessonsTitle,
+            trailing: _LessonProgressRing(familyId: family.id),
+          ),
           SizedBox(height: theme.spacing.md),
           switch (lessons) {
             AsyncData(value: final list) when list.isEmpty => Text(
@@ -144,7 +147,7 @@ class _FamilyBody extends ConsumerWidget {
               children: [
                 for (final (i, lesson) in list.indexed) ...[
                   if (i > 0) SizedBox(height: theme.spacing.sm),
-                  _LessonTile(lesson: lesson),
+                  _LessonTile(familyId: family.id, lesson: lesson),
                 ],
               ],
             ),
@@ -160,40 +163,89 @@ class _FamilyBody extends ConsumerWidget {
   }
 }
 
-/// A lesson title with its summary and reading time (not tappable yet, see
-/// US-041).
-class _LessonTile extends StatelessWidget {
-  const _LessonTile({required this.lesson});
+/// Read/total ring for the "Leçons" section header (US-044). Hidden while
+/// the family has no lesson at all so an empty state stays uncluttered.
+class _LessonProgressRing extends ConsumerWidget {
+  const _LessonProgressRing({required this.familyId});
 
+  final String familyId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final progress = ref.watch(familyLessonProgressProvider(familyId));
+    final (read, total) = switch (progress) {
+      AsyncData(:final value) => (value.read, value.total),
+      _ => (0, 0),
+    };
+    if (total == 0) return const SizedBox.shrink();
+    final theme = AppTheme.of(context);
+    return ArcGauge(
+      value: read / total,
+      color: theme.colors.accent,
+      size: 40,
+      semanticsLabel: AppStrings.familyLessonsTitle,
+      semanticsValue: AppStrings.familyLessonsProgressSemantics(read, total),
+      child: Text(
+        AppStrings.familyLessonsProgress(read, total),
+        style: theme.textStyles.caption,
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+}
+
+/// A lesson title with its summary, reading time and read state; opens the
+/// lesson viewer (US-041).
+class _LessonTile extends ConsumerWidget {
+  const _LessonTile({required this.familyId, required this.lesson});
+
+  final String familyId;
   final Lesson lesson;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = AppTheme.of(context);
     final summary = lesson.summary?.resolve(AppStrings.locale);
     final minutes = lesson.estimatedReadMin;
+    final title = lesson.title.resolve(AppStrings.locale);
+    final read = ref.watch(lessonReadProvider(lesson.id)).value ?? false;
     return AppCard(
-      child: Column(
+      onPressed: () => context.go(AppRoutes.learnLesson(familyId, lesson.id)),
+      semanticsLabel: title,
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            lesson.title.resolve(AppStrings.locale),
-            style: theme.textStyles.bodyStrong,
-          ),
-          if (summary != null) ...[
-            SizedBox(height: theme.spacing.xs),
-            Text(
-              summary,
-              style: theme.textStyles.body.copyWith(
-                color: theme.colors.textSecondary,
-              ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: theme.textStyles.bodyStrong),
+                if (summary != null) ...[
+                  SizedBox(height: theme.spacing.xs),
+                  Text(
+                    summary,
+                    style: theme.textStyles.body.copyWith(
+                      color: theme.colors.textSecondary,
+                    ),
+                  ),
+                ],
+                if (minutes != null) ...[
+                  SizedBox(height: theme.spacing.xs),
+                  Text(
+                    AppStrings.lessonReadTime(minutes),
+                    style: theme.textStyles.caption,
+                  ),
+                ],
+              ],
             ),
-          ],
-          if (minutes != null) ...[
-            SizedBox(height: theme.spacing.xs),
-            Text(
-              AppStrings.lessonReadTime(minutes),
-              style: theme.textStyles.caption,
+          ),
+          if (read) ...[
+            SizedBox(width: theme.spacing.sm),
+            AppIcon(
+              AppIconGlyph.check,
+              size: 18,
+              color: theme.colors.success,
+              semanticsLabel: AppStrings.lessonMarkedRead,
             ),
           ],
         ],

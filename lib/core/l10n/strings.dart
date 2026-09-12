@@ -404,6 +404,32 @@ abstract final class AppStrings {
   static String scorePercent(int percent) => '$percent %';
   static const String scoreUnknown = '—';
 
+  // Lesson viewer (US-041), worked examples (US-043), learning progress
+  // (US-044).
+  static const String lessonCalloutTip = 'Astuce';
+  static const String lessonCalloutTrap = 'Piège';
+  static const String lessonCalloutMethod = 'Méthode';
+  static const String lessonCalloutExample = 'Exemple';
+  static const String lessonImagePlaceholder = 'Image';
+  static const String lessonRevealNextStep = 'Étape suivante';
+  static const String lessonRevealAllSteps = 'Tout afficher';
+  static const String lessonTocTitle = 'Sommaire';
+  static const String lessonTocShow = 'Afficher le sommaire';
+  static const String lessonTocHide = 'Masquer le sommaire';
+  static const String lessonTryIt = 'Essayer';
+  static const String lessonPrevious = 'Leçon précédente';
+  static const String lessonNext = 'Leçon suivante';
+  static const String lessonMarkRead = 'Marquer comme lue';
+  static const String lessonMarkedRead = 'Lue';
+  static const String lessonNotFound = 'Leçon introuvable.';
+  static const String lessonLoading = 'Chargement…';
+
+  static String familyLessonsProgress(int read, int total) =>
+      '$read/$total leçons';
+
+  static String familyLessonsProgressSemantics(int read, int total) =>
+      '$read leçons lues sur $total';
+
   // Flashcards (US-042).
   static const String flashcardsHomeTitle = 'À réviser aujourd\'hui';
   static String flashcardsHomeCount(int count) => switch (count) {

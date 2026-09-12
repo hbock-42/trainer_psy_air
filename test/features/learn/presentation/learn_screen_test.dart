@@ -20,16 +20,21 @@ import 'package:psy_trainer/shared/widgets/widgets.dart';
 
 import '../../../helpers/content_ready_fakes.dart';
 import '../../../helpers/flashcards_fixtures.dart';
-import '../../../helpers/onboarding_fakes.dart';
+import '../../../helpers/onboarding_fakes.dart' show progressRepositoryOverride;
 import '../../../helpers/psy0_families.dart';
 import '../../../helpers/pump_app.dart';
 
 /// Pumps the bare [LearnScreen] over the in-memory repository.
+///
+/// [progress] overrides `progressRepositoryProvider` (defaults to a fresh
+/// fake); pass it instead of doing so through [overrides], which would
+/// override the same provider twice.
 Future<void> pumpLearn(
   WidgetTester tester, {
   bool seeded = true,
   double textScale = 1.0,
   InMemoryContentRepository? content,
+  InMemoryProgressRepository? progress,
   List<Override> overrides = const [],
 }) async {
   await pumpApp(
@@ -40,6 +45,7 @@ Future<void> pumpLearn(
       contentRepositoryProvider.overrideWithValue(
         content ?? psy0ContentRepository(seeded: seeded),
       ),
+      progressRepositoryOverride(repository: progress),
       ...overrides,
     ],
   );
@@ -155,10 +161,12 @@ void main() {
           ),
           findsOneWidget,
         );
+        // No mastery yet: the slot falls back to lesson-read progress
+        // (memory_nback has 2 lessons in the fixture, US-044).
         expect(
           find.descendant(
             of: first,
-            matching: find.text(AppStrings.familyMasteryUnknown),
+            matching: find.text(AppStrings.familyLessonsProgress(0, 2)),
           ),
           findsOneWidget,
         );
@@ -198,10 +206,12 @@ void main() {
         find.descendant(of: allCards().first, matching: find.text('72 %')),
         findsOneWidget,
       );
+      // planning_tubes has no mastery override: falls back to lesson
+      // progress (1 lesson in the fixture, US-044).
       expect(
         find.descendant(
           of: allCards().at(1),
-          matching: find.text(AppStrings.familyMasteryUnknown),
+          matching: find.text(AppStrings.familyLessonsProgress(0, 1)),
         ),
         findsOneWidget,
       );
@@ -293,11 +303,7 @@ void main() {
               nextReviewAt: DateTime.utc(2099),
             );
       }
-      await pumpLearn(
-        tester,
-        content: content,
-        overrides: [progressRepositoryProvider.overrideWithValue(progress)],
-      );
+      await pumpLearn(tester, content: content, progress: progress);
 
       expect(find.text(AppStrings.flashcardsHomeTitle), findsNothing);
     });
@@ -312,11 +318,7 @@ void main() {
       await pumpLearn(
         tester,
         content: content,
-        overrides: [
-          progressRepositoryProvider.overrideWithValue(
-            InMemoryProgressRepository(),
-          ),
-        ],
+        progress: InMemoryProgressRepository(),
       );
 
       expect(find.text(AppStrings.flashcardsHomeTitle), findsOneWidget);

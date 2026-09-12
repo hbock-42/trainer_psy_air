@@ -662,6 +662,7 @@ Route table:
 StatefulShellRoute.indexedStack      AppShell; one branch (own Navigator) per tab, state kept
   /learn                             branch 0  (initial location)
     family/:familyId                 nested -> /learn/family/:familyId (US-040 family page)
+      lesson/:lessonId               nested -> /learn/family/:familyId/lesson/:lessonId (US-041 lesson viewer)
     how-it-works                     nested -> /learn/how-it-works (selection stages)
   /train                             branch 1
     session/:sessionId               nested -> /train/session/:sessionId (pushed inside the tab)

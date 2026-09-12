@@ -4,7 +4,7 @@ issue: 38
 title: "Worked examples per family"
 type: story
 epic: EPIC-04
-status: backlog
+status: review
 priority: P1
 size: S
 lane: learn-ui
@@ -17,5 +17,10 @@ labels: [learn,content]
 **As a** candidate **I want** step-by-step solved examples **so that** I see the method applied.
 
 ## Acceptance criteria
-- [ ] Reveal-step-by-step widget (tap to show next step)
-- [ ] At least 3 worked examples per family in content (tracked in US-081)
+- [x] Reveal-step-by-step widget (tap to show next step): `RevealSteps`, driven by `## Exemple guidé n`
+  sections in the lesson markdown (the `[!EXAMPLE]` statement stays visible; each `### Étape n` is
+  revealed by "Étape suivante", plus a "Tout afficher" shortcut)
+- [ ] At least 3 worked examples per family in content — content authoring, tracked in US-081; out of
+  scope here (this card is the viewer). Every real lesson under `assets/content/psy0/lessons/`
+  already parses and renders through `RevealSteps` without error (see
+  `test/shared/widgets/markdown/real_lessons_test.dart`)
