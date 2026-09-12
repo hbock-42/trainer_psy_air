@@ -159,19 +159,25 @@ void main() {
     'reset all data needs two confirmations, then re-runs onboarding',
     (tester) async {
       await pumpSettings(tester);
+      // The backup section's paste field (US-074) is an `EditableText`,
+      // which owns its own inner `Scrollable`; disambiguate against the
+      // screen's outer list.
+      final outerScrollable = find
+          .descendant(
+            of: find.byKey(SettingsScreen.scrollKey),
+            matching: find.byType(Scrollable),
+          )
+          .first;
       await tester.scrollUntilVisible(
         find.byKey(SettingsScreen.resetActionKey),
         200,
-        // The backup section's paste field (US-074) is an `EditableText`,
-        // which owns its own inner `Scrollable`; disambiguate against the
-        // screen's outer list.
-        scrollable: find
-            .descendant(
-              of: find.byKey(SettingsScreen.scrollKey),
-              matching: find.byType(Scrollable),
-            )
-            .first,
+        scrollable: outerScrollable,
       );
+      // US-092 added a Reminders section above, pushing this button close
+      // to the bottom edge (where a tap sometimes lands on the shell's
+      // overlay instead): scroll a little further so it sits mid-viewport.
+      await tester.drag(outerScrollable, const Offset(0, -100));
+      await tester.pumpAndSettle();
 
       await tester.tap(find.byKey(SettingsScreen.resetActionKey));
       await tester.pumpAndSettle();
