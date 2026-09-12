@@ -288,6 +288,47 @@ tearDown(() => db.close());
 Test the DAO's public queries (insert then read back, ordering, filtering) and migrations
 (`schema` version bumps) rather than SQL details. Use a fixed clock for `createdAt` columns.
 
+## Web persistence tests (US-016)
+
+Two kinds of test touch the web (`WasmDatabase`) path, both under `test/core/db/`:
+
+- **`storage_info_test.dart`** — plain VM test (part of `make test`): `StorageInfo.resolve()` on
+  native is a persistent local file.
+- **`storage_info_web_test.dart`** — `@TestOn('browser')`, so a plain `flutter test` (VM) skips
+  it; run it with `flutter test --platform chrome test/core/db/storage_info_web_test.dart`
+  (needs `CHROME_EXECUTABLE` set if `google-chrome`/`chromium` isn't on `PATH` — on macOS:
+  `export CHROME_EXECUTABLE="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"`).
+  It maps every `WasmStorageImplementation` drift can report to `StorageKind` without needing a
+  real `WasmDatabase.open` call (the mapping, `storageInfoFromWasmResult`, is pure Dart — it
+  never touches `resolvedExecutor`). Verified locally: passes in ~1s.
+
+**A real open + seed + attempt round trip under `--platform chrome` does not work in this repo
+today**, and is not wired into CI: `flutter test --platform chrome` compiles the test to
+JS/wasm and serves it from its own dev server, which does not serve the app's `web/` directory
+(`sqlite3.wasm`, `drift_worker.js`) — `WasmDatabase.open` fails with `TypeError: Failed to
+execute 'compile' on 'WebAssembly': HTTP status code is not ok` (a 404 fetching
+`sqlite3.wasm`). This is a limitation of the `flutter test` browser harness, not of the app: the
+same code works under `flutter build web --release` (verified, see `docs/ARCHITECTURE.md`
+"Platforms"). Do not re-add a `web_smoke_test.dart` that opens a real `WasmDatabase` unless a
+way to serve `web/` from the test harness is found first — it will fail identically.
+
+**Manual check** (until the harness limitation above is resolved), after `make build-web`:
+
+1. Serve `build/web` over plain HTTP (not `file://`, which browsers block from opening
+   `sqlite3.wasm`/workers): `cd apps/psy_trainer/build/web && python3 -m http.server 8000`.
+2. Open `http://localhost:8000` in a real browser, use the app enough to write data (finish
+   onboarding, run one practice item), then check:
+   - DevTools console shows one `[db] web storage: <implementation>` line (from
+     `open_database_web.dart`) with no `missingFeatures` — a shared/local Chrome or Firefox
+     should log `opfsShared` or `opfsLocks`.
+   - DevTools → Application → IndexedDB (or File System, for OPFS) shows a `psy_trainer`
+     database with data.
+   - Reload the page: the data (onboarding state, the practice attempt) is still there.
+   - Settings → About shows "Stockage : OPFS" (or "IndexedDB") with no warning line.
+3. Optional: repeat in a private/incognito window with storage disabled, or in a browser with
+   neither OPFS nor IndexedDB, to see the "mémoire (non persistant)" fallback and its warning
+   line — data should NOT survive a reload in that case.
+
 ## Architecture tests
 
 `test/architecture/` holds tests about the code itself, not its behaviour:

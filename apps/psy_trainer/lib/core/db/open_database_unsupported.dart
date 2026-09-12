@@ -1,14 +1,14 @@
 import 'package:drift/drift.dart';
 
-/// Fallback for platforms without `dart:io` (today: web). Keeps the web
-/// build compiling; opening the database throws until web persistence is
-/// wired (drift `WasmDatabase` needs `sqlite3.wasm` and `drift_worker.js`
-/// served from `web/`, which is outside US-011). Selected by the conditional
-/// import in `open_database.dart`; do not import directly.
+/// Fallback for a platform with neither `dart:io` (native) nor
+/// `dart:js_interop` (web, US-016) — not reached by any Flutter target this
+/// app ships today, kept so the conditional import in `open_database.dart`
+/// always has a default. Selected by that conditional import; do not import
+/// directly.
 QueryExecutor openAppDatabaseExecutor() => LazyDatabase(() async {
   throw UnsupportedError(
-    'The local database is not available on this platform yet '
-    '(web persistence needs drift WasmDatabase assets in web/).',
+    'The local database is not available on this platform '
+    '(neither dart:io nor dart:js_interop is present).',
   );
 });
 
