@@ -12,7 +12,8 @@ import 'package:psy_trainer/core/db/open_database.dart';
 /// `arithmetic_grid` numeric + one generated recipe, `memory_nback` sequence
 /// and generated), one lesson, one deck with three
 /// cards (both `arithmetic_grid`) and the `psy0.blueprint.example-custom`
-/// blueprint. The `lexical_fields` example has no table yet and is skipped.
+/// blueprint. The `lexical_fields` example (US-030/US-085) is parsed too and
+/// mirrored into the `lexical_fields` table.
 class ExampleContent {
   ExampleContent._({
     required this.manifest,
@@ -22,6 +23,7 @@ class ExampleContent {
     required this.lessons,
     required this.decks,
     required this.blueprints,
+    required this.lexicalFields,
   });
 
   factory ExampleContent.load() {
@@ -34,6 +36,7 @@ class ExampleContent {
     final lessons = <Lesson>[];
     final decks = <Deck>[];
     final blueprints = <ExamBlueprint>[];
+    final lexicalFields = <LexicalField>[];
     final files = dir.listSync().whereType<File>().toList()
       ..sort((a, b) => a.path.compareTo(b.path));
     for (final file in files) {
@@ -56,6 +59,10 @@ class ExampleContent {
           decks.add(parser.parseDeck(source, file: name));
         case 'blueprint':
           blueprints.add(parser.parseBlueprint(source, file: name));
+        case 'lexical_fields':
+          lexicalFields.addAll(
+            parser.parseLexicalFields(source, file: name).fields,
+          );
       }
     }
     return ExampleContent._(
@@ -66,6 +73,7 @@ class ExampleContent {
       lessons: lessons,
       decks: decks,
       blueprints: blueprints,
+      lexicalFields: lexicalFields,
     );
   }
 
@@ -76,6 +84,7 @@ class ExampleContent {
   final List<Lesson> lessons;
   final List<Deck> decks;
   final List<ExamBlueprint> blueprints;
+  final List<LexicalField> lexicalFields;
 
   List<Item> get items => [for (final bank in banks) ...bank.items];
 
@@ -99,6 +108,10 @@ class ExampleContent {
       ],
       blueprints: [
         for (final b in blueprints) ContentRows.blueprint(b, seededAt: at),
+      ],
+      lexicalFields: [
+        for (final f in lexicalFields)
+          ContentRows.lexicalField(f, seededAt: at),
       ],
     );
   }

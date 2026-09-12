@@ -66,7 +66,7 @@ void main() {
 
       expect(result.seeded, isTrue);
       final content = container.read(contentRepositoryProvider);
-      expect((await content.contentInfo())?.contentVersion, 2);
+      expect((await content.contentInfo())?.contentVersion, 3);
       expect(await content.families(moduleId: ModuleId.psy0), hasLength(16));
 
       // A second resolution (e.g. after invalidate) is a no-op.

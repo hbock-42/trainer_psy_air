@@ -143,6 +143,10 @@ class ContentSeeder {
         for (final b in bundle.blueprints)
           ContentRows.blueprint(b, seededAt: seededAt),
       ],
+      lexicalFields: [
+        for (final f in bundle.lexicalFields)
+          ContentRows.lexicalField(f, seededAt: seededAt),
+      ],
     );
     return SeedResult(
       seeded: true,

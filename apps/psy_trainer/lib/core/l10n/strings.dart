@@ -808,4 +808,17 @@ abstract final class AppStrings {
     int attempts,
     int unanswered,
   ) => '$correct/$attempts correctes · $unanswered sans réponse';
+
+  // Word boxes / Boîte à mots (US-030).
+  static String wordBoxesErrorCount(int errors) =>
+      errors == 0 ? 'Aucune erreur' : '$errors erreur${errors > 1 ? 's' : ''}';
+  static const String wordBoxesEmptyBox = '—';
+  static String wordBoxesBoxSemantics(int boxNumber, String label) =>
+      'Boîte $boxNumber : $label';
+  static String wordBoxesResultSummary(int errors, int wordCount) => errors == 0
+      ? 'Série réussie sans erreur ($wordCount mots)'
+      : '$errors erreur${errors > 1 ? 's' : ''} sur $wordCount mots';
+  static const String wordBoxesMissedTitle = 'Mots mal classés';
+  static String wordBoxesMissedWord(String word, String fieldName) =>
+      '$word → $fieldName';
 }

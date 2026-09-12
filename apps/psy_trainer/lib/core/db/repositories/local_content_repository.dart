@@ -156,6 +156,18 @@ class LocalContentRepository implements ContentRepository {
     return row == null ? null : ExamBlueprint.fromJson(row.json);
   }
 
+  @override
+  Future<List<LexicalField>> lexicalFields({String? familyId}) async => [
+    for (final row in await _dao.lexicalFieldsOf(familyId: familyId))
+      LexicalField.fromJson(row.json),
+  ];
+
+  @override
+  Future<LexicalField?> lexicalField(String id) async {
+    final row = await _dao.lexicalFieldById(id);
+    return row == null ? null : LexicalField.fromJson(row.json);
+  }
+
   /// Deck rows are stored without their cards; the cards come from the
   /// `flashcards` table.
   static Deck _deck(DeckRow row, List<FlashcardRow> cards) => Deck.fromJson({
