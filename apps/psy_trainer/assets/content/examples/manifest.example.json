@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../docs/content/schema/manifest.schema.json",
+  "$schema": "../../../../../packages/psy_content/schema/manifest.schema.json",
   "kind": "manifest",
   "schemaVersion": 2,
   "contentVersion": 4,

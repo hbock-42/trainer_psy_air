@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/features/train/domain/engine/timing_policy.dart';
 
 void main() {

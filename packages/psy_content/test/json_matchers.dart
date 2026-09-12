@@ -1,4 +1,4 @@
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 /// Keys the models emit even when the source file omitted them, with the
 /// default value the JSON contract assigns. Anything else that appears in the

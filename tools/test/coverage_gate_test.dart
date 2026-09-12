@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
-import '../../tool/coverage_gate.dart';
+import '../coverage_gate.dart';
 
 String fixture(String name) =>
-    File('test/tool/fixtures/$name').readAsStringSync();
+    File('tools/test/fixtures/$name').readAsStringSync();
 
 void main() {
   group('parseLcov', () {

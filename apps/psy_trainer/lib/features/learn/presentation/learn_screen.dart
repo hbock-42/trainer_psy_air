@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import '../../../core/l10n/strings.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';

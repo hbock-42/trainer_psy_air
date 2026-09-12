@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import '../../../core/content/model/exam_blueprint.dart';
+import 'package:psy_content/psy_content.dart';
 import '../../../core/repositories/model/session.dart';
 import '../../../core/repositories/model/stats.dart';
 import 'exam_summary.dart';

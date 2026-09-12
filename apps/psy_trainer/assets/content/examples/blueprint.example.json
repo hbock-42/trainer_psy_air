@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../docs/content/schema/blueprint.schema.json",
+  "$schema": "../../../../../packages/psy_content/schema/blueprint.schema.json",
   "kind": "blueprint",
   "id": "psy0.blueprint.example-custom",
   "version": 1,

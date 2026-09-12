@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/db/app_database.dart';
 import 'package:psy_trainer/core/db/content_rows.dart';
 import 'package:psy_trainer/core/db/open_database.dart';

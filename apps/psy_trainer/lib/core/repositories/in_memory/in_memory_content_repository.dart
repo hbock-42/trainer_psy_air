@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import '../../content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import '../content_repository.dart';
 import '../model/learning.dart';
 

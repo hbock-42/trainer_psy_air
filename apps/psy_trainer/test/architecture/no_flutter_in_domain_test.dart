@@ -61,7 +61,7 @@ void main() {
     const good = [
       "import 'package:freezed_annotation/freezed_annotation.dart';",
       "import 'package:psy_trainer/core/repositories/repositories.dart';",
-      "import '../../../core/content/content.dart';",
+      "import 'package:psy_content/psy_content.dart';",
       "import 'dart:math' as math;",
     ];
     for (final line in bad) {

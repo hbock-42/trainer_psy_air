@@ -1,4 +1,4 @@
-import '../../content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import '../../repositories/content_repository.dart';
 import '../../repositories/model/learning.dart';
 import '../app_database.dart';

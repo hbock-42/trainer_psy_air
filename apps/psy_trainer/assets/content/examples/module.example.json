@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../docs/content/schema/family.schema.json#/$defs/Module",
+  "$schema": "../../../../../packages/psy_content/schema/family.schema.json#/$defs/Module",
   "kind": "module",
   "id": "psy0",
   "version": 2,

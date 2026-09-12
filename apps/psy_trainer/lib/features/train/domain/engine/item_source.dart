@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import '../../../../core/repositories/model/attempt.dart';
 import 'activity_engine.dart';
 

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
+import 'package:test/test.dart';
 
 /// A minimal valid mcq item, mutated by the negative tests below.
 Map<String, Object?> validMcq() => <String, Object?>{

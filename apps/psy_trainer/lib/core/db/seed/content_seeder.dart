@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart' show compute;
 
-import '../../content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import '../app_database.dart';
 import '../content_rows.dart';
 import '../daos/content_dao.dart';

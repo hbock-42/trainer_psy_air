@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import '../../content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'asset_reader.dart';
 
 /// Root asset directory of the content bundle (`pubspec.yaml`).

@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/db/seed/content_ready_provider.dart';
 import 'package:psy_trainer/core/db/seed/content_seeder.dart';
 import 'package:psy_trainer/core/l10n/strings.dart';

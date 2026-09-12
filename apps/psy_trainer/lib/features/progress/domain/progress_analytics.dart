@@ -1,4 +1,4 @@
-import '../../../core/content/model/exam_blueprint.dart';
+import 'package:psy_content/psy_content.dart';
 import '../../../core/repositories/content_repository.dart';
 import '../../../core/repositories/model/session.dart';
 import '../../../core/repositories/model/stats.dart';

@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../core/content/model/exam_blueprint.dart';
-import '../../../../core/content/model/test_family.dart';
+import 'package:psy_content/psy_content.dart';
 import '../../../../core/repositories/repository_providers.dart';
 
 /// Content the dashboard needs to label ids: families (in real-test order)

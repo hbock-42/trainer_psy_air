@@ -1,4 +1,4 @@
-import '../content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'model/learning.dart';
 
 /// Read access to the seeded training content (US-010 models).

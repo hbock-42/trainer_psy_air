@@ -1,4 +1,4 @@
-import '../../../core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import '../../../core/l10n/strings.dart';
 import '../domain/selection_stage.dart';
 

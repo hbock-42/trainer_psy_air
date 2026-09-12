@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../../docs/content/schema/family.schema.json",
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
   "kind": "family",
   "id": "spatial_cubes",
   "moduleId": "psy0",

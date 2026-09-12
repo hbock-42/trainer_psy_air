@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import '../../../../core/repositories/model/session.dart';
 import '../../domain/engine/engine.dart';
 

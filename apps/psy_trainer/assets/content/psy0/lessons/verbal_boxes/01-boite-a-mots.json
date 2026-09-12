@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../../../docs/content/schema/lesson.schema.json",
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
   "kind": "lesson",
   "id": "lesson.verbal_boxes.01",
   "version": 1,

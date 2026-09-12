@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../docs/content/schema/deck.schema.json",
+  "$schema": "../../../../../packages/psy_content/schema/deck.schema.json",
   "kind": "deck",
   "id": "arithmetic_grid.deck.aviation-conversions",
   "version": 1,

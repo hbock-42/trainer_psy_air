@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import '../../../../core/repositories/repository_providers.dart';
 
 /// The PSY0 test families in real-test order (`TestFamily.order`), as seeded

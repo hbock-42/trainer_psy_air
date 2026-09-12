@@ -1,4 +1,4 @@
-import '../../../../core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'answer.dart';
 import 'item_result.dart';
 import 'session_result.dart';

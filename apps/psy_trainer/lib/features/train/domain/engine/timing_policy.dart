@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 
 part 'timing_policy.freezed.dart';
 part 'timing_policy.g.dart';

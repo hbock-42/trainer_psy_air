@@ -4,12 +4,12 @@
 // the "gated" paths (feature domain/data layers and core), and exits with 1
 // when the gated coverage is below `--min`.
 //
-// Usage:
-//   dart run tool/coverage_gate.dart [--min 70] [--file coverage/lcov.info]
+// Usage (from the repo root; the app's lcov lives under its own package):
+//   dart run tools/coverage_gate.dart --file apps/psy_trainer/coverage/lcov.info [--min 70]
 //
 // Pure Dart on purpose (only `dart:io`) so CI can run it without a Flutter
 // device or extra packages. The parsing and policy live in [evaluateCoverage]
-// so `test/tool/coverage_gate_test.dart` can exercise them on fixtures.
+// so `tools/test/coverage_gate_test.dart` can exercise them on fixtures.
 
 import 'dart:io';
 
@@ -258,7 +258,7 @@ void main(List<String> args) {
     stderr
       ..writeln(e.message)
       ..writeln(
-        'Usage: dart run tool/coverage_gate.dart [--min <percent>] '
+        'Usage: dart run tools/coverage_gate.dart [--min <percent>] '
         '[--file <lcov path>]',
       );
     exitCode = 2;

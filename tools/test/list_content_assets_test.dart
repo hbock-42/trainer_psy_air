@@ -1,27 +1,31 @@
 import 'dart:io';
 
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
-import '../../tool/content_assets.dart';
+import '../content_assets.dart';
 
 void main() {
-  test('pubspec.yaml registers every content folder (examples excluded)', () {
-    final dirs = listContentAssetDirectories(Directory.current.path);
-    final registered = registeredContentAssets(
-      File('pubspec.yaml').readAsStringSync(),
-    );
+  test(
+    'the app pubspec.yaml registers every content folder (examples excluded)',
+    () {
+      final dirs = listContentAssetDirectories(Directory.current.path);
+      final registered = registeredContentAssets(
+        File('$contentAppDir/pubspec.yaml').readAsStringSync(),
+      );
 
-    expect(dirs, contains('assets/content/'));
-    expect(dirs, contains('assets/content/psy0/'));
-    expect(dirs.where((d) => d.contains('/examples')), isEmpty);
-    expect(
-      registered,
-      unorderedEquals(dirs),
-      reason:
-          'pubspec.yaml is out of sync with assets/content/: run '
-          '`dart run tool/list_content_assets.dart --write`',
-    );
-  });
+      expect(dirs, contains('assets/content/'));
+      expect(dirs, contains('assets/content/psy0/'));
+      expect(dirs.where((d) => d.contains('/examples')), isEmpty);
+      expect(
+        registered,
+        unorderedEquals(dirs),
+        reason:
+            '$contentAppDir/pubspec.yaml is out of sync with '
+            '$contentAppDir/assets/content/: run '
+            '`dart run tools/list_content_assets.dart --write`',
+      );
+    },
+  );
 
   test('replaceContentAssets rewrites the block between the markers', () {
     const pubspec =

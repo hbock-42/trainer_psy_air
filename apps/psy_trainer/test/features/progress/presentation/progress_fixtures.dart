@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/misc.dart';
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/progress/domain/progress_domain.dart';
 import 'package:psy_trainer/features/progress/presentation/providers/stats_service_provider.dart';

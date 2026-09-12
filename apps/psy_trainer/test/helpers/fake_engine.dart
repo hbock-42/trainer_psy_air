@@ -1,4 +1,4 @@
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/features/train/domain/engine/engine.dart';
 
 /// A minimal [ActivityEngine] for runtime, controller and widget tests.

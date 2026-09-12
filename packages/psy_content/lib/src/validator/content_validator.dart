@@ -2,14 +2,15 @@
 /// Schemas, the Dart models and the semantic rules of `AUTHORING.md`.
 ///
 /// Usable as a library (tests, other tools) through [ContentValidator]; the
-/// CLI wrapper is `tool/validate_content.dart`.
+/// CLI wrapper is `bin/validate_content.dart`.
 library;
 
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart' as p;
-import 'package:psy_trainer/core/content/content.dart';
+
+import '../../psy_content.dart';
 
 import 'content_file.dart';
 import 'report.dart';
@@ -33,11 +34,14 @@ class ContentValidator {
     ContentBundleParser parser = const ContentBundleParser(),
   }) : _parser = parser;
 
-  /// Loads the schemas from [schemaDir] (default `docs/content/schema`).
+  /// Loads the schemas from [schemaDir] (default `schema`, relative to the
+  /// `psy_content` package root; the CLI resolves its own default from the
+  /// script location so it works from any working directory, see
+  /// `bin/validate_content.dart`).
   factory ContentValidator.load({String schemaDir = defaultSchemaDir}) =>
       ContentValidator(schemas: SchemaRegistry.load(schemaDir));
 
-  static const defaultSchemaDir = 'docs/content/schema';
+  static const defaultSchemaDir = 'schema';
   static const defaultContentDir = 'assets/content';
 
   /// Folder names whose content is validated file by file, never as part of

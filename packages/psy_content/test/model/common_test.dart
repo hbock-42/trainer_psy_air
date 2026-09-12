@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
+import 'package:test/test.dart';
 
 Map<String, Object?> validGeneratedJson() => <String, Object?>{
   'id': 'logic_dominos.series.gen.0001',

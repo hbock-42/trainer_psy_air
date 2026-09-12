@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/db/app_database.dart';
 import 'package:psy_trainer/core/db/app_database_provider.dart';
 import 'package:psy_trainer/core/db/seed/asset_reader.dart';

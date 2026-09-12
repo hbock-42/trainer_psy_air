@@ -1,4 +1,4 @@
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_content_repository.dart';
 
 /// The 14 PSY0 family ids in real-test order (EPIC-03 table).

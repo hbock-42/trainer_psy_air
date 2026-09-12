@@ -3,6 +3,13 @@
 How we test the PSY Trainer app: what goes where, how to run it, and the coverage gate CI
 enforces. Established in US-120; amend when the policy changes.
 
+This file covers `apps/psy_trainer/`. Since US-007 the repo is a pub workspace with two more
+test suites: `packages/psy_content/test/` (pure Dart, `package:test`, its own
+`no_flutter_test.dart` architecture test — see `docs/ARCHITECTURE.md`, "Repository layout")
+and `tools/test/` (the coverage gate and content-assets scripts, also `package:test`). Both
+run with `dart test <dir>` from the repo root; `melos run test` / `make test` runs
+everything.
+
 ## Pyramid
 
 | Level | What | Where | Tooling |
@@ -39,10 +46,10 @@ integration_test/                     # device-driven flow tests (US-121)
   `test/features/train/domain/session_state_machine_test.dart`).
 - Test names are sentences describing behaviour: `'advances to the next item after an answer'`,
   not `'test1'` or `'nextItem'`. Group by method/scenario with `group()`.
-- Fixtures used by one test live next to it in a `fixtures/` sub-folder
-  (`test/tool/fixtures/`); fixtures shared across features go in `test/fixtures/`. Read them
-  relative to the package root (`File('test/fixtures/x.json')`): `flutter test` always runs
-  from there.
+- Fixtures used by one test live next to it in a `fixtures/` sub-folder (e.g.
+  `packages/psy_content/test/fixtures/`, `tools/test/fixtures/`); fixtures shared across
+  features go in `test/fixtures/` (app package). Read them relative to the package root
+  (`File('test/fixtures/x.json')`): `flutter test` / `dart test` always run from there.
 - Fakes and stubs shared by several tests go in `test/helpers/`; a fake used by one test stays
   in that file.
 - Golden PNGs are named after the screen/widget and variant: `practice_summary.png`,
@@ -64,8 +71,10 @@ flutter test --update-goldens test/app_golden_test.dart   # regenerate goldens
 
 ## Coverage gate
 
-`make coverage` runs `flutter test --coverage`, which writes `coverage/lcov.info`, then
-`dart run tool/coverage_gate.dart --min 70`. The gate:
+`make coverage` runs `flutter test --coverage` inside `apps/psy_trainer` (writing
+`apps/psy_trainer/coverage/lcov.info`), then, from the repo root, `dart run
+tools/coverage_gate.dart --file apps/psy_trainer/coverage/lcov.info --min 70` (US-007: the
+gate itself is a repo-wide script, not tied to one package). The gate:
 
 - computes line coverage overall (informational) and for the **gated paths**
   `lib/features/**/domain/**`, `lib/features/**/data/**` and `lib/core/**`;
@@ -79,7 +88,7 @@ flutter test --update-goldens test/app_golden_test.dart   # regenerate goldens
 poor proxy for UI quality, and goldens and integration tests cover those. Keep gated coverage
 well above 70 % rather than at it; the threshold is a floor, not a target.
 
-The gate itself is unit-tested in `test/tool/coverage_gate_test.dart` on lcov fixtures.
+The gate itself is unit-tested in `tools/test/coverage_gate_test.dart` on lcov fixtures.
 
 To read coverage locally, `brew install lcov` then `genhtml coverage/lcov.info -o coverage/html`
 and open `coverage/html/index.html`. The `coverage/` folder is git-ignored.

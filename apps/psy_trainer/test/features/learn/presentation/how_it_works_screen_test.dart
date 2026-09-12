@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/l10n/strings.dart';
 import 'package:psy_trainer/features/learn/presentation/how_it_works_screen.dart';
 import 'package:psy_trainer/features/learn/presentation/selection_stages.dart';

@@ -1,4 +1,4 @@
-import '../../../core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 
 /// One stage of the Air France cadet selection (spec §1), shown on the
 /// "how the selection works" page.

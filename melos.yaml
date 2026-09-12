@@ -1,0 +1,60 @@
+# Melos (>= 7, works on top of pub workspaces) convenience scripts for the
+# psy_trainer monorepo (US-007).
+#
+# Each script below is exactly the command(s) documented in
+# docs/ARCHITECTURE.md ("Repository layout") and wired into the root
+# Makefile and CI — Melos is optional sugar for typing `melos run test`
+# instead of the underlying commands. If Melos ever adds friction (version
+# skew, network install in CI, ...) drop it: the Makefile and CI call the
+# same underlying commands directly and do not depend on Melos being
+# installed.
+#
+# Install once per machine: `dart pub global activate melos`.
+# Then, from the repo root: `dart pub get` (resolves the whole workspace),
+# `melos run <script>`.
+name: psy_trainer_workspace
+
+packages:
+  - apps/psy_trainer
+  - packages/psy_content
+
+scripts:
+  analyze:
+    description: >
+      Static analysis for every package (fails on any info): `flutter
+      analyze` for the app, `dart analyze` for the pure-Dart psy_content
+      package.
+    run: |
+      set -e
+      (cd apps/psy_trainer && flutter analyze --fatal-infos)
+      (cd packages/psy_content && dart analyze --fatal-infos)
+
+  format:
+    description: Format check for every package (no changes written).
+    run: |
+      set -e
+      dart format --output=none --set-exit-if-changed apps/psy_trainer/lib apps/psy_trainer/test tools
+      dart format --output=none --set-exit-if-changed packages/psy_content/lib packages/psy_content/test packages/psy_content/bin
+
+  test:
+    description: Every package's tests, plus the repo-wide tools/test/.
+    run: |
+      set -e
+      (cd apps/psy_trainer && flutter test)
+      (cd packages/psy_content && dart test)
+      dart test tools/test
+
+  coverage:
+    description: App coverage with the repo-wide gate (domain/data/core, 70 %).
+    run: |
+      set -e
+      (cd apps/psy_trainer && flutter test --coverage)
+      dart run tools/coverage_gate.dart --file apps/psy_trainer/coverage/lcov.info --min 70
+
+  build:web:
+    description: Release web build of the app (exam-mode target, US-006).
+    run: cd apps/psy_trainer && flutter build web --release
+
+  content:check:
+    description: Validate the content bundle against packages/psy_content/schema.
+    run: dart run psy_content:validate_content apps/psy_trainer/assets/content

@@ -1,0 +1,21 @@
+name: psy_trainer_workspace
+description: >
+  Pub workspace root for the PSY Trainer monorepo (US-007): the Flutter app
+  and its pure-Dart packages resolve from this single pubspec.lock. This
+  package is never published or imported; run `dart pub get` here once, then
+  work from apps/psy_trainer or packages/psy_content as usual.
+publish_to: 'none'
+
+environment:
+  sdk: ^3.11.4
+
+workspace:
+  - apps/psy_trainer
+  - packages/psy_content
+
+# Pure-Dart scripts under tools/ (coverage_gate.dart, list_content_assets.dart)
+# have no package dependencies of their own; their tests use `package:test`
+# from here so `dart test tools/test` works with the workspace's shared
+# package_config.
+dev_dependencies:
+  test: ^1.25.0

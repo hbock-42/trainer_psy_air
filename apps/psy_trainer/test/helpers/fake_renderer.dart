@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/features/train/presentation/engine/engine_ui.dart';
 
 /// Renders a [FakeEngine] MCQ as its stem, the phase name and one tappable

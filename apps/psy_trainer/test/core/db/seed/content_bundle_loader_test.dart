@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/db/seed/asset_reader.dart';
 import 'package:psy_trainer/core/db/seed/content_bundle_loader.dart';
 

@@ -1,6 +1,6 @@
 import 'package:drift/drift.dart';
 
-import '../content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'app_database.dart';
 
 /// Builds content-mirror rows from the US-010 models. Used by the seeder

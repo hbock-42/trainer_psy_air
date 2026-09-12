@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/db/app_database.dart';
 import 'package:psy_trainer/core/db/repositories/local_content_repository.dart';
 import 'package:psy_trainer/core/db/repositories/local_progress_repository.dart';

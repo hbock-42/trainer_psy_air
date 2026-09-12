@@ -1,16 +1,15 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
+import 'package:psy_content/src/validator/content_validator.dart';
+import 'package:psy_content/src/validator/format.dart';
+import 'package:test/test.dart';
 
-import '../../tool/content_validator/content_validator.dart';
-import '../../tool/content_validator/format.dart';
-
-/// Tests of `tool/validate_content.dart` run through its library entry point
-/// ([ContentValidator]) on the fixture bundles under `test/tool/fixtures/`.
+/// Tests of `bin/validate_content.dart` run through its library entry point
+/// ([ContentValidator]) on the fixture bundles under `test/fixtures/`.
 void main() {
-  const fixtures = 'test/tool/fixtures';
+  const fixtures = 'test/fixtures';
   const validBundle = '$fixtures/valid_bundle';
   late ContentValidator validator;
 
@@ -133,10 +132,14 @@ void main() {
   });
 
   group('loose files', () {
+    // The shipped bundle lives in the app package (US-007: assets stay where
+    // Flutter needs them), two levels up from this package's root.
+    const shippedContentDir = '../../apps/psy_trainer/assets/content';
+
     test('the shipped bundle and the authoring examples validate', () {
-      final report = validator.validate([ContentValidator.defaultContentDir]);
+      final report = validator.validate([shippedContentDir]);
       expect(report.errors, isEmpty, reason: report.errors.join('\n'));
-      expect(report.bundles, [ContentValidator.defaultContentDir]);
+      expect(report.bundles, [shippedContentDir]);
       // The examples folder stays loose even inside the real bundle.
       expect(report.looseFiles, greaterThanOrEqualTo(10));
       expect(report.families.map((f) => f.familyId), contains('english'));
@@ -150,7 +153,9 @@ void main() {
       withBundleCopy((root) {
         final examples = Directory(p.join(root, 'examples'))..createSync();
         File(p.join(examples.path, 'mcq.example.json')).writeAsStringSync(
-          File('assets/content/examples/mcq.example.json').readAsStringSync(),
+          File(
+            '$shippedContentDir/examples/mcq.example.json',
+          ).readAsStringSync(),
         );
         final report = validator.validate([root]);
         expect(report.errors, isEmpty, reason: report.errors.join('\n'));
@@ -563,7 +568,7 @@ void main() {
 void withBundleCopy(void Function(String root) body) {
   final temp = Directory.systemTemp.createTempSync('validate_content_');
   try {
-    copyTree(Directory('test/tool/fixtures/valid_bundle'), temp);
+    copyTree(Directory('test/fixtures/valid_bundle'), temp);
     body(temp.path);
   } finally {
     temp.deleteSync(recursive: true);

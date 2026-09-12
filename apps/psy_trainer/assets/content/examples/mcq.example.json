@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../docs/content/schema/bank.schema.json",
+  "$schema": "../../../../../packages/psy_content/schema/bank.schema.json",
   "kind": "bank",
   "familyId": "english",
   "passages": [

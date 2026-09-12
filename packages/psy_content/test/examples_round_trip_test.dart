@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
+import 'package:test/test.dart';
 
 import 'json_matchers.dart';
 
@@ -31,12 +31,12 @@ void main() {
           .toList()
         ..sort((a, b) => a.path.compareTo(b.path));
 
-  final examples = jsonFiles('assets/content/examples');
+  final examples = jsonFiles('../../apps/psy_trainer/assets/content/examples');
   final realFiles = [
-    File('assets/content/manifest.json'),
-    File('assets/content/psy0/module.json'),
-    ...familyFiles('assets/content/psy0'),
-    ...jsonFiles('assets/content/psy0/blueprints'),
+    File('../../apps/psy_trainer/assets/content/manifest.json'),
+    File('../../apps/psy_trainer/assets/content/psy0/module.json'),
+    ...familyFiles('../../apps/psy_trainer/assets/content/psy0'),
+    ...jsonFiles('../../apps/psy_trainer/assets/content/psy0/blueprints'),
   ];
 
   test('the content folders are where we expect them', () {
@@ -45,7 +45,7 @@ void main() {
   });
 
   for (final file in [...examples, ...realFiles]) {
-    final name = file.path.split('assets/content/').last;
+    final name = file.path.split('../../apps/psy_trainer/assets/content/').last;
     test('$name round-trips through the Dart models', () {
       final source = file.readAsStringSync();
       final sourceJson = jsonDecode(source) as Map<String, Object?>;
@@ -108,7 +108,9 @@ void main() {
   }
 
   ItemBank bank(String file) => parser.parseBank(
-    File('assets/content/examples/$file').readAsStringSync(),
+    File(
+      '../../apps/psy_trainer/assets/content/examples/$file',
+    ).readAsStringSync(),
     file: file,
   );
 
@@ -204,7 +206,7 @@ void main() {
     test('blueprint.example.json exercises every v2 section field', () {
       final blueprint = parser.parseBlueprint(
         File(
-          'assets/content/examples/blueprint.example.json',
+          '../../apps/psy_trainer/assets/content/examples/blueprint.example.json',
         ).readAsStringSync(),
         file: 'blueprint.example.json',
       );
@@ -236,7 +238,7 @@ void main() {
     test('lexical_fields.example.json decodes fields and traps', () {
       final lexical = parser.parseLexicalFields(
         File(
-          'assets/content/examples/lexical_fields.example.json',
+          '../../apps/psy_trainer/assets/content/examples/lexical_fields.example.json',
         ).readAsStringSync(),
         file: 'lexical_fields.example.json',
       );
@@ -250,31 +252,28 @@ void main() {
       expect(lexical.fields.last.traps, isEmpty);
     });
 
-    test(
-      'family.example.json resolves enums from their snake_case strings',
-      () {
-        final family = parser.parseFamily(
-          File(
-            'assets/content/examples/family.example.json',
-          ).readAsStringSync(),
-          file: 'family.example.json',
-        );
-        expect(family.engineType, EngineType.memoryNback);
-        expect(family.generatorId, GeneratorId.nback);
-        expect(family.answerFormat, AnswerFormat.keyPress);
-        expect(family.confidence, Confidence.reported);
-        expect(family.status, ContentStatus.published);
-        expect(
-          family.defaultCadence,
-          const Cadence(stimulusMs: 1000, answerWindowMs: 1500),
-        );
-      },
-    );
+    test('family.example.json resolves enums from their snake_case strings', () {
+      final family = parser.parseFamily(
+        File(
+          '../../apps/psy_trainer/assets/content/examples/family.example.json',
+        ).readAsStringSync(),
+        file: 'family.example.json',
+      );
+      expect(family.engineType, EngineType.memoryNback);
+      expect(family.generatorId, GeneratorId.nback);
+      expect(family.answerFormat, AnswerFormat.keyPress);
+      expect(family.confidence, Confidence.reported);
+      expect(family.status, ContentStatus.published);
+      expect(
+        family.defaultCadence,
+        const Cadence(stimulusMs: 1000, answerWindowMs: 1500),
+      );
+    });
 
     test('manifest.example.json decodes dates as UTC midnight', () {
       final manifest = parser.parseManifest(
         File(
-          'assets/content/examples/manifest.example.json',
+          '../../apps/psy_trainer/assets/content/examples/manifest.example.json',
         ).readAsStringSync(),
         file: 'manifest.example.json',
       );
@@ -286,11 +285,13 @@ void main() {
   });
 
   group('real PSY0 content', () {
-    final families = familyFiles('assets/content/psy0')
+    final families = familyFiles('../../apps/psy_trainer/assets/content/psy0')
         .map((f) => parser.parseFamily(f.readAsStringSync(), file: f.path))
         .toList();
     final module = parser.parseModule(
-      File('assets/content/psy0/module.json').readAsStringSync(),
+      File(
+        '../../apps/psy_trainer/assets/content/psy0/module.json',
+      ).readAsStringSync(),
       file: 'psy0/module.json',
     );
 
@@ -345,7 +346,9 @@ void main() {
     for (final name in ['psy0_full', 'psy0_short']) {
       test('$name.json references known families and generators', () {
         final blueprint = parser.parseBlueprint(
-          File('assets/content/psy0/blueprints/$name.json').readAsStringSync(),
+          File(
+            '../../apps/psy_trainer/assets/content/psy0/blueprints/$name.json',
+          ).readAsStringSync(),
           file: '$name.json',
         );
         final familyIds = families.map((f) => f.id).toSet();
@@ -366,7 +369,7 @@ void main() {
     test('psy0_full.json follows the reported order of the real test', () {
       final blueprint = parser.parseBlueprint(
         File(
-          'assets/content/psy0/blueprints/psy0_full.json',
+          '../../apps/psy_trainer/assets/content/psy0/blueprints/psy0_full.json',
         ).readAsStringSync(),
         file: 'psy0_full.json',
       );

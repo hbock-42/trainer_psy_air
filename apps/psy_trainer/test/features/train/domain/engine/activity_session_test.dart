@@ -1,6 +1,6 @@
 import 'package:fake_async/fake_async.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_trainer/core/content/content.dart';
+import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/train/domain/engine/engine.dart';
 
