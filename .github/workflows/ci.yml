@@ -134,10 +134,8 @@ jobs:
   build-android:
     name: build-android
     needs: check
-    # Only on pushes to main, or on PRs carrying the `build` label.
-    if: >-
-      github.event_name == 'push' ||
-      contains(github.event.pull_request.labels.*.name, 'build')
+    # Runs on every PR too: a job that only runs on main can only ever turn
+    # main red after the fact.
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
