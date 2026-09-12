@@ -141,6 +141,11 @@ void main() {
 
     expect(find.byType(LearnScreen), findsOneWidget);
 
+    expect(
+      tester.takeException(),
+      isNull,
+      reason: 'layout error during the onboarding step',
+    );
     // ---- Learn: every seeded PSY0 family, a lesson marked read ---------
 
     final families = await container.read(psy0FamiliesProvider.future);
@@ -170,6 +175,11 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.bySemanticsLabel(l10nFr.lessonMarkedRead), findsWidgets);
 
+    expect(
+      tester.takeException(),
+      isNull,
+      reason: 'layout error during the learn step',
+    );
     // ---- Train: Quick 5 on arithmetic_grid, answered on the grid -------
 
     await tester.tap(find.text(l10nFr.tabTrain));
@@ -215,6 +225,11 @@ void main() {
     await tester.tap(find.byKey(SessionSummaryScreen.backKey));
     await tester.pumpAndSettle();
 
+    expect(
+      tester.takeException(),
+      isNull,
+      reason: 'layout error during the train step',
+    );
     // ---- Exam: the short PSY0 blueprint end to end ----------------------
 
     await tester.tap(find.text(l10nFr.tabExam));
@@ -241,6 +256,11 @@ void main() {
     expect(report!.summary.sections, isNotEmpty);
     expect(find.text(l10nFr.examReportSectionsTitle), findsOneWidget);
 
+    expect(
+      tester.takeException(),
+      isNull,
+      reason: 'layout error during the exam step',
+    );
     // ---- Progress: readiness above zero, recent activity recorded ------
 
     await tester.tap(find.text(l10nFr.tabProgress));
@@ -251,6 +271,11 @@ void main() {
     expect(snapshot.exams, isNotEmpty);
     expect(find.text(l10nFr.recentActivityNone), findsNothing);
 
+    expect(
+      tester.takeException(),
+      isNull,
+      reason: 'layout error during the progress step',
+    );
     // ---- Settings: switch to English, a label changes ------------------
 
     await tester.tap(find.text(l10nFr.tabSettings));
