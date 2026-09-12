@@ -354,6 +354,11 @@ abstract final class AppStrings {
   static const String mcqExampleOptionWrong2 = 'Marseille';
   static const String numericAnswerSemanticsLabel = 'Réponse';
   static const String numericBackspaceSemanticsLabel = 'Effacer';
+
+  // culture_aero (US-028): perishable-fact footer for `McqItem.validAsOf`.
+  /// "Donnée valable au 1 septembre 2026."
+  static String cultureValidAsOf(DateTime date) =>
+      'Donnée valable au ${date.day} ${monthNames[date.month]} ${date.year}.';
   static const String numericExampleStem = 'Combien font 8 × 6 ?';
 
   // Progress dashboard (US-070).
