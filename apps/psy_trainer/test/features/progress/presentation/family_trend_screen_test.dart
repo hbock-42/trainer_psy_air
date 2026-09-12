@@ -10,7 +10,6 @@ import 'package:psy_trainer/features/progress/domain/progress_domain.dart';
 import 'package:psy_trainer/features/progress/presentation/family_trend_screen.dart';
 import 'package:psy_trainer/features/progress/presentation/providers/family_time_series_provider.dart';
 import 'package:psy_trainer/features/progress/presentation/widgets/family_trend_charts.dart';
-import 'package:psy_trainer/features/progress/presentation/widgets/segmented_choice.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
 
 import '../../../helpers/pump_app.dart';

@@ -12,7 +12,6 @@ import 'providers/dashboard_labels_provider.dart';
 import 'providers/family_time_series_provider.dart';
 import 'providers/stats_service_provider.dart';
 import 'widgets/family_trend_charts.dart';
-import 'widgets/segmented_choice.dart';
 
 /// The range of a score-over-time chart: the last 7 days, the last 30 days
 /// (the windows of `StatsService`) or everything.

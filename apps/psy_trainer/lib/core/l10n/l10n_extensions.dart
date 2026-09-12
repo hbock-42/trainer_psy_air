@@ -38,7 +38,7 @@ extension L10nComposed on AppLocalizations {
     final parts = [
       familyItemsCount(itemCount),
       '~${duration(durationSec)}',
-      if (perItemSec != null) familyPerItemSuffix('~${duration(perItemSec)}'),
+      if (perItemSec != null) familyPerItemSuffix(duration(perItemSec)),
     ];
     return parts.join(' · ');
   }
