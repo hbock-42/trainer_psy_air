@@ -13,6 +13,13 @@ import 'package:psy_trainer/core/repositories/repositories.dart';
 import '../../../helpers/file_asset_reader.dart';
 import '../example_content.dart';
 
+/// The `contentVersion` of the real bundle, read from its manifest so content
+/// bumps never break these expectations.
+int realBundleVersion() =>
+    (jsonDecode(File('assets/content/manifest.json').readAsStringSync())
+            as Map<String, Object?>)['contentVersion']!
+        as int;
+
 /// Number of items declared in the bank files of [family], read straight
 /// from the JSON so the expectation tracks the real bundle.
 int bankItemCount(String family) {
@@ -108,7 +115,7 @@ void main() {
 
       expect(result.seeded, isTrue);
       expect(result.previousVersion, isNull);
-      expect(result.contentVersion, 2);
+      expect(result.contentVersion, realBundleVersion());
       expect(
         result.elapsed,
         lessThan(const Duration(seconds: 2)),
@@ -117,7 +124,7 @@ void main() {
 
       final content = LocalContentRepository(db);
       final info = await content.contentInfo();
-      expect(info?.contentVersion, 2);
+      expect(info?.contentVersion, realBundleVersion());
       expect(info?.schemaVersion, 2);
       expect(info?.seededAt, now);
 
@@ -166,8 +173,8 @@ void main() {
       final again = await seeder(inline: true, clock: later).seedIfNeeded();
 
       expect(again.seeded, isFalse);
-      expect(again.previousVersion, 2);
-      expect(again.contentVersion, 2);
+      expect(again.previousVersion, realBundleVersion());
+      expect(again.contentVersion, realBundleVersion());
       final info = await LocalContentRepository(db).contentInfo();
       expect(info?.seededAt, now, reason: 'nothing was rewritten');
     });
@@ -215,7 +222,8 @@ void main() {
       );
       await progress.markLessonRead('lesson.memory_nback.01');
 
-      copy.setContentVersion(3);
+      final bumped = realBundleVersion() + 1;
+      copy.setContentVersion(bumped);
       final later = now.add(const Duration(days: 30));
       final result = await seeder(
         assets: copy.reader(),
@@ -224,11 +232,11 @@ void main() {
       ).seedIfNeeded();
 
       expect(result.seeded, isTrue);
-      expect(result.previousVersion, 2);
-      expect(result.contentVersion, 3);
+      expect(result.previousVersion, realBundleVersion());
+      expect(result.contentVersion, bumped);
       final content = LocalContentRepository(db);
       final info = await content.contentInfo();
-      expect(info?.contentVersion, 3);
+      expect(info?.contentVersion, bumped);
       expect(info?.seededAt, later);
       expect(await content.families(), hasLength(16));
       expect(await content.itemById(english.single.id), isNotNull);
@@ -241,15 +249,16 @@ void main() {
     });
 
     test('an older bundle than the stored content is left alone', () async {
-      copy.setContentVersion(5);
+      final newer = realBundleVersion() + 10;
+      copy.setContentVersion(newer);
       await seeder(assets: copy.reader(), inline: true).seedIfNeeded();
 
       final result = await seeder(inline: true).seedIfNeeded();
 
       expect(result.seeded, isFalse);
-      expect(result.contentVersion, 5);
+      expect(result.contentVersion, newer);
       final info = await LocalContentRepository(db).contentInfo();
-      expect(info?.contentVersion, 5);
+      expect(info?.contentVersion, newer);
     });
 
     test(
