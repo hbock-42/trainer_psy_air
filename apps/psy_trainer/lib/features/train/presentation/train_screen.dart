@@ -12,6 +12,7 @@ import '../../../shared/widgets/widgets.dart';
 import 'launcher/practice_config.dart';
 import 'launcher/practice_session_builder.dart';
 import 'providers/train_families_provider.dart';
+import 'session/resume_session_card.dart';
 
 /// Train home (`/train`, US-050): the 14 PSY0 families in real-test order.
 ///
@@ -41,6 +42,7 @@ class TrainScreen extends ConsumerWidget {
               style: theme.textStyles.caption,
             ),
             SizedBox(height: theme.spacing.lg),
+            const ResumeSessionCard(),
             switch (families) {
               AsyncData(value: final list) when list.isEmpty => Padding(
                 padding: EdgeInsets.symmetric(vertical: theme.spacing.lg),

@@ -9,13 +9,16 @@ import 'package:psy_trainer/core/repositories/repository_providers.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
 import 'package:psy_trainer/core/router/app_routes.dart';
 import 'package:psy_trainer/features/train/domain/engine/engine.dart';
+import 'package:psy_trainer/features/train/presentation/engine/activity_renderer.dart';
+import 'package:psy_trainer/features/train/presentation/engine/activity_session_controller.dart';
 import 'package:psy_trainer/features/train/presentation/engine/engine_registry_provider.dart';
 import 'package:psy_trainer/features/train/presentation/launcher/practice_config.dart';
-import 'package:psy_trainer/features/train/presentation/train_session_screen.dart';
+import 'package:psy_trainer/features/train/presentation/session/practice_session_screen.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
 
 import '../../../../helpers/content_ready_fakes.dart';
 import '../../../../helpers/fake_engine.dart';
+import '../../../../helpers/fake_renderer.dart';
 import '../../../../helpers/onboarding_fakes.dart';
 import 'launcher_fixtures.dart';
 
@@ -37,10 +40,14 @@ Future<ProviderContainer> pumpLauncher(
       ),
       progressRepositoryOverride(repository: progress),
       contentReadyOverride(),
-      if (engineAvailable)
+      if (engineAvailable) ...[
         engineRegistryProvider.overrideWithValue(
           EngineRegistry([FakeEngine(familyId: familyId)]),
         ),
+        rendererRegistryProvider.overrideWithValue(
+          RendererRegistry([FakeRenderer(familyId: familyId)]),
+        ),
+      ],
     ],
   );
   addTearDown(container.dispose);
@@ -113,11 +120,11 @@ void main() {
       await tester.tap(find.text(AppStrings.practiceStartAction));
       await tester.pumpAndSettle();
 
-      expect(find.byType(TrainSessionScreen), findsOneWidget);
-      final screen = tester.widget<TrainSessionScreen>(
-        find.byType(TrainSessionScreen),
+      expect(find.byType(PracticeSessionScreen), findsOneWidget);
+      final screen = tester.widget<PracticeSessionScreen>(
+        find.byType(PracticeSessionScreen),
       );
-      final config = screen.config!;
+      final config = (screen.request as FreshSessionRequest).config;
       expect((config.source as BankSource).items.length, 20);
 
       // Persisted: the profile now remembers 20 items for this family.
@@ -167,10 +174,11 @@ void main() {
       await tester.tap(find.text(AppStrings.practiceQuick5Action));
       await tester.pumpAndSettle();
 
-      expect(find.byType(TrainSessionScreen), findsOneWidget);
-      final config = tester
-          .widget<TrainSessionScreen>(find.byType(TrainSessionScreen))
-          .config!;
+      expect(find.byType(PracticeSessionScreen), findsOneWidget);
+      final request = tester
+          .widget<PracticeSessionScreen>(find.byType(PracticeSessionScreen))
+          .request;
+      final config = (request as FreshSessionRequest).config;
       final source = config.source as GeneratorSource;
       expect(source.count, 5);
       expect(source.difficulty, const DifficultyRange(min: 1, max: 5));

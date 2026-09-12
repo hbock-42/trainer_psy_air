@@ -4,7 +4,7 @@ issue: 42
 title: "Practice session summary & review"
 type: story
 epic: EPIC-05
-status: backlog
+status: review
 priority: P0
 size: S
 lane: train-ui
@@ -17,6 +17,6 @@ labels: [ui,practice]
 **As a** candidate **I want** a summary at the end of a drill **so that** I see my score and re-read mistakes.
 
 ## Acceptance criteria
-- [ ] Score, accuracy, mean/median response time, best/worst item
-- [ ] List of items with correct/wrong; tapping shows item + my answer + explanation
-- [ ] Buttons: "Retry mistakes" (US-054), "Same again", "Back"
+- [x] Score, accuracy, mean/median response time, best/worst item
+- [x] List of items with correct/wrong; tapping shows item + my answer + explanation
+- [x] Buttons: "Retry mistakes" (US-054), "Same again", "Back"
