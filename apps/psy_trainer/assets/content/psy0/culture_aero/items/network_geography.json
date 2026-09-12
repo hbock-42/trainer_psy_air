@@ -15,7 +15,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "En hiver, quel est le décalage de la France métropolitaine par rapport à l'UTC ?"
+        "fr": "En hiver, quel est le décalage de la France métropolitaine par rapport à l'UTC ?"
       },
       "options": [
         {
@@ -41,7 +41,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "La France est sur l'heure d'Europe centrale : **UTC+1 en hiver**, UTC+2 en été (heure d'été de fin mars à fin octobre). Réflexe : Paris = UTC+1, et on ajoute une heure en été."
+        "fr": "La France est sur l'heure d'Europe centrale : **UTC+1 en hiver**, UTC+2 en été (heure d'été de fin mars à fin octobre). Réflexe : Paris = UTC+1, et on ajoute une heure en été."
       },
       "meta": {
         "author": "hbock",
@@ -60,7 +60,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "La Terre tourne de 360° en 24 h. Combien de degrés de longitude correspondent à une heure de décalage horaire ?"
+        "fr": "La Terre tourne de 360° en 24 h. Combien de degrés de longitude correspondent à une heure de décalage horaire ?"
       },
       "options": [
         {
@@ -86,7 +86,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "$360° / 24\\,h = 15°$ de longitude par heure. C'est la base des fuseaux horaires théoriques : un fuseau fait 15° de large. Réflexe : 1 h = 15°, donc 1° = 4 minutes."
+        "fr": "$360° / 24\\,h = 15°$ de longitude par heure. C'est la base des fuseaux horaires théoriques : un fuseau fait 15° de large. Réflexe : 1 h = 15°, donc 1° = 4 minutes."
       },
       "meta": {
         "author": "hbock",
@@ -105,7 +105,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Un vol quitte Paris à 13:00 heure locale en été (UTC+2) et dure 8 h. New York est à UTC−4. Heure locale d'arrivée ?"
+        "fr": "Un vol quitte Paris à 13:00 heure locale en été (UTC+2) et dure 8 h. New York est à UTC−4. Heure locale d'arrivée ?"
       },
       "options": [
         {
@@ -131,7 +131,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Passer par l'UTC : départ 13:00 − 2 = **11:00 UTC** ; + 8 h de vol = 19:00 UTC ; New York = 19:00 − 4 = **15:00**. Réflexe : tout convertir en UTC, ajouter la durée, reconvertir en heure locale d'arrivée."
+        "fr": "Passer par l'UTC : départ 13:00 − 2 = **11:00 UTC** ; + 8 h de vol = 19:00 UTC ; New York = 19:00 − 4 = **15:00**. Réflexe : tout convertir en UTC, ajouter la durée, reconvertir en heure locale d'arrivée."
       },
       "meta": {
         "author": "hbock",
@@ -150,7 +150,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Départ de Paris le 10 janvier à 22:00 locale (UTC+1) pour Tokyo (UTC+9), vol de 13 h. Heure et date locales d'arrivée ?"
+        "fr": "Départ de Paris le 10 janvier à 22:00 locale (UTC+1) pour Tokyo (UTC+9), vol de 13 h. Heure et date locales d'arrivée ?"
       },
       "options": [
         {
@@ -176,7 +176,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "22:00 UTC+1 = 21:00 UTC le 10 ; + 13 h = 10:00 UTC le 11 ; Tokyo = 10:00 + 9 = **19:00 le 11 janvier**. Le Japon n'applique pas d'heure d'été, l'écart Paris–Tokyo vaut donc 8 h en hiver et 7 h en été."
+        "fr": "22:00 UTC+1 = 21:00 UTC le 10 ; + 13 h = 10:00 UTC le 11 ; Tokyo = 10:00 + 9 = **19:00 le 11 janvier**. Le Japon n'applique pas d'heure d'été, l'écart Paris–Tokyo vaut donc 8 h en hiver et 7 h en été."
       },
       "meta": {
         "author": "hbock",
@@ -195,7 +195,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Parmi ces destinations d'outre-mer, laquelle a un décalage de UTC+4 toute l'année ?"
+        "fr": "Parmi ces destinations d'outre-mer, laquelle a un décalage de UTC+4 toute l'année ?"
       },
       "options": [
         {
@@ -221,7 +221,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "La Réunion, dans l'océan Indien, est à **UTC+4** sans heure d'été. Les Antilles (Pointe-à-Pitre, Fort-de-France) sont à UTC−4, Cayenne à UTC−3 et Papeete à UTC−10. Réflexe : océan Indien = +, Amériques = −."
+        "fr": "La Réunion, dans l'océan Indien, est à **UTC+4** sans heure d'été. Les Antilles (Pointe-à-Pitre, Fort-de-France) sont à UTC−4, Cayenne à UTC−3 et Papeete à UTC−10. Réflexe : océan Indien = +, Amériques = −."
       },
       "meta": {
         "author": "hbock",
@@ -240,7 +240,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Il est 12:00 UTC. Quelle heure locale est-il à Mumbai (Inde) ?"
+        "fr": "Il est 12:00 UTC. Quelle heure locale est-il à Mumbai (Inde) ?"
       },
       "options": [
         {
@@ -266,7 +266,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "L'Inde entière est à **UTC+5:30**, un des rares fuseaux à la demi-heure (comme l'Iran à +3:30 ou le Népal à +5:45). 12:00 + 5 h 30 = 17:30. Réflexe : tous les fuseaux ne sont pas des heures entières."
+        "fr": "L'Inde entière est à **UTC+5:30**, un des rares fuseaux à la demi-heure (comme l'Iran à +3:30 ou le Népal à +5:45). 12:00 + 5 h 30 = 17:30. Réflexe : tous les fuseaux ne sont pas des heures entières."
       },
       "meta": {
         "author": "hbock",
@@ -285,7 +285,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "En traversant la ligne de changement de date d'ouest en est (par exemple de Tokyo vers Los Angeles), que fait-on ?"
+        "fr": "En traversant la ligne de changement de date d'ouest en est (par exemple de Tokyo vers Los Angeles), que fait-on ?"
       },
       "options": [
         {
@@ -311,7 +311,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "La ligne de changement de date suit approximativement le méridien 180°. En la franchissant **vers l'est, on recule d'un jour** (on « revit » la journée) ; vers l'ouest, on avance d'un jour. Réflexe : Tokyo → Los Angeles, on peut arriver « avant » d'être parti."
+        "fr": "La ligne de changement de date suit approximativement le méridien 180°. En la franchissant **vers l'est, on recule d'un jour** (on « revit » la journée) ; vers l'ouest, on avance d'un jour. Réflexe : Tokyo → Los Angeles, on peut arriver « avant » d'être parti."
       },
       "meta": {
         "author": "hbock",
@@ -330,7 +330,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Pourquoi un vol Paris–Los Angeles survole-t-il le Groenland alors que les deux villes sont à des latitudes proches ?"
+        "fr": "Pourquoi un vol Paris–Los Angeles survole-t-il le Groenland alors que les deux villes sont à des latitudes proches ?"
       },
       "options": [
         {
@@ -356,7 +356,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Le plus court chemin entre deux points de la sphère est un arc de **grand cercle (orthodromie)**, qui s'incurve vers le pôle sur une carte plate. La loxodromie (cap constant) est plus longue. Réflexe : sur un globe, tendez un fil entre Paris et Los Angeles, il passe par le Groenland."
+        "fr": "Le plus court chemin entre deux points de la sphère est un arc de **grand cercle (orthodromie)**, qui s'incurve vers le pôle sur une carte plate. La loxodromie (cap constant) est plus longue. Réflexe : sur un globe, tendez un fil entre Paris et Los Angeles, il passe par le Groenland."
       },
       "meta": {
         "author": "hbock",
@@ -375,7 +375,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Un vol Paris → New York dure environ 8 h, le retour New York → Paris environ 7 h. Quelle est la cause principale ?"
+        "fr": "Un vol Paris → New York dure environ 8 h, le retour New York → Paris environ 7 h. Quelle est la cause principale ?"
       },
       "options": [
         {
@@ -401,7 +401,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Le **jet-stream** est un courant d'ouest très rapide près de la tropopause (jusqu'à 200 kt et plus). Vent de face vers l'Amérique, vent arrière vers l'Europe : la vitesse sol change, pas la durée « horaire ». Réflexe : vers l'est, c'est plus court."
+        "fr": "Le **jet-stream** est un courant d'ouest très rapide près de la tropopause (jusqu'à 200 kt et plus). Vent de face vers l'Amérique, vent arrière vers l'Europe : la vitesse sol change, pas la durée « horaire ». Réflexe : vers l'est, c'est plus court."
       },
       "meta": {
         "author": "hbock",
@@ -420,7 +420,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quel code IATA correspond à l'aéroport de Papeete, en Polynésie française ?"
+        "fr": "Quel code IATA correspond à l'aéroport de Papeete, en Polynésie française ?"
       },
       "options": [
         {
@@ -446,7 +446,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**PPT = Papeete** (Tahiti-Faa'a). Attention au piège classique **PTP = Pointe-à-Pitre** (Guadeloupe). NOU = Nouméa, RUN = Saint-Denis de La Réunion. Réflexe : PPT comme PaPeeTe, PTP comme PoinTe-à-Pitre."
+        "fr": "**PPT = Papeete** (Tahiti-Faa'a). Attention au piège classique **PTP = Pointe-à-Pitre** (Guadeloupe). NOU = Nouméa, RUN = Saint-Denis de La Réunion. Réflexe : PPT comme PaPeeTe, PTP comme PoinTe-à-Pitre."
       },
       "meta": {
         "author": "hbock",
@@ -465,7 +465,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "L'aéroport de code IATA FDF dessert quelle île française ?"
+        "fr": "L'aéroport de code IATA FDF dessert quelle île française ?"
       },
       "options": [
         {
@@ -491,7 +491,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "**FDF = Fort-de-France**, chef-lieu de la Martinique (aéroport Aimé-Césaire). La Guadeloupe est desservie par PTP (Pointe-à-Pitre), La Réunion par RUN et Mayotte par DZA. Réflexe : le code reprend souvent les initiales de la ville."
+        "fr": "**FDF = Fort-de-France**, chef-lieu de la Martinique (aéroport Aimé-Césaire). La Guadeloupe est desservie par PTP (Pointe-à-Pitre), La Réunion par RUN et Mayotte par DZA. Réflexe : le code reprend souvent les initiales de la ville."
       },
       "meta": {
         "author": "hbock",
@@ -510,7 +510,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "À quelle période de l'année le risque cyclonique est-il le plus élevé à La Réunion ?"
+        "fr": "À quelle période de l'année le risque cyclonique est-il le plus élevé à La Réunion ?"
       },
       "options": [
         {
@@ -536,7 +536,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "La Réunion est dans l'**hémisphère Sud** : son été austral (novembre–avril) est la saison chaude et humide, donc la saison cyclonique. Les saisons y sont inversées par rapport à la métropole. Réflexe : cyclones antillais en été boréal, cyclones de l'océan Indien Sud en été austral."
+        "fr": "La Réunion est dans l'**hémisphère Sud** : son été austral (novembre–avril) est la saison chaude et humide, donc la saison cyclonique. Les saisons y sont inversées par rapport à la métropole. Réflexe : cyclones antillais en été boréal, cyclones de l'océan Indien Sud en été austral."
       },
       "meta": {
         "author": "hbock",
@@ -555,7 +555,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Abidjan, grande escale du réseau africain d'Air France, est la principale ville de quel pays ?"
+        "fr": "Abidjan, grande escale du réseau africain d'Air France, est la principale ville de quel pays ?"
       },
       "options": [
         {
@@ -581,7 +581,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "**Abidjan** est la capitale économique de la Côte d'Ivoire (la capitale politique est Yamoussoukro). Dakar est au Sénégal, Douala au Cameroun, Libreville au Gabon. Réflexe : sur l'Afrique de l'Ouest francophone, associez chaque escale à son pays."
+        "fr": "**Abidjan** est la capitale économique de la Côte d'Ivoire (la capitale politique est Yamoussoukro). Dakar est au Sénégal, Douala au Cameroun, Libreville au Gabon. Réflexe : sur l'Afrique de l'Ouest francophone, associez chaque escale à son pays."
       },
       "meta": {
         "author": "hbock",
@@ -600,7 +600,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quelle ville est la capitale du Sénégal, desservie depuis Paris-CDG ?"
+        "fr": "Quelle ville est la capitale du Sénégal, desservie depuis Paris-CDG ?"
       },
       "options": [
         {
@@ -626,7 +626,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**Dakar** est la capitale du Sénégal (aéroport Blaise-Diagne, code DSS). Bamako est au Mali, Cotonou au Bénin, Conakry en Guinée. Réflexe : l'Afrique de l'Ouest est un pilier historique du réseau Air France, hérité de l'Aéropostale et de l'UTA."
+        "fr": "**Dakar** est la capitale du Sénégal (aéroport Blaise-Diagne, code DSS). Bamako est au Mali, Cotonou au Bénin, Conakry en Guinée. Réflexe : l'Afrique de l'Ouest est un pilier historique du réseau Air France, hérité de l'Aéropostale et de l'UTA."
       },
       "meta": {
         "author": "hbock",
@@ -645,7 +645,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quel aéroport est le hub de Lufthansa, principal concurrent européen d'Air France-KLM ?"
+        "fr": "Quel aéroport est le hub de Lufthansa, principal concurrent européen d'Air France-KLM ?"
       },
       "options": [
         {
@@ -671,7 +671,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Lufthansa est basée à **Francfort** (FRA), avec un second hub à Munich. Amsterdam-Schiphol est le hub de KLM, Madrid celui d'Iberia, Londres-Heathrow celui de British Airways. Réflexe : un grand transporteur = un ou deux hubs identifiés."
+        "fr": "Lufthansa est basée à **Francfort** (FRA), avec un second hub à Munich. Amsterdam-Schiphol est le hub de KLM, Madrid celui d'Iberia, Londres-Heathrow celui de British Airways. Réflexe : un grand transporteur = un ou deux hubs identifiés."
       },
       "meta": {
         "author": "hbock",
@@ -690,7 +690,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Que sont les « NAT tracks » utilisés par les vols entre l'Europe et l'Amérique du Nord ?"
+        "fr": "Que sont les « NAT tracks » utilisés par les vols entre l'Europe et l'Amérique du Nord ?"
       },
       "options": [
         {
@@ -716,7 +716,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Les **North Atlantic Tracks** sont un système de routes parallèles redéfinies chaque jour pour profiter du jet-stream, dans un espace sans couverture radar classique. Elles organisent le trafic transatlantique, très dense. Réflexe : la trajectoire Paris–New York change tous les jours."
+        "fr": "Les **North Atlantic Tracks** sont un système de routes parallèles redéfinies chaque jour pour profiter du jet-stream, dans un espace sans couverture radar classique. Elles organisent le trafic transatlantique, très dense. Réflexe : la trajectoire Paris–New York change tous les jours."
       },
       "meta": {
         "author": "hbock",
@@ -735,7 +735,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Pourquoi un biréacteur comme l'A350 a-t-il besoin d'une approbation ETOPS pour traverser l'Atlantique ?"
+        "fr": "Pourquoi un biréacteur comme l'A350 a-t-il besoin d'une approbation ETOPS pour traverser l'Atlantique ?"
       },
       "options": [
         {
@@ -761,7 +761,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "**ETOPS** (Extended-range Twin-engine Operations) autorise un bimoteur à s'éloigner d'un aérodrome adéquat jusqu'à un temps donné (60, 120, 180 min et plus) sur un moteur, sous conditions techniques et de maintenance. Réflexe : ETOPS = distance maximale à un dégagement, exprimée en minutes."
+        "fr": "**ETOPS** (Extended-range Twin-engine Operations) autorise un bimoteur à s'éloigner d'un aérodrome adéquat jusqu'à un temps donné (60, 120, 180 min et plus) sur un moteur, sous conditions techniques et de maintenance. Réflexe : ETOPS = distance maximale à un dégagement, exprimée en minutes."
       },
       "meta": {
         "author": "hbock",
@@ -780,7 +780,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Dans un hub organisé en « vagues » comme Paris-CDG, quel est le principe ?"
+        "fr": "Dans un hub organisé en « vagues » comme Paris-CDG, quel est le principe ?"
       },
       "options": [
         {
@@ -806,7 +806,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Le modèle **hub and spoke** concentre les arrivées puis, peu après, les départs par vagues : un passager venant de Nantes peut ainsi repartir vers Tokyo avec une correspondance courte. C'est ce qui fait la puissance d'un hub. Réflexe : vague = banque de correspondances."
+        "fr": "Le modèle **hub and spoke** concentre les arrivées puis, peu après, les départs par vagues : un passager venant de Nantes peut ainsi repartir vers Tokyo avec une correspondance courte. C'est ce qui fait la puissance d'un hub. Réflexe : vague = banque de correspondances."
       },
       "meta": {
         "author": "hbock",
@@ -825,7 +825,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Pour quelle raison un aéroport comme CDG sépare-t-il les vols Schengen des vols non Schengen ?"
+        "fr": "Pour quelle raison un aéroport comme CDG sépare-t-il les vols Schengen des vols non Schengen ?"
       },
       "options": [
         {
@@ -851,7 +851,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "L'espace **Schengen** supprime les contrôles aux frontières intérieures : un vol Paris–Rome est traité comme un vol domestique, alors qu'un vol vers Londres ou New York passe par la police aux frontières. Les zones et les portes sont donc séparées. Réflexe : Schengen ≠ Union européenne (l'Irlande n'y est pas, la Suisse et la Norvège si)."
+        "fr": "L'espace **Schengen** supprime les contrôles aux frontières intérieures : un vol Paris–Rome est traité comme un vol domestique, alors qu'un vol vers Londres ou New York passe par la police aux frontières. Les zones et les portes sont donc séparées. Réflexe : Schengen ≠ Union européenne (l'Irlande n'y est pas, la Suisse et la Norvège si)."
       },
       "meta": {
         "author": "hbock",
@@ -870,7 +870,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Un vol décolle de Pointe-à-Pitre (UTC−4) à 18:00 locale et atterrit à Paris (UTC+1, hiver) à 07:30 locale le lendemain. Durée du vol ?"
+        "fr": "Un vol décolle de Pointe-à-Pitre (UTC−4) à 18:00 locale et atterrit à Paris (UTC+1, hiver) à 07:30 locale le lendemain. Durée du vol ?"
       },
       "options": [
         {
@@ -896,7 +896,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Départ 18:00 UTC−4 = 22:00 UTC ; arrivée 07:30 UTC+1 = 06:30 UTC le lendemain ; de 22:00 à 06:30 il y a **8 h 30**. Réflexe : pour une durée, ramenez les deux heures en UTC avant de soustraire, sinon les 5 h d'écart faussent tout."
+        "fr": "Départ 18:00 UTC−4 = 22:00 UTC ; arrivée 07:30 UTC+1 = 06:30 UTC le lendemain ; de 22:00 à 06:30 il y a **8 h 30**. Réflexe : pour une durée, ramenez les deux heures en UTC avant de soustraire, sinon les 5 h d'écart faussent tout."
       },
       "meta": {
         "author": "hbock",

@@ -15,7 +15,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "En vol rectiligne horizontal stabilisé, quelle force équilibre la portance ?"
+        "fr": "En vol rectiligne horizontal stabilisé, quelle force équilibre la portance ?"
       },
       "options": [
         {
@@ -41,7 +41,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Les quatre forces vont par paires : **portance = poids** sur l'axe vertical, **traction = traînée** sur l'axe longitudinal. En vol stabilisé, la somme des forces est nulle."
+        "fr": "Les quatre forces vont par paires : **portance = poids** sur l'axe vertical, **traction = traînée** sur l'axe longitudinal. En vol stabilisé, la somme des forces est nulle."
       },
       "meta": {
         "author": "hbock",
@@ -60,7 +60,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Si la vitesse d'un avion double, toutes choses égales par ailleurs, sa portance est multipliée par :"
+        "fr": "Si la vitesse d'un avion double, toutes choses égales par ailleurs, sa portance est multipliée par :"
       },
       "options": [
         {
@@ -86,7 +86,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "$R_z = \\tfrac{1}{2}\\rho S V^2 C_z$ : la portance varie avec le **carré** de la vitesse. Vitesse × 2 → portance × 4. Réflexe : vitesse au carré, tout le reste linéaire."
+        "fr": "$R_z = \\tfrac{1}{2}\\rho S V^2 C_z$ : la portance varie avec le **carré** de la vitesse. Vitesse × 2 → portance × 4. Réflexe : vitesse au carré, tout le reste linéaire."
       },
       "meta": {
         "author": "hbock",
@@ -105,7 +105,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "L'angle d'incidence (angle d'attaque) est l'angle entre :"
+        "fr": "L'angle d'incidence (angle d'attaque) est l'angle entre :"
       },
       "options": [
         {
@@ -131,7 +131,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "L'incidence se mesure par rapport au **vent relatif**, pas à l'horizon (ça, c'est l'assiette). Un avion peut avoir une assiette faible et une incidence élevée, par exemple en descente rapide cabrée. Réflexe : incidence = corde / vent relatif ; assiette = axe / horizon."
+        "fr": "L'incidence se mesure par rapport au **vent relatif**, pas à l'horizon (ça, c'est l'assiette). Un avion peut avoir une assiette faible et une incidence élevée, par exemple en descente rapide cabrée. Réflexe : incidence = corde / vent relatif ; assiette = axe / horizon."
       },
       "meta": {
         "author": "hbock",
@@ -150,7 +150,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Un avion décroche toujours :"
+        "fr": "Un avion décroche toujours :"
       },
       "options": [
         {
@@ -176,7 +176,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Le décrochage est un phénomène d'**incidence** : au-delà de l'incidence critique (≈ 15–18° sur un profil classique), l'écoulement décolle de l'extrados. La vitesse de décrochage, elle, change avec la masse et le facteur de charge. Réflexe : on décroche à une incidence, pas à une vitesse."
+        "fr": "Le décrochage est un phénomène d'**incidence** : au-delà de l'incidence critique (≈ 15–18° sur un profil classique), l'écoulement décolle de l'extrados. La vitesse de décrochage, elle, change avec la masse et le facteur de charge. Réflexe : on décroche à une incidence, pas à une vitesse."
       },
       "meta": {
         "author": "hbock",
@@ -195,7 +195,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "En virage stabilisé à 60° d'inclinaison en palier, le facteur de charge vaut :"
+        "fr": "En virage stabilisé à 60° d'inclinaison en palier, le facteur de charge vaut :"
       },
       "options": [
         {
@@ -221,7 +221,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "En virage en palier, $n = 1/\\cos\\varphi$. À 60°, $\\cos 60° = 0{,}5$ donc $n = 2$ : l'avion « pèse » deux fois son poids. Repères : 30° → 1,15 ; 45° → 1,41 ; 60° → 2."
+        "fr": "En virage en palier, $n = 1/\\cos\\varphi$. À 60°, $\\cos 60° = 0{,}5$ donc $n = 2$ : l'avion « pèse » deux fois son poids. Repères : 30° → 1,15 ; 45° → 1,41 ; 60° → 2."
       },
       "meta": {
         "author": "hbock",
@@ -240,7 +240,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Un avion décroche à 100 kt en ligne droite. En virage à 60° d'inclinaison en palier, il décroche vers :"
+        "fr": "Un avion décroche à 100 kt en ligne droite. En virage à 60° d'inclinaison en palier, il décroche vers :"
       },
       "options": [
         {
@@ -266,7 +266,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "La vitesse de décrochage croît avec la racine du facteur de charge : $V_{s,n} = V_s\\sqrt{n}$. À 60°, $n = 2$ donc $V_s \\times \\sqrt{2} \\approx 100 \\times 1{,}41 = 141$ kt. Réflexe : racine de n, pas n."
+        "fr": "La vitesse de décrochage croît avec la racine du facteur de charge : $V_{s,n} = V_s\\sqrt{n}$. À 60°, $n = 2$ donc $V_s \\times \\sqrt{2} \\approx 100 \\times 1{,}41 = 141$ kt. Réflexe : racine de n, pas n."
       },
       "meta": {
         "author": "hbock",
@@ -285,7 +285,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quel effet une augmentation de la masse a-t-elle sur la vitesse de décrochage ?"
+        "fr": "Quel effet une augmentation de la masse a-t-elle sur la vitesse de décrochage ?"
       },
       "options": [
         {
@@ -311,7 +311,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "À incidence critique fixe (donc $C_{z,max}$ fixe), soutenir un poids plus grand exige une vitesse plus grande : $V_s \\propto \\sqrt{m}$. Un avion lourd décroche plus vite. Réflexe : masse, facteur de charge et altitude-densité font tous monter la vitesse de décrochage vraie."
+        "fr": "À incidence critique fixe (donc $C_{z,max}$ fixe), soutenir un poids plus grand exige une vitesse plus grande : $V_s \\propto \\sqrt{m}$. Un avion lourd décroche plus vite. Réflexe : masse, facteur de charge et altitude-densité font tous monter la vitesse de décrochage vraie."
       },
       "meta": {
         "author": "hbock",
@@ -330,7 +330,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Sortir les volets hypersustentateurs permet principalement de :"
+        "fr": "Sortir les volets hypersustentateurs permet principalement de :"
       },
       "options": [
         {
@@ -356,7 +356,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Les volets augmentent la courbure (et parfois la surface) de l'aile : le $C_z$ maximal monte, la vitesse de décrochage baisse. Ils ajoutent aussi de la traînée, utile pour descendre plus fort à l'atterrissage. Réflexe : volets = voler lentement, pas vite."
+        "fr": "Les volets augmentent la courbure (et parfois la surface) de l'aile : le $C_z$ maximal monte, la vitesse de décrochage baisse. Ils ajoutent aussi de la traînée, utile pour descendre plus fort à l'atterrissage. Réflexe : volets = voler lentement, pas vite."
       },
       "meta": {
         "author": "hbock",
@@ -375,7 +375,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Les becs de bord d'attaque (slats) agissent surtout en :"
+        "fr": "Les becs de bord d'attaque (slats) agissent surtout en :"
       },
       "options": [
         {
@@ -401,7 +401,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Un bec recolle l'écoulement sur l'extrados aux grandes incidences : l'aile peut cabrer davantage avant de décrocher. C'est pourquoi un avion becs sortis a une assiette très cabrée en approche. Réflexe : volets = plus de portance à incidence donnée ; becs = incidence critique plus grande."
+        "fr": "Un bec recolle l'écoulement sur l'extrados aux grandes incidences : l'aile peut cabrer davantage avant de décrocher. C'est pourquoi un avion becs sortis a une assiette très cabrée en approche. Réflexe : volets = plus de portance à incidence donnée ; becs = incidence critique plus grande."
       },
       "meta": {
         "author": "hbock",
@@ -420,7 +420,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Après le toucher des roues, les spoilers (destructeurs de portance) servent surtout à :"
+        "fr": "Après le toucher des roues, les spoilers (destructeurs de portance) servent surtout à :"
       },
       "options": [
         {
@@ -446,7 +446,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Les spoilers cassent la portance de l'aile : le poids passe sur les roues et les **freins** deviennent efficaces (le freinage dépend de la charge sur les pneus). L'inversion de poussée est un dispositif distinct, sur les moteurs."
+        "fr": "Les spoilers cassent la portance de l'aile : le poids passe sur les roues et les **freins** deviennent efficaces (le freinage dépend de la charge sur les pneus). L'inversion de poussée est un dispositif distinct, sur les moteurs."
       },
       "meta": {
         "author": "hbock",
@@ -465,7 +465,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quelle gouverne commande le mouvement de roulis ?"
+        "fr": "Quelle gouverne commande le mouvement de roulis ?"
       },
       "options": [
         {
@@ -491,7 +491,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Trois axes, trois gouvernes : **ailerons → roulis** (axe longitudinal), **profondeur → tangage** (axe transversal), **direction → lacet** (axe vertical). Les volets ne sont pas une gouverne mais un dispositif hypersustentateur."
+        "fr": "Trois axes, trois gouvernes : **ailerons → roulis** (axe longitudinal), **profondeur → tangage** (axe transversal), **direction → lacet** (axe vertical). Les volets ne sont pas une gouverne mais un dispositif hypersustentateur."
       },
       "meta": {
         "author": "hbock",
@@ -510,7 +510,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Le lacet inverse, à la mise en virage, provient :"
+        "fr": "Le lacet inverse, à la mise en virage, provient :"
       },
       "options": [
         {
@@ -536,7 +536,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "L'aileron baissé crée plus de portance, donc plus de traînée induite : l'aile qui monte est freinée et le nez part du côté opposé au virage. On le contre au palonnier (virage « conjugué »). Réflexe : plus de portance = plus de traînée."
+        "fr": "L'aileron baissé crée plus de portance, donc plus de traînée induite : l'aile qui monte est freinée et le nez part du côté opposé au virage. On le contre au palonnier (virage « conjugué »). Réflexe : plus de portance = plus de traînée."
       },
       "meta": {
         "author": "hbock",
@@ -555,7 +555,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "À quoi sert le compensateur (trim) de profondeur ?"
+        "fr": "À quoi sert le compensateur (trim) de profondeur ?"
       },
       "options": [
         {
@@ -581,7 +581,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Le trim est une petite surface (ou un réglage) qui déplace la position d'équilibre de la gouverne : le pilote n'a plus d'effort à tenir. Il ne pilote pas l'avion, il soulage. Réflexe : on pilote au manche, on trime pour l'effort nul."
+        "fr": "Le trim est une petite surface (ou un réglage) qui déplace la position d'équilibre de la gouverne : le pilote n'a plus d'effort à tenir. Il ne pilote pas l'avion, il soulage. Réflexe : on pilote au manche, on trime pour l'effort nul."
       },
       "meta": {
         "author": "hbock",
@@ -600,7 +600,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Quand la vitesse augmente, la traînée induite :"
+        "fr": "Quand la vitesse augmente, la traînée induite :"
       },
       "options": [
         {
@@ -626,7 +626,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "La traînée induite est le prix de la portance : elle vient des tourbillons de bout d'aile et croît avec l'incidence. À grande vitesse, l'incidence nécessaire est faible → traînée induite faible. C'est la traînée **parasite** qui croît avec $V^2$. Leur somme est minimale à la vitesse de finesse max."
+        "fr": "La traînée induite est le prix de la portance : elle vient des tourbillons de bout d'aile et croît avec l'incidence. À grande vitesse, l'incidence nécessaire est faible → traînée induite faible. C'est la traînée **parasite** qui croît avec $V^2$. Leur somme est minimale à la vitesse de finesse max."
       },
       "meta": {
         "author": "hbock",
@@ -645,7 +645,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Moteur en panne à 1 500 m sol, finesse 10, air calme : quelle distance l'avion peut-il parcourir au mieux ?"
+        "fr": "Moteur en panne à 1 500 m sol, finesse 10, air calme : quelle distance l'avion peut-il parcourir au mieux ?"
       },
       "options": [
         {
@@ -671,7 +671,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "La finesse est le rapport distance parcourue / hauteur perdue : $f = 10$ → pour 1 500 m perdus, 15 000 m parcourus, soit **15 km**. En pratique on garde une marge (vent, virages). Réflexe : distance = hauteur × finesse."
+        "fr": "La finesse est le rapport distance parcourue / hauteur perdue : $f = 10$ → pour 1 500 m perdus, 15 000 m parcourus, soit **15 km**. En pratique on garde une marge (vent, virages). Réflexe : distance = hauteur × finesse."
       },
       "meta": {
         "author": "hbock",
@@ -690,12 +690,12 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "En plané moteur coupé, un vent de face :"
+        "fr": "En plané moteur coupé, un vent de face :"
       },
       "options": [
         {
           "text": {
-            "fr": "réduit la distance franchissable sol ; on réduit la vitesse pour l'optimiser"
+            "fr": "réduit la distance franchissable sol ; on réduit la vitesse pour l'optimiser"
           }
         },
         {
@@ -710,13 +710,13 @@
         },
         {
           "text": {
-            "fr": "réduit la distance franchissable sol ; on augmente légèrement la vitesse pour l'optimiser"
+            "fr": "réduit la distance franchissable sol ; on augmente légèrement la vitesse pour l'optimiser"
           }
         }
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "La finesse **air** ne change pas, mais la vitesse sol diminue face au vent, donc la distance sol aussi. Pour passer moins de temps dans le vent, on vole un peu plus vite que la vitesse de finesse max (règle empirique : + la moitié du vent). Réflexe : vent de face → un peu plus vite ; vent arrière → un peu moins vite."
+        "fr": "La finesse **air** ne change pas, mais la vitesse sol diminue face au vent, donc la distance sol aussi. Pour passer moins de temps dans le vent, on vole un peu plus vite que la vitesse de finesse max (règle empirique : + la moitié du vent). Réflexe : vent de face → un peu plus vite ; vent arrière → un peu moins vite."
       },
       "meta": {
         "author": "hbock",
@@ -735,7 +735,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "L'effet de sol, à l'arrondi, se traduit par :"
+        "fr": "L'effet de sol, à l'arrondi, se traduit par :"
       },
       "options": [
         {
@@ -761,7 +761,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Près du sol (moins d'une envergure), les tourbillons marginaux sont gênés : la traînée induite baisse et la portance est un peu meilleure. L'avion flotte à l'atterrissage et peut décoller « trop tôt » puis s'enfoncer en quittant l'effet de sol. Réflexe : effet de sol = moins de traînée induite."
+        "fr": "Près du sol (moins d'une envergure), les tourbillons marginaux sont gênés : la traînée induite baisse et la portance est un peu meilleure. L'avion flotte à l'atterrissage et peut décoller « trop tôt » puis s'enfoncer en quittant l'effet de sol. Réflexe : effet de sol = moins de traînée induite."
       },
       "meta": {
         "author": "hbock",
@@ -780,7 +780,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Un avion de 1 200 kg a une surface alaire de 15 m². Sa charge alaire est de :"
+        "fr": "Un avion de 1 200 kg a une surface alaire de 15 m². Sa charge alaire est de :"
       },
       "options": [
         {
@@ -825,7 +825,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Un centrage trop arrière rend l'avion :"
+        "fr": "Un centrage trop arrière rend l'avion :"
       },
       "options": [
         {
@@ -851,7 +851,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Le bras de levier de l'empennage diminue : la stabilité longitudinale s'effondre, la profondeur devient trop sensible et la récupération d'un décrochage ou d'une vrille peut être impossible. Un centrage avant est l'inverse : stable, lourd à cabrer, plus de traînée de trim. Réflexe : arrière = instable et dangereux ; avant = stable mais lourd."
+        "fr": "Le bras de levier de l'empennage diminue : la stabilité longitudinale s'effondre, la profondeur devient trop sensible et la récupération d'un décrochage ou d'une vrille peut être impossible. Un centrage avant est l'inverse : stable, lourd à cabrer, plus de traînée de trim. Réflexe : arrière = instable et dangereux ; avant = stable mais lourd."
       },
       "meta": {
         "author": "hbock",
@@ -870,7 +870,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Le dièdre positif des ailes contribue principalement à la stabilité :"
+        "fr": "Le dièdre positif des ailes contribue principalement à la stabilité :"
       },
       "options": [
         {
@@ -896,7 +896,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Après une inclinaison involontaire, l'avion glisse vers l'aile basse ; grâce au dièdre, cette aile prend plus d'incidence et se relève : stabilité en roulis. La stabilité en tangage vient de l'empennage horizontal, celle en lacet de la dérive."
+        "fr": "Après une inclinaison involontaire, l'avion glisse vers l'aile basse ; grâce au dièdre, cette aile prend plus d'incidence et se relève : stabilité en roulis. La stabilité en tangage vient de l'empennage horizontal, celle en lacet de la dérive."
       },
       "meta": {
         "author": "hbock",
@@ -915,7 +915,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Sur l'anémomètre d'un avion léger, l'arc blanc indique :"
+        "fr": "Sur l'anémomètre d'un avion léger, l'arc blanc indique :"
       },
       "options": [
         {
@@ -941,7 +941,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Arc **blanc** : de $V_{s0}$ (décrochage volets sortis) à $V_{fe}$ (vitesse max volets sortis). Arc vert : plage normale ($V_{s1}$ à $V_{no}$). Arc jaune : précaution. Trait rouge : $V_{ne}$. Réflexe : blanc = volets."
+        "fr": "Arc **blanc** : de $V_{s0}$ (décrochage volets sortis) à $V_{fe}$ (vitesse max volets sortis). Arc vert : plage normale ($V_{s1}$ à $V_{no}$). Arc jaune : précaution. Trait rouge : $V_{ne}$. Réflexe : blanc = volets."
       },
       "meta": {
         "author": "hbock",
@@ -960,7 +960,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Au décollage d'un avion de ligne, V1 est :"
+        "fr": "Au décollage d'un avion de ligne, V1 est :"
       },
       "options": [
         {
@@ -970,7 +970,7 @@
         },
         {
           "text": {
-            "fr": "la vitesse de décision : au-delà, on ne peut plus interrompre le décollage"
+            "fr": "la vitesse de décision : au-delà, on ne peut plus interrompre le décollage"
           }
         },
         {
@@ -986,7 +986,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "**V1** = vitesse de décision (avant : on peut arrêter sur la piste restante ; après : on poursuit même sur panne moteur). **VR** = rotation. **V2** = vitesse de sécurité au décollage, tenue en montée initiale sur un moteur. Ordre à retenir : V1 ≤ VR < V2."
+        "fr": "**V1** = vitesse de décision (avant : on peut arrêter sur la piste restante ; après : on poursuit même sur panne moteur). **VR** = rotation. **V2** = vitesse de sécurité au décollage, tenue en montée initiale sur un moteur. Ordre à retenir : V1 ≤ VR < V2."
       },
       "meta": {
         "author": "hbock",
@@ -1005,7 +1005,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "La vitesse de manœuvre $V_a$ est la vitesse :"
+        "fr": "La vitesse de manœuvre $V_a$ est la vitesse :"
       },
       "options": [
         {
@@ -1031,7 +1031,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Sous $V_a$, l'aile décroche avant d'atteindre le facteur de charge limite : la structure est protégée par le décrochage. C'est la vitesse à ne pas dépasser en turbulence forte. $V_a$ diminue avec la masse (avion léger → $V_a$ plus basse)."
+        "fr": "Sous $V_a$, l'aile décroche avant d'atteindre le facteur de charge limite : la structure est protégée par le décrochage. C'est la vitesse à ne pas dépasser en turbulence forte. $V_a$ diminue avec la masse (avion léger → $V_a$ plus basse)."
       },
       "meta": {
         "author": "hbock",
@@ -1050,7 +1050,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Dans un turboréacteur, l'ordre de traversée de l'air est :"
+        "fr": "Dans un turboréacteur, l'ordre de traversée de l'air est :"
       },
       "options": [
         {
@@ -1076,7 +1076,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "Cycle « aspirer – comprimer – brûler – détendre » : le compresseur comprime l'air, la chambre y brûle le kérosène, la turbine prélève de l'énergie pour entraîner le compresseur, la tuyère accélère les gaz. Réflexe : la turbine est **derrière** la combustion."
+        "fr": "Cycle « aspirer – comprimer – brûler – détendre » : le compresseur comprime l'air, la chambre y brûle le kérosène, la turbine prélève de l'énergie pour entraîner le compresseur, la tuyère accélère les gaz. Réflexe : la turbine est **derrière** la combustion."
       },
       "meta": {
         "author": "hbock",
@@ -1095,7 +1095,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Le taux de dilution élevé d'un turbofan moderne (par exemple 10:1) signifie que :"
+        "fr": "Le taux de dilution élevé d'un turbofan moderne (par exemple 10:1) signifie que :"
       },
       "options": [
         {
@@ -1121,7 +1121,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "Taux de dilution = débit du flux secondaire (froid) / débit du flux primaire (cœur). Un grand taux donne une poussée obtenue en accélérant peu une grande masse d'air : meilleur rendement et moins de bruit. Les LEAP et GTF sont vers 10–12:1."
+        "fr": "Taux de dilution = débit du flux secondaire (froid) / débit du flux primaire (cœur). Un grand taux donne une poussée obtenue en accélérant peu une grande masse d'air : meilleur rendement et moins de bruit. Les LEAP et GTF sont vers 10–12:1."
       },
       "meta": {
         "author": "hbock",
@@ -1140,7 +1140,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Une hélice à pas variable « à vitesse constante » permet :"
+        "fr": "Une hélice à pas variable « à vitesse constante » permet :"
       },
       "options": [
         {
@@ -1166,7 +1166,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "Un régulateur ajuste l'angle des pales pour que le régime reste celui affiché : petit pas au décollage (comme une première vitesse), grand pas en croisière. Le pilote règle le régime avec la manette d'hélice et la puissance avec la manette des gaz."
+        "fr": "Un régulateur ajuste l'angle des pales pour que le régime reste celui affiché : petit pas au décollage (comme une première vitesse), grand pas en croisière. Le pilote règle le régime avec la manette d'hélice et la puissance avec la manette des gaz."
       },
       "meta": {
         "author": "hbock",
@@ -1185,7 +1185,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "À la mise de gaz au décollage d'un monomoteur à hélice, le nez tend à partir d'un côté à cause :"
+        "fr": "À la mise de gaz au décollage d'un monomoteur à hélice, le nez tend à partir d'un côté à cause :"
       },
       "options": [
         {
@@ -1211,7 +1211,7 @@
       ],
       "correctIndex": 2,
       "explanation": {
-        "fr": "Le souffle en spirale de l'hélice frappe la dérive d'un côté, et le couple de réaction fait rouler l'avion dans le sens opposé à l'hélice ; à basse vitesse et forte puissance, ces effets dominent. Le pilote les contre au palonnier (pied à droite sur la plupart des avions à hélice tournant à droite)."
+        "fr": "Le souffle en spirale de l'hélice frappe la dérive d'un côté, et le couple de réaction fait rouler l'avion dans le sens opposé à l'hélice ; à basse vitesse et forte puissance, ces effets dominent. Le pilote les contre au palonnier (pied à droite sur la plupart des avions à hélice tournant à droite)."
       },
       "meta": {
         "author": "hbock",
@@ -1230,7 +1230,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Le nombre de Mach d'un avion est le rapport entre :"
+        "fr": "Le nombre de Mach d'un avion est le rapport entre :"
       },
       "options": [
         {
@@ -1256,7 +1256,7 @@
       ],
       "correctIndex": 3,
       "explanation": {
-        "fr": "$M = TAS / a$ où $a$ est la vitesse du son **locale**, qui ne dépend que de la température (≈ 340 m/s au sol, ≈ 295 m/s vers 11 000 m). En altitude, l'air froid rend le son plus lent : on atteint Mach 0,85 avec une TAS plus faible qu'au sol."
+        "fr": "$M = TAS / a$ où $a$ est la vitesse du son **locale**, qui ne dépend que de la température (≈ 340 m/s au sol, ≈ 295 m/s vers 11 000 m). En altitude, l'air froid rend le son plus lent : on atteint Mach 0,85 avec une TAS plus faible qu'au sol."
       },
       "meta": {
         "author": "hbock",
@@ -1275,7 +1275,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Pourquoi les avions de ligne ont-ils des ailes en flèche ?"
+        "fr": "Pourquoi les avions de ligne ont-ils des ailes en flèche ?"
       },
       "options": [
         {
@@ -1301,7 +1301,7 @@
       ],
       "correctIndex": 0,
       "explanation": {
-        "fr": "La flèche réduit la composante de vitesse perpendiculaire au bord d'attaque : le Mach critique (apparition des ondes de choc) recule, ce qui autorise une croisière vers Mach 0,8. En contrepartie, l'aile en flèche est moins efficace à basse vitesse, d'où des dispositifs hypersustentateurs complexes."
+        "fr": "La flèche réduit la composante de vitesse perpendiculaire au bord d'attaque : le Mach critique (apparition des ondes de choc) recule, ce qui autorise une croisière vers Mach 0,8. En contrepartie, l'aile en flèche est moins efficace à basse vitesse, d'où des dispositifs hypersustentateurs complexes."
       },
       "meta": {
         "author": "hbock",
@@ -1320,7 +1320,7 @@
       ],
       "lang": "fr",
       "stem": {
-        "fr": "Un avion de 2 000 kg vole en palier à finesse 8. Quelle traction le moteur fournit-il environ ?"
+        "fr": "Un avion de 2 000 kg vole en palier à finesse 8. Quelle traction le moteur fournit-il environ ?"
       },
       "options": [
         {
@@ -1346,7 +1346,7 @@
       ],
       "correctIndex": 1,
       "explanation": {
-        "fr": "En palier, traction = traînée et portance = poids ; finesse = portance / traînée. Donc traînée = poids / finesse = 2 000 daN / 8 = **250 daN** (avec $g \\approx 10$ m/s², 2 000 kg ≈ 2 000 daN). Réflexe : la finesse dit combien de fois la traction est plus petite que le poids."
+        "fr": "En palier, traction = traînée et portance = poids ; finesse = portance / traînée. Donc traînée = poids / finesse = 2 000 daN / 8 = **250 daN** (avec $g \\approx 10$ m/s², 2 000 kg ≈ 2 000 daN). Réflexe : la finesse dit combien de fois la traction est plus petite que le poids."
       },
       "meta": {
         "author": "hbock",

@@ -2,13 +2,36 @@
   "$schema": "../../../../packages/psy_content/schema/manifest.schema.json",
   "kind": "manifest",
   "schemaVersion": 2,
-  "contentVersion": 4,
+  "contentVersion": 5,
   "updatedAt": "2026-09-12",
-  "modules": ["psy0"],
+  "modules": [
+    "psy0"
+  ],
   "changelog": [
-    { "contentVersion": 4, "date": "2026-09-12", "summary": "Calibration seed banks for dominos/cube-net/viewpoint (US-084): 40+20+20 generated-recipe items picked by tool/calibration/pick_seeds.dart, covering the 1-5 difficulty distribution. Not sampled by the launcher yet (generated families ignore bank items); a corpus for US-086 calibration and a future curated-series mode." },
-    { "contentVersion": 3, "date": "2026-09-12", "summary": "French lexical-field bank for Boîte à mots (US-085): 45 fields, ~20 words each, with traps and incompatibleWith." },
-    { "contentVersion": 2, "date": "2026-09-12", "summary": "Flashcard decks (US-042): culture_aero, arithmetic_grid, english, logic_dominos, memory_nback, attention_rules." },
-    { "contentVersion": 1, "date": "2026-09-12", "summary": "Initial PSY0 bundle: 16 families, psy0_full / psy0_short blueprints, English bank, lessons." }
+    {
+      "contentVersion": 5,
+      "date": "2026-09-12",
+      "summary": "Calibration seed banks for dominos/cube-net/viewpoint (US-084): 40+20+20 generated-recipe items picked by tool/calibration/pick_seeds.dart, covering the 1-5 difficulty distribution. Not sampled by the launcher yet (generated families ignore bank items); a corpus for US-086 calibration and a future curated-series mode."
+    },
+    {
+      "contentVersion": 4,
+      "date": "2026-09-12",
+      "summary": "US-087 content review & QA pass: French typography fixes (NBSP, guillemets) across culture_aero, english and decks; culture.instruments tags merged into culture.flight_mechanics (14 documented topics); fact-checked perishable culture_aero figures."
+    },
+    {
+      "contentVersion": 3,
+      "date": "2026-09-12",
+      "summary": "French lexical-field bank for Boîte à mots (US-085): 45 fields, ~20 words each, with traps and incompatibleWith."
+    },
+    {
+      "contentVersion": 2,
+      "date": "2026-09-12",
+      "summary": "Flashcard decks (US-042): culture_aero, arithmetic_grid, english, logic_dominos, memory_nback, attention_rules."
+    },
+    {
+      "contentVersion": 1,
+      "date": "2026-09-12",
+      "summary": "Initial PSY0 bundle: 16 families, psy0_full / psy0_short blueprints, English bank, lessons."
+    }
   ]
 }

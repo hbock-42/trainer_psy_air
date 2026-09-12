@@ -11,7 +11,7 @@
       "difficulty": 2,
       "tags": ["culture.accidents", "culture.accidents.crm"],
       "lang": "fr",
-      "stem": { "fr": "La collision de Tenerife (27 mars 1977), la plus meurtrière de l'aviation civile, implique deux :" },
+      "stem": { "fr": "La collision de Tenerife (27 mars 1977), la plus meurtrière de l'aviation civile, implique deux :" },
       "options": [
         { "text": { "fr": "Boeing 747" } },
         { "text": { "fr": "Douglas DC-10" } },
@@ -19,7 +19,7 @@
         { "text": { "fr": "Boeing 707" } }
       ],
       "correctIndex": 0,
-      "explanation": { "fr": "Deux **747** (KLM et Pan Am) se percutent sur la piste de Los Rodeos dans le brouillard, après un décollage entrepris sans clairance. Leçon : phraséologie standardisée (« take-off » réservé à la clairance) et remise en cause de l'autorité absolue du commandant, à l'origine du **CRM**." },
+      "explanation": { "fr": "Deux **747** (KLM et Pan Am) se percutent sur la piste de Los Rodeos dans le brouillard, après un décollage entrepris sans clairance. Leçon : phraséologie standardisée (« take-off » réservé à la clairance) et remise en cause de l'autorité absolue du commandant, à l'origine du **CRM**." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -30,7 +30,7 @@
       "difficulty": 2,
       "tags": ["culture.accidents", "culture.accidents.af447"],
       "lang": "fr",
-      "stem": { "fr": "Quel phénomène est à l'origine de la séquence ayant conduit à la perte du vol AF447 Rio–Paris (1er juin 2009) ?" },
+      "stem": { "fr": "Quel phénomène est à l'origine de la séquence ayant conduit à la perte du vol AF447 Rio–Paris (1er juin 2009) ?" },
       "options": [
         { "text": { "fr": "Une panne moteur double due à des cendres volcaniques" } },
         { "text": { "fr": "Le givrage des sondes Pitot en zone orageuse" } },
@@ -38,7 +38,7 @@
         { "text": { "fr": "Une collision avec un autre aéronef" } }
       ],
       "correctIndex": 1,
-      "explanation": { "fr": "L'obstruction par des cristaux de glace des **sondes Pitot** de l'A330 rend les vitesses incohérentes, l'autopilote se déconnecte et l'équipage, désorienté, amène l'avion au **décrochage** en haute altitude. Suites : remplacement des sondes, formation au décrochage haute altitude et à l'**UPRT**." },
+      "explanation": { "fr": "L'obstruction par des cristaux de glace des **sondes Pitot** de l'A330 rend les vitesses incohérentes, l'autopilote se déconnecte et l'équipage, désorienté, amène l'avion au **décrochage** en haute altitude. Suites : remplacement des sondes, formation au décrochage haute altitude et à l'**UPRT**." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -49,7 +49,7 @@
       "difficulty": 3,
       "tags": ["culture.accidents", "culture.accidents.concorde"],
       "lang": "fr",
-      "stem": { "fr": "Quelle est la cause initiale de l'accident du Concorde AF4590 à Gonesse, le 25 juillet 2000 ?" },
+      "stem": { "fr": "Quelle est la cause initiale de l'accident du Concorde AF4590 à Gonesse, le 25 juillet 2000 ?" },
       "options": [
         { "text": { "fr": "Une panne simultanée des quatre réacteurs" } },
         { "text": { "fr": "Un cisaillement de vent à la rotation" } },
@@ -57,7 +57,7 @@
         { "text": { "fr": "Une erreur de centrage au chargement" } }
       ],
       "correctIndex": 2,
-      "explanation": { "fr": "Une **lamelle de titane** perdue par un DC-10 au décollage précédent crève un pneu ; les débris projetés provoquent la rupture d'un réservoir et un incendie. Le programme est modifié (réservoirs blindés au Kevlar, nouveaux pneus) mais Concorde est retiré en 2003." },
+      "explanation": { "fr": "Une **lamelle de titane** perdue par un DC-10 au décollage précédent crève un pneu ; les débris projetés provoquent la rupture d'un réservoir et un incendie. Le programme est modifié (réservoirs blindés au Kevlar, nouveaux pneus) mais Concorde est retiré en 2003." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -68,7 +68,7 @@
       "difficulty": 3,
       "tags": ["culture.accidents", "culture.accidents.a320"],
       "lang": "fr",
-      "stem": { "fr": "L'accident d'Habsheim (26 juin 1988) concerne un Airbus A320 d'Air France lors :" },
+      "stem": { "fr": "L'accident d'Habsheim (26 juin 1988) concerne un Airbus A320 d'Air France lors :" },
       "options": [
         { "text": { "fr": "D'un vol régulier Paris–Bâle par mauvaise visibilité" } },
         { "text": { "fr": "D'un passage bas à très faible vitesse au-dessus d'un meeting aérien" } },
@@ -76,7 +76,7 @@
         { "text": { "fr": "D'une remise de gaz interrompue par une panne moteur" } }
       ],
       "correctIndex": 1,
-      "explanation": { "fr": "Lors d'une **présentation en meeting**, l'A320 survole la piste à quelques dizaines de pieds, en grande incidence et vitesse très basse ; les réacteurs n'ont pas le temps d'accélérer et l'avion touche la forêt. Leçon : marges de hauteur et d'énergie en démonstration, connaissance des lois de protection." },
+      "explanation": { "fr": "Lors d'une **présentation en meeting**, l'A320 survole la piste à quelques dizaines de pieds, en grande incidence et vitesse très basse ; les réacteurs n'ont pas le temps d'accélérer et l'avion touche la forêt. Leçon : marges de hauteur et d'énergie en démonstration, connaissance des lois de protection." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -87,7 +87,7 @@
       "difficulty": 4,
       "tags": ["culture.accidents", "culture.accidents.a320"],
       "lang": "fr",
-      "stem": { "fr": "L'accident du mont Sainte-Odile (Air Inter, 20 janvier 1992) est associé à une confusion entre :" },
+      "stem": { "fr": "L'accident du mont Sainte-Odile (Air Inter, 20 janvier 1992) est associé à une confusion entre :" },
       "options": [
         { "text": { "fr": "Les modes vitesse verticale et angle de descente du pilote automatique" } },
         { "text": { "fr": "Les unités de carburant en kilogrammes et en livres" } },
@@ -95,7 +95,7 @@
         { "text": { "fr": "Les fréquences de l'approche et de la tour" } }
       ],
       "correctIndex": 0,
-      "explanation": { "fr": "L'équipage de l'A320 affiche « 33 » en croyant sélectionner une pente de −3,3° (mode **FPA**) alors que le mode actif est **V/S** : l'avion descend à 3 300 ft/min et percute le relief. Conséquence directe : obligation d'équiper les avions de ligne français d'un **GPWS**." },
+      "explanation": { "fr": "L'équipage de l'A320 affiche « 33 » en croyant sélectionner une pente de −3,3° (mode **FPA**) alors que le mode actif est **V/S** : l'avion descend à 3 300 ft/min et percute le relief. Conséquence directe : obligation d'équiper les avions de ligne français d'un **GPWS**." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -106,7 +106,7 @@
       "difficulty": 3,
       "tags": ["culture.accidents", "culture.accidents.tcas"],
       "lang": "fr",
-      "stem": { "fr": "Quelle règle a été affirmée après la collision en vol d'Überlingen (1er juillet 2002) ?" },
+      "stem": { "fr": "Quelle règle a été affirmée après la collision en vol d'Überlingen (1er juillet 2002) ?" },
       "options": [
         { "text": { "fr": "Le contrôleur prime toujours sur les automatismes de bord" } },
         { "text": { "fr": "Les vols cargo et passagers doivent être séparés par 2 000 ft" } },
@@ -114,7 +114,7 @@
         { "text": { "fr": "Le transpondeur doit être coupé en espace aérien supérieur" } }
       ],
       "correctIndex": 2,
-      "explanation": { "fr": "Un Tu-154 et un 757 se percutent après que l'un a suivi l'instruction du contrôleur, opposée à son avis de résolution **TCAS**. Depuis, la règle est claire : en cas de conflit, on **suit le RA du TCAS**, puis on informe l'ATC." },
+      "explanation": { "fr": "Un Tu-154 et un 757 se percutent après que l'un a suivi l'instruction du contrôleur, opposée à son avis de résolution **TCAS**. Depuis, la règle est claire : en cas de conflit, on **suit le RA du TCAS**, puis on informe l'ATC." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -125,7 +125,7 @@
       "difficulty": 2,
       "tags": ["culture.accidents", "culture.accidents.human_factors"],
       "lang": "fr",
-      "stem": { "fr": "Quelle mesure de nombreuses compagnies ont-elles adoptée après le crash de la Germanwings dans les Alpes (24 mars 2015) ?" },
+      "stem": { "fr": "Quelle mesure de nombreuses compagnies ont-elles adoptée après le crash de la Germanwings dans les Alpes (24 mars 2015) ?" },
       "options": [
         { "text": { "fr": "L'interdiction des vols de nuit en zone montagneuse" } },
         { "text": { "fr": "L'installation d'un troisième pilote sur tous les vols" } },
@@ -144,7 +144,7 @@
       "difficulty": 1,
       "tags": ["culture.accidents", "culture.accidents.success"],
       "lang": "fr",
-      "stem": { "fr": "Pourquoi le vol US Airways 1549 s'est-il posé sur l'Hudson le 15 janvier 2009 ?" },
+      "stem": { "fr": "Pourquoi le vol US Airways 1549 s'est-il posé sur l'Hudson le 15 janvier 2009 ?" },
       "options": [
         { "text": { "fr": "Une double panne moteur après ingestion d'oiseaux" } },
         { "text": { "fr": "Une panne totale des commandes de vol" } },
@@ -152,7 +152,7 @@
         { "text": { "fr": "Un incendie en soute" } }
       ],
       "correctIndex": 0,
-      "explanation": { "fr": "Peu après le décollage de LaGuardia, l'A320 traverse un vol de bernaches : les deux réacteurs perdent leur poussée et le commandant Sullenberger **amerrit** sur l'Hudson sans victime. Exemple de référence de prise de décision rapide et de CRM." },
+      "explanation": { "fr": "Peu après le décollage de LaGuardia, l'A320 traverse un vol de bernaches : les deux réacteurs perdent leur poussée et le commandant Sullenberger **amerrit** sur l'Hudson sans victime. Exemple de référence de prise de décision rapide et de CRM." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -163,7 +163,7 @@
       "difficulty": 2,
       "tags": ["culture.accidents", "culture.accidents.certification"],
       "lang": "fr",
-      "stem": { "fr": "Quel système est mis en cause dans les accidents de Lion Air (2018) et Ethiopian (2019) ayant entraîné l'immobilisation du 737 MAX ?" },
+      "stem": { "fr": "Quel système est mis en cause dans les accidents de Lion Air (2018) et Ethiopian (2019) ayant entraîné l'immobilisation du 737 MAX ?" },
       "options": [
         { "text": { "fr": "Le TCAS" } },
         { "text": { "fr": "Le MCAS" } },
@@ -171,7 +171,7 @@
         { "text": { "fr": "L'ADS-B" } }
       ],
       "correctIndex": 1,
-      "explanation": { "fr": "Le **MCAS**, automatisme qui pique l'avion à nez haut, s'est déclenché sur une sonde d'incidence unique défaillante, sans que les équipages en connaissent l'existence. Le 737 MAX est cloué au sol de mars 2019 à fin 2020 ; la certification et la formation sont revues." },
+      "explanation": { "fr": "Le **MCAS**, automatisme qui pique l'avion à nez haut, s'est déclenché sur une sonde d'incidence unique défaillante, sans que les équipages en connaissent l'existence. Le 737 MAX est cloué au sol de mars 2019 à fin 2020 ; la certification et la formation sont revues." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -182,7 +182,7 @@
       "difficulty": 4,
       "tags": ["culture.accidents", "culture.accidents.crm"],
       "lang": "fr",
-      "stem": { "fr": "Le vol United 173 (Portland, 1978), souvent cité comme acte de naissance du CRM, s'est terminé par :" },
+      "stem": { "fr": "Le vol United 173 (Portland, 1978), souvent cité comme acte de naissance du CRM, s'est terminé par :" },
       "options": [
         { "text": { "fr": "Une collision au sol par brouillard" } },
         { "text": { "fr": "Un décrochage au décollage sur givrage" } },
@@ -190,7 +190,7 @@
         { "text": { "fr": "Une sortie de piste sous orage" } }
       ],
       "correctIndex": 2,
-      "explanation": { "fr": "Absorbé par un voyant de train, le commandant du DC-8 ignore les remarques du mécanicien sur le carburant : les moteurs s'arrêtent en approche. Avec Eastern 401 (Everglades, 1972, autopilote déconnecté sans que personne ne surveille), c'est l'accident fondateur du **Crew Resource Management**." },
+      "explanation": { "fr": "Absorbé par un voyant de train, le commandant du DC-8 ignore les remarques du mécanicien sur le carburant : les moteurs s'arrêtent en approche. Avec Eastern 401 (Everglades, 1972, autopilote déconnecté sans que personne ne surveille), c'est l'accident fondateur du **Crew Resource Management**." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -201,7 +201,7 @@
       "difficulty": 3,
       "tags": ["culture.accidents", "culture.accidents.human_factors"],
       "lang": "fr",
-      "stem": { "fr": "Le vol Helios 522 (2005) a volé sur pilote automatique jusqu'à épuisement du carburant parce que :" },
+      "stem": { "fr": "Le vol Helios 522 (2005) a volé sur pilote automatique jusqu'à épuisement du carburant parce que :" },
       "options": [
         { "text": { "fr": "L'équipage était victime d'hypoxie après une pressurisation restée en mode manuel" } },
         { "text": { "fr": "Les commandes avaient été bloquées par une panne hydraulique" } },
@@ -209,7 +209,7 @@
         { "text": { "fr": "Un incendie avait envahi la cabine" } }
       ],
       "correctIndex": 0,
-      "explanation": { "fr": "Le sélecteur de pressurisation du 737 était resté sur **MAN** après une maintenance ; l'avertisseur d'altitude cabine a été confondu avec l'alarme de configuration décollage et l'équipage a perdu connaissance par **hypoxie**. Réflexe : à l'alarme cabine, masque d'abord." },
+      "explanation": { "fr": "Le sélecteur de pressurisation du 737 était resté sur **MAN** après une maintenance ; l'avertisseur d'altitude cabine a été confondu avec l'alarme de configuration décollage et l'équipage a perdu connaissance par **hypoxie**. Réflexe : à l'alarme cabine, masque d'abord." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -220,7 +220,7 @@
       "difficulty": 3,
       "tags": ["culture.accidents", "culture.accidents.air_france"],
       "lang": "fr",
-      "stem": { "fr": "Le 2 août 2005 à Toronto, un Airbus A340 d'Air France (vol 358) est détruit sans aucune victime après :" },
+      "stem": { "fr": "Le 2 août 2005 à Toronto, un Airbus A340 d'Air France (vol 358) est détruit sans aucune victime après :" },
       "options": [
         { "text": { "fr": "Une collision avec un véhicule de piste" } },
         { "text": { "fr": "Un atterrissage train rentré" } },
@@ -228,7 +228,7 @@
         { "text": { "fr": "Une sortie longitudinale de piste à l'atterrissage sous orage" } }
       ],
       "correctIndex": 3,
-      "explanation": { "fr": "Posé long sur piste mouillée avec fort vent arrière en plein **orage**, l'A340 ne peut s'arrêter et finit dans un ravin ; les 309 occupants évacuent avant l'incendie. Leçons : critères de remise de gaz en approche instable et discipline d'évacuation." },
+      "explanation": { "fr": "Posé long sur piste mouillée avec fort vent arrière en plein **orage**, l'A340 ne peut s'arrêter et finit dans un ravin ; les 309 occupants évacuent avant l'incendie. Leçons : critères de remise de gaz en approche instable et discipline d'évacuation." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -239,7 +239,7 @@
       "difficulty": 4,
       "tags": ["culture.accidents", "culture.accidents.maintenance"],
       "lang": "fr",
-      "stem": { "fr": "Le « planeur de Gimli » (Air Canada, 1983) a dû planer jusqu'à une ancienne base après une panne sèche causée par :" },
+      "stem": { "fr": "Le « planeur de Gimli » (Air Canada, 1983) a dû planer jusqu'à une ancienne base après une panne sèche causée par :" },
       "options": [
         { "text": { "fr": "Une fuite sur les réservoirs de voilure" } },
         { "text": { "fr": "Une erreur de conversion entre livres et kilogrammes lors de l'avitaillement" } },
@@ -247,7 +247,7 @@
         { "text": { "fr": "Une jauge de secours mal recalibrée" } }
       ],
       "correctIndex": 1,
-      "explanation": { "fr": "Le 767, tout nouveau et affiché en unités métriques, a été avitaillé en calculant la masse comme si la densité était en **livres par litre** : moins de la moitié du carburant nécessaire. Réflexe : toujours vérifier les unités dans un calcul de carburant." },
+      "explanation": { "fr": "Le 767, tout nouveau et affiché en unités métriques, a été avitaillé en calculant la masse comme si la densité était en **livres par litre** : moins de la moitié du carburant nécessaire. Réflexe : toujours vérifier les unités dans un calcul de carburant." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -258,7 +258,7 @@
       "difficulty": 4,
       "tags": ["culture.accidents", "culture.accidents.human_factors"],
       "lang": "fr",
-      "stem": { "fr": "Quelle erreur d'équipage caractérise l'accident de Kegworth (British Midland, 1989) ?" },
+      "stem": { "fr": "Quelle erreur d'équipage caractérise l'accident de Kegworth (British Midland, 1989) ?" },
       "options": [
         { "text": { "fr": "L'arrêt du moteur sain au lieu du moteur endommagé" } },
         { "text": { "fr": "L'oubli de la sortie des volets" } },
@@ -266,7 +266,7 @@
         { "text": { "fr": "Le réglage altimétrique en QFE au lieu du QNH" } }
       ],
       "correctIndex": 0,
-      "explanation": { "fr": "Après des vibrations sur le moteur gauche du 737-400, l'équipage réduit puis coupe le **moteur droit**, sain ; le moteur défaillant lâche en finale. Leçon : diagnostiquer sans précipitation, confirmer à deux avant toute action sur un moteur (« identify, confirm, action »)." },
+      "explanation": { "fr": "Après des vibrations sur le moteur gauche du 737-400, l'équipage réduit puis coupe le **moteur droit**, sain ; le moteur défaillant lâche en finale. Leçon : diagnostiquer sans précipitation, confirmer à deux avant toute action sur un moteur (« identify, confirm, action »)." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -277,7 +277,7 @@
       "difficulty": 2,
       "tags": ["culture.accidents", "culture.accidents.security"],
       "lang": "fr",
-      "stem": { "fr": "Le détournement du vol AF 8969 (Airbus A300, décembre 1994) s'est achevé par une intervention du GIGN à :" },
+      "stem": { "fr": "Le détournement du vol AF 8969 (Airbus A300, décembre 1994) s'est achevé par une intervention du GIGN à :" },
       "options": [
         { "text": { "fr": "Paris-Orly" } },
         { "text": { "fr": "Marseille-Marignane" } },
@@ -296,7 +296,7 @@
       "difficulty": 3,
       "tags": ["culture.accidents", "culture.accidents.fire"],
       "lang": "fr",
-      "stem": { "fr": "Le vol Swissair 111 (MD-11, 1998, au large d'Halifax) rappelle avant tout le danger :" },
+      "stem": { "fr": "Le vol Swissair 111 (MD-11, 1998, au large d'Halifax) rappelle avant tout le danger :" },
       "options": [
         { "text": { "fr": "Du givrage de la cellule en croisière" } },
         { "text": { "fr": "Des cendres volcaniques dans les réacteurs" } },
@@ -304,7 +304,7 @@
         { "text": { "fr": "Des turbulences de sillage derrière un gros-porteur" } }
       ],
       "correctIndex": 2,
-      "explanation": { "fr": "Un **feu électrique** né dans le plafond du cockpit s'est propagé pendant que l'équipage déroutait et vidangeait. Leçon retenue : en cas de fumée ou feu, atterrir **au plus vite** sur le terrain le plus proche, quitte à être lourd." },
+      "explanation": { "fr": "Un **feu électrique** né dans le plafond du cockpit s'est propagé pendant que l'équipage déroutait et vidangeait. Leçon retenue : en cas de fumée ou feu, atterrir **au plus vite** sur le terrain le plus proche, quitte à être lourd." },
       "meta": { "author": "hbock", "source": "own" }
     },
     {
@@ -315,7 +315,7 @@
       "difficulty": 5,
       "tags": ["culture.accidents", "culture.accidents.design"],
       "lang": "fr",
-      "stem": { "fr": "Quelle défaillance de conception explique la perte du DC-10 de Turkish Airlines à Ermenonville (3 mars 1974) ?" },
+      "stem": { "fr": "Quelle défaillance de conception explique la perte du DC-10 de Turkish Airlines à Ermenonville (3 mars 1974) ?" },
       "options": [
         { "text": { "fr": "La rupture d'un longeron de voilure en fatigue" } },
         { "text": { "fr": "Un pylône moteur mal fixé après maintenance" } },
@@ -334,7 +334,7 @@
       "difficulty": 3,
       "tags": ["culture.accidents", "culture.accidents.tracking"],
       "lang": "fr",
-      "stem": { "fr": "Quelle évolution réglementaire découle de la disparition du vol Malaysia Airlines MH370 (8 mars 2014) ?" },
+      "stem": { "fr": "Quelle évolution réglementaire découle de la disparition du vol Malaysia Airlines MH370 (8 mars 2014) ?" },
       "options": [
         { "text": { "fr": "L'interdiction de survoler les zones de conflit" } },
         { "text": { "fr": "Le suivi de position des avions en croisière au moins toutes les 15 minutes" } },
@@ -342,7 +342,7 @@
         { "text": { "fr": "L'emport d'un radar météo sur tous les avions de ligne" } }
       ],
       "correctIndex": 1,
-      "explanation": { "fr": "Le 777 n'a jamais été retrouvé. L'OACI a imposé le **suivi normal des vols** (position au moins toutes les 15 min, resserré à 1 min en détresse via le GADSS) et des balises et enregistreurs plus autonomes. Réflexe : MH370 = *tracking*, pas cause connue." },
+      "explanation": { "fr": "Le 777 n'a jamais été retrouvé. L'OACI a imposé le **suivi normal des vols** (position au moins toutes les 15 min, resserré à 1 min en détresse via le GADSS) et des balises et enregistreurs plus autonomes. Réflexe : MH370 = *tracking*, pas cause connue." },
       "meta": { "author": "hbock", "source": "own" }
     }
   ]

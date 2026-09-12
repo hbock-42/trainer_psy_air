@@ -23,7 +23,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Paris Charles de Gaulle ?",
+        "fr": "Code IATA de l'aéroport de Paris Charles de Gaulle ?",
         "en": "IATA code of Paris Charles de Gaulle airport?"
       },
       "back": {
@@ -40,7 +40,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Paris Orly ?",
+        "fr": "Code IATA de l'aéroport de Paris Orly ?",
         "en": "IATA code of Paris Orly airport?"
       },
       "back": {
@@ -57,7 +57,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Londres Heathrow ?",
+        "fr": "Code IATA de l'aéroport de Londres Heathrow ?",
         "en": "IATA code of Londres Heathrow airport?"
       },
       "back": {
@@ -74,7 +74,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de New York JFK ?",
+        "fr": "Code IATA de l'aéroport de New York JFK ?",
         "en": "IATA code of New York JFK airport?"
       },
       "back": {
@@ -91,7 +91,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Los Angeles ?",
+        "fr": "Code IATA de l'aéroport de Los Angeles ?",
         "en": "IATA code of Los Angeles airport?"
       },
       "back": {
@@ -108,7 +108,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Tokyo Narita ?",
+        "fr": "Code IATA de l'aéroport de Tokyo Narita ?",
         "en": "IATA code of Tokyo Narita airport?"
       },
       "back": {
@@ -125,7 +125,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Tokyo Haneda ?",
+        "fr": "Code IATA de l'aéroport de Tokyo Haneda ?",
         "en": "IATA code of Tokyo Haneda airport?"
       },
       "back": {
@@ -142,7 +142,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Dubaï ?",
+        "fr": "Code IATA de l'aéroport de Dubaï ?",
         "en": "IATA code of Dubaï airport?"
       },
       "back": {
@@ -159,7 +159,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Francfort ?",
+        "fr": "Code IATA de l'aéroport de Francfort ?",
         "en": "IATA code of Francfort airport?"
       },
       "back": {
@@ -176,7 +176,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Amsterdam Schiphol ?",
+        "fr": "Code IATA de l'aéroport de Amsterdam Schiphol ?",
         "en": "IATA code of Amsterdam Schiphol airport?"
       },
       "back": {
@@ -193,7 +193,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Madrid Barajas ?",
+        "fr": "Code IATA de l'aéroport de Madrid Barajas ?",
         "en": "IATA code of Madrid Barajas airport?"
       },
       "back": {
@@ -210,7 +210,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Rome Fiumicino ?",
+        "fr": "Code IATA de l'aéroport de Rome Fiumicino ?",
         "en": "IATA code of Rome Fiumicino airport?"
       },
       "back": {
@@ -227,7 +227,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Istanbul ?",
+        "fr": "Code IATA de l'aéroport de Istanbul ?",
         "en": "IATA code of Istanbul airport?"
       },
       "back": {
@@ -244,7 +244,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Singapour Changi ?",
+        "fr": "Code IATA de l'aéroport de Singapour Changi ?",
         "en": "IATA code of Singapour Changi airport?"
       },
       "back": {
@@ -261,7 +261,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Hong Kong ?",
+        "fr": "Code IATA de l'aéroport de Hong Kong ?",
         "en": "IATA code of Hong Kong airport?"
       },
       "back": {
@@ -278,7 +278,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Pékin Capitale ?",
+        "fr": "Code IATA de l'aéroport de Pékin Capitale ?",
         "en": "IATA code of Pékin Capitale airport?"
       },
       "back": {
@@ -295,7 +295,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Shanghai Pudong ?",
+        "fr": "Code IATA de l'aéroport de Shanghai Pudong ?",
         "en": "IATA code of Shanghai Pudong airport?"
       },
       "back": {
@@ -312,7 +312,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de São Paulo Guarulhos ?",
+        "fr": "Code IATA de l'aéroport de São Paulo Guarulhos ?",
         "en": "IATA code of São Paulo Guarulhos airport?"
       },
       "back": {
@@ -329,7 +329,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Mexico ?",
+        "fr": "Code IATA de l'aéroport de Mexico ?",
         "en": "IATA code of Mexico airport?"
       },
       "back": {
@@ -346,7 +346,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Toronto Pearson ?",
+        "fr": "Code IATA de l'aéroport de Toronto Pearson ?",
         "en": "IATA code of Toronto Pearson airport?"
       },
       "back": {
@@ -363,7 +363,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Sydney ?",
+        "fr": "Code IATA de l'aéroport de Sydney ?",
         "en": "IATA code of Sydney airport?"
       },
       "back": {
@@ -380,7 +380,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Delhi ?",
+        "fr": "Code IATA de l'aéroport de Delhi ?",
         "en": "IATA code of Delhi airport?"
       },
       "back": {
@@ -397,7 +397,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Bangkok Suvarnabhumi ?",
+        "fr": "Code IATA de l'aéroport de Bangkok Suvarnabhumi ?",
         "en": "IATA code of Bangkok Suvarnabhumi airport?"
       },
       "back": {
@@ -414,7 +414,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Zurich ?",
+        "fr": "Code IATA de l'aéroport de Zurich ?",
         "en": "IATA code of Zurich airport?"
       },
       "back": {
@@ -431,7 +431,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Munich ?",
+        "fr": "Code IATA de l'aéroport de Munich ?",
         "en": "IATA code of Munich airport?"
       },
       "back": {
@@ -448,7 +448,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Bruxelles ?",
+        "fr": "Code IATA de l'aéroport de Bruxelles ?",
         "en": "IATA code of Bruxelles airport?"
       },
       "back": {
@@ -465,7 +465,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Lisbonne ?",
+        "fr": "Code IATA de l'aéroport de Lisbonne ?",
         "en": "IATA code of Lisbonne airport?"
       },
       "back": {
@@ -482,7 +482,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Athènes ?",
+        "fr": "Code IATA de l'aéroport de Athènes ?",
         "en": "IATA code of Athènes airport?"
       },
       "back": {
@@ -499,7 +499,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Vienne ?",
+        "fr": "Code IATA de l'aéroport de Vienne ?",
         "en": "IATA code of Vienne airport?"
       },
       "back": {
@@ -516,7 +516,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code IATA de l'aéroport de Copenhague ?",
+        "fr": "Code IATA de l'aéroport de Copenhague ?",
         "en": "IATA code of Copenhague airport?"
       },
       "back": {
@@ -533,7 +533,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code OACI (ICAO) de Paris CDG ?",
+        "fr": "Code OACI (ICAO) de Paris CDG ?",
         "en": "ICAO code of Paris CDG?"
       },
       "back": {
@@ -550,7 +550,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code OACI (ICAO) de Paris Orly ?",
+        "fr": "Code OACI (ICAO) de Paris Orly ?",
         "en": "ICAO code of Paris Orly?"
       },
       "back": {
@@ -567,7 +567,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code OACI (ICAO) de Londres Heathrow ?",
+        "fr": "Code OACI (ICAO) de Londres Heathrow ?",
         "en": "ICAO code of Londres Heathrow?"
       },
       "back": {
@@ -584,7 +584,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code OACI (ICAO) de New York JFK ?",
+        "fr": "Code OACI (ICAO) de New York JFK ?",
         "en": "ICAO code of New York JFK?"
       },
       "back": {
@@ -601,7 +601,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code OACI (ICAO) de Los Angeles ?",
+        "fr": "Code OACI (ICAO) de Los Angeles ?",
         "en": "ICAO code of Los Angeles?"
       },
       "back": {
@@ -618,7 +618,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code OACI (ICAO) de Francfort ?",
+        "fr": "Code OACI (ICAO) de Francfort ?",
         "en": "ICAO code of Francfort?"
       },
       "back": {
@@ -635,7 +635,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code OACI (ICAO) de Amsterdam Schiphol ?",
+        "fr": "Code OACI (ICAO) de Amsterdam Schiphol ?",
         "en": "ICAO code of Amsterdam Schiphol?"
       },
       "back": {
@@ -652,7 +652,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code OACI (ICAO) de Tokyo Haneda ?",
+        "fr": "Code OACI (ICAO) de Tokyo Haneda ?",
         "en": "ICAO code of Tokyo Haneda?"
       },
       "back": {
@@ -669,7 +669,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code OACI (ICAO) de Dubaï ?",
+        "fr": "Code OACI (ICAO) de Dubaï ?",
         "en": "ICAO code of Dubaï?"
       },
       "back": {
@@ -686,7 +686,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Code OACI (ICAO) de Pékin Capitale ?",
+        "fr": "Code OACI (ICAO) de Pékin Capitale ?",
         "en": "ICAO code of Pékin Capitale?"
       },
       "back": {
@@ -703,7 +703,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année Air France a-t-elle réceptionné son premier A350 ?",
+        "fr": "En quelle année Air France a-t-elle réceptionné son premier A350 ?",
         "en": "When did Air France receive its first A350?"
       },
       "back": {
@@ -720,7 +720,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année le Concorde a-t-il effectué son dernier vol commercial ?",
+        "fr": "En quelle année le Concorde a-t-il effectué son dernier vol commercial ?",
         "en": "When did Concorde fly its last commercial flight?"
       },
       "back": {
@@ -737,7 +737,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année Air France a-t-elle retiré son dernier Boeing 747 ?",
+        "fr": "En quelle année Air France a-t-elle retiré son dernier Boeing 747 ?",
         "en": "When did Air France retire its last Boeing 747?"
       },
       "back": {
@@ -754,7 +754,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année le premier A380 est-il entré en service chez Air France ?",
+        "fr": "En quelle année le premier A380 est-il entré en service chez Air France ?",
         "en": "When did the A380 enter service at Air France?"
       },
       "back": {
@@ -771,7 +771,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année le Boeing 777 est-il entré en flotte Air France ?",
+        "fr": "En quelle année le Boeing 777 est-il entré en flotte Air France ?",
         "en": "When did the Boeing 777 join the Air France fleet?"
       },
       "back": {
@@ -788,7 +788,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année Air France a-t-elle été fondée ?",
+        "fr": "En quelle année Air France a-t-elle été fondée ?",
         "en": "When was Air France founded?"
       },
       "back": {
@@ -805,7 +805,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année Air France et KLM ont-elles fusionné ?",
+        "fr": "En quelle année Air France et KLM ont-elles fusionné ?",
         "en": "When did Air France and KLM merge?"
       },
       "back": {
@@ -822,7 +822,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année le terminal 1 de Roissy CDG a-t-il ouvert ?",
+        "fr": "En quelle année le terminal 1 de Roissy CDG a-t-il ouvert ?",
         "en": "When did Terminal 1 at Roissy CDG open?"
       },
       "back": {
@@ -839,7 +839,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année l'A220 (ex-CSeries) est-il entré chez Air France ?",
+        "fr": "En quelle année l'A220 (ex-CSeries) est-il entré chez Air France ?",
         "en": "When did the A220 (ex-CSeries) join Air France?"
       },
       "back": {
@@ -856,7 +856,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année Air France a-t-elle reçu son premier A320 ?",
+        "fr": "En quelle année Air France a-t-elle reçu son premier A320 ?",
         "en": "When did Air France receive its first A320?"
       },
       "back": {
@@ -873,7 +873,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année les frères Wright ont-ils réalisé le premier vol motorisé ?",
+        "fr": "En quelle année les frères Wright ont-ils réalisé le premier vol motorisé ?",
         "en": "When was the Wright brothers' first powered flight?"
       },
       "back": {
@@ -890,7 +890,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année Lindbergh a-t-il traversé l'Atlantique en solitaire ?",
+        "fr": "En quelle année Lindbergh a-t-il traversé l'Atlantique en solitaire ?",
         "en": "When did Lindbergh fly solo across the Atlantic?"
       },
       "back": {
@@ -907,7 +907,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année le premier avion de ligne à réaction (Comet) est-il entré en service ?",
+        "fr": "En quelle année le premier avion de ligne à réaction (Comet) est-il entré en service ?",
         "en": "When did the first jet airliner (Comet) enter service?"
       },
       "back": {
@@ -924,7 +924,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année le Concorde a-t-il effectué son premier vol ?",
+        "fr": "En quelle année le Concorde a-t-il effectué son premier vol ?",
         "en": "When did Concorde make its first flight?"
       },
       "back": {
@@ -941,7 +941,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année la convention de Chicago a-t-elle créé l'OACI ?",
+        "fr": "En quelle année la convention de Chicago a-t-elle créé l'OACI ?",
         "en": "When did the Chicago convention create ICAO?"
       },
       "back": {
@@ -958,7 +958,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année l'IATA a-t-elle été fondée ?",
+        "fr": "En quelle année l'IATA a-t-elle été fondée ?",
         "en": "When was IATA founded?"
       },
       "back": {
@@ -975,7 +975,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année l'Airbus A300, premier avion Airbus, est-il entré en service ?",
+        "fr": "En quelle année l'Airbus A300, premier avion Airbus, est-il entré en service ?",
         "en": "When did the Airbus A300, the first Airbus, enter service?"
       },
       "back": {
@@ -992,7 +992,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année a eu lieu l'accident du Concorde à Gonesse ?",
+        "fr": "En quelle année a eu lieu l'accident du Concorde à Gonesse ?",
         "en": "When was the Concorde crash at Gonesse?"
       },
       "back": {
@@ -1009,7 +1009,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année les attentats du 11 septembre ont-ils bouleversé l'aviation civile ?",
+        "fr": "En quelle année les attentats du 11 septembre ont-ils bouleversé l'aviation civile ?",
         "en": "When did 9/11 reshape civil aviation security?"
       },
       "back": {
@@ -1026,7 +1026,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "En quelle année l'accord \"ciel ouvert\" a-t-il libéralisé le marché aérien européen ?",
+        "fr": "En quelle année l'accord « ciel ouvert » a-t-il libéralisé le marché aérien européen ?",
         "en": "When did \"open skies\" liberalise the European air market?"
       },
       "back": {
@@ -1043,7 +1043,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Que signifie le sigle DGAC ?",
+        "fr": "Que signifie le sigle DGAC ?",
         "en": "What does DGAC stand for?"
       },
       "back": {
@@ -1060,7 +1060,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Que signifie le sigle EASA ?",
+        "fr": "Que signifie le sigle EASA ?",
         "en": "What does EASA stand for?"
       },
       "back": {
@@ -1077,7 +1077,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Que signifie le sigle OACI ?",
+        "fr": "Que signifie le sigle OACI ?",
         "en": "What does ICAO stand for?"
       },
       "back": {
@@ -1094,7 +1094,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Que signifie le sigle IATA ?",
+        "fr": "Que signifie le sigle IATA ?",
         "en": "What does IATA stand for?"
       },
       "back": {
@@ -1111,7 +1111,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Que signifie le sigle BEA en France ?",
+        "fr": "Que signifie le sigle BEA en France ?",
         "en": "What does BEA stand for in France?"
       },
       "back": {
@@ -1128,7 +1128,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Quel organisme français fournit les prévisions météorologiques aéronautiques ?",
+        "fr": "Quel organisme français fournit les prévisions météorologiques aéronautiques ?",
         "en": "Which French body provides aeronautical weather forecasts?"
       },
       "back": {
@@ -1145,7 +1145,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Que signifie le sigle DSAC ?",
+        "fr": "Que signifie le sigle DSAC ?",
         "en": "What does DSAC stand for?"
       },
       "back": {
@@ -1162,7 +1162,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Quel organisme gère la circulation aérienne au niveau européen ?",
+        "fr": "Quel organisme gère la circulation aérienne au niveau européen ?",
         "en": "Which body manages air traffic at the European level?"
       },
       "back": {
@@ -1179,7 +1179,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Que signifie le sigle ENAC ?",
+        "fr": "Que signifie le sigle ENAC ?",
         "en": "What does ENAC stand for?"
       },
       "back": {
@@ -1196,7 +1196,7 @@
       "version": 1,
       "deckId": "culture_aero.deck.culture-generale",
       "front": {
-        "fr": "Quel organisme onusien fixe les normes internationales de navigation aérienne ?",
+        "fr": "Quel organisme onusien fixe les normes internationales de navigation aérienne ?",
         "en": "Which UN body sets international air navigation standards?"
       },
       "back": {
