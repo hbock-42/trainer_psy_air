@@ -23,8 +23,7 @@ import 'activity_renderer.dart';
 final Provider<EngineRegistry>
 engineRegistryProvider = Provider<EngineRegistry>(
   (ref) => EngineRegistry(const <ActivityEngine>[
-    // US-021..036: add engines/renderers here, one line each (alphabetical by
-    // family id).
+    // US-021..036: add one line per engine (alphabetical by family id).
     ArithmeticGridEngine(),
     AttentionParityEngine(),
     AttentionRulesEngine(),
@@ -36,8 +35,7 @@ engineRegistryProvider = Provider<EngineRegistry>(
 final Provider<RendererRegistry>
 rendererRegistryProvider = Provider<RendererRegistry>(
   (ref) => RendererRegistry(const <ActivityRenderer>[
-    // US-021..036: add engines/renderers here, one line each (alphabetical by
-    // family id).
+    // US-021..036: add one line per engine (alphabetical by family id).
     ArithmeticGridRenderer(),
     AttentionParityRenderer(),
     AttentionRulesRenderer(),
