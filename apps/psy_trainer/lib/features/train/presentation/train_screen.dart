@@ -9,6 +9,7 @@ import '../../../core/repositories/repository_providers.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
+import '../../engines/english/presentation/english_passage_cache.dart';
 import 'launcher/practice_config.dart';
 import 'launcher/practice_session_builder.dart';
 import 'providers/train_families_provider.dart';
@@ -100,6 +101,7 @@ class _TrainFamilyTile extends ConsumerWidget {
       family: family,
       config: PracticeConfig.quick5(family),
       contentRepository: ref.read(contentRepositoryProvider),
+      onPassagesLoaded: ref.read(englishPassageCacheProvider).addAll,
     );
     if (!context.mounted) return;
     unawaited(context.push(AppRoutes.trainSession('new'), extra: config));

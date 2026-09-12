@@ -39,16 +39,20 @@ part 'app_database.g.dart';
 ///
 /// `stepByStep` needs the schema snapshots exported by
 /// `dart run drift_dev schema dump lib/core/db/app_database.dart drift_schemas/`
-/// and generated with `drift_dev schema steps`; do that together with the
-/// first bump (v2). Until then the strategy is create-only: v1 has no
-/// upgrade path, and content mirrors are simply re-seeded from assets
-/// (US-013), so only user tables need care in migrations.
+/// and generated with `drift_dev schema steps`; set that up together with
+/// the first bump that touches a *user* table (a column added/changed on
+/// `sessions`, `attempts`...). A change that only adds a **content mirror**
+/// table (like `passages` in v2, US-027) needs no data migration — content
+/// mirrors are re-seeded from assets whenever `content_meta` is stale
+/// (US-013) — so its `onUpgrade` step is a plain `m.createTable(...)`; only
+/// user tables need the `stepByStep` treatment.
 @DriftDatabase(
   tables: [
     ContentMetaTable,
     Modules,
     Families,
     Items,
+    Passages,
     Lessons,
     Decks,
     Flashcards,
@@ -74,7 +78,14 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase(super.executor);
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
+
+  /// v2 (US-027): added `passages` (mirror of `ItemBank.passages`, so a
+  /// running session can resolve the `Passage` an `McqItem.passageId`
+  /// points to — see `ContentRepository.passage`/`passagesByIds`). It is a
+  /// content mirror, re-seeded from assets like every other one (see
+  /// "Content seeding" in ARCHITECTURE.md), so the upgrade only has to
+  /// create the table; the seeder fills it on the next run.
 
   /// Datetimes are stored as ISO-8601 text (UTC, millisecond precision), not
   /// unix seconds: cadence-driven activities record several attempts per
@@ -86,6 +97,11 @@ class AppDatabase extends _$AppDatabase {
   @override
   MigrationStrategy get migration => MigrationStrategy(
     onCreate: (m) => m.createAll(),
+    onUpgrade: (m, from, to) async {
+      if (from < 2) {
+        await m.createTable(passages);
+      }
+    },
     beforeOpen: (details) async {
       await customStatement('PRAGMA foreign_keys = ON');
     },

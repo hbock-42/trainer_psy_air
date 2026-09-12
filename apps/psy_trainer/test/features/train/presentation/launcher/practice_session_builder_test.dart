@@ -178,6 +178,70 @@ void main() {
       expect(untimed.timing.isUntimed, isTrue);
     });
 
+    test('a bank family with passageId items uses the passage-aware sampler '
+        'and reports the passages it drew', () async {
+      final family = englishFamily();
+      const passage = Passage(
+        id: 'p1',
+        body: LocalizedText(fr: 'Un texte.'),
+      );
+      final repo = InMemoryContentRepository(
+        families: [family],
+        items: [
+          bankItem(
+            id: 'r1',
+            familyId: family.id,
+            tag: 'reading',
+            passageId: 'p1',
+          ),
+          bankItem(
+            id: 'r2',
+            familyId: family.id,
+            tag: 'reading',
+            passageId: 'p1',
+          ),
+          bankItem(id: 'g1', familyId: family.id, tag: 'grammar'),
+        ],
+        passages: [passage],
+      );
+      List<Passage>? loaded;
+
+      final result = await buildActivitySessionConfig(
+        family: family,
+        config: const PracticeConfig(
+          itemCount: 10,
+          difficulty: null,
+          timed: false,
+        ),
+        contentRepository: repo,
+        onPassagesLoaded: (passages) => loaded = passages,
+      );
+
+      final source = result.source as BankSource;
+      expect(source.items.map((i) => i.id), containsAll(['r1', 'r2', 'g1']));
+      expect(loaded, [passage]);
+    });
+
+    test(
+      'a bank family with no passageId items never calls onPassagesLoaded',
+      () async {
+        var called = false;
+
+        await buildActivitySessionConfig(
+          family: bankFamily(),
+          config: const PracticeConfig(
+            itemCount: 5,
+            difficulty: null,
+            timed: false,
+          ),
+          contentRepository: launcherContentRepository(),
+          onPassagesLoaded: (_) => called = true,
+        );
+
+        expect(called, isFalse);
+      },
+    );
+
     test('title carries the family name for the session placeholder', () async {
       final family = bankFamily();
       final result = await buildActivitySessionConfig(

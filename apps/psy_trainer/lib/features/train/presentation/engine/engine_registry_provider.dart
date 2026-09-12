@@ -8,6 +8,8 @@ import '../../../engines/attention_rules/domain/attention_rules_engine.dart';
 import '../../../engines/attention_rules/presentation/attention_rules_renderer.dart';
 import '../../../engines/culture_aero/domain/culture_aero_engine.dart';
 import '../../../engines/culture_aero/presentation/culture_aero_explanation.dart';
+import '../../../engines/english/domain/english_engine.dart';
+import '../../../engines/english/presentation/english_passage_cache.dart';
 import '../../../engines/logic_dominos/domain/dominos_engine.dart';
 import '../../../engines/logic_dominos/presentation/dominos_renderer.dart';
 import '../../../engines/memory_nback/domain/nback_engine.dart';
@@ -34,6 +36,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         AttentionRulesEngine(),
         CultureAeroEngine(),
         DominosEngine(),
+        EnglishEngine(),
         NbackEngine(),
       ]),
     );
@@ -41,17 +44,22 @@ final Provider<EngineRegistry> engineRegistryProvider =
 /// The widgets of every activity.
 final Provider<RendererRegistry> rendererRegistryProvider =
     Provider<RendererRegistry>(
-      (ref) => RendererRegistry(const <ActivityRenderer>[
+      (ref) => RendererRegistry(<ActivityRenderer>[
         // US-021..036: add one line per engine (alphabetical by family id).
-        ArithmeticGridRenderer(),
-        AttentionParityRenderer(),
-        AttentionRulesRenderer(),
-        DominosRenderer(),
-        McqRenderer(
+        const ArithmeticGridRenderer(),
+        const AttentionParityRenderer(),
+        const AttentionRulesRenderer(),
+        const DominosRenderer(),
+        const McqRenderer(
           familyId: 'culture_aero',
           explanationFooter: cultureAeroExplanationFooter,
         ),
-        NbackRenderer(),
+        McqRenderer(
+          familyId: 'english',
+          passageResolver: (id) =>
+              ref.read(englishPassageCacheProvider).get(id),
+        ),
+        const NbackRenderer(),
       ]),
     );
 

@@ -9,6 +9,7 @@ mixin _$ContentDaoMixin on DatabaseAccessor<AppDatabase> {
   $ModulesTable get modules => attachedDatabase.modules;
   $FamiliesTable get families => attachedDatabase.families;
   $ItemsTable get items => attachedDatabase.items;
+  $PassagesTable get passages => attachedDatabase.passages;
   $LessonsTable get lessons => attachedDatabase.lessons;
   $DecksTable get decks => attachedDatabase.decks;
   $FlashcardsTable get flashcards => attachedDatabase.flashcards;
@@ -30,6 +31,8 @@ class ContentDaoManager {
       $$FamiliesTableTableManager(_db.attachedDatabase, _db.families);
   $$ItemsTableTableManager get items =>
       $$ItemsTableTableManager(_db.attachedDatabase, _db.items);
+  $$PassagesTableTableManager get passages =>
+      $$PassagesTableTableManager(_db.attachedDatabase, _db.passages);
   $$LessonsTableTableManager get lessons =>
       $$LessonsTableTableManager(_db.attachedDatabase, _db.lessons);
   $$DecksTableTableManager get decks =>
