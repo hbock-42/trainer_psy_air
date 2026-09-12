@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart'
+    show TargetPlatform, defaultTargetPlatform;
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -8,9 +11,13 @@ import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
+import '../../settings/presentation/providers/app_settings_provider.dart';
 import '../../train/presentation/engine/engine_ui.dart';
+import '../domain/exam_realism_options.dart';
+import '../domain/exam_section_planner.dart' show englishFamilyId;
 import 'exam_run_controller.dart';
 import 'exam_run_state.dart';
+import 'providers/exam_realism_options_provider.dart';
 
 /// `/exam/run/:blueprintId` (US-061): runs every available section of the
 /// blueprint back to back through `SessionHost`, in exam mode — no back, no
@@ -21,7 +28,18 @@ import 'exam_run_state.dart';
 /// Quitting (the top bar's back arrow) asks for confirmation, then aborts
 /// the whole exam — never just the current section. Between sections with
 /// `breakAfterSec` > 0 a countdown screen offers "Continuer" to skip the
-/// rest of the break.
+/// rest of the break, unless the realism panel's "allow pause between
+/// sections" is off (US-063), in which case only the auto-continue timer
+/// applies.
+///
+/// US-063 realism options applied here (the rest are applied by
+/// `planExamSections`, read once by `ExamRunController` when the run
+/// starts): the countdown bars' `TimingDisplay` (hidden for `english` when
+/// `hideTimerEnglish`, hidden until under a minute left when
+/// `hideRemainingTime`), full-screen immersive chrome + portrait lock on
+/// phones (`immersiveFullScreen`), and a start/end beep per section
+/// (`soundCuesEnabled`, gated on the global `soundEnabledProvider` mute
+/// too).
 class ExamRunScreen extends ConsumerStatefulWidget {
   const ExamRunScreen({required this.blueprintId, super.key});
 
@@ -38,6 +56,8 @@ class ExamRunScreen extends ConsumerStatefulWidget {
 
 class _ExamRunScreenState extends ConsumerState<ExamRunScreen> {
   bool _confirmingQuit = false;
+  bool _immersiveApplied = false;
+  bool _wasRunning = false;
 
   void _askQuit() => setState(() => _confirmingQuit = true);
 
@@ -58,10 +78,74 @@ class _ExamRunScreenState extends ConsumerState<ExamRunScreen> {
     }
   }
 
+  /// Phones only (US-063 point 6): macOS/Windows/web keep their normal
+  /// window chrome and orientation is meaningless there.
+  bool get _isMobile =>
+      defaultTargetPlatform == TargetPlatform.android ||
+      defaultTargetPlatform == TargetPlatform.iOS;
+
+  void _applyImmersiveMode(ExamRealismOptions options) {
+    if (!options.immersiveFullScreen || !_isMobile || _immersiveApplied) {
+      return;
+    }
+    _immersiveApplied = true;
+    unawaited(
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky),
+    );
+    unawaited(
+      SystemChrome.setPreferredOrientations(const [
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]),
+    );
+  }
+
+  void _restoreImmersiveMode() {
+    if (!_immersiveApplied) return;
+    _immersiveApplied = false;
+    unawaited(SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge));
+    unawaited(SystemChrome.setPreferredOrientations(DeviceOrientation.values));
+  }
+
+  @override
+  void dispose() {
+    _restoreImmersiveMode();
+    super.dispose();
+  }
+
+  /// A short beep at the start/end of a section (US-063 point 6). Gated on
+  /// both the realism panel's own toggle and the app-wide sound mute
+  /// (`soundEnabledProvider`); `SystemSound.play` is the only cue the
+  /// widgets layer offers (no audio asset pipeline here), so a platform
+  /// that ignores it is a silent no-op rather than an error.
+  void _playSoundCue(ExamRealismOptions options) {
+    if (!options.soundCuesEnabled) return;
+    if (!ref.read(soundEnabledProvider)) return;
+    unawaited(SystemSound.play(SystemSoundType.click));
+  }
+
+  TimingDisplay _timingDisplayFor(ExamRealismOptions options, String familyId) {
+    if (options.hideTimerEnglish && familyId == englishFamilyId) {
+      return TimingDisplay.hidden;
+    }
+    if (options.hideRemainingTime) return TimingDisplay.hiddenUntilLastMinute;
+    return TimingDisplay.visible;
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final state = ref.watch(examRunControllerProvider(widget.blueprintId));
+    final realism = ref.watch(examRealismOptionsProvider);
+
+    _applyImmersiveMode(realism);
+    if (state is ExamRunRunning && !_wasRunning) {
+      _wasRunning = true;
+      _playSoundCue(realism);
+    } else if (state is! ExamRunRunning && _wasRunning) {
+      _wasRunning = false;
+      _playSoundCue(realism);
+    }
 
     ref.listen<ExamRunState>(examRunControllerProvider(widget.blueprintId), (
       previous,
@@ -89,6 +173,7 @@ class _ExamRunScreenState extends ConsumerState<ExamRunScreen> {
               :final planIndex,
               :final totalSections,
               :final request,
+              :final familyId,
             ) =>
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -106,6 +191,7 @@ class _ExamRunScreenState extends ConsumerState<ExamRunScreen> {
                   Expanded(
                     child: SessionHost(
                       request: request,
+                      timingDisplay: _timingDisplayFor(realism, familyId),
                       onFinished: (result) => ref
                           .read(
                             examRunControllerProvider(
@@ -269,13 +355,15 @@ class _BreakScreenState extends ConsumerState<_BreakScreen> {
             textAlign: TextAlign.center,
             style: theme.textStyles.title,
           ),
-          SizedBox(height: theme.spacing.xl),
-          PrimaryButton(
-            key: ExamRunScreen.skipBreakKey,
-            label: context.l10n.examRunnerBreakContinue,
-            expand: true,
-            onPressed: controller.skipBreak,
-          ),
+          if (controller.allowsSkippingBreak) ...[
+            SizedBox(height: theme.spacing.xl),
+            PrimaryButton(
+              key: ExamRunScreen.skipBreakKey,
+              label: context.l10n.examRunnerBreakContinue,
+              expand: true,
+              onPressed: controller.skipBreak,
+            ),
+          ],
         ],
       ),
     );

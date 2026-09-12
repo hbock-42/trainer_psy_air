@@ -5,6 +5,7 @@ import '../../../core/repositories/content_repository.dart';
 import '../../../core/repositories/model/session.dart';
 import '../../../core/repositories/progress_repository.dart';
 import '../../train/domain/engine/engine.dart';
+import 'exam_realism_options.dart';
 
 /// One section of a blueprint the exam runner will actually play: the
 /// original [section] (its index in the blueprint is [sectionIndex]) turned
@@ -28,12 +29,18 @@ class PlannedExamSection {
 /// itself once every section ran) with a `positionOffset` that keeps
 /// `NewAttempt.position` unique across the whole exam.
 ///
-/// - `generated` sections draw a fresh seed per run from [random].
+/// - `generated` sections draw a fresh seed per run from [random], unless
+///   [options].[ExamRealismOptions.randomizeGenerated] is off, in which case
+///   every generated section reuses [ExamRealismOptions.canonicalSeed].
 /// - `bank` sections sample [ContentRepository.items], excluding items used
 ///   in the candidate's last `avoidRecentSessions` sessions of that family,
 ///   filtered by `tags`/`anyTags` and balanced round-robin over the tag
 ///   matching `balanceByTagPrefix` when one is given (falls back to the
 ///   repository's own random order otherwise).
+///
+/// [options] (US-063) also overrides the culture aéro section's
+/// `scoringPolicy` (+3/−1/0) and its bank items' `allowSkip` when
+/// `negativeMarkingCulture` is on (spec §2.2, 2018-2020 rules).
 Future<List<PlannedExamSection>> planExamSections({
   required ExamBlueprint blueprint,
   required EngineRegistry engines,
@@ -41,6 +48,7 @@ Future<List<PlannedExamSection>> planExamSections({
   required ProgressRepository progress,
   required String sessionId,
   Random? random,
+  ExamRealismOptions options = ExamRealismOptions.defaults,
 }) async {
   final rng = random ?? Random();
   final planned = <PlannedExamSection>[];
@@ -49,16 +57,25 @@ Future<List<PlannedExamSection>> planExamSections({
     final section = blueprint.sections[i];
     if (!engines.hasFamily(section.familyId)) continue;
     final family = await content.familyById(section.familyId);
+    final applyNegativeMarking =
+        section.familyId == cultureFamilyId && options.negativeMarkingCulture;
     final source = switch (section.itemSelection) {
-      GeneratedSelection() => _generatorSource(section, rng),
-      BankSelection() => await _bankSource(section, content, progress),
+      GeneratedSelection() => _generatorSource(section, rng, options),
+      BankSelection() => await _bankSource(
+        section,
+        content,
+        progress,
+        allowSkip: applyNegativeMarking,
+      ),
     };
     final config = ActivitySessionConfig(
       familyId: section.familyId,
       mode: SessionMode.exam,
       source: source,
       timing: TimingPolicy.fromSection(section),
-      scoringPolicy: section.scoringPolicy,
+      scoringPolicy: applyNegativeMarking
+          ? negativeMarkingScoringPolicy
+          : section.scoringPolicy,
       liveFeedback: section.liveFeedback,
       briefing: _briefingText(section, family),
       title: section.title ?? family?.name,
@@ -76,11 +93,31 @@ Future<List<PlannedExamSection>> planExamSections({
   return planned;
 }
 
-ItemSource _generatorSource(ExamSection section, Random random) {
+/// The only family the "negative marking" realism option applies to
+/// (culture aéro, spec §2.2 and §2.4 activity N).
+const String cultureFamilyId = 'culture_aero';
+
+/// The family "hide the timer in English" applies to (spec §2.4 activity O:
+/// "no visible timer in the English test").
+const String englishFamilyId = 'english';
+
+/// `+3` correct / `-1` wrong / `0` skip (2018-2020 culture aéro rules).
+const ScoringPolicy negativeMarkingScoringPolicy = ScoringPolicy(
+  correct: 3,
+  wrong: -1,
+);
+
+ItemSource _generatorSource(
+  ExamSection section,
+  Random random,
+  ExamRealismOptions options,
+) {
   final selection = section.itemSelection as GeneratedSelection;
   return ItemSource.generator(
     generatorId: selection.generatorId,
-    seed: random.nextInt(1 << 31),
+    seed: options.randomizeGenerated
+        ? random.nextInt(1 << 31)
+        : ExamRealismOptions.canonicalSeed,
     params: selection.params,
     count: section.itemCount,
     difficulty: selection.difficulty,
@@ -90,8 +127,9 @@ ItemSource _generatorSource(ExamSection section, Random random) {
 Future<ItemSource> _bankSource(
   ExamSection section,
   ContentRepository content,
-  ProgressRepository progress,
-) async {
+  ProgressRepository progress, {
+  required bool allowSkip,
+}) async {
   final selection = section.itemSelection as BankSelection;
   final excludeIds = await _recentItemIds(
     familyId: section.familyId,
@@ -112,7 +150,13 @@ Future<ItemSource> _bankSource(
           selection.balanceByTagPrefix!,
         )
       : filtered.take(section.itemCount).toList();
-  return ItemSource.bank(picked);
+  final items = allowSkip
+      ? [
+          for (final item in picked)
+            item is McqItem ? item.copyWith(allowSkip: true) : item,
+        ]
+      : picked;
+  return ItemSource.bank(items);
 }
 
 Future<Set<String>> _recentItemIds({

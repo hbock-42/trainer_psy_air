@@ -19,10 +19,13 @@ sealed class ExamRunState with _$ExamRunState {
 
   /// Running the section at [planIndex] of [totalSections] planned
   /// (available) sections; [request] is what the screen hands `SessionHost`.
+  /// [familyId] (US-063) lets the screen pick a `TimingDisplay` (e.g. hide
+  /// the timer for `english`) without decoding [request].
   const factory ExamRunState.running({
     required int planIndex,
     required int totalSections,
     required ActivitySessionRequest request,
+    required String familyId,
   }) = ExamRunRunning;
 
   /// Between two sections (`ExamSection.breakAfterSec` > 0 on the section
