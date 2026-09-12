@@ -2079,6 +2079,28 @@ class AppLocalizationsEn extends AppLocalizations {
       'Air France Corporate — Cadets recruitment news';
 
   @override
+  String get aboutStorageLabel => 'Storage';
+
+  @override
+  String get aboutStorageLocalFile => 'local file';
+
+  @override
+  String get aboutStorageOpfs => 'OPFS';
+
+  @override
+  String get aboutStorageIndexedDb => 'IndexedDB';
+
+  @override
+  String get aboutStorageMemory => 'memory (not persisted)';
+
+  @override
+  String get aboutStorageUnknown => '…';
+
+  @override
+  String get aboutStorageNotPersistentWarning =>
+      'Your data will not be kept after this tab is closed (private browsing, or an unsupported browser).';
+
+  @override
   String get multitaskTouchFallback =>
       'Non-representative touch controls: on the real day, use the keyboard.';
 
