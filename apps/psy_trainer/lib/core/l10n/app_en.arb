@@ -1243,5 +1243,36 @@
         "type": "int"
       }
     }
-  }
+  },
+  "settingsSectionAppearance": "Appearance",
+  "settingsThemeLabel": "Theme",
+  "settingsThemeSystem": "System",
+  "settingsThemeLight": "Light",
+  "settingsThemeDark": "Dark",
+  "settingsLanguageLabel": "Language",
+  "settingsLanguageSystem": "System",
+  "settingsLanguageFr": "French",
+  "settingsLanguageEn": "English",
+  "settingsSoundLabel": "Sound",
+  "settingsSoundOn": "On",
+  "settingsSoundOff": "Off",
+  "settingsKeypadLabel": "Numeric keypad layout",
+  "settingsKeypadPhone": "Phone",
+  "settingsKeypadCalculator": "Calculator",
+  "settingsSectionData": "Data",
+  "settingsResetAction": "Reset all data",
+  "settingsResetConfirm1Title": "Reset all data?",
+  "settingsResetConfirm1Body": "Your progress, statistics and settings will be erased. This action cannot be undone.",
+  "settingsResetConfirm2Title": "Really erase everything?",
+  "settingsResetConfirm2Body": "Last confirmation: there is no way to recover this data.",
+  "settingsResetConfirmAction": "Erase permanently",
+  "settingsResetCancelAction": "Cancel",
+  "settingsAboutAction": "About",
+  "aboutTitle": "About",
+  "aboutVersionLabel": "Version",
+  "aboutVersionUnknown": "Unknown version",
+  "aboutSourcesTitle": "Sources",
+  "aboutSourceAirFranceCorporate": "Air France Corporate — Pilote de ligne",
+  "aboutSourceAirFranceRecruitment": "Air France recruitment portal — Cadet Pilot offer",
+  "aboutSourceAirFranceNews": "Air France Corporate — Cadets recruitment news"
 }

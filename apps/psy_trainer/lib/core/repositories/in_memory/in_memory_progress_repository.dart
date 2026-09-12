@@ -341,4 +341,16 @@ class InMemoryProgressRepository implements ProgressRepository {
   Future<void> saveProfile(UserProfile profile) async {
     storedProfile = profile.copyWith(examDate: profile.examDate?.toUtc());
   }
+
+  // --- Reset ------------------------------------------------------------
+
+  @override
+  Future<void> clearAll() async {
+    sessionsById.clear();
+    attempts.clear();
+    itemStatsById.clear();
+    reviewsByCard.clear();
+    lessonsReadById.clear();
+    storedProfile = null;
+  }
 }

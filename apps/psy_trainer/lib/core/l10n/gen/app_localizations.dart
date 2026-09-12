@@ -2861,6 +2861,192 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'{count, plural, one{{count} item} other{{count} items}}'**
   String familyItemsCount(int count);
+
+  /// No description provided for @settingsSectionAppearance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Apparence'**
+  String get settingsSectionAppearance;
+
+  /// No description provided for @settingsThemeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Thème'**
+  String get settingsThemeLabel;
+
+  /// No description provided for @settingsThemeSystem.
+  ///
+  /// In fr, this message translates to:
+  /// **'Système'**
+  String get settingsThemeSystem;
+
+  /// No description provided for @settingsThemeLight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Clair'**
+  String get settingsThemeLight;
+
+  /// No description provided for @settingsThemeDark.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sombre'**
+  String get settingsThemeDark;
+
+  /// No description provided for @settingsLanguageLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Langue'**
+  String get settingsLanguageLabel;
+
+  /// No description provided for @settingsLanguageSystem.
+  ///
+  /// In fr, this message translates to:
+  /// **'Système'**
+  String get settingsLanguageSystem;
+
+  /// No description provided for @settingsLanguageFr.
+  ///
+  /// In fr, this message translates to:
+  /// **'Français'**
+  String get settingsLanguageFr;
+
+  /// No description provided for @settingsLanguageEn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Anglais'**
+  String get settingsLanguageEn;
+
+  /// No description provided for @settingsSoundLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Son'**
+  String get settingsSoundLabel;
+
+  /// No description provided for @settingsSoundOn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Activé'**
+  String get settingsSoundOn;
+
+  /// No description provided for @settingsSoundOff.
+  ///
+  /// In fr, this message translates to:
+  /// **'Désactivé'**
+  String get settingsSoundOff;
+
+  /// No description provided for @settingsKeypadLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Disposition du clavier numérique'**
+  String get settingsKeypadLabel;
+
+  /// No description provided for @settingsKeypadPhone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Téléphone'**
+  String get settingsKeypadPhone;
+
+  /// No description provided for @settingsKeypadCalculator.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculatrice'**
+  String get settingsKeypadCalculator;
+
+  /// No description provided for @settingsSectionData.
+  ///
+  /// In fr, this message translates to:
+  /// **'Données'**
+  String get settingsSectionData;
+
+  /// No description provided for @settingsResetAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser toutes les données'**
+  String get settingsResetAction;
+
+  /// No description provided for @settingsResetConfirm1Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser toutes les données ?'**
+  String get settingsResetConfirm1Title;
+
+  /// No description provided for @settingsResetConfirm1Body.
+  ///
+  /// In fr, this message translates to:
+  /// **'Votre progression, vos statistiques et vos réglages seront effacés. Cette action ne peut pas être annulée.'**
+  String get settingsResetConfirm1Body;
+
+  /// No description provided for @settingsResetConfirm2Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vraiment tout effacer ?'**
+  String get settingsResetConfirm2Title;
+
+  /// No description provided for @settingsResetConfirm2Body.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dernière confirmation : il n\'y aura aucun moyen de récupérer ces données.'**
+  String get settingsResetConfirm2Body;
+
+  /// No description provided for @settingsResetConfirmAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Effacer définitivement'**
+  String get settingsResetConfirmAction;
+
+  /// No description provided for @settingsResetCancelAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Annuler'**
+  String get settingsResetCancelAction;
+
+  /// No description provided for @settingsAboutAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'À propos'**
+  String get settingsAboutAction;
+
+  /// No description provided for @aboutTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'À propos'**
+  String get aboutTitle;
+
+  /// No description provided for @aboutVersionLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Version'**
+  String get aboutVersionLabel;
+
+  /// No description provided for @aboutVersionUnknown.
+  ///
+  /// In fr, this message translates to:
+  /// **'Version inconnue'**
+  String get aboutVersionUnknown;
+
+  /// No description provided for @aboutSourcesTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sources'**
+  String get aboutSourcesTitle;
+
+  /// No description provided for @aboutSourceAirFranceCorporate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Air France Corporate — Pilote de ligne'**
+  String get aboutSourceAirFranceCorporate;
+
+  /// No description provided for @aboutSourceAirFranceRecruitment.
+  ///
+  /// In fr, this message translates to:
+  /// **'Portail de recrutement Air France — offre Pilote Cadet'**
+  String get aboutSourceAirFranceRecruitment;
+
+  /// No description provided for @aboutSourceAirFranceNews.
+  ///
+  /// In fr, this message translates to:
+  /// **'Air France Corporate — actualités du recrutement Cadets'**
+  String get aboutSourceAirFranceNews;
 }
 
 class _AppLocalizationsDelegate

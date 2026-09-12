@@ -1744,4 +1744,102 @@ class AppLocalizationsEn extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get settingsSectionAppearance => 'Appearance';
+
+  @override
+  String get settingsThemeLabel => 'Theme';
+
+  @override
+  String get settingsThemeSystem => 'System';
+
+  @override
+  String get settingsThemeLight => 'Light';
+
+  @override
+  String get settingsThemeDark => 'Dark';
+
+  @override
+  String get settingsLanguageLabel => 'Language';
+
+  @override
+  String get settingsLanguageSystem => 'System';
+
+  @override
+  String get settingsLanguageFr => 'French';
+
+  @override
+  String get settingsLanguageEn => 'English';
+
+  @override
+  String get settingsSoundLabel => 'Sound';
+
+  @override
+  String get settingsSoundOn => 'On';
+
+  @override
+  String get settingsSoundOff => 'Off';
+
+  @override
+  String get settingsKeypadLabel => 'Numeric keypad layout';
+
+  @override
+  String get settingsKeypadPhone => 'Phone';
+
+  @override
+  String get settingsKeypadCalculator => 'Calculator';
+
+  @override
+  String get settingsSectionData => 'Data';
+
+  @override
+  String get settingsResetAction => 'Reset all data';
+
+  @override
+  String get settingsResetConfirm1Title => 'Reset all data?';
+
+  @override
+  String get settingsResetConfirm1Body =>
+      'Your progress, statistics and settings will be erased. This action cannot be undone.';
+
+  @override
+  String get settingsResetConfirm2Title => 'Really erase everything?';
+
+  @override
+  String get settingsResetConfirm2Body =>
+      'Last confirmation: there is no way to recover this data.';
+
+  @override
+  String get settingsResetConfirmAction => 'Erase permanently';
+
+  @override
+  String get settingsResetCancelAction => 'Cancel';
+
+  @override
+  String get settingsAboutAction => 'About';
+
+  @override
+  String get aboutTitle => 'About';
+
+  @override
+  String get aboutVersionLabel => 'Version';
+
+  @override
+  String get aboutVersionUnknown => 'Unknown version';
+
+  @override
+  String get aboutSourcesTitle => 'Sources';
+
+  @override
+  String get aboutSourceAirFranceCorporate =>
+      'Air France Corporate — Pilote de ligne';
+
+  @override
+  String get aboutSourceAirFranceRecruitment =>
+      'Air France recruitment portal — Cadet Pilot offer';
+
+  @override
+  String get aboutSourceAirFranceNews =>
+      'Air France Corporate — Cadets recruitment news';
 }

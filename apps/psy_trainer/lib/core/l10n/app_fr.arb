@@ -1243,5 +1243,36 @@
         "type": "int"
       }
     }
-  }
+  },
+  "settingsSectionAppearance": "Apparence",
+  "settingsThemeLabel": "Thème",
+  "settingsThemeSystem": "Système",
+  "settingsThemeLight": "Clair",
+  "settingsThemeDark": "Sombre",
+  "settingsLanguageLabel": "Langue",
+  "settingsLanguageSystem": "Système",
+  "settingsLanguageFr": "Français",
+  "settingsLanguageEn": "Anglais",
+  "settingsSoundLabel": "Son",
+  "settingsSoundOn": "Activé",
+  "settingsSoundOff": "Désactivé",
+  "settingsKeypadLabel": "Disposition du clavier numérique",
+  "settingsKeypadPhone": "Téléphone",
+  "settingsKeypadCalculator": "Calculatrice",
+  "settingsSectionData": "Données",
+  "settingsResetAction": "Réinitialiser toutes les données",
+  "settingsResetConfirm1Title": "Réinitialiser toutes les données ?",
+  "settingsResetConfirm1Body": "Votre progression, vos statistiques et vos réglages seront effacés. Cette action ne peut pas être annulée.",
+  "settingsResetConfirm2Title": "Vraiment tout effacer ?",
+  "settingsResetConfirm2Body": "Dernière confirmation : il n'y aura aucun moyen de récupérer ces données.",
+  "settingsResetConfirmAction": "Effacer définitivement",
+  "settingsResetCancelAction": "Annuler",
+  "settingsAboutAction": "À propos",
+  "aboutTitle": "À propos",
+  "aboutVersionLabel": "Version",
+  "aboutVersionUnknown": "Version inconnue",
+  "aboutSourcesTitle": "Sources",
+  "aboutSourceAirFranceCorporate": "Air France Corporate — Pilote de ligne",
+  "aboutSourceAirFranceRecruitment": "Portail de recrutement Air France — offre Pilote Cadet",
+  "aboutSourceAirFranceNews": "Air France Corporate — actualités du recrutement Cadets"
 }

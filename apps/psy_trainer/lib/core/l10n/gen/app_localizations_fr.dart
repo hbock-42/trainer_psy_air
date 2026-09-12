@@ -1753,4 +1753,102 @@ class AppLocalizationsFr extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get settingsSectionAppearance => 'Apparence';
+
+  @override
+  String get settingsThemeLabel => 'Thème';
+
+  @override
+  String get settingsThemeSystem => 'Système';
+
+  @override
+  String get settingsThemeLight => 'Clair';
+
+  @override
+  String get settingsThemeDark => 'Sombre';
+
+  @override
+  String get settingsLanguageLabel => 'Langue';
+
+  @override
+  String get settingsLanguageSystem => 'Système';
+
+  @override
+  String get settingsLanguageFr => 'Français';
+
+  @override
+  String get settingsLanguageEn => 'Anglais';
+
+  @override
+  String get settingsSoundLabel => 'Son';
+
+  @override
+  String get settingsSoundOn => 'Activé';
+
+  @override
+  String get settingsSoundOff => 'Désactivé';
+
+  @override
+  String get settingsKeypadLabel => 'Disposition du clavier numérique';
+
+  @override
+  String get settingsKeypadPhone => 'Téléphone';
+
+  @override
+  String get settingsKeypadCalculator => 'Calculatrice';
+
+  @override
+  String get settingsSectionData => 'Données';
+
+  @override
+  String get settingsResetAction => 'Réinitialiser toutes les données';
+
+  @override
+  String get settingsResetConfirm1Title => 'Réinitialiser toutes les données ?';
+
+  @override
+  String get settingsResetConfirm1Body =>
+      'Votre progression, vos statistiques et vos réglages seront effacés. Cette action ne peut pas être annulée.';
+
+  @override
+  String get settingsResetConfirm2Title => 'Vraiment tout effacer ?';
+
+  @override
+  String get settingsResetConfirm2Body =>
+      'Dernière confirmation : il n\'y aura aucun moyen de récupérer ces données.';
+
+  @override
+  String get settingsResetConfirmAction => 'Effacer définitivement';
+
+  @override
+  String get settingsResetCancelAction => 'Annuler';
+
+  @override
+  String get settingsAboutAction => 'À propos';
+
+  @override
+  String get aboutTitle => 'À propos';
+
+  @override
+  String get aboutVersionLabel => 'Version';
+
+  @override
+  String get aboutVersionUnknown => 'Version inconnue';
+
+  @override
+  String get aboutSourcesTitle => 'Sources';
+
+  @override
+  String get aboutSourceAirFranceCorporate =>
+      'Air France Corporate — Pilote de ligne';
+
+  @override
+  String get aboutSourceAirFranceRecruitment =>
+      'Portail de recrutement Air France — offre Pilote Cadet';
+
+  @override
+  String get aboutSourceAirFranceNews =>
+      'Air France Corporate — actualités du recrutement Cadets';
 }

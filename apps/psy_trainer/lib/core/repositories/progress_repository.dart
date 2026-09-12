@@ -128,4 +128,14 @@ abstract interface class ProgressRepository {
   Future<UserProfile?> profile();
 
   Future<void> saveProfile(UserProfile profile);
+
+  // --- Reset ------------------------------------------------------------
+
+  /// "Réinitialiser toutes les données" (US-091): permanently deletes every
+  /// user row — sessions, attempts, item stats, flashcard reviews, lesson
+  /// progress and the profile — in one transaction. Content mirrors
+  /// (`content_meta`, `items`, `lessons`...) are untouched, so the app does
+  /// not need to re-seed; onboarding runs again because [profile] becomes
+  /// null.
+  Future<void> clearAll();
 }
