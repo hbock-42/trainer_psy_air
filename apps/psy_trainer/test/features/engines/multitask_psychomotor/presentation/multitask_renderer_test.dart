@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
+import 'package:psy_trainer/core/l10n/strings.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/engines/multitask_psychomotor/domain/multitask_engine.dart';
 import 'package:psy_trainer/features/engines/multitask_psychomotor/presentation/multitask_renderer.dart';
@@ -106,14 +108,12 @@ void main() {
   });
 
   group('desktop platform (keyboard confirmed from the start)', () {
-    setUp(() {
-      debugDefaultTargetPlatformOverride = TargetPlatform.macOS;
-    });
-    tearDown(() {
-      debugDefaultTargetPlatformOverride = null;
-    });
+    // Reset synchronously at the end of each test body: the binding's
+    // end-of-test invariant check runs before `tearDown`/`addTearDown`
+    // callbacks fire, so those would reset it too late.
 
     testWidgets('no touch fallback and no exam notice appear', (tester) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.macOS;
       await pumpHost(
         tester,
         ActivitySessionRequest.fresh(config(mode: SessionMode.exam)),
@@ -124,13 +124,20 @@ void main() {
       expect(find.byKey(const Key('multitask.skip_section')), findsNothing);
       expect(find.byKey(const Key('multitask.touch_dpad.up')), findsNothing);
       expect(find.byType(CustomPaint), findsWidgets);
+      debugDefaultTargetPlatformOverride = null;
     });
 
     testWidgets(
       'holding an arrow, pressing space/F, then letting the ticker reach '
       'the duration submits a raw answer and completes the session',
       (tester) async {
-        await pumpHost(tester, ActivitySessionRequest.fresh(config()));
+        debugDefaultTargetPlatformOverride = TargetPlatform.macOS;
+        // Exam mode: no feedback screen to dismiss, so the session finishes
+        // as soon as the renderer submits its `Answer.raw`.
+        await pumpHost(
+          tester,
+          ActivitySessionRequest.fresh(config(mode: SessionMode.exam)),
+        );
         await tester.tap(find.byKey(SessionHost.startKey));
         await tester.pump();
 
@@ -153,6 +160,7 @@ void main() {
         final outcome = repo.attempts.single;
         expect(outcome.answer, isNotNull);
         expect(outcome.answer!['kind'], 'raw');
+        debugDefaultTargetPlatformOverride = null;
       },
     );
   });
