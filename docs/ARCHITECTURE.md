@@ -132,6 +132,7 @@ imports go through a `domain` interface, not into another feature's `presentatio
 | Local database | `drift` on `package:sqlite3` 3.x | `sqlite3` bundles the native library through Dart hooks, so `sqlite3_flutter_libs` (now discontinued) is not needed. Schema: see "Data layer" |
 | IDs / paths    | `uuid`, `path`, `path_provider` | |
 | Charts         | our own `CustomPainter`s        | `fl_chart` builds on Material, so US-070 draws with `CustomPaint`: `ArcGauge`, `RadarChart`, `HorizontalBarChart` in `shared/widgets/` (see `docs/DESIGN_SYSTEM.md`) |
+| Sharing        | `share_plus`                    | Material-free (checked before adding it); US-074's backup export, `XFile.fromData` + `downloadFallbackEnabled` so the same call is the native share sheet on mobile/desktop and a browser download on web |
 | Lints          | `flutter_lints` + stricter rules in `analysis_options.yaml` | `custom_lint` was dropped: its analyzer pin conflicts with `drift_dev` |
 
 Versions are pinned with caret constraints in `pubspec.yaml` and locked in `pubspec.lock`
@@ -281,7 +282,7 @@ Schema v1 (every table has `id TEXT PRIMARY KEY`, `created_at`, `updated_at`):
 | `item_stats` | itemId (unique), familyId, seen, correct, totalResponseMs, lastCorrect, lastSeenAt | maintained by `INSERT ... ON CONFLICT DO UPDATE` |
 | `flashcard_reviews` | flashcardId (unique), deckId, box, reviews, lapses, lastReviewedAt?, nextReviewAt | index `(deck_id, next_review_at)` |
 | `lesson_progress` | lessonId (unique), readAt | |
-| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`). Onboarding (US-090) keeps its two flags in `settings`: `onboardingCompleted` (bool) and `disclaimerAcceptedAt` (ISO-8601 UTC); the mapping lives in `features/onboarding/domain/onboarding_answers.dart`. Settings (US-091) use `locale` for the UI language (`'system' \| 'fr' \| 'en'`, see `LanguagePreference`) and three more `settings` keys: `themeMode` (`'system' \| 'light' \| 'dark'`), `soundEnabled` (bool) and `keypadLayout` (`'phone' \| 'calculator'`) — mapping in `features/settings/domain/app_settings.dart` (`AppSettings`), read through `appSettingsProvider` (`features/settings/presentation/providers/`). Exam realism options (US-063) are one more nested `settings` key, `exam.realism`, holding a JSON object of seven booleans (`negativeMarkingCulture`, `hideRemainingTime`, `hideTimerEnglish`, `randomizeGenerated`, `allowPauseBetweenSections`, `immersiveFullScreen`, `soundCuesEnabled`) — mapping in `features/exam/domain/exam_realism_options.dart` (`ExamRealismOptions`), read through `examRealismOptionsProvider` (`features/exam/presentation/providers/`); see "Exam realism options (US-063)" below |
+| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`). Onboarding (US-090) keeps its two flags in `settings`: `onboardingCompleted` (bool) and `disclaimerAcceptedAt` (ISO-8601 UTC); the mapping lives in `features/onboarding/domain/onboarding_answers.dart`. Settings (US-091) use `locale` for the UI language (`'system' \| 'fr' \| 'en'`, see `LanguagePreference`) and three more `settings` keys: `themeMode` (`'system' \| 'light' \| 'dark'`), `soundEnabled` (bool) and `keypadLayout` (`'phone' \| 'calculator'`) — mapping in `features/settings/domain/app_settings.dart` (`AppSettings`), read through `appSettingsProvider` (`features/settings/presentation/providers/`). Exam realism options (US-063) are one more nested `settings` key, `exam.realism`, holding a JSON object of seven booleans (`negativeMarkingCulture`, `hideRemainingTime`, `hideTimerEnglish`, `randomizeGenerated`, `allowPauseBetweenSections`, `immersiveFullScreen`, `soundCuesEnabled`) — mapping in `features/exam/domain/exam_realism_options.dart` (`ExamRealismOptions`), read through `examRealismOptionsProvider` (`features/exam/presentation/providers/`); see "Exam realism options (US-063)" below. US-073 adds a `goal` key: `{'target': int, 'unit': 'items' \| 'minutes'}` (default `{target: 20, unit: 'items'}`) — mapping in `features/progress/domain/daily_goal.dart` (`DailyGoal`), read through `dailyGoalProvider` (`features/progress/presentation/providers/`) |
 
 Design decisions:
 
@@ -570,6 +571,114 @@ their writes. `familyTimeSeriesProvider` takes a record `(familyId, from, to, mo
 chart queries share one result and is `autoDispose` so ranges nobody watches are dropped.
 Tests override `statsServiceProvider` with a fixed clock and the two repository providers with
 the in-memory fakes.
+
+### Streaks and daily goal (US-073)
+
+```
+features/progress/
+  domain/
+    daily_goal.dart           GoalUnit, DailyGoal (target, unit; UserProfile.settings['goal'])
+    streak_service.dart       ActivityEvent, DailyActivity, StreakSummary, StreakService
+  presentation/
+    providers/
+      daily_goal_provider.dart    dailyGoalProvider (hydrate-once Notifier, same shape as
+                                  appSettingsProvider); settings screen writes it
+      streak_provider.dart        streakServiceProvider, streakSummaryProvider
+    widgets/
+      streak_card.dart            StreakCard: streak counter, an ArcGauge progress ring, the
+                                  heat-map
+      activity_heatmap.dart       ActivityHeatmap: CustomPainter calendar heat-map
+```
+
+`StreakService` is pure Dart (an injectable clock, no repository access): it takes a flat list of
+`ActivityEvent` (`at`, `itemCount`, `responseMs`) and a `DailyGoal`, and returns a `StreakSummary`
+(current/best streak, today's progress and goal-met flag, and a `heatmap` of `DailyActivity` for
+the requested window, default the last 12 weeks). `streakSummaryProvider` builds the events from
+`ProgressRepository.allAttempts()` (every practice attempt and exam-section attempt counts as one
+item) and `allFlashcardReviews()` (each card's `lastReviewedAt`, when set, counts as one item —
+only the latest review per card is stored, not a full history, so a card reviewed several times
+the same day is undercounted by design). Both repository methods return the raw rows (no SQL
+aggregation) so the service buckets them into days itself.
+
+Day boundaries are **local midnight** (`DateTime.toLocal()`), not UTC, so a session just after
+midnight streaks as a new day even though the stored timestamp is UTC. The streak counts *any*
+activity that day, independent of the goal; goal-met is a separate flag on today's cell only, so
+editing the goal never rewrites history. `streakSummaryProvider` watches `progressVersionProvider`
+(recomputes after a finished session, same as the rest of the dashboard) and `dailyGoalProvider`
+(recomputes when the goal changes, no version bump needed).
+
+`ActivityHeatmap` chunks its `days` (oldest first) into columns of 7 — a rolling window ending
+today, not calendar weeks starting Monday — and paints one cell per day with `CustomPaint`,
+coloured by a fixed 0..4 intensity bucket (`ActivityHeatmap.level`) blended between
+`accentSubtle` and `accent`; one `Semantics` node summarises it (`activityHeatmapSemanticsValue`),
+the cells themselves excluded. `StreakCard` reuses the shared `ArcGauge` (`shared/widgets/`) for
+the progress ring rather than a new primitive, since it is already exactly "a 0..1 value with a
+label in the middle".
+
+### Backup export / import (US-074)
+
+`BackupService` (`features/settings/domain/backup_service.dart`, pure Dart) shapes and validates
+a single versioned JSON document that is the whole of a user's data:
+
+```json
+{
+  "format": "psy-trainer-backup",
+  "version": 1,
+  "exportedAt": "2026-09-12T10:00:00.000Z",
+  "app": { "name": "psy_trainer", "version": "1.2.3" },
+  "data": {
+    "sessions": [ { "id": "...", "updatedAt": "...", "fields": { /* every column */ } } ],
+    "attempts": [ ... ],
+    "itemStats": [ ... ],
+    "flashcardReviews": [ ... ],
+    "lessonProgress": [ ... ],
+    "profile": { "id": "me", "updatedAt": "...", "fields": { ... } } | null
+  }
+}
+```
+
+Each row of `data` is a `BackupRow` (`core/repositories/model/backup.dart`): its id, its
+`updatedAt` (the merge watermark) and `fields` — every column of the row, JSON-encoded exactly as
+Drift's generated `toJson()`/`fromJson()` already do it (`row.toJson()` on the way out,
+`XxxRow.fromJson(row.fields)` on the way in), so `BackupService` never needs its own per-table
+mapping. This is deliberately **not** the feature-facing domain models (`TrainingSession`,
+`Attempt`...): those do not carry `updatedAt` (a Drift-row-only concern until now), and a raw row
+dump is exactly the shape a future remote sync (EPIC-13) needs to diff against a server — this
+format *is* that contract, expressed a version early.
+
+`ProgressRepository.exportSnapshot()` / `.importSnapshot(BackupSnapshot)` (both implementations:
+`LocalProgressRepository` reads/writes the tables directly, `InMemoryProgressRepository` tracks a
+parallel `updatedAt` per row purely for this) do the actual merge, one table at a time:
+
+- **`sessions` / `attempts`**: the row `id` is the only identity a row has, so an imported row
+  wins over an existing one at the same `id` when its `updatedAt` is strictly newer; sessions are
+  merged before attempts (attempts reference `sessionId`).
+- **`itemStats` / `flashcardReviews` / `lessonProgress` / `profile`**: merged by their *natural*
+  unique key (`itemId`, `flashcardId`, `lessonId`, the single profile row) instead, since two
+  independent exports can assign different row ids to what is the same item; the existing row's
+  id/`createdAt` are kept, only its fields and `updatedAt` change.
+- A tie or an older `updatedAt` is left alone (`BackupImportSummary.skipped`).
+- Content tables (`items`, `lessons`...) are never part of a backup or touched by it — they are
+  re-derived from the bundled assets (US-013), never user-authored.
+
+`BackupService.parseSnapshot` validates the envelope before anything is written — wrong
+`format`, missing/non-object `data`, a `version` newer than this app understands, or a row missing
+`id`/`updatedAt`/`fields` — and throws `BackupFormatException(BackupErrorReason)`; the settings
+screen maps each reason to a localized message (`context.l10n`, never a literal string in
+`domain/`).
+
+**Export**: `share_plus` (Material-free — checked before adding it) with `XFile.fromData` (no
+`dart:io`/`path_provider` file write needed) and `ShareParams.downloadFallbackEnabled` (its
+default), so the same call opens the native share sheet on mobile/desktop and triggers a browser
+download on web without any platform branching in this app's code.
+
+**Import**: no Material file picker exists on this widgets-only stack, and `file_picker` was not
+added (unverified Material-freedom, and native file-picking entitlements per platform were out of
+scope for this story); instead the settings screen's backup section has a paste-JSON field
+(`features/settings/presentation/widgets/plain_text_area.dart`, `PlainTextArea`) built directly on
+`EditableText` (see "No Material, no Cupertino" above) — paste the exported file's content,
+"Importer" parses, validates and merges it, and reports `BackupImportSummary` (inserted/updated/
+skipped) or the validation error.
 
 ## Engine
 

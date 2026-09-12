@@ -12,8 +12,11 @@ import '../../../shared/widgets/widgets.dart';
 import '../../onboarding/domain/onboarding_answers.dart';
 import '../../onboarding/presentation/providers/onboarding_answers_provider.dart';
 import '../../onboarding/presentation/providers/onboarding_completed_provider.dart';
+import '../../progress/domain/daily_goal.dart';
+import '../../progress/presentation/providers/daily_goal_provider.dart';
 import '../domain/app_settings.dart';
 import 'providers/app_settings_provider.dart';
+import 'widgets/backup_section.dart';
 
 /// The Settings tab (US-091): profile summary, appearance (theme/language),
 /// sound, keypad layout, "reset all data" (double confirmation) and About.
@@ -32,6 +35,11 @@ class SettingsScreen extends ConsumerStatefulWidget {
 
   /// Either overlay's cancel button.
   static const Key resetCancelKey = Key('settings.reset_cancel');
+
+  /// The screen's outer scroll view — the backup section's paste field
+  /// (US-074) owns its own inner `Scrollable`, so a widget test scrolling
+  /// to a key further down must disambiguate against this one.
+  static const Key scrollKey = Key('settings.scroll');
 
   @override
   ConsumerState<SettingsScreen> createState() => _SettingsScreenState();
@@ -56,6 +64,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     final answers = ref.watch(onboardingAnswersProvider);
     final settings = ref.watch(appSettingsProvider);
     final controller = ref.read(appSettingsProvider.notifier);
+    final goal = ref.watch(dailyGoalProvider);
+    final goalController = ref.read(dailyGoalProvider.notifier);
 
     return Stack(
       children: [
@@ -63,6 +73,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           title: context.l10n.tabSettings,
           bodyPadding: EdgeInsets.all(theme.spacing.lg),
           body: ListView(
+            key: SettingsScreen.scrollKey,
             children: [
               _ProfileSummary(answers: answers.value),
               SizedBox(height: theme.spacing.md),
@@ -158,6 +169,56 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   ],
                 ),
               ),
+              SizedBox(height: theme.spacing.xl),
+              SectionHeader(title: context.l10n.settingsSectionGoal),
+              SizedBox(height: theme.spacing.sm),
+              _SettingRow(
+                label: context.l10n.settingsGoalTargetLabel,
+                child: SegmentedChoice<int>(
+                  semanticsLabel: context.l10n.settingsGoalTargetLabel,
+                  selected: goal.target,
+                  onSelected: goalController.setTarget,
+                  options: [
+                    for (final preset
+                        in goal.unit == GoalUnit.items
+                            ? DailyGoal.itemPresets
+                            : DailyGoal.minutePresets)
+                      SegmentedOption(value: preset, label: '$preset'),
+                  ],
+                ),
+              ),
+              SizedBox(height: theme.spacing.md),
+              _SettingRow(
+                label: context.l10n.settingsGoalUnitLabel,
+                child: SegmentedChoice<GoalUnit>(
+                  semanticsLabel: context.l10n.settingsGoalUnitLabel,
+                  selected: goal.unit,
+                  onSelected: (unit) async {
+                    await goalController.setUnit(unit);
+                    // Land on a preset valid for the new unit.
+                    final presets = unit == GoalUnit.items
+                        ? DailyGoal.itemPresets
+                        : DailyGoal.minutePresets;
+                    if (!presets.contains(goal.target)) {
+                      await goalController.setTarget(presets.first);
+                    }
+                  },
+                  options: [
+                    SegmentedOption(
+                      value: GoalUnit.items,
+                      label: context.l10n.settingsGoalUnitItems,
+                    ),
+                    SegmentedOption(
+                      value: GoalUnit.minutes,
+                      label: context.l10n.settingsGoalUnitMinutes,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: theme.spacing.xl),
+              SectionHeader(title: context.l10n.settingsSectionBackup),
+              SizedBox(height: theme.spacing.sm),
+              const BackupSection(),
               SizedBox(height: theme.spacing.xl),
               SectionHeader(title: context.l10n.settingsSectionData),
               SizedBox(height: theme.spacing.sm),

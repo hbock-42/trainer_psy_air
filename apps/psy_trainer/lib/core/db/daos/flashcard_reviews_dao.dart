@@ -29,6 +29,9 @@ class FlashcardReviewsDao extends DatabaseAccessor<AppDatabase>
     flashcardReviews,
   )..where((t) => t.flashcardId.equals(flashcardId))).getSingleOrNull();
 
+  /// Every card's review state (US-073 heat-map, US-074 backup export).
+  Future<List<FlashcardReviewRow>> all() => select(flashcardReviews).get();
+
   /// Reviews whose `nextReviewAt <= now`, soonest first. Uses the
   /// `(deck_id, next_review_at)` index when [deckId] is given.
   Future<List<FlashcardReviewRow>> due({
