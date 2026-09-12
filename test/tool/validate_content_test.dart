@@ -133,16 +133,16 @@ void main() {
   });
 
   group('loose files', () {
-    test('the authoring examples validate on their own', () {
+    test('the shipped bundle and the authoring examples validate', () {
       final report = validator.validate([ContentValidator.defaultContentDir]);
       expect(report.errors, isEmpty, reason: report.errors.join('\n'));
-      expect(report.bundles, isEmpty);
+      expect(report.bundles, [ContentValidator.defaultContentDir]);
+      // The examples folder stays loose even inside the real bundle.
       expect(report.looseFiles, greaterThanOrEqualTo(10));
-      // Families of loose banks are listed but not declared.
       expect(report.families.map((f) => f.familyId), contains('english'));
       expect(
         report.families.firstWhere((f) => f.familyId == 'english').declared,
-        isFalse,
+        isTrue,
       );
     });
 
@@ -434,9 +434,14 @@ void main() {
           'generatorId',
         );
       });
-      final schema = errors.firstWhere((e) => e.source == IssueSource.schema);
+      // v2 binds params to generatorId through an allOf, so the branch
+      // failure is reported alongside the missing property itself.
+      final schema = errors.firstWhere(
+        (e) =>
+            e.source == IssueSource.schema &&
+            e.message == 'missing required property "generatorId"',
+      );
       expect(schema.path, '/sections/0/itemSelection');
-      expect(schema.message, 'missing required property "generatorId"');
       expect(schema.entityId, 's01-arith');
     });
 

@@ -17,7 +17,8 @@ theme.colors.accent; theme.textStyles.title; theme.spacing.lg; theme.radii.mdAll
 ```
 
 `AppThemeScope` is an `InheritedWidget` that also installs `DefaultTextStyle` (body) so plain
-`Text` renders correctly under `WidgetsApp`. Wrap the app once, in the root `builder`:
+`Text` renders correctly under `WidgetsApp`. The app wraps itself once, in the root `builder` of
+`lib/app.dart` (light or dark follows the platform brightness until US-091 adds a setting):
 
 ```dart
 WidgetsApp(
@@ -92,8 +93,9 @@ hit target and a `Semantics` node (button flag, label, enabled/selected state). 
 | `ScoreCard` | headline figure | `title`, `value`, `subtitle`, `delta` (+green / -red / 0 muted) + `deltaSuffix` |
 | `SectionHeader` | title of a content group | `subtitle`, `trailing`; semantics header |
 | `AppCard` | bordered surface | tappable when `onPressed` is set (then `semanticsLabel` is required) |
-| `AppScaffold` | page frame | background + `SafeArea` + optional `AppTopBar` (title, back chevron, actions) + body; no bottom nav (US-005) |
+| `AppScaffold` | page frame | background + `SafeArea` + optional `AppTopBar` (title, back chevron, actions) + body; no bottom nav (the tab shell owns it) |
 | `AppTopBar` | header row used by `AppScaffold` | reusable in custom layouts |
+| `AppTabBar` | main navigation (the shell's five tabs) | `items` (`AppTabItem` glyph + label), `selectedIndex`, `onSelected` (also fired on the active tab, so the shell can pop it to root); `layout: bottom` (row, phones) or `rail` (left column, windows >= `railBreakpoint` 900 dp); handles the safe-area inset on its own edge; each tab is an `AppPressable` with selected flag and label; bottom labels use the caption size so five fit on a phone, rail labels use `label` |
 | `AppIcon` | vector glyph painted with `CustomPaint` | `AppIconGlyph.check, cross, chevronLeft, chevronRight, clock, play, pause, settings, chart, book, target`; follows the text colour; decorative unless `semanticsLabel` is given |
 
 ## Gallery
@@ -108,6 +110,12 @@ if (kWidgetGalleryEnabled)
 ```
 
 The screen brings its own `AppThemeScope`, so it works from any route.
+
+## Strings
+
+No literal copy in widgets or screens: user-facing text comes from `AppStrings`
+(`lib/core/l10n/strings.dart`, French only). US-091 replaces it with ARB localisation; keeping
+every string there today makes that migration a rename.
 
 ## Testing widgets
 

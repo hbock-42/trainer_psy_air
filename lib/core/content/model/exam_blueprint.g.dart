@@ -95,7 +95,6 @@ _ExamSection _$ExamSectionFromJson(
   final val = _ExamSection(
     id: $checkedConvert('id', (v) => v as String),
     familyId: $checkedConvert('familyId', (v) => v as String),
-    durationSec: $checkedConvert('durationSec', (v) => (v as num).toInt()),
     itemCount: $checkedConvert('itemCount', (v) => (v as num).toInt()),
     itemSelection: $checkedConvert(
       'itemSelection',
@@ -110,14 +109,35 @@ _ExamSection _$ExamSectionFromJson(
       (v) =>
           v == null ? null : LocalizedText.fromJson(v as Map<String, dynamic>),
     ),
-    instructions: $checkedConvert(
-      'instructions',
+    briefing: $checkedConvert(
+      'briefing',
       (v) =>
           v == null ? null : LocalizedText.fromJson(v as Map<String, dynamic>),
+    ),
+    sectionTimeSec: $checkedConvert(
+      'sectionTimeSec',
+      (v) => (v as num?)?.toInt(),
     ),
     perItemTimeSec: $checkedConvert(
       'perItemTimeSec',
       (v) => (v as num?)?.toInt(),
+    ),
+    cadence: $checkedConvert(
+      'cadence',
+      (v) => v == null ? null : Cadence.fromJson(v as Map<String, dynamic>),
+    ),
+    scoringPolicy: $checkedConvert(
+      'scoringPolicy',
+      (v) => v == null
+          ? const ScoringPolicy()
+          : ScoringPolicy.fromJson(v as Map<String, dynamic>),
+    ),
+    liveFeedback: $checkedConvert('liveFeedback', (v) => v as bool? ?? false),
+    inputRequirement: $checkedConvert(
+      'inputRequirement',
+      (v) =>
+          $enumDecodeNullable(_$InputRequirementEnumMap, v) ??
+          InputRequirement.touch,
     ),
     breakAfterSec: $checkedConvert(
       'breakAfterSec',
@@ -132,16 +152,25 @@ Map<String, dynamic> _$ExamSectionToJson(_ExamSection instance) =>
     <String, dynamic>{
       'id': instance.id,
       'familyId': instance.familyId,
-      'durationSec': instance.durationSec,
       'itemCount': instance.itemCount,
       'itemSelection': instance.itemSelection.toJson(),
       'confidence': _$ConfidenceEnumMap[instance.confidence]!,
       'title': ?instance.title?.toJson(),
-      'instructions': ?instance.instructions?.toJson(),
+      'briefing': ?instance.briefing?.toJson(),
+      'sectionTimeSec': ?instance.sectionTimeSec,
       'perItemTimeSec': ?instance.perItemTimeSec,
+      'cadence': ?instance.cadence?.toJson(),
+      'scoringPolicy': instance.scoringPolicy.toJson(),
+      'liveFeedback': instance.liveFeedback,
+      'inputRequirement': _$InputRequirementEnumMap[instance.inputRequirement]!,
       'breakAfterSec': instance.breakAfterSec,
       'weight': instance.weight,
     };
+
+const _$InputRequirementEnumMap = {
+  InputRequirement.touch: 'touch',
+  InputRequirement.keyboard: 'keyboard',
+};
 
 BankSelection _$BankSelectionFromJson(Map<String, dynamic> json) =>
     $checkedCreate('BankSelection', json, ($checkedConvert) {
@@ -186,14 +215,18 @@ Map<String, dynamic> _$BankSelectionToJson(BankSelection instance) =>
 GeneratedSelection _$GeneratedSelectionFromJson(Map<String, dynamic> json) =>
     $checkedCreate('GeneratedSelection', json, ($checkedConvert) {
       final val = GeneratedSelection(
-        generatorId: $checkedConvert('generatorId', (v) => v as String),
+        generatorId: $checkedConvert(
+          'generatorId',
+          (v) => $enumDecode(_$GeneratorIdEnumMap, v),
+        ),
         difficulty: $checkedConvert(
           'difficulty',
           (v) => DifficultyRange.fromJson(v as Map<String, dynamic>),
         ),
         params: $checkedConvert(
           'params',
-          (v) => v as Map<String, dynamic>? ?? const <String, Object?>{},
+          (v) => GeneratorParams.fromJson(v as Map<String, dynamic>),
+          readValue: readGeneratorParams,
         ),
         $type: $checkedConvert('mode', (v) => v as String?),
       );
@@ -202,11 +235,26 @@ GeneratedSelection _$GeneratedSelectionFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$GeneratedSelectionToJson(GeneratedSelection instance) =>
     <String, dynamic>{
-      'generatorId': instance.generatorId,
+      'generatorId': _$GeneratorIdEnumMap[instance.generatorId]!,
       'difficulty': instance.difficulty.toJson(),
-      'params': instance.params,
+      'params': generatorParamsToJson(instance.params),
       'mode': instance.$type,
     };
+
+const _$GeneratorIdEnumMap = {
+  GeneratorId.nback: 'nback',
+  GeneratorId.tubes: 'tubes',
+  GeneratorId.stimulusResponse: 'stimulus_response',
+  GeneratorId.paritySequence: 'parity_sequence',
+  GeneratorId.overlayGrid: 'overlay_grid',
+  GeneratorId.dominos: 'dominos',
+  GeneratorId.airways: 'airways',
+  GeneratorId.wordBoxes: 'word_boxes',
+  GeneratorId.arithmeticGrid: 'arithmetic_grid',
+  GeneratorId.viewpoint: 'viewpoint',
+  GeneratorId.cubeNet: 'cube_net',
+  GeneratorId.multitask: 'multitask',
+};
 
 _DifficultyRange _$DifficultyRangeFromJson(Map<String, dynamic> json) =>
     $checkedCreate('_DifficultyRange', json, ($checkedConvert) {

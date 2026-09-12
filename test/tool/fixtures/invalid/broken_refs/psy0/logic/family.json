@@ -6,7 +6,7 @@
   "order": 3,
   "name": { "fr": "Logique", "en": "Logic" },
   "description": { "fr": "Suites et matrices.", "en": "Series and matrices." },
-  "engineType": "logic_series",
+  "engineType": "logic_dominos",
   "answerFormat": "mcq",
   "defaultDurationSec": 600,
   "defaultItemCount": 20,

@@ -31,6 +31,48 @@ Map<String, Object?> validBank({List<Map<String, Object?>>? items}) =>
       'items': items ?? [validMcq()],
     };
 
+/// A minimal valid generated recipe (dominos, default params).
+Map<String, Object?> validGenerated() => <String, Object?>{
+  'id': 'logic_dominos.series.gen.0001',
+  'type': 'generated',
+  'version': 1,
+  'familyId': 'logic_dominos',
+  'difficulty': 2,
+  'tags': ['logic.dominos'],
+  'generatorId': 'dominos',
+  'seed': 7,
+};
+
+/// A minimal valid blueprint around one [section].
+Map<String, Object?> validBlueprint({required Map<String, Object?> section}) =>
+    <String, Object?>{
+      'kind': 'blueprint',
+      'id': 'psy0.blueprint.x',
+      'version': 1,
+      'moduleId': 'psy0',
+      'name': {'fr': 'X'},
+      'description': {'fr': 'X'},
+      'confidence': 'assumed',
+      'tags': ['blueprint.x'],
+      'sections': [section],
+    };
+
+Map<String, Object?> validField() => <String, Object?>{
+  'id': 'verbal_boxes.field.cuisine',
+  'version': 1,
+  'familyId': 'verbal_boxes',
+  'name': {'fr': 'La cuisine'},
+  'difficulty': 1,
+  'tags': ['verbal.boxes'],
+  'words': ['casserole', 'poêle', 'louche', 'fouet', 'passoire'],
+};
+
+Map<String, Object?> validLexicalFields() => <String, Object?>{
+  'kind': 'lexical_fields',
+  'familyId': 'verbal_boxes',
+  'fields': [validField()],
+};
+
 Matcher throwsContentParseException({
   String? file,
   String? entityId,
@@ -298,7 +340,7 @@ void main() {
           {
             'id': 's01',
             'familyId': 'english',
-            'durationSec': 60,
+            'sectionTimeSec': 60,
             'itemCount': 5,
             'itemSelection': {'mode': 'random'},
             'confidence': 'assumed',
@@ -309,6 +351,167 @@ void main() {
         () => parser.parseBlueprint(jsonEncode(blueprint), file: 'b.json'),
         throwsContentParseException(entityId: 's01', messageContains: 'random'),
       );
+    });
+
+    test('a section without any timing policy', () {
+      final blueprint = validBlueprint(
+        section: {
+          'id': 's01',
+          'familyId': 'culture_aero',
+          'itemCount': 5,
+          'itemSelection': {'mode': 'bank'},
+          'confidence': 'assumed',
+        },
+      );
+      expect(
+        () => parser.parseBlueprint(jsonEncode(blueprint), file: 'b.json'),
+        throwsContentParseException(
+          entityId: 's01',
+          messageContains: 'sectionTimeSec',
+        ),
+      );
+    });
+
+    test(
+      'a generated selection with an unknown generator, naming the section',
+      () {
+        final blueprint = validBlueprint(
+          section: {
+            'id': 's01',
+            'familyId': 'logic',
+            'sectionTimeSec': 60,
+            'itemCount': 5,
+            'itemSelection': {
+              'mode': 'generated',
+              'generatorId': 'logic_series',
+              'difficulty': {'min': 2, 'max': 4},
+            },
+            'confidence': 'assumed',
+          },
+        );
+        expect(
+          () => parser.parseBlueprint(jsonEncode(blueprint), file: 'b.json'),
+          throwsContentParseException(
+            entityId: 's01',
+            messageContains: 'logic_series',
+          ),
+        );
+      },
+    );
+
+    test('a generated item with a mistyped param, naming the item', () {
+      final item = validGenerated()..['params'] = {'ruleCount': 'two'};
+      expect(
+        () => parser.parseBank(
+          jsonEncode(validBank(items: [item])..['familyId'] = 'logic_dominos'),
+          file: 'f',
+        ),
+        throwsContentParseException(
+          entityId: 'logic_dominos.series.gen.0001',
+          messageContains: 'ruleCount',
+        ),
+      );
+    });
+
+    test('a generated item without generatorId', () {
+      final item = validGenerated()..remove('generatorId');
+      expect(
+        () => parser.parseBank(
+          jsonEncode(validBank(items: [item])..['familyId'] = 'logic_dominos'),
+          file: 'f',
+        ),
+        throwsContentParseException(
+          entityId: 'logic_dominos.series.gen.0001',
+          messageContains: 'generatorId',
+        ),
+      );
+    });
+
+    test('an mcq item with a malformed validAsOf', () {
+      final item = validMcq()..['validAsOf'] = '11/09/2026';
+      expect(
+        () => parser.parseBank(jsonEncode(validBank(items: [item])), file: 'f'),
+        throwsContentParseException(
+          entityId: 'english.grammar.0001',
+          messageContains: 'validAsOf',
+        ),
+      );
+    });
+
+    group('a lexical field bank with', () {
+      test('a field of another family', () {
+        final bank = validLexicalFields()
+          ..['fields'] = [validField()..['familyId'] = 'english_reading'];
+        expect(
+          () => parser.parseLexicalFields(jsonEncode(bank), file: 'lf.json'),
+          throwsContentParseException(
+            file: 'lf.json',
+            entityId: 'verbal_boxes.field.cuisine',
+            messageContains: 'familyId',
+          ),
+        );
+      });
+
+      test('duplicate field ids', () {
+        final bank = validLexicalFields()
+          ..['fields'] = [validField(), validField()];
+        expect(
+          () => parser.parseLexicalFields(jsonEncode(bank), file: 'lf.json'),
+          throwsContentParseException(messageContains: 'duplicate'),
+        );
+      });
+
+      test('a trap for its own field', () {
+        final bank = validLexicalFields()
+          ..['fields'] = [
+            validField()
+              ..['traps'] = [
+                {'word': 'balance', 'trapFor': 'verbal_boxes.field.cuisine'},
+              ],
+          ];
+        expect(
+          () => parser.parseLexicalFields(jsonEncode(bank), file: 'lf.json'),
+          throwsContentParseException(messageContains: 'own field'),
+        );
+      });
+
+      test('a trap word also listed in words', () {
+        final bank = validLexicalFields()
+          ..['fields'] = [
+            validField()
+              ..['traps'] = [
+                {'word': 'louche', 'trapFor': 'verbal_boxes.field.marine'},
+              ],
+          ];
+        expect(
+          () => parser.parseLexicalFields(jsonEncode(bank), file: 'lf.json'),
+          throwsContentParseException(messageContains: 'louche'),
+        );
+      });
+
+      test('a trap without trapFor, naming the field', () {
+        final bank = validLexicalFields()
+          ..['fields'] = [
+            validField()
+              ..['traps'] = [
+                {'word': 'balance'},
+              ],
+          ];
+        expect(
+          () => parser.parseLexicalFields(jsonEncode(bank), file: 'lf.json'),
+          throwsContentParseException(
+            entityId: 'verbal_boxes.field.cuisine',
+            messageContains: 'trapFor',
+          ),
+        );
+      });
+
+      test('the wrong kind', () {
+        expect(
+          () => parser.parseLexicalFields(jsonEncode(validBank()), file: 'f'),
+          throwsContentParseException(messageContains: 'lexical_fields'),
+        );
+      });
     });
 
     test('an invalid date in the manifest', () {
@@ -340,6 +543,25 @@ void main() {
     test(r'the $schema editor hint', () {
       final bank = validBank()..[r'$schema'] = '../schema/bank.schema.json';
       expect(parser.parseBank(jsonEncode(bank), file: 'f').items, hasLength(1));
+    });
+
+    test('a generated recipe without params (real-test defaults apply)', () {
+      final bank = validBank(items: [validGenerated()])
+        ..['familyId'] = 'logic_dominos';
+      final item =
+          parser.parseBank(jsonEncode(bank), file: 'f').items.single
+              as GeneratedItem;
+      expect(item.generatorId, GeneratorId.dominos);
+      expect(item.params, const GeneratorParams.dominos());
+    });
+
+    test('a valid lexical field bank', () {
+      final bank = parser.parseLexicalFields(
+        jsonEncode(validLexicalFields()),
+        file: 'lf.json',
+      );
+      expect(bank.fields.single.words, hasLength(5));
+      expect(bank.fields.single.traps, isEmpty);
     });
   });
 

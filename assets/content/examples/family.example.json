@@ -1,23 +1,26 @@
 {
   "$schema": "../../../docs/content/schema/family.schema.json",
   "kind": "family",
-  "id": "mental_arithmetic",
+  "id": "memory_nback",
   "moduleId": "psy0",
   "version": 1,
-  "order": 2,
-  "name": { "fr": "Calcul mental", "en": "Mental arithmetic" },
-  "shortName": { "fr": "Calcul", "en": "Arithmetic" },
+  "order": 1,
+  "name": { "fr": "Mémoire N-back", "en": "Memory N-back" },
+  "shortName": { "fr": "N-back", "en": "N-back" },
   "description": {
-    "fr": "Opérations rapides sans calculatrice : additions, multiplications, pourcentages, conversions d'unités et calculs de navigation (vitesse × temps, carburant). Évalue la vitesse **et** la précision sous contrainte de temps.",
-    "en": "Fast operations without a calculator: additions, multiplications, percentages, unit conversions and navigation maths (speed × time, fuel). Assesses speed **and** accuracy under time pressure."
+    "fr": "Un stimulus (couleur ou chiffre) s'affiche environ 1 s ; répondez **oui / non** selon qu'il est identique à celui affiché 2 rangs plus tôt. 1,5 s pour répondre, une absence de réponse compte comme une erreur. 42 stimuli dont 2 amorces.",
+    "en": "A stimulus (colour or digit) shows for about 1 s; answer **yes / no** whether it equals the one shown 2 steps earlier. 1.5 s to answer, no answer counts as an error. 42 stimuli including 2 primers."
   },
-  "engineType": "mental_arithmetic",
-  "answerFormat": "numeric",
+  "engineType": "memory_nback",
+  "generatorId": "nback",
+  "answerFormat": "key_press",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
   "lang": "fr",
-  "defaultDurationSec": 600,
-  "defaultItemCount": 40,
-  "defaultPerItemTimeSec": 20,
-  "confidence": "assumed",
-  "tags": ["arith"],
-  "meta": { "source": "docs/content/psy0-spec.md#mental-arithmetic (US-080), durations to confirm" }
+  "defaultDurationSec": 105,
+  "defaultItemCount": 42,
+  "defaultCadence": { "stimulusMs": 1000, "answerWindowMs": 1500 },
+  "confidence": "reported",
+  "tags": ["memory"],
+  "meta": { "source": "docs/content/psy0-spec.md §2.4-A (US-080); count and cadence reported by candidates 2019-2026" }
 }

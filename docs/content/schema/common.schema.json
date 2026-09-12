@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://trainer-psy-air.local/schema/common.schema.json",
   "title": "Common definitions",
-  "description": "Shared building blocks reused by every content schema (US-010). Content contract schemaVersion 1.",
+  "description": "Shared building blocks reused by every content schema (US-010, extended by US-015). Content contract schemaVersion 2.",
   "$defs": {
     "Id": {
       "type": "string",
@@ -97,11 +97,27 @@
       "description": "Authoring metadata, never shown to the user.",
       "properties": {
         "author": { "type": "string" },
-        "source": { "type": "string", "description": "Where the item/lesson comes from (book, own creation, research doc section). Never copy copyrighted test material." },
+        "source": { "type": "string", "description": "Free-text provenance (book, own creation, research doc section). Never copy copyrighted test material. Prefer `sources` for anything with a URL." },
+        "sources": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Source" },
+          "description": "Structured, dated references (v2). Expected on culture_aero items: where the fact comes from and when it was checked."
+        },
         "reviewedBy": { "type": "string" },
         "reviewedAt": { "type": "string", "format": "date" },
         "notes": { "type": "string" }
       },
+      "additionalProperties": false
+    },
+    "Source": {
+      "type": "object",
+      "description": "One dated reference. `title` is mandatory; `url` and `accessedOn` when the source is online.",
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" },
+        "accessedOn": { "type": "string", "format": "date" }
+      },
+      "required": ["title"],
       "additionalProperties": false
     },
     "Status": {
@@ -109,6 +125,42 @@
       "description": "draft entities pass validation but are not seeded into the app.",
       "enum": ["draft", "published"],
       "default": "published"
+    },
+    "GridSize": {
+      "type": "object",
+      "description": "Rows x columns of a grid (memory patterns, overlay boards, arithmetic grids).",
+      "properties": {
+        "rows": { "type": "integer", "minimum": 2, "maximum": 8 },
+        "cols": { "type": "integer", "minimum": 2, "maximum": 8 }
+      },
+      "required": ["rows", "cols"],
+      "additionalProperties": false
+    },
+    "Cadence": {
+      "type": "object",
+      "description": "Fixed inter-stimulus rhythm (v2). The runtime shows each stimulus for `stimulusMs`, then accepts an answer for `answerWindowMs`; no answer = error. Used by memory_nback and attention_rules.",
+      "properties": {
+        "stimulusMs": { "type": "integer", "minimum": 100, "maximum": 10000 },
+        "answerWindowMs": { "type": "integer", "minimum": 100, "maximum": 20000 }
+      },
+      "required": ["stimulusMs", "answerWindowMs"],
+      "additionalProperties": false
+    },
+    "ScoringPolicy": {
+      "type": "object",
+      "description": "Points per item outcome (v2). Default {1, 0, 0}. The historical culture test used {3, -1, 0} with a 'je ne sais pas' skip (realism option, US-063).",
+      "properties": {
+        "correct": { "type": "number", "default": 1 },
+        "wrong": { "type": "number", "default": 0 },
+        "skip": { "type": "number", "default": 0, "description": "Points for an explicit skip (McqItem.allowSkip) or a timeout." }
+      },
+      "additionalProperties": false
+    },
+    "InputRequirement": {
+      "type": "string",
+      "description": "Input device the activity needs to be representative (v2). keyboard = physical keys (attention_rules, multitask_psychomotor); touch adaptations are labelled 'non-representative'.",
+      "enum": ["touch", "keyboard"],
+      "default": "touch"
     }
   }
 }

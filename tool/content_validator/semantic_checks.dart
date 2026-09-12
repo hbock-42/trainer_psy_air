@@ -669,6 +669,7 @@ void checkBundle(String bundleRoot, List<ContentFile> files, IssueSink sink) {
       case 'family':
         _checkFamilyRefs(file, sink);
       case 'bank':
+      case 'lexical_fields':
         _checkBankRefs(file, sink, familyExists);
       case 'lesson':
         _checkLessonRefs(file, sink, familyExists, deckIds);

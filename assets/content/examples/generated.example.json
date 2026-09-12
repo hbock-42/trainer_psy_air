@@ -1,41 +1,51 @@
 {
   "$schema": "../../../docs/content/schema/bank.schema.json",
   "kind": "bank",
-  "familyId": "logic",
+  "familyId": "memory_nback",
   "items": [
     {
-      "id": "logic.series.gen.0001",
+      "id": "memory_nback.colour.gen.0001",
       "type": "generated",
       "version": 1,
-      "familyId": "logic",
-      "difficulty": 2,
-      "tags": ["logic.series", "logic.series.arithmetic"],
-      "generatorId": "logic_series",
-      "seed": 1842,
-      "params": { "kind": "arithmetic", "length": 5, "answerFormat": "mcq" },
-      "meta": { "notes": "Hand-picked seed used as worked example in lesson logic.lesson.01-series." }
-    },
-    {
-      "id": "logic.series.gen.0002",
-      "type": "generated",
-      "version": 1,
-      "familyId": "logic",
-      "difficulty": 4,
-      "tags": ["logic.series", "logic.series.two_step"],
-      "generatorId": "logic_series",
-      "seed": 90211,
-      "params": { "kind": "two_step", "length": 6, "answerFormat": "numeric" }
-    },
-    {
-      "id": "logic.matrix.gen.0001",
-      "type": "generated",
-      "version": 1,
-      "familyId": "logic",
+      "familyId": "memory_nback",
       "difficulty": 3,
-      "tags": ["logic.matrix", "logic.matrix.rotation"],
-      "generatorId": "figure_matrix",
+      "tags": ["memory.n_back", "memory.n_back.colour"],
+      "generatorId": "nback",
+      "seed": 1842,
+      "params": {
+        "n": 2,
+        "stimulusKind": "colour",
+        "paletteSize": 3,
+        "count": 42,
+        "primers": 2,
+        "stimulusMs": 1000,
+        "answerWindowMs": 1500,
+        "targetRatio": 0.3,
+        "lureRatio": 0.1
+      },
+      "meta": { "notes": "Real-test defaults spelled out; hand-picked seed used as worked example in lesson memory_nback.lesson.01-n-back." }
+    },
+    {
+      "id": "memory_nback.digit.gen.0001",
+      "type": "generated",
+      "version": 1,
+      "familyId": "memory_nback",
+      "difficulty": 4,
+      "tags": ["memory.n_back", "memory.n_back.digit"],
+      "generatorId": "nback",
+      "seed": 90211,
+      "params": { "n": 3, "stimulusKind": "digit", "paletteSize": 10 }
+    },
+    {
+      "id": "memory_nback.colour.gen.0002",
+      "type": "generated",
+      "version": 1,
+      "familyId": "memory_nback",
+      "difficulty": 2,
+      "tags": ["memory.n_back", "memory.n_back.colour"],
+      "generatorId": "nback",
       "seed": 7,
-      "params": { "rules": ["rotation", "count"], "size": 3 }
+      "meta": { "notes": "No params: every value takes the real-test default (2-back, 3 colours, 42 stimuli, 1 s / 1.5 s)." }
     }
   ]
 }

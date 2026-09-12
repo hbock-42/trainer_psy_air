@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'common.dart';
+import 'generator.dart';
 
 part 'exam_blueprint.freezed.dart';
 part 'exam_blueprint.g.dart';
@@ -28,25 +29,39 @@ abstract class ExamBlueprint with _$ExamBlueprint {
       _$ExamBlueprintFromJson(json);
 }
 
-/// One timed section of an [ExamBlueprint].
+/// One activity of an [ExamBlueprint] (contract v2).
+///
+/// Timing is any combination of [sectionTimeSec] (hard limit),
+/// [perItemTimeSec] (per-item limit) and [cadence] (fixed rhythm); the
+/// parser rejects a section with none of the three.
 @freezed
 abstract class ExamSection with _$ExamSection {
   const factory ExamSection({
     required String id,
     required String familyId,
-    required int durationSec,
     required int itemCount,
     required ItemSelection itemSelection,
     required Confidence confidence,
     LocalizedText? title,
-    LocalizedText? instructions,
+    LocalizedText? briefing,
+    int? sectionTimeSec,
     int? perItemTimeSec,
+    Cadence? cadence,
+    @Default(ScoringPolicy()) ScoringPolicy scoringPolicy,
+    @Default(false) bool liveFeedback,
+    @Default(InputRequirement.touch) InputRequirement inputRequirement,
     @Default(0) int breakAfterSec,
     @Default(1.0) double weight,
   }) = _ExamSection;
 
+  const ExamSection._();
+
   factory ExamSection.fromJson(Map<String, Object?> json) =>
       _$ExamSectionFromJson(json);
+
+  /// Whether at least one timing policy is set.
+  bool get hasTiming =>
+      sectionTimeSec != null || perItemTimeSec != null || cadence != null;
 }
 
 /// Where a section's items come from, discriminated by `mode` into `bank` |
@@ -63,12 +78,15 @@ sealed class ItemSelection with _$ItemSelection {
     @Default(3) int avoidRecentSessions,
   }) = BankSelection;
 
-  /// Generate `itemCount` items from `generatorId`.
+  /// Generate `itemCount` items from `generatorId` with the typed `params`
+  /// (see [GeneratorParams]; decoded params always belong to `generatorId`);
+  /// one seed per item is derived from the session seed.
   @FreezedUnionValue('generated')
   const factory ItemSelection.generated({
-    required String generatorId,
+    required GeneratorId generatorId,
     required DifficultyRange difficulty,
-    @Default(<String, Object?>{}) Map<String, Object?> params,
+    @JsonKey(readValue: readGeneratorParams, toJson: generatorParamsToJson)
+    required GeneratorParams params,
   }) = GeneratedSelection;
 
   factory ItemSelection.fromJson(Map<String, Object?> json) =>

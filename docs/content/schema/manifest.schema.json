@@ -10,7 +10,7 @@
     "schemaVersion": {
       "type": "integer",
       "minimum": 1,
-      "description": "Version of the JSON contract (this folder of schemas). Bumped only when the Dart models change incompatibly; the app refuses a bundle whose schemaVersion it does not know."
+      "description": "Version of the JSON contract (this folder of schemas). Current: 2 (US-015). Bumped only when the Dart models change incompatibly; the app refuses a bundle whose schemaVersion it does not know."
     },
     "contentVersion": {
       "type": "integer",

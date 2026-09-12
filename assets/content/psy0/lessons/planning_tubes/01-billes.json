@@ -13,7 +13,6 @@
   "difficulty": 3,
   "tags": ["planning_tubes", "planning_tubes.strategy"],
   "practiceTags": ["planning_tubes"],
-  "deckIds": ["deck.planning_tubes"],
   "status": "published",
   "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 B" }
 }

@@ -1,0 +1,35 @@
+{
+  "$schema": "../../../../docs/content/schema/family.schema.json",
+  "kind": "family",
+  "id": "english_speaking",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 16,
+  "name": {
+    "fr": "Anglais — expression orale",
+    "en": "English — speaking"
+  },
+  "shortName": {
+    "fr": "Anglais oral",
+    "en": "EN speaking"
+  },
+  "description": {
+    "fr": "Consigne affichée, 45 s de préparation puis 60 s d'enregistrement au micro, sans examinateur. Entraînement uniquement : réécoute et grille d'auto-évaluation, pas de notation automatique.",
+    "en": "A prompt, 45 s to prepare, then 60 s recorded through the microphone, no live examiner. Practice only: playback and a self-assessment checklist, no automatic scoring."
+  },
+  "engineType": "english_speaking",
+  "answerFormat": "recording",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "en",
+  "defaultDurationSec": 480,
+  "defaultItemCount": 3,
+  "defaultPerItemTimeSec": 105,
+  "confidence": "assumed",
+  "tags": [
+    "english"
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §2.4-O, §3.1 row 14c (practice-only, out of scope for scoring)"
+  }
+}

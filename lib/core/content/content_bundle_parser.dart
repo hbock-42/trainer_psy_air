@@ -8,6 +8,7 @@ import 'model/deck.dart';
 import 'model/exam_blueprint.dart';
 import 'model/item.dart';
 import 'model/lesson.dart';
+import 'model/lexical_field.dart';
 import 'model/module.dart';
 import 'model/test_family.dart';
 
@@ -21,6 +22,11 @@ import 'model/test_family.dart';
 ///
 /// The `$schema` editor hint is ignored; `kind` is checked against the
 /// expected file kind. Neither is carried by the models.
+///
+/// Beyond decoding, the parser enforces the cross-field rules the schemas
+/// cannot: item/field `familyId` matches the bank, `passageId` resolves,
+/// unique ids per file, flashcard `deckId`, `Lesson.body` xor `file`, every
+/// section has a timing policy, `params` belong to their `generatorId`.
 class ContentBundleParser {
   const ContentBundleParser();
 
@@ -51,6 +57,10 @@ class ContentBundleParser {
   /// `<module>/blueprints/*.json`.
   ExamBlueprint parseBlueprint(String source, {required String file}) =>
       blueprintFromJson(_decode(source, file), file: file);
+
+  /// `<module>/<family>/lexical_fields/*.json` (contract v2).
+  LexicalFieldBank parseLexicalFields(String source, {required String file}) =>
+      lexicalFieldsFromJson(_decode(source, file), file: file);
 
   ContentManifest manifestFromJson(
     Map<String, Object?> json, {
@@ -135,8 +145,66 @@ class ContentBundleParser {
           message: 'duplicate section id',
         );
       }
+      if (!section.hasTiming) {
+        throw ContentParseException(
+          file: file,
+          entityId: section.id,
+          message:
+              'a section needs at least one of "sectionTimeSec", '
+              '"perItemTimeSec" or "cadence"',
+        );
+      }
     }
     return blueprint;
+  }
+
+  LexicalFieldBank lexicalFieldsFromJson(
+    Map<String, Object?> json, {
+    required String file,
+  }) {
+    _checkKind(json, 'lexical_fields', file);
+    final bank = _guard(
+      file,
+      () => LexicalFieldBank.fromJson(json),
+      onError: () => _locateBadListEntry(json, 'fields', file),
+    );
+    final seen = <String>{};
+    for (final field in bank.fields) {
+      if (!seen.add(field.id)) {
+        throw ContentParseException(
+          file: file,
+          entityId: field.id,
+          message: 'duplicate lexical field id',
+        );
+      }
+      if (field.familyId != bank.familyId) {
+        throw ContentParseException(
+          file: file,
+          entityId: field.id,
+          message:
+              'field familyId "${field.familyId}" does not match bank '
+              'familyId "${bank.familyId}"',
+        );
+      }
+      final words = field.words.toSet();
+      for (final trap in field.traps) {
+        if (trap.trapFor == field.id) {
+          throw ContentParseException(
+            file: file,
+            entityId: field.id,
+            message: 'trap "${trap.word}" cannot be a trap for its own field',
+          );
+        }
+        if (words.contains(trap.word)) {
+          throw ContentParseException(
+            file: file,
+            entityId: field.id,
+            message: 'trap "${trap.word}" is also listed in "words"',
+          );
+        }
+      }
+    }
+    return bank;
   }
 
   // ---------------------------------------------------------------------------
@@ -229,7 +297,8 @@ class ContentBundleParser {
     }
   }
 
-  /// Names the entry of [key] (cards, sections) that fails to decode, if any.
+  /// Names the entry of [key] (cards, sections, fields) that fails to decode,
+  /// if any.
   void _locateBadListEntry(Map<String, Object?> json, String key, String file) {
     final entries = json[key];
     if (entries is! List<Object?>) return;
@@ -241,6 +310,8 @@ class ContentBundleParser {
             Flashcard.fromJson(raw);
           case 'sections':
             ExamSection.fromJson(raw);
+          case 'fields':
+            LexicalField.fromJson(raw);
         }
       } catch (e) {
         throw ContentParseException(

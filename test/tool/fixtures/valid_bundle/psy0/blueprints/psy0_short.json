@@ -11,12 +11,12 @@
     {
       "id": "s01-arith",
       "familyId": "mental_arithmetic",
-      "durationSec": 300,
+      "sectionTimeSec": 300,
       "itemCount": 20,
       "perItemTimeSec": 15,
       "itemSelection": {
         "mode": "generated",
-        "generatorId": "mental_arithmetic",
+        "generatorId": "arithmetic_grid",
         "difficulty": { "min": 2, "max": 4 }
       },
       "breakAfterSec": 30,
@@ -25,7 +25,7 @@
     {
       "id": "s02-english",
       "familyId": "english",
-      "durationSec": 360,
+      "sectionTimeSec": 360,
       "itemCount": 15,
       "itemSelection": { "mode": "bank", "difficulty": { "min": 2, "max": 4 } },
       "confidence": "reported"
@@ -33,11 +33,11 @@
     {
       "id": "s03-memory",
       "familyId": "memory",
-      "durationSec": 240,
+      "sectionTimeSec": 240,
       "itemCount": 8,
       "itemSelection": {
         "mode": "generated",
-        "generatorId": "memory_digit_span",
+        "generatorId": "nback",
         "difficulty": { "min": 2, "max": 5 }
       },
       "confidence": "assumed"
