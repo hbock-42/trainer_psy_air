@@ -367,4 +367,64 @@ abstract final class AppStrings {
   static const String activityInProgress = 'en cours';
   static String scorePercent(int percent) => '$percent %';
   static const String scoreUnknown = '—';
+
+  // Score-over-time charts (US-071).
+  static const String familyDetailsTitle = 'Détails par famille';
+  static const String familyDetailsHint =
+      'Touche une famille pour voir son évolution.';
+  static String familyTrendOpenSemantics(String name) =>
+      'Voir l\'évolution de $name';
+  static const String familyTrendTitle = 'Évolution';
+  static const String trendRangeLabel = 'Période';
+  static const String trendRange7d = '7 j';
+  static const String trendRange30d = '30 j';
+  static const String trendRangeAll = 'Tout';
+  static const String trendModeLabel = 'Mode';
+  static const String trendModeAll = 'Tout';
+  static const String trendModePractice = 'Exercices';
+  static const String trendModeExam = 'Simulations';
+  static const String trendAccuracyTitle = 'Précision';
+  static const String trendAccuracySubtitle = 'Réussite par session';
+  static const String trendSpeedTitle = 'Vitesse';
+  static const String trendSpeedSubtitle =
+      'Temps de réponse médian par session';
+  static const String trendEmpty = 'Aucune session sur cette période.';
+  static const String trendLoading = 'Calcul en cours…';
+  static const String trendAccuracyLabel = 'Réussite';
+  static const String trendSpeedLabel = 'Temps';
+
+  /// `1,2 s`: a response time in seconds with one decimal.
+  static String seconds(double seconds) =>
+      '${seconds.toStringAsFixed(1).replaceFirst('.', ',')} s';
+  static String sessionsCount(int count) =>
+      count == 1 ? '1 session' : '$count sessions';
+  static String trendAccuracySummary(int fromPercent, int toPercent, int n) =>
+      n == 1
+      ? '$toPercent % sur 1 session'
+      : 'de $fromPercent % à $toPercent % sur ${sessionsCount(n)}';
+  static String trendSpeedSummary(double fromSec, double toSec, int n) => n == 1
+      ? '${seconds(toSec)} sur 1 session'
+      : 'de ${seconds(fromSec)} à ${seconds(toSec)} sur ${sessionsCount(n)}';
+  static String trendTooltipAccuracy(int correct, int attempts, int percent) =>
+      '$trendAccuracyLabel : $correct/$attempts ($percent %)';
+  static String trendTooltipSpeed(double seconds) =>
+      '$trendSpeedLabel : ${AppStrings.seconds(seconds)}';
+  static const String examChartTitle = 'Simulations';
+  static const String examChartSubtitle = 'Score global par simulation';
+  static const String examChartSemanticsLabel = 'Scores des simulations';
+  static const String examChartHint =
+      'Touche un point pour le détail par section.';
+  static String examChartSummary(int fromPercent, int toPercent, int n) =>
+      n == 1
+      ? '$toPercent % sur 1 simulation'
+      : 'de $fromPercent % à $toPercent % sur $n simulations';
+  static String examAttempt(int number) => 'Simulation $number';
+  static String examScoreLine(int percent) => 'Score : $percent %';
+  static String examSectionsTitle(String date) => 'Sections du $date';
+  static const String examSectionsSemanticsLabel = 'Détail par section';
+  static String examSectionLabel(int number, String family) =>
+      '$number. $family';
+  static String examSectionValue(int correct, int attempts, int percent) =>
+      '$correct/$attempts · $percent %';
+  static const String examSectionNotReached = 'non atteinte';
 }

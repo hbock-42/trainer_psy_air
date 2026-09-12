@@ -154,10 +154,7 @@ void main() {
           count: 3,
           format: (v) => '${(v * 100).round()} %',
         ),
-        xTicks: const [
-          LineChartTick(0, '01/09'),
-          LineChartTick(3, '04/09'),
-        ],
+        xTicks: const [LineChartTick(0, '01/09'), LineChartTick(3, '04/09')],
         formatX: (x) => 'session ${x.round() + 1}',
         formatY: (y) => '${(y * 100).round()} %',
         tooltipBuilder: tooltipBuilder,
@@ -192,9 +189,7 @@ void main() {
       expect(find.byType(LineChartTooltip), findsNothing);
 
       final box = tester.getRect(find.byType(LineChart));
-      final gesture = await tester.createGesture(
-        kind: PointerDeviceKind.mouse,
-      );
+      final gesture = await tester.createGesture(kind: PointerDeviceKind.mouse);
       await gesture.addPointer(location: Offset.zero);
       addTearDown(gesture.removePointer);
       // Right edge of the chart: the last point (x = 3).

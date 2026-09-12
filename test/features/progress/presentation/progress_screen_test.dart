@@ -285,7 +285,10 @@ void main() {
     expect(english, findsOneWidget);
     expect(exam, findsOneWidget);
     expect(calcul, findsOneWidget);
-    expect(find.textContaining('Dominos'), findsNothing);
+    expect(
+      find.descendant(of: list, matching: find.textContaining('Dominos')),
+      findsNothing,
+    );
 
     final englishY = tester.getTopLeft(english).dy;
     final examY = tester.getTopLeft(exam).dy;
