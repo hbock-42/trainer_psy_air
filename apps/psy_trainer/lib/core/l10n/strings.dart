@@ -883,4 +883,29 @@ abstract final class AppStrings {
   static const String cubeNetExplanationTitle = 'Le cube reconstitué';
   static String cubeNetCorrectFaces(int correct, int total) =>
       '$correct/$total faces correctement placées';
+
+  // attention_airways (US-032): flow-management renderer.
+  static String airwaysExampleCapacity(int capacity, int blueCapacity) =>
+      'Gardez au plus $capacity avions -- et au plus $blueCapacity avions '
+      'bleus -- dans chaque zone grise.';
+  static const String airwaysExampleLegendTitle =
+      'Un bouton de couleur par ligne';
+  static String airwaysExampleButtonLabel(int number) => 'Ligne $number';
+  static const String airwaysExampleBody =
+      'Des avions apparaissent sur chaque ligne et avancent vers leur zone. '
+      'Touchez le bouton d\'une ligne pour dérouter son prochain avion vers '
+      'une autre zone -- ou laissez-le filer si aucune zone n\'est menacée.';
+  static String airwaysZoneCount(int total, int blue) => '$total/$blue';
+  static const String airwaysZoneCountSemanticsLabel =
+      'avions au total sur avions bleus';
+  static const String airwaysViolationFlash = 'CRASH';
+  static String airwaysReroutesCounter(int count) => 'Déroutements : $count';
+  static String airwaysViolationsCounter(int count) => 'Violations : $count';
+  static String airwaysRouteButtonSemantics(int number) =>
+      'Dérouter la ligne $number';
+  static String airwaysSummaryClean(int reroutes) => reroutes == 0
+      ? 'Aucune violation, aucun déroutement.'
+      : 'Aucune violation, $reroutes déroutement(s).';
+  static String airwaysSummaryWithViolations(int violations, int reroutes) =>
+      '$violations violation(s), $reroutes déroutement(s).';
 }
