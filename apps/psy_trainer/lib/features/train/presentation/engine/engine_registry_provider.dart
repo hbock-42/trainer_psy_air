@@ -6,7 +6,10 @@ import '../../../engines/attention_parity/domain/attention_parity_engine.dart';
 import '../../../engines/attention_parity/presentation/attention_parity_renderer.dart';
 import '../../../engines/attention_rules/domain/attention_rules_engine.dart';
 import '../../../engines/attention_rules/presentation/attention_rules_renderer.dart';
+import '../../../engines/culture_aero/domain/culture_aero_engine.dart';
+import '../../../engines/culture_aero/presentation/culture_aero_explanation.dart';
 import '../../domain/engine/engine.dart';
+import '../renderers/mcq_renderer.dart';
 import 'activity_renderer.dart';
 
 // Composition root of the activity engines (EPIC-03). Each engine story adds
@@ -27,6 +30,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         // US-021..036: add engines here, one line each.
         AttentionParityEngine(),
         AttentionRulesEngine(),
+        CultureAeroEngine(),
         // US-021..036: add engines here, one line each.
       ]),
     );
@@ -41,6 +45,10 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         // US-021..036: add renderers here, one line each.
         AttentionParityRenderer(),
         AttentionRulesRenderer(),
+        McqRenderer(
+          familyId: 'culture_aero',
+          explanationFooter: cultureAeroExplanationFooter,
+        ),
         // US-021..036: add renderers here, one line each.
       ]),
     );
