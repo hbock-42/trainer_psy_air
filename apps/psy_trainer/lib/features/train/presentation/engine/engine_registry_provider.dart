@@ -43,7 +43,6 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         // US-021..036: add renderers here, one line each (alphabetical by
         // family id).
         const ArithmeticGridRenderer(),
-        // US-021..036: add renderers here, one line each.
         const AttentionParityRenderer(),
         const AttentionRulesRenderer(),
         McqRenderer(
@@ -51,13 +50,8 @@ final Provider<RendererRegistry> rendererRegistryProvider =
           passageResolver: (id) =>
               ref.read(englishPassageCacheProvider).get(id),
         ),
+        const NbackRenderer(),
         // US-021..036: add renderers here, one line each.
-      (ref) => RendererRegistry(const <ActivityRenderer>[
-        // US-021..036: add one line per engine (alphabetical by family id).
-        ArithmeticGridRenderer(),
-        AttentionParityRenderer(),
-        AttentionRulesRenderer(),
-        NbackRenderer(),
       ]),
     );
 
