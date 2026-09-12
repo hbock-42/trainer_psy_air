@@ -10,10 +10,12 @@ import '../../../core/repositories/repository_providers.dart';
 import '../../train/domain/engine/engine.dart';
 import '../../train/presentation/engine/activity_session_controller.dart';
 import '../../train/presentation/engine/engine_registry_provider.dart';
+import '../domain/exam_realism_options.dart';
 import '../domain/exam_resume.dart';
 import '../domain/exam_review.dart';
 import '../domain/exam_section_planner.dart';
 import 'exam_run_state.dart';
+import 'providers/exam_realism_options_provider.dart';
 
 /// One controller per running exam, keyed by the blueprint id.
 ///
@@ -54,6 +56,12 @@ class ExamRunController extends Notifier<ExamRunState> {
   // teardown, where reading another provider is invalid.
   late ProgressRepository _progress;
 
+  // Read once in `build()` too: the realism panel lives on the exam
+  // launcher, before this controller exists, so its value is already
+  // hydrated by the time a run starts and does not need to react to later
+  // changes mid-run.
+  late ExamRealismOptions _realism;
+
   ScheduledTask? _breakTask;
   DateTime? _breakDeadline;
   bool _finished = false;
@@ -62,6 +70,7 @@ class ExamRunController extends Notifier<ExamRunState> {
   ExamRunState build() {
     _clock = ref.watch(engineClockProvider);
     _progress = ref.read(progressRepositoryProvider);
+    _realism = ref.read(examRealismOptionsProvider);
     ref.onDispose(_onDispose);
     unawaited(_load());
     return const ExamRunState.loading();
@@ -104,6 +113,7 @@ class ExamRunController extends Notifier<ExamRunState> {
       progress: progress,
       sessionId: '',
       random: Random(),
+      options: _realism,
     );
     if (planned.isEmpty) {
       state = const ExamRunState.unavailable();
@@ -136,6 +146,7 @@ class ExamRunController extends Notifier<ExamRunState> {
       planIndex: _planIndex,
       totalSections: _sections.length,
       request: ActivitySessionRequest.fresh(planned.config),
+      familyId: planned.section.familyId,
     );
   }
 
@@ -175,6 +186,7 @@ class ExamRunController extends Notifier<ExamRunState> {
         session: session.copyWith(config: resumingConfig.toJson()),
         attempts: candidate.attempts,
       ),
+      familyId: _sections[_planIndex].section.familyId,
     );
   }
 
@@ -224,9 +236,17 @@ class ExamRunController extends Notifier<ExamRunState> {
     return left.isNegative ? Duration.zero : left;
   }
 
+  /// Whether the break screen offers "Continuer" (US-063 point 5): off
+  /// forces the candidate to wait out `ExamSection.breakAfterSec` in full,
+  /// matching "no pause allowed" real conditions.
+  bool get allowsSkippingBreak => _realism.allowPauseBetweenSections;
+
   /// "Continuer" on the break screen: starts the next section right away.
+  /// A no-op when [allowsSkippingBreak] is off (the screen does not offer
+  /// the button then, but guard here too in case a stale key event reaches
+  /// it).
   void skipBreak() {
-    if (_breakDeadline == null) return;
+    if (_breakDeadline == null || !allowsSkippingBreak) return;
     _breakTask?.cancel();
     _breakDeadline = null;
     _emitRunning();

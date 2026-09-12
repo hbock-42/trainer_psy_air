@@ -988,6 +988,42 @@ class AppLocalizationsFr extends AppLocalizations {
   String get examStartAction => 'Commencer';
 
   @override
+  String get examRealismTitle => 'Conditions de l\'examen';
+
+  @override
+  String get examRealismSubtitle =>
+      'Personnalisez le réalisme de la simulation avant de commencer.';
+
+  @override
+  String get examRealismPresetAction => 'Conditions réelles';
+
+  @override
+  String get examRealismNegativeMarkingLabel =>
+      'Points négatifs (culture générale)';
+
+  @override
+  String get examRealismHideRemainingTimeLabel => 'Masquer le temps restant';
+
+  @override
+  String get examRealismHideTimerEnglishLabel =>
+      'Masquer le chronomètre en anglais';
+
+  @override
+  String get examRealismRandomizeLabel => 'Formes/couleurs/touches aléatoires';
+
+  @override
+  String get examRealismAllowPauseLabel =>
+      'Autoriser la pause entre les sections';
+
+  @override
+  String get examRealismImmersiveLabel =>
+      'Plein écran immersif et orientation verrouillée';
+
+  @override
+  String get examRealismSoundCuesLabel =>
+      'Signaux sonores (début/fin de section)';
+
+  @override
   String get examRunnerTitle => 'Simulation';
 
   @override

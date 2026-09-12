@@ -11,6 +11,24 @@ import 'activity_renderer.dart';
 import 'activity_session_controller.dart';
 import 'engine_registry_provider.dart';
 
+/// How `SessionHost`'s countdown bars (`_Countdowns`) show the time left,
+/// independent of the timing itself (`ActivitySessionConfig.timing` keeps
+/// running the same either way -- this only changes what is drawn). US-063
+/// "realism options": the real PSY0 session is reported to show no visible
+/// timer in the English test, and a "hide remaining time" toggle for the
+/// rest.
+enum TimingDisplay {
+  /// The current behaviour: bars and the `m:ss` label are always shown.
+  visible,
+
+  /// Bars are hidden until under a minute is left on whichever of the item
+  /// or section limit is running, then shown normally.
+  hiddenUntilLastMinute,
+
+  /// Never shown, however much time is left.
+  hidden,
+}
+
 /// Runs one activity end to end: briefing (instructions, example, Start),
 /// then the engine's renderer with the countdown bars the timing policy
 /// calls for, then a minimal end state that reports [onFinished].
@@ -22,6 +40,7 @@ class SessionHost extends ConsumerWidget {
   const SessionHost({
     required this.request,
     required this.onFinished,
+    this.timingDisplay = TimingDisplay.visible,
     super.key,
   });
 
@@ -32,6 +51,10 @@ class SessionHost extends ConsumerWidget {
   /// or section timeout) and before its writes necessarily settled; await
   /// the controller's `idle` if the next screen reads the repository.
   final void Function(SessionResult result) onFinished;
+
+  /// See [TimingDisplay]. Practice always passes the default (`visible`);
+  /// the exam runner computes it from `ExamRealismOptions`.
+  final TimingDisplay timingDisplay;
 
   static const Key startKey = Key('session_host.start');
   static const Key nextKey = Key('session_host.next');
@@ -69,6 +92,7 @@ class SessionHost extends ConsumerWidget {
         config: config,
         renderer: renderer,
         controller: controller,
+        timingDisplay: timingDisplay,
       ),
       ActivityPaused() => _Paused(
         config: config,
@@ -169,12 +193,14 @@ class _Running extends ConsumerWidget {
     required this.config,
     required this.renderer,
     required this.controller,
+    required this.timingDisplay,
   });
 
   final ActivityRunning running;
   final ActivitySessionConfig config;
   final ActivityRenderer renderer;
   final ActivitySessionController controller;
+  final TimingDisplay timingDisplay;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -193,7 +219,8 @@ class _Running extends ConsumerWidget {
       onAnswer: controller.answer,
     );
     final hasTimers =
-        running.itemDeadline != null || running.sectionDeadline != null;
+        (running.itemDeadline != null || running.sectionDeadline != null) &&
+        timingDisplay != TimingDisplay.hidden;
 
     return Padding(
       padding: EdgeInsets.all(theme.spacing.lg),
@@ -206,7 +233,11 @@ class _Running extends ConsumerWidget {
           ),
           if (hasTimers) ...[
             SizedBox(height: theme.spacing.md),
-            _Countdowns(running: running, timing: timing),
+            _Countdowns(
+              running: running,
+              timing: timing,
+              timingDisplay: timingDisplay,
+            ),
           ],
           SizedBox(height: theme.spacing.lg),
           Expanded(child: renderer.build(context, render)),
@@ -254,10 +285,15 @@ class _Running extends ConsumerWidget {
 /// The per-item and per-section bars, ticking on a periodic timer against
 /// the engine clock.
 class _Countdowns extends ConsumerStatefulWidget {
-  const _Countdowns({required this.running, required this.timing});
+  const _Countdowns({
+    required this.running,
+    required this.timing,
+    required this.timingDisplay,
+  });
 
   final ActivityRunning running;
   final TimingPolicy timing;
+  final TimingDisplay timingDisplay;
 
   @override
   ConsumerState<_Countdowns> createState() => _CountdownsState();
@@ -289,6 +325,16 @@ class _CountdownsState extends ConsumerState<_Countdowns> {
     final sectionLimit = widget.timing.section;
     final itemLeft = running.itemRemaining(now);
     final sectionLeft = running.sectionRemaining(now);
+
+    if (widget.timingDisplay == TimingDisplay.hiddenUntilLastMinute) {
+      final shortest = [
+        ?itemLeft,
+        ?sectionLeft,
+      ].fold<Duration?>(null, (min, d) => min == null || d < min ? d : min);
+      if (shortest == null || shortest > const Duration(minutes: 1)) {
+        return const SizedBox.shrink();
+      }
+    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
