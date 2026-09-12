@@ -17,10 +17,10 @@ import 'package:psy_trainer/shared/widgets/widgets.dart';
 /// 3 s); the physical keyboard is the primary input (`Focus` +
 /// `KeyboardListener`, matching the run's two keys), two on-screen buttons
 /// labelled "non représentatif" are the touch fallback
-/// (`inputRequirement: keyboard`). The rule is never repeated once the run
-/// starts: see [buildExample] and `StimulusRuleSet`'s doc for why it can
-/// only show the family's canonical illustration, not this run's actual
-/// (randomised) one.
+/// (`inputRequirement: keyboard`). [buildExample] shows this run's actual
+/// rule when `SessionHost` hands it a [RunExampleContext] (US-037); with
+/// none (no run known yet) it falls back to the family's canonical
+/// illustration -- see `StimulusRuleSet`'s doc.
 class AttentionRulesRenderer extends ActivityRenderer {
   const AttentionRulesRenderer();
 
@@ -37,8 +37,11 @@ class AttentionRulesRenderer extends ActivityRenderer {
   }
 
   @override
-  Widget? buildExample(BuildContext context) {
-    final ruleSet = _defaultExampleRuleSet;
+  Widget? buildExample(BuildContext context, [RunExampleContext? run]) {
+    final runParams = run?.params;
+    final ruleSet = runParams is StimulusResponseParams
+        ? StimulusRuleSet.fromRunSeed(run!.runSeed, runParams)
+        : _defaultExampleRuleSet;
     final theme = AppTheme.of(context);
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -104,9 +107,8 @@ class AttentionRulesRenderer extends ActivityRenderer {
 
 /// Canonical illustration matching `family.json`'s own example (filled
 /// square -> N, filled triangle -> X; empty blue -> N, empty orange -> X).
-/// `buildExample` gets no session context (see `ActivityRenderer`), so it
-/// cannot show this run's actual, randomised rule set -- only this fixed
-/// stand-in, built from the generator's own defaults.
+/// `buildExample`'s fallback when it gets no [RunExampleContext] (see
+/// `ActivityRenderer`): the generator's own defaults, unshuffled.
 const StimulusResponseParams _defaultExampleParams = StimulusResponseParams();
 final StimulusRuleSet _defaultExampleRuleSet = StimulusRuleSet.fromParams(
   _defaultExampleParams,

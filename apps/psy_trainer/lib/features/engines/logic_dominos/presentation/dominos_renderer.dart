@@ -28,7 +28,7 @@ class DominosRenderer extends ActivityRenderer {
       _DominosView(key: ValueKey(render.item.id), render: render);
 
   @override
-  Widget? buildExample(BuildContext context) =>
+  Widget? buildExample(BuildContext context, [RunExampleContext? run]) =>
       const _DominoTile(top: 3, bottom: 5, size: 72);
 }
 

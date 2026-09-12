@@ -1217,7 +1217,7 @@ as num,
 /// @nodoc
 mixin _$ItemOrigin {
 
- GeneratorId get generatorId; int get seed;
+ GeneratorId get generatorId; int get seed; int? get runSeed; int? get index;
 /// Create a copy of ItemOrigin
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1230,16 +1230,16 @@ $ItemOriginCopyWith<ItemOrigin> get copyWith => _$ItemOriginCopyWithImpl<ItemOri
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ItemOrigin&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.seed, seed) || other.seed == seed));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ItemOrigin&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.seed, seed) || other.seed == seed)&&(identical(other.runSeed, runSeed) || other.runSeed == runSeed)&&(identical(other.index, index) || other.index == index));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,generatorId,seed);
+int get hashCode => Object.hash(runtimeType,generatorId,seed,runSeed,index);
 
 @override
 String toString() {
-  return 'ItemOrigin(generatorId: $generatorId, seed: $seed)';
+  return 'ItemOrigin(generatorId: $generatorId, seed: $seed, runSeed: $runSeed, index: $index)';
 }
 
 
@@ -1250,7 +1250,7 @@ abstract mixin class $ItemOriginCopyWith<$Res>  {
   factory $ItemOriginCopyWith(ItemOrigin value, $Res Function(ItemOrigin) _then) = _$ItemOriginCopyWithImpl;
 @useResult
 $Res call({
- GeneratorId generatorId, int seed
+ GeneratorId generatorId, int seed, int? runSeed, int? index
 });
 
 
@@ -1267,11 +1267,13 @@ class _$ItemOriginCopyWithImpl<$Res>
 
 /// Create a copy of ItemOrigin
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? generatorId = null,Object? seed = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? generatorId = null,Object? seed = null,Object? runSeed = freezed,Object? index = freezed,}) {
   return _then(_self.copyWith(
 generatorId: null == generatorId ? _self.generatorId : generatorId // ignore: cast_nullable_to_non_nullable
 as GeneratorId,seed: null == seed ? _self.seed : seed // ignore: cast_nullable_to_non_nullable
-as int,
+as int,runSeed: freezed == runSeed ? _self.runSeed : runSeed // ignore: cast_nullable_to_non_nullable
+as int?,index: freezed == index ? _self.index : index // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 
@@ -1356,10 +1358,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( GeneratorId generatorId,  int seed)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( GeneratorId generatorId,  int seed,  int? runSeed,  int? index)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ItemOrigin() when $default != null:
-return $default(_that.generatorId,_that.seed);case _:
+return $default(_that.generatorId,_that.seed,_that.runSeed,_that.index);case _:
   return orElse();
 
 }
@@ -1377,10 +1379,10 @@ return $default(_that.generatorId,_that.seed);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( GeneratorId generatorId,  int seed)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( GeneratorId generatorId,  int seed,  int? runSeed,  int? index)  $default,) {final _that = this;
 switch (_that) {
 case _ItemOrigin():
-return $default(_that.generatorId,_that.seed);case _:
+return $default(_that.generatorId,_that.seed,_that.runSeed,_that.index);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1397,10 +1399,10 @@ return $default(_that.generatorId,_that.seed);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( GeneratorId generatorId,  int seed)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( GeneratorId generatorId,  int seed,  int? runSeed,  int? index)?  $default,) {final _that = this;
 switch (_that) {
 case _ItemOrigin() when $default != null:
-return $default(_that.generatorId,_that.seed);case _:
+return $default(_that.generatorId,_that.seed,_that.runSeed,_that.index);case _:
   return null;
 
 }
@@ -1412,11 +1414,13 @@ return $default(_that.generatorId,_that.seed);case _:
 @JsonSerializable()
 
 class _ItemOrigin implements ItemOrigin {
-  const _ItemOrigin({required this.generatorId, required this.seed});
+  const _ItemOrigin({required this.generatorId, required this.seed, this.runSeed, this.index});
   factory _ItemOrigin.fromJson(Map<String, dynamic> json) => _$ItemOriginFromJson(json);
 
 @override final  GeneratorId generatorId;
 @override final  int seed;
+@override final  int? runSeed;
+@override final  int? index;
 
 /// Create a copy of ItemOrigin
 /// with the given fields replaced by the non-null parameter values.
@@ -1431,16 +1435,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ItemOrigin&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.seed, seed) || other.seed == seed));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ItemOrigin&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.seed, seed) || other.seed == seed)&&(identical(other.runSeed, runSeed) || other.runSeed == runSeed)&&(identical(other.index, index) || other.index == index));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,generatorId,seed);
+int get hashCode => Object.hash(runtimeType,generatorId,seed,runSeed,index);
 
 @override
 String toString() {
-  return 'ItemOrigin(generatorId: $generatorId, seed: $seed)';
+  return 'ItemOrigin(generatorId: $generatorId, seed: $seed, runSeed: $runSeed, index: $index)';
 }
 
 
@@ -1451,7 +1455,7 @@ abstract mixin class _$ItemOriginCopyWith<$Res> implements $ItemOriginCopyWith<$
   factory _$ItemOriginCopyWith(_ItemOrigin value, $Res Function(_ItemOrigin) _then) = __$ItemOriginCopyWithImpl;
 @override @useResult
 $Res call({
- GeneratorId generatorId, int seed
+ GeneratorId generatorId, int seed, int? runSeed, int? index
 });
 
 
@@ -1468,11 +1472,13 @@ class __$ItemOriginCopyWithImpl<$Res>
 
 /// Create a copy of ItemOrigin
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? generatorId = null,Object? seed = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? generatorId = null,Object? seed = null,Object? runSeed = freezed,Object? index = freezed,}) {
   return _then(_ItemOrigin(
 generatorId: null == generatorId ? _self.generatorId : generatorId // ignore: cast_nullable_to_non_nullable
 as GeneratorId,seed: null == seed ? _self.seed : seed // ignore: cast_nullable_to_non_nullable
-as int,
+as int,runSeed: freezed == runSeed ? _self.runSeed : runSeed // ignore: cast_nullable_to_non_nullable
+as int?,index: freezed == index ? _self.index : index // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 

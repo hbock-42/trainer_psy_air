@@ -36,6 +36,6 @@ class FakeRenderer extends ActivityRenderer {
   }
 
   @override
-  Widget? buildExample(BuildContext context) =>
+  Widget? buildExample(BuildContext context, [RunExampleContext? run]) =>
       withExample ? const Text('example', key: exampleKey) : null;
 }

@@ -24,6 +24,8 @@ class ArithmeticGridEngine extends ActivityEngine {
     required GeneratorParams params,
     required int seed,
     required int difficulty,
+    int index = 0,
+    int? runSeed,
   }) {
     final gridParams = params as ArithmeticGridParams;
     return Item.generated(

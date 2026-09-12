@@ -24,6 +24,9 @@ sealed class ItemSource with _$ItemSource {
   /// Generate [count] items from `generatorId` with [params]. One seed per
   /// item and one difficulty within [difficulty] are drawn from
   /// `Random(seed)`, so the whole section is reproducible from [seed].
+  /// [seed] is also the run's `runSeed` (US-037): every item's `generate`
+  /// call gets it unchanged, plus its own `index` (0-based position),
+  /// alongside the per-item seed it always got.
   @FreezedUnionValue('generator')
   const factory ItemSource.generator({
     required GeneratorId generatorId,
@@ -113,6 +116,8 @@ sealed class ItemSource with _$ItemSource {
             params: params,
             seed: itemSeed,
             difficulty: level,
+            index: i,
+            runSeed: seed,
           );
           return SessionItem(
             item: item,
