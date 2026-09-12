@@ -636,4 +636,41 @@ abstract final class AppStrings {
   static String attentionParityNumberSemantics(int value) => 'Nombre $value';
   static String attentionParityRestartCount(int count) =>
       count == 1 ? '1 redémarrage' : '$count redémarrages';
+
+  // Practice session screen (US-051): quit confirmation, resume card.
+  static const String sessionQuitConfirmTitle = 'Quitter la session ?';
+  static const String sessionQuitConfirmBody =
+      'Votre progression sera enregistrée comme abandonnée.';
+  static const String sessionQuitConfirmAction = 'Quitter';
+  static const String sessionQuitCancelAction = 'Annuler';
+
+  static const String sessionResumeCardTitle = 'Reprendre la session';
+  static String sessionResumeCardSubtitle(String familyName) =>
+      'Session en cours : $familyName';
+  static const String sessionResumeCardAction = 'Reprendre la session';
+
+  // Practice session summary & review (US-052).
+  static const String summaryTitle = 'Résumé';
+  static const String summaryAccuracyLabel = 'Précision';
+  static String summaryScoreFraction(int correct, int played) =>
+      '$correct/$played';
+  static const String summaryMeanRtLabel = 'Temps moyen';
+  static const String summaryMedianRtLabel = 'Temps médian';
+  static const String summaryTimeoutsLabel = 'Temps écoulés';
+  static String summaryBestItemLabel(int index) =>
+      'Meilleure réponse : question $index';
+  static String summaryWorstItemLabel(int index) =>
+      'À retravailler : question $index';
+  static const String summaryItemsTitle = 'Détail des questions';
+  static String summaryItemLabel(int index) => 'Question $index';
+  static String summaryItemCorrectSemantics(int index) =>
+      'Question $index, correcte';
+  static String summaryItemWrongSemantics(int index) =>
+      'Question $index, incorrecte';
+  static const String summaryRestartAction = 'Recommencer';
+  static const String summaryRetryMistakesAction = 'Refaire les erreurs';
+  static const String summaryBackAction = 'Retour';
+  static const String summaryReviewMyAnswer = 'Ma réponse';
+  static const String summaryReviewExpected = 'Réponse attendue';
+  static const String summaryReviewRawAnswer = 'Réponse enregistrée';
 }

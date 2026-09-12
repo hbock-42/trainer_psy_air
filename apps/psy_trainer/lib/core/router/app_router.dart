@@ -17,7 +17,9 @@ import '../../features/progress/presentation/progress_screen.dart';
 import '../../features/settings/presentation/edit_profile_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
 import '../../features/train/domain/engine/activity_session_config.dart';
+import '../../features/train/presentation/engine/activity_session_controller.dart';
 import '../../features/train/presentation/launcher/practice_launcher_screen.dart';
+import '../../features/train/presentation/session/practice_session_screen.dart';
 import '../../features/train/presentation/train_screen.dart';
 import '../../features/train/presentation/train_session_screen.dart';
 import 'app_page.dart';
@@ -176,19 +178,32 @@ GoRouter createAppRouter({
                   ),
                   // Nested route pattern: relative path, pushed inside the
                   // Train tab's navigator so the tab stays selected. The
-                  // launcher passes the built `ActivitySessionConfig` as
-                  // `extra` (US-051 replaces this screen with the real
-                  // runner).
+                  // launcher and the Train home pass a built
+                  // `ActivitySessionConfig` as `extra`; the "Reprendre la
+                  // session" card (US-051) passes an `ActivitySessionRequest`
+                  // directly (a resume request has no config of its own to
+                  // wrap). Neither: the bare placeholder used by tests that
+                  // only exercise route plumbing.
                   GoRoute(
                     path: AppRoutes.trainSessionSegment,
-                    pageBuilder: (context, state) => _page(
-                      state,
-                      TrainSessionScreen(
-                        sessionId:
-                            state.pathParameters[AppRoutes.sessionIdParam]!,
-                        config: state.extra as ActivitySessionConfig?,
-                      ),
-                    ),
+                    pageBuilder: (context, state) {
+                      final extra = state.extra;
+                      final request = switch (extra) {
+                        final ActivitySessionRequest request => request,
+                        final ActivitySessionConfig config =>
+                          ActivitySessionRequest.fresh(config),
+                        _ => null,
+                      };
+                      return _page(
+                        state,
+                        request != null
+                            ? PracticeSessionScreen(request: request)
+                            : TrainSessionScreen(
+                                sessionId: state
+                                    .pathParameters[AppRoutes.sessionIdParam]!,
+                              ),
+                      );
+                    },
                   ),
                 ],
               ),
