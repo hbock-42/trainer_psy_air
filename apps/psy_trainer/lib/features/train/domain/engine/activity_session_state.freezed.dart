@@ -125,11 +125,11 @@ return finished(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( int itemCount,  int startIndex)?  briefing,TResult Function( int itemIndex,  int itemCount,  Item item,  ItemPhase phase,  DateTime itemStartedAt,  DateTime? itemDeadline,  DateTime? sectionDeadline,  ItemResult? feedback,  bool awaitsNext)?  running,TResult Function( ActivityRunning snapshot,  Duration? itemRemaining,  Duration? sectionRemaining)?  paused,TResult Function( SessionResult result)?  finished,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( int itemCount,  int startIndex)?  briefing,TResult Function( int itemIndex,  int itemCount,  Item item,  ItemPhase phase,  DateTime itemStartedAt,  DateTime? itemDeadline,  DateTime? sectionDeadline,  ItemResult? feedback,  bool awaitsNext,  int? level)?  running,TResult Function( ActivityRunning snapshot,  Duration? itemRemaining,  Duration? sectionRemaining)?  paused,TResult Function( SessionResult result)?  finished,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case ActivityBriefing() when briefing != null:
 return briefing(_that.itemCount,_that.startIndex);case ActivityRunning() when running != null:
-return running(_that.itemIndex,_that.itemCount,_that.item,_that.phase,_that.itemStartedAt,_that.itemDeadline,_that.sectionDeadline,_that.feedback,_that.awaitsNext);case ActivityPaused() when paused != null:
+return running(_that.itemIndex,_that.itemCount,_that.item,_that.phase,_that.itemStartedAt,_that.itemDeadline,_that.sectionDeadline,_that.feedback,_that.awaitsNext,_that.level);case ActivityPaused() when paused != null:
 return paused(_that.snapshot,_that.itemRemaining,_that.sectionRemaining);case ActivityFinished() when finished != null:
 return finished(_that.result);case _:
   return orElse();
@@ -149,11 +149,11 @@ return finished(_that.result);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( int itemCount,  int startIndex)  briefing,required TResult Function( int itemIndex,  int itemCount,  Item item,  ItemPhase phase,  DateTime itemStartedAt,  DateTime? itemDeadline,  DateTime? sectionDeadline,  ItemResult? feedback,  bool awaitsNext)  running,required TResult Function( ActivityRunning snapshot,  Duration? itemRemaining,  Duration? sectionRemaining)  paused,required TResult Function( SessionResult result)  finished,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( int itemCount,  int startIndex)  briefing,required TResult Function( int itemIndex,  int itemCount,  Item item,  ItemPhase phase,  DateTime itemStartedAt,  DateTime? itemDeadline,  DateTime? sectionDeadline,  ItemResult? feedback,  bool awaitsNext,  int? level)  running,required TResult Function( ActivityRunning snapshot,  Duration? itemRemaining,  Duration? sectionRemaining)  paused,required TResult Function( SessionResult result)  finished,}) {final _that = this;
 switch (_that) {
 case ActivityBriefing():
 return briefing(_that.itemCount,_that.startIndex);case ActivityRunning():
-return running(_that.itemIndex,_that.itemCount,_that.item,_that.phase,_that.itemStartedAt,_that.itemDeadline,_that.sectionDeadline,_that.feedback,_that.awaitsNext);case ActivityPaused():
+return running(_that.itemIndex,_that.itemCount,_that.item,_that.phase,_that.itemStartedAt,_that.itemDeadline,_that.sectionDeadline,_that.feedback,_that.awaitsNext,_that.level);case ActivityPaused():
 return paused(_that.snapshot,_that.itemRemaining,_that.sectionRemaining);case ActivityFinished():
 return finished(_that.result);}
 }
@@ -169,11 +169,11 @@ return finished(_that.result);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( int itemCount,  int startIndex)?  briefing,TResult? Function( int itemIndex,  int itemCount,  Item item,  ItemPhase phase,  DateTime itemStartedAt,  DateTime? itemDeadline,  DateTime? sectionDeadline,  ItemResult? feedback,  bool awaitsNext)?  running,TResult? Function( ActivityRunning snapshot,  Duration? itemRemaining,  Duration? sectionRemaining)?  paused,TResult? Function( SessionResult result)?  finished,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( int itemCount,  int startIndex)?  briefing,TResult? Function( int itemIndex,  int itemCount,  Item item,  ItemPhase phase,  DateTime itemStartedAt,  DateTime? itemDeadline,  DateTime? sectionDeadline,  ItemResult? feedback,  bool awaitsNext,  int? level)?  running,TResult? Function( ActivityRunning snapshot,  Duration? itemRemaining,  Duration? sectionRemaining)?  paused,TResult? Function( SessionResult result)?  finished,}) {final _that = this;
 switch (_that) {
 case ActivityBriefing() when briefing != null:
 return briefing(_that.itemCount,_that.startIndex);case ActivityRunning() when running != null:
-return running(_that.itemIndex,_that.itemCount,_that.item,_that.phase,_that.itemStartedAt,_that.itemDeadline,_that.sectionDeadline,_that.feedback,_that.awaitsNext);case ActivityPaused() when paused != null:
+return running(_that.itemIndex,_that.itemCount,_that.item,_that.phase,_that.itemStartedAt,_that.itemDeadline,_that.sectionDeadline,_that.feedback,_that.awaitsNext,_that.level);case ActivityPaused() when paused != null:
 return paused(_that.snapshot,_that.itemRemaining,_that.sectionRemaining);case ActivityFinished() when finished != null:
 return finished(_that.result);case _:
   return null;
@@ -255,7 +255,7 @@ as int,
 
 
 class ActivityRunning extends ActivitySessionState {
-  const ActivityRunning({required this.itemIndex, required this.itemCount, required this.item, required this.phase, required this.itemStartedAt, this.itemDeadline, this.sectionDeadline, this.feedback, this.awaitsNext = false}): super._();
+  const ActivityRunning({required this.itemIndex, required this.itemCount, required this.item, required this.phase, required this.itemStartedAt, this.itemDeadline, this.sectionDeadline, this.feedback, this.awaitsNext = false, this.level}): super._();
   
 
  final  int itemIndex;
@@ -267,6 +267,7 @@ class ActivityRunning extends ActivitySessionState {
  final  DateTime? sectionDeadline;
  final  ItemResult? feedback;
 @JsonKey() final  bool awaitsNext;
+ final  int? level;
 
 /// Create a copy of ActivitySessionState
 /// with the given fields replaced by the non-null parameter values.
@@ -278,16 +279,16 @@ $ActivityRunningCopyWith<ActivityRunning> get copyWith => _$ActivityRunningCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ActivityRunning&&(identical(other.itemIndex, itemIndex) || other.itemIndex == itemIndex)&&(identical(other.itemCount, itemCount) || other.itemCount == itemCount)&&(identical(other.item, item) || other.item == item)&&(identical(other.phase, phase) || other.phase == phase)&&(identical(other.itemStartedAt, itemStartedAt) || other.itemStartedAt == itemStartedAt)&&(identical(other.itemDeadline, itemDeadline) || other.itemDeadline == itemDeadline)&&(identical(other.sectionDeadline, sectionDeadline) || other.sectionDeadline == sectionDeadline)&&(identical(other.feedback, feedback) || other.feedback == feedback)&&(identical(other.awaitsNext, awaitsNext) || other.awaitsNext == awaitsNext));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ActivityRunning&&(identical(other.itemIndex, itemIndex) || other.itemIndex == itemIndex)&&(identical(other.itemCount, itemCount) || other.itemCount == itemCount)&&(identical(other.item, item) || other.item == item)&&(identical(other.phase, phase) || other.phase == phase)&&(identical(other.itemStartedAt, itemStartedAt) || other.itemStartedAt == itemStartedAt)&&(identical(other.itemDeadline, itemDeadline) || other.itemDeadline == itemDeadline)&&(identical(other.sectionDeadline, sectionDeadline) || other.sectionDeadline == sectionDeadline)&&(identical(other.feedback, feedback) || other.feedback == feedback)&&(identical(other.awaitsNext, awaitsNext) || other.awaitsNext == awaitsNext)&&(identical(other.level, level) || other.level == level));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,itemIndex,itemCount,item,phase,itemStartedAt,itemDeadline,sectionDeadline,feedback,awaitsNext);
+int get hashCode => Object.hash(runtimeType,itemIndex,itemCount,item,phase,itemStartedAt,itemDeadline,sectionDeadline,feedback,awaitsNext,level);
 
 @override
 String toString() {
-  return 'ActivitySessionState.running(itemIndex: $itemIndex, itemCount: $itemCount, item: $item, phase: $phase, itemStartedAt: $itemStartedAt, itemDeadline: $itemDeadline, sectionDeadline: $sectionDeadline, feedback: $feedback, awaitsNext: $awaitsNext)';
+  return 'ActivitySessionState.running(itemIndex: $itemIndex, itemCount: $itemCount, item: $item, phase: $phase, itemStartedAt: $itemStartedAt, itemDeadline: $itemDeadline, sectionDeadline: $sectionDeadline, feedback: $feedback, awaitsNext: $awaitsNext, level: $level)';
 }
 
 
@@ -298,7 +299,7 @@ abstract mixin class $ActivityRunningCopyWith<$Res> implements $ActivitySessionS
   factory $ActivityRunningCopyWith(ActivityRunning value, $Res Function(ActivityRunning) _then) = _$ActivityRunningCopyWithImpl;
 @useResult
 $Res call({
- int itemIndex, int itemCount, Item item, ItemPhase phase, DateTime itemStartedAt, DateTime? itemDeadline, DateTime? sectionDeadline, ItemResult? feedback, bool awaitsNext
+ int itemIndex, int itemCount, Item item, ItemPhase phase, DateTime itemStartedAt, DateTime? itemDeadline, DateTime? sectionDeadline, ItemResult? feedback, bool awaitsNext, int? level
 });
 
 
@@ -315,7 +316,7 @@ class _$ActivityRunningCopyWithImpl<$Res>
 
 /// Create a copy of ActivitySessionState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? itemIndex = null,Object? itemCount = null,Object? item = null,Object? phase = null,Object? itemStartedAt = null,Object? itemDeadline = freezed,Object? sectionDeadline = freezed,Object? feedback = freezed,Object? awaitsNext = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? itemIndex = null,Object? itemCount = null,Object? item = null,Object? phase = null,Object? itemStartedAt = null,Object? itemDeadline = freezed,Object? sectionDeadline = freezed,Object? feedback = freezed,Object? awaitsNext = null,Object? level = freezed,}) {
   return _then(ActivityRunning(
 itemIndex: null == itemIndex ? _self.itemIndex : itemIndex // ignore: cast_nullable_to_non_nullable
 as int,itemCount: null == itemCount ? _self.itemCount : itemCount // ignore: cast_nullable_to_non_nullable
@@ -326,7 +327,8 @@ as DateTime,itemDeadline: freezed == itemDeadline ? _self.itemDeadline : itemDea
 as DateTime?,sectionDeadline: freezed == sectionDeadline ? _self.sectionDeadline : sectionDeadline // ignore: cast_nullable_to_non_nullable
 as DateTime?,feedback: freezed == feedback ? _self.feedback : feedback // ignore: cast_nullable_to_non_nullable
 as ItemResult?,awaitsNext: null == awaitsNext ? _self.awaitsNext : awaitsNext // ignore: cast_nullable_to_non_nullable
-as bool,
+as bool,level: freezed == level ? _self.level : level // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 

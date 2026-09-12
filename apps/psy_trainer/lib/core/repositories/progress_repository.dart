@@ -1,4 +1,5 @@
 import 'model/attempt.dart';
+import 'model/backup.dart';
 import 'model/learning.dart';
 import 'model/session.dart';
 import 'model/stats.dart';
@@ -62,6 +63,15 @@ abstract interface class ProgressRepository {
   /// Attempts of one session ordered by position.
   Future<List<Attempt>> attemptsForSession(String sessionId);
 
+  /// Every attempt ever recorded (practice and exam sections alike),
+  /// unordered no particular way is guaranteed. The engagement history
+  /// behind streaks and the activity heat-map (US-073): unlike
+  /// [attemptsForFamily] it is not scoped to one family, and unlike
+  /// [sessionFamilyStats] it hands back the raw `answeredAt`/`responseMs` of
+  /// every row (no SQL aggregation) so the pure-Dart `StreakService` buckets
+  /// them into local-midnight days itself.
+  Future<List<Attempt>> allAttempts();
+
   /// Attempts of one family answered within `[from, to]` (inclusive, both
   /// optional), oldest first: the raw material "retry my mistakes" (US-054)
   /// folds into per-item streaks (an `ItemStat` only remembers the *last*
@@ -105,6 +115,11 @@ abstract interface class ProgressRepository {
 
   Future<FlashcardReview?> flashcardReview(String flashcardId);
 
+  /// Every card's current review state (US-073: the flashcard contribution
+  /// to the activity heat-map — only the latest review per card is stored,
+  /// not a full history, see `docs/ARCHITECTURE.md`).
+  Future<List<FlashcardReview>> allFlashcardReviews();
+
   /// Reviews due at [now] (`nextReviewAt <= now`), soonest first.
   Future<List<FlashcardReview>> dueFlashcardReviews({
     required DateTime now,
@@ -138,4 +153,24 @@ abstract interface class ProgressRepository {
   /// not need to re-seed; onboarding runs again because [profile] becomes
   /// null.
   Future<void> clearAll();
+
+  // --- Backup (US-074) -------------------------------------------------
+
+  /// Every user row (sessions, attempts, item stats, flashcard reviews,
+  /// lesson progress, profile) as [BackupRow]s, id and `updatedAt` included,
+  /// for `BackupService` to wrap in the versioned JSON envelope. Content
+  /// tables are never part of it (see "Backup format" in
+  /// `docs/ARCHITECTURE.md`).
+  Future<BackupSnapshot> exportSnapshot();
+
+  /// Merges [snapshot] into local storage, table by table. A row wins over
+  /// the existing one at the same key when its `updatedAt` is strictly
+  /// newer (or there is no existing row); a tie or an older row is left
+  /// alone. The key is the row id for `sessions`/`attempts` (no other
+  /// column identifies "the same row"); for `itemStats`/`flashcardReviews`/
+  /// `lessonProgress`/`profile` it is their natural unique key (`itemId`,
+  /// `flashcardId`, `lessonId`, the single profile row) since two exports
+  /// can legitimately assign different row ids to what is the same item.
+  /// Content tables are never touched.
+  Future<BackupImportSummary> importSnapshot(BackupSnapshot snapshot);
 }

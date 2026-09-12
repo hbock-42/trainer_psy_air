@@ -10,7 +10,7 @@ import 'launcher_fixtures.dart';
 
 void main() {
   group('buildActivitySessionConfig', () {
-    test('a generator family gets an ItemSource.generator with the family '
+    test('a generator family gets an ItemSource.adaptive with the family '
         'defaults', () async {
       final family = generatorFamily();
       const config = PracticeConfig(
@@ -27,63 +27,77 @@ void main() {
 
       expect(result.familyId, family.id);
       expect(result.mode, SessionMode.practice);
-      final source = result.source as GeneratorSource;
+      final source = result.source as AdaptiveSource;
       expect(source.generatorId, GeneratorId.nback);
       expect(source.count, 20);
       expect(source.params, GeneratorParams.defaultsFor(GeneratorId.nback));
-      // Auto difficulty -> the full 1..5 span.
-      expect(source.difficulty, const DifficultyRange(min: 1, max: 5));
+      // Auto difficulty with no `autoLevel` passed -> the default level 1
+      // ("level 1 when no data", US-053).
+      expect(source.initialDifficulty, 1);
     });
 
-    test(
-      'a fixed difficulty narrows the generator range to one level',
-      () async {
-        final family = generatorFamily();
-        const config = PracticeConfig(
-          itemCount: 10,
-          difficulty: 4,
-          timed: true,
-        );
+    test('a fixed difficulty overrides the resolved auto level as the '
+        'starting difficulty', () async {
+      final family = generatorFamily();
+      const config = PracticeConfig(itemCount: 10, difficulty: 4, timed: true);
 
-        final result = await buildActivitySessionConfig(
-          family: family,
-          config: config,
-          contentRepository: launcherContentRepository(),
-        );
+      final result = await buildActivitySessionConfig(
+        family: family,
+        config: config,
+        contentRepository: launcherContentRepository(),
+        autoLevel: 2,
+      );
 
-        final source = result.source as GeneratorSource;
-        expect(source.difficulty, const DifficultyRange(min: 4, max: 4));
-      },
-    );
+      final source = result.source as AdaptiveSource;
+      expect(source.initialDifficulty, 4);
+    });
 
-    test(
-      'two runs draw different generator seeds (fresh every time)',
-      () async {
-        final family = generatorFamily();
-        const config = PracticeConfig(
-          itemCount: 5,
-          difficulty: null,
-          timed: true,
-        );
-        final repo = launcherContentRepository();
+    test('"Auto" resolves to the caller-supplied family level', () async {
+      final family = generatorFamily();
+      const config = PracticeConfig(
+        itemCount: 10,
+        difficulty: null,
+        timed: true,
+      );
 
-        final a = await buildActivitySessionConfig(
-          family: family,
-          config: config,
-          contentRepository: repo,
-        );
-        final b = await buildActivitySessionConfig(
-          family: family,
-          config: config,
-          contentRepository: repo,
-        );
+      final result = await buildActivitySessionConfig(
+        family: family,
+        config: config,
+        contentRepository: launcherContentRepository(),
+        autoLevel: 3,
+        autoFastThresholdMs: 900,
+      );
 
-        expect(
-          (a.source as GeneratorSource).seed,
-          isNot((b.source as GeneratorSource).seed),
-        );
-      },
-    );
+      final source = result.source as AdaptiveSource;
+      expect(source.initialDifficulty, 3);
+      expect(source.fastThresholdMs, 900);
+    });
+
+    test('two runs draw different run seeds (fresh every time)', () async {
+      final family = generatorFamily();
+      const config = PracticeConfig(
+        itemCount: 5,
+        difficulty: null,
+        timed: true,
+      );
+      final repo = launcherContentRepository();
+
+      final a = await buildActivitySessionConfig(
+        family: family,
+        config: config,
+        contentRepository: repo,
+      );
+      final b = await buildActivitySessionConfig(
+        family: family,
+        config: config,
+        contentRepository: repo,
+      );
+
+      expect(
+        (a.source as AdaptiveSource).runSeed,
+        isNot((b.source as AdaptiveSource).runSeed),
+      );
+    });
 
     test('a bank family samples items from the content repository', () async {
       final family = bankFamily();

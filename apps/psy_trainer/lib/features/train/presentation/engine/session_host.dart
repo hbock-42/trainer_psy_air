@@ -125,10 +125,17 @@ class _Briefing extends StatelessWidget {
     final briefing =
         config.briefing?.resolve(context.l10n.localeName) ??
         context.l10n.sessionBriefingDefault;
-    final source = config.source;
-    final runContext = source is GeneratorSource
-        ? RunExampleContext(runSeed: source.seed, params: source.params)
-        : null;
+    final runContext = switch (config.source) {
+      GeneratorSource(:final seed, :final params) => RunExampleContext(
+        runSeed: seed,
+        params: params,
+      ),
+      AdaptiveSource(:final runSeed, :final params) => RunExampleContext(
+        runSeed: runSeed,
+        params: params,
+      ),
+      _ => null,
+    };
     final example = renderer.buildExample(context, runContext);
 
     return Padding(
@@ -227,9 +234,19 @@ class _Running extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          ProgressDots(
-            current: running.itemIndex + 1,
-            total: running.itemCount,
+          Row(
+            children: [
+              Expanded(
+                child: ProgressDots(
+                  current: running.itemIndex + 1,
+                  total: running.itemCount,
+                ),
+              ),
+              if (running.level != null) ...[
+                SizedBox(width: theme.spacing.sm),
+                _LevelChip(level: running.level!),
+              ],
+            ],
           ),
           if (hasTimers) ...[
             SizedBox(height: theme.spacing.md),
@@ -361,6 +378,48 @@ class _CountdownsState extends ConsumerState<_Countdowns> {
           ),
         ],
       ],
+    );
+  }
+}
+
+/// Discreet in-session difficulty indicator (US-053): a small pill that
+/// pulses (briefly scales up then settles) whenever [level] changes — no
+/// popup, no explanatory copy, just a quiet "this just moved". Only shown
+/// for an `ItemSource.adaptive` source (`ActivityRunning.level` is null for
+/// every other kind).
+class _LevelChip extends StatelessWidget {
+  const _LevelChip({required this.level});
+
+  final int level;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
+    final colors = theme.colors;
+    return Semantics(
+      label: context.l10n.practiceDifficultyLevel(level),
+      child: AnimatedSwitcher(
+        duration: theme.durations.slow,
+        switchInCurve: Curves.easeOutBack,
+        switchOutCurve: Curves.easeIn,
+        transitionBuilder: (child, animation) =>
+            ScaleTransition(scale: animation, child: child),
+        child: Container(
+          key: ValueKey(level),
+          padding: EdgeInsets.symmetric(
+            horizontal: theme.spacing.sm,
+            vertical: theme.spacing.xs,
+          ),
+          decoration: BoxDecoration(
+            color: colors.accentSubtle,
+            borderRadius: theme.radii.fullAll,
+          ),
+          child: Text(
+            context.l10n.practiceDifficultyLevel(level),
+            style: theme.textStyles.caption.copyWith(color: colors.accent),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -76,6 +76,51 @@ const _$GeneratorIdEnumMap = {
   GeneratorId.multitask: 'multitask',
 };
 
+AdaptiveSource _$AdaptiveSourceFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('AdaptiveSource', json, ($checkedConvert) {
+      final val = AdaptiveSource(
+        generatorId: $checkedConvert(
+          'generatorId',
+          (v) => $enumDecode(_$GeneratorIdEnumMap, v),
+        ),
+        runSeed: $checkedConvert('runSeed', (v) => (v as num).toInt()),
+        params: $checkedConvert(
+          'params',
+          (v) => GeneratorParams.fromJson(v as Map<String, dynamic>),
+          readValue: readGeneratorParams,
+        ),
+        count: $checkedConvert('count', (v) => (v as num).toInt()),
+        initialDifficulty: $checkedConvert(
+          'initialDifficulty',
+          (v) => (v as num).toInt(),
+        ),
+        fastThresholdMs: $checkedConvert(
+          'fastThresholdMs',
+          (v) => (v as num?)?.toInt(),
+        ),
+        policy: $checkedConvert(
+          'policy',
+          (v) => v == null
+              ? AdaptiveDifficultyPolicy.standard
+              : AdaptiveDifficultyPolicy.fromJson(v as Map<String, dynamic>),
+        ),
+        $type: $checkedConvert('kind', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {r'$type': 'kind'});
+
+Map<String, dynamic> _$AdaptiveSourceToJson(AdaptiveSource instance) =>
+    <String, dynamic>{
+      'generatorId': _$GeneratorIdEnumMap[instance.generatorId]!,
+      'runSeed': instance.runSeed,
+      'params': generatorParamsToJson(instance.params),
+      'count': instance.count,
+      'initialDifficulty': instance.initialDifficulty,
+      'fastThresholdMs': ?instance.fastThresholdMs,
+      'policy': instance.policy.toJson(),
+      'kind': instance.$type,
+    };
+
 ReplaySource _$ReplaySourceFromJson(Map<String, dynamic> json) =>
     $checkedCreate('ReplaySource', json, ($checkedConvert) {
       final val = ReplaySource(

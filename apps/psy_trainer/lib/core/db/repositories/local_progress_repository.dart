@@ -2,6 +2,7 @@ import 'package:drift/drift.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../repositories/model/attempt.dart';
+import '../../repositories/model/backup.dart';
 import '../../repositories/model/learning.dart';
 import '../../repositories/model/session.dart';
 import '../../repositories/model/stats.dart';
@@ -188,6 +189,11 @@ class LocalProgressRepository implements ProgressRepository {
   ];
 
   @override
+  Future<List<Attempt>> allAttempts() async => [
+    for (final row in await _db.attemptsDao.all()) _attempt(row),
+  ];
+
+  @override
   Future<List<Attempt>> attemptsForFamily({
     required String familyId,
     DateTime? from,
@@ -261,6 +267,11 @@ class LocalProgressRepository implements ProgressRepository {
       limit: limit,
     ))
       _review(row),
+  ];
+
+  @override
+  Future<List<FlashcardReview>> allFlashcardReviews() async => [
+    for (final row in await _db.flashcardReviewsDao.all()) _review(row),
   ];
 
   @override
@@ -345,6 +356,183 @@ class LocalProgressRepository implements ProgressRepository {
       await _db.delete(_db.flashcardReviews).go();
       await _db.delete(_db.lessonProgress).go();
       await _db.delete(_db.userProfiles).go();
+    });
+  }
+
+  // --- Backup (US-074) -------------------------------------------------
+
+  @override
+  Future<BackupSnapshot> exportSnapshot() async {
+    final sessions = await _db.select(_db.sessions).get();
+    final attempts = await _db.select(_db.attempts).get();
+    final itemStats = await _db.select(_db.itemStats).get();
+    final reviews = await _db.select(_db.flashcardReviews).get();
+    final lessonProgress = await _db.select(_db.lessonProgress).get();
+    final profileRow = await _db.userProfileDao.get();
+    return BackupSnapshot(
+      sessions: [for (final r in sessions) _backupRow(r.id, r.updatedAt, r)],
+      attempts: [for (final r in attempts) _backupRow(r.id, r.updatedAt, r)],
+      itemStats: [for (final r in itemStats) _backupRow(r.id, r.updatedAt, r)],
+      flashcardReviews: [
+        for (final r in reviews) _backupRow(r.id, r.updatedAt, r),
+      ],
+      lessonProgress: [
+        for (final r in lessonProgress) _backupRow(r.id, r.updatedAt, r),
+      ],
+      profile: profileRow == null
+          ? null
+          : _backupRow(profileRow.id, profileRow.updatedAt, profileRow),
+    );
+  }
+
+  static BackupRow _backupRow(String id, DateTime updatedAt, DataClass row) =>
+      BackupRow(id: id, updatedAt: updatedAt, fields: row.toJson());
+
+  @override
+  Future<BackupImportSummary> importSnapshot(BackupSnapshot snapshot) {
+    return _db.transaction(() async {
+      var inserted = 0;
+      var updated = 0;
+      var skipped = 0;
+
+      // Sessions and attempts: the row id is the only identity a row has,
+      // so a same-id row wins by `updatedAt`. Sessions first: attempts
+      // reference `sessionId`.
+      for (final r in snapshot.sessions) {
+        final row = SessionRow.fromJson(
+          r.fields,
+        ).copyWith(updatedAt: r.updatedAt);
+        final existing = await (_db.select(
+          _db.sessions,
+        )..where((t) => t.id.equals(row.id))).getSingleOrNull();
+        if (existing == null) {
+          await _db.into(_db.sessions).insert(row.toCompanion(false));
+          inserted++;
+        } else if (existing.updatedAt.isBefore(r.updatedAt)) {
+          await _db.update(_db.sessions).replace(row);
+          updated++;
+        } else {
+          skipped++;
+        }
+      }
+      for (final r in snapshot.attempts) {
+        final row = AttemptRow.fromJson(
+          r.fields,
+        ).copyWith(updatedAt: r.updatedAt);
+        final existing = await (_db.select(
+          _db.attempts,
+        )..where((t) => t.id.equals(row.id))).getSingleOrNull();
+        if (existing == null) {
+          await _db.into(_db.attempts).insert(row.toCompanion(false));
+          inserted++;
+        } else if (existing.updatedAt.isBefore(r.updatedAt)) {
+          await _db.update(_db.attempts).replace(row);
+          updated++;
+        } else {
+          skipped++;
+        }
+      }
+
+      // Item stats, flashcard reviews and lesson progress each have a
+      // natural unique key (`itemId`/`flashcardId`/`lessonId`); two exports
+      // can assign different row ids to what is the same key, so the merge
+      // looks up by that key and keeps the existing row's id/createdAt.
+      for (final r in snapshot.itemStats) {
+        final row = ItemStatRow.fromJson(
+          r.fields,
+        ).copyWith(updatedAt: r.updatedAt);
+        final existing = await (_db.select(
+          _db.itemStats,
+        )..where((t) => t.itemId.equals(row.itemId))).getSingleOrNull();
+        if (existing == null) {
+          await _db.into(_db.itemStats).insert(row.toCompanion(false));
+          inserted++;
+        } else if (existing.updatedAt.isBefore(r.updatedAt)) {
+          await _db
+              .update(_db.itemStats)
+              .replace(
+                row.copyWith(id: existing.id, createdAt: existing.createdAt),
+              );
+          updated++;
+        } else {
+          skipped++;
+        }
+      }
+      for (final r in snapshot.flashcardReviews) {
+        final row = FlashcardReviewRow.fromJson(
+          r.fields,
+        ).copyWith(updatedAt: r.updatedAt);
+        final existing =
+            await (_db.select(_db.flashcardReviews)
+                  ..where((t) => t.flashcardId.equals(row.flashcardId)))
+                .getSingleOrNull();
+        if (existing == null) {
+          await _db.into(_db.flashcardReviews).insert(row.toCompanion(false));
+          inserted++;
+        } else if (existing.updatedAt.isBefore(r.updatedAt)) {
+          await _db
+              .update(_db.flashcardReviews)
+              .replace(
+                row.copyWith(id: existing.id, createdAt: existing.createdAt),
+              );
+          updated++;
+        } else {
+          skipped++;
+        }
+      }
+      for (final r in snapshot.lessonProgress) {
+        final row = LessonProgressRow.fromJson(
+          r.fields,
+        ).copyWith(updatedAt: r.updatedAt);
+        final existing = await (_db.select(
+          _db.lessonProgress,
+        )..where((t) => t.lessonId.equals(row.lessonId))).getSingleOrNull();
+        if (existing == null) {
+          await _db.into(_db.lessonProgress).insert(row.toCompanion(false));
+          inserted++;
+        } else if (existing.updatedAt.isBefore(r.updatedAt)) {
+          await _db
+              .update(_db.lessonProgress)
+              .replace(
+                row.copyWith(id: existing.id, createdAt: existing.createdAt),
+              );
+          updated++;
+        } else {
+          skipped++;
+        }
+      }
+
+      // Profile: the singleton row, keyed by its fixed id.
+      final profileBackup = snapshot.profile;
+      if (profileBackup != null) {
+        final row = UserProfileRow.fromJson(
+          profileBackup.fields,
+        ).copyWith(updatedAt: profileBackup.updatedAt);
+        final existing = await _db.userProfileDao.get();
+        if (existing == null) {
+          await _db
+              .into(_db.userProfiles)
+              .insert(
+                row.copyWith(id: UserProfiles.singletonId).toCompanion(false),
+              );
+          inserted++;
+        } else if (existing.updatedAt.isBefore(profileBackup.updatedAt)) {
+          await _db
+              .update(_db.userProfiles)
+              .replace(
+                row.copyWith(id: existing.id, createdAt: existing.createdAt),
+              );
+          updated++;
+        } else {
+          skipped++;
+        }
+      }
+
+      return BackupImportSummary(
+        inserted: inserted,
+        updated: updated,
+        skipped: skipped,
+      );
     });
   }
 

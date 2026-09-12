@@ -74,6 +74,16 @@ class _SessionSummaryScreenState extends State<SessionSummaryScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(title, style: theme.textStyles.headline),
+            if (widget.result.levelChanges.isNotEmpty) ...[
+              SizedBox(height: theme.spacing.xs),
+              Text(
+                context.l10n.summaryLevelChangeLabel(
+                  widget.result.levelChanges.first.from,
+                  widget.result.levelChanges.last.to,
+                ),
+                style: theme.textStyles.caption,
+              ),
+            ],
             SizedBox(height: theme.spacing.lg),
             _MetricGrid(result: widget.result),
             SizedBox(height: theme.spacing.lg),
