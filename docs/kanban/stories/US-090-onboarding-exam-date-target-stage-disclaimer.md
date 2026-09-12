@@ -4,7 +4,7 @@ issue: 64
 title: "Onboarding: exam date, target stage, disclaimer"
 type: story
 epic: EPIC-09
-status: review
+status: done
 priority: P1
 size: S
 lane: misc

@@ -4,7 +4,7 @@ issue: 25
 title: "MCQ item renderer"
 type: story
 epic: EPIC-03
-status: review
+status: done
 priority: P0
 size: S
 lane: engines

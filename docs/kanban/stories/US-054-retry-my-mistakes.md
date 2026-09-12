@@ -4,7 +4,7 @@ issue: 44
 title: "Retry my mistakes"
 type: story
 epic: EPIC-05
-status: review
+status: done
 priority: P1
 size: S
 lane: train-ui

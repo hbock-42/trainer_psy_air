@@ -4,7 +4,7 @@ issue: 93
 title: "3-D viewpoint engine (Objets 3D)"
 type: story
 epic: EPIC-03
-status: review
+status: done
 priority: P1
 size: M
 lane: engines

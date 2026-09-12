@@ -4,7 +4,7 @@ issue: 27
 title: "Arithmetic error-grid engine (Grilles de calcul)"
 type: story
 epic: EPIC-03
-status: review
+status: done
 priority: P0
 size: M
 lane: engines

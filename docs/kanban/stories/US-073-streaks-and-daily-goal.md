@@ -4,7 +4,7 @@ issue: 53
 title: "Streaks and daily goal"
 type: story
 epic: EPIC-07
-status: review
+status: done
 priority: P2
 size: S
 lane: analytics

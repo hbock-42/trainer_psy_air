@@ -4,7 +4,7 @@ issue: 42
 title: "Practice session summary & review"
 type: story
 epic: EPIC-05
-status: review
+status: done
 priority: P0
 size: S
 lane: train-ui

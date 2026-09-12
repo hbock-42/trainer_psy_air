@@ -4,7 +4,7 @@ issue: 21
 title: "Repository interfaces with local implementations"
 type: story
 epic: EPIC-02
-status: review
+status: done
 priority: P0
 size: S
 lane: core

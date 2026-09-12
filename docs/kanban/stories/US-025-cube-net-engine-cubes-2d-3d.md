@@ -4,7 +4,7 @@ issue: 29
 title: "Cube-net engine (Cubes 2D/3D)"
 type: story
 epic: EPIC-03
-status: review
+status: done
 priority: P1
 size: L
 lane: engines

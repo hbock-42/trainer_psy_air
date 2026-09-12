@@ -4,7 +4,7 @@ issue: 28
 title: "Dominos engine"
 type: story
 epic: EPIC-03
-status: review
+status: done
 priority: P0
 size: M
 lane: engines

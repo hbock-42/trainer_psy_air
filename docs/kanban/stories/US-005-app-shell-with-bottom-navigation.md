@@ -4,7 +4,7 @@ issue: 18
 title: "App shell with bottom navigation"
 type: story
 epic: EPIC-01
-status: review
+status: done
 priority: P0
 size: S
 lane: core

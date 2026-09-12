@@ -4,7 +4,7 @@ issue: 62
 title: "Calibrate activity generators' difficulty"
 type: story
 epic: EPIC-08
-status: review
+status: done
 priority: P1
 size: S
 lane: content

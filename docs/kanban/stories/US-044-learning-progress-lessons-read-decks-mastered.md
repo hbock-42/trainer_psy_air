@@ -4,7 +4,7 @@ issue: 39
 title: "Learning progress (lessons read, decks mastered)"
 type: story
 epic: EPIC-04
-status: review
+status: done
 priority: P1
 size: S
 lane: learn-ui

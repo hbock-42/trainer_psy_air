@@ -4,7 +4,7 @@ issue: 48
 title: "Realism options"
 type: story
 epic: EPIC-06
-status: review
+status: done
 priority: P2
 size: S
 lane: exam-ui

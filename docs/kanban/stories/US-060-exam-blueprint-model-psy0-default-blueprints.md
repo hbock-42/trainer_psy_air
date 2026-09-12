@@ -4,7 +4,7 @@ issue: 45
 title: "Exam blueprint model & PSY0 default blueprints"
 type: story
 epic: EPIC-06
-status: review
+status: done
 priority: P0
 size: S
 lane: exam-ui

@@ -4,7 +4,7 @@ issue: 79
 title: "ADR: remote sync strategy (future)"
 type: story
 epic: EPIC-13
-status: review
+status: done
 priority: P3
 size: S
 lane: core

@@ -4,7 +4,7 @@ issue: 26
 title: "Numeric input item renderer with keypad"
 type: story
 epic: EPIC-03
-status: review
+status: done
 priority: P0
 size: S
 lane: engines

@@ -4,7 +4,7 @@ issue: 47
 title: "Exam results report"
 type: story
 epic: EPIC-06
-status: review
+status: done
 priority: P0
 size: M
 lane: exam-ui

@@ -4,7 +4,7 @@ issue: 49
 title: "Exam history and resume of interrupted exams"
 type: story
 epic: EPIC-06
-status: review
+status: done
 priority: P1
 size: S
 lane: exam-ui

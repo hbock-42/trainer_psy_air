@@ -4,7 +4,7 @@ issue: 61
 title: "Author French lexical-field bank (Boîte à mots)"
 type: story
 epic: EPIC-08
-status: review
+status: done
 priority: P1
 size: M
 lane: content

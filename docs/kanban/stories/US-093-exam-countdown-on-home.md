@@ -4,7 +4,7 @@ issue: 67
 title: "Exam countdown on home"
 type: story
 epic: EPIC-09
-status: review
+status: done
 priority: P2
 size: S
 lane: misc

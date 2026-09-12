@@ -4,7 +4,7 @@ issue: 58
 title: "Author English item bank (reading passages first)"
 type: story
 epic: EPIC-08
-status: review
+status: done
 priority: P0
 size: L
 lane: content

@@ -4,7 +4,7 @@ issue: 46
 title: "Exam runner (strict, timed, silent)"
 type: story
 epic: EPIC-06
-status: review
+status: done
 priority: P0
 size: L
 lane: exam-ui

@@ -4,7 +4,7 @@ issue: 60
 title: "Author dominos, cube-net and viewpoint seed items"
 type: story
 epic: EPIC-08
-status: review
+status: done
 priority: P1
 size: M
 lane: content

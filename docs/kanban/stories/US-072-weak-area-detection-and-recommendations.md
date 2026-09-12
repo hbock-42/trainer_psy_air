@@ -4,7 +4,7 @@ issue: 52
 title: "Weak-area detection and recommendations"
 type: story
 epic: EPIC-07
-status: review
+status: done
 priority: P1
 size: M
 lane: analytics

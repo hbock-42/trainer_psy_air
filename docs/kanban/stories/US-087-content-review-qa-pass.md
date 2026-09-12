@@ -4,7 +4,7 @@ issue: 63
 title: "Content review & QA pass"
 type: story
 epic: EPIC-08
-status: review
+status: done
 priority: P1
 size: M
 lane: content

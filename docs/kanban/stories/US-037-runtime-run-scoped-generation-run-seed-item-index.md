@@ -4,7 +4,7 @@ issue: 124
 title: "Runtime: run-scoped generation (run seed + item index)"
 type: story
 epic: EPIC-03
-status: review
+status: done
 priority: P0
 size: S
 lane: engines

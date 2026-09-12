@@ -4,7 +4,7 @@ issue: 57
 title: "Author lessons for every PSY0 activity"
 type: story
 epic: EPIC-08
-status: review
+status: done
 priority: P0
 size: L
 lane: content

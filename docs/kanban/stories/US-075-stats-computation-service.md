@@ -4,7 +4,7 @@ issue: 55
 title: "Stats computation service"
 type: story
 epic: EPIC-07
-status: review
+status: done
 priority: P0
 size: M
 lane: analytics

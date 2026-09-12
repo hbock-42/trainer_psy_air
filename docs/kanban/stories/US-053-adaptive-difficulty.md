@@ -4,7 +4,7 @@ issue: 43
 title: "Adaptive difficulty"
 type: story
 epic: EPIC-05
-status: review
+status: done
 priority: P2
 size: M
 lane: train-ui
