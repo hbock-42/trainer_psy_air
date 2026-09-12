@@ -1,0 +1,2591 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lexical_fields.schema.json",
+  "kind": "lexical_fields",
+  "familyId": "verbal_boxes",
+  "fields": [
+    {
+      "id": "verbal_boxes.field.cuisine",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La cuisine",
+        "en": "Cooking"
+      },
+      "lang": "fr",
+      "difficulty": 1,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.everyday"
+      ],
+      "words": [
+        "casserole",
+        "poêle",
+        "louche",
+        "fouet",
+        "passoire",
+        "spatule",
+        "marmite",
+        "râpe",
+        "saladier",
+        "couvercle",
+        "entonnoir",
+        "rouleau à pâtisserie",
+        "tablier",
+        "torchon",
+        "mixeur",
+        "éplucheur",
+        "plaque de cuisson",
+        "mijoter",
+        "éplucher",
+        "rôtir"
+      ],
+      "traps": [
+        {
+          "word": "coupe",
+          "trapFor": "verbal_boxes.field.sport"
+        },
+        {
+          "word": "nappe",
+          "trapFor": "verbal_boxes.field.restaurant"
+        },
+        {
+          "word": "recette",
+          "trapFor": "verbal_boxes.field.ecole"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.desserts",
+        "verbal_boxes.field.legumes",
+        "verbal_boxes.field.restaurant"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.aviation",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "L'aéronef",
+        "en": "The aircraft"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.aviation"
+      ],
+      "words": [
+        "aileron",
+        "empennage",
+        "fuselage",
+        "gouverne",
+        "train d'atterrissage",
+        "volet",
+        "cockpit",
+        "réacteur",
+        "voilure",
+        "dérive",
+        "carlingue",
+        "saumon",
+        "bec de sécurité",
+        "altimètre",
+        "manche à balai",
+        "décollage",
+        "atterrissage",
+        "nacelle",
+        "turbine",
+        "transpondeur"
+      ],
+      "traps": [
+        {
+          "word": "radar",
+          "trapFor": "verbal_boxes.field.informatique"
+        },
+        {
+          "word": "hangar",
+          "trapFor": "verbal_boxes.field.transport"
+        },
+        {
+          "word": "piste",
+          "trapFor": "verbal_boxes.field.sport"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.transport"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.marine",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La marine",
+        "en": "Seafaring"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.everyday"
+      ],
+      "words": [
+        "voilier",
+        "amarre",
+        "quille",
+        "bâbord",
+        "tribord",
+        "mât",
+        "ancre",
+        "coque",
+        "cale",
+        "pont",
+        "écoutille",
+        "gréement",
+        "mousse",
+        "marée",
+        "houle",
+        "cabestan",
+        "gaillard",
+        "cargaison",
+        "hauban",
+        "vigie"
+      ],
+      "traps": [
+        {
+          "word": "gouvernail",
+          "trapFor": "verbal_boxes.field.aviation"
+        },
+        {
+          "word": "hublot",
+          "trapFor": "verbal_boxes.field.aviation"
+        },
+        {
+          "word": "plongée",
+          "trapFor": "verbal_boxes.field.animaux_marins"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.animaux_marins"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.meteo",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La météo",
+        "en": "Weather"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.nature"
+      ],
+      "words": [
+        "nuage",
+        "orage",
+        "grêle",
+        "brise",
+        "pluie",
+        "vent",
+        "brouillard",
+        "tonnerre",
+        "éclair",
+        "averse",
+        "canicule",
+        "gel",
+        "givre",
+        "tempête",
+        "arc-en-ciel",
+        "humidité",
+        "rosée",
+        "bourrasque",
+        "ouragan",
+        "bruine"
+      ],
+      "traps": [
+        {
+          "word": "étoile",
+          "trapFor": "verbal_boxes.field.astronomie"
+        },
+        {
+          "word": "ciel",
+          "trapFor": "verbal_boxes.field.astronomie"
+        },
+        {
+          "word": "froid",
+          "trapFor": "verbal_boxes.field.emotions"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.astronomie",
+        "verbal_boxes.field.desserts"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "notes": "Deliberate hard pair: 'étoile'/'nuage'/'ciel' are genuinely ambiguous between weather and astronomy. Marked incompatibleWith to keep every series unambiguous."
+      }
+    },
+    {
+      "id": "verbal_boxes.field.anatomie",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Le corps humain",
+        "en": "Anatomy"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.science"
+      ],
+      "words": [
+        "genou",
+        "cheville",
+        "épaule",
+        "clavicule",
+        "poumon",
+        "foie",
+        "rein",
+        "tendon",
+        "vertèbre",
+        "sternum",
+        "mâchoire",
+        "poignet",
+        "coude",
+        "muscle",
+        "artère",
+        "veine",
+        "cartilage",
+        "omoplate",
+        "rotule",
+        "pupille"
+      ],
+      "traps": [
+        {
+          "word": "scalpel",
+          "trapFor": "verbal_boxes.field.medecine"
+        },
+        {
+          "word": "pansement",
+          "trapFor": "verbal_boxes.field.medecine"
+        },
+        {
+          "word": "cœur",
+          "trapFor": "verbal_boxes.field.emotions"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.medecine"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.musique",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La musique",
+        "en": "Music"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.arts"
+      ],
+      "words": [
+        "guitare",
+        "tambour",
+        "violon",
+        "flûte",
+        "trompette",
+        "clarinette",
+        "piano",
+        "harpe",
+        "cymbale",
+        "archet",
+        "partition",
+        "accord",
+        "gamme",
+        "tempo",
+        "orchestre",
+        "chœur",
+        "métronome",
+        "saxophone",
+        "contrebasse",
+        "xylophone"
+      ],
+      "traps": [
+        {
+          "word": "instrument",
+          "trapFor": "verbal_boxes.field.outils"
+        },
+        {
+          "word": "rythme",
+          "trapFor": "verbal_boxes.field.sport"
+        },
+        {
+          "word": "clé",
+          "trapFor": "verbal_boxes.field.bureau"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.outils",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les outils",
+        "en": "Tools"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.everyday"
+      ],
+      "words": [
+        "marteau",
+        "tournevis",
+        "clé à molette",
+        "pince",
+        "scie",
+        "perceuse",
+        "niveau",
+        "burin",
+        "enclume",
+        "étau",
+        "clou",
+        "vis",
+        "ciseau à bois",
+        "lime",
+        "mètre ruban",
+        "ponceuse",
+        "rabot",
+        "maillet",
+        "chignole",
+        "établi"
+      ],
+      "traps": [
+        {
+          "word": "truelle",
+          "trapFor": "verbal_boxes.field.jardin"
+        },
+        {
+          "word": "échelle",
+          "trapFor": "verbal_boxes.field.maison"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.vetements",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les vêtements",
+        "en": "Clothing"
+      },
+      "lang": "fr",
+      "difficulty": 1,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.everyday"
+      ],
+      "words": [
+        "manteau",
+        "écharpe",
+        "pantalon",
+        "chemise",
+        "veste",
+        "gilet",
+        "pull",
+        "jupe",
+        "chaussette",
+        "gant",
+        "ceinture",
+        "bonnet",
+        "cravate",
+        "chemisier",
+        "blouson",
+        "capuche",
+        "manche",
+        "doublure",
+        "ourlet",
+        "fermeture éclair"
+      ],
+      "traps": [
+        {
+          "word": "bottes",
+          "trapFor": "verbal_boxes.field.transport"
+        },
+        {
+          "word": "cagoule",
+          "trapFor": "verbal_boxes.field.sport"
+        },
+        {
+          "word": "smoking",
+          "trapFor": "verbal_boxes.field.cinema"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.sport",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Le sport",
+        "en": "Sport"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.body"
+      ],
+      "words": [
+        "ballon",
+        "raquette",
+        "filet",
+        "arbitre",
+        "chronomètre",
+        "podium",
+        "stade",
+        "vestiaire",
+        "échauffement",
+        "entraînement",
+        "médaille",
+        "équipe",
+        "adversaire",
+        "coup franc",
+        "panier",
+        "tribune",
+        "maillot",
+        "survêtement",
+        "course",
+        "haltère"
+      ],
+      "traps": [
+        {
+          "word": "plongeon",
+          "trapFor": "verbal_boxes.field.animaux_marins"
+        },
+        {
+          "word": "escrime",
+          "trapFor": "verbal_boxes.field.armee"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.geographie",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La géographie",
+        "en": "Geography"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.nature"
+      ],
+      "words": [
+        "continent",
+        "péninsule",
+        "isthme",
+        "détroit",
+        "plateau",
+        "bassin",
+        "méridien",
+        "latitude",
+        "longitude",
+        "archipel",
+        "delta",
+        "estuaire",
+        "frontière",
+        "relief",
+        "hémisphère",
+        "fleuve",
+        "affluent",
+        "toundra",
+        "savane",
+        "désert"
+      ],
+      "traps": [
+        {
+          "word": "volcan",
+          "trapFor": "verbal_boxes.field.montagne"
+        },
+        {
+          "word": "côte",
+          "trapFor": "verbal_boxes.field.plage"
+        },
+        {
+          "word": "capitale",
+          "trapFor": "verbal_boxes.field.ville"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.montagne"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.emotions",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les émotions",
+        "en": "Emotions"
+      },
+      "lang": "fr",
+      "difficulty": 4,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.abstract"
+      ],
+      "words": [
+        "joie",
+        "colère",
+        "tristesse",
+        "peur",
+        "surprise",
+        "dégoût",
+        "honte",
+        "fierté",
+        "jalousie",
+        "espoir",
+        "angoisse",
+        "soulagement",
+        "nostalgie",
+        "enthousiasme",
+        "frustration",
+        "gratitude",
+        "méfiance",
+        "culpabilité",
+        "envie",
+        "ennui"
+      ],
+      "traps": [
+        {
+          "word": "larme",
+          "trapFor": "verbal_boxes.field.anatomie"
+        },
+        {
+          "word": "stress",
+          "trapFor": "verbal_boxes.field.medecine"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.ecole",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "L'école",
+        "en": "School"
+      },
+      "lang": "fr",
+      "difficulty": 1,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.everyday"
+      ],
+      "words": [
+        "cahier",
+        "craie",
+        "gomme",
+        "trousse",
+        "classeur",
+        "récréation",
+        "bulletin",
+        "instituteur",
+        "tableau noir",
+        "pupitre",
+        "cartable",
+        "surligneur",
+        "cour",
+        "devoir",
+        "emploi du temps",
+        "classe",
+        "rentrée"
+      ],
+      "traps": [
+        {
+          "word": "compas",
+          "trapFor": "verbal_boxes.field.formes"
+        },
+        {
+          "word": "règle",
+          "trapFor": "verbal_boxes.field.formes"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.bureau"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.jardin",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Le jardin",
+        "en": "Garden"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.nature"
+      ],
+      "words": [
+        "arrosoir",
+        "binette",
+        "sécateur",
+        "brouette",
+        "terreau",
+        "plate-bande",
+        "serre",
+        "compost",
+        "tondeuse",
+        "râteau",
+        "bêche",
+        "haie",
+        "gazon",
+        "paillage",
+        "bulbe",
+        "treillage",
+        "potager",
+        "semis",
+        "griffe",
+        "cabane à outils"
+      ],
+      "traps": [
+        {
+          "word": "bourgeon",
+          "trapFor": "verbal_boxes.field.arbres"
+        },
+        {
+          "word": "rosier",
+          "trapFor": "verbal_boxes.field.fleurs"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.transport",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les transports",
+        "en": "Transport"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.everyday"
+      ],
+      "words": [
+        "autobus",
+        "tramway",
+        "métro",
+        "gare",
+        "quai",
+        "billet",
+        "correspondance",
+        "chauffeur",
+        "wagon",
+        "carrefour",
+        "autoroute",
+        "péage",
+        "embouteillage",
+        "feu tricolore",
+        "passage piéton",
+        "rond-point",
+        "parking",
+        "aiguillage",
+        "navette",
+        "abribus"
+      ],
+      "traps": [
+        {
+          "word": "port",
+          "trapFor": "verbal_boxes.field.marine"
+        },
+        {
+          "word": "traversée",
+          "trapFor": "verbal_boxes.field.marine"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.aviation"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.couleurs",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les couleurs",
+        "en": "Colours"
+      },
+      "lang": "fr",
+      "difficulty": 1,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.abstract"
+      ],
+      "words": [
+        "rouge",
+        "bleu",
+        "jaune",
+        "vert",
+        "violet",
+        "marron",
+        "gris",
+        "turquoise",
+        "doré",
+        "argenté",
+        "beige",
+        "kaki",
+        "carmin",
+        "indigo",
+        "ocre",
+        "pourpre",
+        "ivoire",
+        "cyan",
+        "émeraude",
+        "vermillon"
+      ],
+      "traps": [
+        {
+          "word": "orange",
+          "trapFor": "verbal_boxes.field.fruits"
+        },
+        {
+          "word": "rose",
+          "trapFor": "verbal_boxes.field.fleurs"
+        },
+        {
+          "word": "corail",
+          "trapFor": "verbal_boxes.field.animaux_marins"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.animaux_marins",
+        "verbal_boxes.field.fleurs",
+        "verbal_boxes.field.formes",
+        "verbal_boxes.field.fruits"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.formes",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les formes géométriques",
+        "en": "Geometric shapes"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.abstract"
+      ],
+      "words": [
+        "carré",
+        "cercle",
+        "triangle",
+        "losange",
+        "rectangle",
+        "hexagone",
+        "pentagone",
+        "trapèze",
+        "cube",
+        "sphère",
+        "cylindre",
+        "cône",
+        "ovale",
+        "parallélogramme",
+        "polygone",
+        "diagonale",
+        "base",
+        "segment",
+        "symétrie",
+        "périmètre"
+      ],
+      "traps": [
+        {
+          "word": "angle",
+          "trapFor": "verbal_boxes.field.mathematiques"
+        },
+        {
+          "word": "axe",
+          "trapFor": "verbal_boxes.field.mathematiques"
+        },
+        {
+          "word": "volume",
+          "trapFor": "verbal_boxes.field.mathematiques"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.couleurs",
+        "verbal_boxes.field.mathematiques"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "notes": "Deliberate hard pair: 'angle'/'axe'/'volume' are claimed by both formes (geometry) and mathematiques. Kept as incompatibleWith rather than a mixed series even though mathematiques is difficulty 5, because the schema has no separate hardPairs mechanism -- see AUTHORING.md note in this PR."
+      }
+    },
+    {
+      "id": "verbal_boxes.field.metiers",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les métiers",
+        "en": "Professions"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.abstract"
+      ],
+      "words": [
+        "plombier",
+        "maçon",
+        "électricien",
+        "notaire",
+        "facteur",
+        "boulanger",
+        "menuisier",
+        "vétérinaire",
+        "comptable",
+        "architecte",
+        "serrurier",
+        "couturier",
+        "pompier",
+        "boucher",
+        "fleuriste",
+        "jardinier",
+        "informaticien",
+        "traducteur",
+        "douanier",
+        "peintre en bâtiment"
+      ],
+      "traps": [
+        {
+          "word": "infirmier",
+          "trapFor": "verbal_boxes.field.medecine"
+        },
+        {
+          "word": "professeur",
+          "trapFor": "verbal_boxes.field.ecole"
+        },
+        {
+          "word": "marin",
+          "trapFor": "verbal_boxes.field.marine"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.animaux_marins",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les animaux marins",
+        "en": "Marine animals"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.nature"
+      ],
+      "words": [
+        "baleine",
+        "dauphin",
+        "requin",
+        "méduse",
+        "pieuvre",
+        "otarie",
+        "phoque",
+        "corail",
+        "étoile de mer",
+        "raie",
+        "thon",
+        "crabe",
+        "homard",
+        "hippocampe",
+        "narval",
+        "anémone de mer",
+        "algue",
+        "calmar",
+        "orque",
+        "tortue de mer"
+      ],
+      "traps": [
+        {
+          "word": "moule",
+          "trapFor": "verbal_boxes.field.cuisine"
+        },
+        {
+          "word": "plongeur",
+          "trapFor": "verbal_boxes.field.sport"
+        },
+        {
+          "word": "nageoire",
+          "trapFor": "verbal_boxes.field.sport"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.couleurs",
+        "verbal_boxes.field.marine",
+        "verbal_boxes.field.plage"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.insectes",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les insectes",
+        "en": "Insects"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.nature"
+      ],
+      "words": [
+        "fourmi",
+        "abeille",
+        "guêpe",
+        "papillon",
+        "coccinelle",
+        "libellule",
+        "sauterelle",
+        "criquet",
+        "moustique",
+        "mouche",
+        "scarabée",
+        "cigale",
+        "mante religieuse",
+        "termite",
+        "puce",
+        "chenille",
+        "bourdon",
+        "hanneton",
+        "perce-oreille",
+        "punaise"
+      ],
+      "traps": [
+        {
+          "word": "dard",
+          "trapFor": "verbal_boxes.field.medecine"
+        },
+        {
+          "word": "ruche",
+          "trapFor": "verbal_boxes.field.jardin"
+        },
+        {
+          "word": "aile",
+          "trapFor": "verbal_boxes.field.aviation"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.astronomie",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "L'astronomie",
+        "en": "Astronomy"
+      },
+      "lang": "fr",
+      "difficulty": 4,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.science"
+      ],
+      "words": [
+        "étoile",
+        "planète",
+        "galaxie",
+        "comète",
+        "météorite",
+        "satellite",
+        "orbite",
+        "constellation",
+        "nébuleuse",
+        "télescope",
+        "éclipse",
+        "supernova",
+        "astéroïde",
+        "gravité",
+        "lune",
+        "cratère",
+        "équinoxe",
+        "solstice",
+        "voie lactée",
+        "apesanteur"
+      ],
+      "traps": [
+        {
+          "word": "fusée",
+          "trapFor": "verbal_boxes.field.informatique"
+        },
+        {
+          "word": "nuage",
+          "trapFor": "verbal_boxes.field.meteo"
+        },
+        {
+          "word": "ciel",
+          "trapFor": "verbal_boxes.field.meteo"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.meteo"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "notes": "Deliberate hard pair: 'étoile'/'nuage'/'ciel' are genuinely ambiguous between weather and astronomy. Marked incompatibleWith to keep every series unambiguous."
+      }
+    },
+    {
+      "id": "verbal_boxes.field.informatique",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "L'informatique",
+        "en": "Computing"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.science"
+      ],
+      "words": [
+        "clavier",
+        "écran",
+        "processeur",
+        "mémoire vive",
+        "disque dur",
+        "logiciel",
+        "navigateur",
+        "réseau",
+        "pixel",
+        "curseur",
+        "fichier",
+        "dossier",
+        "imprimante",
+        "sauvegarde",
+        "algorithme",
+        "octet",
+        "routeur",
+        "antivirus",
+        "pare-feu",
+        "clé usb"
+      ],
+      "traps": [
+        {
+          "word": "fenêtre",
+          "trapFor": "verbal_boxes.field.maison"
+        },
+        {
+          "word": "souris",
+          "trapFor": "verbal_boxes.field.animaux_sauvages"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.banque",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La banque et la finance",
+        "en": "Banking and finance"
+      },
+      "lang": "fr",
+      "difficulty": 4,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.abstract"
+      ],
+      "words": [
+        "chèque",
+        "virement",
+        "découvert",
+        "intérêt",
+        "emprunt",
+        "créancier",
+        "actionnaire",
+        "obligation",
+        "dividende",
+        "hypothèque",
+        "guichet",
+        "relevé",
+        "coffre-fort",
+        "devise",
+        "taux",
+        "épargne",
+        "placement",
+        "livret",
+        "solde",
+        "carte bancaire"
+      ],
+      "traps": [
+        {
+          "word": "action",
+          "trapFor": "verbal_boxes.field.sport"
+        },
+        {
+          "word": "titre",
+          "trapFor": "verbal_boxes.field.justice"
+        },
+        {
+          "word": "bourse",
+          "trapFor": "verbal_boxes.field.ecole"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.fruits",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les fruits",
+        "en": "Fruit"
+      },
+      "lang": "fr",
+      "difficulty": 1,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.everyday"
+      ],
+      "words": [
+        "pomme",
+        "poire",
+        "banane",
+        "orange",
+        "fraise",
+        "cerise",
+        "abricot",
+        "pêche",
+        "raisin",
+        "ananas",
+        "mangue",
+        "kiwi",
+        "citron",
+        "pastèque",
+        "melon",
+        "prune",
+        "figue",
+        "framboise",
+        "mirabelle",
+        "clémentine"
+      ],
+      "traps": [
+        {
+          "word": "avocat",
+          "trapFor": "verbal_boxes.field.metiers"
+        },
+        {
+          "word": "olive",
+          "trapFor": "verbal_boxes.field.legumes"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.couleurs",
+        "verbal_boxes.field.desserts",
+        "verbal_boxes.field.legumes"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.legumes",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les légumes",
+        "en": "Vegetables"
+      },
+      "lang": "fr",
+      "difficulty": 1,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.everyday"
+      ],
+      "words": [
+        "carotte",
+        "poireau",
+        "courgette",
+        "aubergine",
+        "chou",
+        "haricot vert",
+        "épinard",
+        "artichaut",
+        "betterave",
+        "radis",
+        "navet",
+        "poivron",
+        "céleri",
+        "endive",
+        "brocoli",
+        "potiron",
+        "oignon",
+        "échalote",
+        "cornichon",
+        "petit pois"
+      ],
+      "traps": [
+        {
+          "word": "pomme de terre",
+          "trapFor": "verbal_boxes.field.fruits"
+        },
+        {
+          "word": "tomate",
+          "trapFor": "verbal_boxes.field.fruits"
+        },
+        {
+          "word": "citrouille",
+          "trapFor": "verbal_boxes.field.desserts"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.cuisine",
+        "verbal_boxes.field.fruits"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.desserts",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les desserts",
+        "en": "Desserts"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.everyday"
+      ],
+      "words": [
+        "tarte",
+        "gâteau",
+        "flan",
+        "crème brûlée",
+        "mousse au chocolat",
+        "macaron",
+        "meringue",
+        "sorbet",
+        "clafoutis",
+        "profiterole",
+        "cheesecake",
+        "compote",
+        "nougat",
+        "caramel",
+        "glace",
+        "biscuit",
+        "brioche",
+        "far breton",
+        "charlotte",
+        "vacherin"
+      ],
+      "traps": [
+        {
+          "word": "religieuse",
+          "trapFor": "verbal_boxes.field.religion"
+        },
+        {
+          "word": "éclair",
+          "trapFor": "verbal_boxes.field.meteo"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.cuisine",
+        "verbal_boxes.field.fruits",
+        "verbal_boxes.field.meteo"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.restaurant",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Le restaurant",
+        "en": "Restaurant"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.everyday"
+      ],
+      "words": [
+        "serveur",
+        "menu",
+        "addition",
+        "réservation",
+        "sommelier",
+        "nappe",
+        "carte des vins",
+        "pourboire",
+        "entrée",
+        "plat du jour",
+        "dessert",
+        "cuisinier en chef",
+        "salle",
+        "terrasse",
+        "couvert",
+        "commande",
+        "maître d'hôtel",
+        "buffet",
+        "brigade",
+        "service"
+      ],
+      "traps": [
+        {
+          "word": "four",
+          "trapFor": "verbal_boxes.field.cuisine"
+        },
+        {
+          "word": "marmite",
+          "trapFor": "verbal_boxes.field.cuisine"
+        },
+        {
+          "word": "recette",
+          "trapFor": "verbal_boxes.field.cuisine"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.cuisine"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.medecine",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La médecine",
+        "en": "Medicine"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.science"
+      ],
+      "words": [
+        "stéthoscope",
+        "scalpel",
+        "pansement",
+        "seringue",
+        "ordonnance",
+        "diagnostic",
+        "vaccin",
+        "perfusion",
+        "chirurgien",
+        "radiographie",
+        "antibiotique",
+        "brancard",
+        "urgence",
+        "bloc opératoire",
+        "anesthésie",
+        "fièvre",
+        "symptôme",
+        "cicatrice",
+        "prothèse",
+        "consultation"
+      ],
+      "traps": [
+        {
+          "word": "blouse",
+          "trapFor": "verbal_boxes.field.vetements"
+        },
+        {
+          "word": "pouls",
+          "trapFor": "verbal_boxes.field.sport"
+        },
+        {
+          "word": "virus",
+          "trapFor": "verbal_boxes.field.informatique"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.anatomie"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.armee",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "L'armée",
+        "en": "The military"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.abstract"
+      ],
+      "words": [
+        "soldat",
+        "caserne",
+        "uniforme",
+        "grade",
+        "char d'assaut",
+        "tranchée",
+        "bataillon",
+        "sentinelle",
+        "munition",
+        "casque",
+        "général",
+        "recrue",
+        "défilé",
+        "artillerie",
+        "camouflage",
+        "insigne",
+        "garnison",
+        "escadron",
+        "manœuvre",
+        "commandement"
+      ],
+      "traps": [
+        {
+          "word": "hélicoptère",
+          "trapFor": "verbal_boxes.field.aviation"
+        },
+        {
+          "word": "cible",
+          "trapFor": "verbal_boxes.field.sport"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.ferme",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La ferme",
+        "en": "The farm"
+      },
+      "lang": "fr",
+      "difficulty": 1,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.nature"
+      ],
+      "words": [
+        "vache",
+        "cochon",
+        "poule",
+        "coq",
+        "mouton",
+        "chèvre",
+        "âne",
+        "cheval",
+        "canard",
+        "dindon",
+        "lapin",
+        "grange",
+        "étable",
+        "enclos",
+        "abreuvoir",
+        "fermier",
+        "tracteur",
+        "foin",
+        "clôture",
+        "fenil"
+      ],
+      "traps": [
+        {
+          "word": "œuf",
+          "trapFor": "verbal_boxes.field.cuisine"
+        },
+        {
+          "word": "laine",
+          "trapFor": "verbal_boxes.field.vetements"
+        },
+        {
+          "word": "selle",
+          "trapFor": "verbal_boxes.field.transport"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.animaux_sauvages",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les animaux sauvages",
+        "en": "Wild animals"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.nature"
+      ],
+      "words": [
+        "lion",
+        "tigre",
+        "éléphant",
+        "girafe",
+        "zèbre",
+        "rhinocéros",
+        "hippopotame",
+        "gorille",
+        "panthère",
+        "hyène",
+        "antilope",
+        "buffle",
+        "loup",
+        "renard",
+        "ours",
+        "sanglier",
+        "chacal",
+        "guépard",
+        "bison",
+        "lynx"
+      ],
+      "traps": [
+        {
+          "word": "plume",
+          "trapFor": "verbal_boxes.field.oiseaux"
+        },
+        {
+          "word": "écaille",
+          "trapFor": "verbal_boxes.field.reptiles"
+        },
+        {
+          "word": "crinière",
+          "trapFor": "verbal_boxes.field.ferme"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.oiseaux"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.oiseaux",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les oiseaux",
+        "en": "Birds"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.nature"
+      ],
+      "words": [
+        "aigle",
+        "hibou",
+        "moineau",
+        "pigeon",
+        "corbeau",
+        "perroquet",
+        "cygne",
+        "pélican",
+        "flamant rose",
+        "mésange",
+        "rossignol",
+        "pic-vert",
+        "faucon",
+        "hirondelle",
+        "vautour",
+        "pinson",
+        "toucan",
+        "autruche",
+        "colibri",
+        "héron"
+      ],
+      "traps": [
+        {
+          "word": "plume",
+          "trapFor": "verbal_boxes.field.insectes"
+        },
+        {
+          "word": "nid",
+          "trapFor": "verbal_boxes.field.arbres"
+        },
+        {
+          "word": "bec",
+          "trapFor": "verbal_boxes.field.aviation"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.animaux_sauvages"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.reptiles",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les reptiles",
+        "en": "Reptiles"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.nature"
+      ],
+      "words": [
+        "serpent",
+        "lézard",
+        "tortue",
+        "iguane",
+        "caméléon",
+        "varan",
+        "crocodile",
+        "cobra",
+        "vipère",
+        "gecko",
+        "python",
+        "boa",
+        "alligator",
+        "salamandre",
+        "anaconda",
+        "orvet",
+        "couleuvre",
+        "dragon de komodo",
+        "tortue terrestre",
+        "scinque"
+      ],
+      "traps": [
+        {
+          "word": "carapace",
+          "trapFor": "verbal_boxes.field.animaux_marins"
+        },
+        {
+          "word": "mue",
+          "trapFor": "verbal_boxes.field.insectes"
+        },
+        {
+          "word": "venin",
+          "trapFor": "verbal_boxes.field.medecine"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.arbres",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les arbres",
+        "en": "Trees"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.nature"
+      ],
+      "words": [
+        "chêne",
+        "sapin",
+        "bouleau",
+        "érable",
+        "peuplier",
+        "saule",
+        "hêtre",
+        "platane",
+        "châtaignier",
+        "if",
+        "tilleul",
+        "frêne",
+        "aulne",
+        "noisetier",
+        "orme",
+        "cyprès",
+        "pin",
+        "olivier",
+        "acacia",
+        "séquoia"
+      ],
+      "traps": [
+        {
+          "word": "branche",
+          "trapFor": "verbal_boxes.field.jardin"
+        },
+        {
+          "word": "feuille",
+          "trapFor": "verbal_boxes.field.ecole"
+        },
+        {
+          "word": "écorce",
+          "trapFor": "verbal_boxes.field.medecine"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.fleurs",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les fleurs",
+        "en": "Flowers"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.nature"
+      ],
+      "words": [
+        "tulipe",
+        "marguerite",
+        "tournesol",
+        "orchidée",
+        "pivoine",
+        "jonquille",
+        "iris",
+        "lys",
+        "pâquerette",
+        "dahlia",
+        "glaïeul",
+        "hortensia",
+        "violette",
+        "camélia",
+        "lavande",
+        "coquelicot",
+        "bouton d'or",
+        "muguet",
+        "jasmin",
+        "freesia"
+      ],
+      "traps": [
+        {
+          "word": "pétale",
+          "trapFor": "verbal_boxes.field.jardin"
+        },
+        {
+          "word": "pollen",
+          "trapFor": "verbal_boxes.field.insectes"
+        },
+        {
+          "word": "bouquet",
+          "trapFor": "verbal_boxes.field.peinture"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.couleurs"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.plage",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La plage",
+        "en": "The beach"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.nature"
+      ],
+      "words": [
+        "sable",
+        "parasol",
+        "serviette de plage",
+        "coquillage",
+        "vague",
+        "marée basse",
+        "maillot de bain",
+        "bouée",
+        "château de sable",
+        "crème solaire",
+        "transat",
+        "phare",
+        "dune",
+        "estran",
+        "plagiste",
+        "plongeoir",
+        "pédalo",
+        "crique",
+        "falaise",
+        "brise-lames"
+      ],
+      "traps": [
+        {
+          "word": "mouette",
+          "trapFor": "verbal_boxes.field.oiseaux"
+        },
+        {
+          "word": "étoile de mer",
+          "trapFor": "verbal_boxes.field.animaux_marins"
+        },
+        {
+          "word": "cabine de plage",
+          "trapFor": "verbal_boxes.field.maison"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.animaux_marins"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.montagne",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La montagne",
+        "en": "The mountain"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.nature"
+      ],
+      "words": [
+        "sommet",
+        "glacier",
+        "avalanche",
+        "refuge",
+        "piolet",
+        "crampon",
+        "col",
+        "versant",
+        "alpiniste",
+        "chalet",
+        "télésiège",
+        "piste de ski",
+        "crevasse",
+        "paroi",
+        "cairn",
+        "randonnée",
+        "altitude",
+        "pente",
+        "corde d'escalade",
+        "moraine"
+      ],
+      "traps": [
+        {
+          "word": "volcan",
+          "trapFor": "verbal_boxes.field.geographie"
+        },
+        {
+          "word": "neige",
+          "trapFor": "verbal_boxes.field.meteo"
+        },
+        {
+          "word": "chamois",
+          "trapFor": "verbal_boxes.field.animaux_sauvages"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.geographie"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.ville",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La ville",
+        "en": "The city"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.everyday"
+      ],
+      "words": [
+        "trottoir",
+        "mairie",
+        "place",
+        "immeuble",
+        "boulevard",
+        "réverbère",
+        "square",
+        "banlieue",
+        "commerce",
+        "quartier",
+        "gratte-ciel",
+        "urbanisme",
+        "égout",
+        "passage souterrain",
+        "borne",
+        "zone piétonne",
+        "monument",
+        "kiosque",
+        "marché",
+        "avenue"
+      ],
+      "traps": [
+        {
+          "word": "bus",
+          "trapFor": "verbal_boxes.field.transport"
+        },
+        {
+          "word": "horloge",
+          "trapFor": "verbal_boxes.field.electricite"
+        },
+        {
+          "word": "parc",
+          "trapFor": "verbal_boxes.field.jardin"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.maison",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La maison",
+        "en": "The house"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.everyday"
+      ],
+      "words": [
+        "canapé",
+        "fauteuil",
+        "commode",
+        "étagère",
+        "tapis",
+        "rideau",
+        "lustre",
+        "coussin",
+        "vaisselier",
+        "armoire",
+        "tiroir",
+        "cheminée",
+        "vestibule",
+        "escalier",
+        "plafond",
+        "cave",
+        "grenier",
+        "volet roulant",
+        "paillasson",
+        "coffre"
+      ],
+      "traps": [
+        {
+          "word": "penderie",
+          "trapFor": "verbal_boxes.field.vetements"
+        },
+        {
+          "word": "moulure",
+          "trapFor": "verbal_boxes.field.peinture"
+        },
+        {
+          "word": "plafonnier",
+          "trapFor": "verbal_boxes.field.electricite"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.bureau",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Le bureau",
+        "en": "The office"
+      },
+      "lang": "fr",
+      "difficulty": 2,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.everyday"
+      ],
+      "words": [
+        "agrafeuse",
+        "classeur",
+        "trombone",
+        "surligneur",
+        "corbeille à papier",
+        "stylo",
+        "post-it",
+        "agenda",
+        "perforatrice",
+        "chemise cartonnée",
+        "tampon encreur",
+        "rapporteur d'angle",
+        "calculatrice",
+        "bloc-notes",
+        "enveloppe",
+        "cachet",
+        "photocopieuse",
+        "adhésif",
+        "élastique",
+        "séparateur"
+      ],
+      "traps": [
+        {
+          "word": "cahier",
+          "trapFor": "verbal_boxes.field.ecole"
+        },
+        {
+          "word": "étiquette",
+          "trapFor": "verbal_boxes.field.vetements"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.ecole"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.justice",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La justice",
+        "en": "Justice"
+      },
+      "lang": "fr",
+      "difficulty": 4,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.abstract"
+      ],
+      "words": [
+        "tribunal",
+        "juge",
+        "magistrat",
+        "procès",
+        "verdict",
+        "témoin",
+        "jury",
+        "accusé",
+        "plaidoirie",
+        "condamnation",
+        "huissier",
+        "greffier",
+        "peine",
+        "réquisitoire",
+        "appel",
+        "délibération",
+        "code pénal",
+        "plainte",
+        "audience",
+        "balance"
+      ],
+      "traps": [
+        {
+          "word": "preuve",
+          "trapFor": "verbal_boxes.field.mathematiques"
+        },
+        {
+          "word": "code",
+          "trapFor": "verbal_boxes.field.informatique"
+        },
+        {
+          "word": "acte",
+          "trapFor": "verbal_boxes.field.banque"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.religion",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La religion",
+        "en": "Religion"
+      },
+      "lang": "fr",
+      "difficulty": 4,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.abstract"
+      ],
+      "words": [
+        "église",
+        "mosquée",
+        "synagogue",
+        "temple",
+        "prière",
+        "pèlerinage",
+        "clergé",
+        "évêque",
+        "imam",
+        "rabbin",
+        "cierge",
+        "autel",
+        "vitrail",
+        "procession",
+        "méditation",
+        "encens",
+        "rituel",
+        "sermon",
+        "croyant",
+        "liturgie"
+      ],
+      "traps": [
+        {
+          "word": "cloche",
+          "trapFor": "verbal_boxes.field.musique"
+        },
+        {
+          "word": "moine",
+          "trapFor": "verbal_boxes.field.metiers"
+        },
+        {
+          "word": "chant",
+          "trapFor": "verbal_boxes.field.musique"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.cinema",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Le cinéma et le théâtre",
+        "en": "Cinema and theatre"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.arts"
+      ],
+      "words": [
+        "scène",
+        "décor",
+        "projecteur",
+        "réalisateur",
+        "acteur",
+        "rideau de scène",
+        "coulisses",
+        "répétition",
+        "tournage",
+        "montage",
+        "clap",
+        "générique",
+        "spectateur",
+        "loge",
+        "applaudissement",
+        "doublage",
+        "figurant",
+        "plan-séquence",
+        "travelling",
+        "arrière-plan"
+      ],
+      "traps": [
+        {
+          "word": "costume",
+          "trapFor": "verbal_boxes.field.vetements"
+        },
+        {
+          "word": "scénario",
+          "trapFor": "verbal_boxes.field.informatique"
+        },
+        {
+          "word": "rôle",
+          "trapFor": "verbal_boxes.field.ecole"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.peinture",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "La peinture et les arts plastiques",
+        "en": "Painting and visual arts"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.arts"
+      ],
+      "words": [
+        "palette",
+        "chevalet",
+        "toile",
+        "fusain",
+        "aquarelle",
+        "pastel",
+        "esquisse",
+        "perspective",
+        "nature morte",
+        "sculpture",
+        "argile",
+        "fresque",
+        "vernis",
+        "atelier d'artiste",
+        "autoportrait",
+        "modèle",
+        "galerie",
+        "empâtement",
+        "glacis",
+        "rehaut"
+      ],
+      "traps": [
+        {
+          "word": "pinceau",
+          "trapFor": "verbal_boxes.field.outils"
+        },
+        {
+          "word": "teinte",
+          "trapFor": "verbal_boxes.field.couleurs"
+        },
+        {
+          "word": "cadre",
+          "trapFor": "verbal_boxes.field.maison"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "verbal_boxes.field.mathematiques",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "Les mathématiques",
+        "en": "Mathematics"
+      },
+      "lang": "fr",
+      "difficulty": 5,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.abstract"
+      ],
+      "words": [
+        "équation",
+        "fraction",
+        "dérivée",
+        "intégrale",
+        "matrice",
+        "vecteur",
+        "théorème",
+        "hypothèse",
+        "fonction",
+        "logarithme",
+        "polynôme",
+        "variable",
+        "démonstration",
+        "ensemble",
+        "probabilité",
+        "statistique",
+        "coefficient",
+        "racine carrée",
+        "axe",
+        "angle"
+      ],
+      "traps": [
+        {
+          "word": "carré",
+          "trapFor": "verbal_boxes.field.formes"
+        },
+        {
+          "word": "racine",
+          "trapFor": "verbal_boxes.field.jardin"
+        },
+        {
+          "word": "moyenne",
+          "trapFor": "verbal_boxes.field.ecole"
+        }
+      ],
+      "incompatibleWith": [
+        "verbal_boxes.field.formes"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "notes": "Deliberate hard pair: 'angle'/'axe'/'volume' are claimed by both formes (geometry) and mathematiques. Kept as incompatibleWith rather than a mixed series even though mathematiques is difficulty 5, because the schema has no separate hardPairs mechanism -- see AUTHORING.md note in this PR."
+      }
+    },
+    {
+      "id": "verbal_boxes.field.electricite",
+      "version": 1,
+      "familyId": "verbal_boxes",
+      "name": {
+        "fr": "L'électricité",
+        "en": "Electricity"
+      },
+      "lang": "fr",
+      "difficulty": 3,
+      "tags": [
+        "verbal.boxes",
+        "verbal.boxes.science"
+      ],
+      "words": [
+        "prise",
+        "interrupteur",
+        "disjoncteur",
+        "câble",
+        "transformateur",
+        "compteur électrique",
+        "tension",
+        "fusible",
+        "isolant",
+        "conducteur",
+        "circuit",
+        "générateur",
+        "wattmètre",
+        "voltmètre",
+        "rallonge",
+        "multiprise",
+        "fil",
+        "tableau électrique",
+        "phase",
+        "terre"
+      ],
+      "traps": [
+        {
+          "word": "ampoule",
+          "trapFor": "verbal_boxes.field.anatomie"
+        },
+        {
+          "word": "courant",
+          "trapFor": "verbal_boxes.field.marine"
+        },
+        {
+          "word": "tableau",
+          "trapFor": "verbal_boxes.field.ecole"
+        }
+      ],
+      "incompatibleWith": [],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    }
+  ]
+}

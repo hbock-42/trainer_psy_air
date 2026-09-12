@@ -209,6 +209,17 @@ words that *do* belong to this field but that a hurried candidate would file und
 words fit both). A word must belong to exactly one field among any set the generator may
 mix; the validator (US-014) checks it. See `assets/content/examples/lexical_fields.example.json`.
 
+The bank at `psy0/verbal_boxes/lexical_fields/core.json` (US-085, 45 fields) marks a pair
+`incompatibleWith` whenever a word would genuinely fit both (e.g. `fruits` ↔ `legumes` over
+`tomate`/`olive`/`pomme de terre`, `couleurs` ↔ `fruits`/`fleurs`/`animaux_marins` over
+`orange`/`rose`/`corail`, `formes` ↔ `mathematiques` over `angle`/`axe`/`carré`). The schema
+has no separate "hard pair" flag to *allow* two overlapping fields into the same series at
+high difficulty, so every genuine overlap is blocked via `incompatibleWith` regardless of
+difficulty; fields on the harder side of a pair (e.g. `mathematiques` at difficulty 5) carry
+a `meta.notes` explaining the trade-off. If a future story wants a deliberately ambiguous
+"hard series" mode, it should add a dedicated field (e.g. `hardPairWith`) rather than reuse
+`incompatibleWith` for the opposite meaning.
+
 ## 4. Difficulty scale
 
 Calibrate against the **real test**, not against a beginner. The app's adaptive mode (US-053)
