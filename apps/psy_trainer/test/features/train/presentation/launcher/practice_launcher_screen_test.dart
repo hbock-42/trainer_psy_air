@@ -77,9 +77,16 @@ void main() {
 
     testWidgets('a family whose engine is missing shows "coming soon" and '
         'disables the controls', (tester) async {
+      // A family id no story has registered an engine for yet (unlike
+      // `bankFamily().id`/`culture_aero`, which US-028 registered for real):
+      // `engineAvailable: false` falls through to the app's real
+      // `engineRegistryProvider`, not a fake, so this only proves "coming
+      // soon" if nothing really claims the id.
+      final unregisteredFamily = bankFamily(id: 'not_yet_implemented_family');
       await pumpLauncher(
         tester,
-        familyId: bankFamily().id,
+        familyId: unregisteredFamily.id,
+        content: InMemoryContentRepository(families: [unregisteredFamily]),
         engineAvailable: false,
       );
 

@@ -85,6 +85,20 @@ class LocalContentRepository implements ContentRepository {
   }
 
   @override
+  Future<Passage?> passage(String id) async {
+    final row = await _dao.passageById(id);
+    return row == null ? null : Passage.fromJson(row.json);
+  }
+
+  @override
+  Future<List<Passage>> passagesByIds(Iterable<String> ids) async {
+    final wanted = ids.toList();
+    final rows = await _dao.passagesByIds(wanted);
+    final byId = {for (final row in rows) row.id: Passage.fromJson(row.json)};
+    return [for (final id in wanted) ?byId[id]];
+  }
+
+  @override
   Future<List<Lesson>> lessons({ModuleId? moduleId, String? familyId}) async =>
       [
         for (final row in await _dao.lessonsOf(

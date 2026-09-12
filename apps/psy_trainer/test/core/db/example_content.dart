@@ -8,8 +8,9 @@ import 'package:psy_trainer/core/db/open_database.dart';
 /// The example bundle in `assets/content/examples/` decoded once, as a
 /// fixture for content DAO/repository tests. Contents (see the JSON files):
 /// module `psy0`, family `memory_nback`, five banks (`english` and
-/// `culture_aero` mcq, `arithmetic_grid` numeric + one generated recipe,
-/// `memory_nback` sequence and generated), one lesson, one deck with three
+/// `culture_aero` mcq — `english` also carries one reading [Passage] — ,
+/// `arithmetic_grid` numeric + one generated recipe, `memory_nback` sequence
+/// and generated), one lesson, one deck with three
 /// cards (both `arithmetic_grid`) and the `psy0.blueprint.example-custom`
 /// blueprint. The `lexical_fields` example has no table yet and is skipped.
 class ExampleContent {
@@ -78,6 +79,8 @@ class ExampleContent {
 
   List<Item> get items => [for (final bank in banks) ...bank.items];
 
+  List<Passage> get passages => [for (final bank in banks) ...bank.passages];
+
   /// Writes the fixture into [db] the way the seeder (US-013) will.
   Future<void> seed(AppDatabase db, {DateTime? seededAt}) {
     final at = seededAt ?? DateTime.utc(2026, 9);
@@ -86,6 +89,9 @@ class ExampleContent {
       modules: [for (final m in modules) ContentRows.module(m, seededAt: at)],
       families: [for (final f in families) ContentRows.family(f, seededAt: at)],
       items: [for (final i in items) ContentRows.item(i, seededAt: at)],
+      passages: [
+        for (final p in passages) ContentRows.passage(p, seededAt: at),
+      ],
       lessons: [for (final l in lessons) ContentRows.lesson(l, seededAt: at)],
       decks: [for (final d in decks) ContentRows.deck(d, seededAt: at)],
       flashcards: [

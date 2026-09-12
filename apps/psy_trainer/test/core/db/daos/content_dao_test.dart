@@ -32,6 +32,10 @@ void main() {
         content.items.where((i) => i.familyId == 'arithmetic_grid').length,
       ),
     );
+    expect(
+      await db.contentDao.passagesByIds([content.passages.single.id]),
+      hasLength(1),
+    );
     expect(await db.contentDao.lessonsOf(), hasLength(content.lessons.length));
     expect(await db.contentDao.decksOf(), hasLength(content.decks.length));
     expect(
@@ -59,6 +63,7 @@ void main() {
     );
     expect(await db.contentDao.itemsOf(familyId: 'english'), isEmpty);
     expect(await db.contentDao.allModules(), isEmpty);
+    expect(await db.contentDao.passageById(content.passages.single.id), isNull);
   });
 
   test('items are filtered by family and difficulty range', () async {

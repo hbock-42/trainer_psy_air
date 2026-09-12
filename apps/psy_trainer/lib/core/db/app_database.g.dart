@@ -1805,6 +1805,315 @@ class ItemsCompanion extends UpdateCompanion<ItemRow> {
   }
 }
 
+class $PassagesTable extends Passages
+    with TableInfo<$PassagesTable, PassageRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $PassagesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  late final GeneratedColumnWithTypeConverter<Map<String, Object?>, String>
+  json = GeneratedColumn<String>(
+    'json',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  ).withConverter<Map<String, Object?>>($PassagesTable.$converterjson);
+  @override
+  List<GeneratedColumn> get $columns => [id, createdAt, updatedAt, json];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'passages';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<PassageRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  PassageRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return PassageRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+      json: $PassagesTable.$converterjson.fromSql(
+        attachedDatabase.typeMapping.read(
+          DriftSqlType.string,
+          data['${effectivePrefix}json'],
+        )!,
+      ),
+    );
+  }
+
+  @override
+  $PassagesTable createAlias(String alias) {
+    return $PassagesTable(attachedDatabase, alias);
+  }
+
+  static TypeConverter<Map<String, Object?>, String> $converterjson =
+      const JsonMapConverter();
+}
+
+class PassageRow extends DataClass implements Insertable<PassageRow> {
+  final String id;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  final Map<String, Object?> json;
+  const PassageRow({
+    required this.id,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.json,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    {
+      map['json'] = Variable<String>($PassagesTable.$converterjson.toSql(json));
+    }
+    return map;
+  }
+
+  PassagesCompanion toCompanion(bool nullToAbsent) {
+    return PassagesCompanion(
+      id: Value(id),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+      json: Value(json),
+    );
+  }
+
+  factory PassageRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return PassageRow(
+      id: serializer.fromJson<String>(json['id']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+      json: serializer.fromJson<Map<String, Object?>>(json['json']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+      'json': serializer.toJson<Map<String, Object?>>(json),
+    };
+  }
+
+  PassageRow copyWith({
+    String? id,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+    Map<String, Object?>? json,
+  }) => PassageRow(
+    id: id ?? this.id,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+    json: json ?? this.json,
+  );
+  PassageRow copyWithCompanion(PassagesCompanion data) {
+    return PassageRow(
+      id: data.id.present ? data.id.value : this.id,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+      json: data.json.present ? data.json.value : this.json,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('PassageRow(')
+          ..write('id: $id, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('json: $json')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, createdAt, updatedAt, json);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is PassageRow &&
+          other.id == this.id &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt &&
+          other.json == this.json);
+}
+
+class PassagesCompanion extends UpdateCompanion<PassageRow> {
+  final Value<String> id;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<Map<String, Object?>> json;
+  final Value<int> rowid;
+  const PassagesCompanion({
+    this.id = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.json = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  PassagesCompanion.insert({
+    required String id,
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    required Map<String, Object?> json,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt),
+       json = Value(json);
+  static Insertable<PassageRow> custom({
+    Expression<String>? id,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<String>? json,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (json != null) 'json': json,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  PassagesCompanion copyWith({
+    Value<String>? id,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<Map<String, Object?>>? json,
+    Value<int>? rowid,
+  }) {
+    return PassagesCompanion(
+      id: id ?? this.id,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      json: json ?? this.json,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (json.present) {
+      map['json'] = Variable<String>(
+        $PassagesTable.$converterjson.toSql(json.value),
+      );
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('PassagesCompanion(')
+          ..write('id: $id, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('json: $json, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 class $LessonsTable extends Lessons with TableInfo<$LessonsTable, LessonRow> {
   @override
   final GeneratedDatabase attachedDatabase;
@@ -7248,6 +7557,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $ModulesTable modules = $ModulesTable(this);
   late final $FamiliesTable families = $FamiliesTable(this);
   late final $ItemsTable items = $ItemsTable(this);
+  late final $PassagesTable passages = $PassagesTable(this);
   late final $LessonsTable lessons = $LessonsTable(this);
   late final $DecksTable decks = $DecksTable(this);
   late final $FlashcardsTable flashcards = $FlashcardsTable(this);
@@ -7346,6 +7656,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     modules,
     families,
     items,
+    passages,
     lessons,
     decks,
     flashcards,
@@ -8314,6 +8625,189 @@ typedef $$ItemsTableProcessedTableManager =
       $$ItemsTableUpdateCompanionBuilder,
       (ItemRow, BaseReferences<_$AppDatabase, $ItemsTable, ItemRow>),
       ItemRow,
+      PrefetchHooks Function()
+    >;
+typedef $$PassagesTableCreateCompanionBuilder =
+    PassagesCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      required Map<String, Object?> json,
+      Value<int> rowid,
+    });
+typedef $$PassagesTableUpdateCompanionBuilder =
+    PassagesCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<Map<String, Object?>> json,
+      Value<int> rowid,
+    });
+
+class $$PassagesTableFilterComposer
+    extends Composer<_$AppDatabase, $PassagesTable> {
+  $$PassagesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnWithTypeConverterFilters<
+    Map<String, Object?>,
+    Map<String, Object>,
+    String
+  >
+  get json => $composableBuilder(
+    column: $table.json,
+    builder: (column) => ColumnWithTypeConverterFilters(column),
+  );
+}
+
+class $$PassagesTableOrderingComposer
+    extends Composer<_$AppDatabase, $PassagesTable> {
+  $$PassagesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get json => $composableBuilder(
+    column: $table.json,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$PassagesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $PassagesTable> {
+  $$PassagesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  GeneratedColumnWithTypeConverter<Map<String, Object?>, String> get json =>
+      $composableBuilder(column: $table.json, builder: (column) => column);
+}
+
+class $$PassagesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $PassagesTable,
+          PassageRow,
+          $$PassagesTableFilterComposer,
+          $$PassagesTableOrderingComposer,
+          $$PassagesTableAnnotationComposer,
+          $$PassagesTableCreateCompanionBuilder,
+          $$PassagesTableUpdateCompanionBuilder,
+          (
+            PassageRow,
+            BaseReferences<_$AppDatabase, $PassagesTable, PassageRow>,
+          ),
+          PassageRow,
+          PrefetchHooks Function()
+        > {
+  $$PassagesTableTableManager(_$AppDatabase db, $PassagesTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$PassagesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$PassagesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$PassagesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<Map<String, Object?>> json = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => PassagesCompanion(
+                id: id,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                json: json,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                required Map<String, Object?> json,
+                Value<int> rowid = const Value.absent(),
+              }) => PassagesCompanion.insert(
+                id: id,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                json: json,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$PassagesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $PassagesTable,
+      PassageRow,
+      $$PassagesTableFilterComposer,
+      $$PassagesTableOrderingComposer,
+      $$PassagesTableAnnotationComposer,
+      $$PassagesTableCreateCompanionBuilder,
+      $$PassagesTableUpdateCompanionBuilder,
+      (PassageRow, BaseReferences<_$AppDatabase, $PassagesTable, PassageRow>),
+      PassageRow,
       PrefetchHooks Function()
     >;
 typedef $$LessonsTableCreateCompanionBuilder =
@@ -11276,6 +11770,8 @@ class $AppDatabaseManager {
       $$FamiliesTableTableManager(_db, _db.families);
   $$ItemsTableTableManager get items =>
       $$ItemsTableTableManager(_db, _db.items);
+  $$PassagesTableTableManager get passages =>
+      $$PassagesTableTableManager(_db, _db.passages);
   $$LessonsTableTableManager get lessons =>
       $$LessonsTableTableManager(_db, _db.lessons);
   $$DecksTableTableManager get decks =>
