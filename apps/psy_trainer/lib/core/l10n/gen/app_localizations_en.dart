@@ -2170,4 +2170,13 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get calcBackExampleStage =>
       'Stage 2: combine the shown number with the result from two calculations ago.';
+
+  @override
+  String get p1AnglesExampleCaption =>
+      'Among the candidate values, tap the ones matching a drawn angle (A, B...), then Confirm.';
+
+  @override
+  String p1AnglesCandidateSemantics(int index, int value) {
+    return 'Value $index, $value degrees';
+  }
 }

@@ -1477,5 +1477,17 @@
       "stage": { "type": "int" }
     }
   },
-  "calcBackExampleStage": "Stage 2: combine the shown number with the result from two calculations ago."
+  "calcBackExampleStage": "Stage 2: combine the shown number with the result from two calculations ago.",
+  "p1AnglesExampleCaption": "Among the candidate values, tap the ones matching a drawn angle (A, B...), then Confirm.",
+  "p1AnglesCandidateSemantics": "Value {index}, {value} degrees",
+  "@p1AnglesCandidateSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "value": {
+        "type": "int"
+      }
+    }
+  }
 }

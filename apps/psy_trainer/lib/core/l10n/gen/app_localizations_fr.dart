@@ -2185,4 +2185,13 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get calcBackExampleStage =>
       'Étape 2 : combinez le nombre affiché avec le résultat obtenu il y a deux calculs.';
+
+  @override
+  String get p1AnglesExampleCaption =>
+      'Parmi les valeurs proposées, touchez celles qui correspondent à un angle dessiné (A, B...), puis Valider.';
+
+  @override
+  String p1AnglesCandidateSemantics(int index, int value) {
+    return 'Valeur $index, $value degrés';
+  }
 }

@@ -18,6 +18,8 @@ import '../../../engines/memory_nback/domain/nback_engine.dart';
 import '../../../engines/memory_nback/presentation/nback_renderer.dart';
 import '../../../engines/multitask_psychomotor/domain/multitask_engine.dart';
 import '../../../engines/multitask_psychomotor/presentation/multitask_renderer.dart';
+import '../../../engines/p1_angles/domain/p1_angles_engine.dart';
+import '../../../engines/p1_angles/presentation/p1_angles_renderer.dart';
 import '../../../engines/p1_wm_calc_back/domain/calc_back_engine.dart';
 import '../../../engines/p1_wm_calc_back/presentation/calc_back_renderer.dart';
 import '../../../engines/p1_wm_reverse_span/domain/reverse_span_engine.dart';
@@ -61,6 +63,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const MultitaskEngine(),
         const NbackEngine(),
         const OverlayGridEngine(),
+        const P1AnglesEngine(),
         const CalcBackEngine(),
         const ReverseSpanEngine(),
         const TubesEngine(),
@@ -92,6 +95,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const MultitaskRenderer(),
         const NbackRenderer(),
         const OverlayGridRenderer(),
+        const P1AnglesRenderer(),
         const CalcBackRenderer(),
         const ReverseSpanRenderer(),
         const TubesRenderer(),
