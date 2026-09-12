@@ -20,6 +20,8 @@ import '../../../engines/multitask_psychomotor/domain/multitask_engine.dart';
 import '../../../engines/multitask_psychomotor/presentation/multitask_renderer.dart';
 import '../../../engines/p1_angles/domain/p1_angles_engine.dart';
 import '../../../engines/p1_angles/presentation/p1_angles_renderer.dart';
+import '../../../engines/p1_mental_arithmetic/domain/mental_arithmetic_engine.dart';
+import '../../../engines/p1_mental_arithmetic/presentation/mental_arithmetic_renderer.dart';
 import '../../../engines/planning_tubes/domain/tubes_engine.dart';
 import '../../../engines/planning_tubes/presentation/tubes_renderer.dart';
 import '../../../engines/spatial_cubes/domain/cube_net_engine.dart';
@@ -56,6 +58,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const CultureAeroEngine(),
         const DominosEngine(),
         const EnglishEngine(),
+        const MentalArithmeticEngine(),
         const MultitaskEngine(),
         const NbackEngine(),
         const OverlayGridEngine(),
@@ -86,6 +89,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
           passageResolver: (id) =>
               ref.read(englishPassageCacheProvider).get(id),
         ),
+        const MentalArithmeticRenderer(),
         const MultitaskRenderer(),
         const NbackRenderer(),
         const OverlayGridRenderer(),

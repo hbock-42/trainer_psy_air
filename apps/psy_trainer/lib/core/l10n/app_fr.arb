@@ -1465,5 +1465,26 @@
         "type": "int"
       }
     }
-  }
+  },
+  "mentalArithmeticAllIntervalsPrompt": "Sélectionnez tous les intervalles qui contiennent la valeur exacte.",
+  "mentalArithmeticTrueValue": "Valeur exacte : {value}",
+  "@mentalArithmeticTrueValue": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "mentalArithmeticIntervalSemantics": "Intervalle {index}, {label}",
+  "@mentalArithmeticIntervalSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "mentalArithmeticAllIntervalsExampleCaption": "Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider."
 }

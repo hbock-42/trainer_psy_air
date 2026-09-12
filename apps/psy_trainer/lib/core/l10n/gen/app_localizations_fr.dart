@@ -2165,4 +2165,22 @@ class AppLocalizationsFr extends AppLocalizations {
   String p1AnglesCandidateSemantics(int index, int value) {
     return 'Valeur $index, $value degrés';
   }
+
+  @override
+  String get mentalArithmeticAllIntervalsPrompt =>
+      'Sélectionnez tous les intervalles qui contiennent la valeur exacte.';
+
+  @override
+  String mentalArithmeticTrueValue(int value) {
+    return 'Valeur exacte : $value';
+  }
+
+  @override
+  String mentalArithmeticIntervalSemantics(int index, String label) {
+    return 'Intervalle $index, $label';
+  }
+
+  @override
+  String get mentalArithmeticAllIntervalsExampleCaption =>
+      'Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider.';
 }

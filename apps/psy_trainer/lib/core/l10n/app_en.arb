@@ -1465,5 +1465,26 @@
         "type": "int"
       }
     }
-  }
+  },
+  "mentalArithmeticAllIntervalsPrompt": "Select every interval that contains the exact value.",
+  "mentalArithmeticTrueValue": "Exact value: {value}",
+  "@mentalArithmeticTrueValue": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "mentalArithmeticIntervalSemantics": "Interval {index}, {label}",
+  "@mentalArithmeticIntervalSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "mentalArithmeticAllIntervalsExampleCaption": "Work out the exact value, then tap every interval that contains it before Confirm."
 }
