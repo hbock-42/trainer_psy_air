@@ -471,6 +471,49 @@ class _WidgetGalleryScreenState extends State<WidgetGalleryScreen> {
                   ),
                 ],
               ),
+              const _Section(
+                title: 'Markdown (lessons, US-041/US-043)',
+                children: [
+                  MarkdownView('''
+# Titre de leçon
+
+Un paragraphe avec du **gras**, de l'*italique* et du `code`.
+
+## Sous-section
+
+| Élément | Valeur |
+|---|---|
+| A | 1 |
+| B | 2 |
+
+- Premier point
+- Deuxième point
+  1. Sous-étape
+
+> [!TIP]
+> Une astuce utile.
+
+> [!TRAP]
+> Un piège classique.
+
+> [!METHOD]
+> La méthode à suivre.
+
+## Exemple guidé 1 — un cas simple
+
+> [!EXAMPLE]
+> Énoncé de l'exemple.
+
+### Étape 1
+
+Premier raisonnement.
+
+### Étape 2
+
+Vérification finale.
+'''),
+                ],
+              ),
               _Section(
                 title: 'Tab bar',
                 children: [

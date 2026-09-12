@@ -55,6 +55,23 @@ abstract final class AppRoutes {
   /// Full location of the "how the selection works" page.
   static const String learnHowItWorks = '$learn/$learnHowItWorksSegment';
 
+  /// Path parameter name for a lesson id (US-041).
+  static const String lessonIdParam = 'lessonId';
+
+  /// Relative path of the lesson viewer (nested under [learnFamilySegment]).
+  static const String learnLessonSegment = 'lesson/:$lessonIdParam';
+
+  /// Full location of a lesson viewer screen.
+  static String learnLesson(String familyId, String lessonId) =>
+      '${learnFamily(familyId)}/lesson/$lessonId';
+
+  /// Where the "Essayer" / "S'entraîner" action of a family or lesson goes.
+  ///
+  /// Placeholder until a per-family practice launcher exists: it always
+  /// resolves to [train] today (see US-041's card); once US-051 adds one,
+  /// this becomes the single place that changes.
+  static String trainFamily(String familyId) => train;
+
   /// The tab routes, in bottom-navigation order. The index in this list is the
   /// `StatefulShellRoute` branch index.
   static const List<String> tabs = [learn, train, exam, progress, settings];

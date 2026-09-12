@@ -16,7 +16,7 @@ import 'package:psy_trainer/features/train/presentation/train_screen.dart';
 import 'package:psy_trainer/shared/widgets/widgets.dart';
 
 import '../../../helpers/content_ready_fakes.dart';
-import '../../../helpers/onboarding_fakes.dart';
+import '../../../helpers/onboarding_fakes.dart' show progressRepositoryOverride;
 import '../../../helpers/psy0_families.dart';
 import '../../../helpers/pump_app.dart';
 
@@ -35,6 +35,7 @@ Future<void> pumpLearn(
       contentRepositoryProvider.overrideWithValue(
         psy0ContentRepository(seeded: seeded),
       ),
+      progressRepositoryOverride(),
       ...overrides,
     ],
   );
@@ -145,10 +146,12 @@ void main() {
           ),
           findsOneWidget,
         );
+        // No mastery yet: the slot falls back to lesson-read progress
+        // (memory_nback has 2 lessons in the fixture, US-044).
         expect(
           find.descendant(
             of: first,
-            matching: find.text(AppStrings.familyMasteryUnknown),
+            matching: find.text(AppStrings.familyLessonsProgress(0, 2)),
           ),
           findsOneWidget,
         );
@@ -188,10 +191,12 @@ void main() {
         find.descendant(of: allCards().first, matching: find.text('72 %')),
         findsOneWidget,
       );
+      // planning_tubes has no mastery override: falls back to lesson
+      // progress (1 lesson in the fixture, US-044).
       expect(
         find.descendant(
           of: allCards().at(1),
-          matching: find.text(AppStrings.familyMasteryUnknown),
+          matching: find.text(AppStrings.familyLessonsProgress(0, 1)),
         ),
         findsOneWidget,
       );

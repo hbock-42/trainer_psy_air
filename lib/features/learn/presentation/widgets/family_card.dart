@@ -5,6 +5,7 @@ import '../../../../core/content/content.dart';
 import '../../../../core/l10n/strings.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
+import '../providers/family_lesson_progress_provider.dart';
 import '../providers/family_mastery_provider.dart';
 import 'confidence_chip.dart';
 
@@ -40,9 +41,16 @@ class FamilyCard extends ConsumerWidget {
     final colors = theme.colors;
     final name = family.name.resolve(AppStrings.locale);
     final mastery = ref.watch(familyMasteryProvider(family.id));
+    final lessonProgress = ref.watch(familyLessonProgressProvider(family.id));
+    // While there is no mastery yet (no attempt, US-075 not wired), show
+    // lesson-read progress in the same slot rather than a bare "—" (US-044).
     final masteryText = switch (mastery) {
       AsyncData(:final value?) => AppStrings.masteryPercent(value),
-      _ => AppStrings.familyMasteryUnknown,
+      _ => switch (lessonProgress) {
+        AsyncData(:final value) when value.total > 0 =>
+          AppStrings.familyLessonsProgress(value.read, value.total),
+        _ => AppStrings.familyMasteryUnknown,
+      },
     };
 
     return AppCard(

@@ -51,6 +51,7 @@ void main() {
         child,
         overrides: [
           contentRepositoryProvider.overrideWithValue(psy0ContentRepository()),
+          progressRepositoryOverride(),
         ],
       ),
     );
