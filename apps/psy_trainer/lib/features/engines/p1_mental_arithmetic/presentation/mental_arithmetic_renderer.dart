@@ -51,10 +51,14 @@ class MentalArithmeticRenderer extends ActivityRenderer {
         MentalArithmeticAnswerMode.freeNumeric;
     return switch (mode) {
       MentalArithmeticAnswerMode.freeNumeric ||
-      MentalArithmeticAnswerMode.equation =>
-        _numericRenderer.buildExample(context, run),
-      MentalArithmeticAnswerMode.smallestInterval =>
-        _mcqRenderer.buildExample(context, run),
+      MentalArithmeticAnswerMode.equation => _numericRenderer.buildExample(
+        context,
+        run,
+      ),
+      MentalArithmeticAnswerMode.smallestInterval => _mcqRenderer.buildExample(
+        context,
+        run,
+      ),
       MentalArithmeticAnswerMode.allIntervals => const _AllIntervalsExample(),
     };
   }

@@ -90,7 +90,7 @@ void main() {
   });
 
   test('a different seed usually yields a different problem', () {
-    final a = build(seed: 1);
+    final a = build();
     final b = build(seed: 2);
     expect(a.expression, isNot(b.expression));
   });
@@ -98,7 +98,7 @@ void main() {
   group('freeNumeric', () {
     test('trueValue matches the printed expression', () {
       for (var seed = 0; seed < 200; seed++) {
-        final problem = build(seed: seed, index: 0);
+        final problem = build(seed: seed);
         expect(problem.mode, MentalArithmeticAnswerMode.freeNumeric);
         expect(problem.trueValue, _evaluate(problem.expression));
       }
@@ -142,10 +142,7 @@ void main() {
             1,
             reason: 'seed=$seed difficulty=$difficulty widths=$widths',
           );
-          expect(
-            problem.intervals[problem.tightestIndex!].width,
-            minWidth,
-          );
+          expect(problem.intervals[problem.tightestIndex!].width, minWidth);
         }
       }
     });

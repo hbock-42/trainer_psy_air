@@ -14,18 +14,8 @@ void main() {
   });
 
   test('generate is deterministic', () {
-    final a = engine.generate(
-      params: params,
-      seed: 7,
-      difficulty: 3,
-      index: 5,
-    );
-    final b = engine.generate(
-      params: params,
-      seed: 7,
-      difficulty: 3,
-      index: 5,
-    );
+    final a = engine.generate(params: params, seed: 7, difficulty: 3, index: 5);
+    final b = engine.generate(params: params, seed: 7, difficulty: 3, index: 5);
     expect(a, b);
   });
 
@@ -44,10 +34,7 @@ void main() {
 
       final right = engine.score(item, Answer.numeric(problem.trueValue));
       expect(right.correct, isTrue);
-      final wrong = engine.score(
-        item,
-        Answer.numeric(problem.trueValue + 1),
-      );
+      final wrong = engine.score(item, Answer.numeric(problem.trueValue + 1));
       expect(wrong.correct, isFalse);
     });
   });
@@ -64,7 +51,10 @@ void main() {
         index: 12,
       );
       expect(item.expected, problem.trueValue);
-      expect(engine.score(item, Answer.numeric(problem.trueValue)).correct, isTrue);
+      expect(
+        engine.score(item, Answer.numeric(problem.trueValue)).correct,
+        isTrue,
+      );
     });
   });
 
@@ -101,7 +91,7 @@ void main() {
       expect(item, isA<GeneratedItem>());
       expect(
         (item as GeneratedItem).origin,
-        ItemOrigin(
+        const ItemOrigin(
           generatorId: GeneratorId.p1MentalArithmetic,
           seed: 6,
           runSeed: 6,
@@ -114,9 +104,9 @@ void main() {
       final item =
           engine.generate(params: params, seed: 6, difficulty: 3, index: 32)
               as GeneratedItem;
-      final containing =
-          MentalArithmeticEngine.problemOf(item).containingIndices.toList()
-            ..sort();
+      final containing = MentalArithmeticEngine.problemOf(
+        item,
+      ).containingIndices.toList()..sort();
 
       final result = engine.score(item, Answer.multiSelect(containing));
 

@@ -5,7 +5,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
-import 'package:psy_trainer/features/engines/p1_mental_arithmetic/domain/mental_arithmetic.dart';
 import 'package:psy_trainer/features/engines/p1_mental_arithmetic/domain/mental_arithmetic_engine.dart';
 import 'package:psy_trainer/features/engines/p1_mental_arithmetic/presentation/mental_arithmetic_intervals_view.dart';
 import 'package:psy_trainer/features/engines/p1_mental_arithmetic/presentation/mental_arithmetic_renderer.dart';
@@ -59,7 +58,6 @@ void main() {
       params: params,
       seed: itemSeed,
       difficulty: level,
-      index: 0,
       runSeed: seed,
     );
   }
@@ -85,7 +83,9 @@ void main() {
         ),
         overrides: [
           progressRepositoryProvider.overrideWithValue(repo),
-          engineRegistryProvider.overrideWithValue(EngineRegistry(const [engine])),
+          engineRegistryProvider.overrideWithValue(
+            EngineRegistry(const [engine]),
+          ),
           rendererRegistryProvider.overrideWithValue(
             RendererRegistry(const [MentalArithmeticRenderer()]),
           ),
@@ -132,64 +132,56 @@ void main() {
     expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
   });
 
-  testWidgets(
-    'smallestInterval: tapping the tightest bracket scores correct',
-    (tester) async {
-      const params = GeneratorParams.p1MentalArithmetic(
-        answerMode: MentalArithmeticAnswerMode.smallestInterval,
-      );
-      final item = firstGeneratedItem(3, params) as McqItem;
+  testWidgets('smallestInterval: tapping the tightest bracket scores correct', (
+    tester,
+  ) async {
+    const params = GeneratorParams.p1MentalArithmetic(
+      answerMode: MentalArithmeticAnswerMode.smallestInterval,
+    );
+    final item = firstGeneratedItem(3, params) as McqItem;
 
-      await pumpHost(tester, configOf(3, params));
-      await tester.tap(find.byKey(SessionHost.startKey));
-      await tester.pump();
+    await pumpHost(tester, configOf(3, params));
+    await tester.tap(find.byKey(SessionHost.startKey));
+    await tester.pump();
 
+    await tester.tap(find.byKey(ValueKey('mcq_option_${item.correctIndex}')));
+    await tester.pump();
+
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
+  });
+
+  testWidgets('allIntervals: selecting exactly the containing brackets scores '
+      'correct', (tester) async {
+    const params = GeneratorParams.p1MentalArithmetic(
+      answerMode: MentalArithmeticAnswerMode.allIntervals,
+    );
+    final item = firstGeneratedItem(4, params) as GeneratedItem;
+    final containing = MentalArithmeticEngine.problemOf(
+      item,
+    ).containingIndices.toList()..sort();
+
+    await pumpHost(tester, configOf(4, params));
+    await tester.tap(find.byKey(SessionHost.startKey));
+    await tester.pump();
+
+    for (final index in containing) {
       await tester.tap(
-        find.byKey(ValueKey('mcq_option_${item.correctIndex}')),
+        find.byKey(MentalArithmeticIntervalsView.tileKey(index)),
       );
       await tester.pump();
+    }
+    await tester.tap(find.byKey(MentalArithmeticIntervalsView.validateKey));
+    await tester.pump();
 
-      expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
-    },
-  );
-
-  testWidgets(
-    'allIntervals: selecting exactly the containing brackets scores '
-    'correct',
-    (tester) async {
-      const params = GeneratorParams.p1MentalArithmetic(
-        answerMode: MentalArithmeticAnswerMode.allIntervals,
-      );
-      final item = firstGeneratedItem(4, params) as GeneratedItem;
-      final containing = MentalArithmeticEngine.problemOf(
-        item,
-      ).containingIndices.toList()..sort();
-
-      await pumpHost(tester, configOf(4, params));
-      await tester.tap(find.byKey(SessionHost.startKey));
-      await tester.pump();
-
-      for (final index in containing) {
-        await tester.tap(
-          find.byKey(MentalArithmeticIntervalsView.tileKey(index)),
-        );
-        await tester.pump();
-      }
-      await tester.tap(
-        find.byKey(MentalArithmeticIntervalsView.validateKey),
-      );
-      await tester.pump();
-
-      expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
-    },
-  );
+    expect(find.text(l10nFr.sessionFeedbackCorrect), findsOneWidget);
+  });
 
   testWidgets('an exam session is silent: no feedback after Valider', (
     tester,
   ) async {
     const params = GeneratorParams.p1MentalArithmetic();
     final item = firstGeneratedItem(1, params) as NumericItem;
-    final config = ActivitySessionConfig(
+    const config = ActivitySessionConfig(
       familyId: 'p1_mental_arithmetic',
       mode: SessionMode.exam,
       source: ItemSource.generator(

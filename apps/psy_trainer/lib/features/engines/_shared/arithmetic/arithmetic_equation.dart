@@ -98,10 +98,7 @@ abstract final class ArithmeticEquationGenerator {
     final k = 1 + rng.nextInt(bound);
     final base = k * unit;
     // base = k * (100 / pct), so pct % of base is exactly k.
-    return ArithmeticEquation(
-      expression: '$pct % de $base',
-      correctValue: k,
-    );
+    return ArithmeticEquation(expression: '$pct % de $base', correctValue: k);
   }
 
   static ArithmeticEquation _buildPriority(Random rng, int cap) {

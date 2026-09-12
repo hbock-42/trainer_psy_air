@@ -127,7 +127,9 @@ class MentalArithmeticEngine extends ActivityEngine {
   }) {
     final options = [
       for (final interval in problem.intervals)
-        McqOption(text: LocalizedText(fr: interval.label, en: interval.label)),
+        McqOption(
+          text: LocalizedText(fr: interval.label, en: interval.label),
+        ),
     ];
     return Item.mcq(
       id: id,
@@ -186,9 +188,7 @@ class MentalArithmeticEngine extends ActivityEngine {
     final selected = answer.indices.toSet();
     final truePositives = selected.intersection(containing).length;
     final precision = selected.isEmpty ? 1.0 : truePositives / selected.length;
-    final recall = containing.isEmpty
-        ? 1.0
-        : truePositives / containing.length;
+    final recall = containing.isEmpty ? 1.0 : truePositives / containing.length;
     final isCorrect =
         selected.length == containing.length &&
         selected.containsAll(containing);

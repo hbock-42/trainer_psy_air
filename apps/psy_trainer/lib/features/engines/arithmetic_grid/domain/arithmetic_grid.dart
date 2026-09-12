@@ -124,7 +124,11 @@ abstract final class ArithmeticGridGenerator {
   /// correct value, so a wrong cell is never ambiguous. Low difficulty
   /// favours the obvious traps (sign flip, off by ten); high difficulty
   /// favours the subtle ones (off by one, swapped priority).
-  static int _applyTrap(Random rng, ArithmeticEquation equality, int difficulty) {
+  static int _applyTrap(
+    Random rng,
+    ArithmeticEquation equality,
+    int difficulty,
+  ) {
     final subtle = <int>[];
     void addSubtle(int value) {
       if (value != equality.correctValue) subtle.add(value);

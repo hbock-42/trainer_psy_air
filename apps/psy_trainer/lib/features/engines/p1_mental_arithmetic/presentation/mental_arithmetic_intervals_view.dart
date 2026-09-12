@@ -22,8 +22,7 @@ class MentalArithmeticIntervalsView extends StatefulWidget {
   final ActivityRenderContext render;
 
   /// `Key` of the tile at [index] (0-based).
-  static Key tileKey(int index) =>
-      Key('mental_arithmetic.interval.$index');
+  static Key tileKey(int index) => Key('mental_arithmetic.interval.$index');
 
   static const Key validateKey = Key('mental_arithmetic.validate');
 
@@ -37,9 +36,8 @@ class _MentalArithmeticIntervalsViewState
   final FocusNode _focusNode = FocusNode();
   final Set<int> _selected = {};
 
-  MentalArithmeticProblem get _problem => MentalArithmeticEngine.problemOf(
-    widget.render.item as GeneratedItem,
-  );
+  MentalArithmeticProblem get _problem =>
+      MentalArithmeticEngine.problemOf(widget.render.item as GeneratedItem);
 
   @override
   void dispose() {
@@ -139,9 +137,7 @@ class _MentalArithmeticIntervalsViewState
                   if (showsFeedback) ...[
                     SizedBox(height: theme.spacing.sm),
                     Text(
-                      context.l10n.mentalArithmeticTrueValue(
-                        problem.trueValue,
-                      ),
+                      context.l10n.mentalArithmeticTrueValue(problem.trueValue),
                       style: theme.textStyles.caption,
                     ),
                   ],
@@ -227,9 +223,7 @@ class _IntervalTile extends StatelessWidget {
           child: Text(
             interval.label,
             textAlign: TextAlign.center,
-            style: theme.textStyles.numeric.copyWith(
-              color: colors.textPrimary,
-            ),
+            style: theme.textStyles.numeric.copyWith(color: colors.textPrimary),
           ),
         ),
       ),
