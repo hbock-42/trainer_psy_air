@@ -181,6 +181,20 @@ class LocalProgressRepository implements ProgressRepository {
     for (final row in await _db.attemptsDao.bySession(sessionId)) _attempt(row),
   ];
 
+  @override
+  Future<List<Attempt>> attemptsForFamily({
+    required String familyId,
+    DateTime? from,
+    DateTime? to,
+  }) async => [
+    for (final row in await _db.attemptsDao.byFamily(
+      familyId: familyId,
+      from: from?.toUtc(),
+      to: to?.toUtc(),
+    ))
+      _attempt(row),
+  ];
+
   // --- Aggregates -----------------------------------------------------------
 
   @override

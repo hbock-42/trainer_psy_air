@@ -6,7 +6,12 @@ import 'package:flutter_riverpod/misc.dart';
 import 'package:psy_content/psy_content.dart';
 import '../../../../core/repositories/model/learning.dart';
 import '../../../../core/repositories/repository_providers.dart';
+import '../../domain/mistakes/mistake_pool.dart';
 import 'practice_config.dart';
+
+/// How long a family's history is searched for un-cleared mistakes
+/// ("Reprendre mes erreurs", US-054).
+const Duration mistakePoolWindow = Duration(days: 30);
 
 /// How far [PracticeLauncherNotifier] has got loading its family and its
 /// last remembered configuration.
@@ -18,6 +23,7 @@ class PracticeLauncherState {
     required this.status,
     this.family,
     this.config,
+    this.mistakePool = MistakePool.empty,
   });
 
   const PracticeLauncherState.loading()
@@ -29,22 +35,33 @@ class PracticeLauncherState {
   const PracticeLauncherState.ready({
     required TestFamily family,
     required PracticeConfig config,
+    MistakePool mistakePool = MistakePool.empty,
   }) : this._(
          status: PracticeLauncherStatus.ready,
          family: family,
          config: config,
+         mistakePool: mistakePool,
        );
 
   final PracticeLauncherStatus status;
   final TestFamily? family;
   final PracticeConfig? config;
 
+  /// Family-scoped mistakes ("Reprendre mes erreurs", US-054), loaded once
+  /// after the family/config themselves; empty (never null) until then, so
+  /// the button stays disabled rather than flash enabled.
+  final MistakePool mistakePool;
+
   bool get isReady => status == PracticeLauncherStatus.ready;
 
-  PracticeLauncherState copyWith({PracticeConfig? config}) => isReady
+  PracticeLauncherState copyWith({
+    PracticeConfig? config,
+    MistakePool? mistakePool,
+  }) => isReady
       ? PracticeLauncherState.ready(
           family: family!,
           config: config ?? this.config!,
+          mistakePool: mistakePool ?? this.mistakePool,
         )
       : this;
 }
@@ -79,6 +96,21 @@ class PracticeLauncherNotifier extends Notifier<PracticeLauncherState> {
         ? PracticeConfig.fromJson(Map<String, Object?>.from(stored), family)
         : PracticeConfig.defaultsFor(family);
     state = PracticeLauncherState.ready(family: family, config: config);
+    unawaited(_loadMistakePool());
+  }
+
+  Future<void> _loadMistakePool() async {
+    final now = DateTime.now();
+    final attempts = await ref
+        .read(progressRepositoryProvider)
+        .attemptsForFamily(
+          familyId: familyId,
+          from: now.subtract(mistakePoolWindow),
+        );
+    if (!state.isReady) return;
+    state = state.copyWith(
+      mistakePool: MistakePool.fromFamilyHistory(attempts),
+    );
   }
 
   Future<void> _apply(PracticeConfig next) async {
