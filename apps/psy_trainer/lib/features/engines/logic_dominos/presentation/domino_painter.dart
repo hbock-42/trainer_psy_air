@@ -56,10 +56,7 @@ class DominoPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final radius = Radius.circular(size.width * 0.12);
-    final outline = RRect.fromRectAndRadius(
-      Offset.zero & size,
-      radius,
-    );
+    final outline = RRect.fromRectAndRadius(Offset.zero & size, radius);
     final facePaint = Paint()..color = faceColor;
     canvas.drawRRect(outline, facePaint);
 
@@ -95,7 +92,7 @@ class DominoPainter extends CustomPainter {
     }
     final pipPaint = Paint()..color = pipColor;
     final pipRadius = box.shortestSide * 0.11;
-    for (final pip in _pipLayouts[value] ?? const []) {
+    for (final pip in _pipLayouts[value] ?? const <Offset>[]) {
       canvas.drawCircle(
         Offset(box.left + pip.dx * box.width, box.top + pip.dy * box.height),
         pipRadius,

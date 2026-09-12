@@ -93,12 +93,13 @@ DominoBoard buildDominoBoard({
 
 typedef _Series = ({List<Domino> dominoes, List<DominoRuleKind> ruleKinds});
 
-_Series _buildSeries(Random rng, int ruleCount, int length) => switch (ruleCount) {
-  1 => _linearSingleHalf(rng, length),
-  2 => _twoRuleFamily(rng, length),
-  3 => _interleaved(rng, length, subRuleCount: 1),
-  _ => _interleaved(rng, length, subRuleCount: 2),
-};
+_Series _buildSeries(Random rng, int ruleCount, int length) =>
+    switch (ruleCount) {
+      1 => _linearSingleHalf(rng, length),
+      2 => _twoRuleFamily(rng, length),
+      3 => _interleaved(rng, length, subRuleCount: 1),
+      _ => _interleaved(rng, length, subRuleCount: 2),
+    };
 
 List<Domino> _zip(List<int> top, List<int> bottom) => [
   for (var i = 0; i < top.length; i++) Domino(top[i], bottom[i]),
@@ -122,7 +123,10 @@ _Series _linearSingleHalf(Random rng, int length) {
   final fixed = _constantValues(rng, length);
   final top = movingIsTop ? moving : fixed;
   final bottom = movingIsTop ? fixed : moving;
-  return (dominoes: _zip(top, bottom), ruleKinds: [DominoRuleKind.linearEachHalf]);
+  return (
+    dominoes: _zip(top, bottom),
+    ruleKinds: [DominoRuleKind.linearEachHalf],
+  );
 }
 
 /// Rule count 2: one relation between top and bottom, on top of a

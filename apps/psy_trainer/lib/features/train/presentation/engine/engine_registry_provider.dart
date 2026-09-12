@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../engines/logic_dominos/domain/dominos_engine.dart';
+import '../../../engines/logic_dominos/presentation/dominos_renderer.dart';
 import '../../domain/engine/engine.dart';
 import 'activity_renderer.dart';
 
@@ -16,6 +18,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
     Provider<EngineRegistry>(
       (ref) => EngineRegistry(const <ActivityEngine>[
         // US-021..036: add engines here, one line each.
+        DominosEngine(),
       ]),
     );
 
@@ -24,6 +27,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
     Provider<RendererRegistry>(
       (ref) => RendererRegistry(const <ActivityRenderer>[
         // US-021..036: add renderers here, one line each.
+        DominosRenderer(),
       ]),
     );
 

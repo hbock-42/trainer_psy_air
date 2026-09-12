@@ -3,9 +3,8 @@ import 'domino_board.dart';
 
 /// The FR sentence(s) naming the rule(s) of [ruleKinds], for the practice
 /// feedback (US-024 acceptance criteria: "explanation names the rule(s)").
-String explanationFor(List<DominoRuleKind> ruleKinds) => ruleKinds
-    .map(_sentenceFor)
-    .join(' ');
+String explanationFor(List<DominoRuleKind> ruleKinds) =>
+    ruleKinds.map(_sentenceFor).join(' ');
 
 String _sentenceFor(DominoRuleKind kind) => switch (kind) {
   DominoRuleKind.linearEachHalf => AppStrings.dominoRuleLinearEachHalf,
