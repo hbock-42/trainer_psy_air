@@ -331,7 +331,7 @@ $ScoringPolicyCopyWith<$Res> get scoringPolicy {
 /// @nodoc
 mixin _$SessionResult {
 
- SessionMode get mode; String get familyId; FinishReason get reason; List<ItemOutcome> get outcomes; SectionResult get section; String? get sessionId; int? get sectionIndex;
+ SessionMode get mode; String get familyId; FinishReason get reason; List<ItemOutcome> get outcomes; SectionResult get section; String? get sessionId; int? get sectionIndex; List<LevelChange> get levelChanges;
 /// Create a copy of SessionResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -342,16 +342,16 @@ $SessionResultCopyWith<SessionResult> get copyWith => _$SessionResultCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SessionResult&&(identical(other.mode, mode) || other.mode == mode)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.reason, reason) || other.reason == reason)&&const DeepCollectionEquality().equals(other.outcomes, outcomes)&&(identical(other.section, section) || other.section == section)&&(identical(other.sessionId, sessionId) || other.sessionId == sessionId)&&(identical(other.sectionIndex, sectionIndex) || other.sectionIndex == sectionIndex));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SessionResult&&(identical(other.mode, mode) || other.mode == mode)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.reason, reason) || other.reason == reason)&&const DeepCollectionEquality().equals(other.outcomes, outcomes)&&(identical(other.section, section) || other.section == section)&&(identical(other.sessionId, sessionId) || other.sessionId == sessionId)&&(identical(other.sectionIndex, sectionIndex) || other.sectionIndex == sectionIndex)&&const DeepCollectionEquality().equals(other.levelChanges, levelChanges));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,mode,familyId,reason,const DeepCollectionEquality().hash(outcomes),section,sessionId,sectionIndex);
+int get hashCode => Object.hash(runtimeType,mode,familyId,reason,const DeepCollectionEquality().hash(outcomes),section,sessionId,sectionIndex,const DeepCollectionEquality().hash(levelChanges));
 
 @override
 String toString() {
-  return 'SessionResult(mode: $mode, familyId: $familyId, reason: $reason, outcomes: $outcomes, section: $section, sessionId: $sessionId, sectionIndex: $sectionIndex)';
+  return 'SessionResult(mode: $mode, familyId: $familyId, reason: $reason, outcomes: $outcomes, section: $section, sessionId: $sessionId, sectionIndex: $sectionIndex, levelChanges: $levelChanges)';
 }
 
 
@@ -362,7 +362,7 @@ abstract mixin class $SessionResultCopyWith<$Res>  {
   factory $SessionResultCopyWith(SessionResult value, $Res Function(SessionResult) _then) = _$SessionResultCopyWithImpl;
 @useResult
 $Res call({
- SessionMode mode, String familyId, FinishReason reason, List<ItemOutcome> outcomes, SectionResult section, String? sessionId, int? sectionIndex
+ SessionMode mode, String familyId, FinishReason reason, List<ItemOutcome> outcomes, SectionResult section, String? sessionId, int? sectionIndex, List<LevelChange> levelChanges
 });
 
 
@@ -379,7 +379,7 @@ class _$SessionResultCopyWithImpl<$Res>
 
 /// Create a copy of SessionResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? mode = null,Object? familyId = null,Object? reason = null,Object? outcomes = null,Object? section = null,Object? sessionId = freezed,Object? sectionIndex = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? mode = null,Object? familyId = null,Object? reason = null,Object? outcomes = null,Object? section = null,Object? sessionId = freezed,Object? sectionIndex = freezed,Object? levelChanges = null,}) {
   return _then(_self.copyWith(
 mode: null == mode ? _self.mode : mode // ignore: cast_nullable_to_non_nullable
 as SessionMode,familyId: null == familyId ? _self.familyId : familyId // ignore: cast_nullable_to_non_nullable
@@ -388,7 +388,8 @@ as FinishReason,outcomes: null == outcomes ? _self.outcomes : outcomes // ignore
 as List<ItemOutcome>,section: null == section ? _self.section : section // ignore: cast_nullable_to_non_nullable
 as SectionResult,sessionId: freezed == sessionId ? _self.sessionId : sessionId // ignore: cast_nullable_to_non_nullable
 as String?,sectionIndex: freezed == sectionIndex ? _self.sectionIndex : sectionIndex // ignore: cast_nullable_to_non_nullable
-as int?,
+as int?,levelChanges: null == levelChanges ? _self.levelChanges : levelChanges // ignore: cast_nullable_to_non_nullable
+as List<LevelChange>,
   ));
 }
 /// Create a copy of SessionResult
@@ -482,10 +483,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( SessionMode mode,  String familyId,  FinishReason reason,  List<ItemOutcome> outcomes,  SectionResult section,  String? sessionId,  int? sectionIndex)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( SessionMode mode,  String familyId,  FinishReason reason,  List<ItemOutcome> outcomes,  SectionResult section,  String? sessionId,  int? sectionIndex,  List<LevelChange> levelChanges)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SessionResult() when $default != null:
-return $default(_that.mode,_that.familyId,_that.reason,_that.outcomes,_that.section,_that.sessionId,_that.sectionIndex);case _:
+return $default(_that.mode,_that.familyId,_that.reason,_that.outcomes,_that.section,_that.sessionId,_that.sectionIndex,_that.levelChanges);case _:
   return orElse();
 
 }
@@ -503,10 +504,10 @@ return $default(_that.mode,_that.familyId,_that.reason,_that.outcomes,_that.sect
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( SessionMode mode,  String familyId,  FinishReason reason,  List<ItemOutcome> outcomes,  SectionResult section,  String? sessionId,  int? sectionIndex)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( SessionMode mode,  String familyId,  FinishReason reason,  List<ItemOutcome> outcomes,  SectionResult section,  String? sessionId,  int? sectionIndex,  List<LevelChange> levelChanges)  $default,) {final _that = this;
 switch (_that) {
 case _SessionResult():
-return $default(_that.mode,_that.familyId,_that.reason,_that.outcomes,_that.section,_that.sessionId,_that.sectionIndex);case _:
+return $default(_that.mode,_that.familyId,_that.reason,_that.outcomes,_that.section,_that.sessionId,_that.sectionIndex,_that.levelChanges);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -523,10 +524,10 @@ return $default(_that.mode,_that.familyId,_that.reason,_that.outcomes,_that.sect
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( SessionMode mode,  String familyId,  FinishReason reason,  List<ItemOutcome> outcomes,  SectionResult section,  String? sessionId,  int? sectionIndex)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( SessionMode mode,  String familyId,  FinishReason reason,  List<ItemOutcome> outcomes,  SectionResult section,  String? sessionId,  int? sectionIndex,  List<LevelChange> levelChanges)?  $default,) {final _that = this;
 switch (_that) {
 case _SessionResult() when $default != null:
-return $default(_that.mode,_that.familyId,_that.reason,_that.outcomes,_that.section,_that.sessionId,_that.sectionIndex);case _:
+return $default(_that.mode,_that.familyId,_that.reason,_that.outcomes,_that.section,_that.sessionId,_that.sectionIndex,_that.levelChanges);case _:
   return null;
 
 }
@@ -538,7 +539,7 @@ return $default(_that.mode,_that.familyId,_that.reason,_that.outcomes,_that.sect
 
 
 class _SessionResult extends SessionResult {
-  const _SessionResult({required this.mode, required this.familyId, required this.reason, required final  List<ItemOutcome> outcomes, required this.section, this.sessionId, this.sectionIndex}): _outcomes = outcomes,super._();
+  const _SessionResult({required this.mode, required this.familyId, required this.reason, required final  List<ItemOutcome> outcomes, required this.section, this.sessionId, this.sectionIndex, final  List<LevelChange> levelChanges = const <LevelChange>[]}): _outcomes = outcomes,_levelChanges = levelChanges,super._();
   
 
 @override final  SessionMode mode;
@@ -554,6 +555,13 @@ class _SessionResult extends SessionResult {
 @override final  SectionResult section;
 @override final  String? sessionId;
 @override final  int? sectionIndex;
+ final  List<LevelChange> _levelChanges;
+@override@JsonKey() List<LevelChange> get levelChanges {
+  if (_levelChanges is EqualUnmodifiableListView) return _levelChanges;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_levelChanges);
+}
+
 
 /// Create a copy of SessionResult
 /// with the given fields replaced by the non-null parameter values.
@@ -565,16 +573,16 @@ _$SessionResultCopyWith<_SessionResult> get copyWith => __$SessionResultCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SessionResult&&(identical(other.mode, mode) || other.mode == mode)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.reason, reason) || other.reason == reason)&&const DeepCollectionEquality().equals(other._outcomes, _outcomes)&&(identical(other.section, section) || other.section == section)&&(identical(other.sessionId, sessionId) || other.sessionId == sessionId)&&(identical(other.sectionIndex, sectionIndex) || other.sectionIndex == sectionIndex));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SessionResult&&(identical(other.mode, mode) || other.mode == mode)&&(identical(other.familyId, familyId) || other.familyId == familyId)&&(identical(other.reason, reason) || other.reason == reason)&&const DeepCollectionEquality().equals(other._outcomes, _outcomes)&&(identical(other.section, section) || other.section == section)&&(identical(other.sessionId, sessionId) || other.sessionId == sessionId)&&(identical(other.sectionIndex, sectionIndex) || other.sectionIndex == sectionIndex)&&const DeepCollectionEquality().equals(other._levelChanges, _levelChanges));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,mode,familyId,reason,const DeepCollectionEquality().hash(_outcomes),section,sessionId,sectionIndex);
+int get hashCode => Object.hash(runtimeType,mode,familyId,reason,const DeepCollectionEquality().hash(_outcomes),section,sessionId,sectionIndex,const DeepCollectionEquality().hash(_levelChanges));
 
 @override
 String toString() {
-  return 'SessionResult(mode: $mode, familyId: $familyId, reason: $reason, outcomes: $outcomes, section: $section, sessionId: $sessionId, sectionIndex: $sectionIndex)';
+  return 'SessionResult(mode: $mode, familyId: $familyId, reason: $reason, outcomes: $outcomes, section: $section, sessionId: $sessionId, sectionIndex: $sectionIndex, levelChanges: $levelChanges)';
 }
 
 
@@ -585,7 +593,7 @@ abstract mixin class _$SessionResultCopyWith<$Res> implements $SessionResultCopy
   factory _$SessionResultCopyWith(_SessionResult value, $Res Function(_SessionResult) _then) = __$SessionResultCopyWithImpl;
 @override @useResult
 $Res call({
- SessionMode mode, String familyId, FinishReason reason, List<ItemOutcome> outcomes, SectionResult section, String? sessionId, int? sectionIndex
+ SessionMode mode, String familyId, FinishReason reason, List<ItemOutcome> outcomes, SectionResult section, String? sessionId, int? sectionIndex, List<LevelChange> levelChanges
 });
 
 
@@ -602,7 +610,7 @@ class __$SessionResultCopyWithImpl<$Res>
 
 /// Create a copy of SessionResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? mode = null,Object? familyId = null,Object? reason = null,Object? outcomes = null,Object? section = null,Object? sessionId = freezed,Object? sectionIndex = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? mode = null,Object? familyId = null,Object? reason = null,Object? outcomes = null,Object? section = null,Object? sessionId = freezed,Object? sectionIndex = freezed,Object? levelChanges = null,}) {
   return _then(_SessionResult(
 mode: null == mode ? _self.mode : mode // ignore: cast_nullable_to_non_nullable
 as SessionMode,familyId: null == familyId ? _self.familyId : familyId // ignore: cast_nullable_to_non_nullable
@@ -611,7 +619,8 @@ as FinishReason,outcomes: null == outcomes ? _self._outcomes : outcomes // ignor
 as List<ItemOutcome>,section: null == section ? _self.section : section // ignore: cast_nullable_to_non_nullable
 as SectionResult,sessionId: freezed == sessionId ? _self.sessionId : sessionId // ignore: cast_nullable_to_non_nullable
 as String?,sectionIndex: freezed == sectionIndex ? _self.sectionIndex : sectionIndex // ignore: cast_nullable_to_non_nullable
-as int?,
+as int?,levelChanges: null == levelChanges ? _self._levelChanges : levelChanges // ignore: cast_nullable_to_non_nullable
+as List<LevelChange>,
   ));
 }
 

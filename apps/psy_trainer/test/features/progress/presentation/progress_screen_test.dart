@@ -113,12 +113,15 @@ void main() {
     expect(expected, greaterThan(0));
 
     expect(find.byType(ReadinessCard), findsOneWidget);
-    expect(find.byType(ArcGauge), findsOneWidget);
+    // The dashboard's streak card (US-073) also has an `ArcGauge`; scope to
+    // the readiness one.
+    final readinessGauge = find.descendant(
+      of: find.byType(ReadinessCard),
+      matching: find.byType(ArcGauge),
+    );
+    expect(readinessGauge, findsOneWidget);
     expect(
-      find.descendant(
-        of: find.byType(ArcGauge),
-        matching: find.text('$expected'),
-      ),
+      find.descendant(of: readinessGauge, matching: find.text('$expected')),
       findsOneWidget,
     );
     expect(find.text(l10nFr.readinessOutOf), findsOneWidget);

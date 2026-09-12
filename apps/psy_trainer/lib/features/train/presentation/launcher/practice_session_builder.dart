@@ -39,23 +39,49 @@ final Map<String, ItemSampler> itemSamplers = {'english': passageAwareSampler};
 /// `/train/session` runs (US-051).
 ///
 /// - Generated families (`family.generatorId` set) get a fresh
-///   [ItemSource.generator]: a new random seed every run, the family's
-///   real-test defaults (`GeneratorParams.defaultsFor`) and a difficulty
-///   range narrowed to one level when the launcher picked one, the full
-///   1..5 span on "Auto".
+///   [ItemSource.adaptive] (US-053): a new random `runSeed` every run, the
+///   family's real-test defaults (`GeneratorParams.defaultsFor`), starting
+///   at the launcher's chosen level or, on "Auto" (`config.difficulty ==
+///   null`), at [autoLevel] — the caller resolves this from `StatsService`
+///   (`ProgressAnalytics.familyProgress(family.id).level`, "the per-family
+///   level derived from recent accuracy & speed", US-075) and passes it in;
+///   [autoFastThresholdMs] is that same family's median response time
+///   (`FamilyProgress.medianResponseMs`), the adaptation policy's "fast"
+///   cutoff. From there the session adapts itself every item it plays (see
+///   `ActivitySession`/`AdaptiveDifficultyPolicy`), whatever level it
+///   started at — a manually fixed level is still a *starting* level, not a
+///   ceiling.
 /// - Bank families sample `count` items from [contentRepository] with the
 ///   family's [ItemSampler] (see [itemSamplers]), then, if [onPassagesLoaded]
 ///   is given and the sample references any passage, load those and hand
-///   them to it.
+///   them to it. "Auto" here still samples from the whole available pool
+///   (no `minDifficulty`/`maxDifficulty`), same as before this story: unlike
+///   a generator, a bank's item pool at exactly the resolved level may be
+///   thin or empty (not every family's content is calibrated across all 5
+///   levels yet), so narrowing to it risks an empty or starved session.
+///   There is also no in-session adaptation for bank families — the whole
+///   sample is drawn once, up front; re-sampling the next item from a new
+///   band mid-session (as generated families do) would need on-demand bank
+///   queries per item, which this story's budget did not cover. Documented
+///   deviation, per the card's own "apply adaptation to generated families
+///   only" fallback.
 Future<ActivitySessionConfig> buildActivitySessionConfig({
   required TestFamily family,
   required PracticeConfig config,
   required ContentRepository contentRepository,
+  int autoLevel = 1,
+  int? autoFastThresholdMs,
   Random? random,
   PassagesLoaded? onPassagesLoaded,
 }) async {
   final source = family.generatorId != null
-      ? _generatorSource(family, config, random ?? Random())
+      ? _adaptiveSource(
+          family,
+          config,
+          random ?? Random(),
+          autoLevel,
+          autoFastThresholdMs,
+        )
       : await _bankSource(family, config, contentRepository, onPassagesLoaded);
   return ActivitySessionConfig(
     familyId: family.id,
@@ -66,20 +92,21 @@ Future<ActivitySessionConfig> buildActivitySessionConfig({
   );
 }
 
-ItemSource _generatorSource(
+ItemSource _adaptiveSource(
   TestFamily family,
   PracticeConfig config,
   Random random,
+  int autoLevel,
+  int? autoFastThresholdMs,
 ) {
-  final level = config.difficulty;
-  return ItemSource.generator(
+  final level = config.difficulty ?? autoLevel;
+  return ItemSource.adaptive(
     generatorId: family.generatorId!,
-    seed: random.nextInt(1 << 31),
+    runSeed: random.nextInt(1 << 31),
     params: GeneratorParams.defaultsFor(family.generatorId!),
     count: config.itemCount,
-    difficulty: level == null
-        ? const DifficultyRange(min: 1, max: 5)
-        : DifficultyRange(min: level, max: level),
+    initialDifficulty: level,
+    fastThresholdMs: autoFastThresholdMs,
   );
 }
 

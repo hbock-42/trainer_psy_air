@@ -561,6 +561,201 @@ void runProgressRepositoryContract({
       expect(await repo.profile(), isNull);
     });
   });
+
+  group('backup (US-074)', () {
+    test('allAttempts returns every attempt, any family', () async {
+      final s1 = await repo.startSession(
+        mode: SessionMode.practice,
+        familyId: 'english',
+      );
+      final s2 = await repo.startSession(
+        mode: SessionMode.practice,
+        familyId: 'memory_nback',
+      );
+      await repo.recordAttempt(
+        NewAttempt(
+          sessionId: s1.id,
+          familyId: 'english',
+          itemId: 'item-1',
+          isCorrect: true,
+          responseMs: 500,
+          position: 0,
+        ),
+      );
+      await repo.recordAttempt(
+        NewAttempt(
+          sessionId: s2.id,
+          familyId: 'memory_nback',
+          origin: const AttemptOrigin(generatorId: 'nback', seed: 1),
+          isCorrect: false,
+          responseMs: 700,
+          position: 0,
+        ),
+      );
+      final all = await repo.allAttempts();
+      expect(all, hasLength(2));
+      expect(
+        all.map((a) => a.familyId),
+        containsAll(['english', 'memory_nback']),
+      );
+    });
+
+    test('allFlashcardReviews returns every card review', () async {
+      await repo.saveFlashcardReview(
+        FlashcardReview(
+          flashcardId: 'card-1',
+          deckId: 'deck-1',
+          box: 1,
+          reviews: 1,
+          lapses: 0,
+          nextReviewAt: fixedNow,
+        ),
+      );
+      await repo.saveFlashcardReview(
+        FlashcardReview(
+          flashcardId: 'card-2',
+          deckId: 'deck-1',
+          box: 2,
+          reviews: 3,
+          lapses: 1,
+          nextReviewAt: fixedNow,
+        ),
+      );
+      final all = await repo.allFlashcardReviews();
+      expect(all.map((r) => r.flashcardId), containsAll(['card-1', 'card-2']));
+    });
+
+    test(
+      'exportSnapshot -> importSnapshot round-trips into a fresh repository',
+      () async {
+        final session = await repo.startSession(
+          mode: SessionMode.practice,
+          familyId: 'english',
+        );
+        await repo.recordAttempt(
+          NewAttempt(
+            sessionId: session.id,
+            familyId: 'english',
+            itemId: 'item-1',
+            isCorrect: true,
+            responseMs: 900,
+            position: 0,
+          ),
+        );
+        await repo.saveFlashcardReview(
+          FlashcardReview(
+            flashcardId: 'card-1',
+            deckId: 'deck-1',
+            box: 1,
+            reviews: 1,
+            lapses: 0,
+            nextReviewAt: fixedNow,
+          ),
+        );
+        await repo.markLessonRead('lesson-1');
+        await repo.saveProfile(const UserProfile(locale: 'fr'));
+
+        final snapshot = await repo.exportSnapshot();
+        expect(snapshot.sessions, hasLength(1));
+        expect(snapshot.attempts, hasLength(1));
+        expect(snapshot.itemStats, hasLength(1));
+        expect(snapshot.flashcardReviews, hasLength(1));
+        expect(snapshot.lessonProgress, hasLength(1));
+        expect(snapshot.profile, isNotNull);
+
+        await repo.clearAll();
+        expect(await repo.sessions(), isEmpty);
+
+        final summary = await repo.importSnapshot(snapshot);
+        expect(
+          summary.inserted,
+          snapshot.sessions.length +
+              snapshot.attempts.length +
+              snapshot.itemStats.length +
+              snapshot.flashcardReviews.length +
+              snapshot.lessonProgress.length +
+              (snapshot.profile == null ? 0 : 1),
+        );
+        expect(summary.updated, 0);
+
+        expect(await repo.sessionById(session.id), isNotNull);
+        expect(await repo.allAttempts(), hasLength(1));
+        expect(await repo.itemStat('item-1'), isNotNull);
+        expect(await repo.allFlashcardReviews(), hasLength(1));
+        expect(await repo.lessonsRead(), hasLength(1));
+        expect((await repo.profile())?.locale, 'fr');
+      },
+    );
+
+    test('importSnapshot: a newer row wins over the existing one', () async {
+      await repo.recordAttempt(
+        NewAttempt(
+          sessionId: (await repo.startSession(mode: SessionMode.practice)).id,
+          familyId: 'english',
+          itemId: 'item-1',
+          isCorrect: false,
+          responseMs: 1000,
+          position: 0,
+        ),
+      );
+      final before = await repo.exportSnapshot();
+      final oldRow = before.itemStats.singleWhere(
+        (r) => r.fields['itemId'] == 'item-1',
+      );
+      final newerRow = BackupRow(
+        id: oldRow.id,
+        updatedAt: oldRow.updatedAt.add(const Duration(minutes: 1)),
+        fields: {...oldRow.fields, 'seen': 99, 'correct': 99},
+      );
+
+      final summary = await repo.importSnapshot(
+        BackupSnapshot(
+          sessions: const [],
+          attempts: const [],
+          itemStats: [newerRow],
+          flashcardReviews: const [],
+          lessonProgress: const [],
+        ),
+      );
+      expect(summary.updated, 1);
+      expect((await repo.itemStat('item-1'))?.seen, 99);
+    });
+
+    test('importSnapshot: an older (or equal) row is skipped', () async {
+      await repo.recordAttempt(
+        NewAttempt(
+          sessionId: (await repo.startSession(mode: SessionMode.practice)).id,
+          familyId: 'english',
+          itemId: 'item-1',
+          isCorrect: true,
+          responseMs: 500,
+          position: 0,
+        ),
+      );
+      final before = await repo.exportSnapshot();
+      final oldRow = before.itemStats.singleWhere(
+        (r) => r.fields['itemId'] == 'item-1',
+      );
+      final staleRow = BackupRow(
+        id: oldRow.id,
+        updatedAt: oldRow.updatedAt.subtract(const Duration(minutes: 1)),
+        fields: {...oldRow.fields, 'seen': 99},
+      );
+
+      final summary = await repo.importSnapshot(
+        BackupSnapshot(
+          sessions: const [],
+          attempts: const [],
+          itemStats: [staleRow],
+          flashcardReviews: const [],
+          lessonProgress: const [],
+        ),
+      );
+      expect(summary.skipped, 1);
+      expect(summary.updated, 0);
+      expect((await repo.itemStat('item-1'))?.seen, 1);
+    });
+  });
 }
 
 /// "Now" as seen by the repositories under test.

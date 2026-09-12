@@ -256,6 +256,41 @@ void main() {
     expect(bar.showLabel, isFalse);
   });
 
+  testWidgets(
+    'an adaptive source shows a discreet level indicator that moves after '
+    '3 consecutive correct-and-fast answers (US-053)',
+    (tester) async {
+      const adaptive = ActivitySessionConfig(
+        familyId: 'fake_family',
+        mode: SessionMode.practice,
+        source: ItemSource.adaptive(
+          generatorId: GeneratorId.dominos,
+          runSeed: 42,
+          params: GeneratorParams.dominos(),
+          count: 6,
+          initialDifficulty: 2,
+          fastThresholdMs: 60000,
+        ),
+      );
+      await pumpHost(tester, const ActivitySessionRequest.fresh(adaptive));
+      await tester.tap(find.byKey(SessionHost.startKey));
+      await tester.pump();
+
+      expect(find.text(l10nFr.practiceDifficultyLevel(2)), findsOneWidget);
+      expect(find.text(l10nFr.practiceDifficultyLevel(3)), findsNothing);
+
+      for (var i = 0; i < 3; i++) {
+        await tester.tap(find.byKey(FakeRenderer.optionKey(0)));
+        await tester.pump();
+        await tester.tap(find.byKey(SessionHost.nextKey));
+        await tester.pumpAndSettle();
+      }
+
+      expect(find.text(l10nFr.practiceDifficultyLevel(3)), findsOneWidget);
+      expect(find.text(l10nFr.practiceDifficultyLevel(2)), findsNothing);
+    },
+  );
+
   group('US-063 TimingDisplay', () {
     testWidgets('hidden never shows the countdown bars, however much time '
         'is left', (tester) async {
