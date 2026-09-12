@@ -311,8 +311,7 @@ class AirwaysSimulation {
 
   void _processExits() {
     _active.removeWhere((a) {
-      if (a.state == AirwaysAircraftState.inZone &&
-          a.exitAtMs! <= _elapsedMs) {
+      if (a.state == AirwaysAircraftState.inZone && a.exitAtMs! <= _elapsedMs) {
         _totals[a.targetZone]--;
         if (a.colour == AircraftColour.blue) _blues[a.targetZone]--;
         return true;

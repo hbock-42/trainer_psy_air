@@ -280,7 +280,10 @@ class _AirwaysViewState extends State<_AirwaysView>
               style: theme.textStyles.body,
             )
           else ...[
-            Text(AppStrings.airwaysExampleLegendTitle, style: theme.textStyles.caption),
+            Text(
+              AppStrings.airwaysExampleLegendTitle,
+              style: theme.textStyles.caption,
+            ),
             SizedBox(height: theme.spacing.xs),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -71,10 +71,12 @@ void main() {
     // for two different seeds; if this ever flakes, the RNG derivation has
     // a bug worth investigating.
     final signatureA = [
-      for (final craft in a.aircraft) (craft.colour, craft.routeId, craft.targetZone),
+      for (final craft in a.aircraft)
+        (craft.colour, craft.routeId, craft.targetZone),
     ];
     final signatureB = [
-      for (final craft in b.aircraft) (craft.colour, craft.routeId, craft.targetZone),
+      for (final craft in b.aircraft)
+        (craft.colour, craft.routeId, craft.targetZone),
     ];
     expect(signatureA, isNot(signatureB));
   });

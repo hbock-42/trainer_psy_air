@@ -13,16 +13,12 @@ void main() {
   });
 
   test('generate is deterministic: same inputs, same item', () {
-    final a = engine.generate(
-      params: params,
-      seed: 123,
-      difficulty: 3,
-    ) as GeneratedItem;
-    final b = engine.generate(
-      params: params,
-      seed: 123,
-      difficulty: 3,
-    ) as GeneratedItem;
+    final a =
+        engine.generate(params: params, seed: 123, difficulty: 3)
+            as GeneratedItem;
+    final b =
+        engine.generate(params: params, seed: 123, difficulty: 3)
+            as GeneratedItem;
     expect(a.id, b.id);
     expect(a.seed, b.seed);
     expect(a.difficulty, b.difficulty);

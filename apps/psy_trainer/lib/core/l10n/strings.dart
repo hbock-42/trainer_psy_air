@@ -881,10 +881,9 @@ abstract final class AppStrings {
   static String airwaysViolationsCounter(int count) => 'Violations : $count';
   static String airwaysRouteButtonSemantics(int number) =>
       'Dérouter la ligne $number';
-  static String airwaysSummaryClean(int reroutes) =>
-      reroutes == 0
-          ? 'Aucune violation, aucun déroutement.'
-          : 'Aucune violation, $reroutes déroutement(s).';
+  static String airwaysSummaryClean(int reroutes) => reroutes == 0
+      ? 'Aucune violation, aucun déroutement.'
+      : 'Aucune violation, $reroutes déroutement(s).';
   static String airwaysSummaryWithViolations(int violations, int reroutes) =>
       '$violations violation(s), $reroutes déroutement(s).';
 }

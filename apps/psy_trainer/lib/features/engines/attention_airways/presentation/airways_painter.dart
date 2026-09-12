@@ -93,10 +93,7 @@ class AirwaysPainter extends CustomPainter {
         ),
         textDirection: TextDirection.ltr,
       )..layout();
-      label.paint(
-        canvas,
-        center - Offset(label.width / 2, label.height / 2),
-      );
+      label.paint(canvas, center - Offset(label.width / 2, label.height / 2));
     }
   }
 

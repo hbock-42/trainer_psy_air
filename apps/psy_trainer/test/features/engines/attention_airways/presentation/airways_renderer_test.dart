@@ -72,9 +72,7 @@ void main() {
     expect(find.text(AppStrings.airwaysExampleButtonLabel(2)), findsOneWidget);
   });
 
-  testWidgets('a touch reroute increases the reroute counter', (
-    tester,
-  ) async {
+  testWidgets('a touch reroute increases the reroute counter', (tester) async {
     await pumpHost(tester, ActivitySessionRequest.fresh(config()));
     await tester.tap(find.byKey(SessionHost.startKey));
     await tester.pump();
