@@ -3012,6 +3012,96 @@ abstract class AppLocalizations {
   /// **'Calculatrice'**
   String get settingsKeypadCalculator;
 
+  /// No description provided for @settingsSectionReminders.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rappels'**
+  String get settingsSectionReminders;
+
+  /// No description provided for @settingsReminderLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rappel quotidien'**
+  String get settingsReminderLabel;
+
+  /// No description provided for @settingsReminderOn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rappel activé'**
+  String get settingsReminderOn;
+
+  /// No description provided for @settingsReminderOff.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rappel désactivé'**
+  String get settingsReminderOff;
+
+  /// No description provided for @settingsReminderTimeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Heure du rappel'**
+  String get settingsReminderTimeLabel;
+
+  /// No description provided for @settingsReminderHour.
+  ///
+  /// In fr, this message translates to:
+  /// **'Heures'**
+  String get settingsReminderHour;
+
+  /// No description provided for @settingsReminderMinute.
+  ///
+  /// In fr, this message translates to:
+  /// **'Minutes'**
+  String get settingsReminderMinute;
+
+  /// No description provided for @settingsReminderUnsupported.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les rappels ne sont pas disponibles sur cet appareil ; ils fonctionnent sur téléphone (Android/iOS).'**
+  String get settingsReminderUnsupported;
+
+  /// No description provided for @settingsReminderPermissionDenied.
+  ///
+  /// In fr, this message translates to:
+  /// **'Notifications refusées : active-les dans les réglages du système pour recevoir le rappel.'**
+  String get settingsReminderPermissionDenied;
+
+  /// No description provided for @reminderNotificationTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'PSY Trainer'**
+  String get reminderNotificationTitle;
+
+  /// No description provided for @reminderFlashcardsDue.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count, plural, =1{1 carte à réviser} other{{count} cartes à réviser}}'**
+  String reminderFlashcardsDue(int count);
+
+  /// No description provided for @reminderWeakestFamily.
+  ///
+  /// In fr, this message translates to:
+  /// **'Point faible : {family}'**
+  String reminderWeakestFamily(String family);
+
+  /// No description provided for @reminderExamToday.
+  ///
+  /// In fr, this message translates to:
+  /// **'L\'examen est aujourd\'hui'**
+  String get reminderExamToday;
+
+  /// No description provided for @reminderExamCountdown.
+  ///
+  /// In fr, this message translates to:
+  /// **'{days, plural, =1{Examen dans 1 jour} other{Examen dans {days} jours}}'**
+  String reminderExamCountdown(int days);
+
+  /// No description provided for @reminderFallback.
+  ///
+  /// In fr, this message translates to:
+  /// **'Un peu d\'entraînement aujourd\'hui ?'**
+  String get reminderFallback;
+
   /// No description provided for @settingsSectionData.
   ///
   /// In fr, this message translates to:

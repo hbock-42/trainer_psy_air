@@ -1824,6 +1824,71 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsKeypadCalculator => 'Calculator';
 
   @override
+  String get settingsSectionReminders => 'Reminders';
+
+  @override
+  String get settingsReminderLabel => 'Daily reminder';
+
+  @override
+  String get settingsReminderOn => 'Reminder on';
+
+  @override
+  String get settingsReminderOff => 'Reminder off';
+
+  @override
+  String get settingsReminderTimeLabel => 'Reminder time';
+
+  @override
+  String get settingsReminderHour => 'Hour';
+
+  @override
+  String get settingsReminderMinute => 'Minute';
+
+  @override
+  String get settingsReminderUnsupported =>
+      'Reminders are not available on this device; they work on phone (Android/iOS).';
+
+  @override
+  String get settingsReminderPermissionDenied =>
+      'Notifications denied: enable them in your system settings to receive the reminder.';
+
+  @override
+  String get reminderNotificationTitle => 'PSY Trainer';
+
+  @override
+  String reminderFlashcardsDue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count flashcards to review',
+      one: '1 flashcard to review',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String reminderWeakestFamily(String family) {
+    return 'Weak spot: $family';
+  }
+
+  @override
+  String get reminderExamToday => 'The exam is today';
+
+  @override
+  String reminderExamCountdown(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'Exam in $days days',
+      one: 'Exam in 1 day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reminderFallback => 'A little practice today?';
+
+  @override
   String get settingsSectionData => 'Data';
 
   @override

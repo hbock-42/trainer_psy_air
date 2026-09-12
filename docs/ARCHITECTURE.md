@@ -281,7 +281,7 @@ Schema v1 (every table has `id TEXT PRIMARY KEY`, `created_at`, `updated_at`):
 | `item_stats` | itemId (unique), familyId, seen, correct, totalResponseMs, lastCorrect, lastSeenAt | maintained by `INSERT ... ON CONFLICT DO UPDATE` |
 | `flashcard_reviews` | flashcardId (unique), deckId, box, reviews, lapses, lastReviewedAt?, nextReviewAt | index `(deck_id, next_review_at)` |
 | `lesson_progress` | lessonId (unique), readAt | |
-| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`). Onboarding (US-090) keeps its two flags in `settings`: `onboardingCompleted` (bool) and `disclaimerAcceptedAt` (ISO-8601 UTC); the mapping lives in `features/onboarding/domain/onboarding_answers.dart`. Settings (US-091) use `locale` for the UI language (`'system' \| 'fr' \| 'en'`, see `LanguagePreference`) and three more `settings` keys: `themeMode` (`'system' \| 'light' \| 'dark'`), `soundEnabled` (bool) and `keypadLayout` (`'phone' \| 'calculator'`) — mapping in `features/settings/domain/app_settings.dart` (`AppSettings`), read through `appSettingsProvider` (`features/settings/presentation/providers/`). Exam realism options (US-063) are one more nested `settings` key, `exam.realism`, holding a JSON object of seven booleans (`negativeMarkingCulture`, `hideRemainingTime`, `hideTimerEnglish`, `randomizeGenerated`, `allowPauseBetweenSections`, `immersiveFullScreen`, `soundCuesEnabled`) — mapping in `features/exam/domain/exam_realism_options.dart` (`ExamRealismOptions`), read through `examRealismOptionsProvider` (`features/exam/presentation/providers/`); see "Exam realism options (US-063)" below |
+| `user_profile` | examDate?, targetStage?, locale, settings json | single row (`id = 'me'`). Onboarding (US-090) keeps its two flags in `settings`: `onboardingCompleted` (bool) and `disclaimerAcceptedAt` (ISO-8601 UTC); the mapping lives in `features/onboarding/domain/onboarding_answers.dart`. Settings (US-091) use `locale` for the UI language (`'system' \| 'fr' \| 'en'`, see `LanguagePreference`) and three more `settings` keys: `themeMode` (`'system' \| 'light' \| 'dark'`), `soundEnabled` (bool) and `keypadLayout` (`'phone' \| 'calculator'`) — mapping in `features/settings/domain/app_settings.dart` (`AppSettings`), read through `appSettingsProvider` (`features/settings/presentation/providers/`). Exam realism options (US-063) are one more nested `settings` key, `exam.realism`, holding a JSON object of seven booleans (`negativeMarkingCulture`, `hideRemainingTime`, `hideTimerEnglish`, `randomizeGenerated`, `allowPauseBetweenSections`, `immersiveFullScreen`, `soundCuesEnabled`) — mapping in `features/exam/domain/exam_realism_options.dart` (`ExamRealismOptions`), read through `examRealismOptionsProvider` (`features/exam/presentation/providers/`); see "Exam realism options (US-063)" below. Local reminders (US-092) are one more nested `settings` key, `reminder`, holding `{enabled: bool, hour: int, minute: int}` — mapping in `features/settings/domain/reminder_settings.dart` (`ReminderSettings`), read through `reminderSettingsProvider` (`features/settings/presentation/providers/`); see "Local reminders (US-092)" below |
 
 Design decisions:
 
@@ -782,6 +782,54 @@ Applied where each condition actually lives:
 - **Keyboard-native warning on touch devices** (already existed, US-061/062): unaffected by this
   panel — `exam_section_planner.dart`'s `_briefingText` appends it to the briefing whenever
   `ExamSection.inputRequirement == InputRequirement.keyboard`.
+
+### Local reminders (US-092)
+
+A single daily notification, on/off + time (Settings, `_ReminderSection`), whose *content* is
+recomputed every time it is (re)scheduled rather than baked in once:
+
+```
+core/notifications/
+  reminder_scheduler.dart               ReminderScheduler interface, ReminderContent,
+                                         nextDailyFireTime (pure, unit-tested)
+  reminder_content.dart                 ReminderContentInputs, ReminderLines,
+                                         ReminderContentBuilder: which lines apply, pure Dart
+  reminder_scheduler_plugin.dart        PluginReminderScheduler (Android/iOS,
+                                         flutter_local_notifications + zonedSchedule)
+  unsupported_reminder_scheduler.dart   UnsupportedReminderScheduler: no-op, isSupported=false
+                                         (macOS, Windows, web — see "Platforms" above)
+  in_memory_reminder_scheduler.dart     InMemoryReminderScheduler: fake for tests, records calls
+  reminder_scheduler_provider.dart      reminderSchedulerProvider: picks the impl for this
+                                         platform (kIsWeb / defaultTargetPlatform)
+  reminder_coordinator_provider.dart    reminderCoordinatorProvider: composes the content
+                                         (due flashcards, weakest family, exam countdown) and
+                                         calls scheduler.scheduleDaily/.cancel
+features/settings/
+  domain/reminder_settings.dart         ReminderSettings (enabled, hour, minute; settings key
+                                         'reminder', see the `user_profile` table above)
+  presentation/
+    providers/reminder_settings_provider.dart  reminderSettingsProvider
+                                         (ReminderSettingsController): same hydration shape as
+                                         AppSettingsController
+    widgets/time_stepper_field.dart      TimeStepperField: hour/minute steppers, same pattern as
+                                         `onboarding`'s `DateStepperField`
+```
+
+`reminderCoordinatorProvider` is watched once from `PsyTrainerApp` (`lib/app.dart`) purely for
+its side effect, so it runs once at app start and again whenever any of its inputs changes
+(`reminderSettingsProvider`, `examDateProvider`, `flashcardsDueTodayProvider`,
+`recommendationsProvider` — the last three already react to `progressVersionProvider`, so a new
+attempt reschedules the reminder with fresh content next time the provider rebuilds). It loads
+`AppLocalizations` directly (`AppLocalizations.delegate.load`) instead of through a
+`BuildContext`, since it runs outside the widget tree; the resolved language follows
+`localeProvider` ('system' falls back to `PlatformDispatcher.instance.locale`, clamped to a
+supported language, else French).
+
+`nextDailyFireTime` (platform-free) picks today if the target hour:minute has not passed yet,
+tomorrow otherwise; `PluginReminderScheduler.scheduleDaily` builds the `zonedSchedule` instant
+from it with `matchDateTimeComponents: DateTimeComponents.time` so the OS re-fires it daily
+without the app rescheduling every day by itself (the app still reschedules on every start /
+settings change, which simply replaces the same notification id, `reminderNotificationId`).
 
 ## State and DI (Riverpod)
 

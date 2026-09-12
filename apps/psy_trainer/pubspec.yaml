@@ -66,6 +66,13 @@ dependencies:
   sqlite3: ^3.5.2
   markdown: ^7.3.1
 
+  # Local reminders (US-092): a daily notification, scheduled on-device.
+  # Platform plugin only (Android/iOS federated implementations); no
+  # Material/Cupertino dependency. `timezone` resolves the next local fire
+  # time for `zonedSchedule` (see `core/notifications/reminder_scheduler_plugin.dart`).
+  flutter_local_notifications: ^19.4.2
+  timezone: ^0.10.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
