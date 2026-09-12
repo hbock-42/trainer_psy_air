@@ -28,6 +28,12 @@ class AttemptsDao extends DatabaseAccessor<AppDatabase>
             ..orderBy([(t) => OrderingTerm.asc(t.position)]))
           .get();
 
+  /// Every attempt ever recorded, oldest first (US-073 streaks, US-074
+  /// backup export).
+  Future<List<AttemptRow>> all() => (select(
+    attempts,
+  )..orderBy([(t) => OrderingTerm.asc(t.answeredAt)])).get();
+
   /// Attempts of one family answered within `[from, to]` (inclusive, both
   /// optional), oldest first (the order "retry my mistakes" folds streaks
   /// in, US-054). Uses the `attempts_family_answered_at` index.

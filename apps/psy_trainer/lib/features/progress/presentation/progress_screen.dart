@@ -14,12 +14,14 @@ import 'providers/exam_date_provider.dart';
 import 'providers/progress_snapshot_provider.dart';
 import 'providers/recent_activity_provider.dart';
 import 'providers/recommendations_provider.dart';
+import 'providers/streak_provider.dart';
 import 'widgets/exam_score_chart_card.dart';
 import 'widgets/family_levels_chart.dart';
 import 'widgets/progress_bands.dart';
 import 'widgets/progress_empty_state.dart';
 import 'widgets/readiness_card.dart';
 import 'widgets/recent_activity_list.dart';
+import 'widgets/streak_card.dart';
 import 'widgets/train_next_card.dart';
 
 /// The Progress tab (US-070): readiness gauge, days until the exam, family
@@ -121,6 +123,7 @@ class _Dashboard extends ConsumerWidget {
         ref.watch(recentActivityProvider).value ?? const <RecentActivity>[];
     final recommendations =
         ref.watch(recommendationsProvider).value ?? const <Recommendation>[];
+    final streak = ref.watch(streakSummaryProvider).value;
 
     return ListView(
       padding: EdgeInsets.all(theme.spacing.lg),
@@ -138,6 +141,10 @@ class _Dashboard extends ConsumerWidget {
                       ? null
                       : daysUntil(examDate, snapshot.computedAt),
                 ),
+                if (streak != null) ...[
+                  SizedBox(height: theme.spacing.xl),
+                  StreakCard(summary: streak),
+                ],
                 SizedBox(height: theme.spacing.xl),
                 SectionHeader(
                   title: context.l10n.familyLevelsTitle,

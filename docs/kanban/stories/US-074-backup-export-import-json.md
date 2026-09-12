@@ -4,7 +4,7 @@ issue: 54
 title: "Backup export / import (JSON)"
 type: story
 epic: EPIC-07
-status: backlog
+status: review
 priority: P2
 size: S
 lane: analytics
@@ -14,5 +14,5 @@ labels: [data]
 
 # US-074 — Backup export / import (JSON)
 
-- [ ] Export all user data to a JSON file (share sheet); import with merge-by-id
-- [ ] Format versioned; this also documents what a future remote sync must carry (EPIC-13)
+- [x] Export all user data to a JSON file (share sheet); import with merge-by-id
+- [x] Format versioned; this also documents what a future remote sync must carry (EPIC-13)

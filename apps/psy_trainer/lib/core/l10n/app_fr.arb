@@ -149,6 +149,73 @@
   "readinessTrendFlat": "Stable",
   "readinessTrendDown": "En baisse",
   "readinessHint": "Familles pratiquées, leçons lues et simulations comptent.",
+  "streakCardTitle": "Série",
+  "streakDays": "{count, plural, =0{Aucun jour} =1{1 jour} other{{count} jours}}",
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "streakBest": "Record : {count, plural, =0{—} =1{1 jour} other{{count} jours}}",
+  "@streakBest": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "streakGoalItems": "{done}/{target} éléments aujourd'hui",
+  "@streakGoalItems": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "streakGoalMinutes": "{done}/{target} min aujourd'hui",
+  "@streakGoalMinutes": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "streakGoalMet": "Objectif atteint !",
+  "streakSemanticsLabel": "Série d'entraînement",
+  "streakSemanticsValue": "{current} jours de série, record {best} jours, {goal}",
+  "@streakSemanticsValue": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "best": {
+        "type": "int"
+      },
+      "goal": {
+        "type": "String"
+      }
+    }
+  },
+  "activityHeatmapSemanticsLabel": "Calendrier d'activité, 12 dernières semaines",
+  "activityHeatmapSemanticsValue": "{active}/{total} jours actifs sur les 12 dernières semaines",
+  "@activityHeatmapSemanticsValue": {
+    "placeholders": {
+      "active": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "examDateSemanticsLabel": "Examen",
   "examDatePassed": "Examen passé",
   "familyLevelsTitle": "Niveaux par famille",
@@ -1267,6 +1334,42 @@
   "settingsResetConfirm2Body": "Dernière confirmation : il n'y aura aucun moyen de récupérer ces données.",
   "settingsResetConfirmAction": "Effacer définitivement",
   "settingsResetCancelAction": "Annuler",
+  "settingsSectionGoal": "Objectif quotidien",
+  "settingsGoalTargetLabel": "Cible",
+  "settingsGoalUnitLabel": "Unité",
+  "settingsGoalUnitItems": "Éléments",
+  "settingsGoalUnitMinutes": "Minutes",
+  "settingsSectionBackup": "Sauvegarde",
+  "backupExportAction": "Exporter mes données",
+  "backupExportHint": "Génère un fichier JSON avec vos sessions, statistiques et réglages, à partager ou conserver.",
+  "backupExportSuccess": "Sauvegarde partagée.",
+  "backupExportCancelled": "Partage annulé.",
+  "backupExportError": "Échec de l'export.",
+  "backupImportTitle": "Importer une sauvegarde",
+  "backupImportHint": "Collez ici le contenu d'un fichier de sauvegarde JSON.",
+  "backupImportAction": "Importer",
+  "backupImportEmpty": "Collez d'abord le contenu d'une sauvegarde.",
+  "backupImportSuccess": "{inserted} ajout(s), {updated} mise(s) à jour, {skipped} ignoré(s).",
+  "@backupImportSuccess": {
+    "placeholders": {
+      "inserted": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "backupErrorInvalidJson": "Le texte n'est pas un JSON valide.",
+  "backupErrorNotAnObject": "Le document doit être un objet JSON.",
+  "backupErrorWrongFormat": "Ce fichier n'est pas une sauvegarde PSY Trainer.",
+  "backupErrorUnsupportedVersion": "Cette sauvegarde vient d'une version plus récente de l'application.",
+  "backupErrorMissingData": "La sauvegarde est incomplète (section « data » manquante).",
+  "backupErrorInvalidRow": "La sauvegarde contient une entrée invalide.",
+  "backupErrorGeneric": "Sauvegarde invalide.",
   "settingsAboutAction": "À propos",
   "aboutTitle": "À propos",
   "aboutVersionLabel": "Version",

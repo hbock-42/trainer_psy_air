@@ -4,7 +4,7 @@ issue: 53
 title: "Streaks and daily goal"
 type: story
 epic: EPIC-07
-status: backlog
+status: review
 priority: P2
 size: S
 lane: analytics
@@ -14,5 +14,5 @@ labels: [analytics,engagement]
 
 # US-073 — Streaks and daily goal
 
-- [ ] Daily goal (items or minutes) configurable; streak counter on the dashboard
-- [ ] Calendar heat-map of activity
+- [x] Daily goal (items or minutes) configurable; streak counter on the dashboard
+- [x] Calendar heat-map of activity

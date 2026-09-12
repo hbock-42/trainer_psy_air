@@ -486,6 +486,63 @@ class AppLocalizationsEn extends AppLocalizations {
       'Families practised, lessons read and simulations count.';
 
   @override
+  String get streakCardTitle => 'Streak';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days',
+      one: '1 day',
+      zero: 'No streak',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String streakBest(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days',
+      one: '1 day',
+      zero: '—',
+    );
+    return 'Best: $_temp0';
+  }
+
+  @override
+  String streakGoalItems(int done, int target) {
+    return '$done/$target items today';
+  }
+
+  @override
+  String streakGoalMinutes(int done, int target) {
+    return '$done/$target min today';
+  }
+
+  @override
+  String get streakGoalMet => 'Goal reached!';
+
+  @override
+  String get streakSemanticsLabel => 'Training streak';
+
+  @override
+  String streakSemanticsValue(int current, int best, String goal) {
+    return '$current day streak, best $best days, $goal';
+  }
+
+  @override
+  String get activityHeatmapSemanticsLabel =>
+      'Activity calendar, last 12 weeks';
+
+  @override
+  String activityHeatmapSemanticsValue(int active, int total) {
+    return '$active/$total active days over the last 12 weeks';
+  }
+
+  @override
   String get examDateSemanticsLabel => 'Exam';
 
   @override
@@ -1815,6 +1872,81 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsResetCancelAction => 'Cancel';
+
+  @override
+  String get settingsSectionGoal => 'Daily goal';
+
+  @override
+  String get settingsGoalTargetLabel => 'Target';
+
+  @override
+  String get settingsGoalUnitLabel => 'Unit';
+
+  @override
+  String get settingsGoalUnitItems => 'Items';
+
+  @override
+  String get settingsGoalUnitMinutes => 'Minutes';
+
+  @override
+  String get settingsSectionBackup => 'Backup';
+
+  @override
+  String get backupExportAction => 'Export my data';
+
+  @override
+  String get backupExportHint =>
+      'Generates a JSON file with your sessions, stats and settings, to share or keep.';
+
+  @override
+  String get backupExportSuccess => 'Backup shared.';
+
+  @override
+  String get backupExportCancelled => 'Share cancelled.';
+
+  @override
+  String get backupExportError => 'Export failed.';
+
+  @override
+  String get backupImportTitle => 'Import a backup';
+
+  @override
+  String get backupImportHint =>
+      'Paste the content of a backup JSON file here.';
+
+  @override
+  String get backupImportAction => 'Import';
+
+  @override
+  String get backupImportEmpty => 'Paste a backup\'s content first.';
+
+  @override
+  String backupImportSuccess(int inserted, int updated, int skipped) {
+    return '$inserted inserted, $updated updated, $skipped skipped.';
+  }
+
+  @override
+  String get backupErrorInvalidJson => 'The text is not valid JSON.';
+
+  @override
+  String get backupErrorNotAnObject => 'The document must be a JSON object.';
+
+  @override
+  String get backupErrorWrongFormat => 'This file is not a PSY Trainer backup.';
+
+  @override
+  String get backupErrorUnsupportedVersion =>
+      'This backup comes from a newer version of the app.';
+
+  @override
+  String get backupErrorMissingData =>
+      'The backup is incomplete (missing \"data\" section).';
+
+  @override
+  String get backupErrorInvalidRow => 'The backup contains an invalid entry.';
+
+  @override
+  String get backupErrorGeneric => 'Invalid backup.';
 
   @override
   String get settingsAboutAction => 'About';

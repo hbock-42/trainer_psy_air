@@ -992,6 +992,66 @@ abstract class AppLocalizations {
   /// **'Familles pratiquées, leçons lues et simulations comptent.'**
   String get readinessHint;
 
+  /// No description provided for @streakCardTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Série'**
+  String get streakCardTitle;
+
+  /// No description provided for @streakDays.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count, plural, =0{Aucun jour} =1{1 jour} other{{count} jours}}'**
+  String streakDays(int count);
+
+  /// No description provided for @streakBest.
+  ///
+  /// In fr, this message translates to:
+  /// **'Record : {count, plural, =0{—} =1{1 jour} other{{count} jours}}'**
+  String streakBest(int count);
+
+  /// No description provided for @streakGoalItems.
+  ///
+  /// In fr, this message translates to:
+  /// **'{done}/{target} éléments aujourd\'hui'**
+  String streakGoalItems(int done, int target);
+
+  /// No description provided for @streakGoalMinutes.
+  ///
+  /// In fr, this message translates to:
+  /// **'{done}/{target} min aujourd\'hui'**
+  String streakGoalMinutes(int done, int target);
+
+  /// No description provided for @streakGoalMet.
+  ///
+  /// In fr, this message translates to:
+  /// **'Objectif atteint !'**
+  String get streakGoalMet;
+
+  /// No description provided for @streakSemanticsLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Série d\'entraînement'**
+  String get streakSemanticsLabel;
+
+  /// No description provided for @streakSemanticsValue.
+  ///
+  /// In fr, this message translates to:
+  /// **'{current} jours de série, record {best} jours, {goal}'**
+  String streakSemanticsValue(int current, int best, String goal);
+
+  /// No description provided for @activityHeatmapSemanticsLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calendrier d\'activité, 12 dernières semaines'**
+  String get activityHeatmapSemanticsLabel;
+
+  /// No description provided for @activityHeatmapSemanticsValue.
+  ///
+  /// In fr, this message translates to:
+  /// **'{active}/{total} jours actifs sur les 12 dernières semaines'**
+  String activityHeatmapSemanticsValue(int active, int total);
+
   /// No description provided for @examDateSemanticsLabel.
   ///
   /// In fr, this message translates to:
@@ -2999,6 +3059,144 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Annuler'**
   String get settingsResetCancelAction;
+
+  /// No description provided for @settingsSectionGoal.
+  ///
+  /// In fr, this message translates to:
+  /// **'Objectif quotidien'**
+  String get settingsSectionGoal;
+
+  /// No description provided for @settingsGoalTargetLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible'**
+  String get settingsGoalTargetLabel;
+
+  /// No description provided for @settingsGoalUnitLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Unité'**
+  String get settingsGoalUnitLabel;
+
+  /// No description provided for @settingsGoalUnitItems.
+  ///
+  /// In fr, this message translates to:
+  /// **'Éléments'**
+  String get settingsGoalUnitItems;
+
+  /// No description provided for @settingsGoalUnitMinutes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Minutes'**
+  String get settingsGoalUnitMinutes;
+
+  /// No description provided for @settingsSectionBackup.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sauvegarde'**
+  String get settingsSectionBackup;
+
+  /// No description provided for @backupExportAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exporter mes données'**
+  String get backupExportAction;
+
+  /// No description provided for @backupExportHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Génère un fichier JSON avec vos sessions, statistiques et réglages, à partager ou conserver.'**
+  String get backupExportHint;
+
+  /// No description provided for @backupExportSuccess.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sauvegarde partagée.'**
+  String get backupExportSuccess;
+
+  /// No description provided for @backupExportCancelled.
+  ///
+  /// In fr, this message translates to:
+  /// **'Partage annulé.'**
+  String get backupExportCancelled;
+
+  /// No description provided for @backupExportError.
+  ///
+  /// In fr, this message translates to:
+  /// **'Échec de l\'export.'**
+  String get backupExportError;
+
+  /// No description provided for @backupImportTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Importer une sauvegarde'**
+  String get backupImportTitle;
+
+  /// No description provided for @backupImportHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Collez ici le contenu d\'un fichier de sauvegarde JSON.'**
+  String get backupImportHint;
+
+  /// No description provided for @backupImportAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Importer'**
+  String get backupImportAction;
+
+  /// No description provided for @backupImportEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Collez d\'abord le contenu d\'une sauvegarde.'**
+  String get backupImportEmpty;
+
+  /// No description provided for @backupImportSuccess.
+  ///
+  /// In fr, this message translates to:
+  /// **'{inserted} ajout(s), {updated} mise(s) à jour, {skipped} ignoré(s).'**
+  String backupImportSuccess(int inserted, int updated, int skipped);
+
+  /// No description provided for @backupErrorInvalidJson.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le texte n\'est pas un JSON valide.'**
+  String get backupErrorInvalidJson;
+
+  /// No description provided for @backupErrorNotAnObject.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le document doit être un objet JSON.'**
+  String get backupErrorNotAnObject;
+
+  /// No description provided for @backupErrorWrongFormat.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ce fichier n\'est pas une sauvegarde PSY Trainer.'**
+  String get backupErrorWrongFormat;
+
+  /// No description provided for @backupErrorUnsupportedVersion.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cette sauvegarde vient d\'une version plus récente de l\'application.'**
+  String get backupErrorUnsupportedVersion;
+
+  /// No description provided for @backupErrorMissingData.
+  ///
+  /// In fr, this message translates to:
+  /// **'La sauvegarde est incomplète (section « data » manquante).'**
+  String get backupErrorMissingData;
+
+  /// No description provided for @backupErrorInvalidRow.
+  ///
+  /// In fr, this message translates to:
+  /// **'La sauvegarde contient une entrée invalide.'**
+  String get backupErrorInvalidRow;
+
+  /// No description provided for @backupErrorGeneric.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sauvegarde invalide.'**
+  String get backupErrorGeneric;
 
   /// No description provided for @settingsAboutAction.
   ///

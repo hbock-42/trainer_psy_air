@@ -153,6 +153,15 @@ void main() {
       await tester.scrollUntilVisible(
         find.byKey(SettingsScreen.resetActionKey),
         200,
+        // The backup section's paste field (US-074) is an `EditableText`,
+        // which owns its own inner `Scrollable`; disambiguate against the
+        // screen's outer list.
+        scrollable: find
+            .descendant(
+              of: find.byKey(SettingsScreen.scrollKey),
+              matching: find.byType(Scrollable),
+            )
+            .first,
       );
 
       await tester.tap(find.byKey(SettingsScreen.resetActionKey));
