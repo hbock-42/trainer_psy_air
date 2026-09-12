@@ -1,0 +1,2724 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "english",
+  "passages": [
+    {
+      "id": "english.reading.p014",
+      "title": {
+        "fr": "Move to Harbour Point"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**From:** Priya Lennox, Facilities Manager\n\n**To:** All staff, Marwick House\n\n**Subject:** Move to Harbour Point — what you need to do before Friday\n\nDear colleagues,\n\nAs announced last month, our lease at Marwick House ends on 31 March and we will start work at Harbour Point on Monday 3 April. The movers will collect crates on Thursday afternoon, so every desk must be packed by 2 p.m. that day. Please label each crate with your name and your new floor number, which you will find in the seating plan attached to this message.\n\nPersonal items that are not packed will be left behind. Monitors and docking stations will be moved by the IT team; do not disconnect them yourselves. Laptops travel with you.\n\nAccess badges for the new building will be handed out at reception on Monday morning between 8 and 9.30. If you cannot be there, ask your team lead to collect yours.\n\nFinally, the underground car park at Harbour Point has only forty spaces, so we encourage you to use the tram, which stops directly in front of the entrance.\n\nThank you for your patience during this busy week.\n\nPriya"
+      }
+    },
+    {
+      "id": "english.reading.p015",
+      "title": {
+        "fr": "Planned lift maintenance, Carrow Tower"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**NOTICE TO ALL TENANTS — Carrow Tower**\n\n**Planned lift maintenance, 12–14 June**\n\nThe two passenger lifts serving floors 1 to 9 will be modernised over three days. Work will start at 7 a.m. on Monday 12 June and is expected to finish by 6 p.m. on Wednesday 14 June. During this period only the goods lift, at the rear of the building, will be in service. It is operated by a member of the security team and may be used by anyone who is unable to take the stairs. Deliveries larger than a standard trolley cannot be accepted until the work is complete.\n\nPlease note that the fire alarm will be tested each morning at 7.15; there is no need to evacuate unless the alarm sounds for longer than thirty seconds.\n\nWe apologise for the disruption. Once the new lifts are in operation, they will run around 30 % faster and use significantly less energy. Questions should be addressed to the building management office on the ground floor or by email to management@carrowtower.example."
+      }
+    },
+    {
+      "id": "english.reading.p016",
+      "title": {
+        "fr": "Shorter weeks, same output?"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Shorter weeks, same output? A six-month trial reports its findings**\n\nWhen forty companies in the northern region agreed to try a four-day working week last year, many managers predicted a fall in productivity. The results, published this week by the Regional Institute of Labour, suggest the opposite. Across the participating firms, output per employee rose by an average of 4 %, while sick leave fell by a fifth. Staff turnover, a costly problem for small businesses, dropped in three quarters of the companies.\n\nThe picture is not uniform, however. Firms in customer-facing sectors such as retail and hospitality found it harder to reduce hours without hiring additional staff, and two companies withdrew from the trial after three months. 'The model works best where work can be organised around tasks rather than opening hours,' said lead researcher Dr Amara Oyelaran.\n\nEmployees were overwhelmingly positive: 91 % said they wished to continue, and a majority reported better sleep and more time for family. Whether the gains will last, the report cautions, is unclear — the novelty of a free day may itself have boosted motivation. A follow-up study is planned for next spring."
+      }
+    },
+    {
+      "id": "english.reading.p017",
+      "title": {
+        "fr": "Kestrel Bicycles — sales by channel, 2025"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Sales by channel, Kestrel Bicycles, 2025 (units sold)**\n\nThe line graph presents quarterly unit sales for Kestrel Bicycles across three channels: the company's own website, independent bike shops, and the two flagship stores in Halden and Port Ross.\n\nIn the first quarter, shops led with 2,400 units, followed by the website at 1,800 and the flagship stores at 900. Website sales climbed steadily every quarter, reaching 3,100 units in the fourth quarter, when they overtook shops for the first time. Shop sales peaked at 2,900 in the second quarter before declining to 2,300 by the end of the year. Flagship store sales rose sharply in the third quarter to 1,600 units, coinciding with the summer promotion, then fell back to 1,000 in the fourth quarter.\n\nTotal sales for the year reached 26,400 units, 12 % more than in 2024. In her commentary, the sales director attributes the online growth to the introduction of free home delivery in April and warns that shop partners are now asking for a similar offer."
+      }
+    },
+    {
+      "id": "english.reading.p018",
+      "title": {
+        "fr": "Northgate Learning Centre — spring courses"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Northgate Learning Centre — Spring professional courses**\n\n| Course | Format | Duration | Price per person | Group discount (5+) |\n|---|---|---|---|---|\n| Effective Presentations | In person | 2 days | 640 | 15 % |\n| Project Management Essentials | Online, live | 4 half-days | 520 | 10 % |\n| Excel for Analysts | Online, self-paced | 12 hours | 210 | none |\n| Negotiation Skills | In person | 1 day | 390 | 15 % |\n| Writing for the Web | Online, live | 3 half-days | 360 | 10 % |\n\nAll prices are in euros and exclude tax. In-person courses take place at our Riverside campus and include lunch. Live online courses run from 9 a.m. to 1 p.m. and are recorded; recordings remain available for 60 days. The self-paced course can be started at any time and must be completed within six months.\n\nCancellations made more than 14 days before the start date are refunded in full; later cancellations may be transferred to a colleague free of charge. Book at least three weeks ahead for in-person courses, as places are limited to twelve."
+      }
+    },
+    {
+      "id": "english.reading.p019",
+      "title": {
+        "fr": "Skyline Express airport shuttle"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Skyline Express — City Centre ↔ Bellmoor Airport**\n\n| Departs Central Station | Arrives Terminal 1 | Arrives Terminal 2 | Days |\n|---|---|---|---|\n| 04:30 | 05:05 | 05:15 | Daily |\n| 05:30 | 06:05 | 06:15 | Daily |\n| 06:30 | 07:10 | 07:20 | Mon–Fri |\n| 07:00 | 07:40 | 07:50 | Daily |\n| 08:00 | 08:35 | 08:45 | Daily |\n| then every 30 minutes until 22:00 | | | Daily |\n\nTickets: single 9.50, return 16.00 (valid 30 days). Children under 12 travel free with an adult. Tickets can be bought from the driver by card only, or in advance through the app, where a return costs 14.00.\n\nJourney times between 06:30 and 09:00 on weekdays are longer because of city traffic; passengers with flights before 9 a.m. are advised to take the 05:30 service. The shuttle does not stop between Central Station and the airport. Large luggage is stored under the coach; each passenger may bring two items free of charge. Services may be cancelled at short notice in severe weather — check the app for live updates."
+      }
+    },
+    {
+      "id": "english.reading.p020",
+      "title": {
+        "fr": "Travel expense policy changes"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**MEMO**\n\n**To:** All department heads\n\n**From:** Finance Department\n\n**Date:** 2 October\n\n**Re:** Changes to the travel expense policy from 1 November\n\nFrom 1 November, the following changes will apply to all business travel.\n\n1. **Meals.** The daily allowance rises from 45 to 55 euros. Receipts are no longer required for individual meals under 20 euros, but the total claimed per day must not exceed the allowance.\n\n2. **Hotels.** Bookings must be made through the corporate portal. Hotels booked elsewhere will be reimbursed only up to the portal rate for the same city and dates.\n\n3. **Rail and air.** Rail travel is expected for journeys under four hours. Business class flights require written approval from a director before booking, not after.\n\n4. **Submission.** Claims must be submitted within 30 days of the return date. Late claims will be paid only with the approval of the department head, and never after 90 days.\n\nPlease brief your teams before the end of the month. The updated policy document and a short video are available on the intranet under Finance > Travel."
+      }
+    },
+    {
+      "id": "english.reading.p021",
+      "title": {
+        "fr": "The Lanterne Hotel — meetings"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**The Lanterne Hotel — Meetings that work**\n\nLooking for a venue that takes the stress out of organising your next event? Our newly refurbished conference centre, ten minutes from Westbridge station, offers six meeting rooms for 8 to 180 delegates, all with natural daylight, high-speed wifi and built-in video conferencing.\n\nOur Day Delegate package, from 68 euros per person, includes room hire, three coffee breaks, a two-course lunch in the Garden Restaurant, unlimited still and sparkling water, and a dedicated event coordinator on the day. Add an overnight stay in one of our 120 rooms, with breakfast, for an additional 95 euros.\n\nBook any event of 30 delegates or more before 31 January and receive a complimentary evening reception with drinks and canapés. Charity and educational organisations enjoy a 10 % reduction all year round.\n\nParking for 60 cars is available on site. Please note that the hotel is entirely non-smoking and that the Garden Restaurant closes to non-residents after 9 p.m.\n\nCall our events team on 0800 555 0199 or visit lanternehotel.example/meetings."
+      }
+    },
+    {
+      "id": "english.reading.p022",
+      "title": {
+        "fr": "Review: The Foundry Coworking"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Review: The Foundry Coworking, Eastgate — 3.5 / 5**\n\nI spent three months at The Foundry while my company's office was being renovated, so this is based on daily use rather than a single visit.\n\nThe good: the building, a converted printing works, is genuinely pleasant. Desks are wide, chairs are proper office chairs rather than café furniture, and the internet never dropped once. The staff are friendly and the coffee, which is included, is better than in most cafés. Meeting rooms can be booked through an app in fifteen-minute slots, and the phone booths solved the problem of taking calls in an open space.\n\nThe less good: at 290 euros a month for a flexible desk, it is not cheap, and the 'flexible' part means you may not find a seat near a window after 9.30. The kitchen is too small for the number of members, and heating was unreliable in January. Printing costs extra and is surprisingly expensive.\n\nWould I return? Probably, for a short period. For a permanent base I would want a fixed desk, which costs 120 euros more."
+      }
+    },
+    {
+      "id": "english.reading.p023",
+      "title": {
+        "fr": "Halvard Appliances — warranty claim form"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Halvard Appliances — Warranty Claim Form**\n\nPlease complete all sections in block capitals. Incomplete forms will be returned.\n\n**Section A — Customer**\n\nName: ______ Telephone: ______ Email: ______ Postcode: ______\n\n**Section B — Product**\n\nModel number (on the label inside the door): ______ Serial number: ______ Date of purchase: ______ Retailer: ______ Proof of purchase attached? ☐ Yes ☐ No\n\n**Section C — Fault**\n\nDescribe the problem in your own words, including when it first occurred and whether it happens every time the appliance is used: ______\n\n**Section D — Preferred resolution** (tick one)\n\n☐ Repair at home ☐ Repair at service centre ☐ Replacement\n\n**Conditions.** The standard warranty covers manufacturing defects for 24 months from the date of purchase. It does not cover damage caused by incorrect installation, misuse or normal wear. Claims without proof of purchase cannot be processed. Home repairs are available only within 40 km of a service centre; outside that area, we will arrange collection of the appliance at no cost. Replacement is offered when a repair is not economically viable, at our discretion. Please allow ten working days for a first response.\n\nReturn this form to claims@halvard.example or by post to the address overleaf."
+      }
+    },
+    {
+      "id": "english.reading.p024",
+      "title": {
+        "fr": "Marlow Air — delayed and damaged baggage FAQ"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Frequently asked questions — Delayed and damaged baggage** (Marlow Air customer service)\n\n**My bag did not arrive. What should I do?**\n\nReport it at the baggage desk before leaving the arrivals hall. You will receive a reference number, which you need for every later contact. Reports made after leaving the airport must be submitted online within 7 days.\n\n**How will I get my bag back?**\n\nMost delayed bags are found within 48 hours and delivered to the address you gave us, at no cost. You can follow the search with your reference number on our website.\n\n**Can I claim for things I had to buy while waiting?**\n\nYes. Keep receipts for essential items such as toiletries and basic clothing. Claims for essential purchases are accepted for delays of more than 24 hours, up to a daily limit stated in our conditions of carriage. Luxury items are not reimbursed.\n\n**My bag arrived damaged.**\n\nReport damage at the airport or online within 7 days. Minor scratches and wheel wear are considered normal and are not covered. For repairable damage we will pay for a repair; otherwise we compensate on the basis of the bag's age and value.\n\n**After what period is a bag considered lost?**\n\nIf your bag has not been found after 21 days, we treat it as lost and you may submit a full claim."
+      }
+    },
+    {
+      "id": "english.reading.p025",
+      "title": {
+        "fr": "Northern Water — reply to a complaint"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Northern Water Services**\n\nCustomer Relations, PO Box 410, Stanmere\n\n14 May\n\nDear Mr Okafor,\n\nThank you for your letter of 3 May concerning the interruption to your water supply on 28 and 29 April, and the condition in which the road outside your property was left after the repair.\n\nI have looked into the matter. The interruption was caused by a burst main on Hollins Lane, which our engineers located at 22:40 on 28 April. Supply was restored at 11:15 the following morning, an outage of just over twelve hours. Under our service guarantee, any unplanned interruption longer than twelve hours entitles the customer to a payment of 30 euros, which will be credited to your next bill. I apologise that this was not applied automatically.\n\nRegarding the road surface, the temporary repair is the responsibility of our contractor, who is required to complete a permanent repair within 28 days. I have asked them to treat your street as a priority and to contact you directly with a date.\n\nIf you are not satisfied with this response, you may refer the matter to the independent Water Ombudsman, whose details are enclosed.\n\nYours sincerely,\n\nHelena Brandt\n\nCustomer Relations Manager"
+      }
+    },
+    {
+      "id": "english.reading.p026",
+      "title": {
+        "fr": "Setting up your new access badge"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Setting up your new access badge — read before first use**\n\nYour badge is delivered inactive. Follow the steps below on your first day; the whole process takes about five minutes.\n\n1. Go to any of the grey activation terminals located next to the main reception desk, the staff entrance and the fourth-floor kitchen.\n\n2. Hold the badge flat against the reader until the light turns green. Do not remove it while the light is orange.\n\n3. Enter the six-digit code sent to your personal email address. The code expires 48 hours after it is sent; if it has expired, ask reception to issue a new one.\n\n4. Choose a four-digit PIN. You will need it for the server room, the print room and any door after 8 p.m.\n\n5. Test the badge on the nearest door. If it is refused, wait two minutes and try again — activation can take a short time to reach every reader.\n\n**Important:** never lend your badge to anyone, even a colleague. A lost or stolen badge must be reported to security immediately by calling extension 2200; it will be blocked and a replacement issued within one working day. Replacement badges cost 15 euros, except in cases of theft reported to the police."
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "english.reading.0052",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.email"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p014",
+      "stem": {
+        "fr": "By what time must desks be packed?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Thursday at 2 p.m."
+          }
+        },
+        {
+          "text": {
+            "fr": "Friday at 2 p.m."
+          }
+        },
+        {
+          "text": {
+            "fr": "Monday at 8 a.m."
+          }
+        },
+        {
+          "text": {
+            "fr": "Thursday at 9.30 a.m."
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **détail** : repérer le mot-clé « packed ». Paragraphe 1 : « every desk must be packed by 2 p.m. that day », et « that day » renvoie à « Thursday afternoon », le jour où les déménageurs ramassent les caisses. Vendredi (dans l'objet du mail) est la date limite globale, pas l'heure de l'emballage."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0053",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.email"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p014",
+      "stem": {
+        "fr": "What should employees do with their monitors?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Take them home over the weekend"
+          }
+        },
+        {
+          "text": {
+            "fr": "Return them to reception"
+          }
+        },
+        {
+          "text": {
+            "fr": "Pack them in a labelled crate"
+          }
+        },
+        {
+          "text": {
+            "fr": "Leave them for the IT team to move"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Paragraphe 2 : « Monitors and docking stations will be moved by the IT team; do not disconnect them yourselves ». Il faut donc les laisser en place. Piège : les caisses étiquetées concernent les objets personnels, pas les écrans."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0054",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.email"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p014",
+      "stem": {
+        "fr": "What can be inferred about parking at Harbour Point?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "It is closer than the tram stop"
+          }
+        },
+        {
+          "text": {
+            "fr": "It will not be sufficient for all staff"
+          }
+        },
+        {
+          "text": {
+            "fr": "It opens on 3 April"
+          }
+        },
+        {
+          "text": {
+            "fr": "It is free for employees"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question d'**inférence** : « only forty spaces, so we encourage you to use the tram » — le mot « only » et la recommandation du tram impliquent qu'il n'y a pas assez de places pour tout le monde. Rien n'est dit sur la gratuité ni sur la date d'ouverture : éliminer ce que le texte ne permet pas de conclure."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0055",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.not_mentioned",
+        "english.reading.email"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p014",
+      "stem": {
+        "fr": "What is NOT mentioned in the email?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The date of the move"
+          }
+        },
+        {
+          "text": {
+            "fr": "The time badges are distributed"
+          }
+        },
+        {
+          "text": {
+            "fr": "The cost of the tram"
+          }
+        },
+        {
+          "text": {
+            "fr": "Where to find the seating plan"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Méthode « NOT mentioned » : vérifier chaque option dans le texte. La date (3 April), le plan des places (« attached to this message ») et l'horaire des badges (« between 8 and 9.30 ») sont tous présents ; le prix du tram n'apparaît nulle part."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0056",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.main_idea",
+        "english.reading.notice"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p015",
+      "stem": {
+        "fr": "What is the main purpose of this notice?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "To ask tenants to postpone their deliveries"
+          }
+        },
+        {
+          "text": {
+            "fr": "To advertise the new energy-saving lifts"
+          }
+        },
+        {
+          "text": {
+            "fr": "To inform tenants of a temporary lift disruption"
+          }
+        },
+        {
+          "text": {
+            "fr": "To announce a fire drill"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Question d'**idée principale** : le titre (« Planned lift maintenance ») et le premier paragraphe donnent le sujet — l'arrêt temporaire des ascenseurs. Le test d'alarme, les livraisons et les économies d'énergie sont des détails secondaires, pas l'objet de l'avis."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0057",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.notice"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p015",
+      "stem": {
+        "fr": "Who operates the goods lift during the works?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A member of the security team"
+          }
+        },
+        {
+          "text": {
+            "fr": "Any tenant who needs it"
+          }
+        },
+        {
+          "text": {
+            "fr": "A lift engineer"
+          }
+        },
+        {
+          "text": {
+            "fr": "The building manager"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Mot-clé « goods lift » : « It is operated by a member of the security team ». Les locataires peuvent l'**utiliser** (« may be used by anyone… ») mais ne le **font pas fonctionner** eux-mêmes — attention à la nuance entre « use » et « operate »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0058",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.notice"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p015",
+      "stem": {
+        "fr": "What should a tenant do if the alarm rings for fifteen seconds at 7.15 on 13 June?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Leave the building immediately"
+          }
+        },
+        {
+          "text": {
+            "fr": "Ignore it, as it is a scheduled test"
+          }
+        },
+        {
+          "text": {
+            "fr": "Call the management office"
+          }
+        },
+        {
+          "text": {
+            "fr": "Use the goods lift to exit"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question d'**inférence** avec deux conditions à croiser : l'alarme est testée « each morning at 7.15 » et il ne faut évacuer que si elle sonne « longer than thirty seconds ». Quinze secondes à 7 h 15 = un test, donc pas d'évacuation. Le piège est de réagir au mot « alarm » sans lire la condition."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0059",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.notice"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p015",
+      "stem": {
+        "fr": "Which benefit of the new lifts is mentioned?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Greater passenger capacity"
+          }
+        },
+        {
+          "text": {
+            "fr": "Access to more floors"
+          }
+        },
+        {
+          "text": {
+            "fr": "Quieter operation"
+          }
+        },
+        {
+          "text": {
+            "fr": "Lower energy consumption"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Dernier paragraphe : « run around 30 % faster and use significantly less energy ». Seule la consommation d'énergie figure dans les options ; capacité, bruit et étages desservis ne sont pas évoqués. Méthode : ne retenir que ce qui est **écrit**, pas ce qui semble logique."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0060",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.main_idea",
+        "english.reading.article"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p016",
+      "stem": {
+        "fr": "What is the main idea of the article?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Retail firms benefited most from the trial"
+          }
+        },
+        {
+          "text": {
+            "fr": "A shorter working week improved most measures without harming output"
+          }
+        },
+        {
+          "text": {
+            "fr": "Most companies abandoned the four-day week after three months"
+          }
+        },
+        {
+          "text": {
+            "fr": "Productivity fell as managers had predicted"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Idée principale : les résultats « suggest the opposite » de la baisse prédite — production +4 %, absences −20 %, turnover en baisse. Les réserves (retail, deux abandons) nuancent mais ne renversent pas le message. Méthode : chercher la phrase qui résume le paragraphe 1, puis vérifier que les autres paragraphes ne la contredisent pas."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0061",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.article"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p016",
+      "stem": {
+        "fr": "How did sick leave change during the trial?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "It fell by 75 %"
+          }
+        },
+        {
+          "text": {
+            "fr": "It fell by 4 %"
+          }
+        },
+        {
+          "text": {
+            "fr": "It fell by 20 %"
+          }
+        },
+        {
+          "text": {
+            "fr": "It rose by 4 %"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "« sick leave fell by a fifth » : un cinquième = 20 %. Les 4 % concernent la production, et les trois quarts (75 %) désignent la proportion d'entreprises où le turnover a baissé. Piège classique : les fractions écrites en toutes lettres (« a fifth », « three quarters »)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0062",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.article"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p016",
+      "stem": {
+        "fr": "Why does the report advise caution about the results?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The excitement of a new arrangement may have temporarily raised motivation"
+          }
+        },
+        {
+          "text": {
+            "fr": "The researchers were paid by the firms"
+          }
+        },
+        {
+          "text": {
+            "fr": "The sample of companies was too small"
+          }
+        },
+        {
+          "text": {
+            "fr": "Two companies provided false data"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Dernier paragraphe : « the novelty of a free day may itself have boosted motivation » — l'effet de nouveauté pourrait expliquer une partie des gains, d'où la prudence et l'étude de suivi. Les autres options ne sont pas dans le texte. Méthode : le mot « cautions » signale la réserve ; lire la phrase qui le suit."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0063",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.vocab_in_context",
+        "english.reading.article"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p016",
+      "stem": {
+        "fr": "The word *withdrew* in paragraph 2 is closest in meaning to"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "complained"
+          }
+        },
+        {
+          "text": {
+            "fr": "joined"
+          }
+        },
+        {
+          "text": {
+            "fr": "expanded"
+          }
+        },
+        {
+          "text": {
+            "fr": "left"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Vocabulaire en contexte** : « two companies withdrew from the trial after three months » — « withdraw from » = se retirer de, quitter. Le contexte (« The picture is not uniform, however ») annonce une difficulté, donc un sens négatif : éliminer « joined » et « expanded »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0064",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.article"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p016",
+      "stem": {
+        "fr": "According to Dr Oyelaran's comment, which business is most likely to succeed with the four-day model?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A restaurant open seven days a week"
+          }
+        },
+        {
+          "text": {
+            "fr": "A hotel reception desk"
+          }
+        },
+        {
+          "text": {
+            "fr": "A software team working to project deadlines"
+          }
+        },
+        {
+          "text": {
+            "fr": "A shop with fixed opening hours"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Inférence à partir d'une citation : le modèle marche « where work can be organised around tasks rather than opening hours ». Une équipe qui livre des projets travaille par tâches ; restaurant, magasin et réception d'hôtel dépendent d'horaires d'ouverture, exactement les secteurs (« retail and hospitality ») cités comme difficiles."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0065",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.graph"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p017",
+      "stem": {
+        "fr": "Which channel sold the most units in the first quarter?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The summer promotion"
+          }
+        },
+        {
+          "text": {
+            "fr": "Independent bike shops"
+          }
+        },
+        {
+          "text": {
+            "fr": "The flagship stores"
+          }
+        },
+        {
+          "text": {
+            "fr": "The website"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « In the first quarter, shops led with 2,400 units » — « led » = étaient en tête. Le site web (1,800) et les magasins phares (900) suivent. Sur un graphique décrit en texte, cherchez d'abord la période demandée, puis comparez les chiffres."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0066",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.graph"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p017",
+      "stem": {
+        "fr": "In which quarter did website sales overtake shop sales?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The third quarter"
+          }
+        },
+        {
+          "text": {
+            "fr": "The second quarter"
+          }
+        },
+        {
+          "text": {
+            "fr": "The first quarter"
+          }
+        },
+        {
+          "text": {
+            "fr": "The fourth quarter"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "« reaching 3,100 units in the fourth quarter, when they overtook shops for the first time ». Le pic des magasins au deuxième trimestre est un distracteur : c'est le moment où les boutiques sont au plus haut, pas celui où le site les dépasse."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0067",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.graph"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p017",
+      "stem": {
+        "fr": "What most likely explains the rise in flagship store sales in the third quarter?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A seasonal promotion"
+          }
+        },
+        {
+          "text": {
+            "fr": "A fall in website prices"
+          }
+        },
+        {
+          "text": {
+            "fr": "Free home delivery"
+          }
+        },
+        {
+          "text": {
+            "fr": "The opening of a new store"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Inférence : la hausse « coinciding with the summer promotion » — le texte associe explicitement le pic des magasins phares à la promotion d'été. La livraison gratuite explique la croissance **en ligne**, pas celle des magasins physiques. Repère : « coinciding with » relie une cause à un effet."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0068",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.graph"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p017",
+      "stem": {
+        "fr": "Approximately how many units did Kestrel sell in 2024?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "About 29,600"
+          }
+        },
+        {
+          "text": {
+            "fr": "About 19,800"
+          }
+        },
+        {
+          "text": {
+            "fr": "About 26,400"
+          }
+        },
+        {
+          "text": {
+            "fr": "About 23,600"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Calcul à partir du texte : 26,400 unités en 2025 représentent « 12 % more than in 2024 », donc 2024 = 26,400 ÷ 1,12 ≈ 23,570. Piège : ajouter 12 % (≈ 29,600) au lieu de diviser. Sur ce type de question, écrivez la relation avant de calculer : **2025 = 2024 × 1,12**."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0069",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.not_mentioned",
+        "english.reading.graph"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p017",
+      "stem": {
+        "fr": "What is NOT mentioned in the description?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The reason for online growth"
+          }
+        },
+        {
+          "text": {
+            "fr": "The total annual sales"
+          }
+        },
+        {
+          "text": {
+            "fr": "The price of the bicycles"
+          }
+        },
+        {
+          "text": {
+            "fr": "The cities where the flagship stores are located"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Vérification option par option : Halden et Port Ross (villes), la livraison gratuite (raison de la croissance en ligne) et 26,400 unités (total annuel) sont cités. Aucun prix de vélo n'apparaît — le texte parle d'unités, jamais de montants."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0070",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.table"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p018",
+      "stem": {
+        "fr": "Which course offers no group discount?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Excel for Analysts"
+          }
+        },
+        {
+          "text": {
+            "fr": "Project Management Essentials"
+          }
+        },
+        {
+          "text": {
+            "fr": "Writing for the Web"
+          }
+        },
+        {
+          "text": {
+            "fr": "Negotiation Skills"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Lecture de tableau : colonne « Group discount », ligne « Excel for Analysts » → « none ». Méthode : identifier la colonne demandée, puis balayer les lignes — ne lisez pas tout le tableau."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0071",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.table"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p018",
+      "stem": {
+        "fr": "A company sends six employees to Effective Presentations. How much will it pay, before tax?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "3,840 euros"
+          }
+        },
+        {
+          "text": {
+            "fr": "3,264 euros"
+          }
+        },
+        {
+          "text": {
+            "fr": "2,720 euros"
+          }
+        },
+        {
+          "text": {
+            "fr": "3,456 euros"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Six personnes ≥ 5 → la remise de groupe de 15 % s'applique : 6 × 640 = 3,840, puis 3,840 × 0,85 = **3,264**. Le piège est d'oublier la remise (3,840) ou d'appliquer 10 % (3,456). Vérifiez toujours la condition (« 5+ ») avant d'appliquer un pourcentage."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0072",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.table"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p018",
+      "stem": {
+        "fr": "What can an employee do if they miss a live online session?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Attend the same session at Riverside"
+          }
+        },
+        {
+          "text": {
+            "fr": "Watch the recording within 60 days"
+          }
+        },
+        {
+          "text": {
+            "fr": "Ask for a full refund"
+          }
+        },
+        {
+          "text": {
+            "fr": "Restart the course six months later"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "« Live online courses … are recorded; recordings remain available for 60 days » — la séance manquée peut être revue. Riverside n'accueille que les cours en présentiel, et les six mois concernent le cours en autonomie (Excel). Méthode : associer chaque règle au **format** de cours concerné."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0073",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.table"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p018",
+      "stem": {
+        "fr": "An employee cancels a place ten days before the course starts. What is possible according to the conditions?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Transferring the place to a colleague at no cost"
+          }
+        },
+        {
+          "text": {
+            "fr": "A 50 % refund"
+          }
+        },
+        {
+          "text": {
+            "fr": "Switching to the self-paced course"
+          }
+        },
+        {
+          "text": {
+            "fr": "A full refund"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Dix jours < 14 jours, donc pas de remboursement intégral (« more than 14 days before »). Pour les annulations tardives, le texte prévoit une seule possibilité : « transferred to a colleague free of charge ». Aucun remboursement partiel n'est mentionné."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0074",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.timetable"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p019",
+      "stem": {
+        "fr": "How much does a return ticket cost when bought through the app?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "9.50"
+          }
+        },
+        {
+          "text": {
+            "fr": "16.00"
+          }
+        },
+        {
+          "text": {
+            "fr": "19.00"
+          }
+        },
+        {
+          "text": {
+            "fr": "14.00"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "« through the app, where a return costs 14.00 ». Le tarif de 16.00 est le prix du retour acheté auprès du chauffeur. Méthode : quand deux prix existent, vérifiez la **condition** attachée à chacun (canal d'achat, âge, validité)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0075",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.timetable"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p019",
+      "stem": {
+        "fr": "Which departure does NOT operate on Sundays?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "04:30"
+          }
+        },
+        {
+          "text": {
+            "fr": "08:00"
+          }
+        },
+        {
+          "text": {
+            "fr": "06:30"
+          }
+        },
+        {
+          "text": {
+            "fr": "07:00"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Colonne « Days » : seule la ligne 06:30 indique « Mon–Fri » ; toutes les autres sont « Daily ». Un tableau horaire se lit par la dernière colonne quand la question porte sur les jours."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0076",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.timetable"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p019",
+      "stem": {
+        "fr": "A passenger flies from Terminal 2 at 8.45 on a Tuesday. Which departure does the operator recommend?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "06:30"
+          }
+        },
+        {
+          "text": {
+            "fr": "07:00"
+          }
+        },
+        {
+          "text": {
+            "fr": "04:30"
+          }
+        },
+        {
+          "text": {
+            "fr": "05:30"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Inférence : le vol part avant 9 h, et le texte dit « passengers with flights before 9 a.m. are advised to take the 05:30 service » à cause du trafic de semaine. Le 06:30 arrive à 07:20 sur le papier, mais le paragraphe prévient que les trajets 06:30–09:00 sont plus longs — c'est le piège."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0077",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.timetable"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p019",
+      "stem": {
+        "fr": "How can passengers pay the driver?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Through the app only"
+          }
+        },
+        {
+          "text": {
+            "fr": "By card only"
+          }
+        },
+        {
+          "text": {
+            "fr": "In cash only"
+          }
+        },
+        {
+          "text": {
+            "fr": "Cash or card"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "« bought from the driver by card only » — le mot « only » exclut les espèces. L'application est l'autre moyen d'achat, mais à l'avance, pas auprès du chauffeur. Repère : « only » restreint toujours la réponse."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0078",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.memo"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p020",
+      "stem": {
+        "fr": "What is the new daily meal allowance?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "20 euros"
+          }
+        },
+        {
+          "text": {
+            "fr": "30 euros"
+          }
+        },
+        {
+          "text": {
+            "fr": "55 euros"
+          }
+        },
+        {
+          "text": {
+            "fr": "45 euros"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Point 1 : « The daily allowance rises from 45 to 55 euros ». 45 est l'ancien montant et 20 le seuil sous lequel le reçu n'est plus exigé. Avec « from X to Y », la **nouvelle** valeur est toujours Y."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0079",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.memo"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p020",
+      "stem": {
+        "fr": "When must written approval be obtained for a business class flight?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Before the flight is booked"
+          }
+        },
+        {
+          "text": {
+            "fr": "Only for flights longer than four hours"
+          }
+        },
+        {
+          "text": {
+            "fr": "When the claim is submitted"
+          }
+        },
+        {
+          "text": {
+            "fr": "Within 30 days after the trip"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Point 3 : « require written approval from a director **before** booking, not after ». La précision « not after » exclut toute validation a posteriori. Les quatre heures concernent le choix train/avion, pas la classe affaires."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0080",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.memo"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p020",
+      "stem": {
+        "fr": "An employee booked a hotel directly at 180 euros per night while the portal offered 140 euros. How much will be reimbursed per night?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Nothing"
+          }
+        },
+        {
+          "text": {
+            "fr": "140 euros"
+          }
+        },
+        {
+          "text": {
+            "fr": "40 euros"
+          }
+        },
+        {
+          "text": {
+            "fr": "180 euros"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Point 2 : les hôtels réservés hors portail sont remboursés « only up to the portal rate » → 140 euros, le reste (40) restant à la charge de l'employé. Le texte ne prévoit pas de refus total : éliminer « Nothing ». Méthode : « up to » = plafond."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0081",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.memo"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p020",
+      "stem": {
+        "fr": "What will happen to a claim submitted 100 days after the return date?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "It will be paid at a reduced rate"
+          }
+        },
+        {
+          "text": {
+            "fr": "It will be paid if the department head approves it"
+          }
+        },
+        {
+          "text": {
+            "fr": "It will be paid automatically"
+          }
+        },
+        {
+          "text": {
+            "fr": "It will not be paid"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Point 4 : les demandes tardives sont payées avec l'accord du chef de service « and never after 90 days ». 100 jours dépassent cette limite absolue, donc aucun paiement, même approuvé. Le piège est de s'arrêter à la première partie de la phrase."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0082",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.advert"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p021",
+      "stem": {
+        "fr": "What is included in the Day Delegate package?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A two-course lunch"
+          }
+        },
+        {
+          "text": {
+            "fr": "An evening reception"
+          }
+        },
+        {
+          "text": {
+            "fr": "Breakfast"
+          }
+        },
+        {
+          "text": {
+            "fr": "An overnight stay"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Paragraphe 2 : le forfait « includes room hire, three coffee breaks, a two-course lunch… ». La nuit et le petit-déjeuner sont un **supplément** (« for an additional 95 euros ») et la réception du soir est une offre conditionnelle. Méthode : lister ce qui suit « includes »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0083",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.advert"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p021",
+      "stem": {
+        "fr": "Who qualifies for the complimentary evening reception?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Charity organisations"
+          }
+        },
+        {
+          "text": {
+            "fr": "Any group booking in January"
+          }
+        },
+        {
+          "text": {
+            "fr": "Groups of at least 30 delegates booking before 31 January"
+          }
+        },
+        {
+          "text": {
+            "fr": "Groups staying overnight"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Deux conditions cumulées : « any event of 30 delegates or more » **et** « before 31 January ». Les autres options ne remplissent qu'une condition ou aucune. Piège : « complimentary » = offert, gratuit (pas « qui fait des compliments »)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0084",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.advert"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p021",
+      "stem": {
+        "fr": "A charity books a meeting for 20 delegates in March. What benefit will it receive?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Free parking"
+          }
+        },
+        {
+          "text": {
+            "fr": "A free overnight stay"
+          }
+        },
+        {
+          "text": {
+            "fr": "A 10 % reduction"
+          }
+        },
+        {
+          "text": {
+            "fr": "A free evening reception"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Inférence : 20 délégués < 30 et mars > 31 janvier, donc pas de réception. En revanche, « Charity and educational organisations enjoy a 10 % reduction all year round » s'applique sans condition de date ni de taille. Méthode : tester chaque offre contre les données du cas."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0085",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.not_mentioned",
+        "english.reading.advert"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p021",
+      "stem": {
+        "fr": "Which of the following is NOT mentioned in the advertisement?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The number of hotel staff"
+          }
+        },
+        {
+          "text": {
+            "fr": "The number of parking spaces"
+          }
+        },
+        {
+          "text": {
+            "fr": "The distance from the railway station"
+          }
+        },
+        {
+          "text": {
+            "fr": "The capacity of the largest room"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Vérification : « ten minutes from Westbridge station », « 8 to 180 delegates », « Parking for 60 cars » sont tous cités. L'annonce mentionne un « event coordinator » mais jamais le nombre d'employés de l'hôtel."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0086",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.main_idea",
+        "english.reading.review"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p022",
+      "stem": {
+        "fr": "What is the reviewer's overall opinion of The Foundry?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "It is not recommended at all"
+          }
+        },
+        {
+          "text": {
+            "fr": "It is ideal as a permanent office"
+          }
+        },
+        {
+          "text": {
+            "fr": "It is worth visiting only for the coffee"
+          }
+        },
+        {
+          "text": {
+            "fr": "It has good facilities but several drawbacks"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Idée générale : la note 3,5/5, la structure « The good / The less good » et la conclusion (« Probably, for a short period ») dessinent un avis nuancé et plutôt positif. Les options extrêmes (« not recommended », « ideal ») ne correspondent pas au ton mesuré du texte."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0087",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.review"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p022",
+      "stem": {
+        "fr": "Why did the reviewer use the coworking space?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "They had just started a new company"
+          }
+        },
+        {
+          "text": {
+            "fr": "Their company's office was being renovated"
+          }
+        },
+        {
+          "text": {
+            "fr": "They were visiting Eastgate for a conference"
+          }
+        },
+        {
+          "text": {
+            "fr": "They wanted a permanent base"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Première phrase : « while my company's office was being renovated ». La base permanente est évoquée seulement en conclusion, comme hypothèse future. Méthode : la raison d'une situation est souvent dans la phrase d'ouverture."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0088",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.vocab_in_context",
+        "english.reading.review"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p022",
+      "stem": {
+        "fr": "The word *dropped* in paragraph 2 is closest in meaning to"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "was cancelled"
+          }
+        },
+        {
+          "text": {
+            "fr": "failed"
+          }
+        },
+        {
+          "text": {
+            "fr": "decreased in price"
+          }
+        },
+        {
+          "text": {
+            "fr": "fell to the floor"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Vocabulaire en contexte** : « the internet never dropped once » figure dans la liste des points positifs ; « drop » pour une connexion = se couper, tomber en panne. Le prix et la chute physique n'ont pas de sens ici — le contexte (liste d'avantages) décide."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0089",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.review"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p022",
+      "stem": {
+        "fr": "How much would a fixed desk cost per month?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "410 euros"
+          }
+        },
+        {
+          "text": {
+            "fr": "290 euros"
+          }
+        },
+        {
+          "text": {
+            "fr": "170 euros"
+          }
+        },
+        {
+          "text": {
+            "fr": "120 euros"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Deux informations à combiner : bureau flexible « 290 euros a month » et bureau fixe « 120 euros more » → 290 + 120 = **410**. Piège : lire 120 comme le prix du bureau fixe, alors que « more » indique un supplément."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0090",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.not_mentioned",
+        "english.reading.review"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p022",
+      "stem": {
+        "fr": "Which of the following does the reviewer NOT complain about?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The price"
+          }
+        },
+        {
+          "text": {
+            "fr": "The size of the kitchen"
+          }
+        },
+        {
+          "text": {
+            "fr": "The internet connection"
+          }
+        },
+        {
+          "text": {
+            "fr": "The heating"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Les plaintes sont dans « The less good » : prix (« not cheap »), cuisine (« too small »), chauffage (« unreliable »), impression. L'internet est au contraire un point fort (« never dropped once »). Méthode : localiser le paragraphe des critiques et cocher les options."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0091",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.form"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p023",
+      "stem": {
+        "fr": "Where can the customer find the model number?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "On the packaging"
+          }
+        },
+        {
+          "text": {
+            "fr": "On the receipt"
+          }
+        },
+        {
+          "text": {
+            "fr": "On the back of the appliance"
+          }
+        },
+        {
+          "text": {
+            "fr": "On a label inside the door"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Section B, entre parenthèses : « Model number (on the label inside the door) ». Sur un formulaire, les indications entre parenthèses ou en petits caractères sont souvent la cible des questions de détail."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0092",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.form"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p023",
+      "stem": {
+        "fr": "How long does the standard warranty last?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "12 months from the date of purchase"
+          }
+        },
+        {
+          "text": {
+            "fr": "Ten working days"
+          }
+        },
+        {
+          "text": {
+            "fr": "24 months from the date of purchase"
+          }
+        },
+        {
+          "text": {
+            "fr": "40 months from the first fault"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Conditions : « covers manufacturing defects for 24 months from the date of purchase ». Les dix jours ouvrés sont le délai de première réponse et 40 est la distance en km — des chiffres présents dans le texte, mais avec un autre sens. Toujours vérifier l'**unité**."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0093",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.form"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p023",
+      "stem": {
+        "fr": "A customer living 60 km from the nearest service centre ticks 'Repair at home'. What is most likely to happen?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The company will collect the appliance free of charge"
+          }
+        },
+        {
+          "text": {
+            "fr": "A replacement will be sent immediately"
+          }
+        },
+        {
+          "text": {
+            "fr": "The claim will be refused"
+          }
+        },
+        {
+          "text": {
+            "fr": "A technician will visit for an additional fee"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Home repairs are available only within 40 km … outside that area, we will arrange collection of the appliance at no cost ». 60 km > 40 km, donc collecte gratuite. Aucun frais supplémentaire ni refus n'est prévu — le remplacement, lui, dépend d'une autre condition (réparation non viable)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0094",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.form"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p023",
+      "stem": {
+        "fr": "Which of the following claims would be rejected under the stated conditions?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A fridge that stopped working after six months"
+          }
+        },
+        {
+          "text": {
+            "fr": "A dishwasher damaged because it was installed incorrectly"
+          }
+        },
+        {
+          "text": {
+            "fr": "A 20-month-old oven whose heating element has failed"
+          }
+        },
+        {
+          "text": {
+            "fr": "A washing machine that leaks, with the receipt attached"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Les exclusions sont explicites : « damage caused by incorrect installation, misuse or normal wear ». Seule la mauvaise installation figure parmi les options ; les autres cas sont des pannes dans les 24 mois, a priori couvertes. Méthode : chercher la phrase des **exclusions** (« does not cover ») et comparer."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0095",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.faq"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p024",
+      "stem": {
+        "fr": "Within what period must an online report of a missing bag be submitted?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "24 hours"
+          }
+        },
+        {
+          "text": {
+            "fr": "21 days"
+          }
+        },
+        {
+          "text": {
+            "fr": "48 hours"
+          }
+        },
+        {
+          "text": {
+            "fr": "7 days"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Première réponse : « Reports made after leaving the airport must be submitted online within 7 days ». 48 heures est le délai habituel pour retrouver un sac, 21 jours celui après lequel il est déclaré perdu. Quatre durées dans le texte : associer chacune à sa règle."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0096",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.faq"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p024",
+      "stem": {
+        "fr": "A passenger's bag arrives 30 hours late. Meanwhile she bought a toothbrush and a designer jacket. What can she claim for?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Both items"
+          }
+        },
+        {
+          "text": {
+            "fr": "Nothing, because the delay was under 48 hours"
+          }
+        },
+        {
+          "text": {
+            "fr": "The toothbrush only"
+          }
+        },
+        {
+          "text": {
+            "fr": "The jacket only"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Deux règles : les achats essentiels sont acceptés pour un retard « of more than 24 hours » (30 h > 24 h, condition remplie) et « Luxury items are not reimbursed ». La brosse à dents est un article de toilette (essentiel), la veste de créateur un article de luxe. Les 48 heures ne sont pas un seuil de remboursement."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0097",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.faq"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p024",
+      "stem": {
+        "fr": "Which type of damage is NOT covered by the airline?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A broken handle"
+          }
+        },
+        {
+          "text": {
+            "fr": "A cracked shell"
+          }
+        },
+        {
+          "text": {
+            "fr": "A torn lining"
+          }
+        },
+        {
+          "text": {
+            "fr": "Worn wheels"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "« Minor scratches and wheel wear are considered normal and are not covered » — l'usure des roulettes est exclue. Poignée, doublure et coque relèvent des dommages réparables ou indemnisables. Repère : « not covered » signale l'exclusion."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0098",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.vocab_in_context",
+        "english.reading.faq"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p024",
+      "stem": {
+        "fr": "The word *treat* in the last answer is closest in meaning to"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "regard"
+          }
+        },
+        {
+          "text": {
+            "fr": "reward"
+          }
+        },
+        {
+          "text": {
+            "fr": "handle carefully"
+          }
+        },
+        {
+          "text": {
+            "fr": "cure"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Vocabulaire en contexte** : « we treat it as lost » = nous le considérons comme perdu. « Treat … as » a le sens de « regard … as », pas celui de soigner ni de récompenser. Le complément « as lost » impose ce sens."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0099",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.main_idea",
+        "english.reading.letter"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p025",
+      "stem": {
+        "fr": "What is the main purpose of the letter?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "To announce planned maintenance work"
+          }
+        },
+        {
+          "text": {
+            "fr": "To respond to a customer's complaint"
+          }
+        },
+        {
+          "text": {
+            "fr": "To explain a price increase"
+          }
+        },
+        {
+          "text": {
+            "fr": "To request payment of an overdue bill"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Idée principale : « Thank you for your letter of 3 May concerning… » puis « I have looked into the matter » — c'est une réponse à une réclamation. Le paiement de 30 euros est versé **au** client, pas réclamé. Méthode : la première phrase d'une lettre formelle en donne presque toujours l'objet."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0100",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.letter"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p025",
+      "stem": {
+        "fr": "Why is Mr Okafor entitled to a payment of 30 euros?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The road was left in poor condition"
+          }
+        },
+        {
+          "text": {
+            "fr": "The interruption lasted longer than twelve hours"
+          }
+        },
+        {
+          "text": {
+            "fr": "The burst main was on his street"
+          }
+        },
+        {
+          "text": {
+            "fr": "He wrote a letter of complaint"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Il faut relier deux phrases : la coupure a duré « just over twelve hours » et la garantie couvre « any unplanned interruption longer than twelve hours ». L'état de la route est traité séparément et ne donne lieu à aucun paiement. Repère : « entitles the customer to » = donne droit à."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0101",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.letter"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p025",
+      "stem": {
+        "fr": "Who is responsible for the permanent repair of the road?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The Water Ombudsman"
+          }
+        },
+        {
+          "text": {
+            "fr": "Northern Water's engineers"
+          }
+        },
+        {
+          "text": {
+            "fr": "The local council"
+          }
+        },
+        {
+          "text": {
+            "fr": "The company's contractor"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Paragraphe 3 : « the temporary repair is the responsibility of our contractor, who is required to complete a permanent repair within 28 days ». Les ingénieurs ont réparé la conduite, pas la chaussée ; l'Ombudsman est un recours, pas un réparateur."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0102",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.letter"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p025",
+      "stem": {
+        "fr": "What does the letter imply about the 30-euro payment?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "It should have been made without the customer having to ask"
+          }
+        },
+        {
+          "text": {
+            "fr": "It depends on the Ombudsman's decision"
+          }
+        },
+        {
+          "text": {
+            "fr": "It will be sent as a cheque"
+          }
+        },
+        {
+          "text": {
+            "fr": "It has already been paid in cash"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Inférence fine : « I apologise that this was not applied automatically » — l'entreprise reconnaît que le paiement aurait dû être fait d'office. Il sera « credited to your next bill », donc ni en espèces ni par chèque, et l'Ombudsman n'intervient qu'en cas d'insatisfaction. Méthode : une excuse révèle ce qui **aurait dû** se passer."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0103",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.instructions"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p026",
+      "stem": {
+        "fr": "Where will the new employee find the activation code?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "In the staff handbook"
+          }
+        },
+        {
+          "text": {
+            "fr": "Printed on the badge"
+          }
+        },
+        {
+          "text": {
+            "fr": "In an email to their personal address"
+          }
+        },
+        {
+          "text": {
+            "fr": "At the reception desk"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Étape 3 : « the six-digit code sent to your personal email address ». La réception n'intervient que si le code a **expiré** (« ask reception to issue a new one ») — c'est le distracteur. Méthode : distinguer la règle générale du cas particulier."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0104",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.instructions"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p026",
+      "stem": {
+        "fr": "When is the four-digit PIN required?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "To activate the badge at the terminal"
+          }
+        },
+        {
+          "text": {
+            "fr": "Every time any door is used"
+          }
+        },
+        {
+          "text": {
+            "fr": "To open certain doors late in the evening"
+          }
+        },
+        {
+          "text": {
+            "fr": "To enter the reception area"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Étape 4 : le PIN sert pour « the server room, the print room and any door after 8 p.m. ». Il n'est donc pas demandé à chaque porte ni à l'activation (qui utilise le code à six chiffres). Attention à ne pas confondre **code** (six chiffres, activation) et **PIN** (quatre chiffres, accès)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0105",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.instructions"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p026",
+      "stem": {
+        "fr": "In which situation would an employee NOT have to pay for a replacement badge?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A badge damaged in a washing machine"
+          }
+        },
+        {
+          "text": {
+            "fr": "A badge lost on the tram"
+          }
+        },
+        {
+          "text": {
+            "fr": "A badge left in a restaurant"
+          }
+        },
+        {
+          "text": {
+            "fr": "A badge stolen and reported to the police"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Dernière phrase : « Replacement badges cost 15 euros, except in cases of theft reported to the police ». Seul le vol **déclaré à la police** est exempté ; une perte ou une dégradation reste payante. Repère : « except » introduit l'unique exception."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0106",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.instructions"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p026",
+      "stem": {
+        "fr": "What should an employee do if a door refuses the badge just after activation?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Wait briefly and try again"
+          }
+        },
+        {
+          "text": {
+            "fr": "Go to a different terminal"
+          }
+        },
+        {
+          "text": {
+            "fr": "Request a new activation code"
+          }
+        },
+        {
+          "text": {
+            "fr": "Call extension 2200"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Étape 5 : « If it is refused, wait two minutes and try again — activation can take a short time to reach every reader ». L'extension 2200 est réservée aux badges perdus ou volés, et un nouveau code ne sert que si le premier a expiré. Méthode : associer chaque action à la **situation** décrite."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    }
+  ]
+}

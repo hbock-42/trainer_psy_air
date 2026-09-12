@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.spatial_overlay.01",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "spatial_overlay",
+  "order": 1,
+  "title": { "fr": "Formes glissées : l'algèbre des superpositions" },
+  "summary": { "fr": "Les trois règles de superposition marine/gris lues comme une parité, les placements forcés d'abord, et une vérification case par case." },
+  "file": { "fr": "lessons/spatial_overlay/01-formes-glissees.fr.md" },
+  "estimatedReadMin": 9,
+  "difficulty": 4,
+  "tags": ["spatial_overlay", "spatial_overlay.strategy"],
+  "practiceTags": ["spatial_overlay"],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 E" }
+}

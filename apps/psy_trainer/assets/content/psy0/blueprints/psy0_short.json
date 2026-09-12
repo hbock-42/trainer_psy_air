@@ -1,0 +1,145 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/blueprint.schema.json",
+  "kind": "blueprint",
+  "id": "psy0.blueprint.short",
+  "version": 1,
+  "moduleId": "psy0",
+  "name": { "fr": "PSY0 — échauffement (~20 min)", "en": "PSY0 — warm-up (~20 min)" },
+  "description": {
+    "fr": "Neuf activités raccourcies dans l'ordre du vrai test, pour une répétition quotidienne. Mêmes cadences et temps par item que la simulation complète, volumes réduits. Durées **estimées**.",
+    "en": "Nine shortened activities in the order of the real test, for a daily rehearsal. Same cadences and per-item times as the full rehearsal, reduced volumes. Timings are **estimated**."
+  },
+  "confidence": "assumed",
+  "tags": ["blueprint.short"],
+  "briefingSec": 0,
+  "sections": [
+    {
+      "id": "s01-nback",
+      "familyId": "memory_nback",
+      "itemCount": 42,
+      "sectionTimeSec": 105,
+      "cadence": { "stimulusMs": 1000, "answerWindowMs": 1500 },
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "nback",
+        "difficulty": { "min": 3, "max": 3 },
+        "params": { "n": 2, "stimulusKind": "colour", "paletteSize": 3, "count": 42, "primers": 2 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s02-rules",
+      "familyId": "attention_rules",
+      "itemCount": 24,
+      "sectionTimeSec": 75,
+      "cadence": { "stimulusMs": 500, "answerWindowMs": 3000 },
+      "liveFeedback": true,
+      "inputRequirement": "keyboard",
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "stimulus_response",
+        "difficulty": { "min": 3, "max": 3 },
+        "params": { "count": 24 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s03-parity",
+      "familyId": "attention_parity",
+      "itemCount": 2,
+      "sectionTimeSec": 120,
+      "perItemTimeSec": 60,
+      "liveFeedback": true,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "parity_sequence",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "numberCount": 16 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s04-grids",
+      "familyId": "arithmetic_grid",
+      "itemCount": 4,
+      "sectionTimeSec": 180,
+      "perItemTimeSec": 45,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "arithmetic_grid",
+        "difficulty": { "min": 2, "max": 4 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s05-viewpoint",
+      "familyId": "spatial_viewpoint",
+      "itemCount": 6,
+      "sectionTimeSec": 90,
+      "perItemTimeSec": 15,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "viewpoint",
+        "difficulty": { "min": 2, "max": 4 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s06-cubes",
+      "familyId": "spatial_cubes",
+      "itemCount": 2,
+      "sectionTimeSec": 120,
+      "perItemTimeSec": 60,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "cube_net",
+        "difficulty": { "min": 2, "max": 4 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s07-dominos",
+      "familyId": "logic_dominos",
+      "itemCount": 5,
+      "sectionTimeSec": 150,
+      "perItemTimeSec": 30,
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "dominos",
+        "difficulty": { "min": 2, "max": 4 }
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s08-culture",
+      "familyId": "culture_aero",
+      "itemCount": 12,
+      "sectionTimeSec": 220,
+      "perItemTimeSec": 18,
+      "itemSelection": {
+        "mode": "bank",
+        "difficulty": { "min": 2, "max": 5 },
+        "balanceByTagPrefix": "culture",
+        "avoidRecentSessions": 3
+      },
+      "confidence": "assumed"
+    },
+    {
+      "id": "s09-english-reading",
+      "familyId": "english",
+      "itemCount": 6,
+      "sectionTimeSec": 240,
+      "itemSelection": {
+        "mode": "bank",
+        "difficulty": { "min": 2, "max": 4 },
+        "tags": ["english.reading"],
+        "avoidRecentSessions": 3
+      },
+      "confidence": "assumed"
+    }
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §3.2 (US-080); transcribed in US-015, to validate/adjust in US-060",
+    "notes": "≈ 21 min 40 s of activity plus briefings. The english_reading section should draw one passage with its linked questions (US-027)."
+  }
+}

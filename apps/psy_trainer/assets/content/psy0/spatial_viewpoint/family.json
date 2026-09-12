@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "spatial_viewpoint",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 10,
+  "name": {
+    "fr": "Objets 3D — point de vue",
+    "en": "3-D objects — viewpoint"
+  },
+  "shortName": {
+    "fr": "Point de vue",
+    "en": "Viewpoint"
+  },
+  "description": {
+    "fr": "Une scène en trois dimensions et 8 points de vue numérotés répartis sur un cercle. Cliquez le point de vue depuis lequel l'image a été prise.",
+    "en": "A three-dimensional scene and 8 numbered viewpoints on a circle. Click the viewpoint the picture was taken from."
+  },
+  "engineType": "spatial_viewpoint",
+  "generatorId": "viewpoint",
+  "answerFormat": "mcq",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 150,
+  "defaultItemCount": 10,
+  "defaultPerItemTimeSec": 15,
+  "confidence": "reported",
+  "tags": [
+    "spatial"
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §2.4-K, §3.1 row 10 (10 items, 10-15 s reported)"
+  }
+}

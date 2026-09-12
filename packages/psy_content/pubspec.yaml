@@ -1,0 +1,28 @@
+name: psy_content
+description: >
+  Content domain model (US-010, contract v2 in US-015) and validator (US-014)
+  for the PSY Trainer content bundles: pure Dart, no Flutter dependency.
+publish_to: 'none'
+version: 1.0.0
+
+# Part of the psy_trainer_workspace pub workspace (US-007): resolved together
+# with every other member from the single lockfile at the repo root
+# (`dart pub get` at the root, not here).
+resolution: workspace
+
+environment:
+  sdk: ^3.11.4
+
+dependencies:
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.12.0
+  path: ^1.9.1
+  # JSON Schema draft 2020-12 validation for bin/validate_content.dart.
+  json_schema: ^5.2.2
+
+dev_dependencies:
+  test: ^1.25.0
+  lints: ^6.0.0
+  build_runner: ^2.15.1
+  freezed: ^3.2.3
+  json_serializable: ^6.11.2

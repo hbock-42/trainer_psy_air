@@ -1,0 +1,921 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "culture_aero",
+  "items": [
+    {
+      "id": "cult.pilot_job_cadet_path.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 1,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.selection"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Dans la sélection Cadets Air France, que désigne la phase « PSY0 » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "La pré-sélection en ligne, à distance, avec tests de logique, culture aéronautique et anglais"
+          }
+        },
+        {
+          "text": {
+            "fr": "L'entretien individuel final à Roissy"
+          }
+        },
+        {
+          "text": {
+            "fr": "La journée de tests psychomoteurs à l'ENAC"
+          }
+        },
+        {
+          "text": {
+            "fr": "La visite médicale de classe 1"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**PSY0** est la pré-sélection : une épreuve **en ligne et à distance**, le premier week-end de septembre, mêlant logique, raisonnement, culture générale aéronautique et anglais renforcé ; elle produit un **classement** des candidats invités à la suite. PSY1 = psychotechnique/psychomoteur, PSY2 = personnalité, groupe et entretien."
+      },
+      "validAsOf": "2026-09-11",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Pilote de ligne / filière Cadets (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/pilote-de-ligne",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.selection"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Où et quand se déroule la phase PSY1 de la sélection Cadets ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "En ligne, sur une fenêtre de 36 h en septembre"
+          }
+        },
+        {
+          "text": {
+            "fr": "Sur une journée pendant les vacances de la Toussaint, à l'ENAC"
+          }
+        },
+        {
+          "text": {
+            "fr": "À Roissy-CDG, en janvier"
+          }
+        },
+        {
+          "text": {
+            "fr": "Dans l'école partenaire, à l'entrée en formation"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**PSY1** regroupe les tests **psychotechniques et psychomoteurs** sur **une journée pendant les vacances de la Toussaint**, en présentiel (à l'ENAC à Toulouse selon les candidats). PSY2 suit en début d'année suivante à Roissy-CDG, au service sélection d'Air France."
+      },
+      "validAsOf": "2026-09-11",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Pilote de ligne / filière Cadets (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/pilote-de-ligne",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.selection"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "De quoi se compose la phase PSY2 de la sélection Cadets Air France ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Un test d'anglais TOEIC et une séance de simulateur"
+          }
+        },
+        {
+          "text": {
+            "fr": "Une journée de tests psychomoteurs sur joystick"
+          }
+        },
+        {
+          "text": {
+            "fr": "Deux inventaires de personnalité, une épreuve de groupe et un entretien individuel"
+          }
+        },
+        {
+          "text": {
+            "fr": "Un examen théorique ATPL blanc"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**PSY2** se tient à Roissy-CDG : **deux inventaires de personnalité, une épreuve de groupe** (sous charte de confidentialité) et **un entretien individuel** avec psychologues et pilotes. Une commission de recrutement statue ensuite sur la réussite ou l'ajournement."
+      },
+      "validAsOf": "2026-09-11",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Pilote de ligne / filière Cadets (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/pilote-de-ligne",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.rules"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien d'échecs en PSY0 entraînent l'élimination définitive de la filière Cadet Air France ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "1"
+          }
+        },
+        {
+          "text": {
+            "fr": "2"
+          }
+        },
+        {
+          "text": {
+            "fr": "Aucun, PSY0 peut être repassé sans limite"
+          }
+        },
+        {
+          "text": {
+            "fr": "3"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Règles d'élimination de la filière Cadet : **3 échecs en PSY0** ou **2 échecs en PSY1** ferment définitivement cette filière (la filière Pilote professionnel reste accessible). Un ajournement en PSY2 permet une nouvelle présentation après un ou deux ans selon la commission."
+      },
+      "validAsOf": "2026-09-11",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Pilote de ligne / filière Cadets (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/pilote-de-ligne",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.eligibility"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle licence un candidat ne doit-il PAS détenir à la clôture des inscriptions Cadets Air France ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Le CPL(A)"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le PPL(A)"
+          }
+        },
+        {
+          "text": {
+            "fr": "L'ATPL théorique"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le brevet de base"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "La filière Cadet vise des candidats **peu ou pas expérimentés** : seuls le **PPL** et/ou l'**ATPL théorique** sont acceptés ; un titulaire de **CPL(A)** à la clôture des inscriptions est exclu (il relève de la filière Pilote professionnel, comme les pilotes militaires brevetés)."
+      },
+      "validAsOf": "2026-09-11",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Pilote de ligne / filière Cadets (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/pilote-de-ligne",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.eligibility"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel certificat médical est exigé au moment du dépôt de candidature Cadets, et lequel avant l'entrée en formation ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Classe 1 au dossier, classe 1 renouvelée avant la formation"
+          }
+        },
+        {
+          "text": {
+            "fr": "Classe 2 au dossier, classe 1 avant la formation"
+          }
+        },
+        {
+          "text": {
+            "fr": "Aucun au dossier, classe 2 avant la formation"
+          }
+        },
+        {
+          "text": {
+            "fr": "LAPL au dossier, classe 2 avant la formation"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Au dépôt du dossier, une aptitude de **classe 2** en cours de validité suffit (une classe 1 est acceptée) ; la **classe 1**, obligatoire pour le transport commercial, est exigée **avant l'entrée en école**. Réflexe : classe 2 pour candidater, classe 1 pour voler pro."
+      },
+      "validAsOf": "2026-09-11",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Pilote de ligne / filière Cadets (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/pilote-de-ligne",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.eligibility"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Depuis la campagne Cadets 2026, comment le niveau d'anglais des candidats est-il évalué ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Par un TOEIC d'au moins 850 points fourni au dossier"
+          }
+        },
+        {
+          "text": {
+            "fr": "Par un entretien en anglais lors du PSY2 uniquement"
+          }
+        },
+        {
+          "text": {
+            "fr": "Par une épreuve d'anglais renforcé intégrée au PSY0, obligatoire pour tous"
+          }
+        },
+        {
+          "text": {
+            "fr": "Il n'est plus évalué avant l'entrée en formation"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "À partir de l'offre 2026, le **TOEIC n'est plus exigé** : une épreuve d'**anglais renforcé** intégrée au PSY0 évalue *listening*, *reading* et *speaking*, pour tous les candidats. Le TOEIC ≥ 850 reste un critère de la filière Pilote professionnel."
+      },
+      "validAsOf": "2026-09-11",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Pilote de ligne / filière Cadets (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/pilote-de-ligne",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.training"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Comment se structure la formation d'un cadet Air France en école partenaire ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "12 mois de vol puis 12 mois de théorie ATPL"
+          }
+        },
+        {
+          "text": {
+            "fr": "6 mois de théorie puis qualification de type directe sur A320"
+          }
+        },
+        {
+          "text": {
+            "fr": "24 mois de simulateur sans vol réel"
+          }
+        },
+        {
+          "text": {
+            "fr": "9 mois de théorie ATPL puis 15 à 21 mois de vol et simulateur (CPL, IR/ME, MCC)"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "La formation dure **2 à 2,5 ans à temps complet** : **9 mois de théorie ATPL** puis **15 à 21 mois** de vol et simulateur (CPL, IR/ME, MCC), soit environ **150 h de vol et 80 h de simulateur**. L'école (ATO) est choisie par Air France."
+      },
+      "validAsOf": "2026-09-11",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Pilote de ligne / filière Cadets (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/pilote-de-ligne",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.training"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel statut contractuel et quelle rémunération sont prévus pour un cadet Air France pendant sa formation ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Contrat de professionnalisation en CDI, rémunéré de 65 % à 100 % du SMIC selon l'âge, logé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Stage non rémunéré, formation à la charge du cadet"
+          }
+        },
+        {
+          "text": {
+            "fr": "CDD de 24 mois payé au SMIC, remboursement en cas d'échec"
+          }
+        },
+        {
+          "text": {
+            "fr": "Contrat d'apprentissage rémunéré 50 % du SMIC"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le cadet signe un **contrat de professionnalisation en CDI** : formation entièrement financée, rémunération de **65 % du SMIC (moins de 21 ans), 80 % (21-26 ans), 100 % (plus de 26 ans)**, logement assuré en école, 5 semaines de congés par an. En cas d'échec (≈ 5 % des cas), aucun remboursement n'est exigé."
+      },
+      "validAsOf": "2026-09-11",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Pilote de ligne / filière Cadets (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/pilote-de-ligne",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.assignment"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "À l'issue de sa formation, sur quels avions un cadet Air France peut-il être affecté ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A350 ou 777 en long-courrier, au choix"
+          }
+        },
+        {
+          "text": {
+            "fr": "A220 ou A320 chez Air France, 737 ou A320neo chez Transavia, selon les besoins"
+          }
+        },
+        {
+          "text": {
+            "fr": "Embraer chez HOP! uniquement"
+          }
+        },
+        {
+          "text": {
+            "fr": "A380 après un an de ligne"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Les jeunes pilotes débutent en **moyen-courrier** : sous contrat Air France sur **A220/A320**, ou détachés chez **Transavia** sur **737/A320neo**. L'affectation et le type avion **ne se choisissent pas** ; la carrière AF/Transavia est gérée sur une **liste unique**. HOP! recrute séparément."
+      },
+      "validAsOf": "2026-09-11",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Pilote de ligne / filière Cadets (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/pilote-de-ligne",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.career"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est l'ordre classique de progression d'un pilote entrant chez Air France ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Commandant moyen-courrier → copilote long-courrier → commandant long-courrier"
+          }
+        },
+        {
+          "text": {
+            "fr": "Copilote long-courrier → copilote moyen-courrier → commandant"
+          }
+        },
+        {
+          "text": {
+            "fr": "Officier pilote de ligne moyen-courrier → OPL long-courrier → commandant de bord"
+          }
+        },
+        {
+          "text": {
+            "fr": "Commandant de bord dès l'embauche sur avion régional"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "La carrière commence comme **Officier Pilote de Ligne** (copilote) sur **moyen-courrier**, se poursuit en **long-courrier**, avant l'accès à la fonction de **Commandant de bord**. À l'arrivée, le pilote suit le stage **SADE** (adaptation à l'exploitant) puis une qualification de type au simulateur."
+      },
+      "validAsOf": "2026-09-11",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Pilote de ligne / filière Cadets (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/pilote-de-ligne",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.licences"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Que signifie l'expression « ATPL frozen » pour un jeune copilote ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Une ATPL suspendue pour raison médicale"
+          }
+        },
+        {
+          "text": {
+            "fr": "Une ATPL limitée aux vols de nuit"
+          }
+        },
+        {
+          "text": {
+            "fr": "Une licence valable uniquement en simulateur"
+          }
+        },
+        {
+          "text": {
+            "fr": "Un CPL/IR avec ATPL théorique réussie, en attendant les 1 500 h nécessaires à l'ATPL complète"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Le parcours de licences : PPL → CPL → IR → ME → MCC, avec l'**ATPL théorique** validée. Le pilote est alors « **ATPL frozen** » : il peut voler copilote ; l'ATPL devient « unfrozen » (délivrée) à **1 500 h** de vol dont des heures en équipage et de nuit, condition pour être commandant de bord."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.medical"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle est la durée de validité d'un certificat médical de classe 1 pour un pilote de ligne de moins de 40 ans ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "12 mois"
+          }
+        },
+        {
+          "text": {
+            "fr": "6 mois"
+          }
+        },
+        {
+          "text": {
+            "fr": "24 mois"
+          }
+        },
+        {
+          "text": {
+            "fr": "60 mois"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "La **classe 1** est valable **12 mois**, ramenés à **6 mois** après 60 ans (et après 40 ans en exploitation monopilote commerciale). La classe 2, pour le vol privé, vaut 60 mois avant 40 ans. Réflexe : classe 1 = visite annuelle."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.english"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Sur l'échelle OACI de compétence linguistique (FCL .055), quel niveau dispense de tout renouvellement ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Niveau 4"
+          }
+        },
+        {
+          "text": {
+            "fr": "Niveau 6"
+          }
+        },
+        {
+          "text": {
+            "fr": "Niveau 5"
+          }
+        },
+        {
+          "text": {
+            "fr": "Niveau 3"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "L'échelle va de 1 à 6 ; le **niveau 4** (opérationnel) est le minimum pour voler en radio anglaise et se renouvelle tous les **4 ans**, le **niveau 5** tous les **6 ans**, le **niveau 6** (expert) est **permanent**. Air France exige au moins le niveau 5 pour sa filière Pilote professionnel."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.crew"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Qui détient l'autorité finale sur l'équipage et les passagers pendant un vol commercial ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Le chef de cabine"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le contrôleur aérien"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le commandant de bord"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le dispatcheur de la compagnie"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Le **commandant de bord** a autorité sur l'ensemble de l'équipage et des passagers et prend toutes les décisions, de la préparation à la clôture du vol ; sa priorité est la sécurité et la sûreté. L'**Officier Pilote de Ligne** (copilote) est le second dans l'ordre hiérarchique."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 5,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.ftl"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Selon les limitations européennes de temps de vol (FTL), quel est le maximum d'heures de vol d'un pilote de ligne par année civile ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "600 h"
+          }
+        },
+        {
+          "text": {
+            "fr": "1 000 h"
+          }
+        },
+        {
+          "text": {
+            "fr": "1 200 h"
+          }
+        },
+        {
+          "text": {
+            "fr": "900 h"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Les **FTL** (*Flight Time Limitations*, règlement Air OPS) plafonnent le temps de vol à **900 h par année civile** (1 000 h sur 12 mois glissants) et **100 h sur 28 jours**, avec des règles de repos associées. Ces limites protègent contre la fatigue, facteur majeur de risque."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.figures"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Depuis la relance du programme Cadets en 2018, combien de jeunes pilotes Air France a-t-elle formés ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Plus de 300"
+          }
+        },
+        {
+          "text": {
+            "fr": "Une cinquantaine"
+          }
+        },
+        {
+          "text": {
+            "fr": "Environ 1 000"
+          }
+        },
+        {
+          "text": {
+            "fr": "Plus de 3 000"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Air France communique sur **plus de 300 cadets formés depuis 2018**, à raison de quelques dizaines à une centaine par campagne, et **25 % de femmes** parmi les cadets sélectionnés en 2025. Réflexe : ordre de grandeur « quelques centaines », pas des milliers."
+      },
+      "validAsOf": "2026-09-11",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Aérométiers — Air France ouvre les candidatures de son programme Cadets 2026",
+            "url": "https://www.aerometiers.fr/actualites/devenir-pilote-de-ligne-air-france-ouvre-les-candidatures-de-son-programme-cadets-2026",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.pilot_job_cadet_path.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.pilot_job_cadet_path",
+        "culture.pilot_job_cadet_path.eligibility"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle affirmation sur les conditions d'accès à la sélection Cadets Air France est exacte ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Il faut avoir moins de 30 ans"
+          }
+        },
+        {
+          "text": {
+            "fr": "Il faut être de nationalité d'un État de l'EEE ou suisse, avec un casier judiciaire vierge"
+          }
+        },
+        {
+          "text": {
+            "fr": "Il faut déjà détenir un CPL et 200 h de vol"
+          }
+        },
+        {
+          "text": {
+            "fr": "La candidature se dépose par courrier avec un chèque de 200 €"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Conditions : nationalité **EEE ou suisse**, français courant, **casier judiciaire vierge**, diplôme requis (bac + ATPL théorique, CPGE, bac+2 scientifique ou M1), classe 2 au dossier, **pas de CPL**. Il n'y a **pas de limite d'âge** (Air France signale seulement des difficultés statistiquement plus fréquentes après 35 ans) ; les frais de 200 € se règlent en ligne, les boursiers étant exonérés."
+      },
+      "validAsOf": "2026-09-11",
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Pilote de ligne / filière Cadets (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/pilote-de-ligne",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    }
+  ]
+}

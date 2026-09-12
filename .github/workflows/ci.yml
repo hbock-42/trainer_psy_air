@@ -34,30 +34,36 @@ jobs:
           cache: true
           pub-cache-key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
 
-      - name: Fetch packages
-        run: flutter pub get
+      # US-007: pub workspace, single pubspec.lock at the root resolves the
+      # app (apps/psy_trainer) and the content package (packages/psy_content)
+      # together.
+      - name: Fetch packages (whole workspace)
+        run: dart pub get
 
       - name: Code generation
-        run: dart run build_runner build --delete-conflicting-outputs
+        run: |
+          (cd apps/psy_trainer && dart run build_runner build --delete-conflicting-outputs)
+          (cd packages/psy_content && dart run build_runner build --delete-conflicting-outputs)
 
       - name: Format check
         # Same scope as `make lint`; generated files are emitted formatted.
-        run: dart format --output=none --set-exit-if-changed lib test
+        run: |
+          dart format --output=none --set-exit-if-changed apps/psy_trainer/lib apps/psy_trainer/test tools
+          dart format --output=none --set-exit-if-changed packages/psy_content/lib packages/psy_content/test packages/psy_content/bin
 
       - name: Analyze
-        run: flutter analyze --fatal-infos
+        run: |
+          (cd apps/psy_trainer && flutter analyze --fatal-infos)
+          (cd packages/psy_content && dart analyze --fatal-infos)
 
       - name: Validate content
-        # Added by US-014; skipped until the validator exists.
-        run: |
-          if [ -f tool/validate_content.dart ]; then
-            dart run tool/validate_content.dart
-          else
-            echo "tool/validate_content.dart not present, skipping content validation"
-          fi
+        run: dart run psy_content:validate_content apps/psy_trainer/assets/content
 
       - name: Test
-        run: flutter test --coverage
+        run: |
+          (cd apps/psy_trainer && flutter test --coverage)
+          (cd packages/psy_content && dart test)
+          dart test tools/test
 
       - name: Upload golden failures
         # Golden mismatches write <name>_masterImage/_testImage/_isolatedDiff
@@ -67,23 +73,23 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: golden-failures
-          path: test/goldens/failures
+          path: apps/psy_trainer/test/goldens/failures
           if-no-files-found: ignore
           retention-days: 14
 
       - name: Coverage gate
-        run: dart run tool/coverage_gate.dart --min 70
+        run: dart run tools/coverage_gate.dart --file apps/psy_trainer/coverage/lcov.info --min 70
 
       - name: Build web
         # Web is an exam-mode target (US-006); a release build is fast enough to
         # run on every PR. Desktop builds are not run in CI.
-        run: flutter build web --release
+        run: cd apps/psy_trainer && flutter build web --release
 
       - name: Upload coverage
         uses: actions/upload-artifact@v4
         with:
           name: coverage
-          path: coverage/lcov.info
+          path: apps/psy_trainer/coverage/lcov.info
           if-no-files-found: warn
           retention-days: 14
 
@@ -119,18 +125,20 @@ jobs:
           cache: true
           pub-cache-key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
 
-      - name: Fetch packages
-        run: flutter pub get
+      - name: Fetch packages (whole workspace)
+        run: dart pub get
 
       - name: Code generation
         run: dart run build_runner build --delete-conflicting-outputs
+        working-directory: apps/psy_trainer
 
       - name: Build debug APK
         run: flutter build apk --debug
+        working-directory: apps/psy_trainer
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-debug-apk
-          path: build/app/outputs/flutter-apk/app-debug.apk
+          path: apps/psy_trainer/build/app/outputs/flutter-apk/app-debug.apk
           retention-days: 14

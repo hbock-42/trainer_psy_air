@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "logic_dominos",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 6,
+  "name": {
+    "fr": "Dominos",
+    "en": "Dominoes"
+  },
+  "shortName": {
+    "fr": "Dominos",
+    "en": "Dominoes"
+  },
+  "description": {
+    "fr": "Une série ou une disposition de dominos suit une ou plusieurs lois (arithmétique modulo 7, alternances, symétries). Reconstituez le domino manquant en choisissant ses deux moitiés (0 à 6).",
+    "en": "A series or arrangement of dominoes follows one or more rules (modulo-7 arithmetic, alternation, symmetry). Rebuild the missing domino by picking its two halves (0 to 6)."
+  },
+  "engineType": "logic_dominos",
+  "generatorId": "dominos",
+  "answerFormat": "mcq",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 480,
+  "defaultItemCount": 16,
+  "defaultPerItemTimeSec": 30,
+  "confidence": "assumed",
+  "tags": [
+    "logic"
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §2.4-G, §3.1 row 6 (present 2024-2026; count assumed, Pilotest trains 20 in 10 min)"
+  }
+}

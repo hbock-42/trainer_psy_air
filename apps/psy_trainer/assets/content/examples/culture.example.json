@@ -1,0 +1,66 @@
+{
+  "$schema": "../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "culture_aero",
+  "items": [
+    {
+      "id": "culture_aero.flight_mechanics.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.flight_mechanics", "culture.flight_mechanics.stall"],
+      "stem": { "fr": "En virage à 60° d'inclinaison en palier, le facteur de charge vaut 2. La vitesse de décrochage est multipliée par environ :" },
+      "options": [
+        { "text": { "fr": "1,2" } },
+        { "text": { "fr": "1,4" } },
+        { "text": { "fr": "2" } },
+        { "text": { "fr": "4" } }
+      ],
+      "correctIndex": 1,
+      "shuffleOptions": false,
+      "allowSkip": true,
+      "explanation": {
+        "fr": "La vitesse de décrochage varie comme la **racine carrée du facteur de charge** : √2 ≈ 1,41. Réflexe : 60° d'inclinaison → n = 2 → Vs × 1,4 ; 45° → n ≈ 1,41 → Vs × 1,19."
+      },
+      "meta": {
+        "author": "hbock",
+        "sources": [{ "title": "Manuel du pilote d'avion (Cépaduès), chapitre mécanique du vol" }]
+      }
+    },
+    {
+      "id": "culture_aero.af_fleet_figures.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.af_fleet_figures", "culture.af_fleet_figures.cadets"],
+      "stem": { "fr": "Depuis la relance du programme Cadets en 2018, combien de cadets Air France a-t-elle recrutés (ordre de grandeur, campagne 2025) ?" },
+      "options": [
+        { "text": { "fr": "Une cinquantaine" } },
+        { "text": { "fr": "Plus de 300" } },
+        { "text": { "fr": "Environ 1 000" } },
+        { "text": { "fr": "Plus de 2 000" } }
+      ],
+      "correctIndex": 1,
+      "allowSkip": true,
+      "validAsOf": "2026-09-11",
+      "explanation": {
+        "fr": "Air France indique **plus de 300 cadets** recrutés depuis 2018 (communiqué d'ouverture de la campagne 2025), soit environ 80 à 105 par campagne. Chiffre périssable : vérifiez la date de validité affichée."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "docs/content/psy0-spec.md §1 (S3)",
+        "sources": [
+          {
+            "title": "Air France Corporate — Devenez Pilote : la campagne de recrutement du programme Cadets est ouverte !",
+            "url": "https://corporate.airfrance.com/fr/actualites/devenez-pilote-la-campagne-de-recrutement-du-programme-cadets-est-ouverte",
+            "accessedOn": "2026-09-11"
+          }
+        ],
+        "reviewedBy": "hbock",
+        "reviewedAt": "2026-09-11"
+      }
+    }
+  ]
+}

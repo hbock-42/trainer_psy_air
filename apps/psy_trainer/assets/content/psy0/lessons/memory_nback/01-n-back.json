@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.memory_nback.01",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "memory_nback",
+  "order": 1,
+  "title": { "fr": "Mémoire N-back : tenir le rythme sans se perdre" },
+  "summary": { "fr": "Format 2-back couleurs, méthode du « train de wagons », gestion des leurres et routine d'échauffement." },
+  "file": { "fr": "lessons/memory_nback/01-n-back.fr.md" },
+  "estimatedReadMin": 9,
+  "difficulty": 2,
+  "tags": ["memory_nback", "memory_nback.strategy", "memory.n_back"],
+  "practiceTags": ["memory_nback"],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 A" }
+}

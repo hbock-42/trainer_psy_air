@@ -3,14 +3,18 @@
 How to write items, lessons, flashcards and exam blueprints for the PSY trainer.
 You do not need Flutter or Dart: content is JSON + Markdown validated by a script.
 The data model itself is described in [CONTRACT.md](CONTRACT.md); the machine-readable
-rules are the JSON Schemas in [`schema/`](schema/). Valid examples of every file type live in
-[`assets/content/examples/`](../../assets/content/examples/) — copy one to start.
+rules are the JSON Schemas in [`packages/psy_content/schema/`](../../packages/psy_content/schema/)
+(US-007 moved them out of `docs/`). Valid examples of every file type live in
+[`apps/psy_trainer/assets/content/examples/`](../../apps/psy_trainer/assets/content/examples/) — copy one to start.
 
 Legal reminder: the app is an unofficial trainer. **Never reproduce copyrighted test
 material** (real Air France / ENAC / publisher items). Write your own items in the same
 spirit; note your source in `meta.source`.
 
 ## 1. Where files go (content bundle layout)
+
+The bundle lives inside the app package (`apps/psy_trainer/`, US-007: Flutter needs its
+assets in the declaring package). Paths below are relative to `apps/psy_trainer/`.
 
 ```
 assets/content/
@@ -70,10 +74,11 @@ Rules:
 - Every JSON file starts with `"kind"` so the validator and the seeder know what it is.
 - **New folder = pubspec entry.** Flutter bundles assets per folder, so after creating a family
   folder, a `lessons/<family>/` folder or an `items/`, `decks/`, `lexical_fields/` or `media/`
-  subfolder, run `make content-assets` (`dart run tool/list_content_assets.dart --write`) to update the list in
-  `pubspec.yaml` (`test/tool/list_content_assets_test.dart` fails otherwise; the seeder reports
+  subfolder, run `make content-assets` (`dart run tools/list_content_assets.dart --write`,
+  from the repo root) to update the list in `apps/psy_trainer/pubspec.yaml`
+  (`tools/test/list_content_assets_test.dart` fails otherwise; the seeder reports
   a declared module or a lesson `.md` file it cannot find with a hint to that command).
-- Add `"$schema": "../../../../docs/content/schema/<kind>.schema.json"` at the top to get
+- Add `"$schema": "../../../../../../packages/psy_content/schema/<kind>.schema.json"` at the top to get
   editor autocompletion (VS Code understands it). It is ignored by the app.
 
 ## 2. Ids
@@ -169,7 +174,7 @@ One item = one JSON object inside a bank file's `items` array. Common fields:
   calibration sets (US-086). Everyday practice/exam items are generated on the fly from the
   blueprint or the family defaults, not from bank files.
 - `difficulty` is the level you *expect*; the validator (later) checks the generator agrees.
-- `params` is **typed per generator** (`docs/content/schema/generators.schema.json`): only the
+- `params` is **typed per generator** (`packages/psy_content/schema/generators.schema.json`): only the
   keys of that generator are allowed, and every key you omit takes the **real-test default**
   below, so `"params": {}` (or no `params` at all) is the real test. Same
   `(generatorId, seed, params)` ⇒ same item, always. Never put the answer in `params`.
@@ -309,8 +314,8 @@ Lessons and decks reuse the same tags so the "Try it" button and weak-area recom
 Run the validator from the repo root (Flutter SDK installed, no Node needed):
 
 ```sh
-dart run tool/validate_content.dart            # whole bundle: assets/content/
-dart run tool/validate_content.dart assets/content/psy0/english   # one folder or file
+dart run psy_content:validate_content apps/psy_trainer/assets/content        # whole bundle
+dart run psy_content:validate_content apps/psy_trainer/assets/content/psy0/english   # one folder or file
 make content-check                             # same, via the Makefile (PATHS=... to narrow)
 ```
 
@@ -318,7 +323,8 @@ It runs three layers on every `*.json` file and exits with code 1 on any error (
 it on every PR, see `.github/workflows/ci.yml`):
 
 1. **JSON Schema** — the file is matched to its schema by its `kind` and checked against
-   [`schema/`](schema/) (draft 2020-12, including `oneOf` / `unevaluatedProperties`).
+   [`packages/psy_content/schema/`](../../packages/psy_content/schema/) (draft 2020-12,
+   including `oneOf` / `unevaluatedProperties`).
 2. **Dart models** — `ContentBundleParser` must accept the file, so the app's models and
    the schemas cannot drift apart.
 3. **Semantic rules** — what schemas cannot say: ids unique across the whole bundle,
@@ -331,7 +337,7 @@ it on every PR, see `.github/workflows/ci.yml`):
    manifest listing every module folder, changelog newest-first and matching
    `contentVersion`, each kind of file in its expected folder (§1).
 
-A *bundle* is a folder holding a `manifest.json` (`assets/content/`); the cross-file rules
+A *bundle* is a folder holding a `manifest.json` (`apps/psy_trainer/assets/content/`); the cross-file rules
 apply inside it. Files outside a bundle — and everything under a folder named `examples/`
 — are validated on their own (layers 1–3 minus the cross-file references).
 
@@ -339,7 +345,7 @@ Options: `--quiet` (errors and verdict only), `--json` (machine-readable report 
 same errors, warnings and family summary), `--schema-dir <dir>`, `--help`. When piping
 `--json` into another tool, add `--verbosity=error` to `dart run` so its own
 "Running build hooks..." banner does not precede the JSON:
-`dart run --verbosity=error tool/validate_content.dart --json`.
+`dart run --verbosity=error psy_content:validate_content --json`.
 
 Sample output on a valid bundle:
 

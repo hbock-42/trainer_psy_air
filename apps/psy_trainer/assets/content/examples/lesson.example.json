@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "arithmetic_grid.lesson.03-speed-time-distance",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "arithmetic_grid",
+  "order": 3,
+  "title": { "fr": "Vitesse, temps, distance", "en": "Speed, time, distance" },
+  "summary": { "fr": "Le réflexe ÷ 6 / ÷ 3 / ÷ 2 pour les distances de navigation.", "en": "The / 6, / 3, / 2 reflex for navigation distances." },
+  "estimatedReadMin": 4,
+  "difficulty": 2,
+  "tags": ["arith.aviation", "arith.aviation.speed_distance"],
+  "practiceTags": ["arith.aviation.speed_distance"],
+  "deckIds": ["arithmetic_grid.deck.aviation-conversions"],
+  "body": {
+    "fr": "# Vitesse, temps, distance\n\nEn navigation tout se ramène à **D = V × T** avec la vitesse en nœuds (NM par heure) et le temps en heures.\n\n## Le réflexe des fractions d'heure\n\n| Temps | Fraction d'heure | Distance |\n|---|---|---|\n| 6 min | 1/10 | V ÷ 10 |\n| 10 min | 1/6 | V ÷ 6 |\n| 15 min | 1/4 | V ÷ 4 |\n| 20 min | 1/3 | V ÷ 3 |\n| 30 min | 1/2 | V ÷ 2 |\n\n> [!METHOD]\n> Décomposez le temps en fractions d'heure connues, calculez chaque morceau, additionnez.\n\n> [!TIP]\n> 1 NM par minute = 60 kt. À 420 kt vous parcourez 7 NM par minute : multipliez simplement les minutes par 7.\n\n> [!TRAP]\n> Ne confondez pas km/h et kt : 1 kt ≈ 1,85 km/h. Si l'énoncé mélange les unités, convertissez **avant** de calculer.\n\n> [!EXAMPLE]\n> Vitesse sol 480 kt, temps 25 min. Distance ?\n> 1. 25 min = 15 min + 10 min = 1/4 h + 1/6 h.\n> 2. 480 ÷ 4 = 120 NM ; 480 ÷ 6 = 80 NM.\n> 3. 120 + 80 = **200 NM**.\n> 4. Vérification : 480 kt = 8 NM/min ; 8 × 25 = 200. ✔\n",
+    "en": "# Speed, time, distance\n\nIn navigation everything comes back to **D = S × T** with speed in knots (NM per hour) and time in hours.\n\n## The fraction-of-an-hour reflex\n\n| Time | Fraction of hour | Distance |\n|---|---|---|\n| 6 min | 1/10 | S / 10 |\n| 10 min | 1/6 | S / 6 |\n| 15 min | 1/4 | S / 4 |\n| 20 min | 1/3 | S / 3 |\n| 30 min | 1/2 | S / 2 |\n\n> [!METHOD]\n> Split the time into known fractions of an hour, compute each part, add them up.\n\n> [!TIP]\n> 1 NM per minute = 60 kt. At 420 kt you cover 7 NM per minute: just multiply the minutes by 7.\n\n> [!TRAP]\n> Do not mix km/h and kt: 1 kt is about 1.85 km/h. If the question mixes units, convert **before** computing.\n\n> [!EXAMPLE]\n> Ground speed 480 kt, time 25 min. Distance?\n> 1. 25 min = 15 min + 10 min = 1/4 h + 1/6 h.\n> 2. 480 / 4 = 120 NM; 480 / 6 = 80 NM.\n> 3. 120 + 80 = **200 NM**.\n> 4. Check: 480 kt = 8 NM/min; 8 × 25 = 200. ✔\n"
+  },
+  "meta": { "author": "hbock" }
+}

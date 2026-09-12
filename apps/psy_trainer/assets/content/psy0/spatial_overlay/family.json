@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "spatial_overlay",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 5,
+  "name": {
+    "fr": "Formes glissées",
+    "en": "Sliding shapes"
+  },
+  "shortName": {
+    "fr": "Formes gl.",
+    "en": "Overlay"
+  },
+  "description": {
+    "fr": "Faites glisser 3 à 4 formes sur une grille centrale pour reproduire la grille cible selon les règles de superposition (marine + marine = marine, marine + gris = gris, gris + gris = marine). Version II : formes qui se chevauchent et cases noires. Passage automatique au plateau suivant une fois résolu.",
+    "en": "Drag 3 to 4 shapes onto a central grid so that, under the overlay rules (navy + navy = navy, navy + grey = grey, grey + grey = navy), it reproduces the target grid. Version II: overlapping shapes and black cells. Auto-advance once solved."
+  },
+  "engineType": "spatial_overlay",
+  "generatorId": "overlay_grid",
+  "answerFormat": "drag",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 360,
+  "defaultItemCount": 5,
+  "defaultPerItemTimeSec": 75,
+  "confidence": "reported",
+  "tags": [
+    "spatial"
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §2.4-E, §3.1 row 5 (5 boards reported 2022-2026, 'fortement complexifiée' in 2026)"
+  }
+}

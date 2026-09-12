@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.multitask_psychomotor.01",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "multitask_psychomotor",
+  "order": 1,
+  "title": { "fr": "Multitâche : suivre, comparer, vérifier sans se figer" },
+  "summary": { "fr": "Placement des mains, cycle de balayage entre poursuite, formes et calculs, heuristiques de vérification rapide." },
+  "file": { "fr": "lessons/multitask_psychomotor/01-multitache.fr.md" },
+  "estimatedReadMin": 8,
+  "difficulty": 3,
+  "tags": ["multitask_psychomotor", "multitask_psychomotor.strategy"],
+  "practiceTags": ["multitask_psychomotor"],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 M" }
+}

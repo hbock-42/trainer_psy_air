@@ -1,0 +1,85 @@
+{
+  "$schema": "../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "arithmetic_grid",
+  "items": [
+    {
+      "id": "arithmetic_grid.drill.0001",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "arithmetic_grid",
+      "difficulty": 2,
+      "tags": ["arith.drill", "arith.drill.priority"],
+      "stem": { "fr": "3 + 4 × 5 = ?", "en": "3 + 4 × 5 = ?" },
+      "expected": 23,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "La multiplication **avant** l'addition : 4 × 5 = 20, puis 3 + 20 = 23. Piège classique des grilles : 7 × 5 = 35 est faux.",
+        "en": "Multiplication **before** addition: 4 × 5 = 20, then 3 + 20 = 23. Classic grid trap: 7 × 5 = 35 is wrong."
+      },
+      "meta": { "notes": "Practice-only free-input drill (US-023 secondary); the exam uses the arithmetic_grid generator." }
+    },
+    {
+      "id": "arithmetic_grid.drill.0002",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "arithmetic_grid",
+      "difficulty": 3,
+      "tags": ["arith.drill", "arith.drill.squares"],
+      "stem": { "fr": "13² = ?" },
+      "expected": 169,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "(10 + 3)² = 100 + 2 × 30 + 9 = **169**. Méthode : carrés de 11 à 19 = 100 + 20 × unité + unité²."
+      }
+    },
+    {
+      "id": "arithmetic_grid.drill.0003",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "arithmetic_grid",
+      "difficulty": 4,
+      "tags": ["arith.drill", "arith.drill.percent"],
+      "stem": { "fr": "15 % de 240 ≈ ? (arrondi à l'entier)" },
+      "expected": 36,
+      "tolerance": { "mode": "absolute", "value": 0.5 },
+      "unit": "%",
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "10 % = 24, 5 % = 12, donc 15 % = **36**. Méthode : décomposer le pourcentage en 10 % + 5 % (moitié)."
+      }
+    },
+    {
+      "id": "arithmetic_grid.drill.0004",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "arithmetic_grid",
+      "difficulty": 2,
+      "tags": ["arith.drill", "arith.drill.time"],
+      "stem": { "fr": "Décollage à 14:35, vol de 2 h 50. Heure d'arrivée (hh:mm) ?" },
+      "expected": 1045,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "14:35 + 2 h = 16:35 ; + 50 min = 16:35 + 25 + 25 = **17:25**. Méthode : ajouter les heures d'abord, puis compléter les minutes vers l'heure ronde."
+      }
+    },
+    {
+      "id": "arithmetic_grid.grid.gen.0001",
+      "type": "generated",
+      "version": 1,
+      "familyId": "arithmetic_grid",
+      "difficulty": 3,
+      "tags": ["arith.grid"],
+      "generatorId": "arithmetic_grid",
+      "seed": 4242,
+      "params": {
+        "grid": { "rows": 3, "cols": 3 },
+        "wrongMin": 1,
+        "wrongMax": 3,
+        "operations": ["add", "sub", "mul", "priority"],
+        "maxOperand": 50
+      },
+      "meta": { "notes": "Worked example for lesson arithmetic_grid.lesson.01-spot-the-error." }
+    }
+  ]
+}

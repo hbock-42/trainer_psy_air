@@ -1,0 +1,817 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "culture_aero",
+  "items": [
+    {
+      "id": "cult.instruments.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.pitot_static"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel instrument utilise à la fois la pression totale (Pitot) et la pression statique ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "L'anémomètre"
+          }
+        },
+        {
+          "text": {
+            "fr": "L'horizon artificiel"
+          }
+        },
+        {
+          "text": {
+            "fr": "L'altimètre"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le variomètre"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "L'anémomètre mesure la **pression dynamique** = pression totale − pression statique, d'où la vitesse. Altimètre et variomètre n'utilisent que la statique ; l'horizon est gyroscopique. Réflexe : Pitot bouché → seul l'anémomètre est faux ; statique bouchée → les trois instruments barométriques sont touchés."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.airspeed"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "En montée à vitesse indiquée constante, la vitesse vraie (TAS) :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "reste égale à la vitesse indiquée"
+          }
+        },
+        {
+          "text": {
+            "fr": "augmente, car l'air est moins dense"
+          }
+        },
+        {
+          "text": {
+            "fr": "diminue, car la température baisse"
+          }
+        },
+        {
+          "text": {
+            "fr": "devient égale à la vitesse sol"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "L'anémomètre lit la pression dynamique $\\tfrac{1}{2}\\rho V^2$ ; en altitude, $\\rho$ diminue, donc pour la même indication la vitesse vraie est plus grande (≈ +2 % par 1 000 ft). Chaîne à retenir : IAS → CAS (erreurs d'instrument) → TAS (densité) → GS (vent)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 1,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.altimeter"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle est la pression standard de référence de l'atmosphère type au niveau de la mer ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "29,92 hPa"
+          }
+        },
+        {
+          "text": {
+            "fr": "1 000 hPa"
+          }
+        },
+        {
+          "text": {
+            "fr": "1 013,25 hPa"
+          }
+        },
+        {
+          "text": {
+            "fr": "1 025 hPa"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "L'atmosphère standard (ISA) fixe 1 013,25 hPa et 15 °C au niveau de la mer ; 29,92 est la même pression exprimée en **pouces de mercure** (inHg), unité utilisée aux États-Unis. C'est le calage utilisé en niveau de vol (QNE)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.altimeter"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Altimètre calé au QFE de l'aérodrome, il indique au sol :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "l'altitude-pression"
+          }
+        },
+        {
+          "text": {
+            "fr": "la hauteur par rapport au niveau de la mer"
+          }
+        },
+        {
+          "text": {
+            "fr": "l'altitude topographique du terrain"
+          }
+        },
+        {
+          "text": {
+            "fr": "zéro"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**QFE** = pression au niveau du terrain → l'altimètre indique une **hauteur** (0 au sol). **QNH** = pression ramenée au niveau de la mer → il indique l'**altitude** du terrain. **QNE** (1 013) → altitude-pression, utilisée pour les niveaux de vol."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.altimeter"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un pilote cale 1 023 hPa alors que le QNH réel est 1 013 hPa. Son altimètre indique, par rapport à l'altitude réelle, environ :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "280 ft de trop"
+          }
+        },
+        {
+          "text": {
+            "fr": "280 ft de moins"
+          }
+        },
+        {
+          "text": {
+            "fr": "1 000 ft de trop"
+          }
+        },
+        {
+          "text": {
+            "fr": "la valeur exacte, l'écart étant négligeable"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Règle : environ **28 ft par hPa** (27–30 selon les sources). Calage trop élevé de 10 hPa → l'instrument surestime d'environ 280 ft : l'avion est plus bas qu'il ne le croit, cas dangereux. Moyen mnémotechnique : « du haut vers le bas » — passer d'une zone de haute pression à une basse sans recaler fait voler trop bas."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.altimeter"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Le niveau de vol FL 350 correspond à :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "3 500 ft au calage QNH"
+          }
+        },
+        {
+          "text": {
+            "fr": "35 000 ft d'altitude-pression au calage 1 013,25 hPa"
+          }
+        },
+        {
+          "text": {
+            "fr": "35 000 m au-dessus du sol"
+          }
+        },
+        {
+          "text": {
+            "fr": "3 500 m d'altitude vraie"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Un niveau de vol s'exprime en **centaines de pieds** d'altitude-pression, altimètre calé au standard : FL 350 = 35 000 ft ≈ 10 700 m. Ce n'est pas une altitude vraie ; c'est ce qui garantit l'espacement vertical entre avions en croisière."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.vsi"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Le variomètre classique fonctionne en mesurant :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "l'accélération verticale grâce à un gyroscope"
+          }
+        },
+        {
+          "text": {
+            "fr": "la température de l'air, qui change avec l'altitude"
+          }
+        },
+        {
+          "text": {
+            "fr": "la différence entre pression statique instantanée et pression statique retardée par un capillaire"
+          }
+        },
+        {
+          "text": {
+            "fr": "la pression dynamique dans le tube Pitot"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Une capsule reçoit la statique directement ; le boîtier la reçoit à travers une fuite calibrée. En montée ou descente, la différence de pression est proportionnelle à la vitesse verticale. Ce retard explique le temps de réponse de quelques secondes du variomètre classique."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.gyro"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "L'horizon artificiel indique :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "l'incidence et le dérapage"
+          }
+        },
+        {
+          "text": {
+            "fr": "le cap et le taux de virage"
+          }
+        },
+        {
+          "text": {
+            "fr": "la trajectoire par rapport au sol"
+          }
+        },
+        {
+          "text": {
+            "fr": "l'assiette et l'inclinaison de l'avion"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "L'horizon artificiel est un gyroscope à axe vertical qui reste fixe dans l'espace : la maquette montre l'**assiette** (tangage) et l'**inclinaison** (roulis) par rapport à l'horizon. Il ne dit rien de l'incidence ni de la trajectoire — c'est l'instrument central du vol sans visibilité."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.compass"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Pourquoi le conservateur de cap (directionnel) doit-il être recalé régulièrement sur le compas ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Parce que le gyroscope dérive lentement et ne connaît pas le nord"
+          }
+        },
+        {
+          "text": {
+            "fr": "Parce qu'il est perturbé par les masses métalliques de l'avion"
+          }
+        },
+        {
+          "text": {
+            "fr": "Parce qu'il oscille en virage comme le compas"
+          }
+        },
+        {
+          "text": {
+            "fr": "Parce que la déclinaison change en vol"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le directionnel est un gyroscope : stable et lisible en virage, mais il ne « sent » pas le nord et dérive (précession, rotation terrestre). On le recale sur le compas magnétique en vol rectiligne stabilisé, toutes les 10–15 min. Réflexe : le compas est la référence, le directionnel le confort."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.compass"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "La déviation du compas magnétique est due :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "à l'écart entre nord géographique et nord magnétique"
+          }
+        },
+        {
+          "text": {
+            "fr": "aux champs magnétiques propres à l'avion (masses métalliques, circuits électriques)"
+          }
+        },
+        {
+          "text": {
+            "fr": "à la rotation de la Terre"
+          }
+        },
+        {
+          "text": {
+            "fr": "à l'inclinaison du champ terrestre en virage"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Deux corrections : la **déclinaison** (variation) est géographique — écart nord vrai / nord magnétique, lue sur la carte ; la **déviation** est propre à chaque avion, lue sur la courbe de compensation près du compas. Chaîne : cap vrai ± déclinaison = cap magnétique ± déviation = cap compas."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.turn_coordinator"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "En virage, la bille de l'indicateur de virage est décalée vers l'intérieur. Le virage est :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "trop serré ; il faut réduire l'inclinaison"
+          }
+        },
+        {
+          "text": {
+            "fr": "dérapé ; il faut mettre du pied du côté de la bille"
+          }
+        },
+        {
+          "text": {
+            "fr": "glissé ; il faut mettre du pied du côté de la bille"
+          }
+        },
+        {
+          "text": {
+            "fr": "symétrique ; rien à corriger"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Bille vers l'intérieur du virage = **glissade** (pas assez de lacet vers l'intérieur). Bille vers l'extérieur = **dérapage**. Dans les deux cas, la règle est la même : « marcher sur la bille », c'est-à-dire mettre du pied du côté où elle est."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.glass_cockpit"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Dans un cockpit à écrans (EFIS), le PFD affiche principalement :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "la météo radar et le trafic"
+          }
+        },
+        {
+          "text": {
+            "fr": "la carte de navigation et la route programmée"
+          }
+        },
+        {
+          "text": {
+            "fr": "les paramètres moteurs et les alarmes"
+          }
+        },
+        {
+          "text": {
+            "fr": "l'attitude, la vitesse, l'altitude et le cap sur un seul écran"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Le **PFD** (Primary Flight Display) regroupe les six instruments de base autour de l'horizon : bande de vitesse à gauche, altitude et vario à droite, cap en bas. Le **ND** (Navigation Display) montre la route et la carte ; les moteurs sont sur l'ECAM (Airbus) ou l'EICAS (Boeing)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.radio_altimeter"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "La radiosonde (radio-altimètre) donne :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "la hauteur réelle au-dessus du sol survolé, par écho radio"
+          }
+        },
+        {
+          "text": {
+            "fr": "l'altitude-pression au calage standard"
+          }
+        },
+        {
+          "text": {
+            "fr": "la distance jusqu'à la piste, par balise"
+          }
+        },
+        {
+          "text": {
+            "fr": "l'altitude par rapport au niveau de la mer"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Un signal radio est émis vers le sol et son temps de retour donne la **hauteur** vraie, précise à quelques pieds, typiquement sous 2 500 ft. C'est elle qui alimente les annonces d'approche (« fifty, forty, thirty… ») et les systèmes d'alerte sol."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.tcas"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Face à un avis de résolution (RA) du TCAS contraire à une instruction du contrôleur, l'équipage doit :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "suivre l'instruction du contrôleur, qui voit tout le trafic"
+          }
+        },
+        {
+          "text": {
+            "fr": "suivre immédiatement le TCAS et prévenir le contrôleur"
+          }
+        },
+        {
+          "text": {
+            "fr": "demander confirmation avant toute manœuvre"
+          }
+        },
+        {
+          "text": {
+            "fr": "ignorer les deux et maintenir le plan de vol"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Un RA est la dernière barrière anticollision : les deux avions reçoivent des ordres coordonnés (l'un monte, l'autre descend). Suivre le contrôleur à la place a déjà causé une collision (Überlingen, 2002). Règle : **TCAS RA prime sur l'ATC**, puis on annonce « TCAS RA »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.gpws"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel système avertit l'équipage d'un rapprochement dangereux du relief ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Le TCAS"
+          }
+        },
+        {
+          "text": {
+            "fr": "L'ADS-B"
+          }
+        },
+        {
+          "text": {
+            "fr": "L'EGPWS"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le transpondeur"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Le **GPWS**, puis l'**EGPWS** (Enhanced, avec base de données terrain et GPS), génère les alarmes « TERRAIN », « PULL UP », « SINK RATE ». Le TCAS traite les autres avions, pas le relief. Le CFIT (vol contrôlé vers le sol) était la première cause d'accident avant sa généralisation."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.transponder"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel code transpondeur signale une panne radio ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "7700"
+          }
+        },
+        {
+          "text": {
+            "fr": "7000"
+          }
+        },
+        {
+          "text": {
+            "fr": "7500"
+          }
+        },
+        {
+          "text": {
+            "fr": "7600"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Les trois codes d'urgence : **7500** détournement (« hi-jack »), **7600** panne radio, **7700** détresse générale. 7000 est le code VFR par défaut en Europe. Moyen mnémotechnique : 75 « seventy-five, man with a knife », 76 « seventy-six, radio needs a fix », 77 « seventy-seven, going to heaven »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.transponder"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Par rapport au mode C, le mode S du transpondeur apporte :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "une interrogation sélective et l'échange de données (identité, paramètres de vol)"
+          }
+        },
+        {
+          "text": {
+            "fr": "la transmission de l'altitude, absente en mode C"
+          }
+        },
+        {
+          "text": {
+            "fr": "la détection du relief"
+          }
+        },
+        {
+          "text": {
+            "fr": "un cryptage militaire des réponses"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Mode A = code à 4 chiffres ; mode C = code + altitude-pression ; mode **S** (Select) = adresse unique 24 bits, interrogation sélective et liaison de données, base du TCAS II et de l'ADS-B. Réflexe : A identité, C altitude, S données."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.instruments.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.instruments",
+        "culture.instruments.recorders"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "De quelle couleur sont les « boîtes noires » d'un avion de ligne ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Noires"
+          }
+        },
+        {
+          "text": {
+            "fr": "Orange"
+          }
+        },
+        {
+          "text": {
+            "fr": "Jaunes"
+          }
+        },
+        {
+          "text": {
+            "fr": "Rouges"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Le FDR (paramètres de vol) et le CVR (voix du cockpit) sont peints en **orange** pour être repérés dans les débris, avec une balise acoustique sous-marine. Ils sont installés à l'arrière, zone qui résiste le mieux à l'impact. « Boîte noire » est un nom d'usage, pas une couleur."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    }
+  ]
+}

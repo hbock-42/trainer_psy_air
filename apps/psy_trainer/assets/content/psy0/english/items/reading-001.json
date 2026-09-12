@@ -1,0 +1,2536 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "english",
+  "passages": [
+    {
+      "id": "english.reading.p001",
+      "title": {
+        "fr": "Gate change for flight NW 442"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**From:** Ground Operations, Halden Airport\n\n**To:** All Northwind Air station staff\n\n**Subject:** Gate change — NW 442 to Lisbon, this evening\n\nPlease note that flight NW 442, scheduled to depart at 19:40, has been moved from gate B12 to gate C4 because of a jet bridge fault that maintenance cannot repair before tonight. Passengers who have already checked in will receive a text message, but many of them printed their boarding passes at home, so the old gate number is still on their documents.\n\nWe therefore need two agents at B12 from 18:30 onwards to redirect anyone who turns up there. The walk between the two piers takes about twelve minutes, so boarding will start ten minutes later than usual. The captain has been informed and has agreed to a slightly shorter turnaround at the destination to recover the delay.\n\nWheelchair passengers should be taken to C4 by the assistance team as soon as they arrive at security; please do not wait for the boarding call. If you have any questions, contact the duty manager on extension 2210 rather than replying to this message.\n\nThank you for your cooperation.\n\nMarta Kessler, Duty Manager"
+      }
+    },
+    {
+      "id": "english.reading.p002",
+      "title": {
+        "fr": "Airfield bulletin — Solvik Airport, week 37"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Solvik Airport (SVK) — Operational bulletin, valid 08 to 14 September**\n\n1. Runway 09/27 will be closed every night from 23:00 to 05:30 local time for resurfacing work. During these hours all traffic will use runway 15/33, which is 600 metres shorter; operators of heavy aircraft should check their performance figures before planning night departures.\n\n2. Taxiway D is closed between taxiways B and C until further notice. Aircraft vacating runway 27 should expect to be routed via taxiway E, which adds approximately four minutes of taxi time.\n\n3. The instrument landing system for runway 27 is undergoing calibration. Pilots may receive an intermittent glideslope signal between 10:00 and 12:00 on 10 and 11 September; approaches during these periods should be flown using the localiser only, with the published higher minima.\n\n4. A crane, 42 metres high, has been erected 1.2 km south-east of the threshold of runway 33. It is lit at night and marked with flags by day.\n\n5. Fuel supplier Norsk Petrol reports that Jet A-1 deliveries are limited to 8,000 litres per aircraft on 09 September due to a tanker strike. Operators requiring more should notify the handling agent 24 hours in advance."
+      }
+    },
+    {
+      "id": "english.reading.p003",
+      "title": {
+        "fr": "Passenger safety card — Aria Regional ARJ-90"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Welcome aboard the ARJ-90. Please read this card before departure.**\n\n**Seat belts.** Fasten your seat belt whenever the sign is on and keep it fastened while seated, even when the sign is off: unexpected turbulence can occur at any time.\n\n**Exits.** This aircraft has four exits: two doors at the front, one door at the rear on the left and one overwing hatch on each side. Count the rows between your seat and the nearest exit — in smoke you may have to find it by touch. Passengers seated next to an overwing hatch must be able to open it and must be willing to help. If you would prefer not to, tell a crew member before take-off.\n\n**Oxygen.** If the cabin loses pressure, masks will drop from above your seat. Pull the mask towards you, place it over your nose and mouth and breathe normally. Secure your own mask before helping others, including children.\n\n**Life jackets.** Your life jacket is under your seat. Put it on over your head and pull the straps tight. Inflate it only once you are outside the aircraft.\n\n**Electronic devices.** Larger devices must be stowed for take-off and landing. Smoking, including electronic cigarettes, is forbidden throughout the flight."
+      }
+    },
+    {
+      "id": "english.reading.p004",
+      "title": {
+        "fr": "Crew shuttle timetable — Perrin Airport to Meridian Hotel"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Crew shuttle — Perrin International Airport (Terminal 2, door 14) to Meridian Airport Hotel**\n\n| Departs T2 | Arrives hotel | Days | Notes |\n|---|---|---|---|\n| 05:15 | 05:35 | Mon–Sat | Not on public holidays |\n| 07:30 | 07:50 | Daily | |\n| 12:00 | 12:20 | Daily | Stops at Cargo Village |\n| 16:45 | 17:10 | Daily | Stops at Cargo Village and Crew Training Centre |\n| 21:30 | 21:50 | Daily | |\n| 23:55 | 00:15 | Fri–Sun | Last service; hotel night desk must be called if delayed |\n\nThe shuttle is free for crews of Skyline Atlantic and Aria Regional on presentation of a valid crew identity card. Crews of other operators pay 6 euros per journey to the driver, cash only. Seats cannot be reserved; when the shuttle is full, the driver will radio for a second vehicle, which normally arrives within fifteen minutes. Return journeys from the hotel leave twenty minutes after each arrival shown above. Between 00:15 and 05:15, crews should use the hotel taxi voucher scheme instead."
+      }
+    },
+    {
+      "id": "english.reading.p005",
+      "title": {
+        "fr": "On-time performance at Skyline Atlantic, first half of the year"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "The bar chart below summarises the punctuality of Skyline Atlantic's departures over the first six months of the year. A flight is counted as on time if it leaves the gate within fifteen minutes of its scheduled departure.\n\n| Month | On-time departures | Main cause of delay |\n|---|---|---|\n| January | 71 % | Winter weather |\n| February | 78 % | Winter weather |\n| March | 84 % | Late inbound aircraft |\n| April | 88 % | Late inbound aircraft |\n| May | 81 % | Air traffic control restrictions |\n| June | 74 % | Air traffic control restrictions |\n\nPunctuality improved steadily from January to April, when it reached its best level of the period. The trend then reversed: May and June were affected by staff shortages at two major control centres in central Europe, which forced the airline to hold departing aircraft on the ground. Weather, the dominant factor in winter, played almost no role after March. Management points out that the June figure, although disappointing, is still four points above the same month last year, and expects the summer schedule changes introduced in July to bring performance back above 80 %."
+      }
+    },
+    {
+      "id": "english.reading.p006",
+      "title": {
+        "fr": "Notice to all flight crew — new fatigue reporting procedure"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**NOTICE — Flight Operations Department, Skyline Atlantic**\n\n**Effective 1 October: fatigue reports move to the CrewPortal app**\n\nFrom 1 October, paper fatigue report forms will no longer be accepted. Crew members who feel unfit to operate because of fatigue, or who wish to report a roster pattern that they consider unsafe, must submit a report through the *Safety* tab of the CrewPortal app within 72 hours of the event.\n\nReports are confidential. They are read by the Fatigue Risk Management group, which includes two elected crew representatives, and are never forwarded to line managers with the reporter's name attached. Statistics drawn from the reports are published every quarter on the intranet.\n\nPlease note that submitting a fatigue report does not by itself remove you from a duty. If you consider yourself unfit to fly, you must still call Crew Control before your report time so that a replacement can be found. Calling Crew Control after the report time will be treated as a late sick call.\n\nCrew members who cannot access the app, for example during a layover without internet, may telephone the Safety Office on the number printed on the back of their crew card; the report will be entered on their behalf."
+      }
+    },
+    {
+      "id": "english.reading.p007",
+      "title": {
+        "fr": "Memo — fuel saving initiative, Q4"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**MEMO**\n\n**To:** All captains and first officers, narrow-body fleet\n\n**From:** Fuel Efficiency Team\n\n**Date:** 22 September\n\nLast quarter, our narrow-body fleet burned 2.3 % more fuel per block hour than the same period a year earlier, even though the average flight was shorter. Our analysis points to three habits that have crept back since the summer.\n\nFirst, single-engine taxi on arrival is now used on only 41 % of flights, down from 63 % in the spring. Where the taxi time exceeds five minutes and conditions allow, we encourage you to shut down one engine after vacating the runway.\n\nSecond, the auxiliary power unit is frequently started at top of descent rather than after landing. On a typical sector this alone costs around 25 kg of fuel.\n\nThird, discretionary fuel above the planned figure has risen to an average of 320 kg. We fully respect the captain's right to carry extra fuel; we simply ask that the reason be recorded in the voyage report so that we can improve the planning figures if they are unrealistic.\n\nNone of these measures takes precedence over safety or passenger comfort. A briefing card summarising the recommended techniques will be placed in every aircraft library by the end of the month."
+      }
+    },
+    {
+      "id": "english.reading.p008",
+      "title": {
+        "fr": "Why airlines are rethinking the cockpit voice recorder"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "For decades, the cockpit voice recorder has kept only the last two hours of audio, after which the recording is overwritten. Investigators have long argued that this is too short: when an aircraft lands safely after an incident and continues to operate, the relevant conversation may already have been erased by the time anyone thinks of pulling the recorder.\n\nNew regulations adopted this year require a 25-hour recording capacity on all newly built large aircraft from next year. Manufacturers say the change is technically trivial — modern recorders store audio on solid-state memory, and the extra capacity costs a few hundred dollars per unit. The real debate has been about privacy. Pilot unions accept the longer recording but insist that it should be used solely for accident investigation, never for routine monitoring or disciplinary purposes. Several airlines have signed agreements to that effect.\n\nWhat remains unresolved is whether older aircraft should be retrofitted. Regulators have so far declined to impose this, pointing out that a retrofit requires certification work that can cost far more than the recorder itself. Safety groups reply that the majority of the fleet will still be flying with two-hour recorders in ten years' time, and that incidents do not wait for aircraft to be replaced."
+      }
+    },
+    {
+      "id": "english.reading.p009",
+      "title": {
+        "fr": "Ground incident report form — instructions"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Halden Airport — Ground Incident Report (form GH-7) — how to complete this form**\n\n**Section A — Who.** Enter your name, employer and the radio call sign of the vehicle or equipment involved. If several people witnessed the event, each must complete a separate form.\n\n**Section B — When and where.** Give the local time to the nearest minute and the stand, taxiway or road where the event happened. Use the location codes printed on the airside map, not informal names.\n\n**Section C — What.** Describe the facts in the order they occurred. Do not speculate about causes and do not name other people; refer to them by their role (\"the loader\", \"the marshaller\").\n\n**Section D — Damage.** Tick *aircraft*, *vehicle*, *equipment* or *none*. Even minor contact with an aircraft must be ticked and the flight number entered, since the aircraft cannot depart until an engineer has inspected it.\n\n**Section E — Actions taken.** State who was informed and when.\n\nHand the completed form to the airside safety office within two hours, or before the end of your shift if sooner. Forms submitted late are still accepted but are flagged in the monthly safety review."
+      }
+    },
+    {
+      "id": "english.reading.p010",
+      "title": {
+        "fr": "FAQ — cadet pilot programme, Skyline Atlantic"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Frequently asked questions — Skyline Atlantic Cadet Programme**\n\n**Do I need any flying experience to apply?** No. The programme is designed for people with no previous flight training. Candidates who already hold a licence may apply, but they receive no credit for prior hours.\n\n**What happens if I fail a stage of the selection?** Candidates who fail at the first stage may reapply after twelve months. Candidates who fail at a later stage may reapply after twenty-four months, and only once.\n\n**Who pays for the training?** Skyline Atlantic funds the full course. In return, cadets sign an agreement to remain with the airline for six years after qualifying; leaving earlier means repaying part of the training cost on a sliding scale.\n\n**Where does the training take place?** Ground school is held at our academy near the airline's main base. Flight training takes place at a partner school abroad, where weather allows more consistent flying. Cadets are expected to relocate for about fourteen months.\n\n**Is there a medical requirement?** Yes. A Class 1 medical certificate must be obtained before the final selection stage, at the candidate's own expense. We strongly advise obtaining it early: a small number of applicants each year discover a disqualifying condition at this point."
+      }
+    },
+    {
+      "id": "english.reading.p011",
+      "title": {
+        "fr": "Aircraft library — required documents by fleet"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Engineering notice — documents to be carried on board, effective 15 November**\n\nThe table lists the documents that must be present in the aircraft library before each departure. Documents marked *digital* are available on the crew tablet only; a paper copy is no longer required.\n\n| Document | Narrow-body fleet | Wide-body fleet | Format |\n|---|---|---|---|\n| Certificate of airworthiness | Required | Required | Paper |\n| Radio licence | Required | Required | Paper |\n| Minimum equipment list | Required | Required | Digital |\n| Cabin crew emergency manual | Required | Required | Digital |\n| De-icing procedures card | Required (Nov–Mar) | Not required | Paper |\n| Long-range navigation supplement | Not required | Required | Digital |\n\nCaptains are reminded that the certificate of airworthiness and the radio licence must be originals; photocopies are not accepted by foreign inspectors. If a paper document is missing, the aircraft must not depart until Engineering has delivered a replacement. If a digital document cannot be opened on the tablet, the flight may proceed provided the other pilot's tablet displays it correctly and the defect is entered in the technical log."
+      }
+    },
+    {
+      "id": "english.reading.p012",
+      "title": {
+        "fr": "Job advertisement — Line Maintenance Technician"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**Aria Regional is hiring: Line Maintenance Technicians, Solvik base**\n\nAria Regional operates a fleet of eighteen ARJ-90 regional jets from three bases in northern Europe. Following the delivery of four additional aircraft next spring, we are expanding our line maintenance team at Solvik.\n\n**The role.** You will carry out daily and pre-departure checks, troubleshoot defects reported by crews and release aircraft to service. Shifts follow a four-days-on, four-days-off pattern, including nights and weekends.\n\n**You will need:** a valid maintenance licence with a rating on the ARJ-90 or a comparable regional jet; at least three years of line maintenance experience; fluent English, since all technical documentation is in English; and a driving licence, as the base is not served by public transport at night.\n\n**We offer:** a competitive salary, a relocation allowance for candidates moving from outside the region, and full type training for licensed technicians without an ARJ-90 rating.\n\nApplications close on 30 November. Interviews will take place in the first two weeks of December and successful candidates are expected to start in February, so that they are fully trained before the new aircraft arrive."
+      }
+    },
+    {
+      "id": "english.reading.p013",
+      "title": {
+        "fr": "Reply to a passenger complaint about a missed connection"
+      },
+      "lang": "en",
+      "body": {
+        "fr": "**From:** Customer Relations, Skyline Atlantic\n\n**To:** Mr D. Okafor\n\n**Subject:** Your journey on 3 August — reference SA/CR/88213\n\nDear Mr Okafor,\n\nThank you for your message about your journey from Halden to Montreal via Perrin on 3 August. I am sorry that you missed your connection and that the rebooking took longer than it should have.\n\nI have looked into what happened. Your first flight left Halden 52 minutes late because a wheel change was required after a tyre inspection during the turnaround. Because the connection at Perrin was only 65 minutes, this left too little time to reach the departure gate, which is in a different terminal.\n\nUnder the applicable regulation, a delay caused by a technical problem discovered during a routine inspection is not regarded as an extraordinary circumstance. You are therefore entitled to a fixed compensation payment of 600 euros in addition to the meal and hotel expenses you have already claimed. Please send us your bank details using the secure link below, and the payment will be made within ten working days.\n\nAs a gesture of goodwill, I have also added 5,000 miles to your loyalty account.\n\nYours sincerely,\n\nIngrid Solheim, Customer Relations"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "english.reading.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.email"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p001",
+      "stem": {
+        "fr": "Why has flight NW 442 been moved to a different gate?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A jet bridge at the original gate is out of order."
+          }
+        },
+        {
+          "text": {
+            "fr": "Too many passengers checked in at the airport."
+          }
+        },
+        {
+          "text": {
+            "fr": "The aircraft arrived late from Lisbon."
+          }
+        },
+        {
+          "text": {
+            "fr": "Gate C4 is closer to the security checkpoint."
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **détail** : première phrase, « moved from gate B12 to gate C4 *because of a jet bridge fault* that maintenance cannot repair ». Repérer le connecteur de cause (*because of*) donne directement la réponse ; le retard de l'avion et la proximité de la sécurité ne sont jamais évoqués."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.email"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p001",
+      "stem": {
+        "fr": "What are staff asked to do about passengers who go to gate B12?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Send them a text message with the new gate number."
+          }
+        },
+        {
+          "text": {
+            "fr": "Reprint their boarding passes at the gate."
+          }
+        },
+        {
+          "text": {
+            "fr": "Station two agents there to redirect them."
+          }
+        },
+        {
+          "text": {
+            "fr": "Ask them to call extension 2210."
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Paragraphe 2 : « we need *two agents at B12* from 18:30 onwards to redirect anyone who turns up there ». Le SMS est envoyé automatiquement par la compagnie, pas par les agents ; l'extension 2210 sert aux questions du personnel, pas aux passagers."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.email"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p001",
+      "stem": {
+        "fr": "What can be inferred about the departure of NW 442?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "It will use a smaller aircraft than usual."
+          }
+        },
+        {
+          "text": {
+            "fr": "It will be cancelled if the delay grows."
+          }
+        },
+        {
+          "text": {
+            "fr": "It will leave earlier to make up for the gate change."
+          }
+        },
+        {
+          "text": {
+            "fr": "It will probably leave a little later than planned."
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Question d'**inférence** : l'embarquement commence dix minutes plus tard et le commandant accepte une escale plus courte à destination « to recover the delay » — un retard au départ est donc attendu. Rien dans le texte n'évoque une annulation ni un changement d'appareil."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.vocab_in_context",
+        "english.reading.email"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p001",
+      "stem": {
+        "fr": "The word *turnaround* in paragraph 2 is closest in meaning to"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "a return flight to the departure airport"
+          }
+        },
+        {
+          "text": {
+            "fr": "the time an aircraft spends on the ground between two flights"
+          }
+        },
+        {
+          "text": {
+            "fr": "the period passengers wait before boarding"
+          }
+        },
+        {
+          "text": {
+            "fr": "a change of direction during the flight"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Vocabulaire en contexte** : « a slightly shorter *turnaround* at the destination to recover the delay » — c'est en raccourcissant l'escale au sol (déchargement, nettoyage, réembarquement) que l'on rattrape le retard. Le sens « demi-tour » existe mais ne s'applique pas ici ; méthode : remplacer le mot par chaque option et vérifier que la phrase reste logique."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.bulletin"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p002",
+      "stem": {
+        "fr": "What should heavy-aircraft operators do before planning a night departure?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Fly the approach using the localiser only."
+          }
+        },
+        {
+          "text": {
+            "fr": "Request an extension of the runway closure."
+          }
+        },
+        {
+          "text": {
+            "fr": "Verify their take-off performance on the shorter runway."
+          }
+        },
+        {
+          "text": {
+            "fr": "Refuel with no more than 8,000 litres."
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Point 1 : la nuit, tout le trafic utilise la piste 15/33, « *600 metres shorter*; operators of heavy aircraft should check their performance figures ». Le carburant (point 5) et le localiser (point 3) concernent d'autres situations : ne pas mélanger les rubriques."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.bulletin"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p002",
+      "stem": {
+        "fr": "According to the bulletin, when might the glideslope signal be unreliable?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Throughout the whole week."
+          }
+        },
+        {
+          "text": {
+            "fr": "Every night from 23:00 to 05:30."
+          }
+        },
+        {
+          "text": {
+            "fr": "On 9 September only."
+          }
+        },
+        {
+          "text": {
+            "fr": "In the late morning on 10 and 11 September."
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Point 3 : « between 10:00 and 12:00 on 10 and 11 September ». Repérer le mot-clé *glideslope* puis lire la phrase entière, car les horaires nocturnes du point 1 sont un piège classique pour qui lit trop vite."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.bulletin"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p002",
+      "stem": {
+        "fr": "What can be inferred about taxiway E?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "It is a longer route than the one normally used."
+          }
+        },
+        {
+          "text": {
+            "fr": "It is the shortest route from runway 27 to the terminal."
+          }
+        },
+        {
+          "text": {
+            "fr": "It is closed between taxiways B and C."
+          }
+        },
+        {
+          "text": {
+            "fr": "It is only used by heavy aircraft."
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Inférence** : le détour par E « adds approximately four minutes of taxi time » — c'est donc un itinéraire plus long que la voie D habituelle. C'est D, et non E, qui est fermée : éliminer d'abord ce qui contredit le texte."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.not_mentioned",
+        "english.reading.bulletin"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p002",
+      "stem": {
+        "fr": "Which of the following is NOT mentioned about the crane?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Its lighting at night"
+          }
+        },
+        {
+          "text": {
+            "fr": "The date it will be removed"
+          }
+        },
+        {
+          "text": {
+            "fr": "Its distance from the runway"
+          }
+        },
+        {
+          "text": {
+            "fr": "Its height"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Point 4 donne la hauteur (42 m), la distance (1,2 km du seuil de la 33) et l'éclairage nocturne. Aucune date de démontage n'apparaît. Méthode « NOT mentioned » : cocher chaque option trouvée dans le texte, la réponse est celle qui reste."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.safety_card"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p003",
+      "stem": {
+        "fr": "How many exits does the ARJ-90 have?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Two"
+          }
+        },
+        {
+          "text": {
+            "fr": "Three"
+          }
+        },
+        {
+          "text": {
+            "fr": "Four"
+          }
+        },
+        {
+          "text": {
+            "fr": "Six"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Rubrique *Exits* : « This aircraft has *four* exits » — deux portes à l'avant, une à l'arrière gauche, une trappe sur chaque aile. Vérification rapide : deux portes avant + « one overwing hatch on *each* side » = deux trappes, soit quatre au total. Piège : compter *one* hatch au lieu de deux."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.safety_card"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p003",
+      "stem": {
+        "fr": "When should a passenger inflate the life jacket?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "While still seated, once the straps are tight."
+          }
+        },
+        {
+          "text": {
+            "fr": "Before putting it over the head."
+          }
+        },
+        {
+          "text": {
+            "fr": "As soon as the cabin loses pressure."
+          }
+        },
+        {
+          "text": {
+            "fr": "Only after leaving the aircraft."
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Rubrique *Life jackets*, dernière phrase : « Inflate it *only once you are outside* the aircraft ». Le mot restrictif *only* est le signal : les autres options décrivent des moments antérieurs, donc interdits."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.safety_card"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p003",
+      "stem": {
+        "fr": "Why does the card advise counting the rows to the nearest exit?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Because visibility may be poor during an evacuation."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because crew members will not be available to help."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because the cabin lights are switched off for take-off."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because exits are not marked on this aircraft."
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Inférence** : « in smoke you may have to find it by touch » — compter les rangées sert à se repérer sans voir, donc en cas de fumée. Le texte ne dit ni que les issues ne sont pas signalées ni que l'équipage sera absent : ne pas ajouter d'informations au texte."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.vocab_in_context",
+        "english.reading.safety_card"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p003",
+      "stem": {
+        "fr": "The word *stowed* in the last paragraph is closest in meaning to"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "handed to the crew"
+          }
+        },
+        {
+          "text": {
+            "fr": "put away"
+          }
+        },
+        {
+          "text": {
+            "fr": "switched off"
+          }
+        },
+        {
+          "text": {
+            "fr": "recharged"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Vocabulaire en contexte** : « larger devices must be *stowed* for take-off and landing » — *to stow* = ranger (dans le compartiment ou sous le siège). Le sens « éteindre » est le piège : un appareil rangé n'est pas forcément éteint, et la carte ne parle pas d'extinction."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.timetable"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p004",
+      "stem": {
+        "fr": "Which departure takes the longest to reach the hotel?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "05:15"
+          }
+        },
+        {
+          "text": {
+            "fr": "16:45"
+          }
+        },
+        {
+          "text": {
+            "fr": "12:00"
+          }
+        },
+        {
+          "text": {
+            "fr": "23:55"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Lire les deux colonnes horaires et soustraire : 16:45 → 17:10 = 25 minutes, contre 20 minutes pour tous les autres (deux arrêts intermédiaires). Sur un tableau, la réponse se calcule : ne pas se fier à l'ordre des lignes."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.timetable"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p004",
+      "stem": {
+        "fr": "A Wednesday flight lands at 23:20. What does the timetable imply for its crew?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "They should use the taxi voucher scheme."
+          }
+        },
+        {
+          "text": {
+            "fr": "They must call the hotel night desk."
+          }
+        },
+        {
+          "text": {
+            "fr": "They can take the 23:55 shuttle."
+          }
+        },
+        {
+          "text": {
+            "fr": "They must wait for the 05:15 shuttle."
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le service de 23:55 ne circule que « Fri–Sun » ; un mercredi, la dernière navette est celle de 21:30, déjà partie. Le texte précise : « Between 00:15 and 05:15, crews should use the hotel taxi voucher scheme » — en pratique, sans navette avant 05:15, c'est la solution prévue. Piège : la colonne *Days* est facile à oublier."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.timetable"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p004",
+      "stem": {
+        "fr": "According to the passage, what happens when the shuttle is full?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The next scheduled service is brought forward."
+          }
+        },
+        {
+          "text": {
+            "fr": "Passengers who booked a seat board first."
+          }
+        },
+        {
+          "text": {
+            "fr": "Another vehicle is requested by radio."
+          }
+        },
+        {
+          "text": {
+            "fr": "Crews are given a taxi voucher."
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "« when the shuttle is full, the driver will *radio for a second vehicle* ». Les réservations sont explicitement impossibles (« Seats cannot be reserved ») : éliminer d'abord ce qui contredit le texte."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.timetable"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p004",
+      "stem": {
+        "fr": "What can be inferred about a crew member from an airline other than Skyline Atlantic or Aria Regional?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "They are not allowed to use the shuttle."
+          }
+        },
+        {
+          "text": {
+            "fr": "They must show a crew identity card to the driver."
+          }
+        },
+        {
+          "text": {
+            "fr": "They pay a reduced fare on return journeys."
+          }
+        },
+        {
+          "text": {
+            "fr": "They need to carry cash to use the shuttle."
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Inférence** : « Crews of other operators pay 6 euros per journey to the driver, *cash only* » — il faut donc avoir des espèces. La carte d'identité équipage ne sert qu'aux deux compagnies exemptées ; aucun tarif réduit n'est mentionné."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.graph"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p005",
+      "stem": {
+        "fr": "In which month did the airline achieve its highest on-time rate?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "February"
+          }
+        },
+        {
+          "text": {
+            "fr": "March"
+          }
+        },
+        {
+          "text": {
+            "fr": "April"
+          }
+        },
+        {
+          "text": {
+            "fr": "May"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Lecture directe du tableau : avril = 88 %, valeur maximale de la période. Le texte le confirme (« reached its best level of the period » en avril). Sur un graphique, toujours vérifier le chiffre plutôt que de deviner à partir de la tendance."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.graph"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p005",
+      "stem": {
+        "fr": "What was the on-time rate in June of the previous year?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "70 %"
+          }
+        },
+        {
+          "text": {
+            "fr": "80 %"
+          }
+        },
+        {
+          "text": {
+            "fr": "78 %"
+          }
+        },
+        {
+          "text": {
+            "fr": "74 %"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Petit calcul : juin = 74 %, « four points above the same month last year » → 74 − 4 = 70 %. Le piège classique est de répondre 78 % en additionnant au lieu de soustraire : *above* signifie que cette année est **au-dessus** de l'an dernier."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0019",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.graph"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p005",
+      "stem": {
+        "fr": "What can be inferred about the delays in May and June?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "They were shorter than fifteen minutes on average."
+          }
+        },
+        {
+          "text": {
+            "fr": "They were mainly due to bad weather."
+          }
+        },
+        {
+          "text": {
+            "fr": "They were mostly caused by problems inside the airline."
+          }
+        },
+        {
+          "text": {
+            "fr": "They were largely outside the airline's control."
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Inférence** : les retards de mai-juin viennent de « staff shortages at two major control centres » — des organismes de contrôle aérien extérieurs à la compagnie. La météo « played almost no role after March » : éliminer cette option. Rien n'est dit sur la durée moyenne des retards."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0020",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.main_idea",
+        "english.reading.graph"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p005",
+      "stem": {
+        "fr": "What is the main purpose of the last paragraph?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "To explain how punctuality is measured."
+          }
+        },
+        {
+          "text": {
+            "fr": "To interpret the figures and give an outlook."
+          }
+        },
+        {
+          "text": {
+            "fr": "To announce a change in the winter schedule."
+          }
+        },
+        {
+          "text": {
+            "fr": "To compare the airline with its competitors."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Idée principale** : le dernier paragraphe commente la tendance (amélioration puis retournement), en donne les causes, puis annonce une attente pour l'été (« expects … to bring performance back above 80 % »). La définition de la ponctualité se trouve dans l'introduction, pas ici ; aucun concurrent n'est cité."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0021",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.notice"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p006",
+      "stem": {
+        "fr": "What changes on 1 October?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Fatigue reports will be published with the reporter's name."
+          }
+        },
+        {
+          "text": {
+            "fr": "Crew Control will handle all fatigue reports."
+          }
+        },
+        {
+          "text": {
+            "fr": "Reports must be submitted electronically rather than on paper."
+          }
+        },
+        {
+          "text": {
+            "fr": "The 72-hour deadline for reports will be removed."
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Premier paragraphe : « paper fatigue report forms will no longer be accepted … must submit a report through the *Safety* tab of the CrewPortal app ». La confidentialité est au contraire garantie (« never forwarded … with the reporter's name »)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0022",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.notice"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p006",
+      "stem": {
+        "fr": "What can be inferred about a pilot who submits a fatigue report but does not contact Crew Control?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The pilot's report will be rejected."
+          }
+        },
+        {
+          "text": {
+            "fr": "The pilot will automatically be replaced on the flight."
+          }
+        },
+        {
+          "text": {
+            "fr": "The pilot's line manager will be informed."
+          }
+        },
+        {
+          "text": {
+            "fr": "The pilot is still expected to operate the flight."
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Inférence** à partir du 3e paragraphe : « submitting a fatigue report does not by itself remove you from a duty » — sans appel à Crew Control, le pilote reste programmé sur le vol. Le rapport n'est pas rejeté pour autant, et le manager n'est jamais informé nominativement."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0023",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.notice"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p006",
+      "stem": {
+        "fr": "Who is allowed to read the individual fatigue reports?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "All crew members, via the intranet."
+          }
+        },
+        {
+          "text": {
+            "fr": "The Fatigue Risk Management group."
+          }
+        },
+        {
+          "text": {
+            "fr": "The reporter's line manager."
+          }
+        },
+        {
+          "text": {
+            "fr": "Crew Control staff on duty."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Paragraphe 2 : « They are read by the Fatigue Risk Management group ». Ce qui est publié sur l'intranet, ce sont des **statistiques** trimestrielles, pas les rapports individuels — distinguer le document et sa synthèse."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0024",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.not_mentioned",
+        "english.reading.notice"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p006",
+      "stem": {
+        "fr": "Which of the following is NOT mentioned as a way of submitting a report?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Sending an e-mail to the Safety Office"
+          }
+        },
+        {
+          "text": {
+            "fr": "Having the report entered by someone else"
+          }
+        },
+        {
+          "text": {
+            "fr": "Using the CrewPortal app"
+          }
+        },
+        {
+          "text": {
+            "fr": "Telephoning the Safety Office"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le texte cite l'application, l'appel téléphonique au Safety Office et la saisie « on their behalf ». Aucun e-mail n'est prévu. Méthode : cocher chaque option repérée dans le texte ; celle qui reste est la réponse."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0025",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.main_idea",
+        "english.reading.memo"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p007",
+      "stem": {
+        "fr": "What is the main purpose of the memo?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "To ask pilots to resume three fuel-saving practices."
+          }
+        },
+        {
+          "text": {
+            "fr": "To criticise captains who carry extra fuel."
+          }
+        },
+        {
+          "text": {
+            "fr": "To announce a new fuel supplier for the fleet."
+          }
+        },
+        {
+          "text": {
+            "fr": "To explain why flights have become shorter."
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Idée principale** : le mémo constate une hausse de la consommation, identifie « three habits that have crept back » et demande à chacun de revenir aux bonnes pratiques. Il respecte explicitement le droit du commandant d'emporter du carburant supplémentaire, ce qui écarte l'option de la critique."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0026",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.memo"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p007",
+      "stem": {
+        "fr": "According to the memo, how much fuel is wasted by starting the APU too early?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "41 % more than in spring"
+          }
+        },
+        {
+          "text": {
+            "fr": "2.3 % per block hour"
+          }
+        },
+        {
+          "text": {
+            "fr": "About 320 kg per flight"
+          }
+        },
+        {
+          "text": {
+            "fr": "About 25 kg per flight"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Troisième paragraphe : « On a typical sector this alone costs around *25 kg* of fuel ». Les autres chiffres appartiennent à d'autres constats (320 kg = carburant discrétionnaire, 41 % = roulage monomoteur) : associer chaque chiffre à son sujet."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0027",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.reading",
+        "english.reading.vocab_in_context",
+        "english.reading.memo"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p007",
+      "stem": {
+        "fr": "The phrase *crept back* in paragraph 1 is closest in meaning to"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "been officially reintroduced"
+          }
+        },
+        {
+          "text": {
+            "fr": "gradually returned unnoticed"
+          }
+        },
+        {
+          "text": {
+            "fr": "been strictly forbidden"
+          }
+        },
+        {
+          "text": {
+            "fr": "suddenly disappeared"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Vocabulaire en contexte** : *to creep back* = revenir lentement, discrètement, à l'insu de tous. Le contexte (des habitudes qui reviennent depuis l'été, sans décision de la direction) exclut l'idée d'une réintroduction officielle. Méthode : chercher l'image derrière le verbe (*creep* = ramper, se glisser)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0028",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.memo"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p007",
+      "stem": {
+        "fr": "Why does the team ask captains to record the reason for carrying extra fuel?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "To comply with a new regulation on voyage reports."
+          }
+        },
+        {
+          "text": {
+            "fr": "To compare captains with each other."
+          }
+        },
+        {
+          "text": {
+            "fr": "To check whether the planned fuel figures need correcting."
+          }
+        },
+        {
+          "text": {
+            "fr": "To penalise captains who carry too much fuel."
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Inférence** : « so that we can improve the planning figures if they are unrealistic » — l'objectif est d'ajuster la planification, non de sanctionner. La phrase « We fully respect the captain's right » élimine toute idée de pénalité."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0029",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.main_idea",
+        "english.reading.article"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p008",
+      "stem": {
+        "fr": "What is the article mainly about?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The high cost of modern voice recorders."
+          }
+        },
+        {
+          "text": {
+            "fr": "Why pilot unions oppose voice recorders."
+          }
+        },
+        {
+          "text": {
+            "fr": "A change in recording requirements and the debate around it."
+          }
+        },
+        {
+          "text": {
+            "fr": "How investigators analyse cockpit conversations."
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Idée principale** : le texte présente la nouvelle exigence de 25 heures, puis les deux débats qu'elle soulève (vie privée, rétrofit). Les syndicats **acceptent** l'enregistrement plus long : l'option sur leur opposition contredit le texte."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0030",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.article"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p008",
+      "stem": {
+        "fr": "According to the article, why was the two-hour limit considered a problem?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Because pilots objected to being recorded for so long."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because the recorders were too expensive to replace."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because solid-state memory could not store more data."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because useful audio could be erased before the recorder was retrieved."
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Paragraphe 1 : « the relevant conversation may already have been *erased* by the time anyone thinks of pulling the recorder ». La mémoire solid-state est au contraire présentée comme rendant l'extension facile."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0031",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.article"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p008",
+      "stem": {
+        "fr": "What does the final sentence suggest about the position of safety groups?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "They believe retrofitting will happen naturally as fleets are renewed."
+          }
+        },
+        {
+          "text": {
+            "fr": "They think waiting for fleet renewal leaves a safety gap for too long."
+          }
+        },
+        {
+          "text": {
+            "fr": "They agree that certification costs make retrofitting impractical."
+          }
+        },
+        {
+          "text": {
+            "fr": "They expect regulators to ban two-hour recorders within ten years."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Inférence** (difficile) : « incidents do not wait for aircraft to be replaced » est un argument contre l'attente — les groupes de sécurité jugent qu'attendre le renouvellement de la flotte laisse la majorité des avions mal équipés pendant dix ans. Ils *répondent* aux régulateurs, donc ne partagent pas leur avis sur les coûts."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0032",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.vocab_in_context",
+        "english.reading.article"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p008",
+      "stem": {
+        "fr": "The word *trivial* in paragraph 2 is closest in meaning to"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "insignificant in difficulty"
+          }
+        },
+        {
+          "text": {
+            "fr": "poorly understood"
+          }
+        },
+        {
+          "text": {
+            "fr": "impossible to justify"
+          }
+        },
+        {
+          "text": {
+            "fr": "extremely expensive"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Vocabulaire en contexte** : « the change is technically *trivial* — … the extra capacity costs a few hundred dollars » : le tiret introduit une explication qui montre que c'est facile et peu coûteux. *Trivial* = sans difficulté, insignifiant, à ne pas confondre avec le sens français « vulgaire »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0033",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.form"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p009",
+      "stem": {
+        "fr": "What should the writer do when several people saw the incident?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Name the witnesses in Section C."
+          }
+        },
+        {
+          "text": {
+            "fr": "Ask the witnesses to sign the same form."
+          }
+        },
+        {
+          "text": {
+            "fr": "Make sure each witness fills in a separate form."
+          }
+        },
+        {
+          "text": {
+            "fr": "List all the witnesses in Section A."
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Section A : « each must complete a *separate* form ». Section C interdit de nommer d'autres personnes : les options qui reviennent à lister des noms contredisent le texte."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0034",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.form"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p009",
+      "stem": {
+        "fr": "Why must even minor contact with an aircraft be reported?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Because the safety office needs it for statistics."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because the aircraft must be checked before it can leave."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because the airline will claim compensation."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because the vehicle driver may lose their licence."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Section D : « the aircraft cannot depart until an engineer has inspected it » — le signalement déclenche l'inspection obligatoire. Aucune compensation ni sanction n'est mentionnée : ne pas extrapoler."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0035",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.form"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p009",
+      "stem": {
+        "fr": "What happens to a form handed in three hours after the event?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "It is refused by the safety office."
+          }
+        },
+        {
+          "text": {
+            "fr": "It must be countersigned by a manager."
+          }
+        },
+        {
+          "text": {
+            "fr": "It is returned to the writer for correction."
+          }
+        },
+        {
+          "text": {
+            "fr": "It is accepted but marked as late in the monthly review."
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Dernière phrase : « Forms submitted late are still accepted but are flagged in the monthly safety review ». Le connecteur *but* oppose l'acceptation et le signalement : les deux sont vrais."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0036",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.vocab_in_context",
+        "english.reading.form"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p009",
+      "stem": {
+        "fr": "The word *speculate* in Section C is closest in meaning to"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "guess"
+          }
+        },
+        {
+          "text": {
+            "fr": "lie"
+          }
+        },
+        {
+          "text": {
+            "fr": "summarise"
+          }
+        },
+        {
+          "text": {
+            "fr": "complain"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Vocabulaire en contexte** : « Do not *speculate* about causes » — dans un rapport factuel, on demande de ne pas **supposer** les causes. *Speculate* = faire des hypothèses, deviner. Méthode : le contraste avec « describe the facts » juste avant oriente vers l'idée de conjecture."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0037",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.faq"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p010",
+      "stem": {
+        "fr": "How long must cadets stay with the airline after qualifying?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Fourteen months"
+          }
+        },
+        {
+          "text": {
+            "fr": "Twenty-four months"
+          }
+        },
+        {
+          "text": {
+            "fr": "Twelve months"
+          }
+        },
+        {
+          "text": {
+            "fr": "Six years"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Rubrique *Who pays* : « remain with the airline for *six years* after qualifying ». Les autres durées existent dans le texte mais concernent la réinscription (12 / 24 mois) et l'expatriation (14 mois) : lier chaque chiffre à sa question."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0038",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.faq"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p010",
+      "stem": {
+        "fr": "According to the FAQ, what advantage do licensed applicants have?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "They skip the first stage of selection."
+          }
+        },
+        {
+          "text": {
+            "fr": "None — their experience is not credited."
+          }
+        },
+        {
+          "text": {
+            "fr": "They receive credit for their flying hours."
+          }
+        },
+        {
+          "text": {
+            "fr": "They can reapply without waiting."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Première rubrique : « they receive *no credit* for prior hours ». La question demande un avantage ; le texte dit qu'il n'y en a pas. Piège : lire trop vite « may apply » comme un privilège."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0039",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.faq"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p010",
+      "stem": {
+        "fr": "Why does the airline advise obtaining the medical certificate early?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Because some candidates turn out to be medically unfit."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because it is cheaper at the start of the year."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because the airline will reimburse it later."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because the certificate takes fourteen months to obtain."
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Inférence** : « a small number of applicants each year discover a disqualifying condition at this point » — mieux vaut le savoir avant d'investir dans la sélection. Le certificat est « at the candidate's own expense » : pas de remboursement."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0040",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.not_mentioned",
+        "english.reading.faq"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p010",
+      "stem": {
+        "fr": "Which of the following is NOT mentioned in the FAQ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The reason for training abroad"
+          }
+        },
+        {
+          "text": {
+            "fr": "The length of the relocation abroad"
+          }
+        },
+        {
+          "text": {
+            "fr": "The minimum age of applicants"
+          }
+        },
+        {
+          "text": {
+            "fr": "The cost of leaving the airline early"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Le texte donne la durée de l'expatriation (14 mois), le remboursement dégressif en cas de départ anticipé et la raison du choix de l'étranger (météo). Aucun âge minimum n'apparaît. Méthode « NOT mentioned » : chercher chaque option ; la seule introuvable est la bonne."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0041",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.table"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p011",
+      "stem": {
+        "fr": "Which document is required on narrow-body aircraft only during part of the year?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "The de-icing procedures card"
+          }
+        },
+        {
+          "text": {
+            "fr": "The radio licence"
+          }
+        },
+        {
+          "text": {
+            "fr": "The minimum equipment list"
+          }
+        },
+        {
+          "text": {
+            "fr": "The long-range navigation supplement"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Ligne *De-icing procedures card* : « Required (Nov–Mar) » pour la flotte monocouloir. Repérer la seule cellule contenant une période. Le supplément de navigation long-courrier n'est pas requis du tout sur ces avions."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0042",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.table"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p011",
+      "stem": {
+        "fr": "What must a crew do if the minimum equipment list will not open on one tablet?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Ask a foreign inspector for approval."
+          }
+        },
+        {
+          "text": {
+            "fr": "Cancel the flight."
+          }
+        },
+        {
+          "text": {
+            "fr": "Check the other pilot's tablet and record the defect."
+          }
+        },
+        {
+          "text": {
+            "fr": "Wait for Engineering to bring a paper copy."
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "La MEL est au format *digital*. Dernière phrase : « the flight may proceed provided the other pilot's tablet displays it correctly and the defect is entered in the technical log ». Il faut d'abord identifier le format du document dans le tableau, puis appliquer la règle correspondante."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0043",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 5,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.table"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p011",
+      "stem": {
+        "fr": "What can be inferred about a wide-body aircraft whose original radio licence has been lost?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "It may depart using a photocopy until a replacement arrives."
+          }
+        },
+        {
+          "text": {
+            "fr": "It is grounded until Engineering supplies a replacement."
+          }
+        },
+        {
+          "text": {
+            "fr": "It may depart on domestic flights only."
+          }
+        },
+        {
+          "text": {
+            "fr": "It may depart if the captain records the loss in the technical log."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Inférence** en combinant deux règles : la licence radio est un document *papier* et « If a paper document is missing, the aircraft must not depart until Engineering has delivered a replacement ». La tolérance du carnet technique ne s'applique qu'aux documents numériques ; les photocopies sont explicitement refusées."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0044",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.advert"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p012",
+      "stem": {
+        "fr": "Why is Aria Regional recruiting more technicians?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Night shifts are being introduced for the first time."
+          }
+        },
+        {
+          "text": {
+            "fr": "Several technicians are leaving the Solvik base."
+          }
+        },
+        {
+          "text": {
+            "fr": "A new base is opening in northern Europe."
+          }
+        },
+        {
+          "text": {
+            "fr": "The airline is receiving new aircraft."
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Premier paragraphe : « Following the delivery of *four additional aircraft* next spring, we are expanding our line maintenance team ». Le connecteur *following* introduit la cause. Aucune nouvelle base ni aucun départ n'est mentionné."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0045",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.advert"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p012",
+      "stem": {
+        "fr": "What can be inferred about a licensed technician who has never worked on the ARJ-90?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "They may be hired and trained on the type by the airline."
+          }
+        },
+        {
+          "text": {
+            "fr": "They must obtain the rating before applying."
+          }
+        },
+        {
+          "text": {
+            "fr": "They will be offered a lower salary."
+          }
+        },
+        {
+          "text": {
+            "fr": "They cannot apply for the position."
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Inférence** : les exigences acceptent « a comparable regional jet », et la rubrique *We offer* promet « full type training for licensed technicians without an ARJ-90 rating ». Les deux passages combinés montrent qu'une candidature sans qualification ARJ-90 est possible."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0046",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.advert"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p012",
+      "stem": {
+        "fr": "Why is a driving licence required?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Technicians travel between the three bases."
+          }
+        },
+        {
+          "text": {
+            "fr": "The base cannot be reached by public transport at night."
+          }
+        },
+        {
+          "text": {
+            "fr": "Technicians must drive vehicles on the apron."
+          }
+        },
+        {
+          "text": {
+            "fr": "Aircraft are towed by the maintenance team."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "« a driving licence, *as* the base is not served by public transport at night » — *as* = puisque. La raison est donnée dans la même phrase ; les autres options sont des suppositions plausibles mais absentes du texte."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0047",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.advert"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p012",
+      "stem": {
+        "fr": "Why does the airline want new employees to start in February?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Because the relocation allowance is only paid in winter."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because interviews cannot be held later than December."
+          }
+        },
+        {
+          "text": {
+            "fr": "Because the four-days-on pattern begins in February."
+          }
+        },
+        {
+          "text": {
+            "fr": "So that they are trained before the fleet grows in the spring."
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Dernière phrase : « expected to start in February, *so that* they are fully trained before the new aircraft arrive » — la finalité est explicite (*so that*). Les nouveaux avions arrivent « next spring », d'où le calendrier."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0048",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 2,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.email"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p013",
+      "stem": {
+        "fr": "What caused the delay of the first flight?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Congestion at Perrin airport"
+          }
+        },
+        {
+          "text": {
+            "fr": "Bad weather at Halden"
+          }
+        },
+        {
+          "text": {
+            "fr": "A problem found during a tyre inspection"
+          }
+        },
+        {
+          "text": {
+            "fr": "A late crew"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Paragraphe 2 : « left Halden 52 minutes late *because a wheel change was required after a tyre inspection* ». Le connecteur *because* signale la cause ; aucune des autres explications n'apparaît."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0049",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 4,
+      "tags": [
+        "english.reading",
+        "english.reading.inference",
+        "english.reading.email"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p013",
+      "stem": {
+        "fr": "What can be inferred about the airline's decision to pay compensation?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "It depends on the passenger providing hotel receipts."
+          }
+        },
+        {
+          "text": {
+            "fr": "It was made only as a gesture of goodwill."
+          }
+        },
+        {
+          "text": {
+            "fr": "It was required because the connection was in another terminal."
+          }
+        },
+        {
+          "text": {
+            "fr": "It follows from the fact that the delay was not considered exceptional."
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Inférence** : « a delay caused by a technical problem … is *not* regarded as an extraordinary circumstance. You are *therefore* entitled to a fixed compensation » — la compensation est due parce que le retard n'est pas exceptionnel. Le geste commercial (les miles) est distinct et vient en plus."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0050",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.detail",
+        "english.reading.email"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p013",
+      "stem": {
+        "fr": "What does the passenger have to do to receive the 600 euros?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Register for the loyalty programme."
+          }
+        },
+        {
+          "text": {
+            "fr": "Send his bank details via a secure link."
+          }
+        },
+        {
+          "text": {
+            "fr": "Reply within ten working days."
+          }
+        },
+        {
+          "text": {
+            "fr": "Claim his meal and hotel expenses."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "« Please send us your bank details using the secure link below, and the payment will be made within ten working days ». Les frais de repas et d'hôtel ont déjà été réclamés (*already claimed*) : ce n'est pas une condition."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "english.reading.0051",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "english",
+      "difficulty": 3,
+      "tags": [
+        "english.reading",
+        "english.reading.vocab_in_context",
+        "english.reading.email"
+      ],
+      "lang": "en",
+      "passageId": "english.reading.p013",
+      "stem": {
+        "fr": "The phrase *looked into* in paragraph 2 is closest in meaning to"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "investigated"
+          }
+        },
+        {
+          "text": {
+            "fr": "predicted"
+          }
+        },
+        {
+          "text": {
+            "fr": "apologised for"
+          }
+        },
+        {
+          "text": {
+            "fr": "ignored"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Vocabulaire en contexte** : *to look into* = examiner, enquêter sur. La phrase suivante détaille les faits découverts, ce qui confirme l'idée d'investigation. Verbe à particule très fréquent dans les courriers professionnels."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    }
+  ]
+}

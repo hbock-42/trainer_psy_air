@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.logic_dominos.01",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "logic_dominos",
+  "order": 1,
+  "title": { "fr": "Dominos : le catalogue des lois modulo 7" },
+  "summary": { "fr": "Lire le sens d'une série, séparer ou coupler les moitiés, reconnaître les dix lois qui reviennent, et vérifier avant de valider." },
+  "file": { "fr": "lessons/logic_dominos/01-dominos.fr.md" },
+  "estimatedReadMin": 10,
+  "difficulty": 3,
+  "tags": ["logic_dominos", "logic_dominos.strategy", "logic.series"],
+  "practiceTags": ["logic_dominos"],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 G" }
+}

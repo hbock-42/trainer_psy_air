@@ -1,0 +1,59 @@
+{
+  "$schema": "../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "memory_nback",
+  "items": [
+    {
+      "id": "memory_nback.span.0001",
+      "type": "sequence",
+      "version": 1,
+      "familyId": "memory_nback",
+      "difficulty": 2,
+      "tags": ["memory.span", "memory.span.forward"],
+      "instructions": {
+        "fr": "Des chiffres vont s'afficher un par un. Retenez-les puis saisissez-les **dans l'ordre**.",
+        "en": "Digits will appear one at a time. Memorise them, then type them back **in order**."
+      },
+      "stimulusKind": "digits",
+      "stimulus": ["7", "2", "9", "4", "1", "8"],
+      "presentationMs": 800,
+      "gapMs": 200,
+      "recallMode": "forward",
+      "explanation": {
+        "fr": "Six chiffres : groupez-les par deux (72 · 94 · 18) ou par trois (729 · 418) et répétez-les mentalement pendant l'affichage. Le regroupement (*chunking*) fait passer de 6 éléments à 2 ou 3."
+      },
+      "meta": { "notes": "Practice-only warm-up: digit span is not part of PSY0 (spec §4.1), it trains the same updating skill as the N-back." }
+    },
+    {
+      "id": "memory_nback.span.0002",
+      "type": "sequence",
+      "version": 1,
+      "familyId": "memory_nback",
+      "difficulty": 4,
+      "tags": ["memory.span", "memory.span.backward"],
+      "stimulusKind": "digits",
+      "stimulus": ["3", "8", "1", "6", "9", "2", "5"],
+      "presentationMs": 800,
+      "gapMs": 200,
+      "recallMode": "backward",
+      "explanation": {
+        "fr": "Sept chiffres à restituer **à l'envers**. Visualisez-les écrits sur une ligne et lisez la ligne de droite à gauche : 5 2 9 6 1 8 3."
+      }
+    },
+    {
+      "id": "memory_nback.pattern.0001",
+      "type": "sequence",
+      "version": 1,
+      "familyId": "memory_nback",
+      "difficulty": 3,
+      "tags": ["memory.pattern"],
+      "instructions": { "fr": "Une grille s'affiche 2 secondes. Reproduisez les cases allumées." },
+      "stimulusKind": "gridCells",
+      "grid": { "rows": 4, "cols": 4 },
+      "stimulus": ["0,0", "1,2", "2,1", "3,3", "1,3"],
+      "presentationMs": 2000,
+      "gapMs": 0,
+      "recallMode": "anyOrder"
+    }
+  ]
+}

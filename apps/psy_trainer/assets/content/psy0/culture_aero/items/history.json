@@ -1,0 +1,539 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "culture_aero",
+  "items": [
+    {
+      "id": "cult.history.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 1,
+      "tags": ["culture.history", "culture.history.pioneers"],
+      "lang": "fr",
+      "stem": { "fr": "Quel est le premier vol habité de l'histoire, réalisé en 1783 à Paris ?" },
+      "options": [
+        { "text": { "fr": "Un ballon à air chaud des frères Montgolfier" } },
+        { "text": { "fr": "Un planeur d'Otto Lilienthal" } },
+        { "text": { "fr": "Un dirigeable de Ferdinand von Zeppelin" } },
+        { "text": { "fr": "Un aéroplane à vapeur de Clément Ader" } }
+      ],
+      "correctIndex": 0,
+      "explanation": { "fr": "Le 21 novembre 1783, Pilâtre de Rozier et le marquis d'Arlandes s'élèvent au-dessus de Paris dans une **montgolfière**. Lilienthal (planeurs), Zeppelin (dirigeables) et Ader viennent plus d'un siècle plus tard. Réflexe : 1783 = plus léger que l'air, 1903 = plus lourd que l'air." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": ["culture.history", "culture.history.pioneers"],
+      "lang": "fr",
+      "stem": { "fr": "En 1890, Clément Ader décolle brièvement avec un appareil à vapeur nommé :" },
+      "options": [
+        { "text": { "fr": "Le Flyer" } },
+        { "text": { "fr": "L'Éole" } },
+        { "text": { "fr": "L'Antoinette" } },
+        { "text": { "fr": "Le Demoiselle" } }
+      ],
+      "correctIndex": 1,
+      "explanation": { "fr": "L'**Éole**, monoplan à moteur à vapeur inspiré de la chauve-souris, aurait quitté le sol sur quelques dizaines de mètres le 9 octobre 1890. Ader est aussi à l'origine du mot « avion ». Le Flyer est celui des Wright, la Demoiselle celle de Santos-Dumont." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 1,
+      "tags": ["culture.history", "culture.history.pioneers"],
+      "lang": "fr",
+      "stem": { "fr": "Le premier vol motorisé, contrôlé et soutenu d'un plus lourd que l'air est attribué aux frères Wright le :" },
+      "options": [
+        { "text": { "fr": "25 juillet 1909" } },
+        { "text": { "fr": "21 novembre 1783" } },
+        { "text": { "fr": "17 décembre 1903" } },
+        { "text": { "fr": "20 mai 1927" } }
+      ],
+      "correctIndex": 2,
+      "explanation": { "fr": "Le **17 décembre 1903** à Kitty Hawk (Caroline du Nord), le Flyer d'Orville et Wilbur Wright vole 12 secondes sur 36 m. 1909 est la traversée de la Manche par Blériot, 1927 celle de l'Atlantique par Lindbergh." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": ["culture.history", "culture.history.pioneers"],
+      "lang": "fr",
+      "stem": { "fr": "Qui a réalisé la première traversée de la Manche en avion, le 25 juillet 1909 ?" },
+      "options": [
+        { "text": { "fr": "Roland Garros" } },
+        { "text": { "fr": "Henri Farman" } },
+        { "text": { "fr": "Alberto Santos-Dumont" } },
+        { "text": { "fr": "Louis Blériot" } }
+      ],
+      "correctIndex": 3,
+      "explanation": { "fr": "**Louis Blériot** relie Calais à Douvres en 37 minutes sur son Blériot XI. Garros traversera la Méditerranée en 1913, Farman est l'auteur du premier kilomètre en circuit fermé (1908), Santos-Dumont du premier vol homologué en Europe (1906)." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.history", "culture.history.pioneers"],
+      "lang": "fr",
+      "stem": { "fr": "Quelle traversée Roland Garros accomplit-il en premier, le 23 septembre 1913 ?" },
+      "options": [
+        { "text": { "fr": "La Méditerranée, de Fréjus à Bizerte" } },
+        { "text": { "fr": "L'Atlantique Nord, de New York à Paris" } },
+        { "text": { "fr": "La Manche, de Calais à Douvres" } },
+        { "text": { "fr": "Les Andes, de Mendoza à Santiago" } }
+      ],
+      "correctIndex": 0,
+      "explanation": { "fr": "Garros signe la **première traversée de la Méditerranée** sans escale (près de 8 h de vol sur un Morane-Saulnier). L'Atlantique attendra 1919 (Alcock et Brown) puis 1927, la Manche est de Blériot (1909), les Andes seront le domaine de l'Aéropostale." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.history", "culture.history.pioneers"],
+      "lang": "fr",
+      "stem": { "fr": "La première traversée de l'Atlantique Nord sans escale en avion (1919) est l'œuvre de :" },
+      "options": [
+        { "text": { "fr": "Nungesser et Coli" } },
+        { "text": { "fr": "Alcock et Brown" } },
+        { "text": { "fr": "Costes et Bellonte" } },
+        { "text": { "fr": "Charles Lindbergh" } }
+      ],
+      "correctIndex": 1,
+      "explanation": { "fr": "En juin 1919, les Britanniques **Alcock et Brown** relient Terre-Neuve à l'Irlande sur un Vickers Vimy. Lindbergh réalise la première traversée **en solitaire** (1927), Costes et Bellonte la première Paris–New York dans le sens est-ouest (1930), Nungesser et Coli disparaissent en 1927." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": ["culture.history", "culture.history.pioneers"],
+      "lang": "fr",
+      "stem": { "fr": "Sur quel aérodrome Charles Lindbergh se pose-t-il le 21 mai 1927 après sa traversée en solitaire ?" },
+      "options": [
+        { "text": { "fr": "Orly" } },
+        { "text": { "fr": "Villacoublay" } },
+        { "text": { "fr": "Le Bourget" } },
+        { "text": { "fr": "Issy-les-Moulineaux" } }
+      ],
+      "correctIndex": 2,
+      "explanation": { "fr": "Parti de New York, le *Spirit of St. Louis* atterrit au **Bourget** après 33 h 30 de vol devant une foule immense. Le Bourget était alors le grand aéroport de Paris ; Orly ne s'imposera qu'après-guerre." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.history", "culture.history.pioneers"],
+      "lang": "fr",
+      "stem": { "fr": "Quel avion disparaît en mai 1927 avec Nungesser et Coli en tentant Paris–New York ?" },
+      "options": [
+        { "text": { "fr": "Le Point d'Interrogation" } },
+        { "text": { "fr": "La Croix-du-Sud" } },
+        { "text": { "fr": "Le Spirit of St. Louis" } },
+        { "text": { "fr": "L'Oiseau Blanc" } }
+      ],
+      "correctIndex": 3,
+      "explanation": { "fr": "**L'Oiseau Blanc** (un Levasseur PL.8) quitte Le Bourget le 8 mai 1927 et n'est jamais retrouvé. Le *Point d'Interrogation* est l'avion de Costes et Bellonte (1930), la *Croix-du-Sud* l'hydravion de Mermoz (1936)." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": ["culture.history", "culture.history.aeropostale"],
+      "lang": "fr",
+      "stem": { "fr": "L'Aéropostale, ancêtre d'Air France, est née de l'entreprise d'un industriel toulousain nommé :" },
+      "options": [
+        { "text": { "fr": "Pierre-Georges Latécoère" } },
+        { "text": { "fr": "Marcel Dassault" } },
+        { "text": { "fr": "Louis Breguet" } },
+        { "text": { "fr": "Henry Potez" } }
+      ],
+      "correctIndex": 0,
+      "explanation": { "fr": "En 1918, **Latécoère** lance les Lignes Aériennes Latécoère (« la Ligne ») de Toulouse vers l'Espagne puis le Maroc et le Sénégal ; l'affaire devient l'Aéropostale en 1927. Breguet et Potez sont des constructeurs, Dassault viendra après-guerre." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.history", "culture.history.aeropostale"],
+      "lang": "fr",
+      "stem": { "fr": "Jean Mermoz disparaît en décembre 1936 dans l'Atlantique Sud à bord de :" },
+      "options": [
+        { "text": { "fr": "Un Latécoère 28 baptisé Comte-de-la-Vaulx" } },
+        { "text": { "fr": "Un hydravion Latécoère 300 baptisé Croix-du-Sud" } },
+        { "text": { "fr": "Un Potez 25 de la ligne des Andes" } },
+        { "text": { "fr": "Un Dewoitine 338 d'Air France" } }
+      ],
+      "correctIndex": 1,
+      "explanation": { "fr": "Le 7 décembre 1936, l'hydravion **Croix-du-Sud** émet un dernier message (« coupons moteur arrière droit ») puis disparaît. Le Laté 28 *Comte-de-la-Vaulx* est celui de sa première traversée postale de l'Atlantique Sud en 1930 ; le Potez 25 est l'avion de Guillaumet dans les Andes." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.history", "culture.history.aeropostale"],
+      "lang": "fr",
+      "stem": { "fr": "Quel pilote de l'Aéropostale survit à une semaine de marche dans les Andes après son crash de 1930 ?" },
+      "options": [
+        { "text": { "fr": "Antoine de Saint-Exupéry" } },
+        { "text": { "fr": "Didier Daurat" } },
+        { "text": { "fr": "Henri Guillaumet" } },
+        { "text": { "fr": "Jean Mermoz" } }
+      ],
+      "correctIndex": 2,
+      "explanation": { "fr": "**Guillaumet**, tombé dans la cordillère en juin 1930, marche cinq jours et cinq nuits ; sa phrase « ce que j'ai fait, aucune bête ne l'aurait fait » est rapportée par Saint-Exupéry dans *Terre des hommes*. Daurat était le directeur d'exploitation de la Ligne." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": ["culture.history", "culture.history.air_france"],
+      "lang": "fr",
+      "stem": { "fr": "En quelle année Air France est-elle créée ?" },
+      "options": [
+        { "text": { "fr": "1919" } },
+        { "text": { "fr": "1927" } },
+        { "text": { "fr": "1946" } },
+        { "text": { "fr": "1933" } }
+      ],
+      "correctIndex": 3,
+      "explanation": { "fr": "Air France naît le **7 octobre 1933** de la fusion de cinq compagnies (Air Orient, Air Union, CIDNA, SGTA et les actifs de l'Aéropostale). 1919 est l'année de KLM, 1927 celle de l'Aéropostale, 1946 celle de la première ligne Paris–New York." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": ["culture.history", "culture.history.air_france"],
+      "lang": "fr",
+      "stem": { "fr": "L'hippocampe ailé (« la crevette ») d'Air France est hérité de laquelle des compagnies fondatrices ?" },
+      "options": [
+        { "text": { "fr": "Air Orient" } },
+        { "text": { "fr": "Air Union" } },
+        { "text": { "fr": "L'Aéropostale" } },
+        { "text": { "fr": "La CIDNA" } }
+      ],
+      "correctIndex": 0,
+      "explanation": { "fr": "L'emblème vient d'**Air Orient**, qui desservait l'Indochine : l'hippocampe évoque à la fois l'avion et l'hydravion, la mer et l'Orient. Air France l'adopte dès 1933 et le conserve encore sur ses avions." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": ["culture.history", "culture.history.air_france"],
+      "lang": "fr",
+      "stem": { "fr": "Quel appareil français était le fleuron de la flotte Air France d'avant-guerre, mettant l'Indochine à cinq jours de Paris ?" },
+      "options": [
+        { "text": { "fr": "Le Bloch 220" } },
+        { "text": { "fr": "Le Dewoitine 338" } },
+        { "text": { "fr": "Le Potez 62" } },
+        { "text": { "fr": "Le Lockheed Constellation" } }
+      ],
+      "correctIndex": 1,
+      "explanation": { "fr": "Trimoteur de 22 places en version Europe, le **Dewoitine 338** (25 exemplaires) est l'avion du « grand décollage » d'Air France dans les années 1930. Le Bloch 220 et le Potez 62 complètent la flotte ; le Constellation est d'après-guerre." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.history", "culture.history.air_france"],
+      "lang": "fr",
+      "stem": { "fr": "Avec quel type d'avion Air France ouvre-t-elle sa ligne Paris–New York en 1946 ?" },
+      "options": [
+        { "text": { "fr": "Boeing 707" } },
+        { "text": { "fr": "Sud-Aviation Caravelle" } },
+        { "text": { "fr": "Douglas DC-4" } },
+        { "text": { "fr": "Boeing 747" } }
+      ],
+      "correctIndex": 2,
+      "explanation": { "fr": "La première liaison régulière Paris–New York (juin 1946) est assurée en **DC-4** quadrimoteur, avec escales ; les Constellation prennent ensuite le relais. Les jets arrivent en 1959 (707, Caravelle) et le 747 en 1970." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": ["culture.history", "culture.history.jet_age"],
+      "lang": "fr",
+      "stem": { "fr": "Quel est le premier avion de ligne à réaction mis en service commercial, en 1952 ?" },
+      "options": [
+        { "text": { "fr": "Le Boeing 707" } },
+        { "text": { "fr": "La Caravelle" } },
+        { "text": { "fr": "Le Douglas DC-8" } },
+        { "text": { "fr": "Le De Havilland Comet" } }
+      ],
+      "correctIndex": 3,
+      "explanation": { "fr": "Le **Comet** britannique inaugure le transport à réaction en mai 1952 ; une série d'accidents dus à la fatigue structurale du fuselage pressurisé l'écarte vite. Le 707 et la Caravelle entrent en service en 1958-1959, le DC-8 en 1959." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.history", "culture.history.jet_age"],
+      "lang": "fr",
+      "stem": { "fr": "Quelle particularité de conception distingue la Caravelle des jets de sa génération ?" },
+      "options": [
+        { "text": { "fr": "Ses réacteurs montés à l'arrière du fuselage" } },
+        { "text": { "fr": "Son aile en flèche inversée" } },
+        { "text": { "fr": "Son cockpit à trois pilotes" } },
+        { "text": { "fr": "Son fuselage non pressurisé" } }
+      ],
+      "correctIndex": 0,
+      "explanation": { "fr": "La **Caravelle** (premier vol 1955, service Air France le 6 mai 1959) est le premier avion de ligne à placer ses deux réacteurs **à l'arrière**, ce qui donne une aile propre et une cabine silencieuse ; la formule sera reprise par le DC-9 et le 727. Air France en a exploité 54 jusqu'en 1981." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.history", "culture.history.jet_age"],
+      "lang": "fr",
+      "stem": { "fr": "En 1970, Air France met en service sur Paris–New York le premier gros-porteur de l'histoire, le :" },
+      "options": [
+        { "text": { "fr": "Douglas DC-10" } },
+        { "text": { "fr": "Boeing 747" } },
+        { "text": { "fr": "Airbus A300" } },
+        { "text": { "fr": "Lockheed L-1011 TriStar" } }
+      ],
+      "correctIndex": 1,
+      "explanation": { "fr": "Le **Boeing 747** « Jumbo » (environ 500 places) ouvre l'ère du transport de masse ; Air France l'aligne sur Paris–New York le 3 juin 1970. Le DC-10 et le TriStar sont des triréacteurs concurrents ; l'A300 arrive chez Air France en 1974." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0019",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": ["culture.history", "culture.history.concorde"],
+      "lang": "fr",
+      "stem": { "fr": "Le premier vol du Concorde a lieu le 2 mars 1969 au départ de :" },
+      "options": [
+        { "text": { "fr": "Paris-Le Bourget" } },
+        { "text": { "fr": "Bristol-Filton" } },
+        { "text": { "fr": "Toulouse-Blagnac" } },
+        { "text": { "fr": "Istres" } }
+      ],
+      "correctIndex": 2,
+      "explanation": { "fr": "Le prototype 001 décolle de **Toulouse** aux mains d'André Turcat ; le 002 britannique volera de Filton un mois plus tard. Concorde est un programme franco-britannique (Sud-Aviation / BAC), d'où les deux chaînes d'assemblage." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0020",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.history", "culture.history.concorde"],
+      "lang": "fr",
+      "stem": { "fr": "Quelle affirmation sur l'exploitation du Concorde par Air France est exacte ?" },
+      "options": [
+        { "text": { "fr": "Service commercial de 1969 à 2000, croisière à Mach 1,4" } },
+        { "text": { "fr": "Service commercial de 1976 à 2003, croisière à Mach 2" } },
+        { "text": { "fr": "Service commercial de 1976 à 2003, croisière à Mach 3" } },
+        { "text": { "fr": "Service commercial de 1980 à 2010, croisière à Mach 2" } }
+      ],
+      "correctIndex": 1,
+      "explanation": { "fr": "Les vols commerciaux débutent le **21 janvier 1976** (Paris–Rio via Dakar pour Air France, Londres–Bahreïn pour British Airways) et s'arrêtent en **2003**. Concorde croise à **Mach 2** (environ 2 150 km/h) et relie Paris à New York en un peu plus de trois heures. Air France en a exploité sept." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0021",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.history", "culture.history.airbus"],
+      "lang": "fr",
+      "stem": { "fr": "Premier appareil du consortium Airbus, l'A300 entre en service chez Air France en :" },
+      "options": [
+        { "text": { "fr": "1970" } },
+        { "text": { "fr": "1972" } },
+        { "text": { "fr": "1978" } },
+        { "text": { "fr": "1974" } }
+      ],
+      "correctIndex": 3,
+      "explanation": { "fr": "Airbus Industrie est fondé en 1970, l'A300 vole pour la première fois en octobre **1972** et Air France, client de lancement, l'exploite à partir de mai **1974** sur Paris–Londres. Repère : 1970 création, 1972 premier vol, 1974 service." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0022",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.history", "culture.history.airbus"],
+      "lang": "fr",
+      "stem": { "fr": "Quelle innovation majeure l'Airbus A320 introduit-il en 1988 dans l'aviation commerciale ?" },
+      "options": [
+        { "text": { "fr": "Les commandes de vol électriques avec mini-manche" } },
+        { "text": { "fr": "Le premier cockpit à deux pilotes" } },
+        { "text": { "fr": "Le premier turboréacteur à double flux" } },
+        { "text": { "fr": "Le premier fuselage en composite" } }
+      ],
+      "correctIndex": 0,
+      "explanation": { "fr": "L'A320 est le premier avion de ligne à **commandes de vol électriques** (*fly-by-wire*) avec lois de protection du domaine de vol et *sidestick* ; Air France en est le client de lancement. Le cockpit à deux existait déjà (A310, 757/767), le composite massif viendra avec le 787 et l'A350." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0023",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": ["culture.history", "culture.history.airbus"],
+      "lang": "fr",
+      "stem": { "fr": "Pendant quelle période Air France a-t-elle exploité l'Airbus A380 ?" },
+      "options": [
+        { "text": { "fr": "2005 – 2015" } },
+        { "text": { "fr": "2009 – 2020" } },
+        { "text": { "fr": "2012 – 2024" } },
+        { "text": { "fr": "2007 – 2018" } }
+      ],
+      "correctIndex": 1,
+      "explanation": { "fr": "L'A380 vole pour la première fois en 2005 ; Air France reçoit le sien fin **2009** et retire prématurément ses dix exemplaires en **2020** avec la crise du Covid-19, remplacés par l'A350. Repère : deux moteurs valent mieux que quatre pour l'économie de carburant." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0024",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": ["culture.history", "culture.history.milestones"],
+      "lang": "fr",
+      "stem": { "fr": "Qui franchit le premier le mur du son en vol horizontal, le 14 octobre 1947 ?" },
+      "options": [
+        { "text": { "fr": "Neil Armstrong" } },
+        { "text": { "fr": "André Turcat" } },
+        { "text": { "fr": "Chuck Yeager" } },
+        { "text": { "fr": "Jacqueline Auriol" } }
+      ],
+      "correctIndex": 2,
+      "explanation": { "fr": "**Chuck Yeager** dépasse Mach 1 sur le Bell X-1 largué d'un B-29 au-dessus du désert de Mojave. Jacqueline Auriol sera la première Française supersonique (1953), Turcat le pilote d'essai de Concorde, Armstrong le premier homme sur la Lune (1969)." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0025",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": ["culture.history", "culture.history.women"],
+      "lang": "fr",
+      "stem": { "fr": "Laquelle de ces aviatrices françaises fut pilote d'essai et détentrice de records de vitesse dans les années 1950 ?" },
+      "options": [
+        { "text": { "fr": "Maryse Bastié" } },
+        { "text": { "fr": "Hélène Boucher" } },
+        { "text": { "fr": "Adrienne Bolland" } },
+        { "text": { "fr": "Jacqueline Auriol" } }
+      ],
+      "correctIndex": 3,
+      "explanation": { "fr": "**Jacqueline Auriol**, pilote d'essai au Centre d'essais en vol, bat plusieurs records de vitesse féminins (Mystère IV, Mirage III). Hélène Boucher est la recordwoman des années 1930 (morte en 1934), Maryse Bastié la spécialiste des raids de distance, Adrienne Bolland la première à traverser les Andes (1921)." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0026",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": ["culture.history", "culture.history.air_france"],
+      "lang": "fr",
+      "stem": { "fr": "Quelle compagnie française, spécialisée dans les lignes intérieures, est absorbée par Air France en 1997 ?" },
+      "options": [
+        { "text": { "fr": "UTA" } },
+        { "text": { "fr": "Air Inter" } },
+        { "text": { "fr": "Air Littoral" } },
+        { "text": { "fr": "Aéromaritime" } }
+      ],
+      "correctIndex": 1,
+      "explanation": { "fr": "**Air Inter** (1954–1997) exploitait le réseau domestique depuis Orly ; sa fusion dans le groupe Air France suit celle d'**UTA**, compagnie long-courrier privée reprise en 1990 et intégrée en 1992. Air Littoral était une régionale indépendante." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0027",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": ["culture.history", "culture.history.air_france"],
+      "lang": "fr",
+      "stem": { "fr": "Le groupe Air France-KLM est né du rapprochement des deux compagnies en :" },
+      "options": [
+        { "text": { "fr": "2004" } },
+        { "text": { "fr": "1999" } },
+        { "text": { "fr": "2008" } },
+        { "text": { "fr": "2011" } }
+      ],
+      "correctIndex": 0,
+      "explanation": { "fr": "L'échange d'actions est finalisé en mai **2004** : Air France-KLM devient une holding avec deux compagnies et deux hubs (CDG et Schiphol). KLM, fondée le 7 octobre **1919**, est la plus ancienne compagnie encore en activité sous son nom d'origine." },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "cult.history.0028",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 5,
+      "tags": ["culture.history", "culture.history.industry"],
+      "lang": "fr",
+      "stem": { "fr": "Quelle filiation industrielle est correcte pour le constructeur de la Caravelle ?" },
+      "options": [
+        { "text": { "fr": "Breguet → Dassault Aviation" } },
+        { "text": { "fr": "SNCASO → Nord-Aviation → SNIAS" } },
+        { "text": { "fr": "SNCASE → Sud-Aviation → Aérospatiale → Airbus" } },
+        { "text": { "fr": "Latécoère → Aéropostale → Air France" } }
+      ],
+      "correctIndex": 2,
+      "explanation": { "fr": "La Caravelle (SE 210) est conçue par la **SNCASE**, qui fusionne avec la SNCASO en 1957 pour former **Sud-Aviation** ; celle-ci devient l'**Aérospatiale** en 1970, puis entre dans EADS/Airbus. Même lignée pour Concorde et les premiers Airbus." },
+      "meta": { "author": "hbock", "source": "own" }
+    }
+  ]
+}

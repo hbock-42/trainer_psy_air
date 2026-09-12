@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../../../packages/psy_content/schema/family.schema.json#/$defs/Module",
+  "kind": "module",
+  "id": "psy0",
+  "version": 1,
+  "order": 0,
+  "name": { "fr": "PSY0 — présélection en ligne", "en": "PSY0 — online pre-selection" },
+  "description": {
+    "fr": "Première étape de la sélection Cadets : une batterie d'environ 14 activités cognitives courtes (mémoire, attention, spatial, planification, calcul, multitâche), un QCM de culture aéronautique et un test d'anglais, passée en ligne sur ordinateur (~3 h). Structure et durées **estimées** à partir de retours de candidats.",
+    "en": "First stage of the Cadet selection: a battery of about 14 short cognitive activities (memory, attention, spatial, planning, arithmetic, multitasking), an aeronautical-culture MCQ and an English test, taken online on a computer (~3 h). Structure and timings are **estimated** from candidate reports."
+  },
+  "familyIds": [
+    "memory_nback",
+    "planning_tubes",
+    "attention_rules",
+    "attention_parity",
+    "spatial_overlay",
+    "logic_dominos",
+    "attention_airways",
+    "verbal_boxes",
+    "arithmetic_grid",
+    "spatial_viewpoint",
+    "spatial_cubes",
+    "culture_aero",
+    "multitask_psychomotor",
+    "english",
+    "english_listening",
+    "english_speaking"
+  ],
+  "defaultBlueprintId": "psy0.blueprint.full"
+}

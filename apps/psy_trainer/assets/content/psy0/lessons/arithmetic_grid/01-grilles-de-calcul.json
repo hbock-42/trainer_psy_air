@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.arithmetic_grid.01",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "arithmetic_grid",
+  "order": 1,
+  "title": { "fr": "Grilles de calcul : traquer les égalités fausses en 45 secondes" },
+  "summary": { "fr": "Priorités opératoires, carrés, divisions, pièges de signe et astuces de vérification rapide (chiffre des unités, parité, ordre de grandeur)." },
+  "file": { "fr": "lessons/arithmetic_grid/01-grilles-de-calcul.fr.md" },
+  "estimatedReadMin": 10,
+  "difficulty": 2,
+  "tags": ["arithmetic_grid", "arithmetic_grid.strategy", "arith.mental"],
+  "practiceTags": ["arithmetic_grid"],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; format from docs/content/psy0-spec.md section 2.4 J" }
+}

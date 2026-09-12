@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.selection_process.01",
+  "version": 1,
+  "moduleId": "psy0",
+  "order": 1,
+  "title": { "fr": "Comment fonctionne la sélection Cadets" },
+  "summary": { "fr": "Les étapes du dossier à la formation, ce que PSY0 évalue vraiment, les règles d'élimination et le calendrier 2026." },
+  "file": { "fr": "lessons/selection_process/01-comment-fonctionne-la-selection.fr.md" },
+  "estimatedReadMin": 8,
+  "difficulty": 1,
+  "tags": ["selection_process", "selection_process.overview"],
+  "practiceTags": [],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; facts from docs/content/psy0-spec.md sections 1, 2.1, 2.2, 2.4" }
+}

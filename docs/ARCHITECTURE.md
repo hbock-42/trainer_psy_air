@@ -3,7 +3,68 @@
 Conventions for the PSY Trainer Flutter app. Established in US-001; amend this file when a
 decision changes (and say why in the PR).
 
-## Folder layout (feature-first)
+## Repository layout (pub workspace, US-007)
+
+The repo is a [pub workspace](https://dart.dev/tools/pub/workspaces) (Dart 3.6+): one
+`pubspec.lock` at the root resolves every member together, and `dart pub get` only ever
+runs there.
+
+```
+pubspec.yaml                 workspace root: `workspace: [apps/psy_trainer, packages/psy_content]`,
+                             publish_to: none, no app code of its own
+melos.yaml                   Melos scripts (analyze, format, test, coverage, build:web,
+                             content:check) — a thin wrapper around per-package commands;
+                             see "Running the workspace" below
+apps/psy_trainer/            the Flutter app: lib, test, assets/content, platform folders
+                             (android, ios, macos, windows, web), its own pubspec.yaml
+                             (`resolution: workspace`), build.yaml, analysis_options.yaml
+packages/psy_content/        pure Dart: content models, ContentBundleParser and the content
+                             validator (see "Content model" and "Content validator" below);
+                             `resolution: workspace`; no Flutter dependency
+tools/                       repo-wide scripts with no package dependencies of their own:
+                             coverage_gate.dart, list_content_assets.dart (+ tools/test/)
+docs/                        unchanged (this file, TESTING.md, content/, kanban/)
+Makefile, .gitattributes,    unchanged, run from the repo root
+.github/
+```
+
+**Adding a package.** Create `packages/<name>/` (or `apps/<name>/` for another app) with its
+own `pubspec.yaml` (`resolution: workspace`, no `publish_to` needed beyond `'none'` for
+private code), list it under the root `workspace:` key, and `dart pub get` at the root. A
+member that depends on another declares a normal `path:` dependency
+(`psy_content: {path: ../../packages/psy_content}`); pub workspaces still resolve
+inter-package dependencies through the pubspec graph, they only share one lockfile and one
+`.dart_tool/`. Add its commands to `melos.yaml` (or the root `Makefile`) and, if it ships
+Dart code, an architecture test enforcing its layer rules (see `no_flutter_test.dart` in
+`packages/psy_content/test/` for the "no Flutter dependency" pattern).
+
+**Why pub workspaces over Melos-only or a single package.** A single package (the pre-US-007
+layout) could not keep `psy_content` Flutter-free without a separate checkout; pub
+workspaces give one lockfile and one `flutter pub get`/`dart pub get` for every member,
+which is simpler than N independent lockfiles kept in sync by hand. Melos is layered on top
+only for the convenience of naming a script once (`melos run test`) instead of a
+per-package loop; if it ever adds friction the root `Makefile` already delegates to the same
+per-package commands and is the fallback (see `melos.yaml`'s header comment).
+
+**Running the workspace** (from the repo root):
+
+```sh
+dart pub global activate melos   # once per machine
+dart pub get                     # resolves every member from the one lockfile
+melos run analyze                # flutter analyze (app) + dart analyze (psy_content), --fatal-infos
+melos run format                 # dart format --output=none --set-exit-if-changed, every member
+melos run test                   # flutter test (app) + dart test (psy_content, tools/test)
+melos run coverage                # flutter test --coverage (app) + tools/coverage_gate.dart
+melos run build:web              # flutter build web --release, in apps/psy_trainer
+melos run content:check          # the content validator over apps/psy_trainer/assets/content
+```
+
+Equivalent `make` targets exist at the root (`make test`, `make lint`, `make coverage`,
+`make build-web`, `make content-check`) and delegate the same way; use whichever you have
+installed. `make gen`, `make run*` and the platform builds still apply to `apps/psy_trainer`
+specifically (the Makefile passes `-C apps/psy_trainer` or an app-scoped command).
+
+## Folder layout (feature-first, `apps/psy_trainer/`)
 
 ```
 lib/
@@ -11,9 +72,9 @@ lib/
   app.dart                   # root WidgetsApp.router
   core/                      # cross-cutting infrastructure: database, routing,
                              # error/logging, constants, extensions
-    content/                 # US-010 content models (JSON contract), pure Dart
     db/                      # Drift: AppDatabase, tables/, daos/, repositories/ (local impls),
-                             # seed/ (content seeder, US-013)
+                             # seed/ (content seeder, US-013); content models come from
+                             # package:psy_content (see packages/psy_content/, US-007)
     repositories/            # ContentRepository / ProgressRepository interfaces, domain
                              # models, Riverpod providers, in_memory/ fakes (US-012)
     errors/                  # logError + global error hooks
@@ -33,21 +94,17 @@ lib/
     train/domain/engine/     # US-020 activity runtime (pure Dart), see "Engine"
     train/presentation/engine/ # its widget half: renderer contract, controller, SessionHost
     engines/<family_id>/     # one activity engine per EPIC-03 story (domain + presentation)
+assets/content/               # the content bundle (US-013), see packages/psy_content/ for
+                             # its models/validator and docs/content/AUTHORING.md
 test/                        # see docs/TESTING.md
   architecture/              # rules about the codebase itself (e.g. no Material)
   features/<feature>/...     # mirrors lib/features; unit + widget tests
   helpers/                   # pumpApp, golden config, shared fakes
   goldens/                   # committed golden PNGs
-  tool/                      # tests for scripts under tool/
   app_test.dart              # smoke test of the root widget
-tool/
-  coverage_gate.dart         # lcov parser + 70 % gate on domain/data/core (make coverage)
-  validate_content.dart      # content validator (US-014, make content-check)
-  list_content_assets.dart   # (re)generates the assets/content/ list in pubspec.yaml (US-013)
-docs/
-  ARCHITECTURE.md            # this file
-  TESTING.md                 # test pyramid, conventions, coverage gate
-  kanban/                    # epics, stories, board (see docs/kanban/README.md)
+                             # (US-007 moved test/tool/ to tools/test/ and test/core/content/
+                             # to packages/psy_content/test/; nothing under this app's test/
+                             # tests a script or the content models any more)
 ```
 
 Initial features: `learn`, `train`, `exam`, `progress`, `settings`, `onboarding`. Add a feature by creating
@@ -271,8 +328,8 @@ assets/content/**  --rootBundle-->  AssetReader  -->  ContentBundleLoader  -->  
 | `content_seeder.dart` | `ContentSeeder.seedIfNeeded()`: reads the manifest, compares `contentVersion` with `content_meta`, and when the bundle is newer (or nothing is stored) reads, parses and calls `ContentDao.replaceAll` (delete + batch insert of every content table and the new meta in **one transaction**). Returns a `SeedResult` (seeded or not, versions, elapsed, counts) |
 | `content_ready_provider.dart` | `assetReaderProvider`, `contentSeederProvider`, `contentReadyProvider` (`FutureProvider<SeedResult>`, Riverpod auto-retry disabled) |
 
-The seeder lives under `core/db/` rather than `core/content/` because it depends on Drift
-(`ContentDao`, `ContentRows`); `core/content/` stays pure Dart.
+The seeder lives under `core/db/` rather than in `package:psy_content` because it depends on
+Drift (`ContentDao`, `ContentRows`); `packages/psy_content/` stays pure Dart (US-007).
 
 Decisions:
 
@@ -324,8 +381,8 @@ seeding instead of after it. Tests that pump the whole app add `contentReadyOver
 `assets/content/` (except `examples/`) is listed in `pubspec.yaml` between the
 `# BEGIN content assets` / `# END content assets` markers. After adding a family folder, a
 `lessons/<family>/` folder or an `items/`, `decks/`, `lexical_fields/`, `media/` subfolder, run
-`dart run tool/list_content_assets.dart --write` (`--check` verifies;
-`test/tool/list_content_assets_test.dart` fails when the list is stale, and
+`dart run tools/list_content_assets.dart --write` from the repo root (`--check` verifies;
+`tools/test/list_content_assets_test.dart` fails when the list is stale, and
 `test/core/db/seed/content_ready_provider_test.dart` checks through `rootBundle` that every
 file on disk is actually bundled).
 
@@ -732,9 +789,12 @@ Commit generated files so a fresh clone builds and analyzes without running the 
 
 ## Quality gates
 
-`make lint` (`flutter analyze` + format check) and `make test` (`flutter test`) must pass before a
-PR is opened. CI (US-004, `.github/workflows/ci.yml`) runs the same commands on every PR and on
-pushes to `main` (`check` job: pub get, codegen, format check, `flutter analyze --fatal-infos`,
-`flutter test --coverage`), and `main` is protected so that `check` must be green to merge. A
-debug APK is built and uploaded as an artifact on pushes to `main` and on PRs labelled `build`.
-Coverage is gated with `make coverage` (see `docs/TESTING.md`). Format with `dart format .`.
+`make lint` (analyze + format check, app and `psy_content`) and `make test` (every member's
+tests) must pass before a PR is opened. CI (US-004, US-007, `.github/workflows/ci.yml`) runs
+the same commands from the repo root on every PR and on pushes to `main` (`check` job: `dart
+pub get` once, codegen, format check, `flutter analyze --fatal-infos` / `dart analyze
+--fatal-infos` for every member, content validation, tests with coverage, coverage gate, web
+build), and `main` is protected so that `check` must be green to merge. A debug APK is built
+(`apps/psy_trainer`) and uploaded as an artifact on pushes to `main` and on PRs labelled
+`build`. Coverage is gated with `make coverage` (see `docs/TESTING.md`). Format with `dart
+format .` in each member (or `melos run format` / `make format` from the root).

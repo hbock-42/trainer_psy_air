@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "spatial_cubes",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 11,
+  "name": {
+    "fr": "Cubes et dés",
+    "en": "Cubes and dice"
+  },
+  "shortName": {
+    "fr": "Cubes",
+    "en": "Cubes"
+  },
+  "description": {
+    "fr": "Un patron de cube de référence à gauche ; à droite, un second patron auquel manquent des faces. Faites glisser les faces proposées (retournables d'un clic) pour reconstituer le **même cube**.",
+    "en": "A reference cube net on the left; on the right, a second net with missing faces. Drag the offered faces (flippable with a click) to rebuild the **same cube**."
+  },
+  "engineType": "spatial_cubes",
+  "generatorId": "cube_net",
+  "answerFormat": "drag",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 360,
+  "defaultItemCount": 6,
+  "defaultPerItemTimeSec": 60,
+  "confidence": "assumed",
+  "tags": [
+    "spatial"
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §2.4-L, §3.1 row 11 (4-10 items reported; 6 retained)"
+  }
+}

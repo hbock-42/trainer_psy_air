@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "attention_airways",
+  "moduleId": "psy0",
+  "version": 1,
+  "order": 7,
+  "name": {
+    "fr": "Airways",
+    "en": "Airways"
+  },
+  "shortName": {
+    "fr": "Airways",
+    "en": "Airways"
+  },
+  "description": {
+    "fr": "Des triangles (« avions ») avancent le long de lignes. Des boutons de couleur permettent de les rerouter. Gardez au plus **4 avions** et au plus **2 avions bleus** dans chaque zone grise en reroutant le moins possible ; une violation = crash.",
+    "en": "Triangles ('aircraft') move along lines. Colour buttons re-route them. Keep at most **4 aircraft** and at most **2 blue aircraft** in each grey zone while re-routing as little as possible; a violation = crash."
+  },
+  "engineType": "attention_airways",
+  "generatorId": "airways",
+  "answerFormat": "simulation",
+  "inputRequirement": "touch",
+  "liveFeedback": true,
+  "lang": "fr",
+  "defaultDurationSec": 300,
+  "defaultItemCount": 10,
+  "defaultPerItemTimeSec": 30,
+  "confidence": "reported",
+  "tags": [
+    "attention"
+  ],
+  "meta": {
+    "source": "docs/content/psy0-spec.md §2.4-H, §3.1 row 7 (10 series reported)"
+  }
+}
