@@ -529,4 +529,13 @@ abstract final class AppStrings {
   static String examSectionValue(int correct, int attempts, int percent) =>
       '$correct/$attempts · $percent %';
   static const String examSectionNotReached = 'non atteinte';
+
+  // Memory N-back (US-026).
+  static const String nbackYes = 'Oui';
+  static const String nbackNo = 'Non';
+  static String nbackYesSemantics(String shortcut) => 'Oui ($shortcut)';
+  static String nbackNoSemantics(String shortcut) => 'Non ($shortcut)';
+  static const String nbackPrimerLabel = 'Amorce — pas de réponse attendue';
+  static const String nbackHistoryStripLabel = 'Repère (derniers stimuli)';
+  static String nbackStimulusSemantics(int index) => 'Stimulus $index';
 }
