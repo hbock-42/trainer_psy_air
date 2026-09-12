@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AttemptOrigin {
 
- String get generatorId; int get seed; Map<String, Object?> get params;
+ String get generatorId; int get seed; Map<String, Object?> get params; int get difficulty;
 /// Create a copy of AttemptOrigin
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $AttemptOriginCopyWith<AttemptOrigin> get copyWith => _$AttemptOriginCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AttemptOrigin&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.seed, seed) || other.seed == seed)&&const DeepCollectionEquality().equals(other.params, params));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AttemptOrigin&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.seed, seed) || other.seed == seed)&&const DeepCollectionEquality().equals(other.params, params)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,generatorId,seed,const DeepCollectionEquality().hash(params));
+int get hashCode => Object.hash(runtimeType,generatorId,seed,const DeepCollectionEquality().hash(params),difficulty);
 
 @override
 String toString() {
-  return 'AttemptOrigin(generatorId: $generatorId, seed: $seed, params: $params)';
+  return 'AttemptOrigin(generatorId: $generatorId, seed: $seed, params: $params, difficulty: $difficulty)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $AttemptOriginCopyWith<$Res>  {
   factory $AttemptOriginCopyWith(AttemptOrigin value, $Res Function(AttemptOrigin) _then) = _$AttemptOriginCopyWithImpl;
 @useResult
 $Res call({
- String generatorId, int seed, Map<String, Object?> params
+ String generatorId, int seed, Map<String, Object?> params, int difficulty
 });
 
 
@@ -65,12 +65,13 @@ class _$AttemptOriginCopyWithImpl<$Res>
 
 /// Create a copy of AttemptOrigin
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? generatorId = null,Object? seed = null,Object? params = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? generatorId = null,Object? seed = null,Object? params = null,Object? difficulty = null,}) {
   return _then(_self.copyWith(
 generatorId: null == generatorId ? _self.generatorId : generatorId // ignore: cast_nullable_to_non_nullable
 as String,seed: null == seed ? _self.seed : seed // ignore: cast_nullable_to_non_nullable
 as int,params: null == params ? _self.params : params // ignore: cast_nullable_to_non_nullable
-as Map<String, Object?>,
+as Map<String, Object?>,difficulty: null == difficulty ? _self.difficulty : difficulty // ignore: cast_nullable_to_non_nullable
+as int,
   ));
 }
 
@@ -155,10 +156,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String generatorId,  int seed,  Map<String, Object?> params)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String generatorId,  int seed,  Map<String, Object?> params,  int difficulty)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AttemptOrigin() when $default != null:
-return $default(_that.generatorId,_that.seed,_that.params);case _:
+return $default(_that.generatorId,_that.seed,_that.params,_that.difficulty);case _:
   return orElse();
 
 }
@@ -176,10 +177,10 @@ return $default(_that.generatorId,_that.seed,_that.params);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String generatorId,  int seed,  Map<String, Object?> params)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String generatorId,  int seed,  Map<String, Object?> params,  int difficulty)  $default,) {final _that = this;
 switch (_that) {
 case _AttemptOrigin():
-return $default(_that.generatorId,_that.seed,_that.params);case _:
+return $default(_that.generatorId,_that.seed,_that.params,_that.difficulty);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -196,10 +197,10 @@ return $default(_that.generatorId,_that.seed,_that.params);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String generatorId,  int seed,  Map<String, Object?> params)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String generatorId,  int seed,  Map<String, Object?> params,  int difficulty)?  $default,) {final _that = this;
 switch (_that) {
 case _AttemptOrigin() when $default != null:
-return $default(_that.generatorId,_that.seed,_that.params);case _:
+return $default(_that.generatorId,_that.seed,_that.params,_that.difficulty);case _:
   return null;
 
 }
@@ -211,7 +212,7 @@ return $default(_that.generatorId,_that.seed,_that.params);case _:
 @JsonSerializable()
 
 class _AttemptOrigin implements AttemptOrigin {
-  const _AttemptOrigin({required this.generatorId, required this.seed, final  Map<String, Object?> params = const <String, Object?>{}}): _params = params;
+  const _AttemptOrigin({required this.generatorId, required this.seed, final  Map<String, Object?> params = const <String, Object?>{}, this.difficulty = 3}): _params = params;
   factory _AttemptOrigin.fromJson(Map<String, dynamic> json) => _$AttemptOriginFromJson(json);
 
 @override final  String generatorId;
@@ -223,6 +224,7 @@ class _AttemptOrigin implements AttemptOrigin {
   return EqualUnmodifiableMapView(_params);
 }
 
+@override@JsonKey() final  int difficulty;
 
 /// Create a copy of AttemptOrigin
 /// with the given fields replaced by the non-null parameter values.
@@ -237,16 +239,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AttemptOrigin&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.seed, seed) || other.seed == seed)&&const DeepCollectionEquality().equals(other._params, _params));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AttemptOrigin&&(identical(other.generatorId, generatorId) || other.generatorId == generatorId)&&(identical(other.seed, seed) || other.seed == seed)&&const DeepCollectionEquality().equals(other._params, _params)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,generatorId,seed,const DeepCollectionEquality().hash(_params));
+int get hashCode => Object.hash(runtimeType,generatorId,seed,const DeepCollectionEquality().hash(_params),difficulty);
 
 @override
 String toString() {
-  return 'AttemptOrigin(generatorId: $generatorId, seed: $seed, params: $params)';
+  return 'AttemptOrigin(generatorId: $generatorId, seed: $seed, params: $params, difficulty: $difficulty)';
 }
 
 
@@ -257,7 +259,7 @@ abstract mixin class _$AttemptOriginCopyWith<$Res> implements $AttemptOriginCopy
   factory _$AttemptOriginCopyWith(_AttemptOrigin value, $Res Function(_AttemptOrigin) _then) = __$AttemptOriginCopyWithImpl;
 @override @useResult
 $Res call({
- String generatorId, int seed, Map<String, Object?> params
+ String generatorId, int seed, Map<String, Object?> params, int difficulty
 });
 
 
@@ -274,12 +276,13 @@ class __$AttemptOriginCopyWithImpl<$Res>
 
 /// Create a copy of AttemptOrigin
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? generatorId = null,Object? seed = null,Object? params = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? generatorId = null,Object? seed = null,Object? params = null,Object? difficulty = null,}) {
   return _then(_AttemptOrigin(
 generatorId: null == generatorId ? _self.generatorId : generatorId // ignore: cast_nullable_to_non_nullable
 as String,seed: null == seed ? _self.seed : seed // ignore: cast_nullable_to_non_nullable
 as int,params: null == params ? _self._params : params // ignore: cast_nullable_to_non_nullable
-as Map<String, Object?>,
+as Map<String, Object?>,difficulty: null == difficulty ? _self.difficulty : difficulty // ignore: cast_nullable_to_non_nullable
+as int,
   ));
 }
 
