@@ -39,7 +39,9 @@ sealed class ActivitySessionState with _$ActivitySessionState {
   /// feedback (practice, or exam with live feedback); otherwise null even
   /// after an answer. [awaitsNext] is true when the session waits for
   /// `next()` to move on. Deadlines are absolute clock times (null when the
-  /// policy has no such limit).
+  /// policy has no such limit). [level] is the difficulty this item is
+  /// playing at, only for an `ItemSource.adaptive` source (US-053); null
+  /// otherwise (the level never changes mid-session for any other source).
   const factory ActivitySessionState.running({
     required int itemIndex,
     required int itemCount,
@@ -50,6 +52,7 @@ sealed class ActivitySessionState with _$ActivitySessionState {
     DateTime? sectionDeadline,
     ItemResult? feedback,
     @Default(false) bool awaitsNext,
+    int? level,
   }) = ActivityRunning;
 
   /// Practice only: timers are frozen with the time left on each limit.

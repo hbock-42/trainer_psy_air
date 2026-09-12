@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:psy_content/psy_content.dart';
 import '../../../../core/repositories/model/session.dart';
+import '../adaptive/adaptive_difficulty_policy.dart';
 import 'item_result.dart';
 
 part 'session_result.freezed.dart';
@@ -59,6 +60,12 @@ abstract class SectionResult with _$SectionResult {
 /// aggregates and the persisted session id ([sessionId] is null when the
 /// session ended before `startSession` returned; `ActivitySession.sessionId`
 /// is the authoritative value once `idle` completes).
+///
+/// [levelChanges] is every in-session difficulty move an `ItemSource
+/// .adaptive` source made (US-053), oldest first; empty for any other
+/// source. It is what the summary reads to show "niveau 2 → 4" discreetly
+/// — see `ActivitySessionConfig`'s doc comment for why it does not also
+/// ride along in the persisted `TrainingSession.config`.
 @freezed
 abstract class SessionResult with _$SessionResult {
   const factory SessionResult({
@@ -69,6 +76,7 @@ abstract class SessionResult with _$SessionResult {
     required SectionResult section,
     String? sessionId,
     int? sectionIndex,
+    @Default(<LevelChange>[]) List<LevelChange> levelChanges,
   }) = _SessionResult;
 
   const SessionResult._();

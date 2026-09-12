@@ -1,12 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:psy_content/psy_content.dart';
 import 'package:psy_trainer/app.dart';
 import 'package:psy_trainer/core/l10n/l10n_extensions.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_content_repository.dart';
 import 'package:psy_trainer/core/repositories/in_memory/in_memory_progress_repository.dart';
 import 'package:psy_trainer/core/repositories/model/attempt.dart';
+import 'package:psy_trainer/core/repositories/model/session.dart';
 import 'package:psy_trainer/core/repositories/repository_providers.dart';
 import 'package:psy_trainer/core/router/app_router.dart';
 import 'package:psy_trainer/core/router/app_routes.dart';
@@ -183,9 +183,54 @@ void main() {
           .widget<PracticeSessionScreen>(find.byType(PracticeSessionScreen))
           .request;
       final config = (request as FreshSessionRequest).config;
-      final source = config.source as GeneratorSource;
+      final source = config.source as AdaptiveSource;
       expect(source.count, 5);
-      expect(source.difficulty, const DifficultyRange(min: 1, max: 5));
+      // No progress history yet: Auto resolves to level 1 (US-053).
+      expect(source.initialDifficulty, 1);
+    });
+
+    testWidgets('"Auto" resolves to the family level StatsService derives from '
+        'recent history (US-053)', (tester) async {
+      final family = generatorFamily();
+      final progress = fakeProgressRepository();
+      final session = await progress.startSession(
+        mode: SessionMode.practice,
+        familyId: family.id,
+        startedAt: DateTime.now(),
+      );
+      // 10 attempts, 7 correct (70% accuracy) -> level 3: meets the
+      // 0.5 and 0.65 thresholds but not 0.8 (`StatsConfig
+      // .levelThresholds`, default), starting from level 1.
+      for (var i = 0; i < 10; i++) {
+        progress.attempts.add(
+          Attempt(
+            id: 'attempt-$i',
+            sessionId: session.id,
+            familyId: family.id,
+            itemId: 'item-$i',
+            isCorrect: i < 7,
+            responseMs: 500,
+            position: i,
+            answeredAt: DateTime.now(),
+          ),
+        );
+      }
+      await pumpLauncher(tester, familyId: family.id, progress: progress);
+
+      await tester.tap(find.text(l10nFr.practiceStartAction));
+      await tester.pumpAndSettle();
+
+      final config =
+          (tester
+                      .widget<PracticeSessionScreen>(
+                        find.byType(PracticeSessionScreen),
+                      )
+                      .request
+                  as FreshSessionRequest)
+              .config;
+      final source = config.source as AdaptiveSource;
+      expect(source.initialDifficulty, 3);
+      expect(source.fastThresholdMs, 500);
     });
 
     testWidgets('"Reprendre mes erreurs" is disabled with an empty pool', (

@@ -7,6 +7,7 @@ export 'content_repository.dart';
 export 'in_memory/in_memory_content_repository.dart';
 export 'in_memory/in_memory_progress_repository.dart';
 export 'model/attempt.dart';
+export 'model/backup.dart';
 export 'model/learning.dart';
 export 'model/session.dart';
 export 'model/stats.dart';
