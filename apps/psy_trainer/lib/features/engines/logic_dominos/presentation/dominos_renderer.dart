@@ -119,7 +119,6 @@ class _DominosViewState extends State<_DominosView> {
     final theme = AppTheme.of(context);
     final board = _board;
     final answered = widget.render.isAnswered;
-    final feedback = widget.render.feedback;
 
     return KeyboardListener(
       focusNode: _focusNode,
@@ -164,15 +163,6 @@ class _DominosViewState extends State<_DominosView> {
             ),
             SizedBox(height: theme.spacing.xs),
             Text(explanationFor(board.ruleKinds), style: theme.textStyles.body),
-            if (feedback != null) ...[
-              SizedBox(height: theme.spacing.xs),
-              Text(
-                feedback.correct
-                    ? AppStrings.sessionFeedbackCorrect
-                    : AppStrings.sessionFeedbackWrong,
-                style: theme.textStyles.bodyStrong,
-              ),
-            ],
           ],
         ],
       ),

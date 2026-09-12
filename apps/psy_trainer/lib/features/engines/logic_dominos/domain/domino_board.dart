@@ -219,7 +219,11 @@ _Series _interleaved(Random rng, int length, {required int subRuleCount}) {
 
 /// Every candidate `Domino` that, placed at [missingIndex], makes the whole
 /// series consistent with at least one rule of the catalog. A unique board
-/// has exactly one.
+/// has exactly one; exposed for the solver's own unit tests
+/// (`domino_board_test.dart`), [buildDominoBoard] is the only real caller.
+Set<Domino> solveDominoCandidates(List<Domino> series, int missingIndex) =>
+    _solveCandidates(series, missingIndex);
+
 Set<Domino> _solveCandidates(List<Domino> series, int missingIndex) {
   final candidates = <Domino>{};
   for (var t = 0; t <= 6; t++) {
