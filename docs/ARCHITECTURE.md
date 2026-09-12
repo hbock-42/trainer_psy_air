@@ -207,7 +207,7 @@ deliberate split by role (US-006):
 |--------|--------|------|
 | Android, iOS (phone) | `android/`, `ios/` | **Learn and practice**: lessons, flashcards, drills, progress. Touch-first layouts. |
 | macOS, Windows | `macos/`, `windows/` | **Exam mode** for keyboard-native activities; the window opens at 1280×800 and cannot shrink below 1024×700 logical pixels (`macos/Runner/MainFlutterWindow.swift`, `windows/runner/win32_window.cpp`). |
-| Web (Chrome) | `web/` | Same as desktop for people without a build; also the cheapest platform to build in CI (`flutter build web --release` in the `check` job). |
+| Web (Chrome) | `web/` | Same as desktop for people without a build; also the cheapest platform to build in CI (`flutter build web --release` in the `check` job). Deployed continuously to GitHub Pages (US-124, see `docs/RELEASE.md` "Web (GitHub Pages)") at `https://hbock-42.github.io/trainer_psy_air/`, using the hash URL strategy (`core/router/url_strategy.dart`) so deep links survive a reload from a project-site sub-path with no server-side SPA rewrite. Persists through drift `WasmDatabase` (US-016; see "Data layer" below) — `web/sqlite3.wasm` (732 KB) + `web/drift_worker.js` (348 KB) add about 1.1 MB to `build/web`; both are fetched lazily by the worker once the database first opens, not part of the initial `main.dart.js` payload. |
 | Tablet + physical keyboard | `android/`, `ios/` | Treated as desktop when a hardware keyboard is present. |
 
 One codebase, one `WidgetsApp`: nothing in `lib/app.dart` or the router is platform-specific.
@@ -262,7 +262,8 @@ feature would still go in that feature's `domain/`.
 | File | Role |
 |------|------|
 | `app_database.dart` | `AppDatabase` (`@DriftDatabase`), `schemaVersion`, migration strategy |
-| `open_database.dart` | `openAppDatabaseExecutor()`: `NativeDatabase.createInBackground` on a file in the app support dir (via `path_provider`); `openInMemoryExecutor()` for tests. Conditional import: `open_database_native.dart` when `dart:io` exists, `open_database_unsupported.dart` on web (throws on first use, see below) |
+| `open_database.dart` | `openAppDatabaseExecutor()`. Conditional import (three-way, US-016): `open_database_native.dart` when `dart:io` exists (`NativeDatabase.createInBackground` on a file in the app support dir via `path_provider`; `openInMemoryExecutor()` for tests); `open_database_web.dart` when `dart:js_interop` exists (drift `WasmDatabase.open`, see below); `open_database_unsupported.dart` is the fallback, not reached by any shipped target |
+| `storage_info.dart` | `StorageInfo`/`StorageKind`/`StorageInfo.resolve()`: where the database actually lives (US-016) — native file, web OPFS/IndexedDB/in-memory. Same conditional-import trio (`storage_info_native.dart`, `storage_info_web.dart`); re-exported from `core/repositories/repository_providers.dart` (`storageInfoProvider`) so `AboutScreen` never imports `core/db/` directly |
 | `app_database_provider.dart` | `appDatabaseProvider` (opens lazily, closes with the container) |
 | `tables/` | `AuditedTable` mixin (id + createdAt/updatedAt), content mirrors, user tables |
 | `daos/` | One DAO per concern, typed queries; the only place SQL is written |
@@ -307,10 +308,45 @@ Design decisions:
   increments in the `DO UPDATE` clause, so concurrent writers never lose an update.
 - **Background isolate.** The app executor is `NativeDatabase.createInBackground`, so queries
   never block the UI thread; tests use `NativeDatabase.memory()`.
-- **Web is not persisted yet.** `drift/native.dart` needs `dart:ffi`, so `open_database.dart`
-  selects a stub on web that keeps `flutter build web` compiling and throws `UnsupportedError`
-  on the first query. Wiring drift's `WasmDatabase` (`sqlite3.wasm` + `drift_worker.js` served
-  from `web/`) is a follow-up card; until then the web target cannot record sessions.
+- **Web persistence (US-016).** `drift/native.dart` needs `dart:ffi`, so on web
+  `open_database_web.dart` instead uses drift's `WasmDatabase.open(databaseName: 'psy_trainer',
+  sqlite3Uri: Uri.parse('sqlite3.wasm'), driftWorkerUri: Uri.parse('drift_worker.js'))` — both
+  URIs relative so the app keeps working when served from a sub-path (GitHub Pages). It picks the
+  most reliable storage the browser actually supports and reports which one:
+
+  | `chosenImplementation` | `StorageKind` | Persistent? | Needs |
+  |---|---|---|---|
+  | `opfsShared` / `opfsLocks` | `opfs` | yes | Origin Private File System (most browsers); `opfsLocks` additionally needs cross-origin isolation (`Cross-Origin-Opener-Policy: same-origin` + `Cross-Origin-Embedder-Policy: require-corp`) |
+  | `sharedIndexedDb` / `unsafeIndexedDb` | `indexedDb` | yes | IndexedDB only (no OPFS) |
+  | `inMemory` | `inMemory` | **no** — lost on reload | neither (private browsing with storage disabled, or an unsupported browser) |
+
+  **GitHub Pages implication:** it serves no custom response headers, so the COOP/COEP pair above
+  is never present and `opfsLocks` never gets picked either — the app there runs on `opfsShared`
+  where the browser supports nested workers from a shared worker (Chrome/Safari do not, see
+  `WasmStorageImplementation.opfsShared`'s doc comment in `package:drift`), otherwise falls back
+  to `sharedIndexedDb`/`unsafeIndexedDb`. Either way it is still persistent; only a browser with
+  neither OPFS nor IndexedDB support (or with both disabled, e.g. some private-browsing modes)
+  drops to `inMemory`.
+
+  The chosen implementation and any `missingFeatures` are logged once (`debugPrint`, see
+  `open_database_web.dart`) and exposed through `storageInfoProvider`
+  (`core/repositories/repository_providers.dart`) for `AboutScreen`, which shows "Stockage : OPFS
+  / IndexedDB / mémoire (non persistant)" and a warning line when `!persistent`.
+
+  **Seeding on web.** `ContentSeeder` parses the bundle through `compute()`
+  (`flutter/foundation.dart`); on web `compute` does not spawn a real isolate (none exist) and
+  just runs the callback inline on the main isolate instead — same call, same result, just no
+  off-thread parallelism. No web-specific branch was needed in `content_bundle_loader.dart` or
+  `content_seeder.dart`.
+
+  **Refreshing the web assets.** `web/sqlite3.wasm` and `web/drift_worker.js` are prebuilt
+  binaries (not generated by any build step in this repo), downloaded once and committed;
+  `tools/fetch_web_sqlite.sh` documents the exact source URLs and pinned versions
+  (`sqlite3.wasm` from the `sqlite3.dart` GitHub release matching `package:sqlite3`'s version in
+  `pubspec.lock`, `drift_worker.js` from the `drift` release matching `package:drift`'s) and
+  re-downloads them; `tools/fetch_web_sqlite.sh --check` verifies the pinned versions still match
+  `pubspec.lock` without downloading. Compatibility rule (forwards-only): a `sqlite3.wasm` from
+  version X needs `package:sqlite3` >= X.
 
 ### Schema migrations
 

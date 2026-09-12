@@ -36,6 +36,17 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Hash URL strategy on web (US-124): GitHub Pages serves the app from a
+  # sub-path (`/trainer_psy_air/`) with no server-side SPA rewrite, so a
+  # deep link's path segment (e.g. `/learn/family/x`) would 404 on reload
+  # under the default path strategy. Using the URL hash instead keeps
+  # every route after the `#`, which GitHub Pages always serves as
+  # `index.html` regardless of the fragment. A no-op stub on non-web
+  # platforms (see the package's non-web `url_strategy.dart`), so it is
+  # safe to call unconditionally from `main.dart`.
+  flutter_web_plugins:
+    sdk: flutter
+
   # ARB-based i18n (US-091): `flutter_localizations` gives the
   # `GlobalWidgetsLocalizations`/`GlobalCupertinoLocalizations`-free base
   # locale delegates `WidgetsApp` needs; `intl` is pinned to the version

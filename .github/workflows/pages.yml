@@ -1,0 +1,75 @@
+name: Pages
+
+# US-124: builds the web target and deploys it to GitHub Pages so the
+# trainer is reachable at a public URL without installing anything, for
+# rehearsing the keyboard-native activities in a browser. Runs after every
+# push to `main` (i.e. after a PR has already passed `ci.yml`'s `check`
+# job) and can be re-run on demand from the Actions tab. Deep links use the
+# hash URL strategy (see `apps/psy_trainer/lib/main.dart`), so no server-side
+# SPA rewrite / `404.html` fallback is needed: GitHub Pages always serves
+# `index.html` for the site root and every route lives after the `#`.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  FLUTTER_VERSION: 3.41.6
+
+jobs:
+  build-and-deploy:
+    name: build-and-deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+          pub-cache-key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
+
+      - name: Fetch packages (whole workspace)
+        run: dart pub get
+
+      - name: Code generation
+        run: dart run build_runner build --delete-conflicting-outputs
+        working-directory: apps/psy_trainer
+
+      # `--base-href` matches the Pages project-site sub-path
+      # (`https://<owner>.github.io/<repo>/`); relative asset URIs in
+      # `web/index.html` / `manifest.json` resolve correctly under it.
+      - name: Build web (release)
+        run: |
+          flutter build web --release \
+            --base-href "/${{ github.event.repository.name }}/"
+        working-directory: apps/psy_trainer
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/psy_trainer/build/web
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -2094,6 +2094,28 @@ class AppLocalizationsFr extends AppLocalizations {
       'Air France Corporate — actualités du recrutement Cadets';
 
   @override
+  String get aboutStorageLabel => 'Stockage';
+
+  @override
+  String get aboutStorageLocalFile => 'fichier local';
+
+  @override
+  String get aboutStorageOpfs => 'OPFS';
+
+  @override
+  String get aboutStorageIndexedDb => 'IndexedDB';
+
+  @override
+  String get aboutStorageMemory => 'mémoire (non persistant)';
+
+  @override
+  String get aboutStorageUnknown => '…';
+
+  @override
+  String get aboutStorageNotPersistentWarning =>
+      'Vos données ne seront pas conservées après la fermeture de cet onglet (mode navigation privée ou navigateur non compatible).';
+
+  @override
   String get multitaskTouchFallback =>
       'Touches non représentatives : le jour J, utilisez le clavier.';
 

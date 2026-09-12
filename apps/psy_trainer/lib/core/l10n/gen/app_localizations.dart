@@ -3402,6 +3402,48 @@ abstract class AppLocalizations {
   /// **'Air France Corporate — actualités du recrutement Cadets'**
   String get aboutSourceAirFranceNews;
 
+  /// No description provided for @aboutStorageLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Stockage'**
+  String get aboutStorageLabel;
+
+  /// No description provided for @aboutStorageLocalFile.
+  ///
+  /// In fr, this message translates to:
+  /// **'fichier local'**
+  String get aboutStorageLocalFile;
+
+  /// No description provided for @aboutStorageOpfs.
+  ///
+  /// In fr, this message translates to:
+  /// **'OPFS'**
+  String get aboutStorageOpfs;
+
+  /// No description provided for @aboutStorageIndexedDb.
+  ///
+  /// In fr, this message translates to:
+  /// **'IndexedDB'**
+  String get aboutStorageIndexedDb;
+
+  /// No description provided for @aboutStorageMemory.
+  ///
+  /// In fr, this message translates to:
+  /// **'mémoire (non persistant)'**
+  String get aboutStorageMemory;
+
+  /// No description provided for @aboutStorageUnknown.
+  ///
+  /// In fr, this message translates to:
+  /// **'…'**
+  String get aboutStorageUnknown;
+
+  /// No description provided for @aboutStorageNotPersistentWarning.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vos données ne seront pas conservées après la fermeture de cet onglet (mode navigation privée ou navigateur non compatible).'**
+  String get aboutStorageNotPersistentWarning;
+
   /// No description provided for @multitaskTouchFallback.
   ///
   /// In fr, this message translates to:
