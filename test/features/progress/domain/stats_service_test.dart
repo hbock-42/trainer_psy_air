@@ -55,11 +55,12 @@ const LocalizedText text = LocalizedText(fr: 'x');
 ExamSection section(String family, {double weight = 1}) => ExamSection(
   id: 'section-$family',
   familyId: family,
-  durationSec: 60,
+  sectionTimeSec: 60,
   itemCount: 10,
   itemSelection: const ItemSelection.generated(
-    generatorId: 'g',
+    generatorId: GeneratorId.dominos,
     difficulty: DifficultyRange(min: 1, max: 5),
+    params: GeneratorParams.dominos(),
   ),
   confidence: Confidence.confirmed,
   weight: weight,

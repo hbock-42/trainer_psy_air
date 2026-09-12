@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:psy_trainer/core/content/content.dart';
 import 'package:psy_trainer/core/repositories/repositories.dart';
 import 'package:psy_trainer/features/progress/domain/progress_domain.dart';
 
@@ -8,6 +9,63 @@ import '../../../core/db/example_content.dart';
 final DateTime now = DateTime.utc(2026, 9, 30, 12);
 
 DateTime daysAgo(int days) => now.subtract(Duration(days: days));
+
+/// The one content family of this fixture: `mental_arithmetic` has no entry
+/// in `StatsConfig.defaultFamilyWeights`, so it weighs 1 in the readiness
+/// score (the arithmetic below relies on that).
+const TestFamily arithFamily = TestFamily(
+  id: 'mental_arithmetic',
+  moduleId: ModuleId.psy0,
+  version: 1,
+  order: 1,
+  name: LocalizedText(fr: 'Calcul mental'),
+  description: LocalizedText(fr: 'Calculs rapides.'),
+  engineType: EngineType.arithmeticGrid,
+  answerFormat: AnswerFormat.numeric,
+  defaultDurationSec: 300,
+  defaultItemCount: 20,
+  confidence: Confidence.assumed,
+);
+
+const Lesson arithLesson = Lesson(
+  id: 'mental_arithmetic.lesson.03',
+  version: 1,
+  moduleId: ModuleId.psy0,
+  familyId: 'mental_arithmetic',
+  order: 3,
+  title: LocalizedText(fr: 'Vitesse, temps, distance'),
+  tags: ['arith'],
+  body: LocalizedText(fr: 'x'),
+);
+
+ExamSection shortSection(String id, String familyId, {double weight = 1}) =>
+    ExamSection(
+      id: id,
+      familyId: familyId,
+      sectionTimeSec: 300,
+      itemCount: 10,
+      itemSelection: const ItemSelection.bank(),
+      confidence: Confidence.assumed,
+      weight: weight,
+    );
+
+/// Four sections (weights 1, 1, 1, 0.5) — the exam scores below are computed
+/// against this structure.
+final ExamBlueprint shortBlueprint = ExamBlueprint(
+  id: 'psy0.blueprint.short',
+  version: 1,
+  moduleId: ModuleId.psy0,
+  name: const LocalizedText(fr: 'Courte'),
+  description: const LocalizedText(fr: 'Quatre sections.'),
+  confidence: Confidence.assumed,
+  tags: const ['blueprint.short'],
+  sections: [
+    shortSection('s01-arith', 'mental_arithmetic'),
+    shortSection('s02-logic', 'logic'),
+    shortSection('s03-english', 'english'),
+    shortSection('s04-memory', 'memory', weight: 0.5),
+  ],
+);
 
 void main() {
   late InMemoryProgressRepository progress;
@@ -19,11 +77,11 @@ void main() {
     progress = InMemoryProgressRepository(clock: () => now);
     content = InMemoryContentRepository(
       modules: example.modules,
-      families: example.families,
+      families: const [arithFamily],
       items: example.items,
-      lessons: example.lessons,
+      lessons: const [arithLesson],
       decks: example.decks,
-      blueprints: example.blueprints,
+      blueprints: [shortBlueprint],
     );
     analytics = ProgressAnalytics(
       progress: progress,
