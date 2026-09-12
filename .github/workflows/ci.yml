@@ -59,6 +59,18 @@ jobs:
       - name: Test
         run: flutter test --coverage
 
+      - name: Upload golden failures
+        # Golden mismatches write <name>_masterImage/_testImage/_isolatedDiff
+        # PNGs; publish them so the diff can be reviewed (and a golden
+        # regenerated from the Linux rendering when the change is intended).
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: golden-failures
+          path: test/goldens/failures
+          if-no-files-found: ignore
+          retention-days: 14
+
       - name: Coverage gate
         run: dart run tool/coverage_gate.dart --min 70
 

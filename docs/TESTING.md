@@ -109,8 +109,10 @@ testWidgets('shows the score', (tester) async {
 
 `pumpApp` wraps the child in `ProviderScope` (with your overrides), `MediaQuery` from the
 test view, `Directionality`, the app's `DefaultTextStyle` and a background `ColoredBox`. It
-does not install a `Navigator`; tests that need routing pump `PsyTrainerApp` (or the
-go_router config once US-002 lands) directly.
+does not install a `Navigator`; tests that need routing pump `PsyTrainerApp` directly, with
+`progressRepositoryOverride()` from `test/helpers/onboarding_fakes.dart` in the overrides: the
+router's onboarding guard reads the profile at startup, and without the in-memory fake it would
+open the real database (`onboardingDone: false` / `completed: false` gives a fresh install).
 
 Some `flutter_test` finders assume Material: `find.byTooltip` works only with `Tooltip`
 (Material), `tester.tap` on a Material button expects ink. Use `find.text`, `find.byKey`,
@@ -128,6 +130,10 @@ await expectGolden(tester, 'practice_summary');
 
 `flutter test` renders with the bundled Ahem font (solid boxes for every glyph) and the
 software rasteriser, so goldens are stable across machines on the same Flutter version.
+Glyph-edge anti-aliasing still differs between macOS and the Linux CI runner; the comparator
+tolerates 1 % of differing pixels by default, and a text-dense screen can pass a larger budget
+with `expectGolden(tester, name, tolerance: 0.05)` (a layout change diffs far more than that).
+CI uploads a `golden-failures` artifact (master / test / diff PNGs) when a golden test fails.
 They can change when Flutter is upgraded: regenerate them in the same PR as the Flutter bump
 and review the diffs. Regenerate with `flutter test --update-goldens <file>`; never update a
 golden without looking at the new image.
@@ -168,9 +174,11 @@ Test the DAO's public queries (insert then read back, ordering, filtering) and m
 
 - `no_material_cupertino_test.dart`: fails if anything under `lib/` imports Material or
   Cupertino.
+- `no_drift_in_features_test.dart`: `lib/features/` never imports Drift, sqlite3 or `core/db/`.
+- `no_flutter_in_domain_test.dart`: `lib/features/*/domain/` never imports Flutter, Riverpod,
+  Drift or a `presentation/` folder.
 - Add tests here for other rules from `docs/ARCHITECTURE.md` as they become checkable
-  (`domain/` must not import Flutter widgets or Drift; `core/` and `shared/` never import
-  `features/`).
+  (`core/` and `shared/` never import `features/`).
 
 They are cheap, run with the unit suite, and turn a documented convention into a failing test
 instead of a review comment.

@@ -67,6 +67,18 @@ abstract interface class ProgressRepository {
     SessionMode? mode,
   });
 
+  /// One row per (session, family, section) over the sessions started
+  /// within `[from, to]` (optional), oldest session first (then section,
+  /// then family): the score-over-time series of US-071 and the per-section
+  /// scores of an exam. Optionally restricted to one mode and/or one family.
+  /// Sessions without attempts are absent. Computed in SQL.
+  Future<List<SessionFamilyStats>> sessionFamilyStats({
+    DateTime? from,
+    DateTime? to,
+    SessionMode? mode,
+    String? familyId,
+  });
+
   Future<ItemStat?> itemStat(String itemId);
 
   /// Stats of bank items, optionally restricted to one family and to items

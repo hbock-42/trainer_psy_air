@@ -19,9 +19,13 @@ import 'package:flutter_test/flutter_test.dart';
 // PNGs are tied to the Flutter version CI uses. Bump both together.
 //
 // Text anti-aliasing also differs slightly between macOS (where goldens are
-// usually generated) and the Linux CI runner (~0.3 % of pixels on a phone
-// surface). The comparator below therefore tolerates a small fraction of
-// differing pixels (`goldenPixelTolerance`); anything above it still fails.
+// usually generated) and the Linux CI runner: every glyph edge differs by a
+// pixel or so, which is ~0.3 % of a phone surface for a sparse screen but
+// close to 4 % for a screen full of text (measured on the learn placeholder).
+// The comparator below therefore tolerates a small fraction of differing
+// pixels (`goldenPixelTolerance`); anything above it still fails. A
+// text-dense golden can raise its own budget with `expectGolden(...,
+// tolerance:)`, keeping it well below what a layout change would produce.
 //
 // Updating goldens after an intentional UI change:
 //
@@ -101,12 +105,13 @@ Future<void> pumpGolden(
 }
 
 /// Sets a fixed surface size, pixel ratio and text scale on the test view,
-/// points the golden comparator at [goldenDirectory], and registers a
-/// teardown that restores everything.
+/// points the golden comparator (accepting [tolerance] differing pixels) at
+/// [goldenDirectory], and registers a teardown that restores everything.
 void configureGoldenView(
   WidgetTester tester, {
   Size size = goldenSurfaceSize,
   double textScale = 1.0,
+  double tolerance = goldenPixelTolerance,
 }) {
   final view = tester.view;
   view.physicalSize = size * goldenDevicePixelRatio;
@@ -119,6 +124,7 @@ void configureGoldenView(
   final previousComparator = goldenFileComparator;
   goldenFileComparator = TolerantGoldenComparator(
     Directory.current.uri.resolve('$goldenDirectory/_'),
+    tolerance: tolerance,
   );
 
   addTearDown(() {
@@ -132,11 +138,23 @@ void configureGoldenView(
 /// Compares the whole test surface with `test/goldens/<name>.png`.
 ///
 /// Pass a [finder] to snapshot a single widget instead of the full screen.
+/// [tolerance] overrides [goldenPixelTolerance] for this comparison (see the
+/// header comment: text-dense screens need a larger anti-aliasing budget).
 Future<void> expectGolden(
   WidgetTester tester,
   String name, {
   Finder? finder,
+  double? tolerance,
 }) async {
+  if (tolerance != null) {
+    final comparator = goldenFileComparator;
+    if (comparator is TolerantGoldenComparator) {
+      goldenFileComparator = TolerantGoldenComparator(
+        comparator.basedir.resolve('_'),
+        tolerance: tolerance,
+      );
+    }
+  }
   await expectLater(
     finder ?? find.byType(View).first,
     matchesGoldenFile('$name.png'),
