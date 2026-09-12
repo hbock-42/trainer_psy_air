@@ -47,6 +47,10 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         AttentionParityRenderer(),
         AttentionRulesRenderer(),
         DominosRenderer(),
+        McqRenderer(
+          familyId: 'culture_aero',
+          explanationFooter: cultureAeroExplanationFooter,
+        ),
         NbackRenderer(),
       ]),
     );
