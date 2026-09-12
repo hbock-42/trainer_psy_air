@@ -1,0 +1,888 @@
+{
+  "$schema": "../../../../docs/content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "culture_aero",
+  "items": [
+    {
+      "id": "cult.subsidiaries_alliances.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 1,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.group"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "En quelle année Air France et KLM ont-elles fusionné pour former le groupe Air France-KLM ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "1999"
+          }
+        },
+        {
+          "text": {
+            "fr": "2013"
+          }
+        },
+        {
+          "text": {
+            "fr": "2009"
+          }
+        },
+        {
+          "text": {
+            "fr": "2004"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "La holding Air France-KLM est née en **mai 2004** du rapprochement des deux compagnies nationales, chacune conservant sa marque, son hub et son certificat de transporteur. Réflexe : 2004 = premier grand rapprochement de compagnies européennes."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.klm"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle particularité historique KLM, fondée en 1919, revendique-t-elle ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Première compagnie à avoir exploité un avion à réaction"
+          }
+        },
+        {
+          "text": {
+            "fr": "Première compagnie à avoir traversé l'Atlantique"
+          }
+        },
+        {
+          "text": {
+            "fr": "Première compagnie à bas coûts d'Europe"
+          }
+        },
+        {
+          "text": {
+            "fr": "Plus ancienne compagnie aérienne encore en activité sous son nom d'origine"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**KLM** (Koninklijke Luchtvaart Maatschappij), créée le 7 octobre 1919, est la **plus ancienne compagnie toujours en exploitation sous son nom d'origine**. Son hub est Amsterdam-Schiphol, son code IATA KL. Réflexe : KLM 1919, Air France 1933."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.transavia"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est l'aéroport de base principal de Transavia France ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Lyon-Saint-Exupéry"
+          }
+        },
+        {
+          "text": {
+            "fr": "Paris-Charles de Gaulle"
+          }
+        },
+        {
+          "text": {
+            "fr": "Paris-Beauvais"
+          }
+        },
+        {
+          "text": {
+            "fr": "Paris-Orly"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Transavia France, la filiale à bas coûts du groupe, est basée à **Paris-Orly** avec des bases secondaires à Nantes, Lyon, Marseille, Bordeaux et Montpellier. CDG reste le hub d'Air France. Réflexe : Orly = Transavia, CDG = Air France."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Transavia France — Wikipédia",
+            "url": "https://fr.wikipedia.org/wiki/Transavia_France",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.transavia"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quels sont les codes IATA et OACI de Transavia France ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "TO / TVF"
+          }
+        },
+        {
+          "text": {
+            "fr": "HV / TRA"
+          }
+        },
+        {
+          "text": {
+            "fr": "AF / AFR"
+          }
+        },
+        {
+          "text": {
+            "fr": "A5 / HOP"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Transavia France = **TO (IATA) / TVF (OACI)**, indicatif radio « FRANCE SOLEIL ». Sa sœur néerlandaise Transavia utilise HV / TRA, Air France AF / AFR, HOP! A5 / HOP. Réflexe : le code IATA fait 2 caractères, le code OACI 3."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Transavia France — Wikipédia",
+            "url": "https://fr.wikipedia.org/wiki/Transavia_France",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.transavia"
+      ],
+      "lang": "fr",
+      "validAsOf": "2026-09-11",
+      "stem": {
+        "fr": "Par quel appareil Transavia France remplace-t-elle progressivement ses Boeing 737-800 ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Boeing 737 MAX 8"
+          }
+        },
+        {
+          "text": {
+            "fr": "Airbus A220-300"
+          }
+        },
+        {
+          "text": {
+            "fr": "Airbus A320neo / A321neo"
+          }
+        },
+        {
+          "text": {
+            "fr": "Embraer E195-E2"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Le groupe a commandé en décembre 2021 100 appareils de la famille **A320neo** (plus 60 options) pour Transavia France et Transavia Pays-Bas ; le premier A320neo est arrivé début 2024 et les 737 doivent avoir disparu vers 2030. Réflexe : Transavia passe de Boeing à Airbus."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France-KLM takes delivery of its first Airbus A320neo, to be operated by Transavia France",
+            "url": "https://www.airfranceklm.com/en/newsroom/air-france-klm-takes-delivery-its-first-airbus-a320neo-be-operated-transavia-france",
+            "accessedOn": "2026-09-11"
+          },
+          {
+            "title": "Transavia France — Wikipédia",
+            "url": "https://fr.wikipedia.org/wiki/Transavia_France",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.transavia"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "En quelle année Transavia France a-t-elle été créée par Air France et Transavia (Pays-Bas) ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "1965"
+          }
+        },
+        {
+          "text": {
+            "fr": "1997"
+          }
+        },
+        {
+          "text": {
+            "fr": "2006"
+          }
+        },
+        {
+          "text": {
+            "fr": "2013"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Transavia France est née le 14 novembre **2006**, premier vol régulier en mai 2007. Sa sœur néerlandaise date de 1965 ; 2013 est l'année de création de HOP!. Réflexe : Transavia NL 1965, Transavia France 2006, HOP! 2013."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Transavia France — Wikipédia",
+            "url": "https://fr.wikipedia.org/wiki/Transavia_France",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.hop"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "De la fusion de quelles compagnies régionales HOP! est-elle issue en 2013 ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Air Inter, UTA et Air Charter"
+          }
+        },
+        {
+          "text": {
+            "fr": "Joon, Air Corsica et CityJet"
+          }
+        },
+        {
+          "text": {
+            "fr": "Air Littoral, Air Liberté et AOM"
+          }
+        },
+        {
+          "text": {
+            "fr": "Brit Air, Régional et Airlinair"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**HOP!** regroupe depuis 2013 les trois filiales régionales d'Air France : **Brit Air, Régional et Airlinair**. Elle exploite aujourd'hui des Embraer et organise ses propres sélections de pilotes, distinctes de la filière Cadets. Réflexe : HOP! = ex-régionales AF réunies."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.skyteam"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "À quelle alliance mondiale Air France appartient-elle ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Star Alliance"
+          }
+        },
+        {
+          "text": {
+            "fr": "oneworld"
+          }
+        },
+        {
+          "text": {
+            "fr": "SkyTeam"
+          }
+        },
+        {
+          "text": {
+            "fr": "Vanilla Alliance"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Air France est membre fondateur de **SkyTeam**. Star Alliance (1997) réunit Lufthansa et United, oneworld (1999) British Airways et American Airlines. Réflexe : les trois grandes alliances = Star, oneworld, SkyTeam."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.skyteam"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelles compagnies ont fondé SkyTeam le 22 juin 2000 ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Air France, KLM, Alitalia et Delta"
+          }
+        },
+        {
+          "text": {
+            "fr": "Air France, Delta, Aeroméxico et Korean Air"
+          }
+        },
+        {
+          "text": {
+            "fr": "Air France, Lufthansa, United et Air Canada"
+          }
+        },
+        {
+          "text": {
+            "fr": "Air France, British Airways, Qantas et Cathay Pacific"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "SkyTeam a été lancée en 2000 par **Air France, Delta Air Lines, Aeroméxico et Korean Air** ; KLM l'a rejointe en 2004 au moment de la fusion. Lufthansa et United sont chez Star Alliance, BA et Cathay chez oneworld. Réflexe : quatre fondateurs, un par continent ou presque."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.skyteam"
+      ],
+      "lang": "fr",
+      "validAsOf": "2025-12-31",
+      "stem": {
+        "fr": "Quel ordre de grandeur de destinations le réseau SkyTeam offre-t-il, selon Air France ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Environ 250"
+          }
+        },
+        {
+          "text": {
+            "fr": "Plus de 1 000"
+          }
+        },
+        {
+          "text": {
+            "fr": "Environ 5 000"
+          }
+        },
+        {
+          "text": {
+            "fr": "Environ 100"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "SkyTeam revendique **plus de 1 000 destinations** dans plus de 160 pays, plus de 13 600 vols quotidiens et environ 624 millions de clients par an. Réflexe : une alliance multiplie le réseau d'une compagnie par cinq ou dix."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Chiffres clés (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/a-propos-air-france/chiffres-cles",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.partnerships"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Qu'est-ce qui distingue une coentreprise (joint venture) transatlantique d'un simple partage de code ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Les compagnies partagent les recettes et coordonnent horaires et prix sur les routes concernées"
+          }
+        },
+        {
+          "text": {
+            "fr": "Les compagnies fusionnent leurs flottes sous une seule immatriculation"
+          }
+        },
+        {
+          "text": {
+            "fr": "Les compagnies utilisent obligatoirement le même type d'avion"
+          }
+        },
+        {
+          "text": {
+            "fr": "Les compagnies vendent des billets l'une pour l'autre, sans autre coordination"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Dans une **joint venture**, comme celle d'Air France-KLM avec Delta et Virgin Atlantic sur l'Atlantique Nord, les partenaires mettent en commun recettes et coûts et pilotent ensemble l'offre, avec une immunité antitrust. Le **partage de code** se limite à vendre un vol sous son propre numéro. Réflexe : codeshare < alliance < joint venture."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.flying_blue"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Comment s'appelle le programme de fidélité commun à Air France et KLM ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Miles & More"
+          }
+        },
+        {
+          "text": {
+            "fr": "Flying Blue"
+          }
+        },
+        {
+          "text": {
+            "fr": "Executive Club"
+          }
+        },
+        {
+          "text": {
+            "fr": "SkyMiles"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Flying Blue** est le programme du groupe Air France-KLM (niveaux Explorer, Silver, Gold, Platinum), avec plus de 30 millions de membres. Miles & More est celui de Lufthansa, Executive Club celui de BA, SkyMiles celui de Delta. Réflexe : bleu = Air France-KLM."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Chiffres clés (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/a-propos-air-france/chiffres-cles",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.group"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Que désigne le sigle AFI KLM E&M au sein du groupe ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "L'activité de maintenance aéronautique (MRO) du groupe"
+          }
+        },
+        {
+          "text": {
+            "fr": "L'école de pilotage interne du groupe"
+          }
+        },
+        {
+          "text": {
+            "fr": "La filiale de restauration à bord"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le centre de contrôle des opérations"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**AFI KLM E&M** (Air France Industries KLM Engineering & Maintenance) est le troisième métier du groupe après le passage et le cargo : deuxième acteur mondial multiproduits de la maintenance, il entretient plus de 3 000 avions par an pour plus de 200 compagnies. Réflexe : E&M = Engineering & Maintenance."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Chiffres clés (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/a-propos-air-france/chiffres-cles",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.history"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle compagnie privée française de long-courrier (Afrique, Pacifique) Air France a-t-elle rachetée en 1990 ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Air Inter"
+          }
+        },
+        {
+          "text": {
+            "fr": "UTA"
+          }
+        },
+        {
+          "text": {
+            "fr": "Air Littoral"
+          }
+        },
+        {
+          "text": {
+            "fr": "AOM"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**UTA** (Union de Transports Aériens), compagnie privée long-courrier vers l'Afrique et le Pacifique, est rachetée par Air France en 1990 puis fusionnée en 1992 ; ses 747 rejoignent la flotte. **Air Inter**, compagnie domestique, sera intégrée plus tard, en 1997. Réflexe : UTA = long-courrier 1990, Air Inter = domestique 1997."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.history"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle marque, lancée par Air France en 2017 pour les jeunes voyageurs, a été abandonnée dès 2019 ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Joon"
+          }
+        },
+        {
+          "text": {
+            "fr": "Hop!"
+          }
+        },
+        {
+          "text": {
+            "fr": "Level"
+          }
+        },
+        {
+          "text": {
+            "fr": "Eurowings"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Joon** a été une filiale à l'identité « lifestyle » exploitée de décembre 2017 à juin 2019, avant réintégration dans Air France. Level appartient au groupe IAG, Eurowings à Lufthansa. Réflexe : Joon = parenthèse de deux ans dans l'histoire AF."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.klm"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle est la filiale régionale de KLM, pendant néerlandais de HOP! ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Martinair"
+          }
+        },
+        {
+          "text": {
+            "fr": "KLM Cityhopper"
+          }
+        },
+        {
+          "text": {
+            "fr": "Transavia"
+          }
+        },
+        {
+          "text": {
+            "fr": "Corendon"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**KLM Cityhopper** assure les lignes régionales européennes de KLM depuis Schiphol sur Embraer. Martinair est la composante cargo du groupe, Transavia la compagnie à bas coûts. Réflexe : HOP! pour AF, Cityhopper pour KLM."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 5,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.partnerships"
+      ],
+      "lang": "fr",
+      "validAsOf": "2026-09-11",
+      "stem": {
+        "fr": "Quelle compagnie scandinave a quitté Star Alliance pour rejoindre SkyTeam en 2024, avec une prise de participation d'Air France-KLM ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Finnair"
+          }
+        },
+        {
+          "text": {
+            "fr": "Norwegian"
+          }
+        },
+        {
+          "text": {
+            "fr": "SAS Scandinavian Airlines"
+          }
+        },
+        {
+          "text": {
+            "fr": "Icelandair"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**SAS**, membre fondateur de Star Alliance, a rejoint SkyTeam le 1er septembre 2024 à l'issue de sa restructuration, Air France-KLM entrant à son capital. Finnair est chez oneworld, Norwegian et Icelandair hors alliance. Réflexe : SAS est le grand transfert d'alliance récent."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France-KLM — Full Year 2025 results, communiqué du 19 février 2026",
+            "url": "https://www.airfranceklm.com/sites/default/files/2026-02/afklm_full_year_2025_press_release_english.pdf",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cult.subsidiaries_alliances.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.subsidiaries_alliances",
+        "culture.subsidiaries_alliances.group"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le quatrième métier du groupe Air France, après le transport de passagers, le fret et la maintenance ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "L'assistance en escale pour les compagnies clientes"
+          }
+        },
+        {
+          "text": {
+            "fr": "La construction d'aéronefs"
+          }
+        },
+        {
+          "text": {
+            "fr": "La gestion d'aéroports"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le contrôle aérien"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Air France Ground Handling** assiste une trentaine de compagnies clientes au hub de Paris-CDG : c'est le quatrième métier du groupe. La gestion des aéroports parisiens relève du Groupe ADP, le contrôle aérien de la DSNA. Réflexe : passage, cargo, maintenance, assistance en escale."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own",
+        "sources": [
+          {
+            "title": "Air France — Chiffres clés (site corporate)",
+            "url": "https://corporate.airfrance.com/fr/a-propos-air-france/chiffres-cles",
+            "accessedOn": "2026-09-11"
+          }
+        ]
+      }
+    }
+  ]
+}

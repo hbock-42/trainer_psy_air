@@ -1,0 +1,997 @@
+{
+  "$schema": "../../../../docs/content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "culture_aero",
+  "items": [
+    {
+      "id": "cult.airports_manufacturers.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 1,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.codes"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le code IATA de l'aéroport Paris-Charles de Gaulle ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "ORY"
+          }
+        },
+        {
+          "text": {
+            "fr": "LFPG"
+          }
+        },
+        {
+          "text": {
+            "fr": "CDG"
+          }
+        },
+        {
+          "text": {
+            "fr": "PAR"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Le code **IATA** (3 lettres, usage commercial : billets, bagages) de Roissy est **CDG** ; **LFPG** est son code **OACI** (4 lettres, usage opérationnel), ORY celui d'Orly et PAR le code de la métropole parisienne. Réflexe : 3 lettres = IATA, 4 lettres = OACI."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.codes"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Les codes OACI des aérodromes de France métropolitaine commencent par :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "FR"
+          }
+        },
+        {
+          "text": {
+            "fr": "EF"
+          }
+        },
+        {
+          "text": {
+            "fr": "LE"
+          }
+        },
+        {
+          "text": {
+            "fr": "LF"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "L'OACI découpe le monde en régions : **L** = Europe du Sud, et **LF** = France (LFPO Orly, LFLL Lyon, LFMN Nice). LE est l'Espagne, EF la Finlande (E = Europe du Nord). L'Outre-mer utilise d'autres préfixes (TFFF Fort-de-France, FMEE La Réunion)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.codes"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "À quel aéroport correspond le code OACI EGLL ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Londres-Heathrow"
+          }
+        },
+        {
+          "text": {
+            "fr": "Amsterdam-Schiphol"
+          }
+        },
+        {
+          "text": {
+            "fr": "Francfort-sur-le-Main"
+          }
+        },
+        {
+          "text": {
+            "fr": "Dublin"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**EG** = Royaume-Uni, EGLL = **Heathrow** (IATA LHR). Amsterdam est EHAM (EH = Pays-Bas), Francfort EDDF (ED = Allemagne), Dublin EIDW (EI = Irlande). Retenir les préfixes pays est le moyen le plus rapide d'éliminer les distracteurs."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.codes"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Le code OACI KJFK désigne l'aéroport John F. Kennedy ; la lettre K indique :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Un aéroport international"
+          }
+        },
+        {
+          "text": {
+            "fr": "Les États-Unis contigus"
+          }
+        },
+        {
+          "text": {
+            "fr": "L'État de New York"
+          }
+        },
+        {
+          "text": {
+            "fr": "Un hub de la compagnie Delta"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Aux **États-Unis contigus**, le code OACI est simplement le code IATA précédé d'un **K** : JFK → KJFK, LAX → KLAX, ATL → KATL. Le Canada utilise **C** (CYUL Montréal-Trudeau), l'Alaska PA et Hawaï PH."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.codes"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel aéroport français porte le code IATA LYS ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Lille-Lesquin"
+          }
+        },
+        {
+          "text": {
+            "fr": "Limoges-Bellegarde"
+          }
+        },
+        {
+          "text": {
+            "fr": "Lyon-Saint-Exupéry"
+          }
+        },
+        {
+          "text": {
+            "fr": "Lorient-Lann-Bihoué"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**LYS / LFLL** = Lyon-Saint-Exupéry, troisième plateforme d'Air France avec CDG et Orly. Lille est LIL (LFQQ), Limoges LIG, Lorient LRT. Réflexe : les codes IATA reprennent en général les premières lettres de la ville."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.codes"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Parmi ces associations code IATA – aéroport, laquelle est fausse ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "NCE – Nice-Côte d'Azur"
+          }
+        },
+        {
+          "text": {
+            "fr": "TLS – Toulouse-Blagnac"
+          }
+        },
+        {
+          "text": {
+            "fr": "BOD – Bordeaux-Mérignac"
+          }
+        },
+        {
+          "text": {
+            "fr": "NTE – Nîmes-Garons"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**NTE** est le code de **Nantes**-Atlantique (LFRS) ; Nîmes-Garons est FNI. NCE, TLS et BOD sont corrects. Réflexe : quand deux villes commencent pareil, le code revient à la plus grande ou à la plus ancienne du réseau."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.paris"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "En quelle année l'aéroport de Roissy-Charles de Gaulle a-t-il été inauguré ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "1974"
+          }
+        },
+        {
+          "text": {
+            "fr": "1961"
+          }
+        },
+        {
+          "text": {
+            "fr": "1982"
+          }
+        },
+        {
+          "text": {
+            "fr": "1994"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Roissy ouvre en mars **1974** avec le terminal 1 « camembert » pour désengorger Orly ; le terminal 2 arrive dans les années 1980-1990 et la gare TGV en 1994. C'est le hub principal d'Air France, doté de **quatre pistes** parallèles deux à deux."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.paris"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel aéroport parisien accueille le Salon international de l'aéronautique et l'aviation d'affaires ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Paris-Orly"
+          }
+        },
+        {
+          "text": {
+            "fr": "Paris-Le Bourget"
+          }
+        },
+        {
+          "text": {
+            "fr": "Toussus-le-Noble"
+          }
+        },
+        {
+          "text": {
+            "fr": "Beauvais-Tillé"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Le Bourget**, premier aéroport commercial de Paris (Lindbergh y atterrit en 1927), est aujourd'hui dédié à l'**aviation d'affaires** et abrite le musée de l'Air et de l'Espace ainsi que le **Salon du Bourget**, tenu les années impaires. Orly, CDG et Le Bourget sont gérés par le Groupe ADP."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.world"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle particularité géographique caractérise Amsterdam-Schiphol, hub de KLM ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Il est construit sur une île artificielle"
+          }
+        },
+        {
+          "text": {
+            "fr": "Il est situé à plus de 2 000 m d'altitude"
+          }
+        },
+        {
+          "text": {
+            "fr": "Il se trouve sous le niveau de la mer"
+          }
+        },
+        {
+          "text": {
+            "fr": "Il ne possède qu'une seule piste"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Schiphol** (EHAM / AMS) est bâti sur un ancien lac asséché, quelques mètres **sous le niveau de la mer** : son altitude de référence est négative. Les aéroports sur île artificielle sont plutôt Kansai (Osaka) ou Hong Kong ; la haute altitude, La Paz ou Mexico."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.world"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel aéroport est régulièrement classé premier mondial en nombre de passagers depuis la fin des années 1990 ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Londres-Heathrow"
+          }
+        },
+        {
+          "text": {
+            "fr": "Dubaï International"
+          }
+        },
+        {
+          "text": {
+            "fr": "Pékin-Capitale"
+          }
+        },
+        {
+          "text": {
+            "fr": "Atlanta Hartsfield-Jackson"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Atlanta** (ATL / KATL), hub géant de Delta, occupe la première place mondiale presque sans interruption depuis 1998 (Pékin l'a dépassé en 2020 seulement). **Dubaï** est premier pour le trafic **international**, Heathrow premier européen."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.world"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle ville africaine du réseau Air France est desservie sous le code IATA ABJ ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Abidjan"
+          }
+        },
+        {
+          "text": {
+            "fr": "Abuja"
+          }
+        },
+        {
+          "text": {
+            "fr": "Alger"
+          }
+        },
+        {
+          "text": {
+            "fr": "Antananarivo"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**ABJ** = Abidjan (Côte d'Ivoire), l'une des plus grosses escales africaines d'Air France. Abuja est ABV, Alger ALG, Antananarivo TNR. Autres codes utiles du réseau : DSS Dakar, CMN Casablanca, TUN Tunis, JNB Johannesburg."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.world"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Tokyo est desservie par deux grands aéroports ; lequel est le plus proche du centre-ville ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Narita (NRT)"
+          }
+        },
+        {
+          "text": {
+            "fr": "Haneda (HND)"
+          }
+        },
+        {
+          "text": {
+            "fr": "Kansai (KIX)"
+          }
+        },
+        {
+          "text": {
+            "fr": "Chubu (NGO)"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**Haneda** (HND / RJTT), dans la baie de Tokyo, est l'aéroport historique redevenu la porte internationale privilégiée ; **Narita** (RJAA) est à 60 km dans la préfecture de Chiba. Kansai dessert Osaka, Chubu Nagoya. Préfixe OACI du Japon : **RJ**."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 1,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.airbus"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Où se trouvent le siège et la principale chaîne d'assemblage d'Airbus ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Toulouse-Blagnac"
+          }
+        },
+        {
+          "text": {
+            "fr": "Hambourg-Finkenwerder"
+          }
+        },
+        {
+          "text": {
+            "fr": "Saint-Nazaire"
+          }
+        },
+        {
+          "text": {
+            "fr": "Paris-Le Bourget"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Airbus est basé à **Toulouse-Blagnac** (assemblage A320, A330, A350). Hambourg assemble aussi des A320, Tianjin (Chine) et Mobile (États-Unis) complètent les chaînes ; Saint-Nazaire fabrique des tronçons de fuselage. Les pièces circulent grâce aux avions-cargos **Beluga**."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.airbus"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "L'Airbus A220, colonne vertébrale du moyen-courrier d'Air France, a été conçu à l'origine par :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Embraer sous le nom E2"
+          }
+        },
+        {
+          "text": {
+            "fr": "Bombardier sous le nom CSeries"
+          }
+        },
+        {
+          "text": {
+            "fr": "Airbus sous le nom A319neo"
+          }
+        },
+        {
+          "text": {
+            "fr": "ATR sous le nom ATR 92"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Le **CSeries** canadien de **Bombardier** est passé sous contrôle d'Airbus en 2018 et rebaptisé A220 ; il est assemblé à Mirabel (Québec) et Mobile (Alabama). Chez Air France, l'A220-300 (148 sièges) remplace A318 et A319."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.boeing"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Dans quelle région des États-Unis Boeing assemble-t-il historiquement ses avions commerciaux (737, 777, 787) ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "La Floride (Miami)"
+          }
+        },
+        {
+          "text": {
+            "fr": "Le Texas (Dallas)"
+          }
+        },
+        {
+          "text": {
+            "fr": "L'État de Washington (Seattle, Everett, Renton)"
+          }
+        },
+        {
+          "text": {
+            "fr": "La Californie (Long Beach)"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "**Everett** (gros-porteurs) et **Renton** (737) sont près de **Seattle**, berceau de Boeing ; une seconde ligne 787 fonctionne à North Charleston (Caroline du Sud). Long Beach était le site de McDonnell Douglas, absorbé en 1997."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.regional"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Les Embraer E170/E190 de HOP! sont produits par un constructeur de quel pays ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Canada"
+          }
+        },
+        {
+          "text": {
+            "fr": "Italie"
+          }
+        },
+        {
+          "text": {
+            "fr": "Japon"
+          }
+        },
+        {
+          "text": {
+            "fr": "Brésil"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "**Embraer** (São José dos Campos, **Brésil**) est le troisième avionneur mondial avec sa famille de jets régionaux E-Jets, exploitée par HOP!, la filiale régionale d'Air France. Le Canada, c'est Bombardier ; l'Italie, Leonardo (partenaire d'ATR)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.regional"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "ATR, constructeur toulousain d'avions régionaux à turbopropulseurs, est une coentreprise entre :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Airbus et Leonardo"
+          }
+        },
+        {
+          "text": {
+            "fr": "Dassault et Safran"
+          }
+        },
+        {
+          "text": {
+            "fr": "Airbus et Bombardier"
+          }
+        },
+        {
+          "text": {
+            "fr": "Embraer et Boeing"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**ATR** (Avions de Transport Régional) est détenu à parts égales par **Airbus** et l'italien **Leonardo** (ex-Aeritalia/Alenia) depuis 1981 ; ses ATR 42 et ATR 72 sont les turbopropulseurs régionaux les plus vendus au monde. Air France ne les exploite plus depuis la fin de HOP! sur ATR."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 3,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.engines"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "CFM International, qui motorise la plupart des A320 et tous les 737, associe :"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Rolls-Royce et Pratt & Whitney"
+          }
+        },
+        {
+          "text": {
+            "fr": "Safran Aircraft Engines et General Electric"
+          }
+        },
+        {
+          "text": {
+            "fr": "Safran et Rolls-Royce"
+          }
+        },
+        {
+          "text": {
+            "fr": "General Electric et Honeywell"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "**CFM** = **C**ommercial **F**an (GE) + **M**56 (Snecma, devenu Safran) : coentreprise franco-américaine créée en 1974, qui produit le CFM56 puis le **LEAP** (LEAP-1A sur A320neo, LEAP-1B exclusif sur 737 MAX). L'alternative sur A320neo est le PW1100G à réducteur de Pratt & Whitney."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0019",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.engines"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel réacteur, le plus puissant jamais certifié, équipe exclusivement le Boeing 777-300ER ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Rolls-Royce Trent XWB"
+          }
+        },
+        {
+          "text": {
+            "fr": "Pratt & Whitney PW4000"
+          }
+        },
+        {
+          "text": {
+            "fr": "General Electric GE90-115B"
+          }
+        },
+        {
+          "text": {
+            "fr": "General Electric GEnx"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Le **GE90-115B** de General Electric est le seul moteur proposé sur le 777-300ER (et le 777-200LR) ; il détient le record de poussée certifiée (plus de 115 000 lbf). Le Trent XWB est réservé à l'A350, le GEnx au 787 et au 747-8, le PW4000 aux 777 de première génération. Réflexe : GE90 = 777, Trent XWB = A350."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0020",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 4,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.fleet_types"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Classez du plus petit au plus grand en capacité : A220-300, 777-300ER, A320, A350-900."
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A320 < A220-300 < A350-900 < 777-300ER"
+          }
+        },
+        {
+          "text": {
+            "fr": "A220-300 < A320 < 777-300ER < A350-900"
+          }
+        },
+        {
+          "text": {
+            "fr": "A220-300 < A350-900 < A320 < 777-300ER"
+          }
+        },
+        {
+          "text": {
+            "fr": "A220-300 < A320 < A350-900 < 777-300ER"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Chez Air France : **A220-300** ~148 sièges, **A320** ~174-178, **A350-900** ~292-324, **777-300ER** jusqu'à ~470 en version loisirs. Réflexe : moyen-courrier A220 < A320 < A321 ; long-courrier 787-9 < A350-900 < 777-300ER."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0021",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 5,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.industry"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel avionneur a lancé le C919, monocouloir concurrent de l'A320 et du 737 ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Mitsubishi (Japon)"
+          }
+        },
+        {
+          "text": {
+            "fr": "COMAC (Chine)"
+          }
+        },
+        {
+          "text": {
+            "fr": "Irkut/UAC (Russie)"
+          }
+        },
+        {
+          "text": {
+            "fr": "Embraer (Brésil)"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Le **C919** de **COMAC** (Shanghai) a effectué son premier vol commercial en 2023, motorisé par le LEAP-1C de CFM. Le MC-21 est russe (Irkut/UAC), Mitsubishi a abandonné son SpaceJet, Embraer reste sur le segment régional."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "cult.airports_manufacturers.0022",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "culture_aero",
+      "difficulty": 2,
+      "tags": [
+        "culture.airports_manufacturers",
+        "culture.airports_manufacturers.industry"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel constructeur français produit à la fois les avions d'affaires Falcon et le chasseur Rafale ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Dassault Aviation"
+          }
+        },
+        {
+          "text": {
+            "fr": "Daher"
+          }
+        },
+        {
+          "text": {
+            "fr": "Safran"
+          }
+        },
+        {
+          "text": {
+            "fr": "Thales"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "**Dassault Aviation** (Mérignac, Saint-Cloud) combine militaire (Mirage, Rafale) et affaires (Falcon 2000, 8X, 6X, 10X). **Daher** fabrique les turbopropulseurs TBM, Safran des moteurs et équipements, Thales de l'avionique."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    }
+  ]
+}
