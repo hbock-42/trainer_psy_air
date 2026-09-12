@@ -1,0 +1,192 @@
+{
+  "$schema": "../../../../docs/content/schema/deck.schema.json",
+  "kind": "deck",
+  "id": "attention_rules.deck.method",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "attention_rules",
+  "order": 1,
+  "name": {
+    "fr": "Méthode règles d'attention",
+    "en": "Attention-rules method"
+  },
+  "description": {
+    "fr": "Aide-mémoire de méthode pour l'épreuve de règles d'attention (Formes et couleurs) : appliquer et changer de règle sans se laisser piéger.",
+    "en": "Method reminders for the attention-rules task (Shapes and colours): applying and switching rules without falling into traps."
+  },
+  "tags": [
+    "attention"
+  ],
+  "cards": [
+    {
+      "id": "attention_rules.deck.method.0001",
+      "version": 1,
+      "deckId": "attention_rules.deck.method",
+      "front": {
+        "fr": "Formes et couleurs : comment mémoriser une règle avant de répondre ?",
+        "en": "Shapes and colours: how to memorise a rule before answering?"
+      },
+      "back": {
+        "fr": "Reformule la règle en une phrase courte (\"si rouge alors gauche\") avant le premier essai ; ne la relis plus ensuite.",
+        "en": "Rephrase the rule as a short sentence (\"if red then left\") before the first trial; don't re-read it afterwards."
+      },
+      "difficulty": 2,
+      "tags": [
+        "attention.rules.method"
+      ]
+    },
+    {
+      "id": "attention_rules.deck.method.0002",
+      "version": 1,
+      "deckId": "attention_rules.deck.method",
+      "front": {
+        "fr": "Formes et couleurs : que faire quand la règle change en cours d'épreuve ?",
+        "en": "Shapes and colours: what to do when the rule changes mid-task?"
+      },
+      "back": {
+        "fr": "Repère le signal de changement (nouvelle consigne affichée) et \"efface\" mentalement l'ancienne règle avant d'appliquer la nouvelle.",
+        "en": "Spot the change cue (new instruction shown) and mentally \"erase\" the old rule before applying the new one."
+      },
+      "difficulty": 2,
+      "tags": [
+        "attention.rules.method"
+      ]
+    },
+    {
+      "id": "attention_rules.deck.method.0003",
+      "version": 1,
+      "deckId": "attention_rules.deck.method",
+      "front": {
+        "fr": "Règles d'attention : comment éviter les automatismes de la règle précédente ?",
+        "en": "Attention rules: how to avoid carrying over the previous rule?"
+      },
+      "back": {
+        "fr": "Ralentis délibérément sur les 2-3 premiers essais suivant un changement de règle : c'est là que les erreurs d'automatisme surviennent.",
+        "en": "Deliberately slow down on the first 2-3 trials after a rule change: that's when automatism errors happen."
+      },
+      "difficulty": 2,
+      "tags": [
+        "attention.rules.method"
+      ]
+    },
+    {
+      "id": "attention_rules.deck.method.0004",
+      "version": 1,
+      "deckId": "attention_rules.deck.method",
+      "front": {
+        "fr": "Règles d'attention : comment gérer plusieurs règles simultanées ?",
+        "en": "Attention rules: how to handle several simultaneous rules?"
+      },
+      "back": {
+        "fr": "Traite-les comme une **liste priorisée** (règle de couleur avant règle de forme) plutôt que de tout évaluer en parallèle.",
+        "en": "Treat them as a **priority list** (colour rule before shape rule) rather than evaluating everything in parallel."
+      },
+      "difficulty": 2,
+      "tags": [
+        "attention.rules.method"
+      ]
+    },
+    {
+      "id": "attention_rules.deck.method.0005",
+      "version": 1,
+      "deckId": "attention_rules.deck.method",
+      "front": {
+        "fr": "Règles d'attention : quel est le piège des exceptions à la règle ?",
+        "en": "Attention rules: what is the trap of rule exceptions?"
+      },
+      "back": {
+        "fr": "Certaines consignes ajoutent une exception (\"sauf si...\") : vérifie-la en dernier, après avoir appliqué la règle générale.",
+        "en": "Some instructions add an exception (\"unless...\"): check it last, after applying the general rule."
+      },
+      "difficulty": 2,
+      "tags": [
+        "attention.rules.method"
+      ]
+    },
+    {
+      "id": "attention_rules.deck.method.0006",
+      "version": 1,
+      "deckId": "attention_rules.deck.method",
+      "front": {
+        "fr": "Règles d'attention : comment garder la vitesse sans sacrifier la précision ?",
+        "en": "Attention rules: how to keep speed without losing accuracy?"
+      },
+      "back": {
+        "fr": "Vise une réponse par seconde environ ; ralentir davantage n'améliore pas la précision au-delà d'un certain point, ça fait juste perdre du temps.",
+        "en": "Aim for roughly one response per second; slowing further doesn't improve accuracy past a point, it just costs time."
+      },
+      "difficulty": 2,
+      "tags": [
+        "attention.rules.method"
+      ]
+    },
+    {
+      "id": "attention_rules.deck.method.0007",
+      "version": 1,
+      "deckId": "attention_rules.deck.method",
+      "front": {
+        "fr": "Règles d'attention : comment repérer un piège de couleur proche ?",
+        "en": "Attention rules: how to spot a near-colour trap?"
+      },
+      "back": {
+        "fr": "Les couleurs voisines (bleu/violet, orange/rouge) sont les pièges classiques : entraîne-toi spécifiquement sur ces paires.",
+        "en": "Neighbouring colours (blue/purple, orange/red) are the classic traps: train specifically on those pairs."
+      },
+      "difficulty": 2,
+      "tags": [
+        "attention.rules.method"
+      ]
+    },
+    {
+      "id": "attention_rules.deck.method.0008",
+      "version": 1,
+      "deckId": "attention_rules.deck.method",
+      "front": {
+        "fr": "Règles d'attention : que faire si on hésite entre deux règles ?",
+        "en": "Attention rules: what to do when torn between two rules?"
+      },
+      "back": {
+        "fr": "Applique la règle **la plus récemment annoncée** : en cas de doute, la dernière consigne prime.",
+        "en": "Apply the **most recently announced** rule: when in doubt, the latest instruction wins."
+      },
+      "difficulty": 2,
+      "tags": [
+        "attention.rules.method"
+      ]
+    },
+    {
+      "id": "attention_rules.deck.method.0009",
+      "version": 1,
+      "deckId": "attention_rules.deck.method",
+      "front": {
+        "fr": "Règles d'attention : pourquoi relire la consigne en boucle ?",
+        "en": "Attention rules: why mentally re-read the instruction periodically?"
+      },
+      "back": {
+        "fr": "Une relecture mentale rapide toutes les 10-15 réponses évite la dérive progressive vers une règle mal appliquée.",
+        "en": "A quick mental re-read every 10-15 responses prevents gradual drift towards a wrongly applied rule."
+      },
+      "difficulty": 2,
+      "tags": [
+        "attention.rules.method"
+      ]
+    },
+    {
+      "id": "attention_rules.deck.method.0010",
+      "version": 1,
+      "deckId": "attention_rules.deck.method",
+      "front": {
+        "fr": "Règles d'attention : comment récupérer après une série d'erreurs ?",
+        "en": "Attention rules: how to recover after a run of errors?"
+      },
+      "back": {
+        "fr": "Marque une pause mentale d'une demi-seconde, reformule la règle active, puis reprends : mieux vaut cette pause qu'une série d'erreurs.",
+        "en": "Take a half-second mental pause, restate the active rule, then resume: that pause beats a run of further errors."
+      },
+      "difficulty": 2,
+      "tags": [
+        "attention.rules.method"
+      ]
+    }
+  ]
+}

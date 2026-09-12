@@ -1,0 +1,1212 @@
+{
+  "$schema": "../../../../docs/content/schema/deck.schema.json",
+  "kind": "deck",
+  "id": "culture_aero.deck.culture-generale",
+  "version": 1,
+  "moduleId": "psy0",
+  "familyId": "culture_aero",
+  "order": 1,
+  "name": {
+    "fr": "Culture aéronautique générale",
+    "en": "General aviation culture"
+  },
+  "description": {
+    "fr": "Codes IATA/ICAO, flotte Air France, histoire de l'aviation et institutions à connaître pour le PSY0.",
+    "en": "IATA/ICAO codes, Air France fleet, aviation history and institutions for the PSY0."
+  },
+  "tags": [
+    "culture_aero"
+  ],
+  "cards": [
+    {
+      "id": "culture_aero.deck.culture-generale.0001",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Paris Charles de Gaulle ?",
+        "en": "IATA code of Paris Charles de Gaulle airport?"
+      },
+      "back": {
+        "fr": "**CDG**",
+        "en": "**CDG**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0002",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Paris Orly ?",
+        "en": "IATA code of Paris Orly airport?"
+      },
+      "back": {
+        "fr": "**ORY**",
+        "en": "**ORY**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0003",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Londres Heathrow ?",
+        "en": "IATA code of Londres Heathrow airport?"
+      },
+      "back": {
+        "fr": "**LHR**",
+        "en": "**LHR**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0004",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de New York JFK ?",
+        "en": "IATA code of New York JFK airport?"
+      },
+      "back": {
+        "fr": "**JFK**",
+        "en": "**JFK**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0005",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Los Angeles ?",
+        "en": "IATA code of Los Angeles airport?"
+      },
+      "back": {
+        "fr": "**LAX**",
+        "en": "**LAX**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0006",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Tokyo Narita ?",
+        "en": "IATA code of Tokyo Narita airport?"
+      },
+      "back": {
+        "fr": "**NRT**",
+        "en": "**NRT**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0007",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Tokyo Haneda ?",
+        "en": "IATA code of Tokyo Haneda airport?"
+      },
+      "back": {
+        "fr": "**HND**",
+        "en": "**HND**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0008",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Dubaï ?",
+        "en": "IATA code of Dubaï airport?"
+      },
+      "back": {
+        "fr": "**DXB**",
+        "en": "**DXB**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0009",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Francfort ?",
+        "en": "IATA code of Francfort airport?"
+      },
+      "back": {
+        "fr": "**FRA**",
+        "en": "**FRA**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0010",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Amsterdam Schiphol ?",
+        "en": "IATA code of Amsterdam Schiphol airport?"
+      },
+      "back": {
+        "fr": "**AMS**",
+        "en": "**AMS**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0011",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Madrid Barajas ?",
+        "en": "IATA code of Madrid Barajas airport?"
+      },
+      "back": {
+        "fr": "**MAD**",
+        "en": "**MAD**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0012",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Rome Fiumicino ?",
+        "en": "IATA code of Rome Fiumicino airport?"
+      },
+      "back": {
+        "fr": "**FCO**",
+        "en": "**FCO**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0013",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Istanbul ?",
+        "en": "IATA code of Istanbul airport?"
+      },
+      "back": {
+        "fr": "**IST**",
+        "en": "**IST**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0014",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Singapour Changi ?",
+        "en": "IATA code of Singapour Changi airport?"
+      },
+      "back": {
+        "fr": "**SIN**",
+        "en": "**SIN**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0015",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Hong Kong ?",
+        "en": "IATA code of Hong Kong airport?"
+      },
+      "back": {
+        "fr": "**HKG**",
+        "en": "**HKG**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0016",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Pékin Capitale ?",
+        "en": "IATA code of Pékin Capitale airport?"
+      },
+      "back": {
+        "fr": "**PEK**",
+        "en": "**PEK**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0017",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Shanghai Pudong ?",
+        "en": "IATA code of Shanghai Pudong airport?"
+      },
+      "back": {
+        "fr": "**PVG**",
+        "en": "**PVG**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0018",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de São Paulo Guarulhos ?",
+        "en": "IATA code of São Paulo Guarulhos airport?"
+      },
+      "back": {
+        "fr": "**GRU**",
+        "en": "**GRU**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0019",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Mexico ?",
+        "en": "IATA code of Mexico airport?"
+      },
+      "back": {
+        "fr": "**MEX**",
+        "en": "**MEX**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0020",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Toronto Pearson ?",
+        "en": "IATA code of Toronto Pearson airport?"
+      },
+      "back": {
+        "fr": "**YYZ**",
+        "en": "**YYZ**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0021",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Sydney ?",
+        "en": "IATA code of Sydney airport?"
+      },
+      "back": {
+        "fr": "**SYD**",
+        "en": "**SYD**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0022",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Delhi ?",
+        "en": "IATA code of Delhi airport?"
+      },
+      "back": {
+        "fr": "**DEL**",
+        "en": "**DEL**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0023",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Bangkok Suvarnabhumi ?",
+        "en": "IATA code of Bangkok Suvarnabhumi airport?"
+      },
+      "back": {
+        "fr": "**BKK**",
+        "en": "**BKK**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0024",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Zurich ?",
+        "en": "IATA code of Zurich airport?"
+      },
+      "back": {
+        "fr": "**ZRH**",
+        "en": "**ZRH**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0025",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Munich ?",
+        "en": "IATA code of Munich airport?"
+      },
+      "back": {
+        "fr": "**MUC**",
+        "en": "**MUC**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0026",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Bruxelles ?",
+        "en": "IATA code of Bruxelles airport?"
+      },
+      "back": {
+        "fr": "**BRU**",
+        "en": "**BRU**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0027",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Lisbonne ?",
+        "en": "IATA code of Lisbonne airport?"
+      },
+      "back": {
+        "fr": "**LIS**",
+        "en": "**LIS**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0028",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Athènes ?",
+        "en": "IATA code of Athènes airport?"
+      },
+      "back": {
+        "fr": "**ATH**",
+        "en": "**ATH**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0029",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Vienne ?",
+        "en": "IATA code of Vienne airport?"
+      },
+      "back": {
+        "fr": "**VIE**",
+        "en": "**VIE**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0030",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code IATA de l'aéroport de Copenhague ?",
+        "en": "IATA code of Copenhague airport?"
+      },
+      "back": {
+        "fr": "**CPH**",
+        "en": "**CPH**"
+      },
+      "difficulty": 1,
+      "tags": [
+        "culture_aero.iata"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0031",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code OACI (ICAO) de Paris CDG ?",
+        "en": "ICAO code of Paris CDG?"
+      },
+      "back": {
+        "fr": "**LFPG**",
+        "en": "**LFPG**"
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.icao"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0032",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code OACI (ICAO) de Paris Orly ?",
+        "en": "ICAO code of Paris Orly?"
+      },
+      "back": {
+        "fr": "**LFPO**",
+        "en": "**LFPO**"
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.icao"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0033",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code OACI (ICAO) de Londres Heathrow ?",
+        "en": "ICAO code of Londres Heathrow?"
+      },
+      "back": {
+        "fr": "**EGLL**",
+        "en": "**EGLL**"
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.icao"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0034",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code OACI (ICAO) de New York JFK ?",
+        "en": "ICAO code of New York JFK?"
+      },
+      "back": {
+        "fr": "**KJFK**",
+        "en": "**KJFK**"
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.icao"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0035",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code OACI (ICAO) de Los Angeles ?",
+        "en": "ICAO code of Los Angeles?"
+      },
+      "back": {
+        "fr": "**KLAX**",
+        "en": "**KLAX**"
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.icao"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0036",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code OACI (ICAO) de Francfort ?",
+        "en": "ICAO code of Francfort?"
+      },
+      "back": {
+        "fr": "**EDDF**",
+        "en": "**EDDF**"
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.icao"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0037",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code OACI (ICAO) de Amsterdam Schiphol ?",
+        "en": "ICAO code of Amsterdam Schiphol?"
+      },
+      "back": {
+        "fr": "**EHAM**",
+        "en": "**EHAM**"
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.icao"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0038",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code OACI (ICAO) de Tokyo Haneda ?",
+        "en": "ICAO code of Tokyo Haneda?"
+      },
+      "back": {
+        "fr": "**RJTT**",
+        "en": "**RJTT**"
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.icao"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0039",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code OACI (ICAO) de Dubaï ?",
+        "en": "ICAO code of Dubaï?"
+      },
+      "back": {
+        "fr": "**OMDB**",
+        "en": "**OMDB**"
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.icao"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0040",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Code OACI (ICAO) de Pékin Capitale ?",
+        "en": "ICAO code of Pékin Capitale?"
+      },
+      "back": {
+        "fr": "**ZBAA**",
+        "en": "**ZBAA**"
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.icao"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0041",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année Air France a-t-elle réceptionné son premier A350 ?",
+        "en": "When did Air France receive its first A350?"
+      },
+      "back": {
+        "fr": "**2019** (30 septembre 2019, premier vol commercial Paris–São Paulo).",
+        "en": "**2019** (30 September 2019, first commercial flight Paris–São Paulo)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.fleet"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0042",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année le Concorde a-t-il effectué son dernier vol commercial ?",
+        "en": "When did Concorde fly its last commercial flight?"
+      },
+      "back": {
+        "fr": "**2003** (le 27 juin 2003 pour Air France).",
+        "en": "**2003** (27 June 2003 for Air France)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.fleet"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0043",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année Air France a-t-elle retiré son dernier Boeing 747 ?",
+        "en": "When did Air France retire its last Boeing 747?"
+      },
+      "back": {
+        "fr": "**2016** (janvier 2016).",
+        "en": "**2016** (January 2016)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.fleet"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0044",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année le premier A380 est-il entré en service chez Air France ?",
+        "en": "When did the A380 enter service at Air France?"
+      },
+      "back": {
+        "fr": "**2009** (novembre 2009, ligne Paris–New York).",
+        "en": "**2009** (November 2009, Paris–New York route)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.fleet"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0045",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année le Boeing 777 est-il entré en flotte Air France ?",
+        "en": "When did the Boeing 777 join the Air France fleet?"
+      },
+      "back": {
+        "fr": "**1998**.",
+        "en": "**1998**."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.fleet"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0046",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année Air France a-t-elle été fondée ?",
+        "en": "When was Air France founded?"
+      },
+      "back": {
+        "fr": "**1933** (fusion de cinq compagnies françaises).",
+        "en": "**1933** (merger of five French airlines)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.fleet"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0047",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année Air France et KLM ont-elles fusionné ?",
+        "en": "When did Air France and KLM merge?"
+      },
+      "back": {
+        "fr": "**2004** (naissance du groupe Air France-KLM).",
+        "en": "**2004** (birth of the Air France-KLM group)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.fleet"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0048",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année le terminal 1 de Roissy CDG a-t-il ouvert ?",
+        "en": "When did Terminal 1 at Roissy CDG open?"
+      },
+      "back": {
+        "fr": "**1974**.",
+        "en": "**1974**."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.fleet"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0049",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année l'A220 (ex-CSeries) est-il entré chez Air France ?",
+        "en": "When did the A220 (ex-CSeries) join Air France?"
+      },
+      "back": {
+        "fr": "**2021**.",
+        "en": "**2021**."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.fleet"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0050",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année Air France a-t-elle reçu son premier A320 ?",
+        "en": "When did Air France receive its first A320?"
+      },
+      "back": {
+        "fr": "**1988**, l'année de la mise en service commerciale de l'A320.",
+        "en": "**1988**, the year the A320 entered commercial service."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.fleet"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0051",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année les frères Wright ont-ils réalisé le premier vol motorisé ?",
+        "en": "When was the Wright brothers' first powered flight?"
+      },
+      "back": {
+        "fr": "**1903** (17 décembre, Kitty Hawk).",
+        "en": "**1903** (17 December, Kitty Hawk)."
+      },
+      "difficulty": 3,
+      "tags": [
+        "culture_aero.history"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0052",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année Lindbergh a-t-il traversé l'Atlantique en solitaire ?",
+        "en": "When did Lindbergh fly solo across the Atlantic?"
+      },
+      "back": {
+        "fr": "**1927**.",
+        "en": "**1927**."
+      },
+      "difficulty": 3,
+      "tags": [
+        "culture_aero.history"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0053",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année le premier avion de ligne à réaction (Comet) est-il entré en service ?",
+        "en": "When did the first jet airliner (Comet) enter service?"
+      },
+      "back": {
+        "fr": "**1952**.",
+        "en": "**1952**."
+      },
+      "difficulty": 3,
+      "tags": [
+        "culture_aero.history"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0054",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année le Concorde a-t-il effectué son premier vol ?",
+        "en": "When did Concorde make its first flight?"
+      },
+      "back": {
+        "fr": "**1969** (2 mars).",
+        "en": "**1969** (2 March)."
+      },
+      "difficulty": 3,
+      "tags": [
+        "culture_aero.history"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0055",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année la convention de Chicago a-t-elle créé l'OACI ?",
+        "en": "When did the Chicago convention create ICAO?"
+      },
+      "back": {
+        "fr": "**1944**.",
+        "en": "**1944**."
+      },
+      "difficulty": 3,
+      "tags": [
+        "culture_aero.history"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0056",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année l'IATA a-t-elle été fondée ?",
+        "en": "When was IATA founded?"
+      },
+      "back": {
+        "fr": "**1945** (La Havane).",
+        "en": "**1945** (Havana)."
+      },
+      "difficulty": 3,
+      "tags": [
+        "culture_aero.history"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0057",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année l'Airbus A300, premier avion Airbus, est-il entré en service ?",
+        "en": "When did the Airbus A300, the first Airbus, enter service?"
+      },
+      "back": {
+        "fr": "**1974**.",
+        "en": "**1974**."
+      },
+      "difficulty": 3,
+      "tags": [
+        "culture_aero.history"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0058",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année a eu lieu l'accident du Concorde à Gonesse ?",
+        "en": "When was the Concorde crash at Gonesse?"
+      },
+      "back": {
+        "fr": "**2000** (25 juillet).",
+        "en": "**2000** (25 July)."
+      },
+      "difficulty": 3,
+      "tags": [
+        "culture_aero.history"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0059",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année les attentats du 11 septembre ont-ils bouleversé l'aviation civile ?",
+        "en": "When did 9/11 reshape civil aviation security?"
+      },
+      "back": {
+        "fr": "**2001**.",
+        "en": "**2001**."
+      },
+      "difficulty": 3,
+      "tags": [
+        "culture_aero.history"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0060",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "En quelle année l'accord \"ciel ouvert\" a-t-il libéralisé le marché aérien européen ?",
+        "en": "When did \"open skies\" liberalise the European air market?"
+      },
+      "back": {
+        "fr": "**1997** (troisième paquet européen), pleinement appliqué en **2004**.",
+        "en": "**1997** (third European package), fully applied by **2004**."
+      },
+      "difficulty": 3,
+      "tags": [
+        "culture_aero.history"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0061",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Que signifie le sigle DGAC ?",
+        "en": "What does DGAC stand for?"
+      },
+      "back": {
+        "fr": "**Direction générale de l'Aviation civile** (régulateur français).",
+        "en": "**Direction générale de l'Aviation civile** (French civil aviation regulator)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.institutions"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0062",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Que signifie le sigle EASA ?",
+        "en": "What does EASA stand for?"
+      },
+      "back": {
+        "fr": "**European Union Aviation Safety Agency**, l'agence européenne de sécurité aérienne.",
+        "en": "**European Union Aviation Safety Agency**."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.institutions"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0063",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Que signifie le sigle OACI ?",
+        "en": "What does ICAO stand for?"
+      },
+      "back": {
+        "fr": "**Organisation de l'aviation civile internationale** (ICAO en anglais), agence de l'ONU.",
+        "en": "**International Civil Aviation Organization**, a UN agency."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.institutions"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0064",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Que signifie le sigle IATA ?",
+        "en": "What does IATA stand for?"
+      },
+      "back": {
+        "fr": "**International Air Transport Association**, l'association mondiale des compagnies aériennes.",
+        "en": "**International Air Transport Association**."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.institutions"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0065",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Que signifie le sigle BEA en France ?",
+        "en": "What does BEA stand for in France?"
+      },
+      "back": {
+        "fr": "**Bureau d'Enquêtes et d'Analyses** pour la sécurité de l'aviation civile.",
+        "en": "**Bureau d'Enquêtes et d'Analyses** (accident investigation bureau)."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.institutions"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0066",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Quel organisme français fournit les prévisions météorologiques aéronautiques ?",
+        "en": "Which French body provides aeronautical weather forecasts?"
+      },
+      "back": {
+        "fr": "**Météo-France**.",
+        "en": "**Météo-France**."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.institutions"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0067",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Que signifie le sigle DSAC ?",
+        "en": "What does DSAC stand for?"
+      },
+      "back": {
+        "fr": "**Direction de la Sécurité de l'Aviation Civile**, direction opérationnelle de la DGAC.",
+        "en": "**Direction de la Sécurité de l'Aviation Civile**, an operational arm of the DGAC."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.institutions"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0068",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Quel organisme gère la circulation aérienne au niveau européen ?",
+        "en": "Which body manages air traffic at the European level?"
+      },
+      "back": {
+        "fr": "**Eurocontrol**.",
+        "en": "**Eurocontrol**."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.institutions"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0069",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Que signifie le sigle ENAC ?",
+        "en": "What does ENAC stand for?"
+      },
+      "back": {
+        "fr": "**École Nationale de l'Aviation Civile**, à Toulouse.",
+        "en": "**École Nationale de l'Aviation Civile**, in Toulouse."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.institutions"
+      ]
+    },
+    {
+      "id": "culture_aero.deck.culture-generale.0070",
+      "version": 1,
+      "deckId": "culture_aero.deck.culture-generale",
+      "front": {
+        "fr": "Quel organisme onusien fixe les normes internationales de navigation aérienne ?",
+        "en": "Which UN body sets international air navigation standards?"
+      },
+      "back": {
+        "fr": "**L'OACI (ICAO)**, agence des Nations Unies basée à Montréal.",
+        "en": "**ICAO**, a UN agency headquartered in Montreal."
+      },
+      "difficulty": 2,
+      "tags": [
+        "culture_aero.institutions"
+      ]
+    }
+  ]
+}

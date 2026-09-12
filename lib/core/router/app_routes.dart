@@ -55,6 +55,21 @@ abstract final class AppRoutes {
   /// Full location of the "how the selection works" page.
   static const String learnHowItWorks = '$learn/$learnHowItWorksSegment';
 
+  /// Relative path of a family's flashcards screen (nested under
+  /// [learnFamilySegment], US-042).
+  static const String learnFamilyCardsSegment = 'cards';
+
+  /// Full location of a family's flashcards screen.
+  static String learnFamilyCards(String familyId) =>
+      '${learnFamily(familyId)}/$learnFamilyCardsSegment';
+
+  /// Relative path of the "review today" flashcards screen (nested under
+  /// [learn], every deck combined; US-042).
+  static const String learnCardsSegment = 'cards';
+
+  /// Full location of the "review today" flashcards screen.
+  static const String learnCards = '$learn/$learnCardsSegment';
+
   /// The tab routes, in bottom-navigation order. The index in this list is the
   /// `StatefulShellRoute` branch index.
   static const List<String> tabs = [learn, train, exam, progress, settings];
