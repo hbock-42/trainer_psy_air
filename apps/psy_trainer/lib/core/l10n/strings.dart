@@ -832,4 +832,19 @@ abstract final class AppStrings {
     int attempts,
     int unanswered,
   ) => '$correct/$attempts correctes · $unanswered sans réponse';
+
+  // spatial_cubes (US-025): cube-net renderer.
+  static const String cubeNetReferenceLabel = 'Patron de référence';
+  static const String cubeNetTargetLabel = 'Patron à compléter';
+  static const String cubeNetTrayLabel = 'Faces à placer';
+  static const String cubeNetTapToRotateHint =
+      'Touchez une face pour la faire pivoter.';
+  static String cubeNetSlotEmptySemantics(int index) => 'Case $index, vide';
+  static String cubeNetSlotFilledSemantics(int index, String value) =>
+      'Case $index, face $value';
+  static String cubeNetTileSemantics(String value, int rotation) =>
+      'Face $value, rotation $rotation degrés';
+  static const String cubeNetExplanationTitle = 'Le cube reconstitué';
+  static String cubeNetCorrectFaces(int correct, int total) =>
+      '$correct/$total faces correctement placées';
 }
