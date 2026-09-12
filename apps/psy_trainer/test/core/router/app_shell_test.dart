@@ -128,8 +128,8 @@ void main() {
     final container = await pumpShell(tester);
     final router = container.read(appRouterProvider);
 
+    // Train is no longer a placeholder (US-050): it has its own test.
     for (final (route, label) in [
-      (AppRoutes.train, AppStrings.tabTrain),
       (AppRoutes.exam, AppStrings.tabExam),
       (AppRoutes.progress, AppStrings.tabProgress),
       (AppRoutes.settings, AppStrings.tabSettings),
