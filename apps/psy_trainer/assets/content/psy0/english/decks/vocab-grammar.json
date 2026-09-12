@@ -23,7 +23,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **runway**",
+        "fr": "Traduire / définir : **runway**",
         "en": "Translate / define: **runway**"
       },
       "back": {
@@ -40,7 +40,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **taxiway**",
+        "fr": "Traduire / définir : **taxiway**",
         "en": "Translate / define: **taxiway**"
       },
       "back": {
@@ -57,7 +57,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **apron**",
+        "fr": "Traduire / définir : **apron**",
         "en": "Translate / define: **apron**"
       },
       "back": {
@@ -74,7 +74,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **cockpit**",
+        "fr": "Traduire / définir : **cockpit**",
         "en": "Translate / define: **cockpit**"
       },
       "back": {
@@ -91,7 +91,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **fuselage**",
+        "fr": "Traduire / définir : **fuselage**",
         "en": "Translate / define: **fuselage**"
       },
       "back": {
@@ -108,7 +108,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **wingspan**",
+        "fr": "Traduire / définir : **wingspan**",
         "en": "Translate / define: **wingspan**"
       },
       "back": {
@@ -125,7 +125,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **throttle**",
+        "fr": "Traduire / définir : **throttle**",
         "en": "Translate / define: **throttle**"
       },
       "back": {
@@ -142,7 +142,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **altitude**",
+        "fr": "Traduire / définir : **altitude**",
         "en": "Translate / define: **altitude**"
       },
       "back": {
@@ -159,7 +159,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **descent**",
+        "fr": "Traduire / définir : **descent**",
         "en": "Translate / define: **descent**"
       },
       "back": {
@@ -176,7 +176,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **clearance**",
+        "fr": "Traduire / définir : **clearance**",
         "en": "Translate / define: **clearance**"
       },
       "back": {
@@ -193,7 +193,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **mayday**",
+        "fr": "Traduire / définir : **mayday**",
         "en": "Translate / define: **mayday**"
       },
       "back": {
@@ -210,7 +210,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **headwind**",
+        "fr": "Traduire / définir : **headwind**",
         "en": "Translate / define: **headwind**"
       },
       "back": {
@@ -227,7 +227,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **tailwind**",
+        "fr": "Traduire / définir : **tailwind**",
         "en": "Translate / define: **tailwind**"
       },
       "back": {
@@ -244,7 +244,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **turbulence**",
+        "fr": "Traduire / définir : **turbulence**",
         "en": "Translate / define: **turbulence**"
       },
       "back": {
@@ -261,7 +261,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **checklist**",
+        "fr": "Traduire / définir : **checklist**",
         "en": "Translate / define: **checklist**"
       },
       "back": {
@@ -278,7 +278,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **briefing**",
+        "fr": "Traduire / définir : **briefing**",
         "en": "Translate / define: **briefing**"
       },
       "back": {
@@ -295,7 +295,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **debrief**",
+        "fr": "Traduire / définir : **debrief**",
         "en": "Translate / define: **debrief**"
       },
       "back": {
@@ -312,7 +312,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **crew**",
+        "fr": "Traduire / définir : **crew**",
         "en": "Translate / define: **crew**"
       },
       "back": {
@@ -329,7 +329,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **cabin**",
+        "fr": "Traduire / définir : **cabin**",
         "en": "Translate / define: **cabin**"
       },
       "back": {
@@ -346,7 +346,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **undercarriage**",
+        "fr": "Traduire / définir : **undercarriage**",
         "en": "Translate / define: **undercarriage**"
       },
       "back": {
@@ -363,7 +363,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **flap**",
+        "fr": "Traduire / définir : **flap**",
         "en": "Translate / define: **flap**"
       },
       "back": {
@@ -380,7 +380,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **rudder**",
+        "fr": "Traduire / définir : **rudder**",
         "en": "Translate / define: **rudder**"
       },
       "back": {
@@ -397,7 +397,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **aileron**",
+        "fr": "Traduire / définir : **aileron**",
         "en": "Translate / define: **aileron**"
       },
       "back": {
@@ -414,7 +414,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **yoke**",
+        "fr": "Traduire / définir : **yoke**",
         "en": "Translate / define: **yoke**"
       },
       "back": {
@@ -431,7 +431,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **autopilot**",
+        "fr": "Traduire / définir : **autopilot**",
         "en": "Translate / define: **autopilot**"
       },
       "back": {
@@ -448,7 +448,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **gauge**",
+        "fr": "Traduire / définir : **gauge**",
         "en": "Translate / define: **gauge**"
       },
       "back": {
@@ -465,7 +465,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **fuel gauge**",
+        "fr": "Traduire / définir : **fuel gauge**",
         "en": "Translate / define: **fuel gauge**"
       },
       "back": {
@@ -482,7 +482,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **landing gear**",
+        "fr": "Traduire / définir : **landing gear**",
         "en": "Translate / define: **landing gear**"
       },
       "back": {
@@ -499,7 +499,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **boarding pass**",
+        "fr": "Traduire / définir : **boarding pass**",
         "en": "Translate / define: **boarding pass**"
       },
       "back": {
@@ -516,7 +516,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **departure**",
+        "fr": "Traduire / définir : **departure**",
         "en": "Translate / define: **departure**"
       },
       "back": {
@@ -533,7 +533,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **arrival**",
+        "fr": "Traduire / définir : **arrival**",
         "en": "Translate / define: **arrival**"
       },
       "back": {
@@ -550,7 +550,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **layover**",
+        "fr": "Traduire / définir : **layover**",
         "en": "Translate / define: **layover**"
       },
       "back": {
@@ -567,7 +567,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **connecting flight**",
+        "fr": "Traduire / définir : **connecting flight**",
         "en": "Translate / define: **connecting flight**"
       },
       "back": {
@@ -584,7 +584,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **air traffic control**",
+        "fr": "Traduire / définir : **air traffic control**",
         "en": "Translate / define: **air traffic control**"
       },
       "back": {
@@ -601,7 +601,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **holding pattern**",
+        "fr": "Traduire / définir : **holding pattern**",
         "en": "Translate / define: **holding pattern**"
       },
       "back": {
@@ -618,7 +618,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **go-around**",
+        "fr": "Traduire / définir : **go-around**",
         "en": "Translate / define: **go-around**"
       },
       "back": {
@@ -635,7 +635,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **stall**",
+        "fr": "Traduire / définir : **stall**",
         "en": "Translate / define: **stall**"
       },
       "back": {
@@ -652,7 +652,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **thrust**",
+        "fr": "Traduire / définir : **thrust**",
         "en": "Translate / define: **thrust**"
       },
       "back": {
@@ -669,7 +669,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **drag**",
+        "fr": "Traduire / définir : **drag**",
         "en": "Translate / define: **drag**"
       },
       "back": {
@@ -686,7 +686,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **lift**",
+        "fr": "Traduire / définir : **lift**",
         "en": "Translate / define: **lift**"
       },
       "back": {
@@ -703,7 +703,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **yaw**",
+        "fr": "Traduire / définir : **yaw**",
         "en": "Translate / define: **yaw**"
       },
       "back": {
@@ -720,7 +720,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **pitch**",
+        "fr": "Traduire / définir : **pitch**",
         "en": "Translate / define: **pitch**"
       },
       "back": {
@@ -737,7 +737,7 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Traduire / définir : **roll**",
+        "fr": "Traduire / définir : **roll**",
         "en": "Translate / define: **roll**"
       },
       "back": {
@@ -754,11 +754,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : its vs it's",
+        "fr": "Piège de grammaire : its vs it's",
         "en": "Grammar trap: its vs it's"
       },
       "back": {
-        "fr": "**its** = possessif (\"the plane and its wings\") ; **it's** = \"it is\"/\"it has\".",
+        "fr": "**its** = possessif (« the plane and its wings ») ; **it's** = « it is »/« it has ».",
         "en": "**its** = possessif (\"the plane and its wings\") ; **it's** = \"it is\"/\"it has\"."
       },
       "difficulty": 2,
@@ -771,11 +771,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : affect vs effect",
+        "fr": "Piège de grammaire : affect vs effect",
         "en": "Grammar trap: affect vs effect"
       },
       "back": {
-        "fr": "**affect** = verbe (influencer) ; **effect** = nom (le résultat, l'effet).",
+        "fr": "**affect** = verbe (influencer) ; **effect** = nom (le résultat, l'effet).",
         "en": "**affect** = verbe (influencer) ; **effect** = nom (le résultat, l'effet)."
       },
       "difficulty": 2,
@@ -788,11 +788,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : less vs fewer",
+        "fr": "Piège de grammaire : less vs fewer",
         "en": "Grammar trap: less vs fewer"
       },
       "back": {
-        "fr": "**less** pour l'indénombrable (less fuel) ; **fewer** pour le dénombrable (fewer passengers).",
+        "fr": "**less** pour l'indénombrable (less fuel) ; **fewer** pour le dénombrable (fewer passengers).",
         "en": "**less** pour l'indénombrable (less fuel) ; **fewer** pour le dénombrable (fewer passengers)."
       },
       "difficulty": 2,
@@ -805,11 +805,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : who vs whom",
+        "fr": "Piège de grammaire : who vs whom",
         "en": "Grammar trap: who vs whom"
       },
       "back": {
-        "fr": "**who** = sujet (\"who called?\") ; **whom** = objet (\"to whom it may concern\").",
+        "fr": "**who** = sujet (« who called ? ») ; **whom** = objet (« to whom it may concern »).",
         "en": "**who** = sujet (\"who called?\") ; **whom** = objet (\"to whom it may concern\")."
       },
       "difficulty": 2,
@@ -822,11 +822,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : lay vs lie",
+        "fr": "Piège de grammaire : lay vs lie",
         "en": "Grammar trap: lay vs lie"
       },
       "back": {
-        "fr": "**lay** = poser qqch (transitif) ; **lie** = être allongé (intransitif).",
+        "fr": "**lay** = poser qqch (transitif) ; **lie** = être allongé (intransitif).",
         "en": "**lay** = poser qqch (transitif) ; **lie** = être allongé (intransitif)."
       },
       "difficulty": 2,
@@ -839,11 +839,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : borrow vs lend",
+        "fr": "Piège de grammaire : borrow vs lend",
         "en": "Grammar trap: borrow vs lend"
       },
       "back": {
-        "fr": "**borrow** = emprunter (à qqn) ; **lend** = prêter (à qqn).",
+        "fr": "**borrow** = emprunter (à qqn) ; **lend** = prêter (à qqn).",
         "en": "**borrow** = emprunter (à qqn) ; **lend** = prêter (à qqn)."
       },
       "difficulty": 2,
@@ -856,11 +856,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : bring vs take",
+        "fr": "Piège de grammaire : bring vs take",
         "en": "Grammar trap: bring vs take"
       },
       "back": {
-        "fr": "**bring** = apporter (vers le locuteur) ; **take** = emporter (loin du locuteur).",
+        "fr": "**bring** = apporter (vers le locuteur) ; **take** = emporter (loin du locuteur).",
         "en": "**bring** = apporter (vers le locuteur) ; **take** = emporter (loin du locuteur)."
       },
       "difficulty": 2,
@@ -873,11 +873,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : say vs tell",
+        "fr": "Piège de grammaire : say vs tell",
         "en": "Grammar trap: say vs tell"
       },
       "back": {
-        "fr": "**say** + phrase (\"he said that...\") ; **tell** + destinataire (\"he told me\").",
+        "fr": "**say** + phrase (« he said that... ») ; **tell** + destinataire (« he told me »).",
         "en": "**say** + phrase (\"he said that...\") ; **tell** + destinataire (\"he told me\")."
       },
       "difficulty": 2,
@@ -890,11 +890,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : make vs do",
+        "fr": "Piège de grammaire : make vs do",
         "en": "Grammar trap: make vs do"
       },
       "back": {
-        "fr": "**make** = créer/fabriquer (make a decision) ; **do** = accomplir une tâche (do the checklist).",
+        "fr": "**make** = créer/fabriquer (make a decision) ; **do** = accomplir une tâche (do the checklist).",
         "en": "**make** = créer/fabriquer (make a decision) ; **do** = accomplir une tâche (do the checklist)."
       },
       "difficulty": 2,
@@ -907,11 +907,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : other vs another",
+        "fr": "Piège de grammaire : other vs another",
         "en": "Grammar trap: other vs another"
       },
       "back": {
-        "fr": "**another** = un de plus (singulier) ; **other** précède un nom pluriel ou déterminé.",
+        "fr": "**another** = un de plus (singulier) ; **other** précède un nom pluriel ou déterminé.",
         "en": "**another** = un de plus (singulier) ; **other** précède un nom pluriel ou déterminé."
       },
       "difficulty": 2,
@@ -924,11 +924,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : much vs many",
+        "fr": "Piège de grammaire : much vs many",
         "en": "Grammar trap: much vs many"
       },
       "back": {
-        "fr": "**much** pour l'indénombrable (much fuel) ; **many** pour le dénombrable (many flights).",
+        "fr": "**much** pour l'indénombrable (much fuel) ; **many** pour le dénombrable (many flights).",
         "en": "**much** pour l'indénombrable (much fuel) ; **many** pour le dénombrable (many flights)."
       },
       "difficulty": 2,
@@ -941,11 +941,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : since vs for",
+        "fr": "Piège de grammaire : since vs for",
         "en": "Grammar trap: since vs for"
       },
       "back": {
-        "fr": "**since** + point de départ (since 2019) ; **for** + durée (for three hours).",
+        "fr": "**since** + point de départ (since 2019) ; **for** + durée (for three hours).",
         "en": "**since** + point de départ (since 2019) ; **for** + durée (for three hours)."
       },
       "difficulty": 2,
@@ -958,11 +958,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : during vs while",
+        "fr": "Piège de grammaire : during vs while",
         "en": "Grammar trap: during vs while"
       },
       "back": {
-        "fr": "**during** + nom (during the flight) ; **while** + proposition (while we were flying).",
+        "fr": "**during** + nom (during the flight) ; **while** + proposition (while we were flying).",
         "en": "**during** + nom (during the flight) ; **while** + proposition (while we were flying)."
       },
       "difficulty": 2,
@@ -975,11 +975,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : though vs although vs even though",
+        "fr": "Piège de grammaire : though vs although vs even though",
         "en": "Grammar trap: though vs although vs even though"
       },
       "back": {
-        "fr": "Les trois signifient \"bien que\" ; **even though** est le plus emphatique.",
+        "fr": "Les trois signifient « bien que » ; **even though** est le plus emphatique.",
         "en": "Les trois signifient \"bien que\" ; **even though** est le plus emphatique."
       },
       "difficulty": 2,
@@ -992,11 +992,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : good vs well",
+        "fr": "Piège de grammaire : good vs well",
         "en": "Grammar trap: good vs well"
       },
       "back": {
-        "fr": "**good** = adjectif (a good landing) ; **well** = adverbe (she flew well).",
+        "fr": "**good** = adjectif (a good landing) ; **well** = adverbe (she flew well).",
         "en": "**good** = adjectif (a good landing) ; **well** = adverbe (she flew well)."
       },
       "difficulty": 2,
@@ -1009,11 +1009,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : few vs a few",
+        "fr": "Piège de grammaire : few vs a few",
         "en": "Grammar trap: few vs a few"
       },
       "back": {
-        "fr": "**few** = presque aucun (négatif) ; **a few** = quelques-uns (positif).",
+        "fr": "**few** = presque aucun (négatif) ; **a few** = quelques-uns (positif).",
         "en": "**few** = presque aucun (négatif) ; **a few** = quelques-uns (positif)."
       },
       "difficulty": 2,
@@ -1026,11 +1026,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : little vs a little",
+        "fr": "Piège de grammaire : little vs a little",
         "en": "Grammar trap: little vs a little"
       },
       "back": {
-        "fr": "**little** = presque rien (négatif) ; **a little** = un peu (positif).",
+        "fr": "**little** = presque rien (négatif) ; **a little** = un peu (positif).",
         "en": "**little** = presque rien (négatif) ; **a little** = un peu (positif)."
       },
       "difficulty": 2,
@@ -1043,11 +1043,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : such vs so",
+        "fr": "Piège de grammaire : such vs so",
         "en": "Grammar trap: such vs so"
       },
       "back": {
-        "fr": "**such** + (a/an) + adjectif + nom ; **so** + adjectif seul (\"so fast\").",
+        "fr": "**such** + (a/an) + adjectif + nom ; **so** + adjectif seul (« so fast »).",
         "en": "**such** + (a/an) + adjectif + nom ; **so** + adjectif seul (\"so fast\")."
       },
       "difficulty": 2,
@@ -1060,11 +1060,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : raise vs rise",
+        "fr": "Piège de grammaire : raise vs rise",
         "en": "Grammar trap: raise vs rise"
       },
       "back": {
-        "fr": "**raise** = transitif, qqn élève qqch (raise the gear) ; **rise** = intransitif (the plane rises).",
+        "fr": "**raise** = transitif, qqn élève qqch (raise the gear) ; **rise** = intransitif (the plane rises).",
         "en": "**raise** = transitif, qqn élève qqch (raise the gear) ; **rise** = intransitif (the plane rises)."
       },
       "difficulty": 2,
@@ -1077,11 +1077,11 @@
       "version": 1,
       "deckId": "english.deck.vocab-grammar",
       "front": {
-        "fr": "Piège de grammaire : advice vs advise",
+        "fr": "Piège de grammaire : advice vs advise",
         "en": "Grammar trap: advice vs advise"
       },
       "back": {
-        "fr": "**advice** = nom indénombrable (some advice) ; **advise** = verbe (to advise).",
+        "fr": "**advice** = nom indénombrable (some advice) ; **advise** = verbe (to advise).",
         "en": "**advice** = nom indénombrable (some advice) ; **advise** = verbe (to advise)."
       },
       "difficulty": 2,
