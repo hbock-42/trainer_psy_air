@@ -251,12 +251,16 @@
     },
     "P1AttentionSustainedParams": {
       "type": "object",
-      "description": "p1_attention_sustained (psy1-spec.md §4.1 row 3). Format is an [open question]; built against the closest PSY0 paradigm (attention_rules-style cadence) until a fuller debrief exists. Defaults [assumed] (3 series of 5, ~9 min).",
+      "description": "p1_attention_sustained (psy1-spec.md §4.1 row 3, US-115). Format is an [open question]; a cadence-driven target-detection stream (attention_rules/memory_nback-style). Each series fixes one target rule (shape+colour conjunction, or 'same shape as previous') from the run seed. Defaults [assumed] (3 series of 5, ~9 min; ratios/palettes picked to keep targets rare).",
       "properties": {
         "seriesCount": { "type": "integer", "minimum": 1, "maximum": 10, "default": 3 },
         "itemsPerSeries": { "type": "integer", "minimum": 1, "maximum": 50, "default": 5 },
         "stimulusMs": { "type": "integer", "minimum": 100, "maximum": 5000, "default": 500 },
-        "answerWindowMs": { "type": "integer", "minimum": 200, "maximum": 10000, "default": 3000 }
+        "answerWindowMs": { "type": "integer", "minimum": 200, "maximum": 10000, "default": 3000 },
+        "targetRatio": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.2, "description": "Share of a series' items that are true targets." },
+        "lureRatio": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.2, "description": "Share that are lures (share exactly one attribute with the target rule without matching it)." },
+        "shapes": { "type": "array", "items": { "type": "string", "enum": ["square", "triangle", "circle", "diamond", "star"] }, "minItems": 2, "maxItems": 5, "default": ["square", "triangle", "circle", "diamond"] },
+        "colours": { "type": "array", "items": { "type": "string", "enum": ["blue", "orange", "green", "pink", "red", "yellow"] }, "minItems": 2, "maxItems": 6, "default": ["blue", "red", "green", "yellow"] }
       },
       "additionalProperties": false
     },

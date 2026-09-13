@@ -1528,5 +1528,55 @@
   "p1CubeRotationSameAnswer": "Même cube, tourné",
   "p1CubeRotationAlteredAnswer": "Modifié",
   "p1CubeRotationExplanationSame": "Le cube candidat est bien le cube de référence, vu sous un autre angle.",
-  "p1CubeRotationExplanationAltered": "Le cube candidat a été modifié (faces échangées ou face inversée) : ce n'est pas une simple rotation."
+  "p1CubeRotationExplanationAltered": "Le cube candidat a été modifié (faces échangées ou face inversée) : ce n'est pas une simple rotation.",
+  "attentionSustainedTarget": "Cible",
+  "attentionSustainedNotTarget": "Pas la cible",
+  "attentionSustainedTargetSemantics": "Cible ({shortcut})",
+  "@attentionSustainedTargetSemantics": {
+    "placeholders": {
+      "shortcut": {
+        "type": "String"
+      }
+    }
+  },
+  "attentionSustainedNotTargetSemantics": "Pas la cible ({shortcut})",
+  "@attentionSustainedNotTargetSemantics": {
+    "placeholders": {
+      "shortcut": {
+        "type": "String"
+      }
+    }
+  },
+  "attentionSustainedTouchFallback": "Touches non représentatives : le jour J, utilisez le clavier.",
+  "attentionSustainedRuleConjunction": "Cible : {colour} {shape}",
+  "@attentionSustainedRuleConjunction": {
+    "placeholders": {
+      "colour": {
+        "type": "String"
+      },
+      "shape": {
+        "type": "String"
+      }
+    }
+  },
+  "attentionSustainedRuleRepeatShape": "Cible : même forme que le stimulus précédent",
+  "attentionSustainedSeriesLabel": "Série {series} / {total}",
+  "@attentionSustainedSeriesLabel": {
+    "placeholders": {
+      "series": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "attentionSustainedStimulusSemantics": "Stimulus {index}",
+  "@attentionSustainedStimulusSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  }
 }

@@ -2224,4 +2224,43 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get p1CubeRotationExplanationAltered =>
       'The candidate cube was altered (faces swapped, or one face mirrored): this is not a plain rotation.';
+
+  @override
+  String get attentionSustainedTarget => 'Target';
+
+  @override
+  String get attentionSustainedNotTarget => 'Not target';
+
+  @override
+  String attentionSustainedTargetSemantics(String shortcut) {
+    return 'Target ($shortcut)';
+  }
+
+  @override
+  String attentionSustainedNotTargetSemantics(String shortcut) {
+    return 'Not target ($shortcut)';
+  }
+
+  @override
+  String get attentionSustainedTouchFallback =>
+      'Non-representative buttons: use the keyboard on the real day.';
+
+  @override
+  String attentionSustainedRuleConjunction(String colour, String shape) {
+    return 'Target: $colour $shape';
+  }
+
+  @override
+  String get attentionSustainedRuleRepeatShape =>
+      'Target: same shape as the previous stimulus';
+
+  @override
+  String attentionSustainedSeriesLabel(int series, int total) {
+    return 'Series $series / $total';
+  }
+
+  @override
+  String attentionSustainedStimulusSemantics(int index) {
+    return 'Stimulus $index';
+  }
 }
