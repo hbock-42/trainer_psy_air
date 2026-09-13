@@ -236,6 +236,51 @@ void main() {
       expect(loaded, [passage]);
     });
 
+    test('p1_reading_fr (english\'s PSY1/French counterpart) also uses the '
+        'passage-aware sampler', () async {
+      final family = p1ReadingFrFamily();
+      const passage = Passage(
+        id: 'p1',
+        body: LocalizedText(fr: 'Un texte.'),
+      );
+      final repo = InMemoryContentRepository(
+        families: [family],
+        items: [
+          bankItem(
+            id: 'r1',
+            familyId: family.id,
+            tag: 'p1_reading_fr.comprehension',
+            passageId: 'p1',
+          ),
+          bankItem(
+            id: 'r2',
+            familyId: family.id,
+            tag: 'p1_reading_fr.comprehension',
+            passageId: 'p1',
+          ),
+        ],
+        passages: [passage],
+      );
+      List<Passage>? loaded;
+
+      final result = await buildActivitySessionConfig(
+        family: family,
+        config: const PracticeConfig(
+          itemCount: 1,
+          difficulty: null,
+          timed: false,
+        ),
+        contentRepository: repo,
+        onPassagesLoaded: (passages) => loaded = passages,
+      );
+
+      // Requesting fewer items than the passage's questions must not
+      // split the set: the passage-aware sampler keeps both together.
+      final source = result.source as BankSource;
+      expect(source.items.map((i) => i.id), containsAll(['r1', 'r2']));
+      expect(loaded, [passage]);
+    });
+
     test(
       'a bank family with no passageId items never calls onPassagesLoaded',
       () async {

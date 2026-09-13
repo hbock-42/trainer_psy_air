@@ -15,7 +15,6 @@
     "en": "MCQ reading comprehension on French-language passages, the same family as PSY0's English reading test but in French."
   },
   "engineType": "p1_reading_fr",
-  "generatorId": "p1_reading_fr",
   "answerFormat": "mcq",
   "inputRequirement": "touch",
   "liveFeedback": false,

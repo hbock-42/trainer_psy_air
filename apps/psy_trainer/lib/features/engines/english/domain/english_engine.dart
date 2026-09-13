@@ -11,8 +11,9 @@ import '../../../train/domain/engine/engine.dart';
 /// runtime's default is its [familyId]. What the reading items need beyond a
 /// plain `McqItem` — the passage panel — is a renderer concern: see
 /// `McqRenderer(familyId: 'english', passageResolver: ...)` in
-/// `engine_registry_provider.dart` and `EnglishPassageCache`
-/// (`presentation/english_passage_cache.dart`).
+/// `engine_registry_provider.dart` and `PassageCache`
+/// (`train/presentation/renderers/passage_cache.dart`, generalised in
+/// US-116 for every passage-bank family, not just `english`).
 ///
 /// `english_listening` and `english_speaking` (spec §3.1 rows 14b/14c) are
 /// out of scope here (stretch goals, no content authored yet): their family

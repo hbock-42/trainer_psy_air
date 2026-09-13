@@ -12,7 +12,6 @@
     "en": "Broad, fast-paced reasoning across numeric, spatial and verbal content. The real test's exact item type is an **open question**."
   },
   "engineType": "p1_general_efficiency",
-  "generatorId": "p1_general_efficiency",
   "answerFormat": "mcq",
   "inputRequirement": "touch",
   "liveFeedback": false,
