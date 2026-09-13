@@ -19,7 +19,11 @@ void main() {
               kind,
               alongRows: alongRows,
             );
-            final inferred = inferExpectedValue(built.descriptor, built.grid, n);
+            final inferred = inferExpectedValue(
+              built.descriptor,
+              built.grid,
+              n,
+            );
             // The generator itself never writes a meaningful (2,2) value for
             // an active rule (matrix_board.dart fills it from the inference
             // instead), so this only asserts the *visible* cells are self-
@@ -50,22 +54,25 @@ void main() {
     }
   });
 
-  test('distributionOfThree is a Latin square (every value once per row/col)', () {
-    final built = generateAttributeGrid(
-      Random(5),
-      attribute,
-      MatrixRuleKind.distributionOfThree,
-      alongRows: true,
-    );
-    final grid = built.grid;
-    for (var r = 0; r < 3; r++) {
-      expect(grid[r].toSet(), hasLength(3));
-    }
-    for (var c = 0; c < 3; c++) {
-      final col = [grid[0][c], grid[1][c], grid[2][c]];
-      expect(col.toSet(), hasLength(3));
-    }
-  });
+  test(
+    'distributionOfThree is a Latin square (every value once per row/col)',
+    () {
+      final built = generateAttributeGrid(
+        Random(5),
+        attribute,
+        MatrixRuleKind.distributionOfThree,
+        alongRows: true,
+      );
+      final grid = built.grid;
+      for (var r = 0; r < 3; r++) {
+        expect(grid[r].toSet(), hasLength(3));
+      }
+      for (var c = 0; c < 3; c++) {
+        final col = [grid[0][c], grid[1][c], grid[2][c]];
+        expect(col.toSet(), hasLength(3));
+      }
+    },
+  );
 
   test('alternation column 2 mirrors column 0 (row rule)', () {
     final built = generateAttributeGrid(

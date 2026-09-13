@@ -82,7 +82,9 @@ MatrixBoard buildMatrixBoard({
     final active = attributes.take(attributeCount).toSet();
 
     final kindsPool = [..._activeRuleKinds]..shuffle(rng);
-    final chosenKinds = kindsPool.take(min(ruleKindCount, kindsPool.length)).toList();
+    final chosenKinds = kindsPool
+        .take(min(ruleKindCount, kindsPool.length))
+        .toList();
 
     final grids = <MatrixAttribute, List<List<int>>>{};
     final descriptors = <MatrixAttribute, MatrixRuleDescriptor>{};
@@ -96,7 +98,12 @@ MatrixBoard buildMatrixBoard({
         kind = MatrixRuleKind.constant;
       }
       final alongRows = rng.nextBool();
-      final built = generateAttributeGrid(rng, attribute, kind, alongRows: alongRows);
+      final built = generateAttributeGrid(
+        rng,
+        attribute,
+        kind,
+        alongRows: alongRows,
+      );
       grids[attribute] = built.grid;
       descriptors[attribute] = built.descriptor;
     }
@@ -117,7 +124,8 @@ MatrixBoard buildMatrixBoard({
       (r) => List.generate(3, (c) {
         if (r == 2 && c == 2) return MatrixFigure.fromVector(expected);
         return MatrixFigure.fromVector([
-          for (final attribute in MatrixAttribute.values) grids[attribute]![r][c],
+          for (final attribute in MatrixAttribute.values)
+            grids[attribute]![r][c],
         ]);
       }),
     );
@@ -152,7 +160,9 @@ MatrixBoard buildMatrixBoard({
     if (solved == 1) {
       return MatrixBoard(
         cells: cells,
-        candidates: [for (final v in shuffledVectors) MatrixFigure.fromVector(v)],
+        candidates: [
+          for (final v in shuffledVectors) MatrixFigure.fromVector(v),
+        ],
         correctIndex: correctIndex,
         rules: MatrixAttribute.values.map((a) => descriptors[a]!).toList(),
       );

@@ -20,7 +20,15 @@ enum PositionSlot { center, topLeft, topRight, bottomLeft, bottomRight }
 /// *attribute vector* (`List<int>` of length [values.length]) throughout
 /// `matrix_rules.dart`/`matrix_board.dart`: `vector[MatrixAttribute.x.index]`
 /// (`Enum.index`, not a separate lookup) is `x`'s raw domain value.
-enum MatrixAttribute { outerShape, innerShape, count, rotation, fill, size, position }
+enum MatrixAttribute {
+  outerShape,
+  innerShape,
+  count,
+  rotation,
+  fill,
+  size,
+  position,
+}
 
 /// Number of distinct values [attribute] can take, i.e. the modulus its
 /// index arithmetic (`matrix_rules.dart`) wraps around. Every domain has at

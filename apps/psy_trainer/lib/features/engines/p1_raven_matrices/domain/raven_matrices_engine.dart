@@ -55,7 +55,8 @@ class RavenMatricesEngine extends ActivityEngine {
       params: generated.params as P1RavenMatricesParams,
       difficulty: generated.difficulty,
     );
-    final correct = answer is ChoiceAnswer && answer.index == board.correctIndex;
+    final correct =
+        answer is ChoiceAnswer && answer.index == board.correctIndex;
     return ItemResult(correct: correct);
   }
 

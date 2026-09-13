@@ -63,10 +63,7 @@ void main() {
       await tester.pump();
 
       final board = RavenMatricesEngine.boardOf(itemAt(1) as GeneratedItem);
-      expect(
-        find.byKey(RavenMatricesRenderer.candidateKey(0)),
-        findsOneWidget,
-      );
+      expect(find.byKey(RavenMatricesRenderer.candidateKey(0)), findsOneWidget);
 
       final correctKey = RavenMatricesRenderer.candidateKey(board.correctIndex);
       await tester.ensureVisible(find.byKey(correctKey));
@@ -128,7 +125,10 @@ void main() {
       // No feedback in exam mode, and the session has not advanced yet: the
       // candidate is only selected, `Valider` still has to be pressed.
       expect(find.text(l10nFr.sessionFinishedTitle), findsNothing);
-      expect(find.byKey(const ValueKey('raven_matrices_validate')), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('raven_matrices_validate')),
+        findsOneWidget,
+      );
 
       await tester.tap(find.byKey(const ValueKey('raven_matrices_validate')));
       await tester.pump();

@@ -51,7 +51,8 @@ void main() {
           expect(
             matches,
             1,
-            reason: 'seed=$seed difficulty=$difficulty produced $matches '
+            reason:
+                'seed=$seed difficulty=$difficulty produced $matches '
                 'matching candidates',
           );
         }
@@ -67,9 +68,12 @@ void main() {
     for (var seed = 0; seed < 30; seed++) {
       final low = buildMatrixBoard(seed: seed, params: params, difficulty: 1);
       final high = buildMatrixBoard(seed: seed, params: params, difficulty: 5);
-      lowMax = lowMax > low.activeRules.length ? lowMax : low.activeRules.length;
-      highMax =
-          highMax > high.activeRules.length ? highMax : high.activeRules.length;
+      lowMax = lowMax > low.activeRules.length
+          ? lowMax
+          : low.activeRules.length;
+      highMax = highMax > high.activeRules.length
+          ? highMax
+          : high.activeRules.length;
     }
     expect(lowMax, lessThanOrEqualTo(2));
     expect(highMax, greaterThan(lowMax));

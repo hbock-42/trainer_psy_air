@@ -57,7 +57,10 @@ class MatrixRuleDescriptor {
 
 /// Picks [count] distinct indices in `0..n-1`.
 List<int> _pickDistinct(Random rng, int n, int count) {
-  assert(count <= n, 'cannot pick $count distinct values out of a $n-value domain');
+  assert(
+    count <= n,
+    'cannot pick $count distinct values out of a $n-value domain',
+  );
   final pool = [for (var i = 0; i < n; i++) i]..shuffle(rng);
   return pool.take(count).toList();
 }
@@ -171,7 +174,11 @@ List<int> _pickDistinct(Random rng, int n, int count) {
 /// solver: independent of however the grid was built, it derives the one
 /// answer every rule agrees on, so the generator can verify exactly one of
 /// its 8 candidates matches on every attribute before shipping a board.
-int inferExpectedValue(MatrixRuleDescriptor descriptor, List<List<int>> grid, int n) {
+int inferExpectedValue(
+  MatrixRuleDescriptor descriptor,
+  List<List<int>> grid,
+  int n,
+) {
   switch (descriptor.kind) {
     case MatrixRuleKind.constant:
       // Any of the 8 visible cells carries the (shared) value.

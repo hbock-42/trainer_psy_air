@@ -11,10 +11,7 @@ import '../domain/matrix_figure.dart';
 /// the whole cluster within the tile (an `Alignment`) and [MatrixFigure
 /// .sizeStep] scales it.
 class MatrixFigurePainter extends CustomPainter {
-  const MatrixFigurePainter({
-    required this.figure,
-    required this.color,
-  });
+  const MatrixFigurePainter({required this.figure, required this.color});
 
   final MatrixFigure figure;
   final Color color;
@@ -29,8 +26,14 @@ class MatrixFigurePainter extends CustomPainter {
     final clusterWidth = spacing * (figure.count - 1);
     final alignment = _alignmentOf(figure.position);
     final center = Offset(
-      size.width / 2 + alignment.x * (size.width / 2 - unit - clusterWidth / 2).clamp(0, double.infinity),
-      size.height / 2 + alignment.y * (size.height / 2 - unit).clamp(0, double.infinity),
+      size.width / 2 +
+          alignment.x *
+              (size.width / 2 - unit - clusterWidth / 2).clamp(
+                0,
+                double.infinity,
+              ),
+      size.height / 2 +
+          alignment.y * (size.height / 2 - unit).clamp(0, double.infinity),
     );
     final start = center.dx - clusterWidth / 2;
 
@@ -52,7 +55,14 @@ class MatrixFigurePainter extends CustomPainter {
   }
 
   void _paintOuter(Canvas canvas, Offset origin, double unit) {
-    _paintShape(canvas, origin, unit, figure.outerShape, figure.rotationDegrees, figure.fill);
+    _paintShape(
+      canvas,
+      origin,
+      unit,
+      figure.outerShape,
+      figure.rotationDegrees,
+      figure.fill,
+    );
   }
 
   void _paintShape(

@@ -253,7 +253,12 @@ class _MatrixCell extends StatelessWidget {
                 ),
               ),
             )
-          : CustomPaint(painter: MatrixFigurePainter(figure: figure, color: theme.colors.textPrimary)),
+          : CustomPaint(
+              painter: MatrixFigurePainter(
+                figure: figure,
+                color: theme.colors.textPrimary,
+              ),
+            ),
     );
   }
 }
@@ -325,7 +330,12 @@ class _CandidateTile extends StatelessWidget {
             border: Border.all(color: look.border, width: 2),
             borderRadius: theme.radii.smAll,
           ),
-          child: CustomPaint(painter: MatrixFigurePainter(figure: figure, color: theme.colors.textPrimary)),
+          child: CustomPaint(
+            painter: MatrixFigurePainter(
+              figure: figure,
+              color: theme.colors.textPrimary,
+            ),
+          ),
         ),
       ),
     );
@@ -334,15 +344,26 @@ class _CandidateTile extends StatelessWidget {
   _TileLook _lookFor(AppTheme theme, AnswerOptionState state) {
     final colors = theme.colors;
     return switch (state) {
-      AnswerOptionState.idle => _TileLook(background: colors.surface, border: colors.border),
-      AnswerOptionState.selected =>
-        _TileLook(background: colors.accentSubtle, border: colors.accent),
-      AnswerOptionState.correct =>
-        _TileLook(background: colors.successSubtle, border: colors.success),
-      AnswerOptionState.wrong =>
-        _TileLook(background: colors.errorSubtle, border: colors.error),
-      AnswerOptionState.disabled =>
-        _TileLook(background: colors.surface.disabledOn(theme), border: colors.border),
+      AnswerOptionState.idle => _TileLook(
+        background: colors.surface,
+        border: colors.border,
+      ),
+      AnswerOptionState.selected => _TileLook(
+        background: colors.accentSubtle,
+        border: colors.accent,
+      ),
+      AnswerOptionState.correct => _TileLook(
+        background: colors.successSubtle,
+        border: colors.success,
+      ),
+      AnswerOptionState.wrong => _TileLook(
+        background: colors.errorSubtle,
+        border: colors.error,
+      ),
+      AnswerOptionState.disabled => _TileLook(
+        background: colors.surface.disabledOn(theme),
+        border: colors.border,
+      ),
     };
   }
 }
@@ -365,7 +386,10 @@ class _Explanation extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(context.l10n.activityExplanationTitle, style: theme.textStyles.label),
+          Text(
+            context.l10n.activityExplanationTitle,
+            style: theme.textStyles.label,
+          ),
           SizedBox(height: theme.spacing.xs),
           Text(
             matrixExplanationFor(context, board.activeRules),
@@ -398,12 +422,17 @@ class _RavenMatricesExample extends StatelessWidget {
           child: Center(
             child: AspectRatio(
               aspectRatio: 1,
-              child: IgnorePointer(child: _MatrixGrid(board: _board, revealAnswer: false)),
+              child: IgnorePointer(
+                child: _MatrixGrid(board: _board, revealAnswer: false),
+              ),
             ),
           ),
         ),
         SizedBox(height: theme.spacing.sm),
-        Text(context.l10n.matrixExampleCaption, style: theme.textStyles.caption),
+        Text(
+          context.l10n.matrixExampleCaption,
+          style: theme.textStyles.caption,
+        ),
       ],
     );
   }
