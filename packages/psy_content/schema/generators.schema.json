@@ -338,7 +338,7 @@
       "properties": {
         "count": { "type": "integer", "minimum": 1, "maximum": 100, "default": 30 },
         "grid": { "$ref": "common.schema.json#/$defs/GridSize", "default": { "rows": 3, "cols": 3 } },
-        "optionCount": { "type": "integer", "minimum": 2, "maximum": 12, "default": 6 }
+        "optionCount": { "type": "integer", "minimum": 2, "maximum": 12, "default": 8, "description": "The engine always renders 8 candidate tiles." }
       },
       "additionalProperties": false
     },

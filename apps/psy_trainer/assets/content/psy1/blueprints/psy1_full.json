@@ -5,12 +5,12 @@
   "version": 1,
   "moduleId": "psy1",
   "name": {
-    "fr": "PSY1 — journée complète (~2 h 47 d'activité)",
-    "en": "PSY1 — full day (~2 h 47 of activity)"
+    "fr": "PSY1 — journée complète (~2 h 56 d'activité)",
+    "en": "PSY1 — full day (~2 h 56 of activity)"
   },
   "description": {
-    "fr": "Les 13 familles PSY1 dans l'ordre rapporté du vrai test, avec les pauses (15 min, ~90 min déjeuner, 10 min). Durées **estimées** à partir de retours de candidats (`docs/content/psy1-spec.md` §4.1). Le vrai jour dure environ 8 h avec l'accueil et le déjeuner.",
-    "en": "The 13 PSY1 families in the reported real-test order, with the breaks (15 min, ~90 min lunch, 10 min). Timings are **estimated** from candidate reports (`docs/content/psy1-spec.md` §4.1). The real day runs about 8 h including check-in and lunch."
+    "fr": "Les 13 familles PSY1 dans l'ordre rapporté du vrai test, plus la variante de rotation de cubes (§2.2, §2.3 row 8), avec les pauses (15 min, ~90 min déjeuner, 10 min). Durées **estimées** à partir de retours de candidats (`docs/content/psy1-spec.md` §4.1). Le vrai jour dure environ 8 h avec l'accueil et le déjeuner.",
+    "en": "The 13 PSY1 families in the reported real-test order, plus the cube-rotation-matching variant (§2.2, §2.3 row 8), with the breaks (15 min, ~90 min lunch, 10 min). Timings are **estimated** from candidate reports (`docs/content/psy1-spec.md` §4.1). The real day runs about 8 h including check-in and lunch."
   },
   "confidence": "assumed",
   "tags": ["blueprint.full"],
@@ -114,12 +114,26 @@
       "familyId": "p1_cube_nets",
       "itemCount": 20,
       "sectionTimeSec": 2400,
-      "breakAfterSec": 5400,
       "itemSelection": {
         "mode": "generated",
         "generatorId": "p1_cube_nets",
         "difficulty": { "min": 2, "max": 4 },
         "params": { "phaseCount": 2, "netsPerPhase": 10 }
+      },
+      "confidence": "reported"
+    },
+    {
+      "id": "s08b-cubes-rotation",
+      "familyId": "p1_cube_nets",
+      "itemCount": 25,
+      "sectionTimeSec": 540,
+      "breakAfterSec": 5400,
+      "scoringPolicy": { "correct": 1, "wrong": -0.25, "skip": 0 },
+      "itemSelection": {
+        "mode": "generated",
+        "generatorId": "p1_cube_nets",
+        "difficulty": { "min": 2, "max": 4 },
+        "params": { "phaseCount": 1, "netsPerPhase": 25, "includeRotationMatching": true }
       },
       "confidence": "reported"
     },
@@ -193,7 +207,7 @@
     }
   ],
   "meta": {
-    "source": "docs/content/psy1-spec.md §4.1 (US-101); to validate/adjust once US-103 content and US-102..116 engines land",
-    "notes": "≈ 2 h 47 min of active testing, consistent with a ~8 h wall-clock day including breaks/lunch/admin. No engine is registered for any PSY1 family yet (US-101 is the contract/module gate); every section shows \"Bientôt\" in the exam launcher until its own story lands."
+    "source": "docs/content/psy1-spec.md §4.1 (US-101); §2.2/§2.3 row 8 for the s08b cube-rotation-matching section (US-103); to validate/adjust once US-102..116 engines land",
+    "notes": "≈ 2 h 56 min of active testing (includes the s08b cube-rotation-matching section, ~25 items / 9 min, -0.25 per wrong per spec §2.2), consistent with a ~8 h wall-clock day including breaks/lunch/admin. No engine is registered for any PSY1 family yet (US-101 is the contract/module gate); every section shows \"Bientôt\" in the exam launcher until its own story lands."
   }
 }

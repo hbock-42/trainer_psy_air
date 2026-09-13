@@ -523,7 +523,7 @@ sealed class GeneratorParams with _$GeneratorParams {
   const factory GeneratorParams.p1RavenMatrices({
     @Default(30) int count,
     @Default(GridSize(rows: 3, cols: 3)) GridSize grid,
-    @Default(6) int optionCount,
+    @Default(8) int optionCount,
   }) = P1RavenMatricesParams;
 
   /// `p1_mental_arithmetic` ("Calcul mental 1-4", spec §4.1 row 12). Same
