@@ -2249,7 +2249,7 @@ as int,
 @JsonSerializable()
 
 class P1RavenMatricesParams extends GeneratorParams {
-  const P1RavenMatricesParams({this.count = 30, this.grid = const GridSize(rows: 3, cols: 3), this.optionCount = 6, final  String? $type}): $type = $type ?? 'p1_raven_matrices',super._();
+  const P1RavenMatricesParams({this.count = 30, this.grid = const GridSize(rows: 3, cols: 3), this.optionCount = 8, final  String? $type}): $type = $type ?? 'p1_raven_matrices',super._();
   factory P1RavenMatricesParams.fromJson(Map<String, dynamic> json) => _$P1RavenMatricesParamsFromJson(json);
 
 @JsonKey() final  int count;

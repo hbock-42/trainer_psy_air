@@ -830,7 +830,7 @@ P1RavenMatricesParams _$P1RavenMatricesParamsFromJson(
     ),
     optionCount: $checkedConvert(
       'optionCount',
-      (v) => (v as num?)?.toInt() ?? 6,
+      (v) => (v as num?)?.toInt() ?? 8,
     ),
     $type: $checkedConvert('generatorId', (v) => v as String?),
   );
