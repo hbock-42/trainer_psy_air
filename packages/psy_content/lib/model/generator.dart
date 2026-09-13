@@ -413,16 +413,39 @@ sealed class GeneratorParams with _$GeneratorParams {
     @Default(TangramMode.compose) TangramMode mode,
   }) = P1TangramParams;
 
-  /// `p1_attention_sustained` (spec §4.1 row 3). Format is an
-  /// `[open question]`; built against the closest PSY0 paradigm
-  /// (`attention_rules`-style cadence) until a fuller debrief exists.
-  /// Defaults `[assumed]` ("3 series of 5, ~9 min").
+  /// `p1_attention_sustained` (spec §4.1 row 3, US-115). Format is an
+  /// `[open question]`; built against the closest PSY0 paradigm (a
+  /// cadence-driven target-detection stream, `attention_rules`/
+  /// `memory_nback`-style) until a fuller debrief exists. Each series draws
+  /// one fixed target rule from the run seed (a shape+colour conjunction, or
+  /// "same shape as the previous stimulus") and stays on it for the whole
+  /// series; `targetRatio` sizes how rare true targets are, `lureRatio` how
+  /// often a stimulus shares exactly one attribute with the target without
+  /// matching it. Defaults `[assumed]` ("3 series of 5, ~9 min"; ratios and
+  /// palettes picked to keep targets rare, per the family's own "rare
+  /// target" framing -- no debrief gives an exact figure).
   @FreezedUnionValue('p1_attention_sustained')
   const factory GeneratorParams.p1AttentionSustained({
     @Default(3) int seriesCount,
     @Default(5) int itemsPerSeries,
     @Default(500) int stimulusMs,
     @Default(3000) int answerWindowMs,
+    @Default(0.2) double targetRatio,
+    @Default(0.2) double lureRatio,
+    @Default(<StimulusShape>[
+      StimulusShape.square,
+      StimulusShape.triangle,
+      StimulusShape.circle,
+      StimulusShape.diamond,
+    ])
+    List<StimulusShape> shapes,
+    @Default(<StimulusColour>[
+      StimulusColour.blue,
+      StimulusColour.red,
+      StimulusColour.green,
+      StimulusColour.yellow,
+    ])
+    List<StimulusColour> colours,
   }) = P1AttentionSustainedParams;
 
   /// `p1_reading_fr` (spec §4.1 row 4). French-language reading
