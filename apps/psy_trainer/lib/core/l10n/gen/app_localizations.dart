@@ -2702,6 +2702,48 @@ abstract class AppLocalizations {
   /// **'Pièce {number}'**
   String overlayGridTileSemantics(int number);
 
+  /// No description provided for @tangramTargetLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Figure cible'**
+  String get tangramTargetLabel;
+
+  /// No description provided for @tangramWorkspaceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Votre espace de travail'**
+  String get tangramWorkspaceLabel;
+
+  /// No description provided for @tangramTrayLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pièces à glisser'**
+  String get tangramTrayLabel;
+
+  /// No description provided for @tangramSolutionCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Solution : emplacement de chaque pièce.'**
+  String get tangramSolutionCaption;
+
+  /// No description provided for @tangramResetAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser'**
+  String get tangramResetAction;
+
+  /// No description provided for @tangramExampleCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Faites glisser les pièces sur l\'espace de travail pour reproduire la figure cible ; appuyez pour faire pivoter, double-appuyez pour retourner.'**
+  String get tangramExampleCaption;
+
+  /// No description provided for @tangramPieceSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pièce {number}'**
+  String tangramPieceSemantics(int number);
+
   /// No description provided for @wordBoxesBoxSemantics.
   ///
   /// In fr, this message translates to:
@@ -3641,6 +3683,60 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Le cube candidat a été modifié (faces échangées ou face inversée) : ce n\'est pas une simple rotation.'**
   String get p1CubeRotationExplanationAltered;
+
+  /// No description provided for @attentionSustainedTarget.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible'**
+  String get attentionSustainedTarget;
+
+  /// No description provided for @attentionSustainedNotTarget.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas la cible'**
+  String get attentionSustainedNotTarget;
+
+  /// No description provided for @attentionSustainedTargetSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible ({shortcut})'**
+  String attentionSustainedTargetSemantics(String shortcut);
+
+  /// No description provided for @attentionSustainedNotTargetSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas la cible ({shortcut})'**
+  String attentionSustainedNotTargetSemantics(String shortcut);
+
+  /// No description provided for @attentionSustainedTouchFallback.
+  ///
+  /// In fr, this message translates to:
+  /// **'Touches non représentatives : le jour J, utilisez le clavier.'**
+  String get attentionSustainedTouchFallback;
+
+  /// No description provided for @attentionSustainedRuleConjunction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible : {colour} {shape}'**
+  String attentionSustainedRuleConjunction(String colour, String shape);
+
+  /// No description provided for @attentionSustainedRuleRepeatShape.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible : même forme que le stimulus précédent'**
+  String get attentionSustainedRuleRepeatShape;
+
+  /// No description provided for @attentionSustainedSeriesLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Série {series} / {total}'**
+  String attentionSustainedSeriesLabel(int series, int total);
+
+  /// No description provided for @attentionSustainedStimulusSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Stimulus {index}'**
+  String attentionSustainedStimulusSemantics(int index);
 
   /// No description provided for @matrixMissingSemantics.
   ///

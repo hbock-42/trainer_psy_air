@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.p1_wm_calc_back.01",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_wm_calc_back",
+  "order": 1,
+  "title": { "fr": "Calcul mémoire arrière : tenir le résultat pendant que le calcul continue" },
+  "summary": {
+    "fr": "Quatre étapes de charge croissante, chacune une chaîne de 20 calculs et plus : la technique du total courant pour ne jamais relire le résultat précédent et éviter la dérive cumulative."
+  },
+  "file": { "fr": "lessons/p1_wm_calc_back/01-calcul-memoire-arriere.fr.md" },
+  "estimatedReadMin": 10,
+  "difficulty": 2,
+  "tags": ["p1_wm_calc_back"],
+  "practiceTags": ["p1_wm_calc_back"],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "own text; facts from docs/content/psy1-spec.md §2.3 row 10, §4.1 row 10"
+  }
+}

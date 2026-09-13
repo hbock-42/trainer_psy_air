@@ -1,0 +1,140 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/deck.schema.json",
+  "kind": "deck",
+  "id": "p1_psychomotor.deck.red_zone_and_keys",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_psychomotor",
+  "order": 1,
+  "name": { "fr": "Psychomoteur : zone rouge, canaux et phases" },
+  "description": { "fr": "La règle de la zone rouge qui remet tout à zéro, quel canal va sur quelle main, la structure en six phases et le rappel sur l'entraînement non représentatif au clavier." },
+  "tags": ["p1_psychomotor"],
+  "cards": [
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0001",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "En une phrase mémorable : que se passe-t-il dès qu'un seul des quatre sous-scores entre en zone rouge ?" },
+      "back": { "fr": "**Un canal en zone rouge, et tout le score tombe à zéro** — instantanément, quelle que soit la qualité des trois autres canaux." },
+      "difficulty": 1,
+      "tags": ["p1_psychomotor"]
+    },
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0002",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "Pourquoi la stratégie « maximiser la moyenne des quatre canaux » est-elle une erreur sur cette épreuve ?" },
+      "back": { "fr": "Parce que la notation ne fait pas de moyenne : elle regarde le **pire** canal à chaque instant. Un score moyen excellent mais un canal en zone rouge donne un total de **0**." },
+      "difficulty": 2,
+      "tags": ["p1_psychomotor"]
+    },
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0003",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "Quelle question faut-il se poser en priorité à chaque instant de l'épreuve ?" },
+      "back": { "fr": "« Lequel des quatre canaux est **le plus proche** de sa zone rouge en ce moment ? » — pas « lequel est le plus facile ou le plus intéressant à améliorer »." },
+      "difficulty": 2,
+      "tags": ["p1_psychomotor"]
+    },
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0004",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "Quel joystick et quels boutons gèrent les quatre jauges qui dérivent ?" },
+      "back": { "fr": "Le **joystick gauche**, avec ses **deux boutons du pouce** pour sélectionner puis recentrer chaque jauge." },
+      "difficulty": 1,
+      "tags": ["p1_psychomotor"]
+    },
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0005",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "Quel joystick gère la poursuite continue à deux axes de la mire mobile ?" },
+      "back": { "fr": "Le **joystick droit**, en contrôle direct et proportionnel — cette main ne doit quasiment jamais quitter le stick." },
+      "difficulty": 1,
+      "tags": ["p1_psychomotor"]
+    },
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0006",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "Quelles touches gèrent l'annulation des lettres cibles, et combien de lettres cibles faut-il annuler parmi combien affichées ?" },
+      "back": { "fr": "Les touches **F1 à F9**. **3 lettres cibles** à annuler parmi **9 lettres** affichées." },
+      "difficulty": 1,
+      "tags": ["p1_psychomotor"]
+    },
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0007",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "Quel dispositif gère les calculs, et à quelle fréquence un nouveau calcul apparaît-il ?" },
+      "back": { "fr": "Le **pavé numérique**. Un nouveau problème d'addition/soustraction apparaît **toutes les 12 secondes**." },
+      "difficulty": 1,
+      "tags": ["p1_psychomotor"]
+    },
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0008",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "Combien de phases compose le Psychomoteur, de quelle durée chacune, et quelle est la durée totale ?" },
+      "back": { "fr": "**Six phases de 3 minutes**, soit **18 minutes** au total." },
+      "difficulty": 1,
+      "tags": ["p1_psychomotor"]
+    },
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0009",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "Comment les quatre tâches apparaissent-elles au fil de l'épreuve : toutes en même temps dès le début, ou progressivement ?" },
+      "back": { "fr": "**Progressivement** : elles se superposent sur les **phases 1 à 3**, puis toutes les quatre tournent ensemble avec un poids d'attention variable jusqu'à la fin." },
+      "difficulty": 2,
+      "tags": ["p1_psychomotor"]
+    },
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0010",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "Que signifie « la phase 5 met l'accent sur lettres + calcul à 40 % » pour votre stratégie ?" },
+      "back": { "fr": "C'est une **répartition d'attention moyenne recommandée**, pas une dispense de surveiller les jauges et la poursuite : un canal non mis en avant peut quand même approcher sa zone rouge." },
+      "difficulty": 3,
+      "tags": ["p1_psychomotor"]
+    },
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0011",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "Pourquoi ne faut-il jamais lâcher totalement le joystick droit, même pour traiter un calcul urgent ?" },
+      "back": { "fr": "La poursuite est **continue** : la lâcher fait dériver la mire loin de sa trajectoire, ce qui coûte plus cher à rattraper que le gain obtenu sur l'autre canal. Garder un contrôle même approximatif suffit." },
+      "difficulty": 2,
+      "tags": ["p1_psychomotor"]
+    },
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0012",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "Pourquoi un entraînement uniquement au clavier ou au tactile n'est-il pas représentatif de l'épreuve réelle ?" },
+      "back": { "fr": "Les touches discrètes ne peuvent pas reproduire un **contrôle analogique proportionnel avec retour au centre** ; les canaux joystick (jauges, poursuite) dégradent fortement, seuls les canaux lettres/calcul restent fidèles." },
+      "difficulty": 2,
+      "tags": ["p1_psychomotor"]
+    },
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0013",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "Quel dispositif d'entraînement est fortement recommandé dès qu'il sera disponible dans l'application (US-102), à la place du clavier ?" },
+      "back": { "fr": "Un **gamepad à deux sticks analogiques** : c'est le substitut le plus proche des deux joysticks Thrustmaster réels, contrairement au clavier ou au tactile." },
+      "difficulty": 2,
+      "tags": ["p1_psychomotor"]
+    },
+    {
+      "id": "p1_psychomotor.deck.red_zone_and_keys.0014",
+      "version": 1,
+      "deckId": "p1_psychomotor.deck.red_zone_and_keys",
+      "front": { "fr": "Pourquoi une jauge qui dérive lentement est-elle un piège plus insidieux qu'un calcul manqué ?" },
+      "back": { "fr": "Une dérive lente **s'accumule sans alerte soudaine** et peut atteindre la zone rouge silencieusement, alors qu'un calcul manqué est un événement ponctuel et immédiatement visible." },
+      "difficulty": 2,
+      "tags": ["p1_psychomotor"]
+    }
+  ]
+}

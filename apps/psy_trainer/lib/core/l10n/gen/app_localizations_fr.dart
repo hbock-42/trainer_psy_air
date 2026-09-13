@@ -1514,6 +1514,31 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get tangramTargetLabel => 'Figure cible';
+
+  @override
+  String get tangramWorkspaceLabel => 'Votre espace de travail';
+
+  @override
+  String get tangramTrayLabel => 'Pièces à glisser';
+
+  @override
+  String get tangramSolutionCaption =>
+      'Solution : emplacement de chaque pièce.';
+
+  @override
+  String get tangramResetAction => 'Réinitialiser';
+
+  @override
+  String get tangramExampleCaption =>
+      'Faites glisser les pièces sur l\'espace de travail pour reproduire la figure cible ; appuyez pour faire pivoter, double-appuyez pour retourner.';
+
+  @override
+  String tangramPieceSemantics(int number) {
+    return 'Pièce $number';
+  }
+
+  @override
   String wordBoxesBoxSemantics(int boxNumber, String label) {
     return 'Boîte $boxNumber : $label';
   }
@@ -2239,6 +2264,45 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get p1CubeRotationExplanationAltered =>
       'Le cube candidat a été modifié (faces échangées ou face inversée) : ce n\'est pas une simple rotation.';
+
+  @override
+  String get attentionSustainedTarget => 'Cible';
+
+  @override
+  String get attentionSustainedNotTarget => 'Pas la cible';
+
+  @override
+  String attentionSustainedTargetSemantics(String shortcut) {
+    return 'Cible ($shortcut)';
+  }
+
+  @override
+  String attentionSustainedNotTargetSemantics(String shortcut) {
+    return 'Pas la cible ($shortcut)';
+  }
+
+  @override
+  String get attentionSustainedTouchFallback =>
+      'Touches non représentatives : le jour J, utilisez le clavier.';
+
+  @override
+  String attentionSustainedRuleConjunction(String colour, String shape) {
+    return 'Cible : $colour $shape';
+  }
+
+  @override
+  String get attentionSustainedRuleRepeatShape =>
+      'Cible : même forme que le stimulus précédent';
+
+  @override
+  String attentionSustainedSeriesLabel(int series, int total) {
+    return 'Série $series / $total';
+  }
+
+  @override
+  String attentionSustainedStimulusSemantics(int index) {
+    return 'Stimulus $index';
+  }
 
   @override
   String get matrixMissingSemantics => 'Case manquante';

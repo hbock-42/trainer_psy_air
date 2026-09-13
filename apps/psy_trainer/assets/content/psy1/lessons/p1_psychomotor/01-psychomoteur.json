@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.p1_psychomotor.01",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_psychomotor",
+  "order": 1,
+  "title": { "fr": "Psychomoteur : ne jamais laisser un canal entrer en zone rouge" },
+  "summary": { "fr": "Les quatre canaux (jauges, poursuite, lettres, calcul), la règle de la zone rouge qui remet tout à zéro, et pourquoi l'entraînement clavier/tactile n'est pas représentatif." },
+  "file": { "fr": "lessons/p1_psychomotor/01-psychomoteur.fr.md" },
+  "estimatedReadMin": 11,
+  "difficulty": 3,
+  "tags": ["p1_psychomotor"],
+  "practiceTags": ["p1_psychomotor"],
+  "status": "published",
+  "deckIds": ["p1_psychomotor.deck.red_zone_and_keys"],
+  "meta": { "author": "hbock", "source": "own text; facts from docs/content/psy1-spec.md §2.1 (hardware), §2.2 (scoring / red-zone rule), §2.3 row 13, §4.1 row 13" }
+}

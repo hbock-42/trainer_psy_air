@@ -20,6 +20,8 @@ import '../../../engines/multitask_psychomotor/domain/multitask_engine.dart';
 import '../../../engines/multitask_psychomotor/presentation/multitask_renderer.dart';
 import '../../../engines/p1_angles/domain/p1_angles_engine.dart';
 import '../../../engines/p1_angles/presentation/p1_angles_renderer.dart';
+import '../../../engines/p1_attention_sustained/domain/attention_sustained_engine.dart';
+import '../../../engines/p1_attention_sustained/presentation/attention_sustained_renderer.dart';
 import '../../../engines/p1_counters/domain/p1_counters_engine.dart';
 import '../../../engines/p1_counters/presentation/p1_counters_renderer.dart';
 import '../../../engines/p1_cube_nets/domain/p1_cube_nets_engine.dart';
@@ -28,6 +30,8 @@ import '../../../engines/p1_mental_arithmetic/domain/mental_arithmetic_engine.da
 import '../../../engines/p1_mental_arithmetic/presentation/mental_arithmetic_renderer.dart';
 import '../../../engines/p1_raven_matrices/domain/raven_matrices_engine.dart';
 import '../../../engines/p1_raven_matrices/presentation/raven_matrices_renderer.dart';
+import '../../../engines/p1_tangram/domain/p1_tangram_engine.dart';
+import '../../../engines/p1_tangram/presentation/p1_tangram_renderer.dart';
 import '../../../engines/p1_wm_calc_back/domain/calc_back_engine.dart';
 import '../../../engines/p1_wm_calc_back/presentation/calc_back_renderer.dart';
 import '../../../engines/p1_wm_reverse_span/domain/reverse_span_engine.dart';
@@ -64,6 +68,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const ArithmeticGridEngine(),
         const AttentionParityEngine(),
         const AttentionRulesEngine(),
+        const AttentionSustainedEngine(),
         const CalcBackEngine(),
         const CountersEngine(),
         const CubeNetEngine(),
@@ -78,6 +83,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const P1CubeNetsEngine(),
         const RavenMatricesEngine(),
         const ReverseSpanEngine(),
+        const TangramEngine(),
         const TubesEngine(),
         const ViewpointEngine(),
         WordBoxesEngine(ref.read(lexicalFieldCatalogueProvider)),
@@ -93,6 +99,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const ArithmeticGridRenderer(),
         const AttentionParityRenderer(),
         const AttentionRulesRenderer(),
+        const AttentionSustainedRenderer(),
         const CalcBackRenderer(),
         const CountersRenderer(),
         const CubeNetRenderer(),
@@ -114,6 +121,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const P1CubeNetsRenderer(),
         const RavenMatricesRenderer(),
         const ReverseSpanRenderer(),
+        const TangramRenderer(),
         const TubesRenderer(),
         const ViewpointRenderer(),
         WordBoxesRenderer(ref.read(lexicalFieldCatalogueProvider)),

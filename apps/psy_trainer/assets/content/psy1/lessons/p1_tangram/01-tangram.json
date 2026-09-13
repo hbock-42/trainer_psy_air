@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.p1_tangram.01",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_tangram",
+  "order": 1,
+  "title": { "fr": "Tangram : composer et compter avec sept pièces" },
+  "summary": { "fr": "Les signatures des sept pièces du tangram, le test d'aire et d'angle pour éliminer une silhouette impossible, et la méthode de balayage pour la variante comptage 2024." },
+  "file": { "fr": "lessons/p1_tangram/01-tangram.fr.md" },
+  "estimatedReadMin": 10,
+  "difficulty": 2,
+  "tags": ["p1_tangram"],
+  "practiceTags": ["p1_tangram"],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "own text; facts from docs/content/psy1-spec.md §2.3 row 2, §4.1 row 2"
+  }
+}

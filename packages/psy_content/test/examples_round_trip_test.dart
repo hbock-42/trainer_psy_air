@@ -476,7 +476,10 @@ void main() {
         ).readAsStringSync(),
         file: 'psy1_full.json',
       );
-      expect(blueprint.sections, hasLength(13));
+      // s08b is the cube-rotation-matching sub-variant added alongside the
+      // net-folding s08 section (US-103, spec §2.2/§2.3 row 8): same family,
+      // an extra section right after it.
+      expect(blueprint.sections, hasLength(14));
       expect(blueprint.sections.map((s) => s.familyId), [
         'p1_math_word_problems',
         'p1_tangram',
@@ -485,6 +488,7 @@ void main() {
         'p1_angles',
         'p1_general_efficiency',
         'p1_counters',
+        'p1_cube_nets',
         'p1_cube_nets',
         'p1_wm_reverse_span',
         'p1_wm_calc_back',

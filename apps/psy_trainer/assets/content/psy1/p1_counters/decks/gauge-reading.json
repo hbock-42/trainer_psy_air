@@ -1,0 +1,158 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/deck.schema.json",
+  "kind": "deck",
+  "id": "p1_counters.deck.gauge_reading",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_counters",
+  "order": 1,
+  "name": { "fr": "Lecture de compteurs : méthode et pièges" },
+  "description": { "fr": "Interpolation entre graduations, compteurs à plusieurs tours, échelles courantes et ordre de balayage — les réflexes pour lire un cadran vite et juste." },
+  "tags": ["p1_counters"],
+  "cards": [
+    {
+      "id": "p1_counters.deck.gauge_reading.0001",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Une aiguille se trouve entre deux graduations majeures non numérotées individuellement. Quelle est la première chose à repérer avant d'estimer sa valeur ?" },
+      "back": { "fr": "Les **deux graduations numérotées** qui encadrent l'aiguille — jamais le zéro du cadran. On interpole toujours localement, entre les deux repères les plus proches." },
+      "difficulty": 1,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0002",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Pourquoi compter les petites graduations une à une depuis un repère majeur est une mauvaise méthode sous pression de temps ?" },
+      "back": { "fr": "Le comptage un à un est lent et sujet à l'**erreur d'une graduation** (off-by-one). L'interpolation par fraction simple (quart, tiers, moitié, trois quarts) est plus rapide et évite ce type d'erreur." },
+      "difficulty": 1,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0003",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Une aiguille est visiblement aux trois quarts de l'intervalle entre les graduations 60 et 70. Valeur lue ?" },
+      "back": { "fr": "60 + (3/4 × 10) = **67-68**. Aucun comptage des petites graduations n'est nécessaire, seulement la reconnaissance de la fraction « trois quarts »." },
+      "difficulty": 1,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0004",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Qu'est-ce qu'un compteur « à plusieurs tours » (ou « à lapping ») ?" },
+      "back": { "fr": "Un cadran dont l'aiguille fait **plus d'un tour complet** pour couvrir toute sa plage de valeurs (typiquement une jauge de carburant ou un compte-tours) : elle repasse par la position « zéro » visuelle sans que la valeur réelle soit nulle." },
+      "difficulty": 2,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0005",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Sur un compteur à plusieurs tours, quelle vérification faut-il faire **avant** de lire la position de l'aiguille principale ?" },
+      "back": { "fr": "Vérifier l'**indicateur de tour** (petite fenêtre numérique, aiguille secondaire, ou couleur de fond différente). Sans cela, on risque une erreur d'un tour complet (par exemple lire 20 au lieu de 120)." },
+      "difficulty": 2,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0006",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Un compteur couvre 0-200 en deux tours de 100. La fenêtre de tour indique « 2ᵉ tour » et l'aiguille pointe aux deux tiers entre 30 et 40 de son propre tour. Valeur réelle ?" },
+      "back": { "fr": "Lecture locale : 30 + (2/3 × 10) ≈ 37. Ajout du tour : 100 + 37 = **137**. Ignorer l'indicateur de tour aurait donné 37 au lieu de 137." },
+      "difficulty": 3,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0007",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Quelles sont les trois formes d'échelle de cadran les plus courantes à reconnaître avant de lire une valeur ?" },
+      "back": { "fr": "**Linéaire** (par ex. 0-100), **circulaire** (par ex. 0-360°), et **non linéaire** (graduations resserrées dans une zone, régulières ailleurs)." },
+      "difficulty": 2,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0008",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Sur une échelle non linéaire (graduations resserrées à une extrémité), comment doit-on interpoler ?" },
+      "back": { "fr": "**Localement**, entre les deux graduations numérotées les plus proches uniquement — jamais en supposant un espacement constant sur tout le cadran." },
+      "difficulty": 3,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0009",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Un cadran circulaire est gradué de 0 à 360°. L'aiguille pointe un peu après le quart de tour. Quelle est la première estimation à faire, avant d'affiner en degrés ?" },
+      "back": { "fr": "La **position angulaire approximative** : un peu après 90° (le quart de tour), donc probablement autour de 95-105°, avant d'affiner par interpolation entre les graduations encadrantes." },
+      "difficulty": 2,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0010",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Trois cadrans sont affichés côte à côte. Quelle règle protège le mieux contre les erreurs de report (inverser deux valeurs) ?" },
+      "back": { "fr": "Fixer un **ordre de balayage** avant de commencer (par exemple gauche à droite) et ne jamais en dévier en cours d'item, même si un cadran semble plus facile à lire." },
+      "difficulty": 2,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0011",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Pourquoi ne faut-il jamais changer l'ordre de balayage à mi-item, même si un cadran attire le regard en premier ?" },
+      "back": { "fr": "Un ordre fixe reste plus rapide **en moyenne** et évite de relire deux fois le même cadran ou d'en sauter un sous la pression du temps ; changer d'ordre réintroduit de l'hésitation." },
+      "difficulty": 2,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0012",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Qu'est-ce qu'une erreur de parallaxe sur la lecture d'un cadran, et comment l'éviter ?" },
+      "back": { "fr": "Un décalage apparent de la position de l'aiguille dû à la perspective ou à son ombre. On l'évite en alignant toujours la lecture sur **la pointe réelle de l'aiguille**, jamais sur son ombre ou son reflet." },
+      "difficulty": 3,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0013",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Après avoir enchaîné plusieurs cadrans linéaires (0-100), un cadran circulaire (0-360°) apparaît. Quel piège classique guette ?" },
+      "back": { "fr": "Lire le cadran circulaire **comme s'il était encore linéaire** par automatisme. Toujours revérifier l'échelle affichée sur le cadran courant avant d'interpoler." },
+      "difficulty": 2,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0014",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Une aiguille est à mi-chemin exact entre les graduations 220 et 240 sur une échelle linéaire. Valeur lue ?" },
+      "back": { "fr": "220 + (1/2 × 20) = **230**. La fraction « moitié » se reconnaît d'un coup d'œil, sans compter les petites graduations intermédiaires." },
+      "difficulty": 1,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0015",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Pourquoi faut-il vérifier l'unité affichée sur un cadran avant de valider une lecture ?" },
+      "back": { "fr": "Une valeur numériquement juste mais dans la **mauvaise unité** (pourcentage au lieu de litres, degrés au lieu de pourcentage) compte comme une erreur ; l'unité fait partie intégrante de la lecture." },
+      "difficulty": 2,
+      "tags": ["p1_counters"]
+    },
+    {
+      "id": "p1_counters.deck.gauge_reading.0016",
+      "version": 1,
+      "deckId": "p1_counters.deck.gauge_reading",
+      "front": { "fr": "Quelle est la compétence de fond que « Compteurs » entraîne, au-delà de la simple lecture de chaque cadran ?" },
+      "back": { "fr": "Le **scan d'instruments** : balayer plusieurs cadrans dans un ordre systématique et fiable, la compétence directement transférable à la lecture d'un tableau de bord en vol." },
+      "difficulty": 2,
+      "tags": ["p1_counters"]
+    }
+  ]
+}

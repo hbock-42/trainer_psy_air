@@ -1,0 +1,3647 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "p1_general_efficiency",
+  "items": [
+    {
+      "id": "efg.numeric.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 2, 6, 10, 14, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "18"
+          }
+        },
+        {
+          "text": {
+            "fr": "21"
+          }
+        },
+        {
+          "text": {
+            "fr": "20"
+          }
+        },
+        {
+          "text": {
+            "fr": "17"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "On ajoute 4 à chaque terme (progression arithmétique de raison 4) : 14 + 4 = 18. Méthode : calculer l'écart constant entre deux termes consécutifs avant de l'appliquer au dernier."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 5, 8, 11, 14, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "17"
+          }
+        },
+        {
+          "text": {
+            "fr": "20"
+          }
+        },
+        {
+          "text": {
+            "fr": "19"
+          }
+        },
+        {
+          "text": {
+            "fr": "16"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "On ajoute 3 à chaque terme (progression arithmétique de raison 3) : 14 + 3 = 17. Méthode : calculer l'écart constant entre deux termes consécutifs avant de l'appliquer au dernier."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 2, 4, 8, 16, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "30"
+          }
+        },
+        {
+          "text": {
+            "fr": "48"
+          }
+        },
+        {
+          "text": {
+            "fr": "16"
+          }
+        },
+        {
+          "text": {
+            "fr": "32"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Chaque terme est multiplié par 2 (progression géométrique de raison 2) : 16 × 2 = 32. Méthode : vérifier le rapport constant entre deux termes consécutifs avant de l'appliquer au dernier."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 3, 6, 12, 24, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "24"
+          }
+        },
+        {
+          "text": {
+            "fr": "46"
+          }
+        },
+        {
+          "text": {
+            "fr": "72"
+          }
+        },
+        {
+          "text": {
+            "fr": "48"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Chaque terme est multiplié par 2 (progression géométrique de raison 2) : 24 × 2 = 48. Méthode : vérifier le rapport constant entre deux termes consécutifs avant de l'appliquer au dernier."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 1, 3, 9, 27, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "81"
+          }
+        },
+        {
+          "text": {
+            "fr": "78"
+          }
+        },
+        {
+          "text": {
+            "fr": "108"
+          }
+        },
+        {
+          "text": {
+            "fr": "27"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Chaque terme est multiplié par 3 (progression géométrique de raison 3) : 27 × 3 = 81. Méthode : vérifier le rapport constant entre deux termes consécutifs avant de l'appliquer au dernier."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 3, 7, 15, 31, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "65"
+          }
+        },
+        {
+          "text": {
+            "fr": "63"
+          }
+        },
+        {
+          "text": {
+            "fr": "62"
+          }
+        },
+        {
+          "text": {
+            "fr": "64"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "La règle double le terme précédent puis ajoute 1 : 31 → 63. Méthode : tester la relation entre deux termes consécutifs (×, puis + ou −) plutôt qu'une simple différence constante."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 5, 9, 17, 33, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "65"
+          }
+        },
+        {
+          "text": {
+            "fr": "64"
+          }
+        },
+        {
+          "text": {
+            "fr": "66"
+          }
+        },
+        {
+          "text": {
+            "fr": "68"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "La règle double le terme précédent puis retranche 1 : 33 → 65. Méthode : tester la relation entre deux termes consécutifs (×, puis + ou −) plutôt qu'une simple différence constante."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 1, 5, 17, 53, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "162"
+          }
+        },
+        {
+          "text": {
+            "fr": "161"
+          }
+        },
+        {
+          "text": {
+            "fr": "160"
+          }
+        },
+        {
+          "text": {
+            "fr": "106"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "La règle triple le terme précédent puis ajoute 2 : 53 → 161. Méthode : tester la relation entre deux termes consécutifs (×, puis + ou −) plutôt qu'une simple différence constante."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 2, 3, 5, 8, 12, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "17"
+          }
+        },
+        {
+          "text": {
+            "fr": "16"
+          }
+        },
+        {
+          "text": {
+            "fr": "22"
+          }
+        },
+        {
+          "text": {
+            "fr": "13"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Les écarts entre termes successifs sont 1, 2, 3, 4 : ils augmentent eux-mêmes de 1 à chaque pas. Méthode : quand la différence n'est pas constante, calculer la différence des différences avant de conclure."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 1, 3, 7, 13, 21, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "22"
+          }
+        },
+        {
+          "text": {
+            "fr": "30"
+          }
+        },
+        {
+          "text": {
+            "fr": "31"
+          }
+        },
+        {
+          "text": {
+            "fr": "41"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Les écarts entre termes successifs sont 2, 4, 6, 8 : ils augmentent eux-mêmes de 2 à chaque pas. Méthode : quand la différence n'est pas constante, calculer la différence des différences avant de conclure."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 3, 4, 7, 12, 19, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "20"
+          }
+        },
+        {
+          "text": {
+            "fr": "27"
+          }
+        },
+        {
+          "text": {
+            "fr": "28"
+          }
+        },
+        {
+          "text": {
+            "fr": "37"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Les écarts entre termes successifs sont 1, 3, 5, 7 : ils augmentent eux-mêmes de 2 à chaque pas. Méthode : quand la différence n'est pas constante, calculer la différence des différences avant de conclure."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 1, 1, 2, 3, 5, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "8"
+          }
+        },
+        {
+          "text": {
+            "fr": "7"
+          }
+        },
+        {
+          "text": {
+            "fr": "9"
+          }
+        },
+        {
+          "text": {
+            "fr": "11"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Chaque terme est la somme des deux précédents : 3 + 5 = 8. Méthode : dès qu'une addition simple ne marche pas terme à terme, tester la somme des deux termes précédents (suite de type Fibonacci)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 2, 3, 5, 8, 13, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "21"
+          }
+        },
+        {
+          "text": {
+            "fr": "20"
+          }
+        },
+        {
+          "text": {
+            "fr": "26"
+          }
+        },
+        {
+          "text": {
+            "fr": "22"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Chaque terme est la somme des deux précédents : 8 + 13 = 21. Méthode : dès qu'une addition simple ne marche pas terme à terme, tester la somme des deux termes précédents (suite de type Fibonacci)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 2, 20, 4, 18, 6, 16, 8, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "14"
+          }
+        },
+        {
+          "text": {
+            "fr": "20"
+          }
+        },
+        {
+          "text": {
+            "fr": "10"
+          }
+        },
+        {
+          "text": {
+            "fr": "12"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Deux suites sont imbriquées : les positions impaires montent de 2 en 2 (2, 4, 6, 8, ...) et les positions paires descendent de 2 en 2 (20, 18, 16, ...). Le prochain terme suit la suite descendante : 16 − 2 = 14. Méthode : quand une seule règle ne fonctionne pas, séparer les termes de rang pair et impair."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le prochain nombre de la série : 1, 5, 3, 9, 5, 13, 7, ... ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "17"
+          }
+        },
+        {
+          "text": {
+            "fr": "9"
+          }
+        },
+        {
+          "text": {
+            "fr": "15"
+          }
+        },
+        {
+          "text": {
+            "fr": "19"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Les positions impaires (1, 3, 5, 7, ...) montent de 2, les positions paires (5, 9, 13, ...) montent de 4. Le prochain terme pair est 13 + 4 = 17. Méthode : séparer la série en deux sous-suites de rang impair/pair quand l'écart alterne."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien vaut 10 % de 250 ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "25"
+          }
+        },
+        {
+          "text": {
+            "fr": "20"
+          }
+        },
+        {
+          "text": {
+            "fr": "30"
+          }
+        },
+        {
+          "text": {
+            "fr": "15"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "10 % équivaut à diviser par 10 : 250 / 10 = 25. Méthode : pour 10 %, il suffit de déplacer la virgule d'un rang."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien vaut 50 % de 84 ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "42"
+          }
+        },
+        {
+          "text": {
+            "fr": "40"
+          }
+        },
+        {
+          "text": {
+            "fr": "44"
+          }
+        },
+        {
+          "text": {
+            "fr": "48"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "50 % correspond à la moitié : 84 / 2 = 42. Méthode : 50 % = diviser par 2, réflexe à automatiser."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un article à 80 € bénéficie d'une remise de 25 %. Quel est son nouveau prix ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "60 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "55 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "65 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "70 €"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "25 % de 80 = 20 (un quart du prix). Nouveau prix : 80 − 20 = 60 €. Méthode : 25 % = un quart, à retrancher directement du prix initial."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0019",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien vaut 15 % de 240 ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "36"
+          }
+        },
+        {
+          "text": {
+            "fr": "30"
+          }
+        },
+        {
+          "text": {
+            "fr": "24"
+          }
+        },
+        {
+          "text": {
+            "fr": "40"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "10 % de 240 = 24, et 5 % = 12 (la moitié de 10 %). 15 % = 24 + 12 = 36. Méthode : décomposer un pourcentage en multiples de 10 % et 5 %."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0020",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un prix a augmenté de 20 % pour atteindre 96 €. Quel était le prix initial ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "80 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "76,80 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "115,20 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "72 €"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Si le prix initial est P, alors 1,20 × P = 96, donc P = 96 / 1,2 = 80 €. Méthode : une hausse de 20 % correspond à multiplier par 1,2 ; pour revenir en arrière, on divise par ce même facteur."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Oiseau est à voler ce que Poisson est à ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Nager"
+          }
+        },
+        {
+          "text": {
+            "fr": "Voler"
+          }
+        },
+        {
+          "text": {
+            "fr": "Courir"
+          }
+        },
+        {
+          "text": {
+            "fr": "Sauter"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "L'oiseau se déplace en volant ; par le même rapport (mode de déplacement propre à l'espèce), le poisson se déplace en nageant. Méthode : identifier la relation exacte du premier couple (ici « se déplace grâce à ») avant de la reproduire."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Chaud est à froid ce que Jour est à ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Nuit"
+          }
+        },
+        {
+          "text": {
+            "fr": "Soleil"
+          }
+        },
+        {
+          "text": {
+            "fr": "Matin"
+          }
+        },
+        {
+          "text": {
+            "fr": "Lumière"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Chaud et froid sont des opposés ; jour et nuit forment le même type d'opposition. Méthode : vérifier que la relation du premier couple est bien une antonymie avant de choisir l'antonyme correspondant."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Médecin est à hôpital ce que Enseignant est à ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "École"
+          }
+        },
+        {
+          "text": {
+            "fr": "Élève"
+          }
+        },
+        {
+          "text": {
+            "fr": "Livre"
+          }
+        },
+        {
+          "text": {
+            "fr": "Classe"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le médecin exerce son métier à l'hôpital ; l'enseignant exerce le sien à l'école, le lieu de travail associé à la profession. Méthode : préciser le rapport « personne / lieu d'exercice » plutôt que « personne / outil »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Clé est à serrure ce que Mot de passe est à ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Compte informatique"
+          }
+        },
+        {
+          "text": {
+            "fr": "Ordinateur"
+          }
+        },
+        {
+          "text": {
+            "fr": "Écran"
+          }
+        },
+        {
+          "text": {
+            "fr": "Clavier"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "La clé permet d'ouvrir une serrure ; le mot de passe permet, par le même principe d'accès protégé, d'ouvrir un compte informatique. Méthode : reformuler la relation de façon abstraite (« élément qui autorise l'accès à ») pour l'appliquer à un domaine différent."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Thermomètre est à température ce que Baromètre est à ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Pression atmosphérique"
+          }
+        },
+        {
+          "text": {
+            "fr": "Vent"
+          }
+        },
+        {
+          "text": {
+            "fr": "Humidité"
+          }
+        },
+        {
+          "text": {
+            "fr": "Altitude"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le thermomètre mesure la température ; le baromètre, par le même rapport « instrument / grandeur mesurée », mesure la pression atmosphérique. Méthode : nommer précisément la grandeur mesurée par chaque instrument avant de comparer."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Larve est à papillon ce que Têtard est à ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Grenouille"
+          }
+        },
+        {
+          "text": {
+            "fr": "Poisson"
+          }
+        },
+        {
+          "text": {
+            "fr": "Serpent"
+          }
+        },
+        {
+          "text": {
+            "fr": "Escargot"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "La larve se métamorphose en papillon ; le têtard se métamorphose, par le même processus, en grenouille. Méthode : repérer une relation de métamorphose (stade juvénile → adulte très différent) plutôt qu'une simple filiation."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Économe est à dépenses ce que Prudent est à ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Risques"
+          }
+        },
+        {
+          "text": {
+            "fr": "Argent"
+          }
+        },
+        {
+          "text": {
+            "fr": "Décisions"
+          }
+        },
+        {
+          "text": {
+            "fr": "Réflexion"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Une personne économe limite ses dépenses ; une personne prudente limite, par la même logique de modération, ses risques. Méthode : traduire chaque adjectif par le comportement qu'il implique avant de comparer les objets concernés."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Muet est à parole ce que Aveugle est à ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Vue"
+          }
+        },
+        {
+          "text": {
+            "fr": "Œil"
+          }
+        },
+        {
+          "text": {
+            "fr": "Obscurité"
+          }
+        },
+        {
+          "text": {
+            "fr": "Lumière"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le muet est privé de la parole ; l'aveugle est privé, par le même rapport de privation, de la vue (et non de l'œil, qui est l'organe, pas la faculté). Méthode : bien distinguer la faculté perdue de l'organe qui la permet."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel mot n'appartient pas au groupe ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Pomme"
+          }
+        },
+        {
+          "text": {
+            "fr": "Poire"
+          }
+        },
+        {
+          "text": {
+            "fr": "Carotte"
+          }
+        },
+        {
+          "text": {
+            "fr": "Cerise"
+          }
+        },
+        {
+          "text": {
+            "fr": "Abricot"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Pomme, poire, cerise et abricot sont des fruits ; la carotte est un légume. Méthode : identifier la catégorie majoritaire (ici « fruit ») avant d'isoler l'élément qui n'en fait pas partie."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel mot n'appartient pas au groupe ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Triangle"
+          }
+        },
+        {
+          "text": {
+            "fr": "Carré"
+          }
+        },
+        {
+          "text": {
+            "fr": "Cercle"
+          }
+        },
+        {
+          "text": {
+            "fr": "Cube"
+          }
+        },
+        {
+          "text": {
+            "fr": "Rectangle"
+          }
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Triangle, carré, cercle et rectangle sont des figures planes (à deux dimensions) ; le cube est un solide à trois dimensions. Méthode : vérifier le nombre de dimensions de chaque forme, pas seulement sa régularité."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel mot n'appartient pas au groupe ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Rapide"
+          }
+        },
+        {
+          "text": {
+            "fr": "Prompt"
+          }
+        },
+        {
+          "text": {
+            "fr": "Lent"
+          }
+        },
+        {
+          "text": {
+            "fr": "Véloce"
+          }
+        },
+        {
+          "text": {
+            "fr": "Vif"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Rapide, prompt, véloce et vif sont synonymes de vitesse élevée ; lent en est l'antonyme. Méthode : chercher le sens commun aux quatre premiers mots, puis repérer celui qui s'y oppose."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel mot n'appartient pas au groupe ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Seine"
+          }
+        },
+        {
+          "text": {
+            "fr": "Loire"
+          }
+        },
+        {
+          "text": {
+            "fr": "Rhône"
+          }
+        },
+        {
+          "text": {
+            "fr": "Garonne"
+          }
+        },
+        {
+          "text": {
+            "fr": "Alpes"
+          }
+        }
+      ],
+      "correctIndex": 4,
+      "explanation": {
+        "fr": "Seine, Loire, Rhône et Garonne sont des fleuves français ; les Alpes forment un massif montagneux. Méthode : vérifier la catégorie géographique précise (cours d'eau vs relief), pas juste « nom géographique français »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel mot n'appartient pas au groupe ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Persévérant"
+          }
+        },
+        {
+          "text": {
+            "fr": "Obstiné"
+          }
+        },
+        {
+          "text": {
+            "fr": "Tenace"
+          }
+        },
+        {
+          "text": {
+            "fr": "Déterminé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Versatile"
+          }
+        }
+      ],
+      "correctIndex": 4,
+      "explanation": {
+        "fr": "Persévérant, obstiné, tenace et déterminé décrivent une personne qui ne change pas d'avis ; versatile décrit au contraire quelqu'un qui change souvent. Méthode : chercher le trait de caractère commun, puis repérer le mot qui en est l'inverse plutôt qu'un simple synonyme approché."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel mot n'appartient pas au groupe ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Baleine"
+          }
+        },
+        {
+          "text": {
+            "fr": "Dauphin"
+          }
+        },
+        {
+          "text": {
+            "fr": "Requin"
+          }
+        },
+        {
+          "text": {
+            "fr": "Phoque"
+          }
+        },
+        {
+          "text": {
+            "fr": "Marsouin"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Baleine, dauphin, phoque et marsouin sont des mammifères marins (respiration à l'air libre) ; le requin est un poisson (respiration par branchies). Méthode : chercher le critère biologique exact (mammifère vs poisson), pas seulement « vit dans la mer »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel mot n'appartient pas au groupe ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Kilogramme"
+          }
+        },
+        {
+          "text": {
+            "fr": "Litre"
+          }
+        },
+        {
+          "text": {
+            "fr": "Mètre"
+          }
+        },
+        {
+          "text": {
+            "fr": "Newton"
+          }
+        },
+        {
+          "text": {
+            "fr": "Watt"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Kilogramme, mètre, newton et watt sont des unités du Système international dérivées de grandeurs fondamentales (masse, longueur, force, puissance) ; le litre est une unité de volume qui n'appartient pas au SI (c'est un multiple du m³ toléré). Méthode : vérifier précisément le statut de chaque unité plutôt que sa seule familiarité."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel mot n'appartient pas au groupe ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Céder"
+          }
+        },
+        {
+          "text": {
+            "fr": "Concéder"
+          }
+        },
+        {
+          "text": {
+            "fr": "Abdiquer"
+          }
+        },
+        {
+          "text": {
+            "fr": "Renoncer"
+          }
+        },
+        {
+          "text": {
+            "fr": "Revendiquer"
+          }
+        }
+      ],
+      "correctIndex": 4,
+      "explanation": {
+        "fr": "Céder, concéder, abdiquer et renoncer expriment l'idée d'abandonner quelque chose ; revendiquer exprime au contraire l'idée de réclamer. Méthode : dégager le sens commun (ici « abandon ») avant d'écarter le mot qui exprime l'action inverse."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le synonyme du mot « rapide » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Prompt"
+          }
+        },
+        {
+          "text": {
+            "fr": "Lent"
+          }
+        },
+        {
+          "text": {
+            "fr": "Fragile"
+          }
+        },
+        {
+          "text": {
+            "fr": "Discret"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Prompt » signifie qui agit ou se produit vite, comme « rapide ». Méthode : éliminer d'abord les mots dont le sens n'a aucun rapport avec la vitesse."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le synonyme du mot « obscur »?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Sombre"
+          }
+        },
+        {
+          "text": {
+            "fr": "Clair"
+          }
+        },
+        {
+          "text": {
+            "fr": "Visible"
+          }
+        },
+        {
+          "text": {
+            "fr": "Lumineux"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Obscur » signifie qui manque de lumière, comme « sombre ». Méthode : se méfier des mots de sens opposé (clair, lumineux) qui appartiennent au même champ lexical mais inversent le sens."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0019",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est l'antonyme du mot « précaire » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Stable"
+          }
+        },
+        {
+          "text": {
+            "fr": "Fragile"
+          }
+        },
+        {
+          "text": {
+            "fr": "Temporaire"
+          }
+        },
+        {
+          "text": {
+            "fr": "Incertain"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Précaire » signifie instable, incertain ; son contraire est « stable ». Méthode : repérer que « fragile », « temporaire » et « incertain » sont en réalité des synonymes de précaire, pas des antonymes — un piège fréquent."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0020",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est l'antonyme du mot « prolixe » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Concis"
+          }
+        },
+        {
+          "text": {
+            "fr": "Bavard"
+          }
+        },
+        {
+          "text": {
+            "fr": "Verbeux"
+          }
+        },
+        {
+          "text": {
+            "fr": "Confus"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Prolixe » désigne un discours trop long et détaillé ; son contraire est « concis ». Méthode : « bavard » et « verbeux » sont des synonymes proches de prolixe, pas des antonymes — repérer le seul mot qui inverse vraiment le sens."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien de faces un cube possède-t-il ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        },
+        {
+          "text": {
+            "fr": "12"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Un cube a une face pour chaque côté d'un carré étiré en volume : 2 faces opposées sur chacun des 3 axes, soit 6 faces. Méthode : compter les paires de faces parallèles, axe par axe."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien de faces un cube a-t-il de plus qu'un tétraèdre ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "2"
+          }
+        },
+        {
+          "text": {
+            "fr": "1"
+          }
+        },
+        {
+          "text": {
+            "fr": "3"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le cube a 6 faces, le tétraèdre (régulier) en a 4 : 6 − 4 = 2. Méthode : connaître par cœur le nombre de faces des solides usuels avant de faire la soustraction."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien d'arêtes un cube possède-t-il ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "12"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "10"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Un cube a 4 arêtes sur la face du dessus, 4 sur celle du dessous, et 4 arêtes verticales qui les relient : 4+4+4 = 12. Méthode : décomposer le comptage en trois groupes d'arêtes parallèles plutôt que compter au hasard."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien de sommets (coins) possède un cube ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "8"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "12"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Chaque face carrée a 4 coins, mais chaque sommet est partagé par 3 faces ; un cube a 4 sommets en haut et 4 en bas, soit 8. Méthode : visualiser les deux carrés opposés (dessus/dessous) et leurs 4 coins chacun."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien de faces possède un prisme à base triangulaire (prisme droit) ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "5"
+          }
+        },
+        {
+          "text": {
+            "fr": "3"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Un prisme à base triangulaire a 2 faces triangulaires (les bases) et 3 faces rectangulaires (les côtés) : 2 + 3 = 5. Méthode : toujours séparer le comptage entre les 2 bases identiques et les faces latérales, en nombre égal au nombre de côtés de la base."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien de faces possède une pyramide à base carrée ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "5"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Une pyramide à base carrée a 1 face carrée (la base) et 4 faces triangulaires (une par côté de la base) : 1 + 4 = 5. Méthode : le nombre de faces triangulaires d'une pyramide est toujours égal au nombre de côtés de sa base, plus 1 pour la base elle-même."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un cube est peint en rouge puis découpé en 27 petits cubes identiques (3×3×3). Combien de petits cubes n'ont aucune face peinte ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "1"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "0"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Seul le petit cube situé exactement au centre du grand cube (ni sur une face, ni sur une arête, ni sur un coin) n'a aucune face extérieure peinte. Méthode : visualiser le découpage 3×3×3 comme un centre entouré de 26 cubes qui touchent tous l'extérieur."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un cube est peint en rouge puis découpé en 27 petits cubes identiques (3×3×3). Combien de petits cubes ont exactement 2 faces peintes ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "12"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "24"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Les petits cubes à 2 faces peintes sont ceux situés au milieu de chaque arête du grand cube (pas aux coins) : un cube a 12 arêtes, donc 12 petits cubes concernés. Méthode : associer chaque catégorie de petit cube à sa position (coin = 3 faces, arête = 2 faces, face = 1 face, centre = 0 face)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une feuille de papier carrée est pliée en deux, puis encore en deux (toujours en pliant un côté sur le côté opposé). On découpe un petit coin sur le pli final. Une fois dépliée, combien de trous la feuille comporte-t-elle ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "2"
+          }
+        },
+        {
+          "text": {
+            "fr": "1"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Deux pliages successifs superposent 4 épaisseurs de papier ; découper un coin traverse les 4 épaisseurs, donc 4 trous apparaissent au dépliage. Méthode : compter le nombre d'épaisseurs empilées (2 pliages = 2² = 4 épaisseurs) avant de compter les trous."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une feuille carrée est pliée en deux trois fois de suite (toujours par le milieu), puis on découpe un petit coin sur le pli final. Une fois dépliée, combien de trous compte-t-on ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "8"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "16"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Trois pliages successifs superposent 2³ = 8 épaisseurs de papier, donc découper un coin produit 8 trous une fois la feuille dépliée. Méthode : le nombre d'épaisseurs double à chaque pliage (2, puis 4, puis 8)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "On plie une feuille de papier en trois parties égales comme une lettre (pli en accordéon), puis on la déplie. Combien de plis (lignes de pliure) sont visibles sur la feuille ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "2"
+          }
+        },
+        {
+          "text": {
+            "fr": "3"
+          }
+        },
+        {
+          "text": {
+            "fr": "1"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Pour obtenir 3 parties égales, il faut exactement 2 lignes de pliure qui séparent la feuille en 3 sections. Méthode : le nombre de plis est toujours égal au nombre de sections obtenues moins un."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un carré de papier est plié en diagonale pour former un triangle, puis ce triangle est encore plié en deux en joignant les deux angles de la base. On découpe la pointe opposée à la base. Une fois dépliée, quelle forme obtient-on au centre de la feuille ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Un losange"
+          }
+        },
+        {
+          "text": {
+            "fr": "Un cercle"
+          }
+        },
+        {
+          "text": {
+            "fr": "Un triangle"
+          }
+        },
+        {
+          "text": {
+            "fr": "Un carré plus petit"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Les deux pliages successifs amènent 4 épaisseurs superposées autour du centre ; découper la pointe crée une ouverture symétrique selon les deux axes de pliage, ce qui donne un losange une fois la feuille dépliée. Méthode : repérer les axes de symétrie créés par chaque pliage pour anticiper la forme finale du trou."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un triangle rectangle a son angle droit en bas à gauche. Si vous le tournez de 90° dans le sens horaire, où se retrouve l'angle droit ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "En haut à gauche"
+          }
+        },
+        {
+          "text": {
+            "fr": "En bas à droite"
+          }
+        },
+        {
+          "text": {
+            "fr": "En haut à droite"
+          }
+        },
+        {
+          "text": {
+            "fr": "Il reste en bas à gauche"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Une rotation de 90° dans le sens horaire déplace chaque point d'un quart de tour vers la droite : le coin bas-gauche se retrouve en haut-gauche. Méthode : suivre un seul repère (ici le coin bas-gauche) tout au long de la rotation plutôt que d'essayer de visualiser toute la figure d'un coup."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un triangle rectangle a son angle droit en haut à droite. Si vous le tournez de 90° dans le sens horaire, quel angle se retrouve en haut à droite ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Celui qui était en haut à gauche"
+          }
+        },
+        {
+          "text": {
+            "fr": "Celui qui était en bas à droite"
+          }
+        },
+        {
+          "text": {
+            "fr": "L'angle droit y reste"
+          }
+        },
+        {
+          "text": {
+            "fr": "Celui qui était en bas à gauche"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Une rotation de 90° horaire fait venir, à chaque coin, l'élément qui se trouvait juste avant lui dans le sens antihoraire, c'est-à-dire le coin en haut à gauche qui vient occuper la position haut-droite. Méthode : imaginer les 4 positions cardinales (haut-gauche, haut-droite, bas-droite, bas-gauche) et décaler chaque élément d'une position dans le sens de la rotation."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une flèche pointe vers le nord. Vous la faites pivoter de 135° dans le sens horaire. Vers quelle direction pointe-t-elle approximativement ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Sud-est"
+          }
+        },
+        {
+          "text": {
+            "fr": "Sud-ouest"
+          }
+        },
+        {
+          "text": {
+            "fr": "Est"
+          }
+        },
+        {
+          "text": {
+            "fr": "Nord-ouest"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "90° horaire amène la flèche vers l'est, et 45° de plus (135° au total) l'amène entre l'est et le sud, soit sud-est. Méthode : décomposer une rotation oblique en un multiple de 90° (les points cardinaux) plus un reste, pour se repérer plus facilement."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une horloge analogique affiche 3h00 (petite aiguille sur le 3, grande sur le 12). On fait pivoter mentalement tout le cadran de 90° dans le sens antihoraire. Vers quel chiffre pointe désormais la petite aiguille ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "12"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "9"
+          }
+        },
+        {
+          "text": {
+            "fr": "3"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Une rotation de 90° antihoraire déplace chaque repère du cadran d'un quart de tour vers la gauche ; le 3 (position droite) se retrouve à la position du haut, soit le 12. Méthode : convertir la rotation en nombre de graduations d'horloge (90° = 3 heures sur un cadran de 12) et décaler dans le bon sens."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une carte à jouer représente un losange dont la pointe supérieure est rouge et la pointe inférieure est bleue. On retourne la carte comme une page de livre (rotation de 180° autour d'un axe vertical), puis on la fait pivoter de 90° dans le sens horaire. Quelle couleur se trouve maintenant à gauche ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Bleu"
+          }
+        },
+        {
+          "text": {
+            "fr": "Rouge"
+          }
+        },
+        {
+          "text": {
+            "fr": "Aucune, les couleurs se sont mélangées"
+          }
+        },
+        {
+          "text": {
+            "fr": "Impossible à déterminer"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le retournement autour de l'axe vertical échange la gauche et la droite mais laisse le haut et le bas inchangés (pointe rouge toujours en haut) ; la rotation de 90° horaire amène ensuite le haut vers la droite, donc le bas (bleu) vers la gauche. Méthode : traiter chaque transformation séparément et dans l'ordre donné, sans les mélanger."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "On trace un carré, puis ses deux diagonales. En combien de régions (triangles) le carré est-il découpé ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "2"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Les deux diagonales d'un carré se croisent en son centre et le divisent en 4 triangles. Méthode : chaque diagonale ajoutée double le nombre de régions déjà présentes lorsqu'elle traverse toutes les régions existantes."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0019",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien de points d'intersection obtient-on en traçant les deux diagonales d'un rectangle ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "1"
+          }
+        },
+        {
+          "text": {
+            "fr": "2"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "0"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Dans un rectangle (ou tout quadrilatère convexe), les deux diagonales se croisent en un seul point intérieur. Méthode : visualiser que deux segments non parallèles ne peuvent se couper qu'en un seul point au maximum."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0020",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Trois cercles sont disposés de sorte que chaque paire de cercles se croise en exactement 2 points, et qu'aucun point n'est commun aux trois cercles à la fois. Combien de points d'intersection au total ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "3"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "9"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Il y a 3 paires de cercles possibles (A-B, A-C, B-C), et chaque paire produit 2 points d'intersection : 3 × 2 = 6. Méthode : compter d'abord le nombre de paires d'objets, puis multiplier par le nombre d'intersections par paire."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Tous les pilotes sont des professionnels de l'aviation. Marc est pilote. Que peut-on en conclure ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Marc est un professionnel de l'aviation"
+          }
+        },
+        {
+          "text": {
+            "fr": "Marc n'est pas un professionnel de l'aviation"
+          }
+        },
+        {
+          "text": {
+            "fr": "Tous les professionnels de l'aviation sont pilotes"
+          }
+        },
+        {
+          "text": {
+            "fr": "On ne peut rien conclure"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Si tous les pilotes appartiennent à l'ensemble « professionnels de l'aviation » et que Marc est pilote, alors Marc appartient nécessairement à cet ensemble. Méthode : un syllogisme du type « tous les A sont B, X est A » conclut toujours « X est B »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Tous les chats sont des mammifères. Aucun mammifère n'est un poisson. Que peut-on en conclure sur les chats ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Aucun chat n'est un poisson"
+          }
+        },
+        {
+          "text": {
+            "fr": "Tous les poissons sont des chats"
+          }
+        },
+        {
+          "text": {
+            "fr": "Certains chats sont des poissons"
+          }
+        },
+        {
+          "text": {
+            "fr": "On ne peut rien conclure"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Les chats sont inclus dans les mammifères, et les mammifères excluent totalement les poissons ; donc les chats excluent aussi les poissons. Méthode : quand un ensemble A est inclus dans B, et que B exclut C, alors A exclut C également."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Tous les avions long-courriers ont plus de deux moteurs n'est pas vrai : certains n'en ont que deux. Sachant que cet A380 a quatre moteurs, peut-on conclure qu'il s'agit d'un long-courrier ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Non, on ne peut rien conclure"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, nécessairement"
+          }
+        },
+        {
+          "text": {
+            "fr": "Non, c'est impossible"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, mais seulement si c'est un Airbus"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Avoir quatre moteurs ne permet pas de déduire qu'un avion est long-courrier, car la proposition inverse (tout avion à quatre moteurs est long-courrier) n'a jamais été énoncée. Méthode : ne jamais inverser une implication « si A alors B » en « si B alors A » sans preuve supplémentaire."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Aucun reptile n'est à sang chaud. Tous les serpents sont des reptiles. Que peut-on conclure sur les serpents ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Aucun serpent n'est à sang chaud"
+          }
+        },
+        {
+          "text": {
+            "fr": "Tous les serpents sont à sang chaud"
+          }
+        },
+        {
+          "text": {
+            "fr": "Certains serpents sont à sang chaud"
+          }
+        },
+        {
+          "text": {
+            "fr": "On ne peut rien conclure"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Les serpents sont inclus dans les reptiles, et aucun reptile n'est à sang chaud ; donc aucun serpent ne l'est non plus. Méthode : appliquer directement l'exclusion valable pour l'ensemble englobant (reptiles) à son sous-ensemble (serpents)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Certains employés sont des managers. Tous les managers ont un bureau individuel. Peut-on conclure que certains employés ont un bureau individuel ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Oui"
+          }
+        },
+        {
+          "text": {
+            "fr": "Non"
+          }
+        },
+        {
+          "text": {
+            "fr": "On ne peut rien conclure du tout"
+          }
+        },
+        {
+          "text": {
+            "fr": "Seulement si tous les employés sont managers"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Puisque certains employés sont managers, et que tous les managers ont un bureau individuel, ces employés-managers ont forcément un bureau individuel : donc certains employés en ont un. Méthode : un « certains A sont B » combiné à « tous les B sont C » permet de conclure « certains A sont C »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Aucun poisson ne respire hors de l'eau. Certains animaux marins respirent hors de l'eau (les mammifères marins). Peut-on en conclure que certains animaux marins ne sont pas des poissons ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Oui"
+          }
+        },
+        {
+          "text": {
+            "fr": "Non"
+          }
+        },
+        {
+          "text": {
+            "fr": "On ne peut rien conclure"
+          }
+        },
+        {
+          "text": {
+            "fr": "Cela dépend de l'espèce"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Si certains animaux marins respirent hors de l'eau, et qu'aucun poisson ne le fait, alors ces animaux-là ne peuvent pas être des poissons. Méthode : une exclusion totale pour une catégorie (poissons) permet d'exclure de cette catégorie tout élément qui a la propriété contraire."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Tous les A sont des B. Aucun B n'est un C. Certains D sont des C. Peut-on conclure que certains D ne sont pas des A ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Oui"
+          }
+        },
+        {
+          "text": {
+            "fr": "Non"
+          }
+        },
+        {
+          "text": {
+            "fr": "On ne peut rien conclure"
+          }
+        },
+        {
+          "text": {
+            "fr": "Seulement si D = C"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Puisque tous les A sont B et qu'aucun B n'est C, aucun A n'est C. Or certains D sont C, donc ces D-là ne peuvent pas être des A. Méthode : chaîner les inclusions et exclusions étape par étape (A⊂B, B∩C=∅, donc A∩C=∅) avant de comparer avec le dernier groupe D."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Si tous les X sont Y et qu'aucun Y n'est Z, alors quelle conclusion est certaine concernant X et Z ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Aucun X n'est Z"
+          }
+        },
+        {
+          "text": {
+            "fr": "Tous les X sont Z"
+          }
+        },
+        {
+          "text": {
+            "fr": "Certains X sont Z"
+          }
+        },
+        {
+          "text": {
+            "fr": "On ne peut rien conclure"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "X est entièrement inclus dans Y, et Y exclut totalement Z ; donc X exclut totalement Z aussi. Méthode : la transitivité de l'exclusion fonctionne comme celle de l'inclusion, à condition que l'un des deux ensembles intermédiaires soit total (« tous » ou « aucun »), pas partiel (« certains »)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Sur une île, les habitants disent toujours la vérité ou mentent toujours. Un habitant déclare : « Je mens toujours. » Que peut-on en conclure ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "C'est une affirmation impossible (il ne peut être ni menteur ni honnête)"
+          }
+        },
+        {
+          "text": {
+            "fr": "C'est un menteur"
+          }
+        },
+        {
+          "text": {
+            "fr": "C'est un honnête homme"
+          }
+        },
+        {
+          "text": {
+            "fr": "On ne peut rien conclure"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "S'il disait la vérité, alors « je mens toujours » serait vrai, contradiction ; s'il mentait, alors il ne mentirait pas toujours, contradiction aussi. Méthode : tester chaque hypothèse (vérité/mensonge) et rejeter celle qui produit une contradiction interne à l'affirmation elle-même."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "A dit : « B ment. » B dit : « A et moi mentons tous les deux. » Sachant que chacun ment toujours ou dit toujours la vérité, qui ment ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Seul B ment"
+          }
+        },
+        {
+          "text": {
+            "fr": "Seul A ment"
+          }
+        },
+        {
+          "text": {
+            "fr": "Les deux mentent"
+          }
+        },
+        {
+          "text": {
+            "fr": "Les deux disent la vérité"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Si B disait la vérité, son affirmation « A et moi mentons » impliquerait que B ment, contradiction : B ment donc. Puisque B ment, l'affirmation de A (« B ment ») est vraie, donc A dit la vérité. Méthode : commencer par tester l'affirmation qui se contredit elle-même (celle de B), puis en déduire la valeur de l'autre."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "A dit : « Nous sommes tous les deux menteurs. » B ne dit rien. Sachant que A ment ou dit toujours la vérité, que peut-on conclure sur A ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A ment"
+          }
+        },
+        {
+          "text": {
+            "fr": "A dit la vérité"
+          }
+        },
+        {
+          "text": {
+            "fr": "On ne peut rien conclure sur A"
+          }
+        },
+        {
+          "text": {
+            "fr": "A dit la vérité une fois sur deux"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Si A disait la vérité, son affirmation impliquerait que lui-même est menteur, contradiction ; A ment donc nécessairement. Méthode : une affirmation qui s'auto-contredit si elle est vraie ne peut être que fausse — c'est le signe qu'elle vient d'un menteur."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Trois habitants A, B, C disent toujours la vérité ou mentent toujours. A dit : « B ment. » B dit : « C ment. » C dit : « A et B mentent tous les deux. » Qui dit la vérité ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Seul A dit la vérité"
+          }
+        },
+        {
+          "text": {
+            "fr": "Seul B dit la vérité"
+          }
+        },
+        {
+          "text": {
+            "fr": "Seul C dit la vérité"
+          }
+        },
+        {
+          "text": {
+            "fr": "A et C disent la vérité"
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Si A disait la vérité, B serait menteur (d'après l'affirmation de A) ; B menteur rend son affirmation « C ment » fausse, donc C dirait la vérité ; mais C affirme que A et B mentent tous les deux, ce qui contredirait A véridique — contradiction, donc A ment. Puisque A ment, son affirmation « B ment » est fausse, donc B dit la vérité. B véridique rend son affirmation « C ment » vraie, donc C ment — et l'affirmation de C (« A et B mentent tous les deux ») est bien fausse puisque B est véridique, ce qui est cohérent avec « C ment ». Méthode : tester chaque personne comme véridique, en déduisant les conséquences en chaîne sur les deux autres, et ne retenir que l'hypothèse qui ne produit aucune contradiction."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "« Tous les A sont B » signifie-t-il que « tous les B sont A » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Non, ce n'est pas garanti"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, toujours"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, mais seulement si A et B sont finis"
+          }
+        },
+        {
+          "text": {
+            "fr": "Cela dépend des exemples"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Tous les A sont B » place A à l'intérieur de B, mais B peut contenir d'autres éléments que ceux de A : rien n'oblige B à être inclus dans A. Méthode : ne jamais confondre une inclusion avec son inverse (l'erreur classique de « conversion illicite »)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Si « certains fruits sont rouges » est vrai, peut-on affirmer que « certains fruits ne sont pas rouges » est également vrai ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Non, pas nécessairement"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, toujours"
+          }
+        },
+        {
+          "text": {
+            "fr": "Seulement si tous les fruits sont rouges"
+          }
+        },
+        {
+          "text": {
+            "fr": "Cela dépend du nombre total de fruits"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Certains fruits sont rouges » est compatible avec le cas où absolument tous les fruits seraient rouges ; les deux affirmations ne sont donc pas automatiquement liées. Méthode : « certains » signifie « au moins un », ce qui n'exclut pas que ce soit en réalité « tous »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Si « aucun A n'est B » est vrai, que peut-on dire de « certains A sont B » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "C'est nécessairement faux"
+          }
+        },
+        {
+          "text": {
+            "fr": "C'est nécessairement vrai"
+          }
+        },
+        {
+          "text": {
+            "fr": "On ne peut rien en dire"
+          }
+        },
+        {
+          "text": {
+            "fr": "Cela dépend du contexte"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Aucun A n'est B » signifie qu'il n'existe pas un seul A qui soit B ; « certains A sont B » affirme l'existence d'au moins un cas, ce qui est directement contredit. Méthode : « aucun » et « certains » (au sens d'« au moins un ») sont des contraires logiques stricts, l'un excluant totalement l'autre."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "On sait que « certains ingénieurs sont pilotes » et que « tous les pilotes de ligne ont une licence ATPL ». Peut-on conclure que « certains ingénieurs ont une licence ATPL » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Non, seulement si les pilotes en question sont des pilotes de ligne"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, dans tous les cas"
+          }
+        },
+        {
+          "text": {
+            "fr": "Non, jamais"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, mais seulement pour la moitié des ingénieurs"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Pilotes » n'est pas forcément équivalent à « pilotes de ligne » (il peut s'agir de pilotes privés, par exemple) ; la conclusion n'est valable que si les ingénieurs-pilotes concernés sont bien des pilotes de ligne. Méthode : vérifier que les catégories utilisées dans deux prémisses désignent exactement le même ensemble avant de les combiner."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "« Aucun A n'est B » et « certains C sont A ». Que peut-on conclure sur C et B ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Certains C ne sont pas B"
+          }
+        },
+        {
+          "text": {
+            "fr": "Tous les C sont B"
+          }
+        },
+        {
+          "text": {
+            "fr": "Aucun C n'est B"
+          }
+        },
+        {
+          "text": {
+            "fr": "On ne peut rien conclure"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Les C qui sont A ne peuvent pas être B (puisqu'aucun A n'est B) ; il existe donc au moins un C (celui qui est A) qui n'est pas B. Méthode : repérer le sous-groupe commun (les C qui sont aussi A) et lui appliquer l'exclusion connue (A exclut B)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "On sait que « tous les A sont B », « certains B sont C », et « aucun C n'est D ». Peut-on conclure que « certains A ne sont pas D » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Non, ce n'est pas garanti"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, toujours"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, mais seulement si tous les B sont C"
+          }
+        },
+        {
+          "text": {
+            "fr": "Non, c'est impossible à déterminer dans tous les cas sauf un"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Les B qui sont C existent, mais rien ne garantit que ce sont précisément les mêmes B qui sont aussi des A : le sous-ensemble « B et C » et le sous-ensemble « A » (inclus dans B) peuvent ne pas se recouper du tout. Méthode : se méfier des chaînes utilisant des « certains », qui ne garantissent pas que les mêmes éléments soient concernés à chaque étape."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0019",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une suite suit la règle « nombre pair, nombre impair, nombre pair, nombre impair... » : 4, 7, 2, 9, ... Le prochain nombre doit-il être pair ou impair ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Pair"
+          }
+        },
+        {
+          "text": {
+            "fr": "Impair"
+          }
+        },
+        {
+          "text": {
+            "fr": "Cela dépend de sa valeur"
+          }
+        },
+        {
+          "text": {
+            "fr": "Impossible à dire"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "La règle alterne strictement parité paire et impaire ; après un impair (9), le suivant doit être pair. Méthode : identifier la règle de parité énoncée et l'appliquer à la position suivante sans se soucier de la valeur exacte."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0020",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une suite de nombres suit la règle « chaque nombre est un multiple de 3 » : 6, 9, 15, 21, ... Lequel de ces nombres pourrait être le suivant ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "27"
+          }
+        },
+        {
+          "text": {
+            "fr": "28"
+          }
+        },
+        {
+          "text": {
+            "fr": "29"
+          }
+        },
+        {
+          "text": {
+            "fr": "26"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Seul 27 est un multiple de 3 (27 = 9×3) parmi les propositions ; les autres ne le sont pas. Méthode : vérifier la divisibilité par 3 de chaque option (somme des chiffres divisible par 3) plutôt que de chercher un autre motif."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    }
+  ]
+}
