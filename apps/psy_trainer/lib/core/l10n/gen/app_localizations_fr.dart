@@ -2158,6 +2158,89 @@ class AppLocalizationsFr extends AppLocalizations {
       'Appuyez sur F quand le calcul encadré, en bas, est faux.';
 
   @override
+  String reverseSpanDigitSemantics(int shown, int total) {
+    return 'Chiffre $shown sur $total';
+  }
+
+  @override
+  String get reverseSpanTypeInstructions => 'Retapez la séquence à l\'envers';
+
+  @override
+  String get reverseSpanExampleShown =>
+      'La séquence affichée, chiffre par chiffre :';
+
+  @override
+  String get reverseSpanExampleExpected => 'Retapez-la à l\'envers :';
+
+  @override
+  String calcBackStageLabel(int stage, int stageCount) {
+    return 'Étape $stage sur $stageCount';
+  }
+
+  @override
+  String calcBackStemSemantics(int stage) {
+    return 'Ajoutez au résultat obtenu il y a $stage calcul(s)';
+  }
+
+  @override
+  String get calcBackExampleStage =>
+      'Étape 2 : combinez le nombre affiché avec le résultat obtenu il y a deux calculs.';
+
+  @override
+  String get p1AnglesExampleCaption =>
+      'Parmi les valeurs proposées, touchez celles qui correspondent à un angle dessiné (A, B...), puis Valider.';
+
+  @override
+  String p1AnglesCandidateSemantics(int index, int value) {
+    return 'Valeur $index, $value degrés';
+  }
+
+  @override
+  String get mentalArithmeticAllIntervalsPrompt =>
+      'Sélectionnez tous les intervalles qui contiennent la valeur exacte.';
+
+  @override
+  String mentalArithmeticTrueValue(int value) {
+    return 'Valeur exacte : $value';
+  }
+
+  @override
+  String mentalArithmeticIntervalSemantics(int index, String label) {
+    return 'Intervalle $index, $label';
+  }
+
+  @override
+  String get mentalArithmeticAllIntervalsExampleCaption =>
+      'Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider.';
+
+  @override
+  String get p1CountersExampleCaption =>
+      'Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.';
+
+  @override
+  String get p1CubeRotationReferenceLabel => 'Cube de référence';
+
+  @override
+  String get p1CubeRotationCandidateLabel => 'Cube candidat';
+
+  @override
+  String get p1CubeRotationQuestion => 'Est-ce le même cube, tourné ?';
+
+  @override
+  String get p1CubeRotationSameAnswer => 'Même cube, tourné';
+
+  @override
+  String get p1CubeRotationAlteredAnswer => 'Modifié';
+
+  @override
+  String get p1CubeRotationExplanationSame =>
+      'Le cube candidat est bien le cube de référence, vu sous un autre angle.';
+
+  @override
+  String get p1CubeRotationExplanationAltered =>
+      'Le cube candidat a été modifié (faces échangées ou face inversée) : ce n\'est pas une simple rotation.';
+
+  @override
   String get matrixMissingSemantics => 'Case manquante';
 
   @override
@@ -2217,35 +2300,4 @@ class AppLocalizationsFr extends AppLocalizations {
   String matrixRuleStepDegrees(int degrees) {
     return '+$degrees°';
   }
-
-  @override
-  String get p1AnglesExampleCaption =>
-      'Parmi les valeurs proposées, touchez celles qui correspondent à un angle dessiné (A, B...), puis Valider.';
-
-  @override
-  String p1AnglesCandidateSemantics(int index, int value) {
-    return 'Valeur $index, $value degrés';
-  }
-
-  @override
-  String get mentalArithmeticAllIntervalsPrompt =>
-      'Sélectionnez tous les intervalles qui contiennent la valeur exacte.';
-
-  @override
-  String mentalArithmeticTrueValue(int value) {
-    return 'Valeur exacte : $value';
-  }
-
-  @override
-  String mentalArithmeticIntervalSemantics(int index, String label) {
-    return 'Intervalle $index, $label';
-  }
-
-  @override
-  String get mentalArithmeticAllIntervalsExampleCaption =>
-      'Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider.';
-
-  @override
-  String get p1CountersExampleCaption =>
-      'Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.';
 }

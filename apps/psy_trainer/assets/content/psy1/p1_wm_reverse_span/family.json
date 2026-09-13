@@ -22,7 +22,7 @@
   "lang": "fr",
   "defaultDurationSec": 600,
   "defaultItemCount": 10,
-  "defaultPerItemTimeSec": 4,
+  "defaultPerItemTimeSec": 15,
   "confidence": "reported",
   "tags": ["memory"],
   "meta": {

@@ -22,10 +22,16 @@ import '../../../engines/p1_angles/domain/p1_angles_engine.dart';
 import '../../../engines/p1_angles/presentation/p1_angles_renderer.dart';
 import '../../../engines/p1_counters/domain/p1_counters_engine.dart';
 import '../../../engines/p1_counters/presentation/p1_counters_renderer.dart';
+import '../../../engines/p1_cube_nets/domain/p1_cube_nets_engine.dart';
+import '../../../engines/p1_cube_nets/presentation/p1_cube_nets_renderer.dart';
 import '../../../engines/p1_mental_arithmetic/domain/mental_arithmetic_engine.dart';
 import '../../../engines/p1_mental_arithmetic/presentation/mental_arithmetic_renderer.dart';
 import '../../../engines/p1_raven_matrices/domain/raven_matrices_engine.dart';
 import '../../../engines/p1_raven_matrices/presentation/raven_matrices_renderer.dart';
+import '../../../engines/p1_wm_calc_back/domain/calc_back_engine.dart';
+import '../../../engines/p1_wm_calc_back/presentation/calc_back_renderer.dart';
+import '../../../engines/p1_wm_reverse_span/domain/reverse_span_engine.dart';
+import '../../../engines/p1_wm_reverse_span/presentation/reverse_span_renderer.dart';
 import '../../../engines/planning_tubes/domain/tubes_engine.dart';
 import '../../../engines/planning_tubes/presentation/tubes_renderer.dart';
 import '../../../engines/spatial_cubes/domain/cube_net_engine.dart';
@@ -58,6 +64,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const ArithmeticGridEngine(),
         const AttentionParityEngine(),
         const AttentionRulesEngine(),
+        const CalcBackEngine(),
         const CountersEngine(),
         const CubeNetEngine(),
         const CultureAeroEngine(),
@@ -69,6 +76,8 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const OverlayGridEngine(),
         const P1AnglesEngine(),
         const RavenMatricesEngine(),
+        const P1CubeNetsEngine(),
+        const ReverseSpanEngine(),
         const TubesEngine(),
         const ViewpointEngine(),
         WordBoxesEngine(ref.read(lexicalFieldCatalogueProvider)),
@@ -84,6 +93,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const ArithmeticGridRenderer(),
         const AttentionParityRenderer(),
         const AttentionRulesRenderer(),
+        const CalcBackRenderer(),
         const CountersRenderer(),
         const CubeNetRenderer(),
         const DominosRenderer(),
@@ -102,6 +112,8 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const OverlayGridRenderer(),
         const P1AnglesRenderer(),
         const RavenMatricesRenderer(),
+        const P1CubeNetsRenderer(),
+        const ReverseSpanRenderer(),
         const TubesRenderer(),
         const ViewpointRenderer(),
         WordBoxesRenderer(ref.read(lexicalFieldCatalogueProvider)),
