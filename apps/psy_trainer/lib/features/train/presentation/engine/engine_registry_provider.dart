@@ -26,6 +26,8 @@ import '../../../engines/p1_counters/domain/p1_counters_engine.dart';
 import '../../../engines/p1_counters/presentation/p1_counters_renderer.dart';
 import '../../../engines/p1_cube_nets/domain/p1_cube_nets_engine.dart';
 import '../../../engines/p1_cube_nets/presentation/p1_cube_nets_renderer.dart';
+import '../../../engines/p1_math_word_problems/domain/word_problems_engine.dart';
+import '../../../engines/p1_math_word_problems/presentation/word_problems_renderer.dart';
 import '../../../engines/p1_mental_arithmetic/domain/mental_arithmetic_engine.dart';
 import '../../../engines/p1_mental_arithmetic/presentation/mental_arithmetic_renderer.dart';
 import '../../../engines/p1_raven_matrices/domain/raven_matrices_engine.dart';
@@ -75,12 +77,13 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const CultureAeroEngine(),
         const DominosEngine(),
         const EnglishEngine(),
-        const MentalArithmeticEngine(),
         const MultitaskEngine(),
         const NbackEngine(),
         const OverlayGridEngine(),
         const P1AnglesEngine(),
         const P1CubeNetsEngine(),
+        const MathWordProblemsEngine(),
+        const MentalArithmeticEngine(),
         const RavenMatricesEngine(),
         const ReverseSpanEngine(),
         const TangramEngine(),
@@ -113,12 +116,13 @@ final Provider<RendererRegistry> rendererRegistryProvider =
           passageResolver: (id) =>
               ref.read(englishPassageCacheProvider).get(id),
         ),
-        const MentalArithmeticRenderer(),
         const MultitaskRenderer(),
         const NbackRenderer(),
         const OverlayGridRenderer(),
         const P1AnglesRenderer(),
         const P1CubeNetsRenderer(),
+        const MathWordProblemsRenderer(),
+        const MentalArithmeticRenderer(),
         const RavenMatricesRenderer(),
         const ReverseSpanRenderer(),
         const TangramRenderer(),
