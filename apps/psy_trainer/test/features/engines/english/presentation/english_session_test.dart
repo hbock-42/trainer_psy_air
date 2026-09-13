@@ -12,7 +12,7 @@ import '../../../../helpers/pump_app.dart';
 /// `SessionHost` over a real passage set (US-027): the passage panel the
 /// contract gap was about — `McqRenderer`'s `passageResolver` fed by a
 /// preloaded cache, exactly how `practice_session_builder.dart` +
-/// `EnglishPassageCache` wire it for a real session.
+/// `PassageCache` wire it for a real session.
 final l10nFr = lookupAppLocalizations(const Locale('fr'));
 
 void main() {
