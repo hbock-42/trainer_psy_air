@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "interview",
+  "moduleId": "psy2",
+  "version": 1,
+  "order": 1,
+  "name": { "fr": "Entretien individuel", "en": "Individual interview" },
+  "shortName": { "fr": "Entretien", "en": "Interview" },
+  "description": {
+    "fr": "Une banque de questions originales par thème (motivation, parcours, CRM, stress, connaissance de soi, culture aéronautique, méta), avec pour chacune une méthode de réponse (façon STAR) et un chronomètre de préparation/réponse. Auto-évaluation seulement : aucune notation \"réussite/échec\" simulée.",
+    "en": "A bank of original questions by theme (motivation, background, CRM, stress, self-awareness, aviation knowledge, reflective), each with an answer method (STAR-shaped) and a prep/answer timer. Self-assessment only: no simulated \"pass/fail\" grading."
+  },
+  "engineType": "interview",
+  "answerFormat": "recording",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 165,
+  "defaultItemCount": 1,
+  "confidence": "reported",
+  "tags": ["psy2", "psy2.interview"],
+  "meta": {
+    "source": "docs/content/psy2-spec.md §2.4, §4.1 (themes, rubric [reported]); questions and guidance are original, never copied real questions"
+  }
+}

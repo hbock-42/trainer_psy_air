@@ -6,6 +6,7 @@ import 'content_parse_exception.dart';
 import 'model/content_manifest.dart';
 import 'model/deck.dart';
 import 'model/exam_blueprint.dart';
+import 'model/interview_question.dart';
 import 'model/item.dart';
 import 'model/lesson.dart';
 import 'model/lexical_field.dart';
@@ -61,6 +62,12 @@ class ContentBundleParser {
   /// `<module>/<family>/lexical_fields/*.json` (contract v2).
   LexicalFieldBank parseLexicalFields(String source, {required String file}) =>
       lexicalFieldsFromJson(_decode(source, file), file: file);
+
+  /// `psy2/<family>/questions/*.json` (contract v2, US-111).
+  InterviewQuestionBank parseInterviewQuestions(
+    String source, {
+    required String file,
+  }) => interviewQuestionsFromJson(_decode(source, file), file: file);
 
   ContentManifest manifestFromJson(
     Map<String, Object?> json, {
@@ -207,6 +214,38 @@ class ContentBundleParser {
     return bank;
   }
 
+  InterviewQuestionBank interviewQuestionsFromJson(
+    Map<String, Object?> json, {
+    required String file,
+  }) {
+    _checkKind(json, 'interview_questions', file);
+    final bank = _guard(
+      file,
+      () => InterviewQuestionBank.fromJson(json),
+      onError: () => _locateBadListEntry(json, 'questions', file),
+    );
+    final seen = <String>{};
+    for (final question in bank.questions) {
+      if (!seen.add(question.id)) {
+        throw ContentParseException(
+          file: file,
+          entityId: question.id,
+          message: 'duplicate interview question id',
+        );
+      }
+      if (question.familyId != bank.familyId) {
+        throw ContentParseException(
+          file: file,
+          entityId: question.id,
+          message:
+              'question familyId "${question.familyId}" does not match bank '
+              'familyId "${bank.familyId}"',
+        );
+      }
+    }
+    return bank;
+  }
+
   // ---------------------------------------------------------------------------
 
   Map<String, Object?> _decode(String source, String file) {
@@ -312,6 +351,8 @@ class ContentBundleParser {
             ExamSection.fromJson(raw);
           case 'fields':
             LexicalField.fromJson(raw);
+          case 'questions':
+            InterviewQuestion.fromJson(raw);
         }
       } catch (e) {
         throw ContentParseException(

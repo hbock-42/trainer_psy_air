@@ -47,7 +47,9 @@
         "p1_wm_calc_back",
         "p1_raven_matrices",
         "p1_mental_arithmetic",
-        "p1_psychomotor"
+        "p1_psychomotor",
+        "interview",
+        "group_exercise"
       ]
     },
     "generatorId": { "$ref": "generators.schema.json#/$defs/GeneratorId", "description": "v2: generator the practice launcher uses for this family (omit for bank-driven families)." },

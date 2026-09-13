@@ -1,0 +1,277 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/interview_questions.schema.json",
+  "kind": "interview_questions",
+  "familyId": "interview",
+  "questions": [
+    {
+      "id": "interview.reflective.0001",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "reflective",
+      "question": {
+        "fr": "En repensant à aujourd'hui, que changeriez-vous dans votre façon d'aborder l'exercice de groupe ?",
+        "en": "Looking back at today, what would you change about how you approached the group exercise?"
+      },
+      "guidance": {
+        "fr": "Ces questions évaluent la capacité à s'auto-évaluer honnêtement en fin de journée. Appuyez-vous sur un fait précis de la journée (pas une généralité), reconnaissez un point à améliorer sans minimiser, et reliez votre réponse à ce que vous ferez différemment ensuite.",
+        "en": "These questions assess the ability to self-assess honestly at the end of the day. Anchor your answer in a precise fact of the day (not a generality), acknowledge a point to improve without minimising it, and connect your answer to what you will do differently next."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Fait précis de la journée -> ce qu'il révèle (fort ou perfectible) -> ce que je ferais différemment -> comment j'avance à partir de là.",
+        "en": "Precise fact of the day -> what it reveals (strength or area to improve) -> what I would do differently -> how I move forward from there."
+      },
+      "tags": [
+        "interview",
+        "interview.reflective"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.reflective.0002",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "reflective",
+      "question": {
+        "fr": "Qu'est-ce que les épreuves d'aujourd'hui ont révélé de vous qu'un CV ne peut pas montrer ?",
+        "en": "What did today's exercises reveal about you that a resume can't show?"
+      },
+      "guidance": {
+        "fr": "Ces questions évaluent la capacité à s'auto-évaluer honnêtement en fin de journée. Appuyez-vous sur un fait précis de la journée (pas une généralité), reconnaissez un point à améliorer sans minimiser, et reliez votre réponse à ce que vous ferez différemment ensuite.",
+        "en": "These questions assess the ability to self-assess honestly at the end of the day. Anchor your answer in a precise fact of the day (not a generality), acknowledge a point to improve without minimising it, and connect your answer to what you will do differently next."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Fait précis de la journée -> ce qu'il révèle (fort ou perfectible) -> ce que je ferais différemment -> comment j'avance à partir de là.",
+        "en": "Precise fact of the day -> what it reveals (strength or area to improve) -> what I would do differently -> how I move forward from there."
+      },
+      "tags": [
+        "interview",
+        "interview.reflective"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.reflective.0003",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "reflective",
+      "question": {
+        "fr": "Quelle est une chose que vous ferez différemment avant votre prochaine évaluation, quel que soit le résultat d'aujourd'hui ?",
+        "en": "What is one thing you'll do differently before your next assessment, regardless of today's result?"
+      },
+      "guidance": {
+        "fr": "Ces questions évaluent la capacité à s'auto-évaluer honnêtement en fin de journée. Appuyez-vous sur un fait précis de la journée (pas une généralité), reconnaissez un point à améliorer sans minimiser, et reliez votre réponse à ce que vous ferez différemment ensuite.",
+        "en": "These questions assess the ability to self-assess honestly at the end of the day. Anchor your answer in a precise fact of the day (not a generality), acknowledge a point to improve without minimising it, and connect your answer to what you will do differently next."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Fait précis de la journée -> ce qu'il révèle (fort ou perfectible) -> ce que je ferais différemment -> comment j'avance à partir de là.",
+        "en": "Precise fact of the day -> what it reveals (strength or area to improve) -> what I would do differently -> how I move forward from there."
+      },
+      "tags": [
+        "interview",
+        "interview.reflective"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.reflective.0004",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "reflective",
+      "question": {
+        "fr": "Si nous demandions aux personnes avec qui vous avez travaillé aujourd'hui de vous décrire en une phrase, que diraient-elles ?",
+        "en": "If we asked the people you worked with today to describe you in one sentence, what would they say?"
+      },
+      "guidance": {
+        "fr": "Ces questions évaluent la capacité à s'auto-évaluer honnêtement en fin de journée. Appuyez-vous sur un fait précis de la journée (pas une généralité), reconnaissez un point à améliorer sans minimiser, et reliez votre réponse à ce que vous ferez différemment ensuite.",
+        "en": "These questions assess the ability to self-assess honestly at the end of the day. Anchor your answer in a precise fact of the day (not a generality), acknowledge a point to improve without minimising it, and connect your answer to what you will do differently next."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Fait précis de la journée -> ce qu'il révèle (fort ou perfectible) -> ce que je ferais différemment -> comment j'avance à partir de là.",
+        "en": "Precise fact of the day -> what it reveals (strength or area to improve) -> what I would do differently -> how I move forward from there."
+      },
+      "tags": [
+        "interview",
+        "interview.reflective"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.reflective.0005",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "reflective",
+      "question": {
+        "fr": "Quelle partie de la journée vous a semblé la plus naturelle, et laquelle la plus forcée ?",
+        "en": "What part of today felt most natural to you, and what part felt most forced?"
+      },
+      "guidance": {
+        "fr": "Ces questions évaluent la capacité à s'auto-évaluer honnêtement en fin de journée. Appuyez-vous sur un fait précis de la journée (pas une généralité), reconnaissez un point à améliorer sans minimiser, et reliez votre réponse à ce que vous ferez différemment ensuite.",
+        "en": "These questions assess the ability to self-assess honestly at the end of the day. Anchor your answer in a precise fact of the day (not a generality), acknowledge a point to improve without minimising it, and connect your answer to what you will do differently next."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Fait précis de la journée -> ce qu'il révèle (fort ou perfectible) -> ce que je ferais différemment -> comment j'avance à partir de là.",
+        "en": "Precise fact of the day -> what it reveals (strength or area to improve) -> what I would do differently -> how I move forward from there."
+      },
+      "tags": [
+        "interview",
+        "interview.reflective"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.reflective.0006",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "reflective",
+      "question": {
+        "fr": "Quelle question auriez-vous aimé que l'on vous pose aujourd'hui ?",
+        "en": "What question do you wish we had asked you today?"
+      },
+      "guidance": {
+        "fr": "Ces questions évaluent la capacité à s'auto-évaluer honnêtement en fin de journée. Appuyez-vous sur un fait précis de la journée (pas une généralité), reconnaissez un point à améliorer sans minimiser, et reliez votre réponse à ce que vous ferez différemment ensuite.",
+        "en": "These questions assess the ability to self-assess honestly at the end of the day. Anchor your answer in a precise fact of the day (not a generality), acknowledge a point to improve without minimising it, and connect your answer to what you will do differently next."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Fait précis de la journée -> ce qu'il révèle (fort ou perfectible) -> ce que je ferais différemment -> comment j'avance à partir de là.",
+        "en": "Precise fact of the day -> what it reveals (strength or area to improve) -> what I would do differently -> how I move forward from there."
+      },
+      "tags": [
+        "interview",
+        "interview.reflective"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.reflective.0007",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "reflective",
+      "question": {
+        "fr": "Quelle est la chose que vous souhaitez le plus que nous retenions de vous ?",
+        "en": "What is the one thing you most want us to remember about you?"
+      },
+      "guidance": {
+        "fr": "Ces questions évaluent la capacité à s'auto-évaluer honnêtement en fin de journée. Appuyez-vous sur un fait précis de la journée (pas une généralité), reconnaissez un point à améliorer sans minimiser, et reliez votre réponse à ce que vous ferez différemment ensuite.",
+        "en": "These questions assess the ability to self-assess honestly at the end of the day. Anchor your answer in a precise fact of the day (not a generality), acknowledge a point to improve without minimising it, and connect your answer to what you will do differently next."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Fait précis de la journée -> ce qu'il révèle (fort ou perfectible) -> ce que je ferais différemment -> comment j'avance à partir de là.",
+        "en": "Precise fact of the day -> what it reveals (strength or area to improve) -> what I would do differently -> how I move forward from there."
+      },
+      "tags": [
+        "interview",
+        "interview.reflective"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.reflective.0008",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "reflective",
+      "question": {
+        "fr": "Dans quelle mesure les résultats des questionnaires de personnalité correspondent-ils à votre comportement réel aujourd'hui ?",
+        "en": "How did the personality-inventory results match how you actually behaved today?"
+      },
+      "guidance": {
+        "fr": "Ces questions évaluent la capacité à s'auto-évaluer honnêtement en fin de journée. Appuyez-vous sur un fait précis de la journée (pas une généralité), reconnaissez un point à améliorer sans minimiser, et reliez votre réponse à ce que vous ferez différemment ensuite.",
+        "en": "These questions assess the ability to self-assess honestly at the end of the day. Anchor your answer in a precise fact of the day (not a generality), acknowledge a point to improve without minimising it, and connect your answer to what you will do differently next."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Fait précis de la journée -> ce qu'il révèle (fort ou perfectible) -> ce que je ferais différemment -> comment j'avance à partir de là.",
+        "en": "Precise fact of the day -> what it reveals (strength or area to improve) -> what I would do differently -> how I move forward from there."
+      },
+      "tags": [
+        "interview",
+        "interview.reflective"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.reflective.0009",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "reflective",
+      "question": {
+        "fr": "Que diriez-vous à un ami qui se prépare pour cette même journée, à partir de ce que vous venez de vivre ?",
+        "en": "What would you tell a friend preparing for this same day, based on what you just experienced?"
+      },
+      "guidance": {
+        "fr": "Ces questions évaluent la capacité à s'auto-évaluer honnêtement en fin de journée. Appuyez-vous sur un fait précis de la journée (pas une généralité), reconnaissez un point à améliorer sans minimiser, et reliez votre réponse à ce que vous ferez différemment ensuite.",
+        "en": "These questions assess the ability to self-assess honestly at the end of the day. Anchor your answer in a precise fact of the day (not a generality), acknowledge a point to improve without minimising it, and connect your answer to what you will do differently next."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Fait précis de la journée -> ce qu'il révèle (fort ou perfectible) -> ce que je ferais différemment -> comment j'avance à partir de là.",
+        "en": "Precise fact of the day -> what it reveals (strength or area to improve) -> what I would do differently -> how I move forward from there."
+      },
+      "tags": [
+        "interview",
+        "interview.reflective"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.reflective.0010",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "reflective",
+      "question": {
+        "fr": "Si vous ne réussissez pas cette fois, que souhaiteriez-vous voir écrit dans votre débriefing ?",
+        "en": "If you don't succeed this time, what would you want written in your debrief?"
+      },
+      "guidance": {
+        "fr": "Ces questions évaluent la capacité à s'auto-évaluer honnêtement en fin de journée. Appuyez-vous sur un fait précis de la journée (pas une généralité), reconnaissez un point à améliorer sans minimiser, et reliez votre réponse à ce que vous ferez différemment ensuite.",
+        "en": "These questions assess the ability to self-assess honestly at the end of the day. Anchor your answer in a precise fact of the day (not a generality), acknowledge a point to improve without minimising it, and connect your answer to what you will do differently next."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Fait précis de la journée -> ce qu'il révèle (fort ou perfectible) -> ce que je ferais différemment -> comment j'avance à partir de là.",
+        "en": "Precise fact of the day -> what it reveals (strength or area to improve) -> what I would do differently -> how I move forward from there."
+      },
+      "tags": [
+        "interview",
+        "interview.reflective"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    }
+  ]
+}

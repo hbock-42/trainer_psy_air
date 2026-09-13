@@ -218,7 +218,7 @@ void main() {
 
   group('step 3 (target stage)', () {
     testWidgets(
-      'PSY0 is selected by default; PSY1 selectable (US-101), PSY2 coming soon',
+      'PSY0 is selected by default; PSY1 and PSY2 are also selectable (US-101/US-111)',
       (tester) async {
         final harness = await pumpFlow(tester);
         await acceptAndContinue(tester);
@@ -231,23 +231,18 @@ void main() {
         expect(tiles, hasLength(3));
         expect(tiles[0].state, AnswerOptionState.selected);
         expect(tiles[1].state, AnswerOptionState.idle);
-        expect(tiles[2].state, AnswerOptionState.disabled);
-        expect(find.text(l10nFr.stageComingSoon), findsNWidgets(1));
+        expect(tiles[2].state, AnswerOptionState.idle);
 
-        // PSY1 is now selectable.
+        // PSY1 is selectable.
         await tester.tap(find.text(l10nFr.stagePsy1Title));
         await tester.pumpAndSettle();
         await tester.tap(find.text(l10nFr.actionFinish));
         await tester.pumpAndSettle();
         expect(harness.submitted.single.targetStage, TargetStage.psy1);
-
-        // Tapping the still-disabled PSY2 stage changes nothing.
       },
     );
 
-    testWidgets('tapping the disabled PSY2 stage changes nothing', (
-      tester,
-    ) async {
+    testWidgets('PSY2 is selectable (US-111/US-112)', (tester) async {
       final harness = await pumpFlow(tester);
       await acceptAndContinue(tester);
       await tester.tap(find.text(l10nFr.onboardingExamDateUnknown));
@@ -257,7 +252,7 @@ void main() {
       await tester.pumpAndSettle();
       await tester.tap(find.text(l10nFr.actionFinish));
       await tester.pumpAndSettle();
-      expect(harness.submitted.single.targetStage, TargetStage.psy0);
+      expect(harness.submitted.single.targetStage, TargetStage.psy2);
     });
   });
 

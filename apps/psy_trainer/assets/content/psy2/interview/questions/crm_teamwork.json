@@ -1,0 +1,277 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/interview_questions.schema.json",
+  "kind": "interview_questions",
+  "familyId": "interview",
+  "questions": [
+    {
+      "id": "interview.crm_teamwork.0001",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "crm_teamwork",
+      "question": {
+        "fr": "Décrivez une fois où vous étiez en désaccord avec une personne en position d'autorité. Qu'avez-vous fait ?",
+        "en": "Describe a time you disagreed with someone in a position of authority. What did you do?"
+      },
+      "guidance": {
+        "fr": "Décrivez une situation réelle (qui, quoi, enjeu), l'action précise que vous avez prise pour communiquer, coordonner ou arbitrer, et le résultat obtenu -- y compris si le résultat a été imparfait. Nommez explicitement le comportement CRM en jeu (communication, remise en question, partage de charge...).",
+        "en": "Describe a real situation (who, what, stakes), the precise action you took to communicate, coordinate or arbitrate, and the result -- even an imperfect one. Name the CRM behaviour explicitly at stake (communication, speaking up, workload sharing...)."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation (équipe, enjeu) -> action de communication/coordination -> résultat -> ce que je changerais/répéterais.",
+        "en": "Situation (team, stakes) -> communication/coordination action -> result -> what I would repeat or change."
+      },
+      "tags": [
+        "interview",
+        "interview.crm_teamwork"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.crm_teamwork.0002",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "crm_teamwork",
+      "question": {
+        "fr": "Racontez une fois où une équipe dont vous faisiez partie a failli échouer. Quel a été votre rôle dans le redressement ?",
+        "en": "Tell me about a time a team you were part of nearly failed. What was your role in the recovery?"
+      },
+      "guidance": {
+        "fr": "Décrivez une situation réelle (qui, quoi, enjeu), l'action précise que vous avez prise pour communiquer, coordonner ou arbitrer, et le résultat obtenu -- y compris si le résultat a été imparfait. Nommez explicitement le comportement CRM en jeu (communication, remise en question, partage de charge...).",
+        "en": "Describe a real situation (who, what, stakes), the precise action you took to communicate, coordinate or arbitrate, and the result -- even an imperfect one. Name the CRM behaviour explicitly at stake (communication, speaking up, workload sharing...)."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation (équipe, enjeu) -> action de communication/coordination -> résultat -> ce que je changerais/répéterais.",
+        "en": "Situation (team, stakes) -> communication/coordination action -> result -> what I would repeat or change."
+      },
+      "tags": [
+        "interview",
+        "interview.crm_teamwork"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.crm_teamwork.0003",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "crm_teamwork",
+      "question": {
+        "fr": "Comment vous assurez-vous que la contribution d'un membre plus discret de l'équipe soit entendue ?",
+        "en": "How do you make sure a quieter team member's input gets heard?"
+      },
+      "guidance": {
+        "fr": "Décrivez une situation réelle (qui, quoi, enjeu), l'action précise que vous avez prise pour communiquer, coordonner ou arbitrer, et le résultat obtenu -- y compris si le résultat a été imparfait. Nommez explicitement le comportement CRM en jeu (communication, remise en question, partage de charge...).",
+        "en": "Describe a real situation (who, what, stakes), the precise action you took to communicate, coordinate or arbitrate, and the result -- even an imperfect one. Name the CRM behaviour explicitly at stake (communication, speaking up, workload sharing...)."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation (équipe, enjeu) -> action de communication/coordination -> résultat -> ce que je changerais/répéterais.",
+        "en": "Situation (team, stakes) -> communication/coordination action -> result -> what I would repeat or change."
+      },
+      "tags": [
+        "interview",
+        "interview.crm_teamwork"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.crm_teamwork.0004",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "crm_teamwork",
+      "question": {
+        "fr": "Décrivez une fois où vous avez dû donner un retour difficile à un pair.",
+        "en": "Describe a time you had to give difficult feedback to a peer."
+      },
+      "guidance": {
+        "fr": "Décrivez une situation réelle (qui, quoi, enjeu), l'action précise que vous avez prise pour communiquer, coordonner ou arbitrer, et le résultat obtenu -- y compris si le résultat a été imparfait. Nommez explicitement le comportement CRM en jeu (communication, remise en question, partage de charge...).",
+        "en": "Describe a real situation (who, what, stakes), the precise action you took to communicate, coordinate or arbitrate, and the result -- even an imperfect one. Name the CRM behaviour explicitly at stake (communication, speaking up, workload sharing...)."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation (équipe, enjeu) -> action de communication/coordination -> résultat -> ce que je changerais/répéterais.",
+        "en": "Situation (team, stakes) -> communication/coordination action -> result -> what I would repeat or change."
+      },
+      "tags": [
+        "interview",
+        "interview.crm_teamwork"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.crm_teamwork.0005",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "crm_teamwork",
+      "question": {
+        "fr": "Que faites-vous quand vous réalisez, en pleine tâche, que vous avez commis une erreur que les autres n'ont pas remarquée ?",
+        "en": "What do you do when you realise, mid-task, that you made a mistake others haven't noticed?"
+      },
+      "guidance": {
+        "fr": "Décrivez une situation réelle (qui, quoi, enjeu), l'action précise que vous avez prise pour communiquer, coordonner ou arbitrer, et le résultat obtenu -- y compris si le résultat a été imparfait. Nommez explicitement le comportement CRM en jeu (communication, remise en question, partage de charge...).",
+        "en": "Describe a real situation (who, what, stakes), the precise action you took to communicate, coordinate or arbitrate, and the result -- even an imperfect one. Name the CRM behaviour explicitly at stake (communication, speaking up, workload sharing...)."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation (équipe, enjeu) -> action de communication/coordination -> résultat -> ce que je changerais/répéterais.",
+        "en": "Situation (team, stakes) -> communication/coordination action -> result -> what I would repeat or change."
+      },
+      "tags": [
+        "interview",
+        "interview.crm_teamwork"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.crm_teamwork.0006",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "crm_teamwork",
+      "question": {
+        "fr": "Comment géreriez-vous un collègue qui bâcle systématiquement une procédure partagée ?",
+        "en": "How would you handle a colleague who consistently cuts corners on a shared procedure?"
+      },
+      "guidance": {
+        "fr": "Décrivez une situation réelle (qui, quoi, enjeu), l'action précise que vous avez prise pour communiquer, coordonner ou arbitrer, et le résultat obtenu -- y compris si le résultat a été imparfait. Nommez explicitement le comportement CRM en jeu (communication, remise en question, partage de charge...).",
+        "en": "Describe a real situation (who, what, stakes), the precise action you took to communicate, coordinate or arbitrate, and the result -- even an imperfect one. Name the CRM behaviour explicitly at stake (communication, speaking up, workload sharing...)."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation (équipe, enjeu) -> action de communication/coordination -> résultat -> ce que je changerais/répéterais.",
+        "en": "Situation (team, stakes) -> communication/coordination action -> result -> what I would repeat or change."
+      },
+      "tags": [
+        "interview",
+        "interview.crm_teamwork"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.crm_teamwork.0007",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "crm_teamwork",
+      "question": {
+        "fr": "Racontez une fois où vous avez dû suivre une décision avec laquelle vous étiez en désaccord intérieurement.",
+        "en": "Tell me about a time you had to follow a decision you privately disagreed with."
+      },
+      "guidance": {
+        "fr": "Décrivez une situation réelle (qui, quoi, enjeu), l'action précise que vous avez prise pour communiquer, coordonner ou arbitrer, et le résultat obtenu -- y compris si le résultat a été imparfait. Nommez explicitement le comportement CRM en jeu (communication, remise en question, partage de charge...).",
+        "en": "Describe a real situation (who, what, stakes), the precise action you took to communicate, coordinate or arbitrate, and the result -- even an imperfect one. Name the CRM behaviour explicitly at stake (communication, speaking up, workload sharing...)."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation (équipe, enjeu) -> action de communication/coordination -> résultat -> ce que je changerais/répéterais.",
+        "en": "Situation (team, stakes) -> communication/coordination action -> result -> what I would repeat or change."
+      },
+      "tags": [
+        "interview",
+        "interview.crm_teamwork"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.crm_teamwork.0008",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "crm_teamwork",
+      "question": {
+        "fr": "À quoi ressemble concrètement, pour vous, « une bonne communication sous pression » ?",
+        "en": "What does \"good communication under pressure\" look like to you, concretely?"
+      },
+      "guidance": {
+        "fr": "Décrivez une situation réelle (qui, quoi, enjeu), l'action précise que vous avez prise pour communiquer, coordonner ou arbitrer, et le résultat obtenu -- y compris si le résultat a été imparfait. Nommez explicitement le comportement CRM en jeu (communication, remise en question, partage de charge...).",
+        "en": "Describe a real situation (who, what, stakes), the precise action you took to communicate, coordinate or arbitrate, and the result -- even an imperfect one. Name the CRM behaviour explicitly at stake (communication, speaking up, workload sharing...)."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation (équipe, enjeu) -> action de communication/coordination -> résultat -> ce que je changerais/répéterais.",
+        "en": "Situation (team, stakes) -> communication/coordination action -> result -> what I would repeat or change."
+      },
+      "tags": [
+        "interview",
+        "interview.crm_teamwork"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.crm_teamwork.0009",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "crm_teamwork",
+      "question": {
+        "fr": "Décrivez une fois où vous avez dû coordonner plusieurs personnes aux priorités contradictoires.",
+        "en": "Describe a time you had to coordinate several people with conflicting priorities."
+      },
+      "guidance": {
+        "fr": "Décrivez une situation réelle (qui, quoi, enjeu), l'action précise que vous avez prise pour communiquer, coordonner ou arbitrer, et le résultat obtenu -- y compris si le résultat a été imparfait. Nommez explicitement le comportement CRM en jeu (communication, remise en question, partage de charge...).",
+        "en": "Describe a real situation (who, what, stakes), the precise action you took to communicate, coordinate or arbitrate, and the result -- even an imperfect one. Name the CRM behaviour explicitly at stake (communication, speaking up, workload sharing...)."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation (équipe, enjeu) -> action de communication/coordination -> résultat -> ce que je changerais/répéterais.",
+        "en": "Situation (team, stakes) -> communication/coordination action -> result -> what I would repeat or change."
+      },
+      "tags": [
+        "interview",
+        "interview.crm_teamwork"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.crm_teamwork.0010",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "crm_teamwork",
+      "question": {
+        "fr": "Comment construisez-vous rapidement la confiance avec des personnes que vous venez de rencontrer et dont vous devez dépendre ?",
+        "en": "How do you build trust quickly with people you've just met and must rely on?"
+      },
+      "guidance": {
+        "fr": "Décrivez une situation réelle (qui, quoi, enjeu), l'action précise que vous avez prise pour communiquer, coordonner ou arbitrer, et le résultat obtenu -- y compris si le résultat a été imparfait. Nommez explicitement le comportement CRM en jeu (communication, remise en question, partage de charge...).",
+        "en": "Describe a real situation (who, what, stakes), the precise action you took to communicate, coordinate or arbitrate, and the result -- even an imperfect one. Name the CRM behaviour explicitly at stake (communication, speaking up, workload sharing...)."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation (équipe, enjeu) -> action de communication/coordination -> résultat -> ce que je changerais/répéterais.",
+        "en": "Situation (team, stakes) -> communication/coordination action -> result -> what I would repeat or change."
+      },
+      "tags": [
+        "interview",
+        "interview.crm_teamwork"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    }
+  ]
+}

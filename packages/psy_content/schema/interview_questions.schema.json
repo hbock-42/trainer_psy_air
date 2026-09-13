@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trainer-psy-air.local/schema/interview_questions.schema.json",
+  "title": "InterviewQuestionBank file",
+  "description": "One JSON file under assets/content/psy2/<family>/questions/. Holds the original PSY2 interview questions of one theme (docs/content/psy2-spec.md §4.1). Dart: InterviewQuestionBank, InterviewQuestion.",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "kind": { "const": "interview_questions" },
+    "familyId": { "$ref": "common.schema.json#/$defs/Id", "description": "Always \"interview\" for PSY2." },
+    "questions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/InterviewQuestion" },
+      "minItems": 1,
+      "maxItems": 100
+    }
+  },
+  "required": ["kind", "familyId", "questions"],
+  "additionalProperties": false,
+  "$defs": {
+    "InterviewTheme": {
+      "type": "string",
+      "description": "One of the seven reported PSY2 interview themes (spec §4.1).",
+      "enum": [
+        "motivation",
+        "background",
+        "crm_teamwork",
+        "stress",
+        "self_awareness",
+        "aviation_knowledge",
+        "reflective"
+      ]
+    },
+    "InterviewQuestion": {
+      "type": "object",
+      "description": "One original interview question, never a leaked/copied real question (author-content skill, legal note).",
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/Id", "description": "interview.<theme>.<nnnn>, e.g. interview.motivation.0001" },
+        "version": { "$ref": "common.schema.json#/$defs/Version" },
+        "familyId": { "$ref": "common.schema.json#/$defs/Id" },
+        "theme": { "$ref": "#/$defs/InterviewTheme" },
+        "question": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "The question itself, original wording." },
+        "guidance": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "What a strong answer covers (STAR-shaped: situation, action, result/reasoning) without mandating the acronym; never a scripted answer. May be shared across every question of a theme." },
+        "modelAnswerSkeleton": { "$ref": "common.schema.json#/$defs/LocalizedText", "description": "A structural skeleton (e.g. \"Situation -> action -> result -> what I'd repeat/change\"), not a written-out answer." },
+        "tags": { "$ref": "common.schema.json#/$defs/Tags" },
+        "status": { "$ref": "common.schema.json#/$defs/Status" },
+        "meta": { "$ref": "common.schema.json#/$defs/Meta" }
+      },
+      "required": ["id", "version", "familyId", "theme", "question", "guidance", "modelAnswerSkeleton"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -426,7 +426,11 @@ void main() {
       );
       final container = await pumpFullApp(tester, content: content);
 
-      await tester.tap(find.text(l10nFr.flashcardsHomeTitle));
+      // The module switch now offers PSY0/PSY1/PSY2 (US-111), so this card
+      // is not guaranteed to be within the initial viewport.
+      final dueCard = find.text(l10nFr.flashcardsHomeTitle);
+      await tester.ensureVisible(dueCard);
+      await tester.tap(dueCard);
       await tester.pumpAndSettle();
 
       expect(

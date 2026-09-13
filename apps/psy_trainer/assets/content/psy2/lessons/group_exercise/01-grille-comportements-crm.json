@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.group_exercise.01",
+  "version": 1,
+  "moduleId": "psy2",
+  "familyId": "group_exercise",
+  "order": 1,
+  "title": {
+    "fr": "La grille des six comportements CRM",
+    "en": "The six CRM behaviours rubric"
+  },
+  "summary": {
+    "fr": "Communication, leadership/suivisme, conscience de la situation, prise de décision, gestion de la charge, esprit d'équipe : ce qu'un observateur regarde concrètement.",
+    "en": "Communication, leadership/followership, situational awareness, decision-making, workload management, teamwork: what an observer concretely looks for."
+  },
+  "file": { "fr": "lessons/group_exercise/01-grille-comportements-crm.fr.md" },
+  "estimatedReadMin": 8,
+  "difficulty": 2,
+  "tags": ["psy2.group_exercise", "psy2.group_exercise.crm"],
+  "practiceTags": [],
+  "deckIds": ["group_exercise.deck.crm"],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "docs/content/psy2-spec.md §4.2 (six-dimension CRM rubric, reported)"
+  }
+}

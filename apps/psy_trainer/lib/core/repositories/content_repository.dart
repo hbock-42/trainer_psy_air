@@ -79,4 +79,12 @@ abstract interface class ContentRepository {
   Future<List<LexicalField>> lexicalFields({String? familyId});
 
   Future<LexicalField?> lexicalField(String id);
+
+  /// PSY2 interview practice questions (`interview.<theme>.<nnnn>`,
+  /// US-111), optionally restricted to one family (always `interview`
+  /// today), ordered by id. The interview practice screen draws its themes
+  /// and questions from these.
+  Future<List<InterviewQuestion>> interviewQuestions({String? familyId});
+
+  Future<InterviewQuestion?> interviewQuestion(String id);
 }

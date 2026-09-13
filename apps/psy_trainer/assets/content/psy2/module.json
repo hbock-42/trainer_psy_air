@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../../packages/psy_content/schema/family.schema.json#/$defs/Module",
+  "kind": "module",
+  "id": "psy2",
+  "version": 1,
+  "order": 2,
+  "name": {
+    "fr": "PSY2 — sélection finale Cadets",
+    "en": "PSY2 — Cadet final selection"
+  },
+  "description": {
+    "fr": "Dernière étape de la sélection Cadets, au centre de sélection Air France (Roissy-CDG rapporté) : deux inventaires de personnalité, un exercice de groupe et des entretiens individuels avec des psychologues et des pilotes. Aucun engin chronométré ici : l'app propose une banque de questions d'entretien, une grille de comportements CRM et des auto-évaluations. Contenu et confidentialité: `docs/content/psy2-spec.md`.",
+    "en": "Final stage of the Cadet selection, at the Air France selection centre (reported at Roissy-CDG): two personality inventories, a group exercise and individual interviews with psychologists and pilots. No timed engine here: the app offers an interview question bank, a CRM behaviour rubric and self-assessments. Content and confidentiality: `docs/content/psy2-spec.md`."
+  },
+  "familyIds": ["interview", "group_exercise"],
+  "status": "published"
+}

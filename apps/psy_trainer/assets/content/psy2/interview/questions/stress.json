@@ -1,0 +1,277 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/interview_questions.schema.json",
+  "kind": "interview_questions",
+  "familyId": "interview",
+  "questions": [
+    {
+      "id": "interview.stress.0001",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "stress",
+      "question": {
+        "fr": "Décrivez la situation la plus stressante que vous ayez affrontée et comment vous vous en êtes sorti.",
+        "en": "Describe the most stressful situation you've faced and how you got through it."
+      },
+      "guidance": {
+        "fr": "Nommez un signe concret de charge (physique, cognitif, comportemental), l'action correctrice prise sur le moment, et ce que vous avez changé depuis. Le jury cherche une lucidité sur soi, pas une image de contrôle total en toutes circonstances.",
+        "en": "Name a concrete sign of overload (physical, cognitive, behavioural), the corrective action taken in the moment, and what you changed since. The panel is looking for self-awareness, not an image of total control in every circumstance."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation sous pression -> signe/réaction constatée -> action prise pour reprendre la main -> ce que j'ai changé depuis.",
+        "en": "Situation under pressure -> sign/reaction noticed -> action taken to regain control -> what I changed since."
+      },
+      "tags": [
+        "interview",
+        "interview.stress"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.stress.0002",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "stress",
+      "question": {
+        "fr": "Quels signes physiques ou mentaux vous indiquent que vous êtes en surcharge ?",
+        "en": "What physical or mental signs tell you that you're becoming overloaded?"
+      },
+      "guidance": {
+        "fr": "Nommez un signe concret de charge (physique, cognitif, comportemental), l'action correctrice prise sur le moment, et ce que vous avez changé depuis. Le jury cherche une lucidité sur soi, pas une image de contrôle total en toutes circonstances.",
+        "en": "Name a concrete sign of overload (physical, cognitive, behavioural), the corrective action taken in the moment, and what you changed since. The panel is looking for self-awareness, not an image of total control in every circumstance."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation sous pression -> signe/réaction constatée -> action prise pour reprendre la main -> ce que j'ai changé depuis.",
+        "en": "Situation under pressure -> sign/reaction noticed -> action taken to regain control -> what I changed since."
+      },
+      "tags": [
+        "interview",
+        "interview.stress"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.stress.0003",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "stress",
+      "question": {
+        "fr": "Racontez une fois où vous avez dû prendre une décision rapide avec des informations incomplètes.",
+        "en": "Tell me about a time you had to make a fast decision with incomplete information."
+      },
+      "guidance": {
+        "fr": "Nommez un signe concret de charge (physique, cognitif, comportemental), l'action correctrice prise sur le moment, et ce que vous avez changé depuis. Le jury cherche une lucidité sur soi, pas une image de contrôle total en toutes circonstances.",
+        "en": "Name a concrete sign of overload (physical, cognitive, behavioural), the corrective action taken in the moment, and what you changed since. The panel is looking for self-awareness, not an image of total control in every circumstance."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation sous pression -> signe/réaction constatée -> action prise pour reprendre la main -> ce que j'ai changé depuis.",
+        "en": "Situation under pressure -> sign/reaction noticed -> action taken to regain control -> what I changed since."
+      },
+      "tags": [
+        "interview",
+        "interview.stress"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.stress.0004",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "stress",
+      "question": {
+        "fr": "Comment vous préparez-vous avant un événement à fort enjeu (examen, compétition, prestation) ?",
+        "en": "How do you prepare yourself before a high-stakes event (exam, competition, performance)?"
+      },
+      "guidance": {
+        "fr": "Nommez un signe concret de charge (physique, cognitif, comportemental), l'action correctrice prise sur le moment, et ce que vous avez changé depuis. Le jury cherche une lucidité sur soi, pas une image de contrôle total en toutes circonstances.",
+        "en": "Name a concrete sign of overload (physical, cognitive, behavioural), the corrective action taken in the moment, and what you changed since. The panel is looking for self-awareness, not an image of total control in every circumstance."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation sous pression -> signe/réaction constatée -> action prise pour reprendre la main -> ce que j'ai changé depuis.",
+        "en": "Situation under pressure -> sign/reaction noticed -> action taken to regain control -> what I changed since."
+      },
+      "tags": [
+        "interview",
+        "interview.stress"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.stress.0005",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "stress",
+      "question": {
+        "fr": "Décrivez une fois où le stress vous a fait commettre une erreur. Qu'avez-vous changé ensuite ?",
+        "en": "Describe a time stress caused you to make a mistake. What did you change afterward?"
+      },
+      "guidance": {
+        "fr": "Nommez un signe concret de charge (physique, cognitif, comportemental), l'action correctrice prise sur le moment, et ce que vous avez changé depuis. Le jury cherche une lucidité sur soi, pas une image de contrôle total en toutes circonstances.",
+        "en": "Name a concrete sign of overload (physical, cognitive, behavioural), the corrective action taken in the moment, and what you changed since. The panel is looking for self-awareness, not an image of total control in every circumstance."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation sous pression -> signe/réaction constatée -> action prise pour reprendre la main -> ce que j'ai changé depuis.",
+        "en": "Situation under pressure -> sign/reaction noticed -> action taken to regain control -> what I changed since."
+      },
+      "tags": [
+        "interview",
+        "interview.stress"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.stress.0006",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "stress",
+      "question": {
+        "fr": "Que faites-vous dans les minutes qui suivent un imprévu, avant d'agir ?",
+        "en": "What do you do in the minutes right after something goes wrong, before acting?"
+      },
+      "guidance": {
+        "fr": "Nommez un signe concret de charge (physique, cognitif, comportemental), l'action correctrice prise sur le moment, et ce que vous avez changé depuis. Le jury cherche une lucidité sur soi, pas une image de contrôle total en toutes circonstances.",
+        "en": "Name a concrete sign of overload (physical, cognitive, behavioural), the corrective action taken in the moment, and what you changed since. The panel is looking for self-awareness, not an image of total control in every circumstance."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation sous pression -> signe/réaction constatée -> action prise pour reprendre la main -> ce que j'ai changé depuis.",
+        "en": "Situation under pressure -> sign/reaction noticed -> action taken to regain control -> what I changed since."
+      },
+      "tags": [
+        "interview",
+        "interview.stress"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.stress.0007",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "stress",
+      "question": {
+        "fr": "Comment distinguez-vous un problème urgent d'un problème important lorsque les deux apparaissent en même temps ?",
+        "en": "How do you separate an urgent problem from an important one when both appear at once?"
+      },
+      "guidance": {
+        "fr": "Nommez un signe concret de charge (physique, cognitif, comportemental), l'action correctrice prise sur le moment, et ce que vous avez changé depuis. Le jury cherche une lucidité sur soi, pas une image de contrôle total en toutes circonstances.",
+        "en": "Name a concrete sign of overload (physical, cognitive, behavioural), the corrective action taken in the moment, and what you changed since. The panel is looking for self-awareness, not an image of total control in every circumstance."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation sous pression -> signe/réaction constatée -> action prise pour reprendre la main -> ce que j'ai changé depuis.",
+        "en": "Situation under pressure -> sign/reaction noticed -> action taken to regain control -> what I changed since."
+      },
+      "tags": [
+        "interview",
+        "interview.stress"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.stress.0008",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "stress",
+      "question": {
+        "fr": "Racontez une échéance que vous avez failli manquer. Qu'est-ce qui s'est mal passé et qu'avez-vous appris ?",
+        "en": "Tell me about a deadline you nearly missed. What went wrong and what did you learn?"
+      },
+      "guidance": {
+        "fr": "Nommez un signe concret de charge (physique, cognitif, comportemental), l'action correctrice prise sur le moment, et ce que vous avez changé depuis. Le jury cherche une lucidité sur soi, pas une image de contrôle total en toutes circonstances.",
+        "en": "Name a concrete sign of overload (physical, cognitive, behavioural), the corrective action taken in the moment, and what you changed since. The panel is looking for self-awareness, not an image of total control in every circumstance."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation sous pression -> signe/réaction constatée -> action prise pour reprendre la main -> ce que j'ai changé depuis.",
+        "en": "Situation under pressure -> sign/reaction noticed -> action taken to regain control -> what I changed since."
+      },
+      "tags": [
+        "interview",
+        "interview.stress"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.stress.0009",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "stress",
+      "question": {
+        "fr": "Quelles habitudes vous aident à récupérer après une journée éprouvante ?",
+        "en": "What routines help you recover after a demanding day?"
+      },
+      "guidance": {
+        "fr": "Nommez un signe concret de charge (physique, cognitif, comportemental), l'action correctrice prise sur le moment, et ce que vous avez changé depuis. Le jury cherche une lucidité sur soi, pas une image de contrôle total en toutes circonstances.",
+        "en": "Name a concrete sign of overload (physical, cognitive, behavioural), the corrective action taken in the moment, and what you changed since. The panel is looking for self-awareness, not an image of total control in every circumstance."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation sous pression -> signe/réaction constatée -> action prise pour reprendre la main -> ce que j'ai changé depuis.",
+        "en": "Situation under pressure -> sign/reaction noticed -> action taken to regain control -> what I changed since."
+      },
+      "tags": [
+        "interview",
+        "interview.stress"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.stress.0010",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "stress",
+      "question": {
+        "fr": "Décrivez une situation où vous avez dû rester calme alors que quelqu'un près de vous ne l'était pas.",
+        "en": "Describe a situation where you had to stay calm while someone near you was not."
+      },
+      "guidance": {
+        "fr": "Nommez un signe concret de charge (physique, cognitif, comportemental), l'action correctrice prise sur le moment, et ce que vous avez changé depuis. Le jury cherche une lucidité sur soi, pas une image de contrôle total en toutes circonstances.",
+        "en": "Name a concrete sign of overload (physical, cognitive, behavioural), the corrective action taken in the moment, and what you changed since. The panel is looking for self-awareness, not an image of total control in every circumstance."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation sous pression -> signe/réaction constatée -> action prise pour reprendre la main -> ce que j'ai changé depuis.",
+        "en": "Situation under pressure -> sign/reaction noticed -> action taken to regain control -> what I changed since."
+      },
+      "tags": [
+        "interview",
+        "interview.stress"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    }
+  ]
+}

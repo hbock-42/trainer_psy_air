@@ -1,0 +1,277 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/interview_questions.schema.json",
+  "kind": "interview_questions",
+  "familyId": "interview",
+  "questions": [
+    {
+      "id": "interview.motivation.0001",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "motivation",
+      "question": {
+        "fr": "Qu'est-ce qui vous a d'abord attiré vers le métier de pilote, et comment cette raison a-t-elle évolué depuis ?",
+        "en": "What first drew you to becoming a pilot, and how has that reason evolved since?"
+      },
+      "guidance": {
+        "fr": "Une réponse solide part d'un exemple concret (un moment, une décision), explique le raisonnement qui l'a guidé, et se termine sur ce que cela dit de votre projet aujourd'hui. Évitez les généralités (\"j'ai toujours rêvé de voler\") sans les rattacher à un fait vérifiable de votre parcours.",
+        "en": "A strong answer starts from a concrete moment or decision, explains the reasoning behind it, and ends with what it says about your project today. Avoid generalities (\"I've always dreamed of flying\") that are not anchored in a verifiable fact of your path."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation ou déclencheur -> décision/action prise -> ce que j'en ai retenu -> comment cela nourrit mon projet aujourd'hui.",
+        "en": "Trigger/situation -> decision or action taken -> what I took from it -> how it feeds my project today."
+      },
+      "tags": [
+        "interview",
+        "interview.motivation"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.motivation.0002",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "motivation",
+      "question": {
+        "fr": "Pourquoi Air France (ou Transavia) en particulier, plutôt qu'une autre compagnie ou une autre filière ?",
+        "en": "Why Air France (or Transavia) specifically, rather than another operator or track?"
+      },
+      "guidance": {
+        "fr": "Une réponse solide part d'un exemple concret (un moment, une décision), explique le raisonnement qui l'a guidé, et se termine sur ce que cela dit de votre projet aujourd'hui. Évitez les généralités (\"j'ai toujours rêvé de voler\") sans les rattacher à un fait vérifiable de votre parcours.",
+        "en": "A strong answer starts from a concrete moment or decision, explains the reasoning behind it, and ends with what it says about your project today. Avoid generalities (\"I've always dreamed of flying\") that are not anchored in a verifiable fact of your path."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation ou déclencheur -> décision/action prise -> ce que j'en ai retenu -> comment cela nourrit mon projet aujourd'hui.",
+        "en": "Trigger/situation -> decision or action taken -> what I took from it -> how it feeds my project today."
+      },
+      "tags": [
+        "interview",
+        "interview.motivation"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.motivation.0003",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "motivation",
+      "question": {
+        "fr": "Racontez-moi votre parcours jusqu'à cet entretien : qu'est-ce que cela révèle de vous ?",
+        "en": "Walk me through your path to this interview -- what does it show about you?"
+      },
+      "guidance": {
+        "fr": "Une réponse solide part d'un exemple concret (un moment, une décision), explique le raisonnement qui l'a guidé, et se termine sur ce que cela dit de votre projet aujourd'hui. Évitez les généralités (\"j'ai toujours rêvé de voler\") sans les rattacher à un fait vérifiable de votre parcours.",
+        "en": "A strong answer starts from a concrete moment or decision, explains the reasoning behind it, and ends with what it says about your project today. Avoid generalities (\"I've always dreamed of flying\") that are not anchored in a verifiable fact of your path."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation ou déclencheur -> décision/action prise -> ce que j'en ai retenu -> comment cela nourrit mon projet aujourd'hui.",
+        "en": "Trigger/situation -> decision or action taken -> what I took from it -> how it feeds my project today."
+      },
+      "tags": [
+        "interview",
+        "interview.motivation"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.motivation.0004",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "motivation",
+      "question": {
+        "fr": "Quelle autre carrière avez-vous sérieusement envisagée, et pourquoi ne l'avez-vous pas choisie ?",
+        "en": "What alternative career did you seriously consider, and why didn't you choose it?"
+      },
+      "guidance": {
+        "fr": "Une réponse solide part d'un exemple concret (un moment, une décision), explique le raisonnement qui l'a guidé, et se termine sur ce que cela dit de votre projet aujourd'hui. Évitez les généralités (\"j'ai toujours rêvé de voler\") sans les rattacher à un fait vérifiable de votre parcours.",
+        "en": "A strong answer starts from a concrete moment or decision, explains the reasoning behind it, and ends with what it says about your project today. Avoid generalities (\"I've always dreamed of flying\") that are not anchored in a verifiable fact of your path."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation ou déclencheur -> décision/action prise -> ce que j'en ai retenu -> comment cela nourrit mon projet aujourd'hui.",
+        "en": "Trigger/situation -> decision or action taken -> what I took from it -> how it feeds my project today."
+      },
+      "tags": [
+        "interview",
+        "interview.motivation"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.motivation.0005",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "motivation",
+      "question": {
+        "fr": "Où vous voyez-vous professionnellement dans dix ans ?",
+        "en": "Where do you see yourself professionally in ten years?"
+      },
+      "guidance": {
+        "fr": "Une réponse solide part d'un exemple concret (un moment, une décision), explique le raisonnement qui l'a guidé, et se termine sur ce que cela dit de votre projet aujourd'hui. Évitez les généralités (\"j'ai toujours rêvé de voler\") sans les rattacher à un fait vérifiable de votre parcours.",
+        "en": "A strong answer starts from a concrete moment or decision, explains the reasoning behind it, and ends with what it says about your project today. Avoid generalities (\"I've always dreamed of flying\") that are not anchored in a verifiable fact of your path."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation ou déclencheur -> décision/action prise -> ce que j'en ai retenu -> comment cela nourrit mon projet aujourd'hui.",
+        "en": "Trigger/situation -> decision or action taken -> what I took from it -> how it feeds my project today."
+      },
+      "tags": [
+        "interview",
+        "interview.motivation"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.motivation.0006",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "motivation",
+      "question": {
+        "fr": "Quelle partie du métier de pilote pensez-vous trouver la plus difficile au quotidien ?",
+        "en": "What part of the pilot's job do you expect to find hardest, day to day?"
+      },
+      "guidance": {
+        "fr": "Une réponse solide part d'un exemple concret (un moment, une décision), explique le raisonnement qui l'a guidé, et se termine sur ce que cela dit de votre projet aujourd'hui. Évitez les généralités (\"j'ai toujours rêvé de voler\") sans les rattacher à un fait vérifiable de votre parcours.",
+        "en": "A strong answer starts from a concrete moment or decision, explains the reasoning behind it, and ends with what it says about your project today. Avoid generalities (\"I've always dreamed of flying\") that are not anchored in a verifiable fact of your path."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation ou déclencheur -> décision/action prise -> ce que j'en ai retenu -> comment cela nourrit mon projet aujourd'hui.",
+        "en": "Trigger/situation -> decision or action taken -> what I took from it -> how it feeds my project today."
+      },
+      "tags": [
+        "interview",
+        "interview.motivation"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.motivation.0007",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "motivation",
+      "question": {
+        "fr": "Qu'avez-vous fait ces douze derniers mois pour préparer activement cette carrière ?",
+        "en": "What have you done in the last twelve months to actively prepare for this career?"
+      },
+      "guidance": {
+        "fr": "Une réponse solide part d'un exemple concret (un moment, une décision), explique le raisonnement qui l'a guidé, et se termine sur ce que cela dit de votre projet aujourd'hui. Évitez les généralités (\"j'ai toujours rêvé de voler\") sans les rattacher à un fait vérifiable de votre parcours.",
+        "en": "A strong answer starts from a concrete moment or decision, explains the reasoning behind it, and ends with what it says about your project today. Avoid generalities (\"I've always dreamed of flying\") that are not anchored in a verifiable fact of your path."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation ou déclencheur -> décision/action prise -> ce que j'en ai retenu -> comment cela nourrit mon projet aujourd'hui.",
+        "en": "Trigger/situation -> decision or action taken -> what I took from it -> how it feeds my project today."
+      },
+      "tags": [
+        "interview",
+        "interview.motivation"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.motivation.0008",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "motivation",
+      "question": {
+        "fr": "Si vous n'êtes pas sélectionné aujourd'hui, que ferez-vous ensuite ?",
+        "en": "If you are not selected today, what would you do next?"
+      },
+      "guidance": {
+        "fr": "Une réponse solide part d'un exemple concret (un moment, une décision), explique le raisonnement qui l'a guidé, et se termine sur ce que cela dit de votre projet aujourd'hui. Évitez les généralités (\"j'ai toujours rêvé de voler\") sans les rattacher à un fait vérifiable de votre parcours.",
+        "en": "A strong answer starts from a concrete moment or decision, explains the reasoning behind it, and ends with what it says about your project today. Avoid generalities (\"I've always dreamed of flying\") that are not anchored in a verifiable fact of your path."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation ou déclencheur -> décision/action prise -> ce que j'en ai retenu -> comment cela nourrit mon projet aujourd'hui.",
+        "en": "Trigger/situation -> decision or action taken -> what I took from it -> how it feeds my project today."
+      },
+      "tags": [
+        "interview",
+        "interview.motivation"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.motivation.0009",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "motivation",
+      "question": {
+        "fr": "Que signifie « être professionnel » pour vous dans le contexte aéronautique ?",
+        "en": "What does \"being a professional\" mean to you in an aviation context?"
+      },
+      "guidance": {
+        "fr": "Une réponse solide part d'un exemple concret (un moment, une décision), explique le raisonnement qui l'a guidé, et se termine sur ce que cela dit de votre projet aujourd'hui. Évitez les généralités (\"j'ai toujours rêvé de voler\") sans les rattacher à un fait vérifiable de votre parcours.",
+        "en": "A strong answer starts from a concrete moment or decision, explains the reasoning behind it, and ends with what it says about your project today. Avoid generalities (\"I've always dreamed of flying\") that are not anchored in a verifiable fact of your path."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation ou déclencheur -> décision/action prise -> ce que j'en ai retenu -> comment cela nourrit mon projet aujourd'hui.",
+        "en": "Trigger/situation -> decision or action taken -> what I took from it -> how it feeds my project today."
+      },
+      "tags": [
+        "interview",
+        "interview.motivation"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.motivation.0010",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "motivation",
+      "question": {
+        "fr": "Selon votre entourage, quelle est votre raison la plus forte de poursuivre cette voie, au-delà de la passion ?",
+        "en": "What would your entourage say is your strongest reason for pursuing this, beyond passion?"
+      },
+      "guidance": {
+        "fr": "Une réponse solide part d'un exemple concret (un moment, une décision), explique le raisonnement qui l'a guidé, et se termine sur ce que cela dit de votre projet aujourd'hui. Évitez les généralités (\"j'ai toujours rêvé de voler\") sans les rattacher à un fait vérifiable de votre parcours.",
+        "en": "A strong answer starts from a concrete moment or decision, explains the reasoning behind it, and ends with what it says about your project today. Avoid generalities (\"I've always dreamed of flying\") that are not anchored in a verifiable fact of your path."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Situation ou déclencheur -> décision/action prise -> ce que j'en ai retenu -> comment cela nourrit mon projet aujourd'hui.",
+        "en": "Trigger/situation -> decision or action taken -> what I took from it -> how it feeds my project today."
+      },
+      "tags": [
+        "interview",
+        "interview.motivation"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    }
+  ]
+}
