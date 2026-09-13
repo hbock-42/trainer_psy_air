@@ -1366,6 +1366,37 @@
   "settingsKeypadLabel": "Numeric keypad layout",
   "settingsKeypadPhone": "Phone",
   "settingsKeypadCalculator": "Calculator",
+  "settingsSectionGamepad": "Gamepads",
+  "settingsGamepadNoneDetected": "No gamepad detected. Plug in a dual-analog-stick gamepad, or use the keyboard (non-representative).",
+  "settingsGamepadLiveAxesLabel": "Live axes",
+  "settingsGamepadDeadZoneLabel": "Dead zone",
+  "settingsGamepadDeadZoneLow": "Low",
+  "settingsGamepadDeadZoneMedium": "Medium",
+  "settingsGamepadDeadZoneHigh": "High",
+  "settingsGamepadInvertYLabel": "Invert Y axis (tracking)",
+  "settingsGamepadInvertYOn": "On",
+  "settingsGamepadInvertYOff": "Off",
+  "settingsGamepadSelectButtonLabel": "Gauge select button",
+  "settingsGamepadRecentreButtonLabel": "Gauge recentre button",
+  "p1PsychomotorExampleGauges": "Left stick + 2 thumb buttons: select then recentre the 4 drifting gauges before they reach their red zone.",
+  "p1PsychomotorExampleTracking": "Right stick: keep the crosshair aligned with the moving target, continuous proportional control.",
+  "p1PsychomotorExampleLetters": "F1 to F9 keys: cancel the 3 target letters among the 9 letters shown.",
+  "p1PsychomotorExampleArithmetic": "Numpad: answer the addition/subtraction problem that appears every 12 seconds.",
+  "p1PsychomotorKeyboardFallbackBanner": "Keyboard training: not representative of the real test. Plug in a gamepad as soon as you can (Settings → Gamepads).",
+  "p1PsychomotorDeviceRequired": "This activity needs a dual-analog-stick gamepad. Plug one in to continue, or skip this section.",
+  "p1PsychomotorChannelGauges": "Gauges",
+  "p1PsychomotorChannelTracking": "Tracking",
+  "p1PsychomotorChannelLetters": "Letters",
+  "p1PsychomotorChannelArithmetic": "Arithmetic",
+  "p1PsychomotorSummaryTitle": "Per-channel summary",
+  "p1PsychomotorSummaryZeroed": "Total score dropped to 0: the \"{channel}\" channel entered its red zone.",
+  "@p1PsychomotorSummaryZeroed": {
+    "placeholders": {
+      "channel": {
+        "type": "String"
+      }
+    }
+  },
   "settingsSectionReminders": "Reminders",
   "settingsReminderLabel": "Daily reminder",
   "settingsReminderOn": "Reminder on",

@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  gamepads_windows
   share_plus
   url_launcher_windows
 )

@@ -19,6 +19,7 @@ import '../domain/app_settings.dart';
 import 'providers/app_settings_provider.dart';
 import 'providers/reminder_settings_provider.dart';
 import 'widgets/backup_section.dart';
+import 'widgets/gamepad_section.dart';
 import 'widgets/time_stepper_field.dart';
 
 /// The Settings tab (US-091): profile summary, appearance (theme/language),
@@ -174,6 +175,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               ),
               SizedBox(height: theme.spacing.xl),
               const _ReminderSection(),
+              SizedBox(height: theme.spacing.xl),
+              const GamepadSection(),
               SizedBox(height: theme.spacing.xl),
               SectionHeader(title: context.l10n.settingsSectionGoal),
               SizedBox(height: theme.spacing.sm),

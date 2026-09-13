@@ -3150,6 +3150,150 @@ abstract class AppLocalizations {
   /// **'Calculatrice'**
   String get settingsKeypadCalculator;
 
+  /// No description provided for @settingsSectionGamepad.
+  ///
+  /// In fr, this message translates to:
+  /// **'Manettes'**
+  String get settingsSectionGamepad;
+
+  /// No description provided for @settingsGamepadNoneDetected.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune manette détectée. Branchez un gamepad à deux sticks analogiques, ou utilisez le clavier (non représentatif).'**
+  String get settingsGamepadNoneDetected;
+
+  /// No description provided for @settingsGamepadLiveAxesLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Axes en direct'**
+  String get settingsGamepadLiveAxesLabel;
+
+  /// No description provided for @settingsGamepadDeadZoneLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Zone morte'**
+  String get settingsGamepadDeadZoneLabel;
+
+  /// No description provided for @settingsGamepadDeadZoneLow.
+  ///
+  /// In fr, this message translates to:
+  /// **'Faible'**
+  String get settingsGamepadDeadZoneLow;
+
+  /// No description provided for @settingsGamepadDeadZoneMedium.
+  ///
+  /// In fr, this message translates to:
+  /// **'Moyenne'**
+  String get settingsGamepadDeadZoneMedium;
+
+  /// No description provided for @settingsGamepadDeadZoneHigh.
+  ///
+  /// In fr, this message translates to:
+  /// **'Large'**
+  String get settingsGamepadDeadZoneHigh;
+
+  /// No description provided for @settingsGamepadInvertYLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Inverser l\'axe Y (poursuite)'**
+  String get settingsGamepadInvertYLabel;
+
+  /// No description provided for @settingsGamepadInvertYOn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Activé'**
+  String get settingsGamepadInvertYOn;
+
+  /// No description provided for @settingsGamepadInvertYOff.
+  ///
+  /// In fr, this message translates to:
+  /// **'Désactivé'**
+  String get settingsGamepadInvertYOff;
+
+  /// No description provided for @settingsGamepadSelectButtonLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bouton de sélection de jauge'**
+  String get settingsGamepadSelectButtonLabel;
+
+  /// No description provided for @settingsGamepadRecentreButtonLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bouton de recentrage de jauge'**
+  String get settingsGamepadRecentreButtonLabel;
+
+  /// No description provided for @p1PsychomotorExampleGauges.
+  ///
+  /// In fr, this message translates to:
+  /// **'Joystick gauche + 2 boutons du pouce : sélectionnez puis recentrez les 4 jauges qui dérivent avant qu\'elles n\'atteignent leur zone rouge.'**
+  String get p1PsychomotorExampleGauges;
+
+  /// No description provided for @p1PsychomotorExampleTracking.
+  ///
+  /// In fr, this message translates to:
+  /// **'Joystick droit : maintenez la mire alignée avec la cible mobile, en contrôle proportionnel continu.'**
+  String get p1PsychomotorExampleTracking;
+
+  /// No description provided for @p1PsychomotorExampleLetters.
+  ///
+  /// In fr, this message translates to:
+  /// **'Touches F1 à F9 : annulez les 3 lettres cibles parmi les 9 lettres affichées.'**
+  String get p1PsychomotorExampleLetters;
+
+  /// No description provided for @p1PsychomotorExampleArithmetic.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pavé numérique : répondez au calcul d\'addition/soustraction qui apparaît toutes les 12 secondes.'**
+  String get p1PsychomotorExampleArithmetic;
+
+  /// No description provided for @p1PsychomotorKeyboardFallbackBanner.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entraînement au clavier : non représentatif de l\'épreuve réelle. Branchez un gamepad dès que possible (Réglages → Manettes).'**
+  String get p1PsychomotorKeyboardFallbackBanner;
+
+  /// No description provided for @p1PsychomotorDeviceRequired.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cette épreuve nécessite un gamepad à deux sticks analogiques. Branchez-en un pour continuer, ou passez cette section.'**
+  String get p1PsychomotorDeviceRequired;
+
+  /// No description provided for @p1PsychomotorChannelGauges.
+  ///
+  /// In fr, this message translates to:
+  /// **'Jauges'**
+  String get p1PsychomotorChannelGauges;
+
+  /// No description provided for @p1PsychomotorChannelTracking.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poursuite'**
+  String get p1PsychomotorChannelTracking;
+
+  /// No description provided for @p1PsychomotorChannelLetters.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lettres'**
+  String get p1PsychomotorChannelLetters;
+
+  /// No description provided for @p1PsychomotorChannelArithmetic.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul'**
+  String get p1PsychomotorChannelArithmetic;
+
+  /// No description provided for @p1PsychomotorSummaryTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Récapitulatif par canal'**
+  String get p1PsychomotorSummaryTitle;
+
+  /// No description provided for @p1PsychomotorSummaryZeroed.
+  ///
+  /// In fr, this message translates to:
+  /// **'Score total tombé à 0 : le canal « {channel} » est entré en zone rouge.'**
+  String p1PsychomotorSummaryZeroed(String channel);
+
   /// No description provided for @settingsSectionReminders.
   ///
   /// In fr, this message translates to:

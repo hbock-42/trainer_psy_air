@@ -1366,6 +1366,37 @@
   "settingsKeypadLabel": "Disposition du clavier numérique",
   "settingsKeypadPhone": "Téléphone",
   "settingsKeypadCalculator": "Calculatrice",
+  "settingsSectionGamepad": "Manettes",
+  "settingsGamepadNoneDetected": "Aucune manette détectée. Branchez un gamepad à deux sticks analogiques, ou utilisez le clavier (non représentatif).",
+  "settingsGamepadLiveAxesLabel": "Axes en direct",
+  "settingsGamepadDeadZoneLabel": "Zone morte",
+  "settingsGamepadDeadZoneLow": "Faible",
+  "settingsGamepadDeadZoneMedium": "Moyenne",
+  "settingsGamepadDeadZoneHigh": "Large",
+  "settingsGamepadInvertYLabel": "Inverser l'axe Y (poursuite)",
+  "settingsGamepadInvertYOn": "Activé",
+  "settingsGamepadInvertYOff": "Désactivé",
+  "settingsGamepadSelectButtonLabel": "Bouton de sélection de jauge",
+  "settingsGamepadRecentreButtonLabel": "Bouton de recentrage de jauge",
+  "p1PsychomotorExampleGauges": "Joystick gauche + 2 boutons du pouce : sélectionnez puis recentrez les 4 jauges qui dérivent avant qu'elles n'atteignent leur zone rouge.",
+  "p1PsychomotorExampleTracking": "Joystick droit : maintenez la mire alignée avec la cible mobile, en contrôle proportionnel continu.",
+  "p1PsychomotorExampleLetters": "Touches F1 à F9 : annulez les 3 lettres cibles parmi les 9 lettres affichées.",
+  "p1PsychomotorExampleArithmetic": "Pavé numérique : répondez au calcul d'addition/soustraction qui apparaît toutes les 12 secondes.",
+  "p1PsychomotorKeyboardFallbackBanner": "Entraînement au clavier : non représentatif de l'épreuve réelle. Branchez un gamepad dès que possible (Réglages → Manettes).",
+  "p1PsychomotorDeviceRequired": "Cette épreuve nécessite un gamepad à deux sticks analogiques. Branchez-en un pour continuer, ou passez cette section.",
+  "p1PsychomotorChannelGauges": "Jauges",
+  "p1PsychomotorChannelTracking": "Poursuite",
+  "p1PsychomotorChannelLetters": "Lettres",
+  "p1PsychomotorChannelArithmetic": "Calcul",
+  "p1PsychomotorSummaryTitle": "Récapitulatif par canal",
+  "p1PsychomotorSummaryZeroed": "Score total tombé à 0 : le canal « {channel} » est entré en zone rouge.",
+  "@p1PsychomotorSummaryZeroed": {
+    "placeholders": {
+      "channel": {
+        "type": "String"
+      }
+    }
+  },
   "settingsSectionReminders": "Rappels",
   "settingsReminderLabel": "Rappel quotidien",
   "settingsReminderOn": "Rappel activé",

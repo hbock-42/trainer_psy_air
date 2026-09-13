@@ -1926,6 +1926,87 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsKeypadCalculator => 'Calculator';
 
   @override
+  String get settingsSectionGamepad => 'Gamepads';
+
+  @override
+  String get settingsGamepadNoneDetected =>
+      'No gamepad detected. Plug in a dual-analog-stick gamepad, or use the keyboard (non-representative).';
+
+  @override
+  String get settingsGamepadLiveAxesLabel => 'Live axes';
+
+  @override
+  String get settingsGamepadDeadZoneLabel => 'Dead zone';
+
+  @override
+  String get settingsGamepadDeadZoneLow => 'Low';
+
+  @override
+  String get settingsGamepadDeadZoneMedium => 'Medium';
+
+  @override
+  String get settingsGamepadDeadZoneHigh => 'High';
+
+  @override
+  String get settingsGamepadInvertYLabel => 'Invert Y axis (tracking)';
+
+  @override
+  String get settingsGamepadInvertYOn => 'On';
+
+  @override
+  String get settingsGamepadInvertYOff => 'Off';
+
+  @override
+  String get settingsGamepadSelectButtonLabel => 'Gauge select button';
+
+  @override
+  String get settingsGamepadRecentreButtonLabel => 'Gauge recentre button';
+
+  @override
+  String get p1PsychomotorExampleGauges =>
+      'Left stick + 2 thumb buttons: select then recentre the 4 drifting gauges before they reach their red zone.';
+
+  @override
+  String get p1PsychomotorExampleTracking =>
+      'Right stick: keep the crosshair aligned with the moving target, continuous proportional control.';
+
+  @override
+  String get p1PsychomotorExampleLetters =>
+      'F1 to F9 keys: cancel the 3 target letters among the 9 letters shown.';
+
+  @override
+  String get p1PsychomotorExampleArithmetic =>
+      'Numpad: answer the addition/subtraction problem that appears every 12 seconds.';
+
+  @override
+  String get p1PsychomotorKeyboardFallbackBanner =>
+      'Keyboard training: not representative of the real test. Plug in a gamepad as soon as you can (Settings → Gamepads).';
+
+  @override
+  String get p1PsychomotorDeviceRequired =>
+      'This activity needs a dual-analog-stick gamepad. Plug one in to continue, or skip this section.';
+
+  @override
+  String get p1PsychomotorChannelGauges => 'Gauges';
+
+  @override
+  String get p1PsychomotorChannelTracking => 'Tracking';
+
+  @override
+  String get p1PsychomotorChannelLetters => 'Letters';
+
+  @override
+  String get p1PsychomotorChannelArithmetic => 'Arithmetic';
+
+  @override
+  String get p1PsychomotorSummaryTitle => 'Per-channel summary';
+
+  @override
+  String p1PsychomotorSummaryZeroed(String channel) {
+    return 'Total score dropped to 0: the \"$channel\" channel entered its red zone.';
+  }
+
+  @override
   String get settingsSectionReminders => 'Reminders';
 
   @override

@@ -1939,6 +1939,88 @@ class AppLocalizationsFr extends AppLocalizations {
   String get settingsKeypadCalculator => 'Calculatrice';
 
   @override
+  String get settingsSectionGamepad => 'Manettes';
+
+  @override
+  String get settingsGamepadNoneDetected =>
+      'Aucune manette détectée. Branchez un gamepad à deux sticks analogiques, ou utilisez le clavier (non représentatif).';
+
+  @override
+  String get settingsGamepadLiveAxesLabel => 'Axes en direct';
+
+  @override
+  String get settingsGamepadDeadZoneLabel => 'Zone morte';
+
+  @override
+  String get settingsGamepadDeadZoneLow => 'Faible';
+
+  @override
+  String get settingsGamepadDeadZoneMedium => 'Moyenne';
+
+  @override
+  String get settingsGamepadDeadZoneHigh => 'Large';
+
+  @override
+  String get settingsGamepadInvertYLabel => 'Inverser l\'axe Y (poursuite)';
+
+  @override
+  String get settingsGamepadInvertYOn => 'Activé';
+
+  @override
+  String get settingsGamepadInvertYOff => 'Désactivé';
+
+  @override
+  String get settingsGamepadSelectButtonLabel => 'Bouton de sélection de jauge';
+
+  @override
+  String get settingsGamepadRecentreButtonLabel =>
+      'Bouton de recentrage de jauge';
+
+  @override
+  String get p1PsychomotorExampleGauges =>
+      'Joystick gauche + 2 boutons du pouce : sélectionnez puis recentrez les 4 jauges qui dérivent avant qu\'elles n\'atteignent leur zone rouge.';
+
+  @override
+  String get p1PsychomotorExampleTracking =>
+      'Joystick droit : maintenez la mire alignée avec la cible mobile, en contrôle proportionnel continu.';
+
+  @override
+  String get p1PsychomotorExampleLetters =>
+      'Touches F1 à F9 : annulez les 3 lettres cibles parmi les 9 lettres affichées.';
+
+  @override
+  String get p1PsychomotorExampleArithmetic =>
+      'Pavé numérique : répondez au calcul d\'addition/soustraction qui apparaît toutes les 12 secondes.';
+
+  @override
+  String get p1PsychomotorKeyboardFallbackBanner =>
+      'Entraînement au clavier : non représentatif de l\'épreuve réelle. Branchez un gamepad dès que possible (Réglages → Manettes).';
+
+  @override
+  String get p1PsychomotorDeviceRequired =>
+      'Cette épreuve nécessite un gamepad à deux sticks analogiques. Branchez-en un pour continuer, ou passez cette section.';
+
+  @override
+  String get p1PsychomotorChannelGauges => 'Jauges';
+
+  @override
+  String get p1PsychomotorChannelTracking => 'Poursuite';
+
+  @override
+  String get p1PsychomotorChannelLetters => 'Lettres';
+
+  @override
+  String get p1PsychomotorChannelArithmetic => 'Calcul';
+
+  @override
+  String get p1PsychomotorSummaryTitle => 'Récapitulatif par canal';
+
+  @override
+  String p1PsychomotorSummaryZeroed(String channel) {
+    return 'Score total tombé à 0 : le canal « $channel » est entré en zone rouge.';
+  }
+
+  @override
   String get settingsSectionReminders => 'Rappels';
 
   @override

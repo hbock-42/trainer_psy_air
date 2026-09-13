@@ -78,6 +78,14 @@ dependencies:
   markdown: ^7.3.1
   share_plus: ^12.0.2
 
+  # Gamepad input for the PSY1 psychomotor engine (US-102, spec §3): native
+  # controller APIs on desktop (GameInput/GCController/evdev+SDL DB) and the
+  # W3C Gamepad API on web, normalised to one Dart-facing event stream. Pure
+  # Dart/platform-channel API, no Material dependency. Pinned exactly (no
+  # `^`) since `GamepadsPackageService` reads its normalized-event API
+  # surface directly.
+  gamepads: 0.1.11
+
   # Local reminders (US-092): a daily notification, scheduled on-device.
   # Platform plugin only (Android/iOS federated implementations); no
   # Material/Cupertino dependency. `timezone` resolves the next local fire
