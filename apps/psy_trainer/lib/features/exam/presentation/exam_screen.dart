@@ -55,37 +55,48 @@ class ExamScreen extends ConsumerWidget {
             SizedBox(height: theme.spacing.lg),
             const ExamResumeCard(),
             SizedBox(height: theme.spacing.lg),
-            const _RealismOptionsPanel(),
-            SizedBox(height: theme.spacing.lg),
-            switch (blueprints) {
-              AsyncData(value: final list) when list.isEmpty => Text(
-                context.l10n.examEmptyBlueprints,
-                style: theme.textStyles.body.copyWith(
-                  color: theme.colors.textSecondary,
+            if (activeModule.moduleId == ModuleId.psy2)
+              AppCard(
+                child: Text(
+                  context.l10n.psy2NoTimedExercise,
+                  style: theme.textStyles.body.copyWith(
+                    color: theme.colors.textSecondary,
+                  ),
                 ),
-              ),
-              AsyncData(value: final list) => Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  for (final (i, entry) in list.indexed) ...[
-                    if (i > 0) SizedBox(height: theme.spacing.md),
-                    _BlueprintCard(entry: entry),
+              )
+            else ...[
+              const _RealismOptionsPanel(),
+              SizedBox(height: theme.spacing.lg),
+              switch (blueprints) {
+                AsyncData(value: final list) when list.isEmpty => Text(
+                  context.l10n.examEmptyBlueprints,
+                  style: theme.textStyles.body.copyWith(
+                    color: theme.colors.textSecondary,
+                  ),
+                ),
+                AsyncData(value: final list) => Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    for (final (i, entry) in list.indexed) ...[
+                      if (i > 0) SizedBox(height: theme.spacing.md),
+                      _BlueprintCard(entry: entry),
+                    ],
                   ],
-                ],
-              ),
-              AsyncError() => Text(
-                context.l10n.examBlueprintsError,
-                style: theme.textStyles.body.copyWith(
-                  color: theme.colors.textSecondary,
                 ),
-              ),
-              _ => Text(
-                context.l10n.examBlueprintsLoading,
-                style: theme.textStyles.body.copyWith(
-                  color: theme.colors.textSecondary,
+                AsyncError() => Text(
+                  context.l10n.examBlueprintsError,
+                  style: theme.textStyles.body.copyWith(
+                    color: theme.colors.textSecondary,
+                  ),
                 ),
-              ),
-            },
+                _ => Text(
+                  context.l10n.examBlueprintsLoading,
+                  style: theme.textStyles.body.copyWith(
+                    color: theme.colors.textSecondary,
+                  ),
+                ),
+              },
+            ],
           ],
         ),
       ),

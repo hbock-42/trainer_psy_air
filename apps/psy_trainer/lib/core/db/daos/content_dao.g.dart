@@ -15,6 +15,8 @@ mixin _$ContentDaoMixin on DatabaseAccessor<AppDatabase> {
   $FlashcardsTable get flashcards => attachedDatabase.flashcards;
   $BlueprintsTable get blueprints => attachedDatabase.blueprints;
   $LexicalFieldsTable get lexicalFields => attachedDatabase.lexicalFields;
+  $InterviewQuestionsTable get interviewQuestions =>
+      attachedDatabase.interviewQuestions;
   ContentDaoManager get managers => ContentDaoManager(this);
 }
 
@@ -44,4 +46,9 @@ class ContentDaoManager {
       $$BlueprintsTableTableManager(_db.attachedDatabase, _db.blueprints);
   $$LexicalFieldsTableTableManager get lexicalFields =>
       $$LexicalFieldsTableTableManager(_db.attachedDatabase, _db.lexicalFields);
+  $$InterviewQuestionsTableTableManager get interviewQuestions =>
+      $$InterviewQuestionsTableTableManager(
+        _db.attachedDatabase,
+        _db.interviewQuestions,
+      );
 }

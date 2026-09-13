@@ -8,11 +8,12 @@ void main() {
   final examDate = DateTime.utc(2027, 9, 4);
 
   group('TargetStage', () {
-    test('PSY0 and PSY1 are available (US-101), PSY0 is the default', () {
+    test('PSY0, PSY1 and PSY2 are all available (US-101/US-111), PSY0 is the '
+        'default', () {
       expect(TargetStage.defaultStage, TargetStage.psy0);
       expect(TargetStage.psy0.isAvailable, isTrue);
       expect(TargetStage.psy1.isAvailable, isTrue);
-      expect(TargetStage.psy2.isAvailable, isFalse);
+      expect(TargetStage.psy2.isAvailable, isTrue);
     });
 
     test('round-trips through its key and falls back on unknown values', () {

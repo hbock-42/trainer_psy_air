@@ -76,6 +76,15 @@ enum EngineType {
   p1MentalArithmetic,
   @JsonValue('p1_psychomotor')
   p1Psychomotor,
+
+  // PSY2 (EPIC-11, US-111/US-112): no timed engine (spec ethics note); the
+  // two families exist for lessons/content organisation only. `interview`
+  // and `group_exercise` screens are bespoke (not the generic
+  // `ActivityEngine`/`SessionHost` runtime).
+  @JsonValue('interview')
+  interview,
+  @JsonValue('group_exercise')
+  groupExercise,
 }
 
 /// Primary answer widget of a family.

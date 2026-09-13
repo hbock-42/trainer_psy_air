@@ -20,6 +20,7 @@ part 'content_dao.g.dart';
     Flashcards,
     Blueprints,
     LexicalFields,
+    InterviewQuestions,
   ],
 )
 class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
@@ -42,6 +43,7 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
     List<FlashcardsCompanion> flashcards = const [],
     List<BlueprintsCompanion> blueprints = const [],
     List<LexicalFieldsCompanion> lexicalFields = const [],
+    List<InterviewQuestionsCompanion> interviewQuestions = const [],
   }) {
     return transaction(() async {
       await clearContent();
@@ -55,6 +57,7 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
         b.insertAll(this.flashcards, flashcards);
         b.insertAll(this.blueprints, blueprints);
         b.insertAll(this.lexicalFields, lexicalFields);
+        b.insertAll(this.interviewQuestions, interviewQuestions);
         b.insert(
           contentMetaTable,
           meta.copyWith(id: const Value(ContentMetaTable.singletonId)),
@@ -76,6 +79,7 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
       flashcards,
       blueprints,
       lexicalFields,
+      interviewQuestions,
     ];
     for (final table in tables) {
       await delete(table).go();
@@ -222,4 +226,17 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
 
   Future<LexicalFieldRow?> lexicalFieldById(String id) =>
       (select(lexicalFields)..where((t) => t.id.equals(id))).getSingleOrNull();
+
+  // --- Interview questions -----------------------------------------------
+
+  Future<List<InterviewQuestionRow>> interviewQuestionsOf({String? familyId}) {
+    final query = select(interviewQuestions)
+      ..orderBy([(t) => OrderingTerm.asc(t.id)]);
+    if (familyId != null) query.where((t) => t.familyId.equals(familyId));
+    return query.get();
+  }
+
+  Future<InterviewQuestionRow?> interviewQuestionById(String id) => (select(
+    interviewQuestions,
+  )..where((t) => t.id.equals(id))).getSingleOrNull();
 }

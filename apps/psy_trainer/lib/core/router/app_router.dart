@@ -17,6 +17,9 @@ import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/onboarding/presentation/providers/onboarding_completed_provider.dart';
 import '../../features/progress/presentation/family_trend_screen.dart';
 import '../../features/progress/presentation/progress_screen.dart';
+import '../../features/psy2/presentation/group_exercise_screen.dart';
+import '../../features/psy2/presentation/interview_screen.dart';
+import '../../features/psy2/presentation/psy2_how_it_works_screen.dart';
 import '../../features/settings/presentation/about_screen.dart';
 import '../../features/settings/presentation/edit_profile_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
@@ -159,6 +162,21 @@ GoRouter createAppRouter({
                     path: AppRoutes.learnCardsSegment,
                     pageBuilder: (context, state) =>
                         _page(state, const FlashcardsScreen()),
+                  ),
+                  GoRoute(
+                    path: AppRoutes.learnInterviewSegment,
+                    pageBuilder: (context, state) =>
+                        _page(state, const InterviewScreen()),
+                  ),
+                  GoRoute(
+                    path: AppRoutes.learnGroupExerciseSegment,
+                    pageBuilder: (context, state) =>
+                        _page(state, const GroupExerciseScreen()),
+                  ),
+                  GoRoute(
+                    path: AppRoutes.learnPsy2HowItWorksSegment,
+                    pageBuilder: (context, state) =>
+                        _page(state, const Psy2HowItWorksScreen()),
                   ),
                 ],
               ),

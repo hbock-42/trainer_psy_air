@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/family.schema.json",
+  "kind": "family",
+  "id": "group_exercise",
+  "moduleId": "psy2",
+  "version": 1,
+  "order": 2,
+  "name": { "fr": "Exercice de groupe", "en": "Group exercise" },
+  "shortName": { "fr": "Groupe", "en": "Group" },
+  "description": {
+    "fr": "Aucun contenu de l'épreuve réelle (confidentialité) : des leçons sur les 6 comportements CRM attendus, un guide pour organiser un groupe d'entraînement entre pairs, et une grille d'auto-évaluation à remplir après une session simulée.",
+    "en": "No content from the real exercise (confidentiality): lessons on the 6 expected CRM behaviours, a guide to organise a peer practice group, and a self-assessment checklist to fill in after a mock session."
+  },
+  "engineType": "group_exercise",
+  "answerFormat": "multi_select",
+  "inputRequirement": "touch",
+  "liveFeedback": false,
+  "lang": "fr",
+  "defaultDurationSec": 1800,
+  "defaultItemCount": 1,
+  "confidence": "assumed",
+  "tags": ["psy2", "psy2.group_exercise"],
+  "meta": {
+    "source": "docs/content/psy2-spec.md §4.2 (CRM rubric [reported]); no group-exercise content reproduced (spec §5/§7 ethics note)"
+  }
+}

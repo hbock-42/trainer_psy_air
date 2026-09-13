@@ -73,6 +73,25 @@ Map<String, Object?> validLexicalFields() => <String, Object?>{
   'fields': [validField()],
 };
 
+Map<String, Object?> validInterviewQuestion() => <String, Object?>{
+  'id': 'interview.motivation.0001',
+  'version': 1,
+  'familyId': 'interview',
+  'theme': 'motivation',
+  'question': {'fr': 'Pourquoi ce métier ?'},
+  'guidance': {'fr': 'Un exemple concret, une raison, une évolution.'},
+  'modelAnswerSkeleton': {
+    'fr': 'Déclencheur -> action -> ce que j\'en retiens.',
+  },
+  'tags': ['interview.motivation'],
+};
+
+Map<String, Object?> validInterviewQuestions() => <String, Object?>{
+  'kind': 'interview_questions',
+  'familyId': 'interview',
+  'questions': [validInterviewQuestion()],
+};
+
 Matcher throwsContentParseException({
   String? file,
   String? entityId,
@@ -510,6 +529,49 @@ void main() {
         expect(
           () => parser.parseLexicalFields(jsonEncode(validBank()), file: 'f'),
           throwsContentParseException(messageContains: 'lexical_fields'),
+        );
+      });
+    });
+
+    group('InterviewQuestionBank', () {
+      test('a valid bank round-trips', () {
+        final bank = parser.parseInterviewQuestions(
+          jsonEncode(validInterviewQuestions()),
+          file: 'iq.json',
+        );
+        expect(bank.familyId, 'interview');
+        expect(bank.questions.single.theme, InterviewTheme.motivation);
+        expect(bank.questions.single.question.fr, 'Pourquoi ce métier ?');
+      });
+
+      test('a duplicate question id', () {
+        final bank = validInterviewQuestions()
+          ..['questions'] = [
+            validInterviewQuestion(),
+            validInterviewQuestion(),
+          ];
+        expect(
+          () => parser.parseInterviewQuestions(jsonEncode(bank), file: 'f'),
+          throwsContentParseException(messageContains: 'duplicate'),
+        );
+      });
+
+      test('a question familyId that does not match the bank', () {
+        final bank = validInterviewQuestions()
+          ..['questions'] = [validInterviewQuestion()..['familyId'] = 'other'];
+        expect(
+          () => parser.parseInterviewQuestions(jsonEncode(bank), file: 'f'),
+          throwsContentParseException(messageContains: 'familyId'),
+        );
+      });
+
+      test('the wrong kind', () {
+        expect(
+          () => parser.parseInterviewQuestions(
+            jsonEncode(validBank()),
+            file: 'f',
+          ),
+          throwsContentParseException(messageContains: 'interview_questions'),
         );
       });
     });

@@ -482,6 +482,7 @@ const Map<String, String> expectedLocation = {
       '<module>/<family>/lessons/*.json',
   'deck': '<module>/<family>/decks/*.json',
   'blueprint': '<module>/blueprints/*.json',
+  'interview_questions': '<module>/<family>/questions/*.json',
 };
 
 bool _isAtExpectedLocation(ContentFile file) {
@@ -497,6 +498,8 @@ bool _isAtExpectedLocation(ContentFile file) {
           (s.length == 4 && file.familyDir != null && s[2] == 'lessons'),
     'deck' => s.length == 4 && file.familyDir != null && s[2] == 'decks',
     'blueprint' => s.length == 3 && s[1] == 'blueprints',
+    'interview_questions' =>
+      s.length == 4 && file.familyDir != null && s[2] == 'questions',
     _ => true,
   };
 }
@@ -670,6 +673,7 @@ void checkBundle(String bundleRoot, List<ContentFile> files, IssueSink sink) {
         _checkFamilyRefs(file, sink);
       case 'bank':
       case 'lexical_fields':
+      case 'interview_questions':
         _checkBankRefs(file, sink, familyExists);
       case 'lesson':
         _checkLessonRefs(file, sink, familyExists, deckIds);

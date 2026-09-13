@@ -136,7 +136,11 @@ void main() {
       expect(info?.seededAt, now);
 
       final modules = await content.modules();
-      expect(modules.map((m) => m.id), [ModuleId.psy0, ModuleId.psy1]);
+      expect(modules.map((m) => m.id), [
+        ModuleId.psy0,
+        ModuleId.psy1,
+        ModuleId.psy2,
+      ]);
 
       final families = await content.families(moduleId: ModuleId.psy0);
       expect(families, hasLength(16));
@@ -167,6 +171,20 @@ void main() {
       // p1_cube_nets (US-103, spec §2.2/§2.3 row 8).
       expect(psy1Blueprints.first.sections, hasLength(14));
 
+      // PSY2 (US-111/US-112): no timed engine, but its two families, the
+      // interview question bank and the CRM lessons/deck seed and read back
+      // like any other content.
+      final psy2Families = await content.families(moduleId: ModuleId.psy2);
+      expect(psy2Families.map((f) => f.id).toSet(), {
+        'interview',
+        'group_exercise',
+      });
+      final interviewQuestions = await content.interviewQuestions(
+        familyId: 'interview',
+      );
+      expect(interviewQuestions, hasLength(70));
+      expect(interviewQuestions.map((q) => q.familyId).toSet(), {'interview'});
+
       final english = await content.items(familyId: 'english', shuffle: false);
       expect(english, hasLength(bankItemCount('english')));
       expect(english.map((i) => i.familyId).toSet(), {'english'});
@@ -176,12 +194,15 @@ void main() {
       expect(await content.items(familyId: 'english_speaking'), isEmpty);
 
       final lessons = await content.lessons(moduleId: ModuleId.psy0);
-      final psy1Lessons = await content.lessons(moduleId: ModuleId.psy1);
-      expect(lessons.length + psy1Lessons.length, result.lessonCount);
+      // `result.lessonCount` is bundle-wide: PSY0 + PSY1 (US-103) + PSY2
+      // (US-111) lessons together.
       expect(lessons.length, greaterThanOrEqualTo(16));
+      final psy1Lessons = await content.lessons(moduleId: ModuleId.psy1);
       // US-103: a lesson per p1_* family plus the module-level selection_day
       // lesson ("comment se déroule la journée PSY1").
       expect(psy1Lessons.length, greaterThanOrEqualTo(14));
+      final allLessons = await content.lessons();
+      expect(allLessons, hasLength(result.lessonCount));
       final nback = await content.lessons(familyId: 'memory_nback');
       expect(nback, hasLength(1));
       // Markdown bodies are inlined at seeding time (see ARCHITECTURE.md).
@@ -270,7 +291,7 @@ void main() {
       expect(info?.contentVersion, bumped);
       expect(info?.seededAt, later);
       expect(await content.families(moduleId: ModuleId.psy0), hasLength(16));
-      expect(await content.families(), hasLength(29));
+      expect(await content.families(), hasLength(31));
       expect(await content.itemById(english.single.id), isNotNull);
 
       // User data survived the re-seed.

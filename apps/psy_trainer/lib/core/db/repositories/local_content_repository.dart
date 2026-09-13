@@ -175,6 +175,20 @@ class LocalContentRepository implements ContentRepository {
     'cards': [for (final card in cards) card.json],
   });
 
+  @override
+  Future<List<InterviewQuestion>> interviewQuestions({
+    String? familyId,
+  }) async => [
+    for (final row in await _dao.interviewQuestionsOf(familyId: familyId))
+      InterviewQuestion.fromJson(row.json),
+  ];
+
+  @override
+  Future<InterviewQuestion?> interviewQuestion(String id) async {
+    final row = await _dao.interviewQuestionById(id);
+    return row == null ? null : InterviewQuestion.fromJson(row.json);
+  }
+
   /// The `modules.id` / `*.moduleId` column holds the JSON value of
   /// [ModuleId] (`psy0`...), i.e. its enum name.
   static String _moduleKey(ModuleId id) => id.name;

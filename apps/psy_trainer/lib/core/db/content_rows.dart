@@ -124,6 +124,22 @@ abstract final class ContentRows {
     updatedAt: seededAt,
   );
 
+  static InterviewQuestionsCompanion interviewQuestion(
+    InterviewQuestion question, {
+    required DateTime seededAt,
+  }) {
+    final json = question.toJson();
+    return InterviewQuestionsCompanion.insert(
+      id: question.id,
+      familyId: question.familyId,
+      theme: json['theme']! as String,
+      version: question.version,
+      json: json,
+      createdAt: seededAt,
+      updatedAt: seededAt,
+    );
+  }
+
   static BlueprintsCompanion blueprint(
     ExamBlueprint blueprint, {
     required DateTime seededAt,

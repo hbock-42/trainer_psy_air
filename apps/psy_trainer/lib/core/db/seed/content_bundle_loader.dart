@@ -36,6 +36,7 @@ class LoadedContentBundle {
     required this.decks,
     required this.blueprints,
     required this.lexicalFields,
+    required this.interviewQuestions,
   });
 
   final ContentManifest manifest;
@@ -60,6 +61,11 @@ class LoadedContentBundle {
   /// the `lexical_fields` table so `ContentRepository.lexicalFields`/
   /// `lexicalField` can serve them to the `word_boxes` generator.
   final List<LexicalField> lexicalFields;
+
+  /// The PSY2 interview practice bank (US-111), mirrored into the
+  /// `interview_questions` table so `ContentRepository.interviewQuestions`/
+  /// `interviewQuestion` can serve them to the interview practice screen.
+  final List<InterviewQuestion> interviewQuestions;
 
   int get flashcardCount =>
       decks.fold(0, (sum, deck) => sum + deck.cards.length);
@@ -166,6 +172,7 @@ class _Parser {
   final List<Deck> decks = [];
   final List<ExamBlueprint> blueprints = [];
   final List<LexicalField> lexicalFields = [];
+  final List<InterviewQuestion> interviewQuestions = [];
 
   LoadedContentBundle run() {
     // Path order: bank files are seeded alphabetically (AUTHORING.md §1) and
@@ -195,6 +202,7 @@ class _Parser {
       decks: decks,
       blueprints: blueprints,
       lexicalFields: lexicalFields,
+      interviewQuestions: interviewQuestions,
     );
   }
 
@@ -258,6 +266,13 @@ class _Parser {
       case 'lexical_fields':
         lexicalFields.addAll(
           parser.lexicalFieldsFromJson(decoded, file: file).fields,
+        );
+      case 'interview_questions':
+        interviewQuestions.addAll(
+          parser
+              .interviewQuestionsFromJson(decoded, file: file)
+              .questions
+              .where((q) => q.status == ContentStatus.published),
         );
       default:
         throw ContentParseException(
