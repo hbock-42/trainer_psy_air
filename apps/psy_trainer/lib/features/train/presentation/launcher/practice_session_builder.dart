@@ -16,9 +16,9 @@ import 'practice_config.dart';
 /// synchronous, so a family whose renderer shows a passage panel (`english`,
 /// US-027) needs its passages preloaded before the session starts; the
 /// launcher screens pass a callback that stashes them somewhere the renderer
-/// can read synchronously (see `EnglishPassageCache` in
-/// `features/engines/english/presentation/`). Families with no
-/// `passageId` items never trigger this.
+/// can read synchronously (see `PassageCache` in
+/// `train/presentation/renderers/passage_cache.dart`, module-agnostic since
+/// US-116). Families with no `passageId` items never trigger this.
 typedef PassagesLoaded = void Function(List<Passage> passages);
 
 /// Picks which of a family's candidate bank items make up a session, given
@@ -33,7 +33,16 @@ typedef ItemSampler = List<Item> Function(List<Item> candidates, int count);
 
 /// Family-specific [ItemSampler]s, keyed by family id. A family absent from
 /// this map gets [balanceByTag].
-final Map<String, ItemSampler> itemSamplers = {'english': passageAwareSampler};
+///
+/// `p1_reading_fr` (US-116) is `english`'s PSY1/French counterpart: same
+/// passage-linked-MCQ shape, so it needs the same [passageAwareSampler].
+/// `p1_general_efficiency` (US-116) needs [efgTagBalancedSampler] instead of
+/// the default [balanceByTag]: see that function's doc for why.
+final Map<String, ItemSampler> itemSamplers = {
+  'english': passageAwareSampler,
+  'p1_reading_fr': passageAwareSampler,
+  'p1_general_efficiency': efgTagBalancedSampler,
+};
 
 /// Turns the launcher's [PracticeConfig] into the `ActivitySessionConfig`
 /// `/train/session` runs (US-051).
@@ -145,6 +154,38 @@ List<Item> balanceByTag(List<Item> candidates, int count) {
   final byTag = <String, List<Item>>{};
   for (final item in candidates) {
     final tag = item.tags.isEmpty ? '' : item.tags.first;
+    byTag.putIfAbsent(tag, () => []).add(item);
+  }
+  final tags = byTag.keys.toList();
+  final picked = <Item>[];
+  var i = 0;
+  while (picked.length < count && picked.length < candidates.length) {
+    final list = byTag[tags[i % tags.length]]!;
+    if (list.isNotEmpty) picked.add(list.removeAt(0));
+    i++;
+  }
+  return picked;
+}
+
+/// [ItemSampler] for `p1_general_efficiency` (US-116): every item carries
+/// the generic `"efg"` tag *before* its real category tag (e.g. `["efg",
+/// "efg.numeric"]`, US-103's authoring convention — the family-wide tag
+/// documents the item belongs to EFG at all, distinct from `culture_aero`'s
+/// bank where the first tag already is the specific topic). [balanceByTag]
+/// keys off `tags.first`, so applied here it would bucket the whole bank
+/// under one `"efg"` tag and never balance across categories. This picks,
+/// for each item, the first tag that starts with `efg.` (falling back to
+/// `tags.first` for a malformed item with none) and round-robins over that
+/// instead, the same way [balanceByTag] round-robins over `tags.first` —
+/// spreading a session across `efg.numeric|verbal|spatial|logic`.
+List<Item> efgTagBalancedSampler(List<Item> candidates, int count) {
+  if (candidates.length <= count) return candidates;
+  final byTag = <String, List<Item>>{};
+  for (final item in candidates) {
+    final tag = item.tags.firstWhere(
+      (t) => t.startsWith('efg.'),
+      orElse: () => item.tags.isEmpty ? '' : item.tags.first,
+    );
     byTag.putIfAbsent(tag, () => []).add(item);
   }
   final tags = byTag.keys.toList();
