@@ -20,6 +20,8 @@ import '../../../engines/multitask_psychomotor/domain/multitask_engine.dart';
 import '../../../engines/multitask_psychomotor/presentation/multitask_renderer.dart';
 import '../../../engines/p1_angles/domain/p1_angles_engine.dart';
 import '../../../engines/p1_angles/presentation/p1_angles_renderer.dart';
+import '../../../engines/p1_attention_sustained/domain/attention_sustained_engine.dart';
+import '../../../engines/p1_attention_sustained/presentation/attention_sustained_renderer.dart';
 import '../../../engines/p1_counters/domain/p1_counters_engine.dart';
 import '../../../engines/p1_counters/presentation/p1_counters_renderer.dart';
 import '../../../engines/p1_mental_arithmetic/domain/mental_arithmetic_engine.dart';
@@ -60,6 +62,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const ArithmeticGridEngine(),
         const AttentionParityEngine(),
         const AttentionRulesEngine(),
+        const AttentionSustainedEngine(),
         const CalcBackEngine(),
         const CountersEngine(),
         const CubeNetEngine(),
@@ -87,6 +90,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const ArithmeticGridRenderer(),
         const AttentionParityRenderer(),
         const AttentionRulesRenderer(),
+        const AttentionSustainedRenderer(),
         const CalcBackRenderer(),
         const CountersRenderer(),
         const CubeNetRenderer(),

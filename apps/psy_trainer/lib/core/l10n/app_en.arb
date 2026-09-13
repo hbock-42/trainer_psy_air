@@ -1511,5 +1511,55 @@
     }
   },
   "mentalArithmeticAllIntervalsExampleCaption": "Work out the exact value, then tap every interval that contains it before Confirm.",
-  "p1CountersExampleCaption": "Read each gauge (needle, scale or drum counter) then answer the question asked."
+  "p1CountersExampleCaption": "Read each gauge (needle, scale or drum counter) then answer the question asked.",
+  "attentionSustainedTarget": "Target",
+  "attentionSustainedNotTarget": "Not target",
+  "attentionSustainedTargetSemantics": "Target ({shortcut})",
+  "@attentionSustainedTargetSemantics": {
+    "placeholders": {
+      "shortcut": {
+        "type": "String"
+      }
+    }
+  },
+  "attentionSustainedNotTargetSemantics": "Not target ({shortcut})",
+  "@attentionSustainedNotTargetSemantics": {
+    "placeholders": {
+      "shortcut": {
+        "type": "String"
+      }
+    }
+  },
+  "attentionSustainedTouchFallback": "Non-representative buttons: use the keyboard on the real day.",
+  "attentionSustainedRuleConjunction": "Target: {colour} {shape}",
+  "@attentionSustainedRuleConjunction": {
+    "placeholders": {
+      "colour": {
+        "type": "String"
+      },
+      "shape": {
+        "type": "String"
+      }
+    }
+  },
+  "attentionSustainedRuleRepeatShape": "Target: same shape as the previous stimulus",
+  "attentionSustainedSeriesLabel": "Series {series} / {total}",
+  "@attentionSustainedSeriesLabel": {
+    "placeholders": {
+      "series": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "attentionSustainedStimulusSemantics": "Stimulus {index}",
+  "@attentionSustainedStimulusSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  }
 }

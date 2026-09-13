@@ -3599,6 +3599,60 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.'**
   String get p1CountersExampleCaption;
+
+  /// No description provided for @attentionSustainedTarget.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible'**
+  String get attentionSustainedTarget;
+
+  /// No description provided for @attentionSustainedNotTarget.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas la cible'**
+  String get attentionSustainedNotTarget;
+
+  /// No description provided for @attentionSustainedTargetSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible ({shortcut})'**
+  String attentionSustainedTargetSemantics(String shortcut);
+
+  /// No description provided for @attentionSustainedNotTargetSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas la cible ({shortcut})'**
+  String attentionSustainedNotTargetSemantics(String shortcut);
+
+  /// No description provided for @attentionSustainedTouchFallback.
+  ///
+  /// In fr, this message translates to:
+  /// **'Touches non représentatives : le jour J, utilisez le clavier.'**
+  String get attentionSustainedTouchFallback;
+
+  /// No description provided for @attentionSustainedRuleConjunction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible : {colour} {shape}'**
+  String attentionSustainedRuleConjunction(String colour, String shape);
+
+  /// No description provided for @attentionSustainedRuleRepeatShape.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible : même forme que le stimulus précédent'**
+  String get attentionSustainedRuleRepeatShape;
+
+  /// No description provided for @attentionSustainedSeriesLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Série {series} / {total}'**
+  String attentionSustainedSeriesLabel(int series, int total);
+
+  /// No description provided for @attentionSustainedStimulusSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Stimulus {index}'**
+  String attentionSustainedStimulusSemantics(int index);
 }
 
 class _AppLocalizationsDelegate

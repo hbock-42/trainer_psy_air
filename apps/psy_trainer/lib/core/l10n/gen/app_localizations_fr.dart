@@ -2216,4 +2216,43 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get p1CountersExampleCaption =>
       'Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.';
+
+  @override
+  String get attentionSustainedTarget => 'Cible';
+
+  @override
+  String get attentionSustainedNotTarget => 'Pas la cible';
+
+  @override
+  String attentionSustainedTargetSemantics(String shortcut) {
+    return 'Cible ($shortcut)';
+  }
+
+  @override
+  String attentionSustainedNotTargetSemantics(String shortcut) {
+    return 'Pas la cible ($shortcut)';
+  }
+
+  @override
+  String get attentionSustainedTouchFallback =>
+      'Touches non représentatives : le jour J, utilisez le clavier.';
+
+  @override
+  String attentionSustainedRuleConjunction(String colour, String shape) {
+    return 'Cible : $colour $shape';
+  }
+
+  @override
+  String get attentionSustainedRuleRepeatShape =>
+      'Cible : même forme que le stimulus précédent';
+
+  @override
+  String attentionSustainedSeriesLabel(int series, int total) {
+    return 'Série $series / $total';
+  }
+
+  @override
+  String attentionSustainedStimulusSemantics(int index) {
+    return 'Stimulus $index';
+  }
 }

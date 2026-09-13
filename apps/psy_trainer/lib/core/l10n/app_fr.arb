@@ -1511,5 +1511,55 @@
     }
   },
   "mentalArithmeticAllIntervalsExampleCaption": "Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider.",
-  "p1CountersExampleCaption": "Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée."
+  "p1CountersExampleCaption": "Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.",
+  "attentionSustainedTarget": "Cible",
+  "attentionSustainedNotTarget": "Pas la cible",
+  "attentionSustainedTargetSemantics": "Cible ({shortcut})",
+  "@attentionSustainedTargetSemantics": {
+    "placeholders": {
+      "shortcut": {
+        "type": "String"
+      }
+    }
+  },
+  "attentionSustainedNotTargetSemantics": "Pas la cible ({shortcut})",
+  "@attentionSustainedNotTargetSemantics": {
+    "placeholders": {
+      "shortcut": {
+        "type": "String"
+      }
+    }
+  },
+  "attentionSustainedTouchFallback": "Touches non représentatives : le jour J, utilisez le clavier.",
+  "attentionSustainedRuleConjunction": "Cible : {colour} {shape}",
+  "@attentionSustainedRuleConjunction": {
+    "placeholders": {
+      "colour": {
+        "type": "String"
+      },
+      "shape": {
+        "type": "String"
+      }
+    }
+  },
+  "attentionSustainedRuleRepeatShape": "Cible : même forme que le stimulus précédent",
+  "attentionSustainedSeriesLabel": "Série {series} / {total}",
+  "@attentionSustainedSeriesLabel": {
+    "placeholders": {
+      "series": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "attentionSustainedStimulusSemantics": "Stimulus {index}",
+  "@attentionSustainedStimulusSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  }
 }
