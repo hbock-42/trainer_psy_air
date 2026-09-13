@@ -1453,5 +1453,44 @@
   "multitaskCalcButtonLabel": "F",
   "multitaskExampleTracking": "Maintenez la flèche du clavier dans la direction où se déplace le cercle.",
   "multitaskExampleShape": "Appuyez sur Espace quand la forme dans le cercle est identique à la forme de référence (en haut à gauche).",
-  "multitaskExampleCalc": "Appuyez sur F quand le calcul encadré, en bas, est faux."
+  "multitaskExampleCalc": "Appuyez sur F quand le calcul encadré, en bas, est faux.",
+  "matrixMissingSemantics": "Case manquante",
+  "matrixQuestionMark": "?",
+  "matrixCandidateSemantics": "Réponse {index}",
+  "@matrixCandidateSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "matrixExampleCaption": "Trouvez la figure qui complète la matrice.",
+  "matrixAxisRow": "rangée",
+  "matrixAxisColumn": "colonne",
+  "matrixAttributeOuterShape": "forme",
+  "matrixAttributeInnerShape": "forme intérieure",
+  "matrixAttributeCount": "nombre",
+  "matrixAttributeRotation": "rotation",
+  "matrixAttributeFill": "remplissage",
+  "matrixAttributeSize": "taille",
+  "matrixAttributePosition": "position",
+  "matrixRuleDistributionSuffix": "en distribution (3 valeurs)",
+  "matrixRuleAlternationSuffix": "en alternance",
+  "matrixRuleXorSuffix": "= combinaison des deux premières",
+  "matrixRuleStepPlain": "+{step}",
+  "@matrixRuleStepPlain": {
+    "placeholders": {
+      "step": {
+        "type": "int"
+      }
+    }
+  },
+  "matrixRuleStepDegrees": "+{degrees}°",
+  "@matrixRuleStepDegrees": {
+    "placeholders": {
+      "degrees": {
+        "type": "int"
+      }
+    }
+  }
 }
