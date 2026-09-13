@@ -62,6 +62,10 @@ class BundleCopy {
     for (final entity in source.listSync(recursive: true)) {
       final relative = entity.path.substring(source.path.length + 1);
       if (relative.startsWith('examples')) continue;
+      // US-125: never copy the generated pre-bundle (gitignored, may or may
+      // not exist locally) — these tests mutate the authored tree and must
+      // see their own mutations, not a stale `bundles/<module>.json`.
+      if (relative.startsWith('bundles')) continue;
       final target = '${root.path}/assets/content/$relative';
       if (entity is Directory) {
         Directory(target).createSync(recursive: true);

@@ -10,7 +10,7 @@ CONTENT := packages/psy_content
 # melos.yaml for the same commands as Melos scripts (`melos run <name>`) if
 # you'd rather use that.
 
-.PHONY: help deps gen gen-watch lint format test test-watch coverage integration content-check content-assets run run-macos run-web build-macos build-web clean board
+.PHONY: help deps gen gen-watch lint format test test-watch coverage integration content-check content-assets content-bundles run run-macos run-web build-macos build-web clean board
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-12s %s\n", $$1, $$2}'
@@ -59,8 +59,11 @@ integration: deps ## Run the end-to-end flow test (integration_test/, US-121), h
 content-check: deps ## Validate the content bundle (PATHS=<files or dirs>, default the app's assets/content)
 	$(DART) run --verbosity=error psy_content:validate_content $(if $(PATHS),$(PATHS),$(APP)/assets/content)
 
-content-assets: ## Rewrite the app's assets/content folder list in its pubspec.yaml (US-013)
+content-assets: content-bundles ## Rewrite the app's assets/content folder list in its pubspec.yaml (US-013), and (re)build the pre-bundles (US-125)
 	$(DART) run --verbosity=error tools/list_content_assets.dart --write
+
+content-bundles: deps ## (Re)build assets/content/bundles/<module>.json from the authored tree (US-125, gitignored, run before flutter build/test in CI)
+	$(DART) run --verbosity=error tools/bundle_content.dart
 
 run: deps ## Run the app on the connected device (DEVICE=<id> to pick one)
 	(cd $(APP) && $(FLUTTER) run $(if $(DEVICE),-d $(DEVICE),))
@@ -74,7 +77,7 @@ run-web: deps ## Run the web app in Chrome
 build-macos: deps ## Debug build of the macOS app (headless verification)
 	(cd $(APP) && $(FLUTTER) build macos --debug)
 
-build-web: deps ## Release build of the web app (same command as CI)
+build-web: deps content-bundles ## Release build of the web app (same command as CI), pre-bundled content first (US-125)
 	(cd $(APP) && $(FLUTTER) build web --release)
 
 clean: ## Remove build artefacts

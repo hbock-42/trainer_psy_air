@@ -25,11 +25,21 @@ const String contentAssetsEndMarker = '  # END content assets';
 ///
 /// Empty directories are listed too: `flutter build` accepts them and it
 /// keeps the list stable while a family folder is being filled.
+/// Folder under [contentAssetRoot] that never exists in the checked-out
+/// tree (US-125: `tools/bundle_content.dart` generates it, gitignored) but
+/// must always be registered: `flutter build web` runs after that tool in
+/// CI/`make content-assets`, and an unregistered directory would silently
+/// ship no bundles even though the tool wrote them.
+const String contentBundlesFolder = 'bundles';
+
 List<String> listContentAssetDirectories(String repoRoot) {
   final appRoot = '$repoRoot/$contentAppDir';
   final root = Directory('$appRoot/$contentAssetRoot');
   if (!root.existsSync()) return const [];
-  final dirs = <String>['$contentAssetRoot/'];
+  final dirs = <String>[
+    '$contentAssetRoot/',
+    '$contentAssetRoot/$contentBundlesFolder/',
+  ];
   for (final entity in root.listSync(recursive: true)) {
     if (entity is! Directory) continue;
     final relative = entity.path
@@ -37,9 +47,10 @@ List<String> listContentAssetDirectories(String repoRoot) {
         .replaceAll('\\', '/');
     final segments = relative.split('/');
     if (segments.length > 2 && segments[2] == contentExamplesFolder) continue;
+    if (segments.length > 2 && segments[2] == contentBundlesFolder) continue;
     dirs.add('$relative/');
   }
-  return dirs..sort();
+  return (dirs.toSet().toList())..sort();
 }
 
 /// The `- assets/content/...` entries currently listed in [pubspec] (the

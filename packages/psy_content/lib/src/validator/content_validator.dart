@@ -48,6 +48,12 @@ class ContentValidator {
   /// the enclosing bundle (the authoring samples).
   static const looseFolders = {'examples'};
 
+  /// Folder names never scanned at all (US-125): `bundles/` holds the
+  /// generated per-module pre-bundle (`tools/bundle_content.dart`), not
+  /// authored content — it has no `kind` the schemas recognise and is
+  /// gitignored besides.
+  static const ignoredFolders = {'bundles'};
+
   final SchemaRegistry schemas;
   final ContentBundleParser _parser;
 
@@ -128,6 +134,11 @@ class ContentValidator {
           .listSync(recursive: true, followLinks: false)
           .whereType<File>()
           .where((f) => f.path.toLowerCase().endsWith('.json'))
+          .where(
+            (f) => !p
+                .split(p.relative(f.path, from: dir.path))
+                .any(ignoredFolders.contains),
+          )
           .toList()
         ..sort((a, b) => a.path.compareTo(b.path));
 
