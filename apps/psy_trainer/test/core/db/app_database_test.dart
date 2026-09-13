@@ -12,7 +12,7 @@ void main() {
   tearDown(() => db.close());
 
   test(
-    'opens at schema version 4 with every table and index created',
+    'opens at schema version 5 with every table and index created',
     () async {
       final tables = await db
           .customSelect(
@@ -35,6 +35,7 @@ void main() {
         'lesson_progress',
         'lessons',
         'lexical_fields',
+        'module_seed_state',
         'modules',
         'passages',
         'sessions',
@@ -62,12 +63,13 @@ void main() {
           .map((row) => row.read<int>('user_version'))
           .getSingle();
       expect(version, db.schemaVersion);
-      expect(db.schemaVersion, 4);
+      expect(db.schemaVersion, 5);
     },
   );
 
-  test('v1 -> v4 upgrade creates `passages`, `lexical_fields` and '
-      '`interview_questions` on a v1 file without losing content', () async {
+  test('v1 -> v5 upgrade creates `passages`, `lexical_fields`, '
+      '`interview_questions` and `module_seed_state` on a v1 file without '
+      'losing content', () async {
     final path = Directory.systemTemp
         .createTempSync('app_database_migration_test')
         .path;
@@ -75,12 +77,13 @@ void main() {
     addTearDown(() => Directory(path).delete(recursive: true));
 
     // Simulate a v1 file: create the current schema, then drop the tables
-    // v1 lacked (`passages`, `lexical_fields`, `interview_questions`) and
-    // roll `user_version` back to 1.
+    // v1 lacked (`passages`, `lexical_fields`, `interview_questions`,
+    // `module_seed_state`) and roll `user_version` back to 1.
     final v1 = AppDatabase(NativeDatabase(File(file)));
     await v1.customStatement('DROP TABLE passages');
     await v1.customStatement('DROP TABLE lexical_fields');
     await v1.customStatement('DROP TABLE interview_questions');
+    await v1.customStatement('DROP TABLE module_seed_state');
     await v1.customStatement('PRAGMA user_version = 1');
     await v1
         .into(v1.families)
@@ -106,16 +109,17 @@ void main() {
     final tables = await upgraded
         .customSelect(
           "SELECT name FROM sqlite_master WHERE type = 'table' "
-          "AND name IN ('passages', 'lexical_fields', 'interview_questions')",
+          "AND name IN ('passages', 'lexical_fields', 'interview_questions', "
+          "'module_seed_state')",
         )
         .get();
-    expect(tables, hasLength(3));
+    expect(tables, hasLength(4));
 
     final version = await upgraded
         .customSelect('PRAGMA user_version')
         .map((row) => row.read<int>('user_version'))
         .getSingle();
-    expect(version, 4);
+    expect(version, 5);
   });
 
   test('enforces foreign keys (attempts need an existing session)', () async {

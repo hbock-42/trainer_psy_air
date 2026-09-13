@@ -161,4 +161,99 @@ class ContentSeeder {
       lessonCount: bundle.lessons.length,
     );
   }
+
+  /// Seeds one [module] only (US-125: lazy seeding), gated on
+  /// [ModuleSeedState] (not `content_meta`, which [seedIfNeeded] uses and
+  /// this method also stamps, but only informationally — see
+  /// `ContentDao.replaceModule`). Other modules' rows are untouched, so the
+  /// startup gate can resolve after the active module alone is seeded while
+  /// the others seed in the background (`moduleSeedProvider`).
+  ///
+  /// A module missing from the manifest is a no-op [SeedResult] rather than
+  /// an error: the caller (background seeding of "every other module") does
+  /// not need to special-case a module the current bundle dropped.
+  Future<SeedResult> seedModule(ModuleId module, {bool force = false}) async {
+    final stopwatch = Stopwatch()..start();
+    final manifest = await _loader.readManifest();
+    if (!manifest.modules.contains(module)) {
+      return SeedResult(seeded: false, contentVersion: manifest.contentVersion);
+    }
+    final stored = await _dao.moduleSeedStateOf(module.name);
+    if (!force &&
+        stored != null &&
+        stored.contentVersion >= manifest.contentVersion) {
+      return SeedResult(
+        seeded: false,
+        contentVersion: manifest.contentVersion,
+        previousVersion: stored.contentVersion,
+        elapsed: stopwatch.elapsed,
+      );
+    }
+
+    final raw = await _loader.read(manifest: manifest, onlyModules: {module});
+    final bundle = await _parse(raw);
+    final moduleModel = bundle.modules.firstWhere(
+      (m) => m.id == module,
+      orElse: () => throw ContentParseException(
+        file: '${module.name}/module.json',
+        entityId: module.name,
+        message: 'module "${module.name}" has no (published) module.json',
+      ),
+    );
+    final seededAt = _clock().toUtc();
+    final familyIds = [for (final f in bundle.families) f.id];
+    await _dao.replaceModule(
+      moduleId: module.name,
+      familyIds: familyIds,
+      meta: ContentRows.meta(manifest, seededAt: seededAt),
+      module: ContentRows.module(moduleModel, seededAt: seededAt),
+      seedState: ContentRows.moduleSeedState(
+        module,
+        contentVersion: manifest.contentVersion,
+        seededAt: seededAt,
+      ),
+      families: [
+        for (final f in bundle.families)
+          ContentRows.family(f, seededAt: seededAt),
+      ],
+      items: [
+        for (final i in bundle.items) ContentRows.item(i, seededAt: seededAt),
+      ],
+      passages: [
+        for (final p in bundle.passages)
+          ContentRows.passage(p, seededAt: seededAt),
+      ],
+      lessons: [
+        for (final l in bundle.lessons)
+          ContentRows.lesson(l, seededAt: seededAt),
+      ],
+      decks: [
+        for (final d in bundle.decks) ContentRows.deck(d, seededAt: seededAt),
+      ],
+      flashcards: [
+        for (final d in bundle.decks)
+          ...ContentRows.flashcards(d, seededAt: seededAt),
+      ],
+      blueprints: [
+        for (final b in bundle.blueprints)
+          ContentRows.blueprint(b, seededAt: seededAt),
+      ],
+      lexicalFields: [
+        for (final f in bundle.lexicalFields)
+          ContentRows.lexicalField(f, seededAt: seededAt),
+      ],
+      interviewQuestions: [
+        for (final q in bundle.interviewQuestions)
+          ContentRows.interviewQuestion(q, seededAt: seededAt),
+      ],
+    );
+    return SeedResult(
+      seeded: true,
+      contentVersion: manifest.contentVersion,
+      previousVersion: stored?.contentVersion,
+      elapsed: stopwatch.elapsed,
+      itemCount: bundle.items.length,
+      lessonCount: bundle.lessons.length,
+    );
+  }
 }

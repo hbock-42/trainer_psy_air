@@ -17,6 +17,7 @@ mixin _$ContentDaoMixin on DatabaseAccessor<AppDatabase> {
   $LexicalFieldsTable get lexicalFields => attachedDatabase.lexicalFields;
   $InterviewQuestionsTable get interviewQuestions =>
       attachedDatabase.interviewQuestions;
+  $ModuleSeedStateTable get moduleSeedState => attachedDatabase.moduleSeedState;
   ContentDaoManager get managers => ContentDaoManager(this);
 }
 
@@ -50,5 +51,10 @@ class ContentDaoManager {
       $$InterviewQuestionsTableTableManager(
         _db.attachedDatabase,
         _db.interviewQuestions,
+      );
+  $$ModuleSeedStateTableTableManager get moduleSeedState =>
+      $$ModuleSeedStateTableTableManager(
+        _db.attachedDatabase,
+        _db.moduleSeedState,
       );
 }

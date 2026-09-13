@@ -21,6 +21,7 @@ part 'content_dao.g.dart';
     Blueprints,
     LexicalFields,
     InterviewQuestions,
+    ModuleSeedState,
   ],
 )
 class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
@@ -66,6 +67,90 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
     });
   }
 
+  /// State row of [moduleId] in [ModuleSeedState] — the gate
+  /// `ContentSeeder.seedModule` uses to decide whether the module needs
+  /// (re)seeding (US-125).
+  Future<ModuleSeedStateRow?> moduleSeedStateOf(String moduleId) => (select(
+    moduleSeedState,
+  )..where((t) => t.id.equals(moduleId))).getSingleOrNull();
+
+  /// Replaces one module's rows atomically: deletes every row belonging to
+  /// [moduleId] (families/lessons/blueprints directly, items/decks/
+  /// flashcards/lexical fields/interview questions through [familyIds], the
+  /// families just deleted), then inserts the given ones, upserts the
+  /// module's own row and its [ModuleSeedState], and stamps the singleton
+  /// `content_meta` (informational only — see [ContentDao] doc). Other
+  /// modules' rows are untouched. Passages are never deleted, only
+  /// upserted: they have no module/family column and are cheap to leave
+  /// stale (an `McqItem.passageId` that no longer resolves is a authoring
+  /// mistake the validator already catches on the tree).
+  Future<void> replaceModule({
+    required String moduleId,
+    required List<String> familyIds,
+    required ContentMetaTableCompanion meta,
+    required ModulesCompanion module,
+    required ModuleSeedStateCompanion seedState,
+    List<FamiliesCompanion> families = const [],
+    List<ItemsCompanion> items = const [],
+    List<PassagesCompanion> passages = const [],
+    List<LessonsCompanion> lessons = const [],
+    List<DecksCompanion> decks = const [],
+    List<FlashcardsCompanion> flashcards = const [],
+    List<BlueprintsCompanion> blueprints = const [],
+    List<LexicalFieldsCompanion> lexicalFields = const [],
+    List<InterviewQuestionsCompanion> interviewQuestions = const [],
+  }) {
+    return transaction(() async {
+      await (delete(
+        this.families,
+      )..where((t) => t.moduleId.equals(moduleId))).go();
+      await (delete(
+        this.lessons,
+      )..where((t) => t.moduleId.equals(moduleId))).go();
+      await (delete(
+        this.blueprints,
+      )..where((t) => t.moduleId.equals(moduleId))).go();
+      if (familyIds.isNotEmpty) {
+        await (delete(
+          this.items,
+        )..where((t) => t.familyId.isIn(familyIds))).go();
+        await (delete(
+          this.decks,
+        )..where((t) => t.familyId.isIn(familyIds))).go();
+        final deckIds = decks.map((d) => d.id.value).toList();
+        if (deckIds.isNotEmpty) {
+          await (delete(
+            this.flashcards,
+          )..where((t) => t.deckId.isIn(deckIds))).go();
+        }
+        await (delete(
+          this.lexicalFields,
+        )..where((t) => t.familyId.isIn(familyIds))).go();
+        await (delete(
+          this.interviewQuestions,
+        )..where((t) => t.familyId.isIn(familyIds))).go();
+      }
+      await batch((b) {
+        b.insert(modules, module, mode: InsertMode.insertOrReplace);
+        b.insertAll(this.families, families);
+        b.insertAll(this.items, items);
+        b.insertAll(this.passages, passages, mode: InsertMode.insertOrReplace);
+        b.insertAll(this.lessons, lessons);
+        b.insertAll(this.decks, decks);
+        b.insertAll(this.flashcards, flashcards);
+        b.insertAll(this.blueprints, blueprints);
+        b.insertAll(this.lexicalFields, lexicalFields);
+        b.insertAll(this.interviewQuestions, interviewQuestions);
+        b.insert(
+          contentMetaTable,
+          meta.copyWith(id: const Value(ContentMetaTable.singletonId)),
+          mode: InsertMode.insertOrReplace,
+        );
+        b.insert(moduleSeedState, seedState, mode: InsertMode.insertOrReplace);
+      });
+    });
+  }
+
   /// Deletes every content row (including `content_meta`).
   Future<void> clearContent() async {
     final tables = <TableInfo<Table, Object?>>[
@@ -80,6 +165,7 @@ class ContentDao extends DatabaseAccessor<AppDatabase> with _$ContentDaoMixin {
       blueprints,
       lexicalFields,
       interviewQuestions,
+      moduleSeedState,
     ];
     for (final table in tables) {
       await delete(table).go();
