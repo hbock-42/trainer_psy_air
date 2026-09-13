@@ -63,10 +63,9 @@
       "sectionTimeSec": 1200,
       "breakAfterSec": 900,
       "itemSelection": {
-        "mode": "generated",
-        "generatorId": "p1_reading_fr",
+        "mode": "bank",
         "difficulty": { "min": 2, "max": 4 },
-        "params": { "passageCount": 10 }
+        "avoidRecentSessions": 3
       },
       "confidence": "reported"
     },
@@ -89,10 +88,10 @@
       "itemCount": 35,
       "sectionTimeSec": 1800,
       "itemSelection": {
-        "mode": "generated",
-        "generatorId": "p1_general_efficiency",
+        "mode": "bank",
         "difficulty": { "min": 2, "max": 4 },
-        "params": { "count": 35 }
+        "balanceByTagPrefix": "efg",
+        "avoidRecentSessions": 3
       },
       "confidence": "assumed"
     },
