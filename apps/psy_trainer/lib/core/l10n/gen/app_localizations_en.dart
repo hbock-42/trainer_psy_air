@@ -154,10 +154,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'Psychotechnical and psychomotor tests, one day in person.';
 
   @override
-  String get stagePsy2Subtitle =>
-      'Interview, group exercise and CRM self-assessments, no timed exercise.';
-
-  @override
   String get stageComingSoon => 'Coming soon';
 
   @override
@@ -1506,6 +1502,30 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get tangramTargetLabel => 'Target shape';
+
+  @override
+  String get tangramWorkspaceLabel => 'Your workspace';
+
+  @override
+  String get tangramTrayLabel => 'Pieces to drag';
+
+  @override
+  String get tangramSolutionCaption => 'Solution: each piece\'s placement.';
+
+  @override
+  String get tangramResetAction => 'Reset';
+
+  @override
+  String get tangramExampleCaption =>
+      'Drag the pieces onto the workspace to reproduce the target shape; tap to rotate, double-tap to flip.';
+
+  @override
+  String tangramPieceSemantics(int number) {
+    return 'Piece $number';
+  }
+
+  @override
   String wordBoxesBoxSemantics(int boxNumber, String label) {
     return 'Box $boxNumber: $label';
   }
@@ -2205,6 +2225,133 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get p1CountersExampleCaption =>
       'Read each gauge (needle, scale or drum counter) then answer the question asked.';
+
+  @override
+  String get p1CubeRotationReferenceLabel => 'Reference cube';
+
+  @override
+  String get p1CubeRotationCandidateLabel => 'Candidate cube';
+
+  @override
+  String get p1CubeRotationQuestion => 'Is this the same cube, rotated?';
+
+  @override
+  String get p1CubeRotationSameAnswer => 'Same cube, rotated';
+
+  @override
+  String get p1CubeRotationAlteredAnswer => 'Altered';
+
+  @override
+  String get p1CubeRotationExplanationSame =>
+      'The candidate cube is indeed the reference cube, seen from another angle.';
+
+  @override
+  String get p1CubeRotationExplanationAltered =>
+      'The candidate cube was altered (faces swapped, or one face mirrored): this is not a plain rotation.';
+
+  @override
+  String get attentionSustainedTarget => 'Target';
+
+  @override
+  String get attentionSustainedNotTarget => 'Not target';
+
+  @override
+  String attentionSustainedTargetSemantics(String shortcut) {
+    return 'Target ($shortcut)';
+  }
+
+  @override
+  String attentionSustainedNotTargetSemantics(String shortcut) {
+    return 'Not target ($shortcut)';
+  }
+
+  @override
+  String get attentionSustainedTouchFallback =>
+      'Non-representative buttons: use the keyboard on the real day.';
+
+  @override
+  String attentionSustainedRuleConjunction(String colour, String shape) {
+    return 'Target: $colour $shape';
+  }
+
+  @override
+  String get attentionSustainedRuleRepeatShape =>
+      'Target: same shape as the previous stimulus';
+
+  @override
+  String attentionSustainedSeriesLabel(int series, int total) {
+    return 'Series $series / $total';
+  }
+
+  @override
+  String attentionSustainedStimulusSemantics(int index) {
+    return 'Stimulus $index';
+  }
+
+  @override
+  String get matrixMissingSemantics => 'Missing cell';
+
+  @override
+  String get matrixQuestionMark => '?';
+
+  @override
+  String matrixCandidateSemantics(int index) {
+    return 'Answer $index';
+  }
+
+  @override
+  String get matrixExampleCaption =>
+      'Find the figure that completes the matrix.';
+
+  @override
+  String get matrixAxisRow => 'row';
+
+  @override
+  String get matrixAxisColumn => 'column';
+
+  @override
+  String get matrixAttributeOuterShape => 'shape';
+
+  @override
+  String get matrixAttributeInnerShape => 'inner shape';
+
+  @override
+  String get matrixAttributeCount => 'count';
+
+  @override
+  String get matrixAttributeRotation => 'rotation';
+
+  @override
+  String get matrixAttributeFill => 'fill';
+
+  @override
+  String get matrixAttributeSize => 'size';
+
+  @override
+  String get matrixAttributePosition => 'position';
+
+  @override
+  String get matrixRuleDistributionSuffix => 'in distribution (3 values)';
+
+  @override
+  String get matrixRuleAlternationSuffix => 'alternating';
+
+  @override
+  String get matrixRuleXorSuffix => '= combination of the first two';
+
+  @override
+  String matrixRuleStepPlain(int step) {
+    return '+$step';
+  }
+
+  @override
+  String matrixRuleStepDegrees(int degrees) {
+    return '+$degrees°';
+  }
+
+  @override
+  String get stagePsy2Subtitle =>
+      'Interview, group exercise and CRM self-assessments, no timed exercise.';
 
   @override
   String get psy2NoTimedExercise =>

@@ -368,12 +368,6 @@ abstract class AppLocalizations {
   /// **'Tests psychotechniques et psychomoteurs, une journée en présentiel.'**
   String get stagePsy1Subtitle;
 
-  /// No description provided for @stagePsy2Subtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entretien, exercice de groupe et auto-évaluations CRM, sans épreuve chronométrée.'**
-  String get stagePsy2Subtitle;
-
   /// No description provided for @stageComingSoon.
   ///
   /// In fr, this message translates to:
@@ -2708,6 +2702,48 @@ abstract class AppLocalizations {
   /// **'Pièce {number}'**
   String overlayGridTileSemantics(int number);
 
+  /// No description provided for @tangramTargetLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Figure cible'**
+  String get tangramTargetLabel;
+
+  /// No description provided for @tangramWorkspaceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Votre espace de travail'**
+  String get tangramWorkspaceLabel;
+
+  /// No description provided for @tangramTrayLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pièces à glisser'**
+  String get tangramTrayLabel;
+
+  /// No description provided for @tangramSolutionCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Solution : emplacement de chaque pièce.'**
+  String get tangramSolutionCaption;
+
+  /// No description provided for @tangramResetAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser'**
+  String get tangramResetAction;
+
+  /// No description provided for @tangramExampleCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Faites glisser les pièces sur l\'espace de travail pour reproduire la figure cible ; appuyez pour faire pivoter, double-appuyez pour retourner.'**
+  String get tangramExampleCaption;
+
+  /// No description provided for @tangramPieceSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pièce {number}'**
+  String tangramPieceSemantics(int number);
+
   /// No description provided for @wordBoxesBoxSemantics.
   ///
   /// In fr, this message translates to:
@@ -3605,6 +3641,216 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.'**
   String get p1CountersExampleCaption;
+
+  /// No description provided for @p1CubeRotationReferenceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cube de référence'**
+  String get p1CubeRotationReferenceLabel;
+
+  /// No description provided for @p1CubeRotationCandidateLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cube candidat'**
+  String get p1CubeRotationCandidateLabel;
+
+  /// No description provided for @p1CubeRotationQuestion.
+  ///
+  /// In fr, this message translates to:
+  /// **'Est-ce le même cube, tourné ?'**
+  String get p1CubeRotationQuestion;
+
+  /// No description provided for @p1CubeRotationSameAnswer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Même cube, tourné'**
+  String get p1CubeRotationSameAnswer;
+
+  /// No description provided for @p1CubeRotationAlteredAnswer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modifié'**
+  String get p1CubeRotationAlteredAnswer;
+
+  /// No description provided for @p1CubeRotationExplanationSame.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le cube candidat est bien le cube de référence, vu sous un autre angle.'**
+  String get p1CubeRotationExplanationSame;
+
+  /// No description provided for @p1CubeRotationExplanationAltered.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le cube candidat a été modifié (faces échangées ou face inversée) : ce n\'est pas une simple rotation.'**
+  String get p1CubeRotationExplanationAltered;
+
+  /// No description provided for @attentionSustainedTarget.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible'**
+  String get attentionSustainedTarget;
+
+  /// No description provided for @attentionSustainedNotTarget.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas la cible'**
+  String get attentionSustainedNotTarget;
+
+  /// No description provided for @attentionSustainedTargetSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible ({shortcut})'**
+  String attentionSustainedTargetSemantics(String shortcut);
+
+  /// No description provided for @attentionSustainedNotTargetSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas la cible ({shortcut})'**
+  String attentionSustainedNotTargetSemantics(String shortcut);
+
+  /// No description provided for @attentionSustainedTouchFallback.
+  ///
+  /// In fr, this message translates to:
+  /// **'Touches non représentatives : le jour J, utilisez le clavier.'**
+  String get attentionSustainedTouchFallback;
+
+  /// No description provided for @attentionSustainedRuleConjunction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible : {colour} {shape}'**
+  String attentionSustainedRuleConjunction(String colour, String shape);
+
+  /// No description provided for @attentionSustainedRuleRepeatShape.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible : même forme que le stimulus précédent'**
+  String get attentionSustainedRuleRepeatShape;
+
+  /// No description provided for @attentionSustainedSeriesLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Série {series} / {total}'**
+  String attentionSustainedSeriesLabel(int series, int total);
+
+  /// No description provided for @attentionSustainedStimulusSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Stimulus {index}'**
+  String attentionSustainedStimulusSemantics(int index);
+
+  /// No description provided for @matrixMissingSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Case manquante'**
+  String get matrixMissingSemantics;
+
+  /// No description provided for @matrixQuestionMark.
+  ///
+  /// In fr, this message translates to:
+  /// **'?'**
+  String get matrixQuestionMark;
+
+  /// No description provided for @matrixCandidateSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réponse {index}'**
+  String matrixCandidateSemantics(int index);
+
+  /// No description provided for @matrixExampleCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Trouvez la figure qui complète la matrice.'**
+  String get matrixExampleCaption;
+
+  /// No description provided for @matrixAxisRow.
+  ///
+  /// In fr, this message translates to:
+  /// **'rangée'**
+  String get matrixAxisRow;
+
+  /// No description provided for @matrixAxisColumn.
+  ///
+  /// In fr, this message translates to:
+  /// **'colonne'**
+  String get matrixAxisColumn;
+
+  /// No description provided for @matrixAttributeOuterShape.
+  ///
+  /// In fr, this message translates to:
+  /// **'forme'**
+  String get matrixAttributeOuterShape;
+
+  /// No description provided for @matrixAttributeInnerShape.
+  ///
+  /// In fr, this message translates to:
+  /// **'forme intérieure'**
+  String get matrixAttributeInnerShape;
+
+  /// No description provided for @matrixAttributeCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'nombre'**
+  String get matrixAttributeCount;
+
+  /// No description provided for @matrixAttributeRotation.
+  ///
+  /// In fr, this message translates to:
+  /// **'rotation'**
+  String get matrixAttributeRotation;
+
+  /// No description provided for @matrixAttributeFill.
+  ///
+  /// In fr, this message translates to:
+  /// **'remplissage'**
+  String get matrixAttributeFill;
+
+  /// No description provided for @matrixAttributeSize.
+  ///
+  /// In fr, this message translates to:
+  /// **'taille'**
+  String get matrixAttributeSize;
+
+  /// No description provided for @matrixAttributePosition.
+  ///
+  /// In fr, this message translates to:
+  /// **'position'**
+  String get matrixAttributePosition;
+
+  /// No description provided for @matrixRuleDistributionSuffix.
+  ///
+  /// In fr, this message translates to:
+  /// **'en distribution (3 valeurs)'**
+  String get matrixRuleDistributionSuffix;
+
+  /// No description provided for @matrixRuleAlternationSuffix.
+  ///
+  /// In fr, this message translates to:
+  /// **'en alternance'**
+  String get matrixRuleAlternationSuffix;
+
+  /// No description provided for @matrixRuleXorSuffix.
+  ///
+  /// In fr, this message translates to:
+  /// **'= combinaison des deux premières'**
+  String get matrixRuleXorSuffix;
+
+  /// No description provided for @matrixRuleStepPlain.
+  ///
+  /// In fr, this message translates to:
+  /// **'+{step}'**
+  String matrixRuleStepPlain(int step);
+
+  /// No description provided for @matrixRuleStepDegrees.
+  ///
+  /// In fr, this message translates to:
+  /// **'+{degrees}°'**
+  String matrixRuleStepDegrees(int degrees);
+
+  /// No description provided for @stagePsy2Subtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entretien, exercice de groupe et auto-évaluations CRM, sans épreuve chronométrée.'**
+  String get stagePsy2Subtitle;
 
   /// No description provided for @psy2NoTimedExercise.
   ///

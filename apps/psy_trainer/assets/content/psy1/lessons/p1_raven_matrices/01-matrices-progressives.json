@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.p1_raven_matrices.01",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_raven_matrices",
+  "order": 1,
+  "title": { "fr": "Matrices progressives : trouver la règle avant de chercher la case" },
+  "summary": { "fr": "L'ordre des règles à tester (nombre, remplissage, taille, rotation, superposition), la vérification croisée lignes/colonnes et les pièges d'union vs ou-exclusif." },
+  "file": { "fr": "lessons/p1_raven_matrices/01-matrices-progressives.fr.md" },
+  "estimatedReadMin": 11,
+  "difficulty": 2,
+  "tags": ["p1_raven_matrices"],
+  "practiceTags": ["p1_raven_matrices"],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "own text; facts from docs/content/psy1-spec.md §2.3 row 11, §4.1 row 11"
+  }
+}

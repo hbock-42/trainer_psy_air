@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.p1_reading_fr.01",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_reading_fr",
+  "order": 1,
+  "title": { "fr": "Compréhension de lecture en français : lire vite, répondre juste" },
+  "summary": {
+    "fr": "Dix textes en vingt minutes : la méthode de lecture ciblée, le repérage par mots-clés et la distinction entre « non mentionné » et « faux » pour ne pas se laisser piéger."
+  },
+  "file": { "fr": "lessons/p1_reading_fr/01-comprehension-de-lecture-fr.fr.md" },
+  "estimatedReadMin": 10,
+  "difficulty": 2,
+  "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+  "practiceTags": ["p1_reading_fr"],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "own text; facts from docs/content/psy1-spec.md §2.3 row 4, §4.1 row 4"
+  }
+}

@@ -45,7 +45,6 @@
   "onboardingStageIntro": "The app's content follows the stage you choose.",
   "stagePsy0Subtitle": "Cognitive tests, aviation knowledge and English, remote.",
   "stagePsy1Subtitle": "Psychotechnical and psychomotor tests, one day in person.",
-  "stagePsy2Subtitle": "Interview, group exercise and CRM self-assessments, no timed exercise.",
   "stageComingSoon": "Coming soon",
   "settingsEditProfile": "Edit my profile",
   "settingsProfileSummaryExamDate": "Exam date:",
@@ -945,6 +944,20 @@
       }
     }
   },
+  "tangramTargetLabel": "Target shape",
+  "tangramWorkspaceLabel": "Your workspace",
+  "tangramTrayLabel": "Pieces to drag",
+  "tangramSolutionCaption": "Solution: each piece's placement.",
+  "tangramResetAction": "Reset",
+  "tangramExampleCaption": "Drag the pieces onto the workspace to reproduce the target shape; tap to rotate, double-tap to flip.",
+  "tangramPieceSemantics": "Piece {number}",
+  "@tangramPieceSemantics": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "wordBoxesBoxSemantics": "Box {boxNumber}: {label}",
   "@wordBoxesBoxSemantics": {
     "placeholders": {
@@ -1458,8 +1471,12 @@
   "reverseSpanDigitSemantics": "Digit {shown} of {total}",
   "@reverseSpanDigitSemantics": {
     "placeholders": {
-      "shown": { "type": "int" },
-      "total": { "type": "int" }
+      "shown": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
     }
   },
   "reverseSpanTypeInstructions": "Type the sequence back in reverse",
@@ -1468,14 +1485,20 @@
   "calcBackStageLabel": "Stage {stage} of {stageCount}",
   "@calcBackStageLabel": {
     "placeholders": {
-      "stage": { "type": "int" },
-      "stageCount": { "type": "int" }
+      "stage": {
+        "type": "int"
+      },
+      "stageCount": {
+        "type": "int"
+      }
     }
   },
   "calcBackStemSemantics": "Add to the result from {stage} calculation(s) ago",
   "@calcBackStemSemantics": {
     "placeholders": {
-      "stage": { "type": "int" }
+      "stage": {
+        "type": "int"
+      }
     }
   },
   "calcBackExampleStage": "Stage 2: combine the shown number with the result from two calculations ago.",
@@ -1513,6 +1536,82 @@
   },
   "mentalArithmeticAllIntervalsExampleCaption": "Work out the exact value, then tap every interval that contains it before Confirm.",
   "p1CountersExampleCaption": "Read each gauge (needle, scale or drum counter) then answer the question asked.",
+  "p1CubeRotationReferenceLabel": "Reference cube",
+  "p1CubeRotationCandidateLabel": "Candidate cube",
+  "p1CubeRotationQuestion": "Is this the same cube, rotated?",
+  "p1CubeRotationSameAnswer": "Same cube, rotated",
+  "p1CubeRotationAlteredAnswer": "Altered",
+  "p1CubeRotationExplanationSame": "The candidate cube is indeed the reference cube, seen from another angle.",
+  "p1CubeRotationExplanationAltered": "The candidate cube was altered (faces swapped, or one face mirrored): this is not a plain rotation.",
+  "attentionSustainedTarget": "Target",
+  "attentionSustainedNotTarget": "Not target",
+  "attentionSustainedTargetSemantics": "Target ({shortcut})",
+  "@attentionSustainedTargetSemantics": {
+    "placeholders": {
+      "shortcut": {
+        "type": "String"
+      }
+    }
+  },
+  "attentionSustainedNotTargetSemantics": "Not target ({shortcut})",
+  "@attentionSustainedNotTargetSemantics": {
+    "placeholders": {
+      "shortcut": {
+        "type": "String"
+      }
+    }
+  },
+  "attentionSustainedTouchFallback": "Non-representative buttons: use the keyboard on the real day.",
+  "attentionSustainedRuleConjunction": "Target: {colour} {shape}",
+  "@attentionSustainedRuleConjunction": {
+    "placeholders": {
+      "colour": {
+        "type": "String"
+      },
+      "shape": {
+        "type": "String"
+      }
+    }
+  },
+  "attentionSustainedRuleRepeatShape": "Target: same shape as the previous stimulus",
+  "attentionSustainedSeriesLabel": "Series {series} / {total}",
+  "@attentionSustainedSeriesLabel": {
+    "placeholders": {
+      "series": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "attentionSustainedStimulusSemantics": "Stimulus {index}",
+  "@attentionSustainedStimulusSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "matrixMissingSemantics": "Missing cell",
+  "matrixQuestionMark": "?",
+  "matrixCandidateSemantics": "Answer {index}",
+  "matrixExampleCaption": "Find the figure that completes the matrix.",
+  "matrixAxisRow": "row",
+  "matrixAxisColumn": "column",
+  "matrixAttributeOuterShape": "shape",
+  "matrixAttributeInnerShape": "inner shape",
+  "matrixAttributeCount": "count",
+  "matrixAttributeRotation": "rotation",
+  "matrixAttributeFill": "fill",
+  "matrixAttributeSize": "size",
+  "matrixAttributePosition": "position",
+  "matrixRuleDistributionSuffix": "in distribution (3 values)",
+  "matrixRuleAlternationSuffix": "alternating",
+  "matrixRuleXorSuffix": "= combination of the first two",
+  "matrixRuleStepPlain": "+{step}",
+  "matrixRuleStepDegrees": "+{degrees}°",
+  "stagePsy2Subtitle": "Interview, group exercise and CRM self-assessments, no timed exercise.",
   "psy2NoTimedExercise": "No timed exercise for PSY2: practise from the Learn tab (interview, group exercise).",
   "psy2LearnInterviewSubtitle": "Seven question themes, a prep/answer timer, notes and self-assessment.",
   "psy2LearnGroupExerciseSubtitle": "The six CRM behaviours, a peer practice guide and a self-assessment checklist.",

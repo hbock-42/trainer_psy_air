@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.p1_wm_reverse_span.01",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_wm_reverse_span",
+  "order": 1,
+  "title": { "fr": "Mémoire de travail inversée : lire à l'endroit, répondre à l'envers" },
+  "summary": {
+    "fr": "Chiffres retenus puis restitués en sens inverse sous 3 à 4 secondes : chunking, technique de lecture inversée et pourquoi la difficulté vient de la réorganisation, pas de la mémoire brute."
+  },
+  "file": { "fr": "lessons/p1_wm_reverse_span/01-memoire-de-travail-inversee.fr.md" },
+  "estimatedReadMin": 10,
+  "difficulty": 2,
+  "tags": ["p1_wm_reverse_span"],
+  "practiceTags": ["p1_wm_reverse_span"],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "own text; facts from docs/content/psy1-spec.md §2.3 row 9, §4.1 row 9"
+  }
+}

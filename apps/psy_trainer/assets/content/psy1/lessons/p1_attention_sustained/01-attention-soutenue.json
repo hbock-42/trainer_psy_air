@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.p1_attention_sustained.01",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_attention_sustained",
+  "order": 1,
+  "title": { "fr": "Attention soutenue : tenir la cadence sur trois séries" },
+  "summary": { "fr": "Balayage à rythme fixe, lutte contre la dérive attentionnelle entre les séries et règle de décision pré-engagée pour ne jamais hésiter." },
+  "file": { "fr": "lessons/p1_attention_sustained/01-attention-soutenue.fr.md" },
+  "estimatedReadMin": 9,
+  "difficulty": 2,
+  "tags": ["p1_attention_sustained"],
+  "practiceTags": ["p1_attention_sustained"],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; facts from docs/content/psy1-spec.md §2.3 row 3, §4.1 row 3" }
+}

@@ -287,6 +287,10 @@ using them; third-level tags are free.
 | `multitask_psychomotor` | `multitask` | `multitask.tracking`, `multitask.shapes`, `multitask.calc` |
 | `english` (+ `english_listening`, `english_speaking`) | `english` | `english.reading` (`.detail`, `.inference`, `.main_idea`, `.vocab_in_context`, `.graph`), `english.grammar` (`.tenses`, `.modals`, `.conditionals`, `.prepositions`, `.articles`, `.questions`, `.passive`, `.reported_speech`), `english.vocab` (`.general`, `.aviation`, `.phrasal_verbs`, `.collocations`), `english.listening`, `english.speaking`, `english.strategy` |
 | blueprints | `blueprint` | `blueprint.full`, `blueprint.short`, `blueprint.custom` |
+| `p1_reading_fr` | `p1_reading_fr` | `p1_reading_fr.comprehension`, `p1_reading_fr.inference`, `p1_reading_fr.vocab_in_context` |
+| `p1_math_word_problems` | `p1_math_word_problems` | `p1_math_word_problems.speed_time_distance`, `p1_math_word_problems.fuel`, `p1_math_word_problems.proportions`, `p1_math_word_problems.conversions`, `p1_math_word_problems.time_zones` |
+| `p1_general_efficiency` | `efg` | `efg.numeric`, `efg.verbal`, `efg.spatial`, `efg.logic` (US-103: mixed-topic MCQ bank, spec §2.3 row 6) |
+| `p1_tangram`, `p1_cube_nets`, `p1_raven_matrices`, `p1_angles`, `p1_attention_sustained`, `p1_counters`, `p1_mental_arithmetic`, `p1_wm_reverse_span`, `p1_wm_calc_back`, `p1_psychomotor` | own `familyId` | Lessons/decks only this story (US-103), no bank yet: the familyId itself is the tag until a bank needs a second level. |
 
 Lessons and decks reuse the same tags so the "Try it" button and weak-area recommendations
 (US-041, US-072) can link lessons ↔ items ↔ decks.
