@@ -128,7 +128,7 @@
       "familyId": "p1_wm_reverse_span",
       "itemCount": 10,
       "sectionTimeSec": 600,
-      "perItemTimeSec": 4,
+      "perItemTimeSec": 15,
       "itemSelection": {
         "mode": "generated",
         "generatorId": "p1_wm_reverse_span",

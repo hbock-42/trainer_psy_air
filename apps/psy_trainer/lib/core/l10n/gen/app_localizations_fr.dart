@@ -2158,6 +2158,35 @@ class AppLocalizationsFr extends AppLocalizations {
       'Appuyez sur F quand le calcul encadré, en bas, est faux.';
 
   @override
+  String reverseSpanDigitSemantics(int shown, int total) {
+    return 'Chiffre $shown sur $total';
+  }
+
+  @override
+  String get reverseSpanTypeInstructions => 'Retapez la séquence à l\'envers';
+
+  @override
+  String get reverseSpanExampleShown =>
+      'La séquence affichée, chiffre par chiffre :';
+
+  @override
+  String get reverseSpanExampleExpected => 'Retapez-la à l\'envers :';
+
+  @override
+  String calcBackStageLabel(int stage, int stageCount) {
+    return 'Étape $stage sur $stageCount';
+  }
+
+  @override
+  String calcBackStemSemantics(int stage) {
+    return 'Ajoutez au résultat obtenu il y a $stage calcul(s)';
+  }
+
+  @override
+  String get calcBackExampleStage =>
+      'Étape 2 : combinez le nombre affiché avec le résultat obtenu il y a deux calculs.';
+
+  @override
   String get p1AnglesExampleCaption =>
       'Parmi les valeurs proposées, touchez celles qui correspondent à un angle dessiné (A, B...), puis Valider.';
 

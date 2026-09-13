@@ -2143,6 +2143,35 @@ class AppLocalizationsEn extends AppLocalizations {
       'Press F when the boxed calculation, at the bottom, is wrong.';
 
   @override
+  String reverseSpanDigitSemantics(int shown, int total) {
+    return 'Digit $shown of $total';
+  }
+
+  @override
+  String get reverseSpanTypeInstructions => 'Type the sequence back in reverse';
+
+  @override
+  String get reverseSpanExampleShown =>
+      'The sequence shown, one digit at a time:';
+
+  @override
+  String get reverseSpanExampleExpected => 'Type it back in reverse:';
+
+  @override
+  String calcBackStageLabel(int stage, int stageCount) {
+    return 'Stage $stage of $stageCount';
+  }
+
+  @override
+  String calcBackStemSemantics(int stage) {
+    return 'Add to the result from $stage calculation(s) ago';
+  }
+
+  @override
+  String get calcBackExampleStage =>
+      'Stage 2: combine the shown number with the result from two calculations ago.';
+
+  @override
   String get p1AnglesExampleCaption =>
       'Among the candidate values, tap the ones matching a drawn angle (A, B...), then Confirm.';
 
