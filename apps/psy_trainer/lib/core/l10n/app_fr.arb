@@ -944,6 +944,20 @@
       }
     }
   },
+  "tangramTargetLabel": "Figure cible",
+  "tangramWorkspaceLabel": "Votre espace de travail",
+  "tangramTrayLabel": "Pièces à glisser",
+  "tangramSolutionCaption": "Solution : emplacement de chaque pièce.",
+  "tangramResetAction": "Réinitialiser",
+  "tangramExampleCaption": "Faites glisser les pièces sur l'espace de travail pour reproduire la figure cible ; appuyez pour faire pivoter, double-appuyez pour retourner.",
+  "tangramPieceSemantics": "Pièce {number}",
+  "@tangramPieceSemantics": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "wordBoxesBoxSemantics": "Boîte {boxNumber} : {label}",
   "@wordBoxesBoxSemantics": {
     "placeholders": {

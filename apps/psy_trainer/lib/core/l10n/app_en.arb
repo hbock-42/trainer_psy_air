@@ -944,6 +944,20 @@
       }
     }
   },
+  "tangramTargetLabel": "Target shape",
+  "tangramWorkspaceLabel": "Your workspace",
+  "tangramTrayLabel": "Pieces to drag",
+  "tangramSolutionCaption": "Solution: each piece's placement.",
+  "tangramResetAction": "Reset",
+  "tangramExampleCaption": "Drag the pieces onto the workspace to reproduce the target shape; tap to rotate, double-tap to flip.",
+  "tangramPieceSemantics": "Piece {number}",
+  "@tangramPieceSemantics": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "wordBoxesBoxSemantics": "Box {boxNumber}: {label}",
   "@wordBoxesBoxSemantics": {
     "placeholders": {

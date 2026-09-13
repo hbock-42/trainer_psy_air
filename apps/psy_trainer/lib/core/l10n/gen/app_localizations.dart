@@ -2702,6 +2702,48 @@ abstract class AppLocalizations {
   /// **'Pièce {number}'**
   String overlayGridTileSemantics(int number);
 
+  /// No description provided for @tangramTargetLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Figure cible'**
+  String get tangramTargetLabel;
+
+  /// No description provided for @tangramWorkspaceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Votre espace de travail'**
+  String get tangramWorkspaceLabel;
+
+  /// No description provided for @tangramTrayLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pièces à glisser'**
+  String get tangramTrayLabel;
+
+  /// No description provided for @tangramSolutionCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Solution : emplacement de chaque pièce.'**
+  String get tangramSolutionCaption;
+
+  /// No description provided for @tangramResetAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser'**
+  String get tangramResetAction;
+
+  /// No description provided for @tangramExampleCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Faites glisser les pièces sur l\'espace de travail pour reproduire la figure cible ; appuyez pour faire pivoter, double-appuyez pour retourner.'**
+  String get tangramExampleCaption;
+
+  /// No description provided for @tangramPieceSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pièce {number}'**
+  String tangramPieceSemantics(int number);
+
   /// No description provided for @wordBoxesBoxSemantics.
   ///
   /// In fr, this message translates to:

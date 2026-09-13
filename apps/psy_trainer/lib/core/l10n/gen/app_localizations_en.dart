@@ -1502,6 +1502,30 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get tangramTargetLabel => 'Target shape';
+
+  @override
+  String get tangramWorkspaceLabel => 'Your workspace';
+
+  @override
+  String get tangramTrayLabel => 'Pieces to drag';
+
+  @override
+  String get tangramSolutionCaption => 'Solution: each piece\'s placement.';
+
+  @override
+  String get tangramResetAction => 'Reset';
+
+  @override
+  String get tangramExampleCaption =>
+      'Drag the pieces onto the workspace to reproduce the target shape; tap to rotate, double-tap to flip.';
+
+  @override
+  String tangramPieceSemantics(int number) {
+    return 'Piece $number';
+  }
+
+  @override
   String wordBoxesBoxSemantics(int boxNumber, String label) {
     return 'Box $boxNumber: $label';
   }
