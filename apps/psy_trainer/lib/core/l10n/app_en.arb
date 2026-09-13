@@ -1592,5 +1592,23 @@
         "type": "int"
       }
     }
-  }
+  },
+  "matrixMissingSemantics": "Missing cell",
+  "matrixQuestionMark": "?",
+  "matrixCandidateSemantics": "Answer {index}",
+  "matrixExampleCaption": "Find the figure that completes the matrix.",
+  "matrixAxisRow": "row",
+  "matrixAxisColumn": "column",
+  "matrixAttributeOuterShape": "shape",
+  "matrixAttributeInnerShape": "inner shape",
+  "matrixAttributeCount": "count",
+  "matrixAttributeRotation": "rotation",
+  "matrixAttributeFill": "fill",
+  "matrixAttributeSize": "size",
+  "matrixAttributePosition": "position",
+  "matrixRuleDistributionSuffix": "in distribution (3 values)",
+  "matrixRuleAlternationSuffix": "alternating",
+  "matrixRuleXorSuffix": "= combination of the first two",
+  "matrixRuleStepPlain": "+{step}",
+  "matrixRuleStepDegrees": "+{degrees}°"
 }

@@ -2303,4 +2303,65 @@ class AppLocalizationsFr extends AppLocalizations {
   String attentionSustainedStimulusSemantics(int index) {
     return 'Stimulus $index';
   }
+
+  @override
+  String get matrixMissingSemantics => 'Case manquante';
+
+  @override
+  String get matrixQuestionMark => '?';
+
+  @override
+  String matrixCandidateSemantics(int index) {
+    return 'Réponse $index';
+  }
+
+  @override
+  String get matrixExampleCaption =>
+      'Trouvez la figure qui complète la matrice.';
+
+  @override
+  String get matrixAxisRow => 'rangée';
+
+  @override
+  String get matrixAxisColumn => 'colonne';
+
+  @override
+  String get matrixAttributeOuterShape => 'forme';
+
+  @override
+  String get matrixAttributeInnerShape => 'forme intérieure';
+
+  @override
+  String get matrixAttributeCount => 'nombre';
+
+  @override
+  String get matrixAttributeRotation => 'rotation';
+
+  @override
+  String get matrixAttributeFill => 'remplissage';
+
+  @override
+  String get matrixAttributeSize => 'taille';
+
+  @override
+  String get matrixAttributePosition => 'position';
+
+  @override
+  String get matrixRuleDistributionSuffix => 'en distribution (3 valeurs)';
+
+  @override
+  String get matrixRuleAlternationSuffix => 'en alternance';
+
+  @override
+  String get matrixRuleXorSuffix => '= combinaison des deux premières';
+
+  @override
+  String matrixRuleStepPlain(int step) {
+    return '+$step';
+  }
+
+  @override
+  String matrixRuleStepDegrees(int degrees) {
+    return '+$degrees°';
+  }
 }

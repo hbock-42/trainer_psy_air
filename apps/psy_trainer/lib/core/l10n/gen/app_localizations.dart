@@ -3737,6 +3737,114 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Stimulus {index}'**
   String attentionSustainedStimulusSemantics(int index);
+
+  /// No description provided for @matrixMissingSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Case manquante'**
+  String get matrixMissingSemantics;
+
+  /// No description provided for @matrixQuestionMark.
+  ///
+  /// In fr, this message translates to:
+  /// **'?'**
+  String get matrixQuestionMark;
+
+  /// No description provided for @matrixCandidateSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réponse {index}'**
+  String matrixCandidateSemantics(int index);
+
+  /// No description provided for @matrixExampleCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Trouvez la figure qui complète la matrice.'**
+  String get matrixExampleCaption;
+
+  /// No description provided for @matrixAxisRow.
+  ///
+  /// In fr, this message translates to:
+  /// **'rangée'**
+  String get matrixAxisRow;
+
+  /// No description provided for @matrixAxisColumn.
+  ///
+  /// In fr, this message translates to:
+  /// **'colonne'**
+  String get matrixAxisColumn;
+
+  /// No description provided for @matrixAttributeOuterShape.
+  ///
+  /// In fr, this message translates to:
+  /// **'forme'**
+  String get matrixAttributeOuterShape;
+
+  /// No description provided for @matrixAttributeInnerShape.
+  ///
+  /// In fr, this message translates to:
+  /// **'forme intérieure'**
+  String get matrixAttributeInnerShape;
+
+  /// No description provided for @matrixAttributeCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'nombre'**
+  String get matrixAttributeCount;
+
+  /// No description provided for @matrixAttributeRotation.
+  ///
+  /// In fr, this message translates to:
+  /// **'rotation'**
+  String get matrixAttributeRotation;
+
+  /// No description provided for @matrixAttributeFill.
+  ///
+  /// In fr, this message translates to:
+  /// **'remplissage'**
+  String get matrixAttributeFill;
+
+  /// No description provided for @matrixAttributeSize.
+  ///
+  /// In fr, this message translates to:
+  /// **'taille'**
+  String get matrixAttributeSize;
+
+  /// No description provided for @matrixAttributePosition.
+  ///
+  /// In fr, this message translates to:
+  /// **'position'**
+  String get matrixAttributePosition;
+
+  /// No description provided for @matrixRuleDistributionSuffix.
+  ///
+  /// In fr, this message translates to:
+  /// **'en distribution (3 valeurs)'**
+  String get matrixRuleDistributionSuffix;
+
+  /// No description provided for @matrixRuleAlternationSuffix.
+  ///
+  /// In fr, this message translates to:
+  /// **'en alternance'**
+  String get matrixRuleAlternationSuffix;
+
+  /// No description provided for @matrixRuleXorSuffix.
+  ///
+  /// In fr, this message translates to:
+  /// **'= combinaison des deux premières'**
+  String get matrixRuleXorSuffix;
+
+  /// No description provided for @matrixRuleStepPlain.
+  ///
+  /// In fr, this message translates to:
+  /// **'+{step}'**
+  String matrixRuleStepPlain(int step);
+
+  /// No description provided for @matrixRuleStepDegrees.
+  ///
+  /// In fr, this message translates to:
+  /// **'+{degrees}°'**
+  String matrixRuleStepDegrees(int degrees);
 }
 
 class _AppLocalizationsDelegate

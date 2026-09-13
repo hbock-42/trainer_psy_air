@@ -2287,4 +2287,65 @@ class AppLocalizationsEn extends AppLocalizations {
   String attentionSustainedStimulusSemantics(int index) {
     return 'Stimulus $index';
   }
+
+  @override
+  String get matrixMissingSemantics => 'Missing cell';
+
+  @override
+  String get matrixQuestionMark => '?';
+
+  @override
+  String matrixCandidateSemantics(int index) {
+    return 'Answer $index';
+  }
+
+  @override
+  String get matrixExampleCaption =>
+      'Find the figure that completes the matrix.';
+
+  @override
+  String get matrixAxisRow => 'row';
+
+  @override
+  String get matrixAxisColumn => 'column';
+
+  @override
+  String get matrixAttributeOuterShape => 'shape';
+
+  @override
+  String get matrixAttributeInnerShape => 'inner shape';
+
+  @override
+  String get matrixAttributeCount => 'count';
+
+  @override
+  String get matrixAttributeRotation => 'rotation';
+
+  @override
+  String get matrixAttributeFill => 'fill';
+
+  @override
+  String get matrixAttributeSize => 'size';
+
+  @override
+  String get matrixAttributePosition => 'position';
+
+  @override
+  String get matrixRuleDistributionSuffix => 'in distribution (3 values)';
+
+  @override
+  String get matrixRuleAlternationSuffix => 'alternating';
+
+  @override
+  String get matrixRuleXorSuffix => '= combination of the first two';
+
+  @override
+  String matrixRuleStepPlain(int step) {
+    return '+$step';
+  }
+
+  @override
+  String matrixRuleStepDegrees(int degrees) {
+    return '+$degrees°';
+  }
 }
