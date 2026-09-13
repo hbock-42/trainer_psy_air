@@ -97,3 +97,28 @@ builds the web target and deploys it to GitHub Pages:
   `apps/psy_trainer/lib/`.
 - Work is organised as epics and user stories in [docs/kanban](docs/kanban/README.md); one PR per
   story, branch `us-xxx-short-title`, PR title `US-xxx: Title`.
+
+## Working with agents
+
+[`AGENTS.md`](AGENTS.md) at the repo root is the agent-agnostic entry point: a short
+non-negotiables list and an index of task-shaped skills. `CLAUDE.md` is a symlink to it, so
+Claude Code picks it up automatically; any other agent tool reads `AGENTS.md` directly.
+
+Skills live under [`.agents/skills/<name>/SKILL.md`](.agents/skills) — self-contained,
+task-triggered procedures (`ship-a-story`, `add-activity-engine`, `author-content`,
+`data-layer`, `design-system`, `progress-analytics`) instead of one monolithic doc: an agent
+loads only the skill for the task at hand rather than all of `docs/`. `.claude/skills` is a
+relative symlink to the same folder (`.claude/skills -> ../.agents/skills`), so Claude Code's
+own skill discovery finds them with no duplication.
+
+**Adding a skill:** create `.agents/skills/<name>/SKILL.md` with YAML frontmatter (`name`,
+a one-line `description` naming the trigger task) and a body under ~250 lines, self-sufficient
+for its task (concrete file paths and commands, not links to other docs); add a row to
+`AGENTS.md`'s skills table and to `docs/ARCHITECTURE.md`'s "Skills" index.
+`tools/test/skills_test.dart` checks every skill has frontmatter, a matching `AGENTS.md` row,
+and stays under the size cap.
+
+**Windows checkouts:** a relative symlink checked out on Windows needs
+`git config core.symlinks true` (and Developer Mode or an elevated `git clone`) for
+`.claude/skills` and `CLAUDE.md` to resolve as real symlinks instead of text files containing
+the link's target.
