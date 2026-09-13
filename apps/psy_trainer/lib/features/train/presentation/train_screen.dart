@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:psy_content/psy_content.dart';
 
 import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/repositories/repository_providers.dart';
@@ -53,44 +54,57 @@ class TrainScreen extends ConsumerWidget {
             ),
             SizedBox(height: theme.spacing.lg),
             const ResumeSessionCard(),
-            switch (families) {
-              AsyncData(value: final list) when list.isEmpty => Padding(
+            if (activeModule.moduleId == ModuleId.psy2)
+              Padding(
                 padding: EdgeInsets.symmetric(vertical: theme.spacing.lg),
-                child: Text(
-                  context.l10n.trainFamiliesEmpty,
-                  style: theme.textStyles.body.copyWith(
-                    color: theme.colors.textSecondary,
+                child: AppCard(
+                  child: Text(
+                    context.l10n.psy2NoTimedExercise,
+                    style: theme.textStyles.body.copyWith(
+                      color: theme.colors.textSecondary,
+                    ),
                   ),
                 ),
-              ),
-              AsyncData(value: final list) => Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  for (final (i, entry) in list.indexed) ...[
-                    if (i > 0) SizedBox(height: theme.spacing.sm),
-                    _TrainFamilyTile(index: i + 1, entry: entry),
+              )
+            else
+              switch (families) {
+                AsyncData(value: final list) when list.isEmpty => Padding(
+                  padding: EdgeInsets.symmetric(vertical: theme.spacing.lg),
+                  child: Text(
+                    context.l10n.trainFamiliesEmpty,
+                    style: theme.textStyles.body.copyWith(
+                      color: theme.colors.textSecondary,
+                    ),
+                  ),
+                ),
+                AsyncData(value: final list) => Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    for (final (i, entry) in list.indexed) ...[
+                      if (i > 0) SizedBox(height: theme.spacing.sm),
+                      _TrainFamilyTile(index: i + 1, entry: entry),
+                    ],
                   ],
-                ],
-              ),
-              AsyncError() => Padding(
-                padding: EdgeInsets.symmetric(vertical: theme.spacing.lg),
-                child: Text(
-                  context.l10n.trainFamiliesError,
-                  style: theme.textStyles.body.copyWith(
-                    color: theme.colors.textSecondary,
+                ),
+                AsyncError() => Padding(
+                  padding: EdgeInsets.symmetric(vertical: theme.spacing.lg),
+                  child: Text(
+                    context.l10n.trainFamiliesError,
+                    style: theme.textStyles.body.copyWith(
+                      color: theme.colors.textSecondary,
+                    ),
                   ),
                 ),
-              ),
-              _ => Padding(
-                padding: EdgeInsets.symmetric(vertical: theme.spacing.lg),
-                child: Text(
-                  context.l10n.trainFamiliesLoading,
-                  style: theme.textStyles.body.copyWith(
-                    color: theme.colors.textSecondary,
+                _ => Padding(
+                  padding: EdgeInsets.symmetric(vertical: theme.spacing.lg),
+                  child: Text(
+                    context.l10n.trainFamiliesLoading,
+                    style: theme.textStyles.body.copyWith(
+                      color: theme.colors.textSecondary,
+                    ),
                   ),
                 ),
-              ),
-            },
+              },
           ],
         ),
       ),

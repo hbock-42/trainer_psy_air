@@ -99,6 +99,28 @@ abstract final class AppRoutes {
   /// Full location of the "review today" flashcards screen.
   static const String learnCards = '$learn/$learnCardsSegment';
 
+  /// Relative path of the PSY2 interview practice screen (nested under
+  /// [learn], US-111).
+  static const String learnInterviewSegment = 'interview';
+
+  /// Full location of the PSY2 interview practice screen.
+  static const String learnInterview = '$learn/$learnInterviewSegment';
+
+  /// Relative path of the PSY2 group-exercise guide and self-assessment
+  /// screen (nested under [learn], US-112).
+  static const String learnGroupExerciseSegment = 'group-exercise';
+
+  /// Full location of the PSY2 group-exercise screen.
+  static const String learnGroupExercise = '$learn/$learnGroupExerciseSegment';
+
+  /// Relative path of the "Comment se passe le PSY2" overview (nested under
+  /// [learn], US-111/US-112).
+  static const String learnPsy2HowItWorksSegment = 'psy2-how-it-works';
+
+  /// Full location of the PSY2 "how it works" overview.
+  static const String learnPsy2HowItWorks =
+      '$learn/$learnPsy2HowItWorksSegment';
+
   /// Relative path of the family score-over-time page (nested under
   /// [progress], US-071).
   static const String progressFamilySegment = 'family/:$familyIdParam';

@@ -144,7 +144,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get onboardingStageIntro =>
-      'Le contenu de l\'application suit l\'étape choisie. Seul le PSY0 est disponible pour le moment.';
+      'Le contenu de l\'application suit l\'étape choisie.';
 
   @override
   String get stagePsy0Subtitle =>
@@ -153,6 +153,10 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get stagePsy1Subtitle =>
       'Tests psychotechniques et psychomoteurs, une journée en présentiel.';
+
+  @override
+  String get stagePsy2Subtitle =>
+      'Entretien, exercice de groupe et auto-évaluations CRM, sans épreuve chronométrée.';
 
   @override
   String get stageComingSoon => 'Bientôt';
@@ -2216,4 +2220,188 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get p1CountersExampleCaption =>
       'Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.';
+
+  @override
+  String get psy2NoTimedExercise =>
+      'Pas d\'exercice chronométré pour le PSY2 : entraînez-vous depuis l\'onglet Apprendre (entretien, exercice de groupe).';
+
+  @override
+  String get psy2LearnInterviewSubtitle =>
+      'Sept thèmes de questions, chronomètre de préparation/réponse, notes et auto-évaluation.';
+
+  @override
+  String get psy2LearnGroupExerciseSubtitle =>
+      'Les six comportements CRM, un guide d\'entraînement entre pairs et une grille d\'auto-évaluation.';
+
+  @override
+  String get psy2LearnHowItWorksSubtitle =>
+      'La structure du PSY2, ce que l\'app peut préparer, et ce qu\'elle ne fait pas.';
+
+  @override
+  String get psy2InterviewTitle => 'Entretien';
+
+  @override
+  String get psy2InterviewIntro =>
+      'Choisissez un thème (ou laissez le hasard décider), puis entraînez-vous avec un chronomètre de préparation et de réponse.';
+
+  @override
+  String get psy2InterviewEmpty =>
+      'Aucune question d\'entretien pour le moment.';
+
+  @override
+  String get psy2InterviewThemeTitle => 'Thème';
+
+  @override
+  String get psy2InterviewThemeRandom => 'Au hasard';
+
+  @override
+  String get psy2InterviewStart => 'Commencer';
+
+  @override
+  String get psy2InterviewPrepLabel => 'Préparation';
+
+  @override
+  String get psy2InterviewAnswerLabel => 'Réponse';
+
+  @override
+  String get psy2InterviewShowGuidance => 'Voir la méthode de réponse';
+
+  @override
+  String get psy2InterviewHideGuidance => 'Masquer la méthode de réponse';
+
+  @override
+  String get psy2InterviewGuidanceTitle => 'Ce qu\'une bonne réponse couvre';
+
+  @override
+  String get psy2InterviewSkeletonTitle => 'Structure suggérée';
+
+  @override
+  String get psy2InterviewNotesLabel => 'Notes personnelles';
+
+  @override
+  String get psy2InterviewNotesHint =>
+      'Ce qui s\'est bien passé, ce que je changerais...';
+
+  @override
+  String get psy2InterviewSkipPrep => 'Commencer à répondre';
+
+  @override
+  String get psy2InterviewFinishAnswer => 'Terminer et m\'auto-évaluer';
+
+  @override
+  String get psy2InterviewRubricTitle => 'Auto-évaluation';
+
+  @override
+  String get psy2InterviewSave => 'Enregistrer';
+
+  @override
+  String get psy2InterviewSaved =>
+      'Entraînement enregistré. Retrouvez son historique dans l\'onglet Progression.';
+
+  @override
+  String get psy2InterviewPracticeAnother =>
+      'S\'entraîner sur une autre question';
+
+  @override
+  String get psy2GroupExerciseTitle => 'Exercice de groupe';
+
+  @override
+  String get psy2GroupExerciseChecklistTitle =>
+      'Auto-évaluation après un entraînement';
+
+  @override
+  String get psy2GroupExerciseWentWell => 'Ce qui s\'est bien passé';
+
+  @override
+  String get psy2GroupExerciseToImprove => 'Ce qui est à améliorer';
+
+  @override
+  String get psy2GroupExerciseReflection1 =>
+      'Que ferais-je différemment si c\'était l\'épreuve réelle ?';
+
+  @override
+  String get psy2GroupExerciseReflection2 =>
+      'Qu\'ai-je appris sur mon comportement par défaut sous pression ?';
+
+  @override
+  String get psy2GroupExerciseSave => 'Enregistrer';
+
+  @override
+  String get psy2GroupExerciseSaved =>
+      'Auto-évaluation enregistrée. Retrouvez son historique dans l\'onglet Progression.';
+
+  @override
+  String get psy2HowItWorksTitle => 'Comment se passe le PSY2';
+
+  @override
+  String get psy2HowItWorksEmpty => 'Contenu à venir.';
+
+  @override
+  String get psy2ThemeMotivation => 'Motivation et projet';
+
+  @override
+  String get psy2ThemeBackground => 'Parcours et présentation';
+
+  @override
+  String get psy2ThemeCrmTeamwork => 'CRM et travail d\'équipe';
+
+  @override
+  String get psy2ThemeStress => 'Stress et pression';
+
+  @override
+  String get psy2ThemeSelfAwareness => 'Connaissance de soi';
+
+  @override
+  String get psy2ThemeAviationKnowledge => 'Culture aéronautique';
+
+  @override
+  String get psy2ThemeReflective => 'Questions réflexives';
+
+  @override
+  String get psy2RubricStructure => 'Structure (situation → action → résultat)';
+
+  @override
+  String get psy2RubricConcreteness => 'Exemples concrets';
+
+  @override
+  String get psy2RubricSelfAwareness => 'Connaissance de soi';
+
+  @override
+  String get psy2RubricRelevance => 'Lien avec l\'aéronautique / le CRM';
+
+  @override
+  String get psy2RubricDelivery => 'Aisance à l\'oral';
+
+  @override
+  String get psy2DimCommunication => 'Communication';
+
+  @override
+  String get psy2DimLeadership => 'Leadership / suivisme';
+
+  @override
+  String get psy2DimSituationalAwareness => 'Conscience de la situation';
+
+  @override
+  String get psy2DimDecisionMaking => 'Prise de décision';
+
+  @override
+  String get psy2DimWorkloadManagement => 'Gestion de la charge';
+
+  @override
+  String get psy2DimTeamwork => 'Esprit d\'équipe';
+
+  @override
+  String get psy2ProgressInterviewTitle => 'Entretien — progression';
+
+  @override
+  String get psy2ProgressInterviewSubtitle =>
+      'Moyenne de l\'auto-évaluation par entraînement, et moyenne par critère.';
+
+  @override
+  String get psy2ProgressGroupExerciseTitle =>
+      'Exercice de groupe — progression';
+
+  @override
+  String get psy2ProgressGroupExerciseSubtitle =>
+      'Moyenne de l\'auto-évaluation par session, et moyenne par dimension CRM.';
 }

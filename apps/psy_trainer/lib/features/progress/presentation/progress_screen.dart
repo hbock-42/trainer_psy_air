@@ -7,6 +7,7 @@ import '../../../core/l10n/l10n_extensions.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/widgets.dart';
+import '../../psy2/presentation/widgets/psy2_progress_section.dart';
 import '../domain/progress_snapshot.dart';
 import '../domain/recommendation.dart';
 import 'providers/dashboard_labels_provider.dart';
@@ -172,6 +173,7 @@ class _Dashboard extends ConsumerWidget {
                   onAction: onRecommendation,
                 ),
                 SizedBox(height: theme.spacing.xl),
+                const Psy2ProgressSection(),
                 SectionHeader(
                   title: context.l10n.recentActivityTitle,
                   subtitle: context.l10n.recentActivitySubtitle,
