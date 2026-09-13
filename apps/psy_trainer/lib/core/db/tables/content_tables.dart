@@ -129,6 +129,18 @@ class LexicalFields extends Table with AuditedTable {
   TextColumn get json => text().map(const JsonMapConverter())();
 }
 
+/// Tracks, per module, which bundle `contentVersion` was last mirrored into
+/// this database (US-125: lazy seeding). Independent of [ContentMetaTable]
+/// (which only stamps the bundle version the *seeder* last touched, for
+/// display/debugging): the gate `ContentSeeder.seedModule` uses to decide
+/// whether a module needs (re)seeding is this table, keyed by [id] (the
+/// module id, `psy0`/`psy1`/`psy2`), not the singleton row.
+@DataClassName('ModuleSeedStateRow')
+class ModuleSeedState extends Table with AuditedTable {
+  IntColumn get contentVersion => integer()();
+  DateTimeColumn get seededAt => dateTime()();
+}
+
 /// Mirror of the PSY2 interview questions authored under
 /// `psy2/interview/questions/*.json` (`InterviewQuestionBank.questions`,
 /// US-111): the original, per-theme interview prompts the practice screen

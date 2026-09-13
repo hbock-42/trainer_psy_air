@@ -53,6 +53,11 @@ jobs:
         run: dart run build_runner build --delete-conflicting-outputs
         working-directory: apps/psy_trainer
 
+      # US-125: one JSON per module instead of ~130 individual asset
+      # requests at first launch; gitignored, rebuilt on every build.
+      - name: Pre-bundle content
+        run: dart run --verbosity=error tools/bundle_content.dart
+
       # `--base-href` matches the Pages project-site sub-path
       # (`https://<owner>.github.io/<repo>/`); relative asset URIs in
       # `web/index.html` / `manifest.json` resolve correctly under it.

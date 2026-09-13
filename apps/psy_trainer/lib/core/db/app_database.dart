@@ -59,6 +59,7 @@ part 'app_database.g.dart';
     Blueprints,
     LexicalFields,
     InterviewQuestions,
+    ModuleSeedState,
     Sessions,
     Attempts,
     ItemStats,
@@ -80,7 +81,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase(super.executor);
 
   @override
-  int get schemaVersion => 4;
+  int get schemaVersion => 5;
 
   /// v2 (US-027): added `passages` (mirror of `ItemBank.passages`, so a
   /// running session can resolve the `Passage` an `McqItem.passageId`
@@ -99,6 +100,12 @@ class AppDatabase extends _$AppDatabase {
   /// `InterviewQuestionBank.questions`, the PSY2 interview practice bank —
   /// see `ContentRepository.interviewQuestions`/`interviewQuestion`).
   /// Content mirror, so the upgrade only creates the table.
+  ///
+  /// v5 (US-125): added `module_seed_state` (one row per module, the gate
+  /// `ContentSeeder.seedModule` uses for lazy per-module seeding — see
+  /// "Content seeding" in ARCHITECTURE.md). A fresh, empty content mirror
+  /// table: the upgrade only creates it, the next launch seeds every module
+  /// that has no row yet.
 
   /// Datetimes are stored as ISO-8601 text (UTC, millisecond precision), not
   /// unix seconds: cadence-driven activities record several attempts per
@@ -119,6 +126,9 @@ class AppDatabase extends _$AppDatabase {
       }
       if (from < 4) {
         await m.createTable(interviewQuestions);
+      }
+      if (from < 5) {
+        await m.createTable(moduleSeedState);
       }
     },
     beforeOpen: (details) async {

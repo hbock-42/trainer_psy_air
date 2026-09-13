@@ -80,6 +80,11 @@ jobs:
       - name: Coverage gate
         run: dart run tools/coverage_gate.dart --file apps/psy_trainer/coverage/lcov.info --min 70
 
+      - name: Pre-bundle content
+        # US-125: one JSON per module instead of ~130 individual asset
+        # requests at first launch; gitignored, rebuilt on every build.
+        run: dart run --verbosity=error tools/bundle_content.dart
+
       - name: Build web
         # Web is an exam-mode target (US-006); a release build is fast enough to
         # run on every PR. Desktop builds are not run in CI.

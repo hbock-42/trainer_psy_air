@@ -160,6 +160,36 @@ deliberate split by role (US-006):
 | Android, iOS (phone) | `android/`, `ios/` | **Learn and practice**: lessons, flashcards, drills, progress. Touch-first layouts. |
 | macOS, Windows | `macos/`, `windows/` | **Exam mode** for keyboard-native activities; the window opens at 1280×800 and cannot shrink below 1024×700 logical pixels (`macos/Runner/MainFlutterWindow.swift`, `windows/runner/win32_window.cpp`). |
 | Web (Chrome) | `web/` | Same as desktop for people without a build; also the cheapest platform to build in CI (`flutter build web --release` in the `check` job). Deployed continuously to GitHub Pages (US-124, see `docs/RELEASE.md` "Web (GitHub Pages)") at `https://hbock-42.github.io/trainer_psy_air/`, using the hash URL strategy (`core/router/url_strategy.dart`) so deep links survive a reload from a project-site sub-path with no server-side SPA rewrite. Persists through drift `WasmDatabase` (US-016; see the `data-layer` skill) — `web/sqlite3.wasm` (732 KB) + `web/drift_worker.js` (348 KB) add about 1.1 MB to `build/web`; both are fetched lazily by the worker once the database first opens, not part of the initial `main.dart.js` payload. |
+
+### Startup performance (US-125)
+
+A cold Lighthouse trace of the deployed build (before this story) showed the two suspected
+causes confirmed: first launch fetched ~130 individual content files (152 requests, ~470 KB
+gzip) before the router could show anything, and `main.dart.js` (1.20 MB gzip) carried all 27
+activity engines up front (TBT 1.93 s, TTI 15.8 s). Full numbers, before/after:
+`tools/web_startup_profile.md`.
+
+Two independent changes:
+
+- **Content pre-bundling + lazy per-module seeding**: `tools/bundle_content.dart` (run by `make
+  content-assets`/CI before `flutter build`, gitignored — the authored tree stays the source of
+  truth and the only thing `make content-check` validates) collapses each module's files into
+  one `assets/content/bundles/<module>.json`. `ContentBundleLoader` prefers it, falling back to
+  the per-file tree (tests keep using `FileAssetReader`). `ContentSeeder.seedModule` (gated by
+  the `module_seed_state` table, not `content_meta`) seeds only the *active* module before the
+  first frame; the other modules seed in the background right after
+  (`SchedulerBinding.addPostFrameCallback`, see `contentReadyProvider`/`moduleSeedProvider` in
+  `core/db/seed/content_ready_provider.dart`) — 152 requests before first paint down to 2. See
+  the `data-layer` skill, "Content seeding".
+- **Deferred PSY1 engines**: the 13 PSY1 engines/renderers are behind a single `deferred as`
+  import (`engine_registry_provider.dart` -> `deferred/psy1_engines.dart`), loaded in the
+  background after the first frame (`deferredEnginesLoaderProvider`, watched once from
+  `PsyTrainerApp`) and registered into the same, still-mutable `EngineRegistry`/
+  `RendererRegistry` instances. `flutter build web` now emits `main.dart.js_1.part.js`; native
+  builds are unaffected (deferred imports are a no-op there). This is a smaller, deliberately
+  scoped win than the story card's reference design (gating a per-family `ensureLoaded` behind
+  the practice launcher/exam planner/retry-mistakes builder) — see the PR description and
+  `deferred/psy1_engines.dart`'s doc comment for why.
 | Tablet + physical keyboard | `android/`, `ios/` | Treated as desktop when a hardware keyboard is present. |
 
 One codebase, one `WidgetsApp`: nothing in `lib/app.dart` or the router is platform-specific.

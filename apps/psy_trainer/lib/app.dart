@@ -8,6 +8,7 @@ import 'core/router/startup_gate.dart';
 import 'core/theme/app_theme.dart';
 import 'features/settings/domain/app_settings.dart';
 import 'features/settings/presentation/providers/app_settings_provider.dart';
+import 'features/train/presentation/engine/engine_registry_provider.dart';
 
 /// Root of the application.
 ///
@@ -28,6 +29,10 @@ class PsyTrainerApp extends ConsumerWidget {
     // whenever its inputs change; nothing reads the value, only the side
     // effect matters (see `reminder_coordinator_provider.dart`).
     ref.watch(reminderCoordinatorProvider);
+    // US-125: loads the deferred PSY1 engines/renderers in the background,
+    // once, right after the first frame — see
+    // `deferredEnginesLoaderProvider`.
+    ref.watch(deferredEnginesLoaderProvider);
     return WidgetsApp.router(
       title: 'PSY Trainer',
       color: AppColors.light.background,

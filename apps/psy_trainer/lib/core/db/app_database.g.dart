@@ -4932,6 +4932,375 @@ class InterviewQuestionsCompanion
   }
 }
 
+class $ModuleSeedStateTable extends ModuleSeedState
+    with TableInfo<$ModuleSeedStateTable, ModuleSeedStateRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $ModuleSeedStateTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _contentVersionMeta = const VerificationMeta(
+    'contentVersion',
+  );
+  @override
+  late final GeneratedColumn<int> contentVersion = GeneratedColumn<int>(
+    'content_version',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _seededAtMeta = const VerificationMeta(
+    'seededAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> seededAt = GeneratedColumn<DateTime>(
+    'seeded_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    createdAt,
+    updatedAt,
+    contentVersion,
+    seededAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'module_seed_state';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<ModuleSeedStateRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    if (data.containsKey('content_version')) {
+      context.handle(
+        _contentVersionMeta,
+        contentVersion.isAcceptableOrUnknown(
+          data['content_version']!,
+          _contentVersionMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_contentVersionMeta);
+    }
+    if (data.containsKey('seeded_at')) {
+      context.handle(
+        _seededAtMeta,
+        seededAt.isAcceptableOrUnknown(data['seeded_at']!, _seededAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_seededAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  ModuleSeedStateRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return ModuleSeedStateRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+      contentVersion: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}content_version'],
+      )!,
+      seededAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}seeded_at'],
+      )!,
+    );
+  }
+
+  @override
+  $ModuleSeedStateTable createAlias(String alias) {
+    return $ModuleSeedStateTable(attachedDatabase, alias);
+  }
+}
+
+class ModuleSeedStateRow extends DataClass
+    implements Insertable<ModuleSeedStateRow> {
+  final String id;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  final int contentVersion;
+  final DateTime seededAt;
+  const ModuleSeedStateRow({
+    required this.id,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.contentVersion,
+    required this.seededAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    map['content_version'] = Variable<int>(contentVersion);
+    map['seeded_at'] = Variable<DateTime>(seededAt);
+    return map;
+  }
+
+  ModuleSeedStateCompanion toCompanion(bool nullToAbsent) {
+    return ModuleSeedStateCompanion(
+      id: Value(id),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+      contentVersion: Value(contentVersion),
+      seededAt: Value(seededAt),
+    );
+  }
+
+  factory ModuleSeedStateRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return ModuleSeedStateRow(
+      id: serializer.fromJson<String>(json['id']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+      contentVersion: serializer.fromJson<int>(json['contentVersion']),
+      seededAt: serializer.fromJson<DateTime>(json['seededAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+      'contentVersion': serializer.toJson<int>(contentVersion),
+      'seededAt': serializer.toJson<DateTime>(seededAt),
+    };
+  }
+
+  ModuleSeedStateRow copyWith({
+    String? id,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+    int? contentVersion,
+    DateTime? seededAt,
+  }) => ModuleSeedStateRow(
+    id: id ?? this.id,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+    contentVersion: contentVersion ?? this.contentVersion,
+    seededAt: seededAt ?? this.seededAt,
+  );
+  ModuleSeedStateRow copyWithCompanion(ModuleSeedStateCompanion data) {
+    return ModuleSeedStateRow(
+      id: data.id.present ? data.id.value : this.id,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+      contentVersion: data.contentVersion.present
+          ? data.contentVersion.value
+          : this.contentVersion,
+      seededAt: data.seededAt.present ? data.seededAt.value : this.seededAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ModuleSeedStateRow(')
+          ..write('id: $id, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('contentVersion: $contentVersion, ')
+          ..write('seededAt: $seededAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(id, createdAt, updatedAt, contentVersion, seededAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is ModuleSeedStateRow &&
+          other.id == this.id &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt &&
+          other.contentVersion == this.contentVersion &&
+          other.seededAt == this.seededAt);
+}
+
+class ModuleSeedStateCompanion extends UpdateCompanion<ModuleSeedStateRow> {
+  final Value<String> id;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<int> contentVersion;
+  final Value<DateTime> seededAt;
+  final Value<int> rowid;
+  const ModuleSeedStateCompanion({
+    this.id = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.contentVersion = const Value.absent(),
+    this.seededAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  ModuleSeedStateCompanion.insert({
+    required String id,
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    required int contentVersion,
+    required DateTime seededAt,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt),
+       contentVersion = Value(contentVersion),
+       seededAt = Value(seededAt);
+  static Insertable<ModuleSeedStateRow> custom({
+    Expression<String>? id,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<int>? contentVersion,
+    Expression<DateTime>? seededAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (contentVersion != null) 'content_version': contentVersion,
+      if (seededAt != null) 'seeded_at': seededAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  ModuleSeedStateCompanion copyWith({
+    Value<String>? id,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<int>? contentVersion,
+    Value<DateTime>? seededAt,
+    Value<int>? rowid,
+  }) {
+    return ModuleSeedStateCompanion(
+      id: id ?? this.id,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      contentVersion: contentVersion ?? this.contentVersion,
+      seededAt: seededAt ?? this.seededAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (contentVersion.present) {
+      map['content_version'] = Variable<int>(contentVersion.value);
+    }
+    if (seededAt.present) {
+      map['seeded_at'] = Variable<DateTime>(seededAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ModuleSeedStateCompanion(')
+          ..write('id: $id, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('contentVersion: $contentVersion, ')
+          ..write('seededAt: $seededAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 class $SessionsTable extends Sessions
     with TableInfo<$SessionsTable, SessionRow> {
   @override
@@ -8493,6 +8862,9 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $LexicalFieldsTable lexicalFields = $LexicalFieldsTable(this);
   late final $InterviewQuestionsTable interviewQuestions =
       $InterviewQuestionsTable(this);
+  late final $ModuleSeedStateTable moduleSeedState = $ModuleSeedStateTable(
+    this,
+  );
   late final $SessionsTable sessions = $SessionsTable(this);
   late final $AttemptsTable attempts = $AttemptsTable(this);
   late final $ItemStatsTable itemStats = $ItemStatsTable(this);
@@ -8602,6 +8974,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     blueprints,
     lexicalFields,
     interviewQuestions,
+    moduleSeedState,
     sessions,
     attempts,
     itemStats,
@@ -11234,6 +11607,218 @@ typedef $$InterviewQuestionsTableProcessedTableManager =
       InterviewQuestionRow,
       PrefetchHooks Function()
     >;
+typedef $$ModuleSeedStateTableCreateCompanionBuilder =
+    ModuleSeedStateCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      required int contentVersion,
+      required DateTime seededAt,
+      Value<int> rowid,
+    });
+typedef $$ModuleSeedStateTableUpdateCompanionBuilder =
+    ModuleSeedStateCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<int> contentVersion,
+      Value<DateTime> seededAt,
+      Value<int> rowid,
+    });
+
+class $$ModuleSeedStateTableFilterComposer
+    extends Composer<_$AppDatabase, $ModuleSeedStateTable> {
+  $$ModuleSeedStateTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get contentVersion => $composableBuilder(
+    column: $table.contentVersion,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get seededAt => $composableBuilder(
+    column: $table.seededAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$ModuleSeedStateTableOrderingComposer
+    extends Composer<_$AppDatabase, $ModuleSeedStateTable> {
+  $$ModuleSeedStateTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get contentVersion => $composableBuilder(
+    column: $table.contentVersion,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get seededAt => $composableBuilder(
+    column: $table.seededAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$ModuleSeedStateTableAnnotationComposer
+    extends Composer<_$AppDatabase, $ModuleSeedStateTable> {
+  $$ModuleSeedStateTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  GeneratedColumn<int> get contentVersion => $composableBuilder(
+    column: $table.contentVersion,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get seededAt =>
+      $composableBuilder(column: $table.seededAt, builder: (column) => column);
+}
+
+class $$ModuleSeedStateTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $ModuleSeedStateTable,
+          ModuleSeedStateRow,
+          $$ModuleSeedStateTableFilterComposer,
+          $$ModuleSeedStateTableOrderingComposer,
+          $$ModuleSeedStateTableAnnotationComposer,
+          $$ModuleSeedStateTableCreateCompanionBuilder,
+          $$ModuleSeedStateTableUpdateCompanionBuilder,
+          (
+            ModuleSeedStateRow,
+            BaseReferences<
+              _$AppDatabase,
+              $ModuleSeedStateTable,
+              ModuleSeedStateRow
+            >,
+          ),
+          ModuleSeedStateRow,
+          PrefetchHooks Function()
+        > {
+  $$ModuleSeedStateTableTableManager(
+    _$AppDatabase db,
+    $ModuleSeedStateTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$ModuleSeedStateTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ModuleSeedStateTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$ModuleSeedStateTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<int> contentVersion = const Value.absent(),
+                Value<DateTime> seededAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => ModuleSeedStateCompanion(
+                id: id,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                contentVersion: contentVersion,
+                seededAt: seededAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                required int contentVersion,
+                required DateTime seededAt,
+                Value<int> rowid = const Value.absent(),
+              }) => ModuleSeedStateCompanion.insert(
+                id: id,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                contentVersion: contentVersion,
+                seededAt: seededAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$ModuleSeedStateTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $ModuleSeedStateTable,
+      ModuleSeedStateRow,
+      $$ModuleSeedStateTableFilterComposer,
+      $$ModuleSeedStateTableOrderingComposer,
+      $$ModuleSeedStateTableAnnotationComposer,
+      $$ModuleSeedStateTableCreateCompanionBuilder,
+      $$ModuleSeedStateTableUpdateCompanionBuilder,
+      (
+        ModuleSeedStateRow,
+        BaseReferences<
+          _$AppDatabase,
+          $ModuleSeedStateTable,
+          ModuleSeedStateRow
+        >,
+      ),
+      ModuleSeedStateRow,
+      PrefetchHooks Function()
+    >;
 typedef $$SessionsTableCreateCompanionBuilder =
     SessionsCompanion Function({
       required String id,
@@ -13228,6 +13813,8 @@ class $AppDatabaseManager {
       $$LexicalFieldsTableTableManager(_db, _db.lexicalFields);
   $$InterviewQuestionsTableTableManager get interviewQuestions =>
       $$InterviewQuestionsTableTableManager(_db, _db.interviewQuestions);
+  $$ModuleSeedStateTableTableManager get moduleSeedState =>
+      $$ModuleSeedStateTableTableManager(_db, _db.moduleSeedState);
   $$SessionsTableTableManager get sessions =>
       $$SessionsTableTableManager(_db, _db.sessions);
   $$AttemptsTableTableManager get attempts =>

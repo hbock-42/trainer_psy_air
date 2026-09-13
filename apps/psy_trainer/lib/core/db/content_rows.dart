@@ -151,4 +151,19 @@ abstract final class ContentRows {
     createdAt: seededAt,
     updatedAt: seededAt,
   );
+
+  /// The per-module seeding gate (US-125): [moduleId] was mirrored at
+  /// [contentVersion] (the bundle's `manifest.contentVersion`, not the
+  /// module's own `version` field — see `ContentSeeder.seedModule`).
+  static ModuleSeedStateCompanion moduleSeedState(
+    ModuleId moduleId, {
+    required int contentVersion,
+    required DateTime seededAt,
+  }) => ModuleSeedStateCompanion.insert(
+    id: moduleId.name,
+    contentVersion: contentVersion,
+    seededAt: seededAt,
+    createdAt: seededAt,
+    updatedAt: seededAt,
+  );
 }

@@ -13,7 +13,11 @@ const String contentBundleRoot = 'assets/content';
 /// Plain strings only, so the whole thing can be handed to another isolate
 /// for parsing ([ContentBundleLoader.parse]).
 class RawContentBundle {
-  const RawContentBundle({required this.manifest, required this.files});
+  const RawContentBundle({
+    required this.manifest,
+    required this.files,
+    Set<String>? modules,
+  }) : _modules = modules;
 
   /// The manifest, already parsed (it is read first to decide whether the
   /// rest of the bundle is needed at all).
@@ -21,6 +25,15 @@ class RawContentBundle {
 
   /// Every `.json` and `.md` file under the declared module folders.
   final Map<String, String> files;
+
+  final Set<String>? _modules;
+
+  /// Module names actually present in [files] (US-125: a lazy/per-module
+  /// read only fetches the active module's files, not every module the full
+  /// manifest declares — see [ContentBundleLoader.read]'s `onlyModules`).
+  /// Defaults to every module of [manifest].
+  Set<String> get modules =>
+      _modules ?? manifest.modules.map((m) => m.name).toSet();
 }
 
 /// The bundle decoded into the US-010 models, drafts removed, lesson bodies
@@ -105,13 +118,38 @@ class ContentBundleLoader {
     return parser.parseManifest(await assets.readString(path), file: path);
   }
 
-  /// Reads the manifest and every `.json` / `.md` file of the modules it
-  /// declares. A module listed in the manifest but absent from the assets is
-  /// reported as a [ContentParseException] on the manifest.
-  Future<RawContentBundle> read({ContentManifest? manifest}) async {
+  /// Path of the pre-bundled JSON of [module] (US-125), one document per
+  /// module holding every `.json`/`.md` file of it (`.md` lesson bodies
+  /// inlined) — see `tools/bundle_content.dart`. Generated, not part of the
+  /// authored tree.
+  String bundleFilePath(ModuleId module) => '$root/bundles/${module.name}.json';
+
+  /// Reads the manifest and every `.json` / `.md` file of [onlyModules]
+  /// (default: every module the manifest declares). A module listed but
+  /// absent from the assets is reported as a [ContentParseException] on the
+  /// manifest.
+  ///
+  /// Each module is read from its pre-bundled document
+  /// ([bundleFilePath]) when present (one asset read instead of one per
+  /// file); otherwise (that file missing — the common case in tests, which
+  /// read the authored tree directly) every `.json`/`.md` file under the
+  /// module's folder is listed and read individually, exactly as before
+  /// US-125.
+  Future<RawContentBundle> read({
+    ContentManifest? manifest,
+    Set<ModuleId>? onlyModules,
+  }) async {
     manifest ??= await readManifest();
+    final wanted = onlyModules == null
+        ? manifest.modules
+        : manifest.modules.where(onlyModules.contains);
     final files = <String, String>{};
-    for (final module in manifest.modules) {
+    for (final module in wanted) {
+      final bundled = await _readBundleFile(module);
+      if (bundled != null) {
+        files.addAll(bundled);
+        continue;
+      }
       final prefix = '$root/${module.name}/';
       final keys = await assets.listAssets(prefix: prefix);
       if (keys.isEmpty) {
@@ -128,15 +166,46 @@ class ContentBundleLoader {
         files[key.substring(root.length + 1)] = await assets.readString(key);
       }
     }
-    return RawContentBundle(manifest: manifest, files: files);
+    return RawContentBundle(
+      manifest: manifest,
+      files: files,
+      modules: wanted.map((m) => m.name).toSet(),
+    );
+  }
+
+  /// The `{"files": {...}}` document at [bundleFilePath] for [module], or
+  /// null when it doesn't exist (no bundle was built — [read] falls back to
+  /// the authored tree) or is malformed (same fallback: a bad pre-bundle
+  /// must never break the app, only miss the perf win).
+  Future<Map<String, String>?> _readBundleFile(ModuleId module) async {
+    final String raw;
+    try {
+      raw = await assets.readString(bundleFilePath(module));
+    } on Object {
+      return null;
+    }
+    final Object? decoded;
+    try {
+      decoded = jsonDecode(raw);
+    } on FormatException {
+      return null;
+    }
+    if (decoded is! Map<String, Object?>) return null;
+    final map = decoded['files'];
+    if (map is! Map) return null;
+    return {
+      for (final entry in map.entries)
+        entry.key as String: entry.value as String,
+    };
   }
 
   /// [read] then [parse], the latter through [run] (defaults to inline; the
   /// seeder passes `compute`).
   Future<LoadedContentBundle> load({
+    Set<ModuleId>? onlyModules,
     Future<LoadedContentBundle> Function(RawContentBundle raw)? run,
   }) async {
-    final raw = await read();
+    final raw = await read(onlyModules: onlyModules);
     return run == null ? parse(raw) : await run(raw);
   }
 
@@ -182,7 +251,7 @@ class _Parser {
     for (final path in paths) {
       _parseFile(path, raw.files[path]!);
     }
-    final declared = raw.manifest.modules.map((m) => m.name).toSet();
+    final declared = raw.modules;
     for (final module in declared) {
       if (!modules.any((m) => m.id.name == module)) {
         throw ContentParseException(

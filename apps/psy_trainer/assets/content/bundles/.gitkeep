@@ -1,0 +1,3 @@
+# Generated per-module content bundles land here (tools/bundle_content.dart).
+# The JSON files are gitignored; this file keeps the asset directory present
+# so `flutter analyze` and `pub get` see it before the build step runs.

@@ -84,23 +84,55 @@ versions; refresh with `tools/fetch_web_sqlite.sh` (`--check` to verify without 
 (`@TestOn('browser')`, pure mapping logic) and `docs/TESTING.md` "Web persistence tests" for
 the manual verification procedure after `make build-web`.
 
-## Content seeding (US-013)
+## Content seeding (US-013, pre-bundled + lazy per-module since US-125)
 
 ```
-assets/content/**  --rootBundle-->  AssetReader  -->  ContentBundleLoader  -->  ContentSeeder  -->  ContentDao.replaceAll
+assets/content/bundles/<module>.json (preferred)  \
+assets/content/**                    (fallback)    >-- AssetReader --> ContentBundleLoader --> ContentSeeder
 ```
 
-`ContentSeeder.seedIfNeeded()` compares `manifest.contentVersion` with the stored
-`content_meta` row; newer -> re-seed (delete + batch insert every content table, one
-transaction); equal -> no-op; older (downgraded build) -> left alone. **User data is never
-touched** by `replaceAll` — only the content tables. Lessons: the seeder reads the `.md` file a
-lesson's `file` points to and stores it in `body` (`file` becomes null after seeding) so the
-viewer never touches the asset bundle. New folder under `assets/content/` -> `make
-content-assets` (see `author-content` skill) or the seeder reports a missing file with a hint.
+`tools/bundle_content.dart` (`make content-assets`/CI, before `flutter build`/`flutter test`)
+collapses each module's authored files (`.json`/`.md`, lesson bodies inlined) into one
+`assets/content/bundles/<module>.json` — generated, **gitignored**; the authored tree stays the
+source of truth and the only thing `make content-check` validates (the validator ignores
+`bundles/`). `ContentBundleLoader.read` tries `bundles/<module>.json` first (one asset read
+instead of one per file) and falls back to listing/reading the module's folder when that file is
+missing — tests keep using the tree via `FileAssetReader` unmodified.
 
-Startup: `StartupGate` (`core/router/startup_gate.dart`) watches `contentReadyProvider` +
-`onboardingCompletedProvider` and shows `SplashScreen` / `ErrorScreen` (with retry) / the
-router accordingly.
+Two ways to seed, both on `ContentSeeder`:
+
+- **`seedIfNeeded()`** (the original, full-bundle path): compares `manifest.contentVersion` with
+  the stored `content_meta` row; newer -> re-seed everything (delete + batch insert every
+  content table, one transaction, `ContentDao.replaceAll`); equal -> no-op; older (downgraded
+  build) -> left alone. Still used by tests/tools that want the whole bundle in one call, and by
+  anything that needs every module seeded synchronously.
+- **`seedModule(ModuleId)`** (US-125, what the running app actually calls): seeds one module
+  only, gated by a per-module row in the `module_seed_state` table (schema v5) — not
+  `content_meta`, whose singleton row `seedModule` also stamps but only informationally.
+  `ContentDao.replaceModule` deletes and reinserts only that module's rows (families/lessons/
+  blueprints by `moduleId`, items/decks/flashcards/lexical fields/interview questions by the
+  module's family ids; passages are upserted, never deleted — they carry no module/family
+  column and staleness there is harmless). Other modules' rows are untouched.
+
+**User data is never touched** by either path — only the content tables. Lessons: the seeder
+reads the `.md` file a lesson's `file` points to and stores it in `body` (`file` becomes null
+after seeding) so the viewer never touches the asset bundle. New folder under
+`assets/content/` -> `make content-assets` (see `author-content` skill) or the seeder reports a
+missing file with a hint.
+
+Startup (`core/db/seed/content_ready_provider.dart`): `contentReadyProvider` seeds only the
+*active* module (`activeModuleProvider`, US-101) via `seedModule` — this, not the whole bundle,
+is what `StartupGate` (`core/router/startup_gate.dart`) gates the router on (watches
+`contentReadyProvider` + `onboardingCompletedProvider`, shows `SplashScreen` / `ErrorScreen`
+with retry / the router accordingly). Once resolved, every *other* supported module is queued
+through `moduleSeedProvider(ModuleId)` on the next frame
+(`SchedulerBinding.addPostFrameCallback`) — a background pass, never awaited by the screens
+that display family lists (`trainFamiliesProvider`, `psy0FamiliesProvider`,
+`examBlueprintsProvider` read `contentRepositoryProvider` directly, deliberately not
+`moduleSeedProvider`, so existing tests that fake `contentRepositoryProvider` don't also need to
+fake the seeding stack — see that file's doc comment for the trade-off this leaves). See
+`tools/web_startup_profile.md` and `docs/ARCHITECTURE.md` "Startup performance" for the
+before/after numbers.
 
 ## Backup export/import (US-074)
 
