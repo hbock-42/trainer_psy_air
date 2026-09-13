@@ -4,7 +4,7 @@ issue: 167
 title: "PSY1: Raven-style progressive matrices engine"
 type: story
 epic: EPIC-10
-status: review
+status: done
 priority: P2
 size: L
 lane: engines

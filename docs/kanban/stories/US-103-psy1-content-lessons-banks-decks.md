@@ -4,7 +4,7 @@ issue: 71
 title: "PSY1 content: lessons, banks, decks"
 type: story
 epic: EPIC-10
-status: review
+status: done
 priority: P2
 size: L
 lane: content

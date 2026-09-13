@@ -4,7 +4,7 @@ issue: 166
 title: "PSY1: working-memory engines (reverse span, calc memory back)"
 type: story
 epic: EPIC-10
-status: review
+status: done
 priority: P2
 size: M
 lane: engines

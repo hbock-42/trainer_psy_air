@@ -4,7 +4,7 @@ issue: 173
 title: "PSY1: bank-driven engines (reading FR, EFG)"
 type: story
 epic: EPIC-10
-status: review
+status: done
 priority: P2
 size: S
 lane: engines

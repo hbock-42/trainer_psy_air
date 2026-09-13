@@ -4,7 +4,7 @@ issue: 170
 title: "PSY1: counters / gauge reading engine"
 type: story
 epic: EPIC-10
-status: review
+status: done
 priority: P2
 size: M
 lane: engines

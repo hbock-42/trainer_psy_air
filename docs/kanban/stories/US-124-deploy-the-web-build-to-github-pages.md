@@ -4,7 +4,7 @@ issue: 158
 title: "Deploy the web build to GitHub Pages"
 type: story
 epic: EPIC-12
-status: review
+status: done
 priority: P1
 size: S
 lane: core

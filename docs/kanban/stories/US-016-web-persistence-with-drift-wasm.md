@@ -4,7 +4,7 @@ issue: 157
 title: "Web persistence with drift WASM"
 type: story
 epic: EPIC-02
-status: review
+status: done
 priority: P1
 size: M
 lane: core

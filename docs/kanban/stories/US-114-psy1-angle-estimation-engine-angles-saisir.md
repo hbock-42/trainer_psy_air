@@ -4,7 +4,7 @@ issue: 171
 title: "PSY1: angle estimation engine (Angles à saisir)"
 type: story
 epic: EPIC-10
-status: review
+status: done
 priority: P2
 size: S
 lane: engines

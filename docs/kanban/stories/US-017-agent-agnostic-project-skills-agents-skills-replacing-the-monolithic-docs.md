@@ -4,7 +4,7 @@ issue: 180
 title: "Agent-agnostic project skills (.agents/skills) replacing the monolithic docs"
 type: story
 epic: EPIC-12
-status: review
+status: done
 priority: P1
 size: M
 lane: core
