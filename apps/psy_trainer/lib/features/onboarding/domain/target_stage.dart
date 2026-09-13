@@ -1,8 +1,8 @@
 /// The selection stage the user is preparing for.
 ///
-/// Stored in `UserProfile.targetStage` by [key]. PSY0 and PSY1 (US-101) have
-/// content today; PSY2 is listed in onboarding as "coming soon" so the choice
-/// is recorded once its trainer exists (EPIC-11).
+/// Stored in `UserProfile.targetStage` by [key]. PSY0, PSY1 (US-101) and
+/// PSY2 (US-111/US-112) all have content today; PSY2 has no timed engine
+/// (spec ethics note), only lessons, interview practice and self-assessment.
 enum TargetStage {
   psy0('psy0'),
   psy1('psy1'),
@@ -17,7 +17,7 @@ enum TargetStage {
   static const TargetStage defaultStage = psy0;
 
   /// Whether the app has a trainer for this stage.
-  bool get isAvailable => this == psy0 || this == psy1;
+  bool get isAvailable => true;
 
   /// Parses a stored [key]; unknown or null values fall back to [fallback]
   /// (null by default).

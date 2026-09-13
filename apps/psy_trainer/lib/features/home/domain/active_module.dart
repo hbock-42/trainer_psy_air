@@ -3,16 +3,18 @@ import 'package:psy_content/psy_content.dart';
 import '../../../core/repositories/model/learning.dart';
 import '../../onboarding/domain/target_stage.dart';
 
-/// Which module (PSY0/PSY1, US-101) the Learn/Train/Exam homes and the
-/// dashboard currently show.
+/// Which module (PSY0/PSY1/PSY2, US-101/US-111) the Learn/Train/Exam homes
+/// and the dashboard currently show.
 ///
 /// Defaults to the profile's `targetStage` (set in onboarding or "edit my
 /// profile"); the `ModuleSwitch` segmented control
 /// (`shared/widgets/module_switch.dart`) can override it for the app session
 /// and persists that override in `UserProfile.settings['module']` (see
 /// `docs/ARCHITECTURE.md`, "Data layer") so it survives a restart. PSY2 has
-/// no content yet (EPIC-11): it is never a supported module here even if
-/// stored as `targetStage`, and the switch/dashboard fall back to PSY0.
+/// no timed engine (EPIC-11, spec ethics note): Learn shows its lessons,
+/// interview practice and group-exercise self-assessment, while Train/Exam
+/// show a friendly "no timed exercise for PSY2" note instead of a family
+/// list.
 class ActiveModule {
   const ActiveModule({required this.moduleId, required this.available});
 
@@ -26,7 +28,11 @@ class ActiveModule {
   static const String settingsKey = 'module';
 
   /// Modules the app currently has content/trainer for, in display order.
-  static const List<ModuleId> supportedModules = [ModuleId.psy0, ModuleId.psy1];
+  static const List<ModuleId> supportedModules = [
+    ModuleId.psy0,
+    ModuleId.psy1,
+    ModuleId.psy2,
+  ];
 
   static const ActiveModule defaults = ActiveModule(
     moduleId: ModuleId.psy0,
@@ -36,7 +42,7 @@ class ActiveModule {
   static ModuleId? _moduleOf(TargetStage stage) => switch (stage) {
     TargetStage.psy0 => ModuleId.psy0,
     TargetStage.psy1 => ModuleId.psy1,
-    TargetStage.psy2 => null,
+    TargetStage.psy2 => ModuleId.psy2,
   };
 
   /// Reads the active module: the stored override in

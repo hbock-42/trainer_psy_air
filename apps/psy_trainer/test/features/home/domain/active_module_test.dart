@@ -8,7 +8,7 @@ void main() {
     test('defaults to PSY0 for a missing profile', () {
       final active = ActiveModule.fromProfile(null);
       expect(active.moduleId, ModuleId.psy0);
-      expect(active.available, [ModuleId.psy0, ModuleId.psy1]);
+      expect(active.available, [ModuleId.psy0, ModuleId.psy1, ModuleId.psy2]);
     });
 
     test('follows targetStage when no override is stored', () {
@@ -16,9 +16,9 @@ void main() {
       expect(ActiveModule.fromProfile(profile).moduleId, ModuleId.psy1);
     });
 
-    test('PSY2 targetStage falls back to PSY0 (no PSY2 content yet)', () {
+    test('PSY2 targetStage is honoured (US-111/US-112)', () {
       const profile = UserProfile(locale: 'fr', targetStage: 'psy2');
-      expect(ActiveModule.fromProfile(profile).moduleId, ModuleId.psy0);
+      expect(ActiveModule.fromProfile(profile).moduleId, ModuleId.psy2);
     });
 
     test('a stored override wins over targetStage', () {
@@ -30,13 +30,13 @@ void main() {
       expect(ActiveModule.fromProfile(profile).moduleId, ModuleId.psy1);
     });
 
-    test('an unsupported override falls back to targetStage', () {
+    test('a PSY2 override wins over targetStage', () {
       const profile = UserProfile(
         locale: 'fr',
         targetStage: 'psy0',
         settings: {'module': 'psy2'},
       );
-      expect(ActiveModule.fromProfile(profile).moduleId, ModuleId.psy0);
+      expect(ActiveModule.fromProfile(profile).moduleId, ModuleId.psy2);
     });
   });
 

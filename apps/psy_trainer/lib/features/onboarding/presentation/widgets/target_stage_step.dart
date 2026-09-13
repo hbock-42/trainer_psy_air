@@ -6,8 +6,8 @@ import '../../../../shared/widgets/widgets.dart';
 import '../../domain/target_stage.dart';
 import 'onboarding_step_layout.dart';
 
-/// Step 3: the stage the user prepares. PSY0 is selectable (and selected by
-/// default); PSY1 and PSY2 are listed but disabled with a "coming soon" tag.
+/// Step 3: the stage the user prepares. PSY0, PSY1 and PSY2 (US-111/US-112)
+/// are all selectable.
 class TargetStageStep extends StatelessWidget {
   const TargetStageStep({
     required this.selected,
@@ -73,7 +73,7 @@ class _StageTile extends StatelessWidget {
     final subtitle = switch (stage) {
       TargetStage.psy0 => context.l10n.stagePsy0Subtitle,
       TargetStage.psy1 => context.l10n.stagePsy1Subtitle,
-      TargetStage.psy2 => context.l10n.stageComingSoon,
+      TargetStage.psy2 => context.l10n.stagePsy2Subtitle,
     };
     final state = !stage.isAvailable
         ? AnswerOptionState.disabled
