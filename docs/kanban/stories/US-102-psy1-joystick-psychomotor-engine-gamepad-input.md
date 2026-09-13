@@ -4,7 +4,7 @@ issue: 70
 title: "PSY1: joystick psychomotor engine (gamepad input)"
 type: story
 epic: EPIC-10
-status: review
+status: done
 priority: P2
 size: L
 lane: engines

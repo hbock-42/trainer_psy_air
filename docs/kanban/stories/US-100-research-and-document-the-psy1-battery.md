@@ -4,7 +4,7 @@ issue: 68
 title: "Research and document the PSY1 battery"
 type: story
 epic: EPIC-10
-status: review
+status: done
 priority: P2
 size: S
 lane: content

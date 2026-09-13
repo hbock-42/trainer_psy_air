@@ -4,7 +4,7 @@ issue: 73
 title: "PSY2: interview preparation (question bank, self-recording, rubric)"
 type: story
 epic: EPIC-11
-status: review
+status: done
 priority: P2
 size: M
 lane: learn-ui

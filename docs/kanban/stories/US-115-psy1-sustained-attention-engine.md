@@ -4,7 +4,7 @@ issue: 172
 title: "PSY1: sustained attention engine"
 type: story
 epic: EPIC-10
-status: review
+status: done
 priority: P2
 size: M
 lane: engines

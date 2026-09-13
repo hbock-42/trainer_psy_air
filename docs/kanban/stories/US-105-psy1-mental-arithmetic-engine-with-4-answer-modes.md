@@ -4,7 +4,7 @@ issue: 165
 title: "PSY1: mental arithmetic engine with 4 answer modes"
 type: story
 epic: EPIC-10
-status: review
+status: done
 priority: P2
 size: M
 lane: engines

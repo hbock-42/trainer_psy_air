@@ -4,7 +4,7 @@ issue: 169
 title: "PSY1: tangram engine"
 type: story
 epic: EPIC-10
-status: review
+status: done
 priority: P2
 size: L
 lane: engines

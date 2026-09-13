@@ -4,7 +4,7 @@ issue: 168
 title: "PSY1: cube nets with rune alphabet + cube rotation matching"
 type: story
 epic: EPIC-10
-status: review
+status: done
 priority: P2
 size: M
 lane: engines

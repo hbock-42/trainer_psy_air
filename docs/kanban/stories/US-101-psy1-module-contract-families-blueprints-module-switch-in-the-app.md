@@ -4,7 +4,7 @@ issue: 69
 title: "PSY1 module: contract, families, blueprints, module switch in the app"
 type: story
 epic: EPIC-10
-status: review
+status: done
 priority: P1
 size: M
 lane: core
