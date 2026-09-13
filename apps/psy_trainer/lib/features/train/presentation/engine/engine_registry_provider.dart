@@ -26,6 +26,8 @@ import '../../../engines/p1_counters/presentation/p1_counters_renderer.dart';
 import '../../../engines/p1_cube_nets/domain/p1_cube_nets_engine.dart';
 import '../../../engines/p1_cube_nets/presentation/p1_cube_nets_renderer.dart';
 import '../../../engines/p1_general_efficiency/domain/p1_general_efficiency_engine.dart';
+import '../../../engines/p1_math_word_problems/domain/word_problems_engine.dart';
+import '../../../engines/p1_math_word_problems/presentation/word_problems_renderer.dart';
 import '../../../engines/p1_mental_arithmetic/domain/mental_arithmetic_engine.dart';
 import '../../../engines/p1_mental_arithmetic/presentation/mental_arithmetic_renderer.dart';
 import '../../../engines/p1_raven_matrices/domain/raven_matrices_engine.dart';
@@ -77,6 +79,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const CultureAeroEngine(),
         const DominosEngine(),
         const EnglishEngine(),
+        const MathWordProblemsEngine(),
         const MentalArithmeticEngine(),
         const MultitaskEngine(),
         const NbackEngine(),
@@ -108,6 +111,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const CountersRenderer(),
         const CubeNetRenderer(),
         const DominosRenderer(),
+        const MathWordProblemsRenderer(),
         const McqRenderer(
           familyId: 'culture_aero',
           explanationFooter: cultureAeroExplanationFooter,
