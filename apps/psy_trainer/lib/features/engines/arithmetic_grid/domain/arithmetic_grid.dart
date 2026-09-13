@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:psy_content/psy_content.dart';
 
+import '../../_shared/arithmetic/arithmetic_equation.dart';
+
 /// One equality of an [ArithmeticGrid]: a fixed calculation ([expression],
 /// [correctValue]) and the value actually printed next to it
 /// ([displayedValue]), equal to [correctValue] on a correct cell and off by
@@ -71,12 +73,12 @@ abstract final class ArithmeticGridGenerator {
         : params.operations;
 
     final used = <String>{};
-    final built = <_Equality>[];
+    final built = <ArithmeticEquation>[];
     for (var i = 0; i < cellCount; i++) {
-      var equality = _buildEquality(rng, ops, operandCap);
+      var equality = ArithmeticEquationGenerator.build(rng, ops, operandCap);
       var attempts = 0;
       while (used.contains(equality.expression) && attempts < 20) {
-        equality = _buildEquality(rng, ops, operandCap);
+        equality = ArithmeticEquationGenerator.build(rng, ops, operandCap);
         attempts++;
       }
       used.add(equality.expression);
@@ -92,12 +94,8 @@ abstract final class ArithmeticGridGenerator {
     return ArithmeticGrid(size: params.grid, cells: cells);
   }
 
-  static int _operandCap(int maxOperand, int difficulty) {
-    final cap = maxOperand < 4 ? 4 : maxOperand;
-    final level = difficulty.clamp(minDifficulty, maxDifficulty);
-    final scaled = (cap * level / maxDifficulty).round();
-    return scaled.clamp(4, cap);
-  }
+  static int _operandCap(int maxOperand, int difficulty) =>
+      arithmeticOperandCap(maxOperand, difficulty);
 
   static Set<int> _pickWrongIndices(Random rng, int cellCount, int wrongCount) {
     final indices = List<int>.generate(cellCount, (i) => i)..shuffle(rng);
@@ -106,7 +104,7 @@ abstract final class ArithmeticGridGenerator {
 
   static ArithmeticGridCell _finalise(
     Random rng,
-    _Equality equality,
+    ArithmeticEquation equality,
     bool shouldBeWrong,
     int difficulty,
   ) {
@@ -126,7 +124,11 @@ abstract final class ArithmeticGridGenerator {
   /// correct value, so a wrong cell is never ambiguous. Low difficulty
   /// favours the obvious traps (sign flip, off by ten); high difficulty
   /// favours the subtle ones (off by one, swapped priority).
-  static int _applyTrap(Random rng, _Equality equality, int difficulty) {
+  static int _applyTrap(
+    Random rng,
+    ArithmeticEquation equality,
+    int difficulty,
+  ) {
     final subtle = <int>[];
     void addSubtle(int value) {
       if (value != equality.correctValue) subtle.add(value);
@@ -157,104 +159,4 @@ abstract final class ArithmeticGridGenerator {
     final window = min(2, ordered.length);
     return ordered[rng.nextInt(window)];
   }
-
-  static _Equality _buildEquality(
-    Random rng,
-    List<ArithmeticOperation> ops,
-    int cap,
-  ) {
-    final op = ops[rng.nextInt(ops.length)];
-    return switch (op) {
-      ArithmeticOperation.add => _buildAdd(rng, cap),
-      ArithmeticOperation.sub => _buildSub(rng, cap),
-      ArithmeticOperation.mul => _buildMul(rng, cap),
-      ArithmeticOperation.div => _buildDiv(rng, cap),
-      ArithmeticOperation.square => _buildSquare(rng, cap),
-      ArithmeticOperation.percent => _buildPercent(rng, cap),
-      ArithmeticOperation.priority => _buildPriority(rng, cap),
-    };
-  }
-
-  static _Equality _buildAdd(Random rng, int cap) {
-    final a = 1 + rng.nextInt(cap);
-    final b = 1 + rng.nextInt(cap);
-    return _Equality(expression: '$a + $b', correctValue: a + b);
-  }
-
-  static _Equality _buildSub(Random rng, int cap) {
-    final a = 1 + rng.nextInt(cap);
-    final b = 1 + rng.nextInt(a);
-    return _Equality(expression: '$a - $b', correctValue: a - b);
-  }
-
-  static _Equality _buildMul(Random rng, int cap) {
-    final bound = max(2, min(12, cap));
-    final a = 2 + rng.nextInt(bound - 1);
-    final b = 2 + rng.nextInt(bound - 1);
-    return _Equality(expression: '$a × $b', correctValue: a * b);
-  }
-
-  static _Equality _buildDiv(Random rng, int cap) {
-    final bound = max(2, min(12, cap));
-    final b = 2 + rng.nextInt(bound - 1);
-    final q = 2 + rng.nextInt(bound - 1);
-    return _Equality(expression: '${b * q} ÷ $b', correctValue: q);
-  }
-
-  static _Equality _buildSquare(Random rng, int cap) {
-    final bound = max(2, min(20, cap));
-    final n = 2 + rng.nextInt(bound - 1);
-    return _Equality(expression: '$n²', correctValue: n * n);
-  }
-
-  static _Equality _buildPercent(Random rng, int cap) {
-    const percents = [10, 20, 25, 50];
-    final pct = percents[rng.nextInt(percents.length)];
-    final unit = 100 ~/ pct;
-    final bound = max(1, min(12, cap ~/ unit));
-    final k = 1 + rng.nextInt(bound);
-    final base = k * unit;
-    // base = k * (100 / pct), so pct % of base is exactly k.
-    return _Equality(expression: '$pct % de $base', correctValue: k);
-  }
-
-  static _Equality _buildPriority(Random rng, int cap) {
-    final bound = max(2, min(10, cap));
-    final a = 1 + rng.nextInt(bound);
-    final c = 2 + rng.nextInt(bound - 1);
-    final isAdd = rng.nextBool();
-    if (rng.nextBool()) {
-      // a ± (q × c) ÷ c : keep the division operand-only, no swap trap.
-      final q = 1 + rng.nextInt(bound);
-      final b = q * c;
-      final correct = isAdd ? a + q : a - q;
-      final expr = '$a ${isAdd ? '+' : '-'} $b ÷ $c';
-      return _Equality(expression: expr, correctValue: correct);
-    }
-    final b = 1 + rng.nextInt(bound);
-    final correct = isAdd ? a + b * c : a - b * c;
-    final altValue = isAdd ? (a + b) * c : (a - b) * c;
-    final expr = '$a ${isAdd ? '+' : '-'} $b × $c';
-    return _Equality(
-      expression: expr,
-      correctValue: correct,
-      leftToRightValue: altValue,
-    );
-  }
-}
-
-/// A calculation built ahead of the wrong/correct decision:
-/// [leftToRightValue] is only set for priority equalities, as the
-/// left-to-right (wrong) alternative to the priority-respecting
-/// [correctValue].
-class _Equality {
-  const _Equality({
-    required this.expression,
-    required this.correctValue,
-    this.leftToRightValue,
-  });
-
-  final String expression;
-  final int correctValue;
-  final int? leftToRightValue;
 }
