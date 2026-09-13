@@ -2143,27 +2143,33 @@ class AppLocalizationsEn extends AppLocalizations {
       'Press F when the boxed calculation, at the bottom, is wrong.';
 
   @override
-  String get p1CubeRotationReferenceLabel => 'Reference cube';
+  String reverseSpanDigitSemantics(int shown, int total) {
+    return 'Digit $shown of $total';
+  }
 
   @override
-  String get p1CubeRotationCandidateLabel => 'Candidate cube';
+  String get reverseSpanTypeInstructions => 'Type the sequence back in reverse';
 
   @override
-  String get p1CubeRotationQuestion => 'Is this the same cube, rotated?';
+  String get reverseSpanExampleShown =>
+      'The sequence shown, one digit at a time:';
 
   @override
-  String get p1CubeRotationSameAnswer => 'Same cube, rotated';
+  String get reverseSpanExampleExpected => 'Type it back in reverse:';
 
   @override
-  String get p1CubeRotationAlteredAnswer => 'Altered';
+  String calcBackStageLabel(int stage, int stageCount) {
+    return 'Stage $stage of $stageCount';
+  }
 
   @override
-  String get p1CubeRotationExplanationSame =>
-      'The candidate cube is indeed the reference cube, seen from another angle.';
+  String calcBackStemSemantics(int stage) {
+    return 'Add to the result from $stage calculation(s) ago';
+  }
 
   @override
-  String get p1CubeRotationExplanationAltered =>
-      'The candidate cube was altered (faces swapped, or one face mirrored): this is not a plain rotation.';
+  String get calcBackExampleStage =>
+      'Stage 2: combine the shown number with the result from two calculations ago.';
 
   @override
   String get p1AnglesExampleCaption =>
@@ -2191,4 +2197,31 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get mentalArithmeticAllIntervalsExampleCaption =>
       'Work out the exact value, then tap every interval that contains it before Confirm.';
+
+  @override
+  String get p1CountersExampleCaption =>
+      'Read each gauge (needle, scale or drum counter) then answer the question asked.';
+
+  @override
+  String get p1CubeRotationReferenceLabel => 'Reference cube';
+
+  @override
+  String get p1CubeRotationCandidateLabel => 'Candidate cube';
+
+  @override
+  String get p1CubeRotationQuestion => 'Is this the same cube, rotated?';
+
+  @override
+  String get p1CubeRotationSameAnswer => 'Same cube, rotated';
+
+  @override
+  String get p1CubeRotationAlteredAnswer => 'Altered';
+
+  @override
+  String get p1CubeRotationExplanationSame =>
+      'The candidate cube is indeed the reference cube, seen from another angle.';
+
+  @override
+  String get p1CubeRotationExplanationAltered =>
+      'The candidate cube was altered (faces swapped, or one face mirrored): this is not a plain rotation.';
 }

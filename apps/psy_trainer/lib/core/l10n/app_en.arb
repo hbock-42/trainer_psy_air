@@ -1454,13 +1454,40 @@
   "multitaskExampleTracking": "Keep the keyboard arrow in the direction the circle is moving.",
   "multitaskExampleShape": "Press Space when the shape in the circle matches the reference shape (top left).",
   "multitaskExampleCalc": "Press F when the boxed calculation, at the bottom, is wrong.",
-  "p1CubeRotationReferenceLabel": "Reference cube",
-  "p1CubeRotationCandidateLabel": "Candidate cube",
-  "p1CubeRotationQuestion": "Is this the same cube, rotated?",
-  "p1CubeRotationSameAnswer": "Same cube, rotated",
-  "p1CubeRotationAlteredAnswer": "Altered",
-  "p1CubeRotationExplanationSame": "The candidate cube is indeed the reference cube, seen from another angle.",
-  "p1CubeRotationExplanationAltered": "The candidate cube was altered (faces swapped, or one face mirrored): this is not a plain rotation.",
+  "reverseSpanDigitSemantics": "Digit {shown} of {total}",
+  "@reverseSpanDigitSemantics": {
+    "placeholders": {
+      "shown": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "reverseSpanTypeInstructions": "Type the sequence back in reverse",
+  "reverseSpanExampleShown": "The sequence shown, one digit at a time:",
+  "reverseSpanExampleExpected": "Type it back in reverse:",
+  "calcBackStageLabel": "Stage {stage} of {stageCount}",
+  "@calcBackStageLabel": {
+    "placeholders": {
+      "stage": {
+        "type": "int"
+      },
+      "stageCount": {
+        "type": "int"
+      }
+    }
+  },
+  "calcBackStemSemantics": "Add to the result from {stage} calculation(s) ago",
+  "@calcBackStemSemantics": {
+    "placeholders": {
+      "stage": {
+        "type": "int"
+      }
+    }
+  },
+  "calcBackExampleStage": "Stage 2: combine the shown number with the result from two calculations ago.",
   "p1AnglesExampleCaption": "Among the candidate values, tap the ones matching a drawn angle (A, B...), then Confirm.",
   "p1AnglesCandidateSemantics": "Value {index}, {value} degrees",
   "@p1AnglesCandidateSemantics": {
@@ -1493,5 +1520,13 @@
       }
     }
   },
-  "mentalArithmeticAllIntervalsExampleCaption": "Work out the exact value, then tap every interval that contains it before Confirm."
+  "mentalArithmeticAllIntervalsExampleCaption": "Work out the exact value, then tap every interval that contains it before Confirm.",
+  "p1CountersExampleCaption": "Read each gauge (needle, scale or drum counter) then answer the question asked.",
+  "p1CubeRotationReferenceLabel": "Reference cube",
+  "p1CubeRotationCandidateLabel": "Candidate cube",
+  "p1CubeRotationQuestion": "Is this the same cube, rotated?",
+  "p1CubeRotationSameAnswer": "Same cube, rotated",
+  "p1CubeRotationAlteredAnswer": "Altered",
+  "p1CubeRotationExplanationSame": "The candidate cube is indeed the reference cube, seen from another angle.",
+  "p1CubeRotationExplanationAltered": "The candidate cube was altered (faces swapped, or one face mirrored): this is not a plain rotation."
 }

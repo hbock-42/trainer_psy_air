@@ -11,6 +11,9 @@ Legal reminder: the app is an unofficial trainer. **Never reproduce copyrighted 
 material** (real Air France / ENAC / publisher items). Write your own items in the same
 spirit; note your source in `meta.source`.
 
+This is human-facing reference. The condensed procedure an agent needs while authoring content
+is the `author-content` skill (`.agents/skills/author-content/SKILL.md`).
+
 ## 1. Where files go (content bundle layout)
 
 The bundle lives inside the app package (`apps/psy_trainer/`, US-007: Flutter needs its

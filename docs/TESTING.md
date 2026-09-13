@@ -1,7 +1,10 @@
 # Testing
 
 How we test the PSY Trainer app: what goes where, how to run it, and the coverage gate CI
-enforces. Established in US-120; amend when the policy changes.
+enforces. Established in US-120; amend when the policy changes. This is human-facing
+reference; the exact commands to run before shipping a PR (and the required CI jobs) are the
+`ship-a-story` skill (`.agents/skills/ship-a-story/SKILL.md`), and the widget-test template for
+a new engine's renderer is the `add-activity-engine` skill.
 
 This file covers `apps/psy_trainer/`. Since US-007 the repo is a pub workspace with two more
 test suites: `packages/psy_content/test/` (pure Dart, `package:test`, its own

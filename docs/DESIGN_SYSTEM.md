@@ -3,6 +3,10 @@
 Calm, high-contrast, aviation-inspired UI built on `package:flutter/widgets.dart` only.
 No Material, no Cupertino (enforced by `test/architecture/no_material_cupertino_test.dart`).
 
+This is human-facing reference for the tokens and widget catalogue. The condensed version an
+agent needs while building or using a widget is the `design-system` skill
+(`.agents/skills/design-system/SKILL.md`).
+
 - Tokens: `lib/core/theme/` (`AppTheme`, `AppColors`, `AppTextStyles`, `AppSpacing`, `AppRadii`,
   `AppDurations`)
 - Charts: no chart package (`fl_chart` needs Material); `ArcGauge`, `RadarChart`,

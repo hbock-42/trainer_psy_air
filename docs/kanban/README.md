@@ -4,6 +4,9 @@ Flutter app to prepare the Air France cadet selection tests (PSY0 first, then PS
 Local database only for now; remote sync is a placeholder epic.
 **UI is built on the Flutter `widgets` layer only — no Material, no Cupertino** (see EPIC-01).
 
+Shipping a card (branch, commit, PR, board update) is the `ship-a-story` skill
+(`.agents/skills/ship-a-story/SKILL.md`).
+
 - **[BOARD.md](BOARD.md)** — index of every card (regenerate with `./gen_board.sh`)
 - **[ROADMAP.md](ROADMAP.md)** — milestones, parallel lanes, dependency graph
 - `epics/` — one file per epic (`EPIC-xx-*.md`)

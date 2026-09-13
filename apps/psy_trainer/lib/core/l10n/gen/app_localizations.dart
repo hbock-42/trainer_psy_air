@@ -3516,6 +3516,90 @@ abstract class AppLocalizations {
   /// **'Appuyez sur F quand le calcul encadré, en bas, est faux.'**
   String get multitaskExampleCalc;
 
+  /// No description provided for @reverseSpanDigitSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Chiffre {shown} sur {total}'**
+  String reverseSpanDigitSemantics(int shown, int total);
+
+  /// No description provided for @reverseSpanTypeInstructions.
+  ///
+  /// In fr, this message translates to:
+  /// **'Retapez la séquence à l\'envers'**
+  String get reverseSpanTypeInstructions;
+
+  /// No description provided for @reverseSpanExampleShown.
+  ///
+  /// In fr, this message translates to:
+  /// **'La séquence affichée, chiffre par chiffre :'**
+  String get reverseSpanExampleShown;
+
+  /// No description provided for @reverseSpanExampleExpected.
+  ///
+  /// In fr, this message translates to:
+  /// **'Retapez-la à l\'envers :'**
+  String get reverseSpanExampleExpected;
+
+  /// No description provided for @calcBackStageLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Étape {stage} sur {stageCount}'**
+  String calcBackStageLabel(int stage, int stageCount);
+
+  /// No description provided for @calcBackStemSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajoutez au résultat obtenu il y a {stage} calcul(s)'**
+  String calcBackStemSemantics(int stage);
+
+  /// No description provided for @calcBackExampleStage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Étape 2 : combinez le nombre affiché avec le résultat obtenu il y a deux calculs.'**
+  String get calcBackExampleStage;
+
+  /// No description provided for @p1AnglesExampleCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Parmi les valeurs proposées, touchez celles qui correspondent à un angle dessiné (A, B...), puis Valider.'**
+  String get p1AnglesExampleCaption;
+
+  /// No description provided for @p1AnglesCandidateSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeur {index}, {value} degrés'**
+  String p1AnglesCandidateSemantics(int index, int value);
+
+  /// No description provided for @mentalArithmeticAllIntervalsPrompt.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sélectionnez tous les intervalles qui contiennent la valeur exacte.'**
+  String get mentalArithmeticAllIntervalsPrompt;
+
+  /// No description provided for @mentalArithmeticTrueValue.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeur exacte : {value}'**
+  String mentalArithmeticTrueValue(int value);
+
+  /// No description provided for @mentalArithmeticIntervalSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Intervalle {index}, {label}'**
+  String mentalArithmeticIntervalSemantics(int index, String label);
+
+  /// No description provided for @mentalArithmeticAllIntervalsExampleCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider.'**
+  String get mentalArithmeticAllIntervalsExampleCaption;
+
+  /// No description provided for @p1CountersExampleCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.'**
+  String get p1CountersExampleCaption;
+
   /// No description provided for @p1CubeRotationReferenceLabel.
   ///
   /// In fr, this message translates to:
@@ -3557,42 +3641,6 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Le cube candidat a été modifié (faces échangées ou face inversée) : ce n\'est pas une simple rotation.'**
   String get p1CubeRotationExplanationAltered;
-
-  /// No description provided for @p1AnglesExampleCaption.
-  ///
-  /// In fr, this message translates to:
-  /// **'Parmi les valeurs proposées, touchez celles qui correspondent à un angle dessiné (A, B...), puis Valider.'**
-  String get p1AnglesExampleCaption;
-
-  /// No description provided for @p1AnglesCandidateSemantics.
-  ///
-  /// In fr, this message translates to:
-  /// **'Valeur {index}, {value} degrés'**
-  String p1AnglesCandidateSemantics(int index, int value);
-
-  /// No description provided for @mentalArithmeticAllIntervalsPrompt.
-  ///
-  /// In fr, this message translates to:
-  /// **'Sélectionnez tous les intervalles qui contiennent la valeur exacte.'**
-  String get mentalArithmeticAllIntervalsPrompt;
-
-  /// No description provided for @mentalArithmeticTrueValue.
-  ///
-  /// In fr, this message translates to:
-  /// **'Valeur exacte : {value}'**
-  String mentalArithmeticTrueValue(int value);
-
-  /// No description provided for @mentalArithmeticIntervalSemantics.
-  ///
-  /// In fr, this message translates to:
-  /// **'Intervalle {index}, {label}'**
-  String mentalArithmeticIntervalSemantics(int index, String label);
-
-  /// No description provided for @mentalArithmeticAllIntervalsExampleCaption.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider.'**
-  String get mentalArithmeticAllIntervalsExampleCaption;
 }
 
 class _AppLocalizationsDelegate
