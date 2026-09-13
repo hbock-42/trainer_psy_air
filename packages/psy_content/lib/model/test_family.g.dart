@@ -155,6 +155,8 @@ const _$EngineTypeEnumMap = {
   EngineType.p1RavenMatrices: 'p1_raven_matrices',
   EngineType.p1MentalArithmetic: 'p1_mental_arithmetic',
   EngineType.p1Psychomotor: 'p1_psychomotor',
+  EngineType.interview: 'interview',
+  EngineType.groupExercise: 'group_exercise',
 };
 
 const _$AnswerFormatEnumMap = {

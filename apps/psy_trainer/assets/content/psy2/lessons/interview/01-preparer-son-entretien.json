@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.interview.01",
+  "version": 1,
+  "moduleId": "psy2",
+  "familyId": "interview",
+  "order": 1,
+  "title": {
+    "fr": "Préparer l'entretien PSY2 : thèmes et méthode de réponse",
+    "en": "Preparing the PSY2 interview: themes and answer method"
+  },
+  "summary": {
+    "fr": "Les sept thèmes rapportés de l'entretien, ce que les évaluateurs cherchent, et une méthode de réponse en quatre temps (sans se réciter un texte appris).",
+    "en": "The seven reported interview themes, what evaluators look for, and a four-step answer method (without reciting a memorised script)."
+  },
+  "file": { "fr": "lessons/interview/01-preparer-son-entretien.fr.md" },
+  "estimatedReadMin": 7,
+  "difficulty": 2,
+  "tags": ["psy2.interview", "psy2.interview.method"],
+  "practiceTags": [],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "docs/content/psy2-spec.md §2.4, §4.1"
+  }
+}

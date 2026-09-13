@@ -1,0 +1,277 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/interview_questions.schema.json",
+  "kind": "interview_questions",
+  "familyId": "interview",
+  "questions": [
+    {
+      "id": "interview.background.0001",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "background",
+      "question": {
+        "fr": "Présentez votre parcours en quelques minutes, sans notes.",
+        "en": "Present your background in a few minutes, without reading notes."
+      },
+      "guidance": {
+        "fr": "Structurez sur un fil chronologique clair, choisissez 2-3 étapes réellement significatives plutôt qu'un CV exhaustif, et reliez chaque étape à une compétence ou un trait utile en équipage. Une réponse concrète (un fait, un contexte précis) vaut mieux qu'une réponse généraliste.",
+        "en": "Structure along a clear timeline, pick 2-3 genuinely significant steps rather than an exhaustive résumé, and connect each step to a skill or trait useful as crew. A concrete answer (a fact, a precise context) beats a generic one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Point de départ -> étape clé 1 (situation -> action -> résultat) -> étape clé 2 -> ce que cela montre de moi aujourd'hui.",
+        "en": "Starting point -> key step 1 (situation -> action -> result) -> key step 2 -> what this shows about me today."
+      },
+      "tags": [
+        "interview",
+        "interview.background"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.background.0002",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "background",
+      "question": {
+        "fr": "Quelle expérience passée, dans l'aéronautique ou en dehors, explique le mieux qui vous êtes aujourd'hui ?",
+        "en": "Which past experience -- inside or outside aviation -- best explains who you are today?"
+      },
+      "guidance": {
+        "fr": "Structurez sur un fil chronologique clair, choisissez 2-3 étapes réellement significatives plutôt qu'un CV exhaustif, et reliez chaque étape à une compétence ou un trait utile en équipage. Une réponse concrète (un fait, un contexte précis) vaut mieux qu'une réponse généraliste.",
+        "en": "Structure along a clear timeline, pick 2-3 genuinely significant steps rather than an exhaustive résumé, and connect each step to a skill or trait useful as crew. A concrete answer (a fact, a precise context) beats a generic one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Point de départ -> étape clé 1 (situation -> action -> résultat) -> étape clé 2 -> ce que cela montre de moi aujourd'hui.",
+        "en": "Starting point -> key step 1 (situation -> action -> result) -> key step 2 -> what this shows about me today."
+      },
+      "tags": [
+        "interview",
+        "interview.background"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.background.0003",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "background",
+      "question": {
+        "fr": "Quelle décision de vos études ou de votre carrière referiez-vous différemment aujourd'hui ?",
+        "en": "What is a decision from your studies or career you would make differently now?"
+      },
+      "guidance": {
+        "fr": "Structurez sur un fil chronologique clair, choisissez 2-3 étapes réellement significatives plutôt qu'un CV exhaustif, et reliez chaque étape à une compétence ou un trait utile en équipage. Une réponse concrète (un fait, un contexte précis) vaut mieux qu'une réponse généraliste.",
+        "en": "Structure along a clear timeline, pick 2-3 genuinely significant steps rather than an exhaustive résumé, and connect each step to a skill or trait useful as crew. A concrete answer (a fact, a precise context) beats a generic one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Point de départ -> étape clé 1 (situation -> action -> résultat) -> étape clé 2 -> ce que cela montre de moi aujourd'hui.",
+        "en": "Starting point -> key step 1 (situation -> action -> result) -> key step 2 -> what this shows about me today."
+      },
+      "tags": [
+        "interview",
+        "interview.background"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.background.0004",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "background",
+      "question": {
+        "fr": "Décrivez un moment où vous avez dû apprendre quelque chose de difficile rapidement. Comment vous y êtes-vous pris ?",
+        "en": "Describe a moment you had to learn something difficult quickly. How did you approach it?"
+      },
+      "guidance": {
+        "fr": "Structurez sur un fil chronologique clair, choisissez 2-3 étapes réellement significatives plutôt qu'un CV exhaustif, et reliez chaque étape à une compétence ou un trait utile en équipage. Une réponse concrète (un fait, un contexte précis) vaut mieux qu'une réponse généraliste.",
+        "en": "Structure along a clear timeline, pick 2-3 genuinely significant steps rather than an exhaustive résumé, and connect each step to a skill or trait useful as crew. A concrete answer (a fact, a precise context) beats a generic one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Point de départ -> étape clé 1 (situation -> action -> résultat) -> étape clé 2 -> ce que cela montre de moi aujourd'hui.",
+        "en": "Starting point -> key step 1 (situation -> action -> result) -> key step 2 -> what this shows about me today."
+      },
+      "tags": [
+        "interview",
+        "interview.background"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.background.0005",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "background",
+      "question": {
+        "fr": "De quelle réussite êtes-vous le plus fier, et qu'est-ce que cela vous a coûté d'y parvenir ?",
+        "en": "What achievement are you proudest of, and what did it cost you to get there?"
+      },
+      "guidance": {
+        "fr": "Structurez sur un fil chronologique clair, choisissez 2-3 étapes réellement significatives plutôt qu'un CV exhaustif, et reliez chaque étape à une compétence ou un trait utile en équipage. Une réponse concrète (un fait, un contexte précis) vaut mieux qu'une réponse généraliste.",
+        "en": "Structure along a clear timeline, pick 2-3 genuinely significant steps rather than an exhaustive résumé, and connect each step to a skill or trait useful as crew. A concrete answer (a fact, a precise context) beats a generic one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Point de départ -> étape clé 1 (situation -> action -> résultat) -> étape clé 2 -> ce que cela montre de moi aujourd'hui.",
+        "en": "Starting point -> key step 1 (situation -> action -> result) -> key step 2 -> what this shows about me today."
+      },
+      "tags": [
+        "interview",
+        "interview.background"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.background.0006",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "background",
+      "question": {
+        "fr": "Racontez une fois où vous avez changé d'avis sur quelque chose d'important après une nouvelle information.",
+        "en": "Tell me about a time you changed your mind about something important after new information."
+      },
+      "guidance": {
+        "fr": "Structurez sur un fil chronologique clair, choisissez 2-3 étapes réellement significatives plutôt qu'un CV exhaustif, et reliez chaque étape à une compétence ou un trait utile en équipage. Une réponse concrète (un fait, un contexte précis) vaut mieux qu'une réponse généraliste.",
+        "en": "Structure along a clear timeline, pick 2-3 genuinely significant steps rather than an exhaustive résumé, and connect each step to a skill or trait useful as crew. A concrete answer (a fact, a precise context) beats a generic one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Point de départ -> étape clé 1 (situation -> action -> résultat) -> étape clé 2 -> ce que cela montre de moi aujourd'hui.",
+        "en": "Starting point -> key step 1 (situation -> action -> result) -> key step 2 -> what this shows about me today."
+      },
+      "tags": [
+        "interview",
+        "interview.background"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.background.0007",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "background",
+      "question": {
+        "fr": "Quelle compétence avez-vous développée entièrement de votre propre initiative ?",
+        "en": "What is a skill you've built entirely on your own initiative?"
+      },
+      "guidance": {
+        "fr": "Structurez sur un fil chronologique clair, choisissez 2-3 étapes réellement significatives plutôt qu'un CV exhaustif, et reliez chaque étape à une compétence ou un trait utile en équipage. Une réponse concrète (un fait, un contexte précis) vaut mieux qu'une réponse généraliste.",
+        "en": "Structure along a clear timeline, pick 2-3 genuinely significant steps rather than an exhaustive résumé, and connect each step to a skill or trait useful as crew. A concrete answer (a fact, a precise context) beats a generic one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Point de départ -> étape clé 1 (situation -> action -> résultat) -> étape clé 2 -> ce que cela montre de moi aujourd'hui.",
+        "en": "Starting point -> key step 1 (situation -> action -> result) -> key step 2 -> what this shows about me today."
+      },
+      "tags": [
+        "interview",
+        "interview.background"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.background.0008",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "background",
+      "question": {
+        "fr": "Comment un ancien professeur ou responsable vous décrirait-il en trois mots, et pourquoi ?",
+        "en": "How would a former teacher or supervisor describe you in three words, and why?"
+      },
+      "guidance": {
+        "fr": "Structurez sur un fil chronologique clair, choisissez 2-3 étapes réellement significatives plutôt qu'un CV exhaustif, et reliez chaque étape à une compétence ou un trait utile en équipage. Une réponse concrète (un fait, un contexte précis) vaut mieux qu'une réponse généraliste.",
+        "en": "Structure along a clear timeline, pick 2-3 genuinely significant steps rather than an exhaustive résumé, and connect each step to a skill or trait useful as crew. A concrete answer (a fact, a precise context) beats a generic one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Point de départ -> étape clé 1 (situation -> action -> résultat) -> étape clé 2 -> ce que cela montre de moi aujourd'hui.",
+        "en": "Starting point -> key step 1 (situation -> action -> result) -> key step 2 -> what this shows about me today."
+      },
+      "tags": [
+        "interview",
+        "interview.background"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.background.0009",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "background",
+      "question": {
+        "fr": "Quel est le plus grand écart entre la façon dont vous vous percevez et celle dont les autres vous décrivent ?",
+        "en": "What is the biggest gap between how you see yourself and how others describe you?"
+      },
+      "guidance": {
+        "fr": "Structurez sur un fil chronologique clair, choisissez 2-3 étapes réellement significatives plutôt qu'un CV exhaustif, et reliez chaque étape à une compétence ou un trait utile en équipage. Une réponse concrète (un fait, un contexte précis) vaut mieux qu'une réponse généraliste.",
+        "en": "Structure along a clear timeline, pick 2-3 genuinely significant steps rather than an exhaustive résumé, and connect each step to a skill or trait useful as crew. A concrete answer (a fact, a precise context) beats a generic one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Point de départ -> étape clé 1 (situation -> action -> résultat) -> étape clé 2 -> ce que cela montre de moi aujourd'hui.",
+        "en": "Starting point -> key step 1 (situation -> action -> result) -> key step 2 -> what this shows about me today."
+      },
+      "tags": [
+        "interview",
+        "interview.background"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.background.0010",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "background",
+      "question": {
+        "fr": "Quelle expérience extérieure à l'aéronautique pensez-vous qu'elle fera de vous un meilleur équipier ?",
+        "en": "What non-aviation experience do you think will make you a better crew member?"
+      },
+      "guidance": {
+        "fr": "Structurez sur un fil chronologique clair, choisissez 2-3 étapes réellement significatives plutôt qu'un CV exhaustif, et reliez chaque étape à une compétence ou un trait utile en équipage. Une réponse concrète (un fait, un contexte précis) vaut mieux qu'une réponse généraliste.",
+        "en": "Structure along a clear timeline, pick 2-3 genuinely significant steps rather than an exhaustive résumé, and connect each step to a skill or trait useful as crew. A concrete answer (a fact, a precise context) beats a generic one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Point de départ -> étape clé 1 (situation -> action -> résultat) -> étape clé 2 -> ce que cela montre de moi aujourd'hui.",
+        "en": "Starting point -> key step 1 (situation -> action -> result) -> key step 2 -> what this shows about me today."
+      },
+      "tags": [
+        "interview",
+        "interview.background"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    }
+  ]
+}

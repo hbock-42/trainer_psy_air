@@ -1,0 +1,277 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/interview_questions.schema.json",
+  "kind": "interview_questions",
+  "familyId": "interview",
+  "questions": [
+    {
+      "id": "interview.aviation_knowledge.0001",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "aviation_knowledge",
+      "question": {
+        "fr": "Dans vos propres mots, qu'est-ce que le CRM et pourquoi est-il important sur le plan opérationnel ?",
+        "en": "In your own words, what is CRM and why does it matter operationally?"
+      },
+      "guidance": {
+        "fr": "Donnez une définition juste et simple, puis un exemple opérationnel concret qui montre que vous comprenez l'enjeu (sécurité, coordination, réglementation) au-delà de la définition apprise par cœur.",
+        "en": "Give an accurate, simple definition, then a concrete operational example showing you understand the stake (safety, coordination, regulation) beyond a memorised definition."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Définition simple -> pourquoi c'est important opérationnellement -> exemple concret ou anecdote qui l'illustre.",
+        "en": "Simple definition -> why it matters operationally -> a concrete example or anecdote illustrating it."
+      },
+      "tags": [
+        "interview",
+        "interview.aviation_knowledge"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.aviation_knowledge.0002",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "aviation_knowledge",
+      "question": {
+        "fr": "Que savez-vous de la flotte et du réseau d'Air France / Transavia ?",
+        "en": "What do you know about Air France's / Transavia's fleet and route network?"
+      },
+      "guidance": {
+        "fr": "Donnez une définition juste et simple, puis un exemple opérationnel concret qui montre que vous comprenez l'enjeu (sécurité, coordination, réglementation) au-delà de la définition apprise par cœur.",
+        "en": "Give an accurate, simple definition, then a concrete operational example showing you understand the stake (safety, coordination, regulation) beyond a memorised definition."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Définition simple -> pourquoi c'est important opérationnellement -> exemple concret ou anecdote qui l'illustre.",
+        "en": "Simple definition -> why it matters operationally -> a concrete example or anecdote illustrating it."
+      },
+      "tags": [
+        "interview",
+        "interview.aviation_knowledge"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.aviation_knowledge.0003",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "aviation_knowledge",
+      "question": {
+        "fr": "Quelle est la différence entre un METAR et un TAF, et quand utilise-t-on chacun ?",
+        "en": "What is the difference between a METAR and a TAF, and when would you use each?"
+      },
+      "guidance": {
+        "fr": "Donnez une définition juste et simple, puis un exemple opérationnel concret qui montre que vous comprenez l'enjeu (sécurité, coordination, réglementation) au-delà de la définition apprise par cœur.",
+        "en": "Give an accurate, simple definition, then a concrete operational example showing you understand the stake (safety, coordination, regulation) beyond a memorised definition."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Définition simple -> pourquoi c'est important opérationnellement -> exemple concret ou anecdote qui l'illustre.",
+        "en": "Simple definition -> why it matters operationally -> a concrete example or anecdote illustrating it."
+      },
+      "tags": [
+        "interview",
+        "interview.aviation_knowledge"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.aviation_knowledge.0004",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "aviation_knowledge",
+      "question": {
+        "fr": "Expliquez simplement pourquoi le vent traversier compte au décollage et à l'atterrissage.",
+        "en": "Explain, simply, why crosswind matters for takeoff and landing."
+      },
+      "guidance": {
+        "fr": "Donnez une définition juste et simple, puis un exemple opérationnel concret qui montre que vous comprenez l'enjeu (sécurité, coordination, réglementation) au-delà de la définition apprise par cœur.",
+        "en": "Give an accurate, simple definition, then a concrete operational example showing you understand the stake (safety, coordination, regulation) beyond a memorised definition."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Définition simple -> pourquoi c'est important opérationnellement -> exemple concret ou anecdote qui l'illustre.",
+        "en": "Simple definition -> why it matters operationally -> a concrete example or anecdote illustrating it."
+      },
+      "tags": [
+        "interview",
+        "interview.aviation_knowledge"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.aviation_knowledge.0005",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "aviation_knowledge",
+      "question": {
+        "fr": "Que signifie le « gradient d'autorité » dans un cockpit, et pourquoi peut-il être un risque ?",
+        "en": "What does \"authority gradient\" mean in a cockpit, and why can it be a risk?"
+      },
+      "guidance": {
+        "fr": "Donnez une définition juste et simple, puis un exemple opérationnel concret qui montre que vous comprenez l'enjeu (sécurité, coordination, réglementation) au-delà de la définition apprise par cœur.",
+        "en": "Give an accurate, simple definition, then a concrete operational example showing you understand the stake (safety, coordination, regulation) beyond a memorised definition."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Définition simple -> pourquoi c'est important opérationnellement -> exemple concret ou anecdote qui l'illustre.",
+        "en": "Simple definition -> why it matters operationally -> a concrete example or anecdote illustrating it."
+      },
+      "tags": [
+        "interview",
+        "interview.aviation_knowledge"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.aviation_knowledge.0006",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "aviation_knowledge",
+      "question": {
+        "fr": "Quelle actualité aéronautique récente a retenu votre attention, et pourquoi ?",
+        "en": "What recent aviation news story caught your attention, and why?"
+      },
+      "guidance": {
+        "fr": "Donnez une définition juste et simple, puis un exemple opérationnel concret qui montre que vous comprenez l'enjeu (sécurité, coordination, réglementation) au-delà de la définition apprise par cœur.",
+        "en": "Give an accurate, simple definition, then a concrete operational example showing you understand the stake (safety, coordination, regulation) beyond a memorised definition."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Définition simple -> pourquoi c'est important opérationnellement -> exemple concret ou anecdote qui l'illustre.",
+        "en": "Simple definition -> why it matters operationally -> a concrete example or anecdote illustrating it."
+      },
+      "tags": [
+        "interview",
+        "interview.aviation_knowledge"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.aviation_knowledge.0007",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "aviation_knowledge",
+      "question": {
+        "fr": "Que comprenez-vous de la façon dont un équipage à plusieurs se répartit les tâches ?",
+        "en": "What do you understand about how a multi-crew cockpit divides tasks?"
+      },
+      "guidance": {
+        "fr": "Donnez une définition juste et simple, puis un exemple opérationnel concret qui montre que vous comprenez l'enjeu (sécurité, coordination, réglementation) au-delà de la définition apprise par cœur.",
+        "en": "Give an accurate, simple definition, then a concrete operational example showing you understand the stake (safety, coordination, regulation) beyond a memorised definition."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Définition simple -> pourquoi c'est important opérationnellement -> exemple concret ou anecdote qui l'illustre.",
+        "en": "Simple definition -> why it matters operationally -> a concrete example or anecdote illustrating it."
+      },
+      "tags": [
+        "interview",
+        "interview.aviation_knowledge"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.aviation_knowledge.0008",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "aviation_knowledge",
+      "question": {
+        "fr": "Pourquoi existe-t-il une réglementation stricte du temps de repos et de service pour les pilotes ?",
+        "en": "Why does a strict rest/duty-time regulation exist for pilots?"
+      },
+      "guidance": {
+        "fr": "Donnez une définition juste et simple, puis un exemple opérationnel concret qui montre que vous comprenez l'enjeu (sécurité, coordination, réglementation) au-delà de la définition apprise par cœur.",
+        "en": "Give an accurate, simple definition, then a concrete operational example showing you understand the stake (safety, coordination, regulation) beyond a memorised definition."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Définition simple -> pourquoi c'est important opérationnellement -> exemple concret ou anecdote qui l'illustre.",
+        "en": "Simple definition -> why it matters operationally -> a concrete example or anecdote illustrating it."
+      },
+      "tags": [
+        "interview",
+        "interview.aviation_knowledge"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.aviation_knowledge.0009",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "aviation_knowledge",
+      "question": {
+        "fr": "Qu'est-ce que le givrage, et pourquoi est-il opérationnellement significatif ?",
+        "en": "What is icing, and why is it operationally significant?"
+      },
+      "guidance": {
+        "fr": "Donnez une définition juste et simple, puis un exemple opérationnel concret qui montre que vous comprenez l'enjeu (sécurité, coordination, réglementation) au-delà de la définition apprise par cœur.",
+        "en": "Give an accurate, simple definition, then a concrete operational example showing you understand the stake (safety, coordination, regulation) beyond a memorised definition."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Définition simple -> pourquoi c'est important opérationnellement -> exemple concret ou anecdote qui l'illustre.",
+        "en": "Simple definition -> why it matters operationally -> a concrete example or anecdote illustrating it."
+      },
+      "tags": [
+        "interview",
+        "interview.aviation_knowledge"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.aviation_knowledge.0010",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "aviation_knowledge",
+      "question": {
+        "fr": "En quoi consiste, mois par mois selon votre compréhension, le parcours de formation cadet ?",
+        "en": "What does the cadet training pathway involve, month by month, as you understand it?"
+      },
+      "guidance": {
+        "fr": "Donnez une définition juste et simple, puis un exemple opérationnel concret qui montre que vous comprenez l'enjeu (sécurité, coordination, réglementation) au-delà de la définition apprise par cœur.",
+        "en": "Give an accurate, simple definition, then a concrete operational example showing you understand the stake (safety, coordination, regulation) beyond a memorised definition."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Définition simple -> pourquoi c'est important opérationnellement -> exemple concret ou anecdote qui l'illustre.",
+        "en": "Simple definition -> why it matters operationally -> a concrete example or anecdote illustrating it."
+      },
+      "tags": [
+        "interview",
+        "interview.aviation_knowledge"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    }
+  ]
+}

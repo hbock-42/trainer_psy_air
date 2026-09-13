@@ -147,6 +147,10 @@ class ContentSeeder {
         for (final f in bundle.lexicalFields)
           ContentRows.lexicalField(f, seededAt: seededAt),
       ],
+      interviewQuestions: [
+        for (final q in bundle.interviewQuestions)
+          ContentRows.interviewQuestion(q, seededAt: seededAt),
+      ],
     );
     return SeedResult(
       seeded: true,

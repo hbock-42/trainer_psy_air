@@ -9,6 +9,7 @@ export 'model/content_manifest.dart';
 export 'model/deck.dart';
 export 'model/exam_blueprint.dart';
 export 'model/generator.dart';
+export 'model/interview_question.dart';
 export 'model/item.dart';
 export 'model/lesson.dart';
 export 'model/lexical_field.dart';

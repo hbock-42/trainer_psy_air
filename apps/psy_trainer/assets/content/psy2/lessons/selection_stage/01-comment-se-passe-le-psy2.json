@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.psy2_selection_stage.01",
+  "version": 1,
+  "moduleId": "psy2",
+  "order": 1,
+  "title": { "fr": "Comment se passe le PSY2", "en": "How the PSY2 stage works" },
+  "summary": {
+    "fr": "La dernière étape de la sélection Cadets : deux inventaires de personnalité, un exercice de groupe et des entretiens individuels, ce que l'app peut (et ne peut pas) vous aider à préparer.",
+    "en": "The last stage of the Cadet selection: two personality inventories, a group exercise and individual interviews -- what the app can (and cannot) help you prepare."
+  },
+  "file": { "fr": "lessons/selection_stage/01-comment-se-passe-le-psy2.fr.md" },
+  "estimatedReadMin": 6,
+  "difficulty": 1,
+  "tags": ["psy2", "psy2.selection_stage"],
+  "practiceTags": [],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "docs/content/psy2-spec.md §1, §2, §4, §5, §7"
+  }
+}

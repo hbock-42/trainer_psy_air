@@ -1,0 +1,277 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/interview_questions.schema.json",
+  "kind": "interview_questions",
+  "familyId": "interview",
+  "questions": [
+    {
+      "id": "interview.self_awareness.0001",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "self_awareness",
+      "question": {
+        "fr": "Quelle faiblesse travaillez-vous activement, et qu'avez-vous fait pour cela ?",
+        "en": "What is a weakness you are actively working on, and what have you done about it?"
+      },
+      "guidance": {
+        "fr": "Choisissez une vraie faiblesse (pas une qualité déguisée) et un exemple où elle s'est manifestée, puis l'action concrète et continue prise pour la travailler. Terminez sur un résultat mesurable ou un changement observable, même partiel.",
+        "en": "Pick a real weakness (not a disguised strength) and an example where it showed, then the concrete, ongoing action taken to work on it. End with a measurable or observable change, even a partial one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Faiblesse identifiée -> exemple où elle s'est manifestée -> action engagée pour la travailler -> évolution constatée depuis.",
+        "en": "Weakness identified -> example where it showed -> action taken to work on it -> change noticed since."
+      },
+      "tags": [
+        "interview",
+        "interview.self_awareness"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.self_awareness.0002",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "self_awareness",
+      "question": {
+        "fr": "Décrivez un retour critique difficile à entendre mais utile.",
+        "en": "Describe a piece of critical feedback that was hard to hear but useful."
+      },
+      "guidance": {
+        "fr": "Choisissez une vraie faiblesse (pas une qualité déguisée) et un exemple où elle s'est manifestée, puis l'action concrète et continue prise pour la travailler. Terminez sur un résultat mesurable ou un changement observable, même partiel.",
+        "en": "Pick a real weakness (not a disguised strength) and an example where it showed, then the concrete, ongoing action taken to work on it. End with a measurable or observable change, even a partial one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Faiblesse identifiée -> exemple où elle s'est manifestée -> action engagée pour la travailler -> évolution constatée depuis.",
+        "en": "Weakness identified -> example where it showed -> action taken to work on it -> change noticed since."
+      },
+      "tags": [
+        "interview",
+        "interview.self_awareness"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.self_awareness.0003",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "self_awareness",
+      "question": {
+        "fr": "Quel type de situation fait ressortir le pire de vous, et comment le gérez-vous ?",
+        "en": "What kind of situation brings out the worst in you, and how do you manage it?"
+      },
+      "guidance": {
+        "fr": "Choisissez une vraie faiblesse (pas une qualité déguisée) et un exemple où elle s'est manifestée, puis l'action concrète et continue prise pour la travailler. Terminez sur un résultat mesurable ou un changement observable, même partiel.",
+        "en": "Pick a real weakness (not a disguised strength) and an example where it showed, then the concrete, ongoing action taken to work on it. End with a measurable or observable change, even a partial one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Faiblesse identifiée -> exemple où elle s'est manifestée -> action engagée pour la travailler -> évolution constatée depuis.",
+        "en": "Weakness identified -> example where it showed -> action taken to work on it -> change noticed since."
+      },
+      "tags": [
+        "interview",
+        "interview.self_awareness"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.self_awareness.0004",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "self_awareness",
+      "question": {
+        "fr": "Si votre ami le plus proche devait nommer votre plus grand angle mort, quel serait-il ?",
+        "en": "If your closest friend had to name your biggest blind spot, what would it be?"
+      },
+      "guidance": {
+        "fr": "Choisissez une vraie faiblesse (pas une qualité déguisée) et un exemple où elle s'est manifestée, puis l'action concrète et continue prise pour la travailler. Terminez sur un résultat mesurable ou un changement observable, même partiel.",
+        "en": "Pick a real weakness (not a disguised strength) and an example where it showed, then the concrete, ongoing action taken to work on it. End with a measurable or observable change, even a partial one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Faiblesse identifiée -> exemple où elle s'est manifestée -> action engagée pour la travailler -> évolution constatée depuis.",
+        "en": "Weakness identified -> example where it showed -> action taken to work on it -> change noticed since."
+      },
+      "tags": [
+        "interview",
+        "interview.self_awareness"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.self_awareness.0005",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "self_awareness",
+      "question": {
+        "fr": "Racontez une fois où votre premier instinct dans une situation s'est révélé faux.",
+        "en": "Tell me about a time your first instinct in a situation turned out to be wrong."
+      },
+      "guidance": {
+        "fr": "Choisissez une vraie faiblesse (pas une qualité déguisée) et un exemple où elle s'est manifestée, puis l'action concrète et continue prise pour la travailler. Terminez sur un résultat mesurable ou un changement observable, même partiel.",
+        "en": "Pick a real weakness (not a disguised strength) and an example where it showed, then the concrete, ongoing action taken to work on it. End with a measurable or observable change, even a partial one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Faiblesse identifiée -> exemple où elle s'est manifestée -> action engagée pour la travailler -> évolution constatée depuis.",
+        "en": "Weakness identified -> example where it showed -> action taken to work on it -> change noticed since."
+      },
+      "tags": [
+        "interview",
+        "interview.self_awareness"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.self_awareness.0006",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "self_awareness",
+      "question": {
+        "fr": "Qu'avez-vous changé dans votre façon de travailler à la suite d'un échec passé ?",
+        "en": "What have you changed about how you work as a result of a past failure?"
+      },
+      "guidance": {
+        "fr": "Choisissez une vraie faiblesse (pas une qualité déguisée) et un exemple où elle s'est manifestée, puis l'action concrète et continue prise pour la travailler. Terminez sur un résultat mesurable ou un changement observable, même partiel.",
+        "en": "Pick a real weakness (not a disguised strength) and an example where it showed, then the concrete, ongoing action taken to work on it. End with a measurable or observable change, even a partial one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Faiblesse identifiée -> exemple où elle s'est manifestée -> action engagée pour la travailler -> évolution constatée depuis.",
+        "en": "Weakness identified -> example where it showed -> action taken to work on it -> change noticed since."
+      },
+      "tags": [
+        "interview",
+        "interview.self_awareness"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.self_awareness.0007",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "self_awareness",
+      "question": {
+        "fr": "Comment savez-vous que vous avez tort dans une discussion, et que faites-vous alors ?",
+        "en": "How do you know when you're wrong in an argument, and what do you do about it?"
+      },
+      "guidance": {
+        "fr": "Choisissez une vraie faiblesse (pas une qualité déguisée) et un exemple où elle s'est manifestée, puis l'action concrète et continue prise pour la travailler. Terminez sur un résultat mesurable ou un changement observable, même partiel.",
+        "en": "Pick a real weakness (not a disguised strength) and an example where it showed, then the concrete, ongoing action taken to work on it. End with a measurable or observable change, even a partial one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Faiblesse identifiée -> exemple où elle s'est manifestée -> action engagée pour la travailler -> évolution constatée depuis.",
+        "en": "Weakness identified -> example where it showed -> action taken to work on it -> change noticed since."
+      },
+      "tags": [
+        "interview",
+        "interview.self_awareness"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.self_awareness.0008",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "self_awareness",
+      "question": {
+        "fr": "Quel type de retour demandez-vous activement, et à qui ?",
+        "en": "What kind of feedback do you actively ask for, and from whom?"
+      },
+      "guidance": {
+        "fr": "Choisissez une vraie faiblesse (pas une qualité déguisée) et un exemple où elle s'est manifestée, puis l'action concrète et continue prise pour la travailler. Terminez sur un résultat mesurable ou un changement observable, même partiel.",
+        "en": "Pick a real weakness (not a disguised strength) and an example where it showed, then the concrete, ongoing action taken to work on it. End with a measurable or observable change, even a partial one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Faiblesse identifiée -> exemple où elle s'est manifestée -> action engagée pour la travailler -> évolution constatée depuis.",
+        "en": "Weakness identified -> example where it showed -> action taken to work on it -> change noticed since."
+      },
+      "tags": [
+        "interview",
+        "interview.self_awareness"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.self_awareness.0009",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "self_awareness",
+      "question": {
+        "fr": "Décrivez une habitude que vous avez délibérément construite pour compenser une faiblesse connue.",
+        "en": "Describe a habit you've deliberately built to compensate for a known weakness."
+      },
+      "guidance": {
+        "fr": "Choisissez une vraie faiblesse (pas une qualité déguisée) et un exemple où elle s'est manifestée, puis l'action concrète et continue prise pour la travailler. Terminez sur un résultat mesurable ou un changement observable, même partiel.",
+        "en": "Pick a real weakness (not a disguised strength) and an example where it showed, then the concrete, ongoing action taken to work on it. End with a measurable or observable change, even a partial one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Faiblesse identifiée -> exemple où elle s'est manifestée -> action engagée pour la travailler -> évolution constatée depuis.",
+        "en": "Weakness identified -> example where it showed -> action taken to work on it -> change noticed since."
+      },
+      "tags": [
+        "interview",
+        "interview.self_awareness"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    },
+    {
+      "id": "interview.self_awareness.0010",
+      "version": 1,
+      "familyId": "interview",
+      "theme": "self_awareness",
+      "question": {
+        "fr": "Qu'est-ce qui, honnêtement, ferait de vous un équipier difficile à avoir à bord ?",
+        "en": "What would make you a difficult crew member to fly with, honestly?"
+      },
+      "guidance": {
+        "fr": "Choisissez une vraie faiblesse (pas une qualité déguisée) et un exemple où elle s'est manifestée, puis l'action concrète et continue prise pour la travailler. Terminez sur un résultat mesurable ou un changement observable, même partiel.",
+        "en": "Pick a real weakness (not a disguised strength) and an example where it showed, then the concrete, ongoing action taken to work on it. End with a measurable or observable change, even a partial one."
+      },
+      "modelAnswerSkeleton": {
+        "fr": "Faiblesse identifiée -> exemple où elle s'est manifestée -> action engagée pour la travailler -> évolution constatée depuis.",
+        "en": "Weakness identified -> example where it showed -> action taken to work on it -> change noticed since."
+      },
+      "tags": [
+        "interview",
+        "interview.self_awareness"
+      ],
+      "status": "published",
+      "meta": {
+        "author": "hbock",
+        "source": "own original wording; theme from docs/content/psy2-spec.md §4.1"
+      }
+    }
+  ]
+}

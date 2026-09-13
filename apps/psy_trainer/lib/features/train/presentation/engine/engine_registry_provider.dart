@@ -29,6 +29,8 @@ import '../../../engines/p1_general_efficiency/domain/p1_general_efficiency_engi
 import '../../../engines/p1_mental_arithmetic/domain/mental_arithmetic_engine.dart';
 import '../../../engines/p1_mental_arithmetic/presentation/mental_arithmetic_renderer.dart';
 import '../../../engines/p1_reading_fr/domain/p1_reading_fr_engine.dart';
+import '../../../engines/p1_raven_matrices/domain/raven_matrices_engine.dart';
+import '../../../engines/p1_raven_matrices/presentation/raven_matrices_renderer.dart';
 import '../../../engines/p1_tangram/domain/p1_tangram_engine.dart';
 import '../../../engines/p1_tangram/presentation/p1_tangram_renderer.dart';
 import '../../../engines/p1_wm_calc_back/domain/calc_back_engine.dart';
@@ -83,6 +85,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const P1CubeNetsEngine(),
         const P1GeneralEfficiencyEngine(),
         const P1ReadingFrEngine(),
+        const RavenMatricesEngine(),
         const ReverseSpanEngine(),
         const TangramEngine(),
         const TubesEngine(),
@@ -124,6 +127,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const OverlayGridRenderer(),
         const P1AnglesRenderer(),
         const P1CubeNetsRenderer(),
+        const RavenMatricesRenderer(),
         const ReverseSpanRenderer(),
         const TangramRenderer(),
         const TubesRenderer(),

@@ -105,23 +105,33 @@ class _LearnScreenState extends ConsumerState<LearnScreen> {
                   _FlashcardsDueCard(due: dueToday, onPressed: _openCards),
                 ],
                 SizedBox(height: theme.spacing.xl),
-                SectionHeader(
-                  title: context.l10n.learnFamiliesTitle,
-                  subtitle: context.l10n.learnFamiliesSubtitle,
-                ),
-                SizedBox(height: theme.spacing.md),
-                switch (families) {
-                  AsyncData(value: final list) when list.isEmpty =>
-                    const _EmptyState(),
-                  AsyncData(value: final list) => _FamilyGrid(
-                    families: list,
-                    twoColumns: twoColumns,
-                    onLearn: _openFamily,
-                    onTrain: _openTrain,
+                if (activeModule.moduleId == ModuleId.psy2)
+                  _Psy2Entries(
+                    onInterview: () => context.push(AppRoutes.learnInterview),
+                    onGroupExercise: () =>
+                        context.push(AppRoutes.learnGroupExercise),
+                    onHowItWorks: () =>
+                        context.push(AppRoutes.learnPsy2HowItWorks),
+                  )
+                else ...[
+                  SectionHeader(
+                    title: context.l10n.learnFamiliesTitle,
+                    subtitle: context.l10n.learnFamiliesSubtitle,
                   ),
-                  AsyncError() => _Message(context.l10n.learnFamiliesError),
-                  _ => _Message(context.l10n.learnFamiliesLoading),
-                },
+                  SizedBox(height: theme.spacing.md),
+                  switch (families) {
+                    AsyncData(value: final list) when list.isEmpty =>
+                      const _EmptyState(),
+                    AsyncData(value: final list) => _FamilyGrid(
+                      families: list,
+                      twoColumns: twoColumns,
+                      onLearn: _openFamily,
+                      onTrain: _openTrain,
+                    ),
+                    AsyncError() => _Message(context.l10n.learnFamiliesError),
+                    _ => _Message(context.l10n.learnFamiliesLoading),
+                  },
+                ],
               ],
             ),
           ),
@@ -325,6 +335,101 @@ class _FlashcardsDueCard extends StatelessWidget {
                 SizedBox(height: theme.spacing.xs),
                 Text(
                   context.l10n.flashcardsHomeCount(due),
+                  style: theme.textStyles.body.copyWith(
+                    color: theme.colors.textSecondary,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(width: theme.spacing.sm),
+          AppIcon(
+            AppIconGlyph.chevronRight,
+            size: 20,
+            color: theme.colors.textMuted,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// The PSY2 Learn entries (US-111/US-112): "Entretien", "Exercice de
+/// groupe" and "Comment se passe le PSY2" -- shown instead of the generic
+/// family grid, since PSY2 has no timed engine (spec ethics note) and its
+/// two practice screens are bespoke.
+class _Psy2Entries extends StatelessWidget {
+  const _Psy2Entries({
+    required this.onInterview,
+    required this.onGroupExercise,
+    required this.onHowItWorks,
+  });
+
+  final VoidCallback onInterview;
+  final VoidCallback onGroupExercise;
+  final VoidCallback onHowItWorks;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        SectionHeader(title: context.l10n.learnFamiliesTitle),
+        SizedBox(height: theme.spacing.md),
+        _Psy2EntryCard(
+          key: const Key('psy2.entry.interview'),
+          title: context.l10n.psy2InterviewTitle,
+          subtitle: context.l10n.psy2LearnInterviewSubtitle,
+          onPressed: onInterview,
+        ),
+        SizedBox(height: theme.spacing.md),
+        _Psy2EntryCard(
+          key: const Key('psy2.entry.group_exercise'),
+          title: context.l10n.psy2GroupExerciseTitle,
+          subtitle: context.l10n.psy2LearnGroupExerciseSubtitle,
+          onPressed: onGroupExercise,
+        ),
+        SizedBox(height: theme.spacing.md),
+        _Psy2EntryCard(
+          key: const Key('psy2.entry.how_it_works'),
+          title: context.l10n.psy2HowItWorksTitle,
+          subtitle: context.l10n.psy2LearnHowItWorksSubtitle,
+          onPressed: onHowItWorks,
+        ),
+      ],
+    );
+  }
+}
+
+class _Psy2EntryCard extends StatelessWidget {
+  const _Psy2EntryCard({
+    required this.title,
+    required this.subtitle,
+    required this.onPressed,
+    super.key,
+  });
+
+  final String title;
+  final String subtitle;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
+    return AppCard(
+      onPressed: onPressed,
+      semanticsLabel: '$title. $subtitle',
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: theme.textStyles.title),
+                SizedBox(height: theme.spacing.xs),
+                Text(
+                  subtitle,
                   style: theme.textStyles.body.copyWith(
                     color: theme.colors.textSecondary,
                   ),

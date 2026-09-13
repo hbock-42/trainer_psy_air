@@ -4471,6 +4471,467 @@ class LexicalFieldsCompanion extends UpdateCompanion<LexicalFieldRow> {
   }
 }
 
+class $InterviewQuestionsTable extends InterviewQuestions
+    with TableInfo<$InterviewQuestionsTable, InterviewQuestionRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $InterviewQuestionsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _familyIdMeta = const VerificationMeta(
+    'familyId',
+  );
+  @override
+  late final GeneratedColumn<String> familyId = GeneratedColumn<String>(
+    'family_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _themeMeta = const VerificationMeta('theme');
+  @override
+  late final GeneratedColumn<String> theme = GeneratedColumn<String>(
+    'theme',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _versionMeta = const VerificationMeta(
+    'version',
+  );
+  @override
+  late final GeneratedColumn<int> version = GeneratedColumn<int>(
+    'version',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  @override
+  late final GeneratedColumnWithTypeConverter<Map<String, Object?>, String>
+  json =
+      GeneratedColumn<String>(
+        'json',
+        aliasedName,
+        false,
+        type: DriftSqlType.string,
+        requiredDuringInsert: true,
+      ).withConverter<Map<String, Object?>>(
+        $InterviewQuestionsTable.$converterjson,
+      );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    createdAt,
+    updatedAt,
+    familyId,
+    theme,
+    version,
+    json,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'interview_questions';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<InterviewQuestionRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    if (data.containsKey('family_id')) {
+      context.handle(
+        _familyIdMeta,
+        familyId.isAcceptableOrUnknown(data['family_id']!, _familyIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_familyIdMeta);
+    }
+    if (data.containsKey('theme')) {
+      context.handle(
+        _themeMeta,
+        theme.isAcceptableOrUnknown(data['theme']!, _themeMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_themeMeta);
+    }
+    if (data.containsKey('version')) {
+      context.handle(
+        _versionMeta,
+        version.isAcceptableOrUnknown(data['version']!, _versionMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_versionMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  InterviewQuestionRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return InterviewQuestionRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+      familyId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}family_id'],
+      )!,
+      theme: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}theme'],
+      )!,
+      version: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}version'],
+      )!,
+      json: $InterviewQuestionsTable.$converterjson.fromSql(
+        attachedDatabase.typeMapping.read(
+          DriftSqlType.string,
+          data['${effectivePrefix}json'],
+        )!,
+      ),
+    );
+  }
+
+  @override
+  $InterviewQuestionsTable createAlias(String alias) {
+    return $InterviewQuestionsTable(attachedDatabase, alias);
+  }
+
+  static TypeConverter<Map<String, Object?>, String> $converterjson =
+      const JsonMapConverter();
+}
+
+class InterviewQuestionRow extends DataClass
+    implements Insertable<InterviewQuestionRow> {
+  final String id;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  final String familyId;
+  final String theme;
+  final int version;
+  final Map<String, Object?> json;
+  const InterviewQuestionRow({
+    required this.id,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.familyId,
+    required this.theme,
+    required this.version,
+    required this.json,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    map['family_id'] = Variable<String>(familyId);
+    map['theme'] = Variable<String>(theme);
+    map['version'] = Variable<int>(version);
+    {
+      map['json'] = Variable<String>(
+        $InterviewQuestionsTable.$converterjson.toSql(json),
+      );
+    }
+    return map;
+  }
+
+  InterviewQuestionsCompanion toCompanion(bool nullToAbsent) {
+    return InterviewQuestionsCompanion(
+      id: Value(id),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+      familyId: Value(familyId),
+      theme: Value(theme),
+      version: Value(version),
+      json: Value(json),
+    );
+  }
+
+  factory InterviewQuestionRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return InterviewQuestionRow(
+      id: serializer.fromJson<String>(json['id']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+      familyId: serializer.fromJson<String>(json['familyId']),
+      theme: serializer.fromJson<String>(json['theme']),
+      version: serializer.fromJson<int>(json['version']),
+      json: serializer.fromJson<Map<String, Object?>>(json['json']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+      'familyId': serializer.toJson<String>(familyId),
+      'theme': serializer.toJson<String>(theme),
+      'version': serializer.toJson<int>(version),
+      'json': serializer.toJson<Map<String, Object?>>(json),
+    };
+  }
+
+  InterviewQuestionRow copyWith({
+    String? id,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+    String? familyId,
+    String? theme,
+    int? version,
+    Map<String, Object?>? json,
+  }) => InterviewQuestionRow(
+    id: id ?? this.id,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+    familyId: familyId ?? this.familyId,
+    theme: theme ?? this.theme,
+    version: version ?? this.version,
+    json: json ?? this.json,
+  );
+  InterviewQuestionRow copyWithCompanion(InterviewQuestionsCompanion data) {
+    return InterviewQuestionRow(
+      id: data.id.present ? data.id.value : this.id,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+      familyId: data.familyId.present ? data.familyId.value : this.familyId,
+      theme: data.theme.present ? data.theme.value : this.theme,
+      version: data.version.present ? data.version.value : this.version,
+      json: data.json.present ? data.json.value : this.json,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('InterviewQuestionRow(')
+          ..write('id: $id, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('familyId: $familyId, ')
+          ..write('theme: $theme, ')
+          ..write('version: $version, ')
+          ..write('json: $json')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(id, createdAt, updatedAt, familyId, theme, version, json);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is InterviewQuestionRow &&
+          other.id == this.id &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt &&
+          other.familyId == this.familyId &&
+          other.theme == this.theme &&
+          other.version == this.version &&
+          other.json == this.json);
+}
+
+class InterviewQuestionsCompanion
+    extends UpdateCompanion<InterviewQuestionRow> {
+  final Value<String> id;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<String> familyId;
+  final Value<String> theme;
+  final Value<int> version;
+  final Value<Map<String, Object?>> json;
+  final Value<int> rowid;
+  const InterviewQuestionsCompanion({
+    this.id = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.familyId = const Value.absent(),
+    this.theme = const Value.absent(),
+    this.version = const Value.absent(),
+    this.json = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  InterviewQuestionsCompanion.insert({
+    required String id,
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    required String familyId,
+    required String theme,
+    required int version,
+    required Map<String, Object?> json,
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt),
+       familyId = Value(familyId),
+       theme = Value(theme),
+       version = Value(version),
+       json = Value(json);
+  static Insertable<InterviewQuestionRow> custom({
+    Expression<String>? id,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<String>? familyId,
+    Expression<String>? theme,
+    Expression<int>? version,
+    Expression<String>? json,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (familyId != null) 'family_id': familyId,
+      if (theme != null) 'theme': theme,
+      if (version != null) 'version': version,
+      if (json != null) 'json': json,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  InterviewQuestionsCompanion copyWith({
+    Value<String>? id,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<String>? familyId,
+    Value<String>? theme,
+    Value<int>? version,
+    Value<Map<String, Object?>>? json,
+    Value<int>? rowid,
+  }) {
+    return InterviewQuestionsCompanion(
+      id: id ?? this.id,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      familyId: familyId ?? this.familyId,
+      theme: theme ?? this.theme,
+      version: version ?? this.version,
+      json: json ?? this.json,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (familyId.present) {
+      map['family_id'] = Variable<String>(familyId.value);
+    }
+    if (theme.present) {
+      map['theme'] = Variable<String>(theme.value);
+    }
+    if (version.present) {
+      map['version'] = Variable<int>(version.value);
+    }
+    if (json.present) {
+      map['json'] = Variable<String>(
+        $InterviewQuestionsTable.$converterjson.toSql(json.value),
+      );
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('InterviewQuestionsCompanion(')
+          ..write('id: $id, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('familyId: $familyId, ')
+          ..write('theme: $theme, ')
+          ..write('version: $version, ')
+          ..write('json: $json, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 class $SessionsTable extends Sessions
     with TableInfo<$SessionsTable, SessionRow> {
   @override
@@ -8030,6 +8491,8 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $FlashcardsTable flashcards = $FlashcardsTable(this);
   late final $BlueprintsTable blueprints = $BlueprintsTable(this);
   late final $LexicalFieldsTable lexicalFields = $LexicalFieldsTable(this);
+  late final $InterviewQuestionsTable interviewQuestions =
+      $InterviewQuestionsTable(this);
   late final $SessionsTable sessions = $SessionsTable(this);
   late final $AttemptsTable attempts = $AttemptsTable(this);
   late final $ItemStatsTable itemStats = $ItemStatsTable(this);
@@ -8065,6 +8528,10 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final Index lexicalFieldsFamilyDifficulty = Index(
     'lexical_fields_family_difficulty',
     'CREATE INDEX lexical_fields_family_difficulty ON lexical_fields (family_id, difficulty)',
+  );
+  late final Index interviewQuestionsFamilyTheme = Index(
+    'interview_questions_family_theme',
+    'CREATE INDEX interview_questions_family_theme ON interview_questions (family_id, theme)',
   );
   late final Index sessionsStartedAt = Index(
     'sessions_started_at',
@@ -8134,6 +8601,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     flashcards,
     blueprints,
     lexicalFields,
+    interviewQuestions,
     sessions,
     attempts,
     itemStats,
@@ -8147,6 +8615,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     flashcardsDeckDifficulty,
     blueprintsModule,
     lexicalFieldsFamilyDifficulty,
+    interviewQuestionsFamilyTheme,
     sessionsStartedAt,
     sessionsFamilyStartedAt,
     attemptsSessionPosition,
@@ -10509,6 +10978,262 @@ typedef $$LexicalFieldsTableProcessedTableManager =
       LexicalFieldRow,
       PrefetchHooks Function()
     >;
+typedef $$InterviewQuestionsTableCreateCompanionBuilder =
+    InterviewQuestionsCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      required String familyId,
+      required String theme,
+      required int version,
+      required Map<String, Object?> json,
+      Value<int> rowid,
+    });
+typedef $$InterviewQuestionsTableUpdateCompanionBuilder =
+    InterviewQuestionsCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<String> familyId,
+      Value<String> theme,
+      Value<int> version,
+      Value<Map<String, Object?>> json,
+      Value<int> rowid,
+    });
+
+class $$InterviewQuestionsTableFilterComposer
+    extends Composer<_$AppDatabase, $InterviewQuestionsTable> {
+  $$InterviewQuestionsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get familyId => $composableBuilder(
+    column: $table.familyId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get theme => $composableBuilder(
+    column: $table.theme,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get version => $composableBuilder(
+    column: $table.version,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnWithTypeConverterFilters<
+    Map<String, Object?>,
+    Map<String, Object>,
+    String
+  >
+  get json => $composableBuilder(
+    column: $table.json,
+    builder: (column) => ColumnWithTypeConverterFilters(column),
+  );
+}
+
+class $$InterviewQuestionsTableOrderingComposer
+    extends Composer<_$AppDatabase, $InterviewQuestionsTable> {
+  $$InterviewQuestionsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get familyId => $composableBuilder(
+    column: $table.familyId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get theme => $composableBuilder(
+    column: $table.theme,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get version => $composableBuilder(
+    column: $table.version,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get json => $composableBuilder(
+    column: $table.json,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$InterviewQuestionsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $InterviewQuestionsTable> {
+  $$InterviewQuestionsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  GeneratedColumn<String> get familyId =>
+      $composableBuilder(column: $table.familyId, builder: (column) => column);
+
+  GeneratedColumn<String> get theme =>
+      $composableBuilder(column: $table.theme, builder: (column) => column);
+
+  GeneratedColumn<int> get version =>
+      $composableBuilder(column: $table.version, builder: (column) => column);
+
+  GeneratedColumnWithTypeConverter<Map<String, Object?>, String> get json =>
+      $composableBuilder(column: $table.json, builder: (column) => column);
+}
+
+class $$InterviewQuestionsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $InterviewQuestionsTable,
+          InterviewQuestionRow,
+          $$InterviewQuestionsTableFilterComposer,
+          $$InterviewQuestionsTableOrderingComposer,
+          $$InterviewQuestionsTableAnnotationComposer,
+          $$InterviewQuestionsTableCreateCompanionBuilder,
+          $$InterviewQuestionsTableUpdateCompanionBuilder,
+          (
+            InterviewQuestionRow,
+            BaseReferences<
+              _$AppDatabase,
+              $InterviewQuestionsTable,
+              InterviewQuestionRow
+            >,
+          ),
+          InterviewQuestionRow,
+          PrefetchHooks Function()
+        > {
+  $$InterviewQuestionsTableTableManager(
+    _$AppDatabase db,
+    $InterviewQuestionsTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$InterviewQuestionsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$InterviewQuestionsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$InterviewQuestionsTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<String> familyId = const Value.absent(),
+                Value<String> theme = const Value.absent(),
+                Value<int> version = const Value.absent(),
+                Value<Map<String, Object?>> json = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => InterviewQuestionsCompanion(
+                id: id,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                familyId: familyId,
+                theme: theme,
+                version: version,
+                json: json,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                required String familyId,
+                required String theme,
+                required int version,
+                required Map<String, Object?> json,
+                Value<int> rowid = const Value.absent(),
+              }) => InterviewQuestionsCompanion.insert(
+                id: id,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                familyId: familyId,
+                theme: theme,
+                version: version,
+                json: json,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$InterviewQuestionsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $InterviewQuestionsTable,
+      InterviewQuestionRow,
+      $$InterviewQuestionsTableFilterComposer,
+      $$InterviewQuestionsTableOrderingComposer,
+      $$InterviewQuestionsTableAnnotationComposer,
+      $$InterviewQuestionsTableCreateCompanionBuilder,
+      $$InterviewQuestionsTableUpdateCompanionBuilder,
+      (
+        InterviewQuestionRow,
+        BaseReferences<
+          _$AppDatabase,
+          $InterviewQuestionsTable,
+          InterviewQuestionRow
+        >,
+      ),
+      InterviewQuestionRow,
+      PrefetchHooks Function()
+    >;
 typedef $$SessionsTableCreateCompanionBuilder =
     SessionsCompanion Function({
       required String id,
@@ -12501,6 +13226,8 @@ class $AppDatabaseManager {
       $$BlueprintsTableTableManager(_db, _db.blueprints);
   $$LexicalFieldsTableTableManager get lexicalFields =>
       $$LexicalFieldsTableTableManager(_db, _db.lexicalFields);
+  $$InterviewQuestionsTableTableManager get interviewQuestions =>
+      $$InterviewQuestionsTableTableManager(_db, _db.interviewQuestions);
   $$SessionsTableTableManager get sessions =>
       $$SessionsTableTableManager(_db, _db.sessions);
   $$AttemptsTableTableManager get attempts =>

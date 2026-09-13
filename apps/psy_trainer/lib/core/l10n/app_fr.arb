@@ -42,7 +42,7 @@
   "dateFieldIncrement": "Suivant",
   "dateFieldDecrement": "Précédent",
   "onboardingStageHeadline": "Quelle étape préparez-vous ?",
-  "onboardingStageIntro": "Le contenu de l'application suit l'étape choisie. Seul le PSY0 est disponible pour le moment.",
+  "onboardingStageIntro": "Le contenu de l'application suit l'étape choisie.",
   "stagePsy0Subtitle": "Tests cognitifs, culture aéronautique et anglais, à distance.",
   "stagePsy1Subtitle": "Tests psychotechniques et psychomoteurs, une journée en présentiel.",
   "stageComingSoon": "Bientôt",
@@ -1592,5 +1592,101 @@
         "type": "int"
       }
     }
-  }
+  },
+  "matrixMissingSemantics": "Case manquante",
+  "matrixQuestionMark": "?",
+  "matrixCandidateSemantics": "Réponse {index}",
+  "@matrixCandidateSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "matrixExampleCaption": "Trouvez la figure qui complète la matrice.",
+  "matrixAxisRow": "rangée",
+  "matrixAxisColumn": "colonne",
+  "matrixAttributeOuterShape": "forme",
+  "matrixAttributeInnerShape": "forme intérieure",
+  "matrixAttributeCount": "nombre",
+  "matrixAttributeRotation": "rotation",
+  "matrixAttributeFill": "remplissage",
+  "matrixAttributeSize": "taille",
+  "matrixAttributePosition": "position",
+  "matrixRuleDistributionSuffix": "en distribution (3 valeurs)",
+  "matrixRuleAlternationSuffix": "en alternance",
+  "matrixRuleXorSuffix": "= combinaison des deux premières",
+  "matrixRuleStepPlain": "+{step}",
+  "@matrixRuleStepPlain": {
+    "placeholders": {
+      "step": {
+        "type": "int"
+      }
+    }
+  },
+  "matrixRuleStepDegrees": "+{degrees}°",
+  "@matrixRuleStepDegrees": {
+    "placeholders": {
+      "degrees": {
+        "type": "int"
+      }
+    }
+  },
+  "stagePsy2Subtitle": "Entretien, exercice de groupe et auto-évaluations CRM, sans épreuve chronométrée.",
+  "psy2NoTimedExercise": "Pas d'exercice chronométré pour le PSY2 : entraînez-vous depuis l'onglet Apprendre (entretien, exercice de groupe).",
+  "psy2LearnInterviewSubtitle": "Sept thèmes de questions, chronomètre de préparation/réponse, notes et auto-évaluation.",
+  "psy2LearnGroupExerciseSubtitle": "Les six comportements CRM, un guide d'entraînement entre pairs et une grille d'auto-évaluation.",
+  "psy2LearnHowItWorksSubtitle": "La structure du PSY2, ce que l'app peut préparer, et ce qu'elle ne fait pas.",
+  "psy2InterviewTitle": "Entretien",
+  "psy2InterviewIntro": "Choisissez un thème (ou laissez le hasard décider), puis entraînez-vous avec un chronomètre de préparation et de réponse.",
+  "psy2InterviewEmpty": "Aucune question d'entretien pour le moment.",
+  "psy2InterviewThemeTitle": "Thème",
+  "psy2InterviewThemeRandom": "Au hasard",
+  "psy2InterviewStart": "Commencer",
+  "psy2InterviewPrepLabel": "Préparation",
+  "psy2InterviewAnswerLabel": "Réponse",
+  "psy2InterviewShowGuidance": "Voir la méthode de réponse",
+  "psy2InterviewHideGuidance": "Masquer la méthode de réponse",
+  "psy2InterviewGuidanceTitle": "Ce qu'une bonne réponse couvre",
+  "psy2InterviewSkeletonTitle": "Structure suggérée",
+  "psy2InterviewNotesLabel": "Notes personnelles",
+  "psy2InterviewNotesHint": "Ce qui s'est bien passé, ce que je changerais...",
+  "psy2InterviewSkipPrep": "Commencer à répondre",
+  "psy2InterviewFinishAnswer": "Terminer et m'auto-évaluer",
+  "psy2InterviewRubricTitle": "Auto-évaluation",
+  "psy2InterviewSave": "Enregistrer",
+  "psy2InterviewSaved": "Entraînement enregistré. Retrouvez son historique dans l'onglet Progression.",
+  "psy2InterviewPracticeAnother": "S'entraîner sur une autre question",
+  "psy2GroupExerciseTitle": "Exercice de groupe",
+  "psy2GroupExerciseChecklistTitle": "Auto-évaluation après un entraînement",
+  "psy2GroupExerciseWentWell": "Ce qui s'est bien passé",
+  "psy2GroupExerciseToImprove": "Ce qui est à améliorer",
+  "psy2GroupExerciseReflection1": "Que ferais-je différemment si c'était l'épreuve réelle ?",
+  "psy2GroupExerciseReflection2": "Qu'ai-je appris sur mon comportement par défaut sous pression ?",
+  "psy2GroupExerciseSave": "Enregistrer",
+  "psy2GroupExerciseSaved": "Auto-évaluation enregistrée. Retrouvez son historique dans l'onglet Progression.",
+  "psy2HowItWorksTitle": "Comment se passe le PSY2",
+  "psy2HowItWorksEmpty": "Contenu à venir.",
+  "psy2ThemeMotivation": "Motivation et projet",
+  "psy2ThemeBackground": "Parcours et présentation",
+  "psy2ThemeCrmTeamwork": "CRM et travail d'équipe",
+  "psy2ThemeStress": "Stress et pression",
+  "psy2ThemeSelfAwareness": "Connaissance de soi",
+  "psy2ThemeAviationKnowledge": "Culture aéronautique",
+  "psy2ThemeReflective": "Questions réflexives",
+  "psy2RubricStructure": "Structure (situation → action → résultat)",
+  "psy2RubricConcreteness": "Exemples concrets",
+  "psy2RubricSelfAwareness": "Connaissance de soi",
+  "psy2RubricRelevance": "Lien avec l'aéronautique / le CRM",
+  "psy2RubricDelivery": "Aisance à l'oral",
+  "psy2DimCommunication": "Communication",
+  "psy2DimLeadership": "Leadership / suivisme",
+  "psy2DimSituationalAwareness": "Conscience de la situation",
+  "psy2DimDecisionMaking": "Prise de décision",
+  "psy2DimWorkloadManagement": "Gestion de la charge",
+  "psy2DimTeamwork": "Esprit d'équipe",
+  "psy2ProgressInterviewTitle": "Entretien — progression",
+  "psy2ProgressInterviewSubtitle": "Moyenne de l'auto-évaluation par entraînement, et moyenne par critère.",
+  "psy2ProgressGroupExerciseTitle": "Exercice de groupe — progression",
+  "psy2ProgressGroupExerciseSubtitle": "Moyenne de l'auto-évaluation par session, et moyenne par dimension CRM."
 }

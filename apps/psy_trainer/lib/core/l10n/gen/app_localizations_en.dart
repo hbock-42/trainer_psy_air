@@ -143,7 +143,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboardingStageIntro =>
-      'The app\'s content follows the stage you choose. Only PSY0 is available for now.';
+      'The app\'s content follows the stage you choose.';
 
   @override
   String get stagePsy0Subtitle =>
@@ -2287,4 +2287,249 @@ class AppLocalizationsEn extends AppLocalizations {
   String attentionSustainedStimulusSemantics(int index) {
     return 'Stimulus $index';
   }
+
+  @override
+  String get matrixMissingSemantics => 'Missing cell';
+
+  @override
+  String get matrixQuestionMark => '?';
+
+  @override
+  String matrixCandidateSemantics(int index) {
+    return 'Answer $index';
+  }
+
+  @override
+  String get matrixExampleCaption =>
+      'Find the figure that completes the matrix.';
+
+  @override
+  String get matrixAxisRow => 'row';
+
+  @override
+  String get matrixAxisColumn => 'column';
+
+  @override
+  String get matrixAttributeOuterShape => 'shape';
+
+  @override
+  String get matrixAttributeInnerShape => 'inner shape';
+
+  @override
+  String get matrixAttributeCount => 'count';
+
+  @override
+  String get matrixAttributeRotation => 'rotation';
+
+  @override
+  String get matrixAttributeFill => 'fill';
+
+  @override
+  String get matrixAttributeSize => 'size';
+
+  @override
+  String get matrixAttributePosition => 'position';
+
+  @override
+  String get matrixRuleDistributionSuffix => 'in distribution (3 values)';
+
+  @override
+  String get matrixRuleAlternationSuffix => 'alternating';
+
+  @override
+  String get matrixRuleXorSuffix => '= combination of the first two';
+
+  @override
+  String matrixRuleStepPlain(int step) {
+    return '+$step';
+  }
+
+  @override
+  String matrixRuleStepDegrees(int degrees) {
+    return '+$degrees°';
+  }
+
+  @override
+  String get stagePsy2Subtitle =>
+      'Interview, group exercise and CRM self-assessments, no timed exercise.';
+
+  @override
+  String get psy2NoTimedExercise =>
+      'No timed exercise for PSY2: practise from the Learn tab (interview, group exercise).';
+
+  @override
+  String get psy2LearnInterviewSubtitle =>
+      'Seven question themes, a prep/answer timer, notes and self-assessment.';
+
+  @override
+  String get psy2LearnGroupExerciseSubtitle =>
+      'The six CRM behaviours, a peer practice guide and a self-assessment checklist.';
+
+  @override
+  String get psy2LearnHowItWorksSubtitle =>
+      'The PSY2 structure, what the app can help prepare, and what it does not do.';
+
+  @override
+  String get psy2InterviewTitle => 'Interview';
+
+  @override
+  String get psy2InterviewIntro =>
+      'Pick a theme (or let chance decide), then practise with a prep and answer timer.';
+
+  @override
+  String get psy2InterviewEmpty => 'No interview questions yet.';
+
+  @override
+  String get psy2InterviewThemeTitle => 'Theme';
+
+  @override
+  String get psy2InterviewThemeRandom => 'Random';
+
+  @override
+  String get psy2InterviewStart => 'Start';
+
+  @override
+  String get psy2InterviewPrepLabel => 'Preparation';
+
+  @override
+  String get psy2InterviewAnswerLabel => 'Answer';
+
+  @override
+  String get psy2InterviewShowGuidance => 'Show the answer method';
+
+  @override
+  String get psy2InterviewHideGuidance => 'Hide the answer method';
+
+  @override
+  String get psy2InterviewGuidanceTitle => 'What a strong answer covers';
+
+  @override
+  String get psy2InterviewSkeletonTitle => 'Suggested structure';
+
+  @override
+  String get psy2InterviewNotesLabel => 'Personal notes';
+
+  @override
+  String get psy2InterviewNotesHint => 'What went well, what I\'d change...';
+
+  @override
+  String get psy2InterviewSkipPrep => 'Start answering';
+
+  @override
+  String get psy2InterviewFinishAnswer => 'Finish and self-assess';
+
+  @override
+  String get psy2InterviewRubricTitle => 'Self-assessment';
+
+  @override
+  String get psy2InterviewSave => 'Save';
+
+  @override
+  String get psy2InterviewSaved =>
+      'Practice saved. Find its history on the Progress tab.';
+
+  @override
+  String get psy2InterviewPracticeAnother => 'Practise another question';
+
+  @override
+  String get psy2GroupExerciseTitle => 'Group exercise';
+
+  @override
+  String get psy2GroupExerciseChecklistTitle =>
+      'Self-assessment after a mock session';
+
+  @override
+  String get psy2GroupExerciseWentWell => 'What went well';
+
+  @override
+  String get psy2GroupExerciseToImprove => 'What to improve';
+
+  @override
+  String get psy2GroupExerciseReflection1 =>
+      'What would I do differently if this were the real thing?';
+
+  @override
+  String get psy2GroupExerciseReflection2 =>
+      'What did I learn about my default behaviour under pressure?';
+
+  @override
+  String get psy2GroupExerciseSave => 'Save';
+
+  @override
+  String get psy2GroupExerciseSaved =>
+      'Self-assessment saved. Find its history on the Progress tab.';
+
+  @override
+  String get psy2HowItWorksTitle => 'How PSY2 works';
+
+  @override
+  String get psy2HowItWorksEmpty => 'Content coming soon.';
+
+  @override
+  String get psy2ThemeMotivation => 'Motivation and career project';
+
+  @override
+  String get psy2ThemeBackground => 'Background and self-presentation';
+
+  @override
+  String get psy2ThemeCrmTeamwork => 'CRM and teamwork';
+
+  @override
+  String get psy2ThemeStress => 'Stress and pressure';
+
+  @override
+  String get psy2ThemeSelfAwareness => 'Self-awareness';
+
+  @override
+  String get psy2ThemeAviationKnowledge => 'Aviation knowledge';
+
+  @override
+  String get psy2ThemeReflective => 'Reflective questions';
+
+  @override
+  String get psy2RubricStructure => 'Structure (situation → action → result)';
+
+  @override
+  String get psy2RubricConcreteness => 'Concrete examples';
+
+  @override
+  String get psy2RubricSelfAwareness => 'Self-awareness';
+
+  @override
+  String get psy2RubricRelevance => 'Link to aviation / CRM';
+
+  @override
+  String get psy2RubricDelivery => 'Delivery';
+
+  @override
+  String get psy2DimCommunication => 'Communication';
+
+  @override
+  String get psy2DimLeadership => 'Leadership / followership';
+
+  @override
+  String get psy2DimSituationalAwareness => 'Situational awareness';
+
+  @override
+  String get psy2DimDecisionMaking => 'Decision-making';
+
+  @override
+  String get psy2DimWorkloadManagement => 'Workload management';
+
+  @override
+  String get psy2DimTeamwork => 'Teamwork';
+
+  @override
+  String get psy2ProgressInterviewTitle => 'Interview — progress';
+
+  @override
+  String get psy2ProgressInterviewSubtitle =>
+      'Self-assessment average per practice, and average per criterion.';
+
+  @override
+  String get psy2ProgressGroupExerciseTitle => 'Group exercise — progress';
+
+  @override
+  String get psy2ProgressGroupExerciseSubtitle =>
+      'Self-assessment average per session, and average per CRM dimension.';
 }

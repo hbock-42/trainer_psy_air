@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.group_exercise.02",
+  "version": 1,
+  "moduleId": "psy2",
+  "familyId": "group_exercise",
+  "order": 2,
+  "title": {
+    "fr": "Organiser un entraînement entre pairs (et pourquoi l'authenticité prime sur la technique)",
+    "en": "Organising a peer practice group (and why authenticity beats technique)"
+  },
+  "summary": {
+    "fr": "Taille de groupe, tâche neutre proposée à titre d'exemple, minutage, rotation observateur/participant, débrief -- et pourquoi chercher \"la combine\" est contre-productif.",
+    "en": "Group size, a neutral example task, timing, observer/participant rotation, debrief -- and why looking for \"the trick\" is counter-productive."
+  },
+  "file": {
+    "fr": "lessons/group_exercise/02-organiser-un-entrainement-entre-pairs.fr.md"
+  },
+  "estimatedReadMin": 6,
+  "difficulty": 1,
+  "tags": ["psy2.group_exercise", "psy2.group_exercise.mock_group"],
+  "practiceTags": [],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "docs/content/psy2-spec.md §4.2, §7 (ethics: no group-exercise content reproduced)"
+  }
+}

@@ -353,7 +353,7 @@ abstract class AppLocalizations {
   /// No description provided for @onboardingStageIntro.
   ///
   /// In fr, this message translates to:
-  /// **'Le contenu de l\'application suit l\'étape choisie. Seul le PSY0 est disponible pour le moment.'**
+  /// **'Le contenu de l\'application suit l\'étape choisie.'**
   String get onboardingStageIntro;
 
   /// No description provided for @stagePsy0Subtitle.
@@ -3737,6 +3737,456 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Stimulus {index}'**
   String attentionSustainedStimulusSemantics(int index);
+
+  /// No description provided for @matrixMissingSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Case manquante'**
+  String get matrixMissingSemantics;
+
+  /// No description provided for @matrixQuestionMark.
+  ///
+  /// In fr, this message translates to:
+  /// **'?'**
+  String get matrixQuestionMark;
+
+  /// No description provided for @matrixCandidateSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réponse {index}'**
+  String matrixCandidateSemantics(int index);
+
+  /// No description provided for @matrixExampleCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Trouvez la figure qui complète la matrice.'**
+  String get matrixExampleCaption;
+
+  /// No description provided for @matrixAxisRow.
+  ///
+  /// In fr, this message translates to:
+  /// **'rangée'**
+  String get matrixAxisRow;
+
+  /// No description provided for @matrixAxisColumn.
+  ///
+  /// In fr, this message translates to:
+  /// **'colonne'**
+  String get matrixAxisColumn;
+
+  /// No description provided for @matrixAttributeOuterShape.
+  ///
+  /// In fr, this message translates to:
+  /// **'forme'**
+  String get matrixAttributeOuterShape;
+
+  /// No description provided for @matrixAttributeInnerShape.
+  ///
+  /// In fr, this message translates to:
+  /// **'forme intérieure'**
+  String get matrixAttributeInnerShape;
+
+  /// No description provided for @matrixAttributeCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'nombre'**
+  String get matrixAttributeCount;
+
+  /// No description provided for @matrixAttributeRotation.
+  ///
+  /// In fr, this message translates to:
+  /// **'rotation'**
+  String get matrixAttributeRotation;
+
+  /// No description provided for @matrixAttributeFill.
+  ///
+  /// In fr, this message translates to:
+  /// **'remplissage'**
+  String get matrixAttributeFill;
+
+  /// No description provided for @matrixAttributeSize.
+  ///
+  /// In fr, this message translates to:
+  /// **'taille'**
+  String get matrixAttributeSize;
+
+  /// No description provided for @matrixAttributePosition.
+  ///
+  /// In fr, this message translates to:
+  /// **'position'**
+  String get matrixAttributePosition;
+
+  /// No description provided for @matrixRuleDistributionSuffix.
+  ///
+  /// In fr, this message translates to:
+  /// **'en distribution (3 valeurs)'**
+  String get matrixRuleDistributionSuffix;
+
+  /// No description provided for @matrixRuleAlternationSuffix.
+  ///
+  /// In fr, this message translates to:
+  /// **'en alternance'**
+  String get matrixRuleAlternationSuffix;
+
+  /// No description provided for @matrixRuleXorSuffix.
+  ///
+  /// In fr, this message translates to:
+  /// **'= combinaison des deux premières'**
+  String get matrixRuleXorSuffix;
+
+  /// No description provided for @matrixRuleStepPlain.
+  ///
+  /// In fr, this message translates to:
+  /// **'+{step}'**
+  String matrixRuleStepPlain(int step);
+
+  /// No description provided for @matrixRuleStepDegrees.
+  ///
+  /// In fr, this message translates to:
+  /// **'+{degrees}°'**
+  String matrixRuleStepDegrees(int degrees);
+
+  /// No description provided for @stagePsy2Subtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entretien, exercice de groupe et auto-évaluations CRM, sans épreuve chronométrée.'**
+  String get stagePsy2Subtitle;
+
+  /// No description provided for @psy2NoTimedExercise.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas d\'exercice chronométré pour le PSY2 : entraînez-vous depuis l\'onglet Apprendre (entretien, exercice de groupe).'**
+  String get psy2NoTimedExercise;
+
+  /// No description provided for @psy2LearnInterviewSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sept thèmes de questions, chronomètre de préparation/réponse, notes et auto-évaluation.'**
+  String get psy2LearnInterviewSubtitle;
+
+  /// No description provided for @psy2LearnGroupExerciseSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les six comportements CRM, un guide d\'entraînement entre pairs et une grille d\'auto-évaluation.'**
+  String get psy2LearnGroupExerciseSubtitle;
+
+  /// No description provided for @psy2LearnHowItWorksSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'La structure du PSY2, ce que l\'app peut préparer, et ce qu\'elle ne fait pas.'**
+  String get psy2LearnHowItWorksSubtitle;
+
+  /// No description provided for @psy2InterviewTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entretien'**
+  String get psy2InterviewTitle;
+
+  /// No description provided for @psy2InterviewIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choisissez un thème (ou laissez le hasard décider), puis entraînez-vous avec un chronomètre de préparation et de réponse.'**
+  String get psy2InterviewIntro;
+
+  /// No description provided for @psy2InterviewEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune question d\'entretien pour le moment.'**
+  String get psy2InterviewEmpty;
+
+  /// No description provided for @psy2InterviewThemeTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Thème'**
+  String get psy2InterviewThemeTitle;
+
+  /// No description provided for @psy2InterviewThemeRandom.
+  ///
+  /// In fr, this message translates to:
+  /// **'Au hasard'**
+  String get psy2InterviewThemeRandom;
+
+  /// No description provided for @psy2InterviewStart.
+  ///
+  /// In fr, this message translates to:
+  /// **'Commencer'**
+  String get psy2InterviewStart;
+
+  /// No description provided for @psy2InterviewPrepLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Préparation'**
+  String get psy2InterviewPrepLabel;
+
+  /// No description provided for @psy2InterviewAnswerLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réponse'**
+  String get psy2InterviewAnswerLabel;
+
+  /// No description provided for @psy2InterviewShowGuidance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Voir la méthode de réponse'**
+  String get psy2InterviewShowGuidance;
+
+  /// No description provided for @psy2InterviewHideGuidance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Masquer la méthode de réponse'**
+  String get psy2InterviewHideGuidance;
+
+  /// No description provided for @psy2InterviewGuidanceTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ce qu\'une bonne réponse couvre'**
+  String get psy2InterviewGuidanceTitle;
+
+  /// No description provided for @psy2InterviewSkeletonTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Structure suggérée'**
+  String get psy2InterviewSkeletonTitle;
+
+  /// No description provided for @psy2InterviewNotesLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Notes personnelles'**
+  String get psy2InterviewNotesLabel;
+
+  /// No description provided for @psy2InterviewNotesHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ce qui s\'est bien passé, ce que je changerais...'**
+  String get psy2InterviewNotesHint;
+
+  /// No description provided for @psy2InterviewSkipPrep.
+  ///
+  /// In fr, this message translates to:
+  /// **'Commencer à répondre'**
+  String get psy2InterviewSkipPrep;
+
+  /// No description provided for @psy2InterviewFinishAnswer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Terminer et m\'auto-évaluer'**
+  String get psy2InterviewFinishAnswer;
+
+  /// No description provided for @psy2InterviewRubricTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Auto-évaluation'**
+  String get psy2InterviewRubricTitle;
+
+  /// No description provided for @psy2InterviewSave.
+  ///
+  /// In fr, this message translates to:
+  /// **'Enregistrer'**
+  String get psy2InterviewSave;
+
+  /// No description provided for @psy2InterviewSaved.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entraînement enregistré. Retrouvez son historique dans l\'onglet Progression.'**
+  String get psy2InterviewSaved;
+
+  /// No description provided for @psy2InterviewPracticeAnother.
+  ///
+  /// In fr, this message translates to:
+  /// **'S\'entraîner sur une autre question'**
+  String get psy2InterviewPracticeAnother;
+
+  /// No description provided for @psy2GroupExerciseTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exercice de groupe'**
+  String get psy2GroupExerciseTitle;
+
+  /// No description provided for @psy2GroupExerciseChecklistTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Auto-évaluation après un entraînement'**
+  String get psy2GroupExerciseChecklistTitle;
+
+  /// No description provided for @psy2GroupExerciseWentWell.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ce qui s\'est bien passé'**
+  String get psy2GroupExerciseWentWell;
+
+  /// No description provided for @psy2GroupExerciseToImprove.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ce qui est à améliorer'**
+  String get psy2GroupExerciseToImprove;
+
+  /// No description provided for @psy2GroupExerciseReflection1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Que ferais-je différemment si c\'était l\'épreuve réelle ?'**
+  String get psy2GroupExerciseReflection1;
+
+  /// No description provided for @psy2GroupExerciseReflection2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Qu\'ai-je appris sur mon comportement par défaut sous pression ?'**
+  String get psy2GroupExerciseReflection2;
+
+  /// No description provided for @psy2GroupExerciseSave.
+  ///
+  /// In fr, this message translates to:
+  /// **'Enregistrer'**
+  String get psy2GroupExerciseSave;
+
+  /// No description provided for @psy2GroupExerciseSaved.
+  ///
+  /// In fr, this message translates to:
+  /// **'Auto-évaluation enregistrée. Retrouvez son historique dans l\'onglet Progression.'**
+  String get psy2GroupExerciseSaved;
+
+  /// No description provided for @psy2HowItWorksTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Comment se passe le PSY2'**
+  String get psy2HowItWorksTitle;
+
+  /// No description provided for @psy2HowItWorksEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Contenu à venir.'**
+  String get psy2HowItWorksEmpty;
+
+  /// No description provided for @psy2ThemeMotivation.
+  ///
+  /// In fr, this message translates to:
+  /// **'Motivation et projet'**
+  String get psy2ThemeMotivation;
+
+  /// No description provided for @psy2ThemeBackground.
+  ///
+  /// In fr, this message translates to:
+  /// **'Parcours et présentation'**
+  String get psy2ThemeBackground;
+
+  /// No description provided for @psy2ThemeCrmTeamwork.
+  ///
+  /// In fr, this message translates to:
+  /// **'CRM et travail d\'équipe'**
+  String get psy2ThemeCrmTeamwork;
+
+  /// No description provided for @psy2ThemeStress.
+  ///
+  /// In fr, this message translates to:
+  /// **'Stress et pression'**
+  String get psy2ThemeStress;
+
+  /// No description provided for @psy2ThemeSelfAwareness.
+  ///
+  /// In fr, this message translates to:
+  /// **'Connaissance de soi'**
+  String get psy2ThemeSelfAwareness;
+
+  /// No description provided for @psy2ThemeAviationKnowledge.
+  ///
+  /// In fr, this message translates to:
+  /// **'Culture aéronautique'**
+  String get psy2ThemeAviationKnowledge;
+
+  /// No description provided for @psy2ThemeReflective.
+  ///
+  /// In fr, this message translates to:
+  /// **'Questions réflexives'**
+  String get psy2ThemeReflective;
+
+  /// No description provided for @psy2RubricStructure.
+  ///
+  /// In fr, this message translates to:
+  /// **'Structure (situation → action → résultat)'**
+  String get psy2RubricStructure;
+
+  /// No description provided for @psy2RubricConcreteness.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemples concrets'**
+  String get psy2RubricConcreteness;
+
+  /// No description provided for @psy2RubricSelfAwareness.
+  ///
+  /// In fr, this message translates to:
+  /// **'Connaissance de soi'**
+  String get psy2RubricSelfAwareness;
+
+  /// No description provided for @psy2RubricRelevance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lien avec l\'aéronautique / le CRM'**
+  String get psy2RubricRelevance;
+
+  /// No description provided for @psy2RubricDelivery.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aisance à l\'oral'**
+  String get psy2RubricDelivery;
+
+  /// No description provided for @psy2DimCommunication.
+  ///
+  /// In fr, this message translates to:
+  /// **'Communication'**
+  String get psy2DimCommunication;
+
+  /// No description provided for @psy2DimLeadership.
+  ///
+  /// In fr, this message translates to:
+  /// **'Leadership / suivisme'**
+  String get psy2DimLeadership;
+
+  /// No description provided for @psy2DimSituationalAwareness.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conscience de la situation'**
+  String get psy2DimSituationalAwareness;
+
+  /// No description provided for @psy2DimDecisionMaking.
+  ///
+  /// In fr, this message translates to:
+  /// **'Prise de décision'**
+  String get psy2DimDecisionMaking;
+
+  /// No description provided for @psy2DimWorkloadManagement.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gestion de la charge'**
+  String get psy2DimWorkloadManagement;
+
+  /// No description provided for @psy2DimTeamwork.
+  ///
+  /// In fr, this message translates to:
+  /// **'Esprit d\'équipe'**
+  String get psy2DimTeamwork;
+
+  /// No description provided for @psy2ProgressInterviewTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entretien — progression'**
+  String get psy2ProgressInterviewTitle;
+
+  /// No description provided for @psy2ProgressInterviewSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Moyenne de l\'auto-évaluation par entraînement, et moyenne par critère.'**
+  String get psy2ProgressInterviewSubtitle;
+
+  /// No description provided for @psy2ProgressGroupExerciseTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exercice de groupe — progression'**
+  String get psy2ProgressGroupExerciseTitle;
+
+  /// No description provided for @psy2ProgressGroupExerciseSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Moyenne de l\'auto-évaluation par session, et moyenne par dimension CRM.'**
+  String get psy2ProgressGroupExerciseSubtitle;
 }
 
 class _AppLocalizationsDelegate
