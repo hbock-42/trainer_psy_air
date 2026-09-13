@@ -2168,4 +2168,8 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get mentalArithmeticAllIntervalsExampleCaption =>
       'Work out the exact value, then tap every interval that contains it before Confirm.';
+
+  @override
+  String get p1CountersExampleCaption =>
+      'Read each gauge (needle, scale or drum counter) then answer the question asked.';
 }

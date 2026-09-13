@@ -1486,5 +1486,6 @@
       }
     }
   },
-  "mentalArithmeticAllIntervalsExampleCaption": "Work out the exact value, then tap every interval that contains it before Confirm."
+  "mentalArithmeticAllIntervalsExampleCaption": "Work out the exact value, then tap every interval that contains it before Confirm.",
+  "p1CountersExampleCaption": "Read each gauge (needle, scale or drum counter) then answer the question asked."
 }

@@ -2183,4 +2183,8 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get mentalArithmeticAllIntervalsExampleCaption =>
       'Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider.';
+
+  @override
+  String get p1CountersExampleCaption =>
+      'Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.';
 }

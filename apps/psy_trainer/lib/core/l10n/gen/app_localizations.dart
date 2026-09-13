@@ -3551,6 +3551,12 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Calculez la valeur exacte, puis touchez tous les intervalles qui la contiennent avant de Valider.'**
   String get mentalArithmeticAllIntervalsExampleCaption;
+
+  /// No description provided for @p1CountersExampleCaption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.'**
+  String get p1CountersExampleCaption;
 }
 
 class _AppLocalizationsDelegate

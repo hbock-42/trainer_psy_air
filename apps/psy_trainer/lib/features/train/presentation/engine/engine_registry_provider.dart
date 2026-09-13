@@ -20,6 +20,8 @@ import '../../../engines/multitask_psychomotor/domain/multitask_engine.dart';
 import '../../../engines/multitask_psychomotor/presentation/multitask_renderer.dart';
 import '../../../engines/p1_angles/domain/p1_angles_engine.dart';
 import '../../../engines/p1_angles/presentation/p1_angles_renderer.dart';
+import '../../../engines/p1_counters/domain/p1_counters_engine.dart';
+import '../../../engines/p1_counters/presentation/p1_counters_renderer.dart';
 import '../../../engines/p1_mental_arithmetic/domain/mental_arithmetic_engine.dart';
 import '../../../engines/p1_mental_arithmetic/presentation/mental_arithmetic_renderer.dart';
 import '../../../engines/planning_tubes/domain/tubes_engine.dart';
@@ -54,6 +56,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const ArithmeticGridEngine(),
         const AttentionParityEngine(),
         const AttentionRulesEngine(),
+        const CountersEngine(),
         const CubeNetEngine(),
         const CultureAeroEngine(),
         const DominosEngine(),
@@ -78,6 +81,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const ArithmeticGridRenderer(),
         const AttentionParityRenderer(),
         const AttentionRulesRenderer(),
+        const CountersRenderer(),
         const CubeNetRenderer(),
         const DominosRenderer(),
         const McqRenderer(
