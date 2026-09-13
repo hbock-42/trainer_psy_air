@@ -137,6 +137,20 @@ captures `ref` (e.g. `WordBoxesEngine(ref.read(lexicalFieldCatalogueProvider))` 
 `const`). Several engine stories touch this file in parallel — expect a trivial merge conflict
 on push; resolve by keeping every line from both sides (see `ship-a-story`, "merge hotspots").
 
+**PSY1 families only** (US-125, deferred engines): if your family is `p1_*`, its engine and
+renderer do **not** go in `engineRegistryProvider`/`rendererRegistryProvider` above — they go
+in `psy1Engines()`/`psy1Renderers(ref)` in
+`apps/psy_trainer/lib/features/train/presentation/engine/deferred/psy1_engines.dart`, imported
+there directly (normal, non-deferred imports *inside* that file — only
+`engine_registry_provider.dart`'s `import 'deferred/psy1_engines.dart' deferred as psy1;` is
+deferred, and that line never changes). Also add your family id to the `psy1FamilyIds` constant
+in the same file (checked against the two lists by
+`test/features/train/presentation/engine/deferred/psy1_engines_test.dart` — a mismatch fails
+that test). Everything else (steps 1-3, 5, l10n, tests) is unchanged; PSY1 engines/renderers
+are registered into the same `EngineRegistry`/`RendererRegistry` instances as every other
+engine, just later (in the background, shortly after the first frame — see
+`deferredEnginesLoaderProvider` and `docs/ARCHITECTURE.md` "Startup performance").
+
 ## 5. Check the content matches
 
 Check `assets/content/psy0/<family>/family.json` (`engineType`, `generatorId`,
