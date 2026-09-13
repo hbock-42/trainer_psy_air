@@ -415,6 +415,8 @@ void main() {
     });
   });
 
+  const bankDrivenPsy1 = {'p1_reading_fr', 'p1_general_efficiency'};
+
   group('real PSY1 content (US-101)', () {
     final families = familyFiles('../../apps/psy_trainer/assets/content/psy1')
         .map((f) => parser.parseFamily(f.readAsStringSync(), file: f.path))
@@ -431,19 +433,32 @@ void main() {
       expect(families.map((f) => f.id).toSet(), module.familyIds.toSet());
       for (final family in families) {
         expect(family.toJson()['engineType'], family.id, reason: family.id);
-        expect(family.toJson()['generatorId'], family.id, reason: family.id);
+        // Bank-driven families (US-116) carry no generator.
+        expect(
+          family.toJson()['generatorId'],
+          bankDrivenPsy1.contains(family.id) ? isNull : family.id,
+          reason: family.id,
+        );
         expect(family.moduleId, ModuleId.psy1);
       }
       final orders = families.map((f) => f.order).toList()..sort();
       expect(orders, List.generate(families.length, (i) => i + 1));
     });
 
-    test('every family names one of the 13 p1_* generators, one each', () {
-      final generated = families.map((f) => f.generatorId!).toSet();
-      expect(
-        generated,
-        GeneratorId.values.where((id) => id.name.startsWith('p1')).toSet(),
-      );
+    test('every generated family names its own p1_* generator, one each', () {
+      final generated = families
+          .where((f) => !bankDrivenPsy1.contains(f.id))
+          .map((f) => f.generatorId!)
+          .toSet();
+      final expected = GeneratorId.values
+          .where((id) => id.name.startsWith('p1'))
+          .where(
+            (id) =>
+                id != GeneratorId.p1ReadingFr &&
+                id != GeneratorId.p1GeneralEfficiency,
+          )
+          .toSet();
+      expect(generated, expected);
     });
 
     for (final name in ['psy1_full', 'psy1_short']) {
