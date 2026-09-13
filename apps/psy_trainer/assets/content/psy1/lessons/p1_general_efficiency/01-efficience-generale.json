@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.p1_general_efficiency.01",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_general_efficiency",
+  "order": 1,
+  "title": { "fr": "Efficience générale (EFG) : basculer vite entre quatre types de raisonnement" },
+  "summary": { "fr": "Reconnaître en un coup d'œil quel sous-domaine un item mobilise (numérique, verbal, spatial, logique) et changer de stratégie sans temps mort, sous 51 secondes par item." },
+  "file": { "fr": "lessons/p1_general_efficiency/01-efficience-generale.fr.md" },
+  "estimatedReadMin": 10,
+  "difficulty": 2,
+  "tags": ["p1_general_efficiency", "efg.numeric", "efg.verbal", "efg.spatial", "efg.logic"],
+  "practiceTags": ["p1_general_efficiency"],
+  "status": "published",
+  "meta": { "author": "hbock", "source": "own text; facts from docs/content/psy1-spec.md §2.3 row 6, §4.1 row 6" }
+}

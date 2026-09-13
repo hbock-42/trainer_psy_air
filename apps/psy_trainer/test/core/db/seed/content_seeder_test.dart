@@ -20,10 +20,10 @@ int realBundleVersion() =>
             as Map<String, Object?>)['contentVersion']!
         as int;
 
-/// Number of items declared in the bank files of [family], read straight
-/// from the JSON so the expectation tracks the real bundle.
-int bankItemCount(String family) {
-  final dir = Directory('assets/content/psy0/$family/items');
+/// Number of items declared in the bank files of [family] under [module],
+/// read straight from the JSON so the expectation tracks the real bundle.
+int bankItemCount(String family, {String module = 'psy0'}) {
+  final dir = Directory('assets/content/$module/$family/items');
   if (!dir.existsSync()) return 0;
   var count = 0;
   for (final file in dir.listSync().whereType<File>()) {
@@ -33,12 +33,19 @@ int bankItemCount(String family) {
   return count;
 }
 
-/// Items of every PSY0 bank file, as seeded.
-int totalBankItemCount() => Directory('assets/content/psy0')
-    .listSync()
-    .whereType<Directory>()
+/// Items of every bank file across every module, as seeded.
+int totalBankItemCount() => ['psy0', 'psy1']
     .map(
-      (d) => bankItemCount(d.uri.pathSegments.lastWhere((s) => s.isNotEmpty)),
+      (module) => Directory('assets/content/$module')
+          .listSync()
+          .whereType<Directory>()
+          .map(
+            (d) => bankItemCount(
+              d.uri.pathSegments.lastWhere((s) => s.isNotEmpty),
+              module: module,
+            ),
+          )
+          .fold(0, (sum, n) => sum + n),
     )
     .fold(0, (sum, n) => sum + n);
 
@@ -156,7 +163,9 @@ void main() {
         'psy1.blueprint.full',
         'psy1.blueprint.short',
       ]);
-      expect(psy1Blueprints.first.sections, hasLength(13));
+      // 13 families + the s08b cube-rotation-matching sub-variant of
+      // p1_cube_nets (US-103, spec §2.2/§2.3 row 8).
+      expect(psy1Blueprints.first.sections, hasLength(14));
 
       final english = await content.items(familyId: 'english', shuffle: false);
       expect(english, hasLength(bankItemCount('english')));
@@ -167,8 +176,12 @@ void main() {
       expect(await content.items(familyId: 'english_speaking'), isEmpty);
 
       final lessons = await content.lessons(moduleId: ModuleId.psy0);
-      expect(lessons, hasLength(result.lessonCount));
+      final psy1Lessons = await content.lessons(moduleId: ModuleId.psy1);
+      expect(lessons.length + psy1Lessons.length, result.lessonCount);
       expect(lessons.length, greaterThanOrEqualTo(16));
+      // US-103: a lesson per p1_* family plus the module-level selection_day
+      // lesson ("comment se déroule la journée PSY1").
+      expect(psy1Lessons.length, greaterThanOrEqualTo(14));
       final nback = await content.lessons(familyId: 'memory_nback');
       expect(nback, hasLength(1));
       // Markdown bodies are inlined at seeding time (see ARCHITECTURE.md).

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.p1_angles.01",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_angles",
+  "order": 1,
+  "title": { "fr": "Angles à saisir : viser juste parmi neuf valeurs" },
+  "summary": { "fr": "Sept repères angulaires à mémoriser, la méthode encadrer-puis-balayer pour cocher jusqu'à quatre candidats sur neuf, et les pièges de complément et de valeurs rondes." },
+  "file": { "fr": "lessons/p1_angles/01-angles-a-saisir.fr.md" },
+  "estimatedReadMin": 9,
+  "difficulty": 2,
+  "tags": ["p1_angles"],
+  "practiceTags": ["p1_angles"],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "own text; facts from docs/content/psy1-spec.md §2.3 row 5, §4.1 row 5"
+  }
+}

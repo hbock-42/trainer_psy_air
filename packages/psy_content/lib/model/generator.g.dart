@@ -626,6 +626,40 @@ P1AttentionSustainedParams _$P1AttentionSustainedParamsFromJson(
       'answerWindowMs',
       (v) => (v as num?)?.toInt() ?? 3000,
     ),
+    targetRatio: $checkedConvert(
+      'targetRatio',
+      (v) => (v as num?)?.toDouble() ?? 0.2,
+    ),
+    lureRatio: $checkedConvert(
+      'lureRatio',
+      (v) => (v as num?)?.toDouble() ?? 0.2,
+    ),
+    shapes: $checkedConvert(
+      'shapes',
+      (v) =>
+          (v as List<dynamic>?)
+              ?.map((e) => $enumDecode(_$StimulusShapeEnumMap, e))
+              .toList() ??
+          const <StimulusShape>[
+            StimulusShape.square,
+            StimulusShape.triangle,
+            StimulusShape.circle,
+            StimulusShape.diamond,
+          ],
+    ),
+    colours: $checkedConvert(
+      'colours',
+      (v) =>
+          (v as List<dynamic>?)
+              ?.map((e) => $enumDecode(_$StimulusColourEnumMap, e))
+              .toList() ??
+          const <StimulusColour>[
+            StimulusColour.blue,
+            StimulusColour.red,
+            StimulusColour.green,
+            StimulusColour.yellow,
+          ],
+    ),
     $type: $checkedConvert('generatorId', (v) => v as String?),
   );
   return val;
@@ -638,6 +672,10 @@ Map<String, dynamic> _$P1AttentionSustainedParamsToJson(
   'itemsPerSeries': instance.itemsPerSeries,
   'stimulusMs': instance.stimulusMs,
   'answerWindowMs': instance.answerWindowMs,
+  'targetRatio': instance.targetRatio,
+  'lureRatio': instance.lureRatio,
+  'shapes': instance.shapes.map((e) => _$StimulusShapeEnumMap[e]!).toList(),
+  'colours': instance.colours.map((e) => _$StimulusColourEnumMap[e]!).toList(),
   'generatorId': instance.$type,
 };
 
@@ -830,7 +868,7 @@ P1RavenMatricesParams _$P1RavenMatricesParamsFromJson(
     ),
     optionCount: $checkedConvert(
       'optionCount',
-      (v) => (v as num?)?.toInt() ?? 6,
+      (v) => (v as num?)?.toInt() ?? 8,
     ),
     $type: $checkedConvert('generatorId', (v) => v as String?),
   );

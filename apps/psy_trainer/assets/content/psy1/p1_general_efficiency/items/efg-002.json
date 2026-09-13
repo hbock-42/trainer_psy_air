@@ -1,0 +1,3612 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "p1_general_efficiency",
+  "items": [
+    {
+      "id": "efg.numeric.0021",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un prix a baissé de 25 % pour atteindre 45 €. Quel était le prix initial ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "60 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "56,25 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "33,75 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "50 €"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Une baisse de 25 % revient à multiplier par 0,75. Donc P × 0,75 = 45, soit P = 45 / 0,75 = 60 €. Méthode : traduire la baisse en facteur multiplicatif puis diviser pour retrouver la valeur de départ."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0022",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un salaire de 2 000 € augmente de 5 % puis, le mois suivant, baisse de 5 %. Quel est le salaire final ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "1 995 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "2 000 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "2 005 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "1 950 €"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "2 000 × 1,05 = 2 100, puis 2 100 × 0,95 = 1 995 €. Méthode : les hausses et baisses en pourcentage ne s'annulent jamais exactement, il faut enchaîner les deux facteurs multiplicatifs."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0023",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un article coûte 120 € après une hausse de 20 % suivie d'une remise de 10 % sur le nouveau prix. Quel était le prix d'origine ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "environ 111,11 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "100 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "108 €"
+          }
+        },
+        {
+          "text": {
+            "fr": "96 €"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Prix final = P × 1,2 × 0,9 = 1,08 × P = 120, donc P = 120 / 1,08 ≈ 111,11 €. Méthode : combiner les facteurs multiplicatifs successifs (1,2 puis 0,9) avant de diviser."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0024",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une carte utilise une échelle de 1/50 000. Une distance de 4 cm sur la carte correspond à combien de km réels ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "2 km"
+          }
+        },
+        {
+          "text": {
+            "fr": "4 km"
+          }
+        },
+        {
+          "text": {
+            "fr": "0,5 km"
+          }
+        },
+        {
+          "text": {
+            "fr": "20 km"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "4 cm × 50 000 = 200 000 cm = 2 000 m = 2 km. Méthode : multiplier la distance mesurée par le dénominateur de l'échelle, puis convertir en km."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0025",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "3 ouvriers construisent un mur en 12 heures. Combien de temps faudrait-il à 6 ouvriers, à rythme égal ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "6 heures"
+          }
+        },
+        {
+          "text": {
+            "fr": "4 heures"
+          }
+        },
+        {
+          "text": {
+            "fr": "24 heures"
+          }
+        },
+        {
+          "text": {
+            "fr": "9 heures"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le nombre d'ouvriers double, donc le temps est divisé par deux : 12 / 2 = 6 heures. Méthode : plus d'ouvriers pour une même tâche → relation inversement proportionnelle."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0026",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une recette pour 4 personnes utilise 250 g de farine. Quelle quantité faut-il pour 10 personnes ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "625 g"
+          }
+        },
+        {
+          "text": {
+            "fr": "500 g"
+          }
+        },
+        {
+          "text": {
+            "fr": "550 g"
+          }
+        },
+        {
+          "text": {
+            "fr": "400 g"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "250 g / 4 personnes = 62,5 g par personne ; pour 10 personnes : 62,5 × 10 = 625 g. Méthode : ramener d'abord la quantité à une seule unité (règle de trois), puis multiplier."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0027",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un robinet remplit un bassin en 6 heures. Un second robinet, utilisé seul, le remplirait en 3 heures. En combien de temps les deux robinets ensemble remplissent-ils le bassin ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "2 heures"
+          }
+        },
+        {
+          "text": {
+            "fr": "4,5 heures"
+          }
+        },
+        {
+          "text": {
+            "fr": "1,5 heure"
+          }
+        },
+        {
+          "text": {
+            "fr": "3 heures"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Débit combiné = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 1/2 bassin par heure, donc 2 heures pour remplir le bassin entier. Méthode : additionner les débits (inverses des temps), pas les temps eux-mêmes."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0028",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "4 ouvriers réalisent une tâche en 9 jours. Combien de jours faudrait-il à 6 ouvriers pour réaliser une tâche 1,5 fois plus grande ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "9 jours"
+          }
+        },
+        {
+          "text": {
+            "fr": "6 jours"
+          }
+        },
+        {
+          "text": {
+            "fr": "13,5 jours"
+          }
+        },
+        {
+          "text": {
+            "fr": "12 jours"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Travail total = 4 × 9 = 36 unités-jour pour une tâche ; pour 1,5 tâche il faut 54 unités-jour ; avec 6 ouvriers : 54 / 6 = 9 jours. Méthode : raisonner en « unités-jour » (effectif × durée) proportionnelles à la quantité de travail."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0029",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un mélange contient de l'eau et du sirop dans un rapport 5:1. Quelle est la proportion de sirop dans 1,2 L de mélange ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "0,2 L"
+          }
+        },
+        {
+          "text": {
+            "fr": "0,24 L"
+          }
+        },
+        {
+          "text": {
+            "fr": "0,15 L"
+          }
+        },
+        {
+          "text": {
+            "fr": "0,3 L"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le rapport 5:1 fait 6 parts au total ; chaque part vaut 1,2 / 6 = 0,2 L, et le sirop représente 1 part. Méthode : additionner les termes du rapport pour trouver la valeur d'une part avant de multiplier."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0030",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Si 3x + 7 = 25, que vaut x ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "5"
+          }
+        },
+        {
+          "text": {
+            "fr": "7"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "3x = 25 − 7 = 18, donc x = 18 / 3 = 6. Méthode : isoler le terme en x en passant les constantes de l'autre côté, puis diviser."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0031",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Si 5x − 4 = 3x + 10, que vaut x ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "7"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        },
+        {
+          "text": {
+            "fr": "5"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "5x − 3x = 10 + 4, soit 2x = 14, donc x = 7. Méthode : regrouper les x d'un côté et les nombres de l'autre avant de diviser."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0032",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Si x/4 + 3 = 8, que vaut x ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "20"
+          }
+        },
+        {
+          "text": {
+            "fr": "16"
+          }
+        },
+        {
+          "text": {
+            "fr": "24"
+          }
+        },
+        {
+          "text": {
+            "fr": "12"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "x/4 = 8 − 3 = 5, donc x = 5 × 4 = 20. Méthode : isoler le terme fractionnaire puis multiplier par le dénominateur."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0033",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Si 2(x + 3) = 4x − 2, que vaut x ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "3"
+          }
+        },
+        {
+          "text": {
+            "fr": "5"
+          }
+        },
+        {
+          "text": {
+            "fr": "2"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "2x + 6 = 4x − 2, donc 8 = 2x, soit x = 4. Méthode : développer d'abord la parenthèse avant de regrouper les termes."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0034",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "J'ai le double de l'âge de ma sœur. Ensemble, nous avons 36 ans. Quel est mon âge ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "24 ans"
+          }
+        },
+        {
+          "text": {
+            "fr": "18 ans"
+          }
+        },
+        {
+          "text": {
+            "fr": "20 ans"
+          }
+        },
+        {
+          "text": {
+            "fr": "22 ans"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Si l'âge de la sœur est x, le mien est 2x, donc x + 2x = 36, soit 3x = 36 et x = 12 ; mon âge = 24 ans. Méthode : traduire l'énoncé en une seule équation avec une inconnue avant de résoudre."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0035",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "J'ai le triple de l'âge de mon fils. Dans 10 ans, j'aurai le double de son âge. Quel est mon âge actuel ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "30 ans"
+          }
+        },
+        {
+          "text": {
+            "fr": "24 ans"
+          }
+        },
+        {
+          "text": {
+            "fr": "36 ans"
+          }
+        },
+        {
+          "text": {
+            "fr": "27 ans"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Soit x l'âge du fils : mon âge est 3x. Dans 10 ans : 3x + 10 = 2(x + 10), donc 3x + 10 = 2x + 20, soit x = 10 et mon âge = 30 ans. Méthode : poser une équation à deux instants (aujourd'hui / dans 10 ans) avec la même inconnue."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0036",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Si 2x + 3y = 12 et y = 2, que vaut x ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "3"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "2"
+          }
+        },
+        {
+          "text": {
+            "fr": "5"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "En remplaçant y par 2 : 2x + 6 = 12, donc 2x = 6, soit x = 3. Méthode : substituer d'abord la valeur connue avant de résoudre l'équation restante."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0037",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un père a 4 fois l'âge de son fils. Il y a 5 ans, il avait 7 fois son âge. Quel est l'âge actuel du fils ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "10 ans"
+          }
+        },
+        {
+          "text": {
+            "fr": "8 ans"
+          }
+        },
+        {
+          "text": {
+            "fr": "12 ans"
+          }
+        },
+        {
+          "text": {
+            "fr": "15 ans"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Soit x l'âge du fils : le père a 4x. Il y a 5 ans : 4x − 5 = 7(x − 5), soit 4x − 5 = 7x − 35, donc 3x = 30 et x = 10 ans. Méthode : traduire chaque époque (aujourd'hui, il y a 5 ans) en équation séparée avec la même inconnue, puis résoudre le système obtenu."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0038",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien de secondes y a-t-il, à l'ordre de grandeur près, dans une journée ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "environ 86 000"
+          }
+        },
+        {
+          "text": {
+            "fr": "environ 8 600"
+          }
+        },
+        {
+          "text": {
+            "fr": "environ 860 000"
+          }
+        },
+        {
+          "text": {
+            "fr": "environ 8 600 000"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "24 h × 3 600 s = 86 400 s, soit environ 86 000. Méthode : décomposer 24 × 60 × 60 plutôt que chercher la valeur exacte de mémoire."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0039",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion vole à environ 800 km/h. Quelle distance parcourt-il en 45 minutes, à l'ordre de grandeur près ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "environ 600 km"
+          }
+        },
+        {
+          "text": {
+            "fr": "environ 400 km"
+          }
+        },
+        {
+          "text": {
+            "fr": "environ 800 km"
+          }
+        },
+        {
+          "text": {
+            "fr": "environ 1 000 km"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "45 minutes = 3/4 d'heure ; 800 × 0,75 = 600 km. Méthode : convertir la durée en fraction d'heure pour multiplier directement par la vitesse horaire."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.numeric.0040",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.numeric"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un stade contient environ 40 000 spectateurs. S'il est rempli à 75 %, combien de spectateurs y a-t-il approximativement ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "environ 30 000"
+          }
+        },
+        {
+          "text": {
+            "fr": "environ 35 000"
+          }
+        },
+        {
+          "text": {
+            "fr": "environ 28 000"
+          }
+        },
+        {
+          "text": {
+            "fr": "environ 32 000"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "75 % = trois quarts ; 40 000 × 3/4 = 30 000. Méthode : convertir le pourcentage en fraction simple pour estimer rapidement."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0021",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le synonyme du mot « ubiquiste » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Omniprésent"
+          }
+        },
+        {
+          "text": {
+            "fr": "Rare"
+          }
+        },
+        {
+          "text": {
+            "fr": "Unique"
+          }
+        },
+        {
+          "text": {
+            "fr": "Local"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Ubiquiste » qualifie ce qui est présent partout à la fois, comme « omniprésent ». Méthode : décomposer le mot (« ubiquité » = présence en tout lieu) pour en retrouver le sens même s'il est peu fréquent."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0022",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est l'antonyme du mot « altruiste » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Égoïste"
+          }
+        },
+        {
+          "text": {
+            "fr": "Généreux"
+          }
+        },
+        {
+          "text": {
+            "fr": "Solidaire"
+          }
+        },
+        {
+          "text": {
+            "fr": "Bienveillant"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Altruiste » désigne quelqu'un qui se soucie des autres ; son contraire est « égoïste », centré sur soi. Méthode : chercher le mot qui inverse la direction de l'attention (vers autrui vs vers soi)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0023",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est le synonyme du mot « dithyrambique » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Élogieux"
+          }
+        },
+        {
+          "text": {
+            "fr": "Critique"
+          }
+        },
+        {
+          "text": {
+            "fr": "Neutre"
+          }
+        },
+        {
+          "text": {
+            "fr": "Modéré"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Dithyrambique » qualifie un éloge excessif et enthousiaste, proche d'« élogieux ». Méthode : associer le mot rare à un contexte connu (« critique dithyrambique d'un film ») pour en déduire qu'il s'agit d'une louange."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0024",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est l'antonyme du mot « velléitaire » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Déterminé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Hésitant"
+          }
+        },
+        {
+          "text": {
+            "fr": "Indécis"
+          }
+        },
+        {
+          "text": {
+            "fr": "Timide"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Velléitaire » décrit quelqu'un qui a des intentions sans jamais les concrétiser ; son contraire est « déterminé », qui agit avec constance. Méthode : ne pas confondre les quasi-synonymes du doute (hésitant, indécis) avec le véritable antonyme, qui décrit l'action ferme."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0025",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Complétez logiquement : « Il pleut depuis ce matin, alors j'ai pris mon ___. »"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Parapluie"
+          }
+        },
+        {
+          "text": {
+            "fr": "Chapeau"
+          }
+        },
+        {
+          "text": {
+            "fr": "Ballon"
+          }
+        },
+        {
+          "text": {
+            "fr": "Vélo"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "La pluie appelle un objet qui protège de l'eau : le parapluie. Méthode : chercher dans la première partie de la phrase la cause, puis l'objet qui en est la conséquence logique directe."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0026",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Complétez logiquement : « Comme il n'avait pas révisé, il a ___ son examen. »"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Raté"
+          }
+        },
+        {
+          "text": {
+            "fr": "Réussi"
+          }
+        },
+        {
+          "text": {
+            "fr": "Organisé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Reporté"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Ne pas réviser entraîne logiquement un échec à l'examen. Méthode : repérer le lien de cause à conséquence introduit par « comme » et choisir l'option qui en découle sans contradiction."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0027",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Complétez logiquement : « Bien qu'il soit très riche, il vit de manière ___. »"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Modeste"
+          }
+        },
+        {
+          "text": {
+            "fr": "Luxueuse"
+          }
+        },
+        {
+          "text": {
+            "fr": "Ostentatoire"
+          }
+        },
+        {
+          "text": {
+            "fr": "Dispendieuse"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Bien que » introduit une opposition : la richesse s'oppose ici à un mode de vie simple, donc « modeste ». Méthode : repérer le connecteur logique (« bien que » = opposition) avant de choisir un mot cohérent avec le contraste attendu."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0028",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Complétez logiquement : « Puisque la réunion a été annulée, nous ___ nos plans pour l'après-midi. »"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Avons modifié"
+          }
+        },
+        {
+          "text": {
+            "fr": "Avons confirmé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Avons ignoré"
+          }
+        },
+        {
+          "text": {
+            "fr": "Avons répété"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "L'annulation d'un événement prévu entraîne un changement d'organisation, donc « modifié ». Méthode : « puisque » introduit une cause ; l'option choisie doit être la conséquence la plus directe de cette cause."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0029",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Complétez logiquement : « Non seulement il est arrivé en retard, mais en plus il a ___ son rapport. »"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Oublié"
+          }
+        },
+        {
+          "text": {
+            "fr": "Terminé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Anticipé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Soigné"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Non seulement... mais en plus » annonce un deuxième problème qui s'ajoute au premier (le retard) ; « oublié » va dans le même sens négatif. Méthode : repérer que la structure annonce une accumulation de faits similaires, pas un contraste."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0030",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Complétez logiquement : « Le vol ayant été retardé de trois heures, les passagers ont dû ___ leur correspondance. »"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Reprogrammer"
+          }
+        },
+        {
+          "text": {
+            "fr": "Confirmer"
+          }
+        },
+        {
+          "text": {
+            "fr": "Anticiper"
+          }
+        },
+        {
+          "text": {
+            "fr": "Accélérer"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Un retard de trois heures rend la correspondance initiale caduque, donc il faut la « reprogrammer ». Méthode : suivre la chaîne de conséquences (retard → correspondance manquée → nécessité de la réorganiser)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0031",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Complétez logiquement : « Loin d'être découragé par cet échec, il en a tiré une ___ leçon. »"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Précieuse"
+          }
+        },
+        {
+          "text": {
+            "fr": "Inutile"
+          }
+        },
+        {
+          "text": {
+            "fr": "Vaine"
+          }
+        },
+        {
+          "text": {
+            "fr": "Regrettable"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Loin d'être découragé » indique que l'échec a eu un effet positif, donc la leçon est « précieuse » (utile), pas négative. Méthode : bien lire la négation initiale (« loin de ») qui inverse l'attente naturelle avant de choisir le mot final."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0032",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Complétez logiquement : « Malgré des indices accablants, l'accusé a été ___ faute de preuves irréfutables. »"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Acquitté"
+          }
+        },
+        {
+          "text": {
+            "fr": "Condamné"
+          }
+        },
+        {
+          "text": {
+            "fr": "Incarcéré"
+          }
+        },
+        {
+          "text": {
+            "fr": "Sanctionné"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Malgré des indices » mais « faute de preuves irréfutables » signale que la justice ne peut pas condamner, donc l'accusé est « acquitté ». Méthode : peser les deux connecteurs (concession « malgré », cause « faute de ») qui pointent tous deux vers l'absence de condamnation."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0033",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Parmi ces mots, lequel est un nom de métier lié au droit ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Avocat"
+          }
+        },
+        {
+          "text": {
+            "fr": "Architecte"
+          }
+        },
+        {
+          "text": {
+            "fr": "Kinésithérapeute"
+          }
+        },
+        {
+          "text": {
+            "fr": "Boulanger"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "L'avocat exerce une profession juridique ; les autres relèvent du bâtiment, de la santé ou de l'alimentation. Méthode : classer chaque métier par grand secteur d'activité avant de répondre."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0034",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Parmi ces mots, lequel désigne un état de la matière ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Gazeux"
+          }
+        },
+        {
+          "text": {
+            "fr": "Transparent"
+          }
+        },
+        {
+          "text": {
+            "fr": "Visqueux"
+          }
+        },
+        {
+          "text": {
+            "fr": "Chaud"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Gazeux » désigne l'un des trois états de la matière (solide, liquide, gazeux) ; les autres sont des propriétés physiques, pas des états. Méthode : distinguer précisément un « état de la matière » d'une simple « propriété » de la matière."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0035",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Parmi ces mots, lequel n'est pas un temps du passé en français ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Futur antérieur"
+          }
+        },
+        {
+          "text": {
+            "fr": "Imparfait"
+          }
+        },
+        {
+          "text": {
+            "fr": "Passé simple"
+          }
+        },
+        {
+          "text": {
+            "fr": "Plus-que-parfait"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le futur antérieur exprime une action achevée avant un moment futur ; ce n'est donc pas un temps du passé, contrairement aux trois autres. Méthode : se rappeler que « futur » dans le nom du temps indique déjà une orientation vers l'avenir, même si sa valeur est celle d'une antériorité."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0036",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Parmi ces mots, lequel désigne une figure de style fondée sur l'exagération ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Hyperbole"
+          }
+        },
+        {
+          "text": {
+            "fr": "Métaphore"
+          }
+        },
+        {
+          "text": {
+            "fr": "Litote"
+          }
+        },
+        {
+          "text": {
+            "fr": "Ellipse"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "L'hyperbole consiste à exagérer pour accentuer un effet (« mourir de rire ») ; les autres reposent sur la substitution de sens, l'atténuation ou l'omission. Méthode : associer chaque figure de style à son mécanisme précis plutôt qu'à son seul nom."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0037",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Complétez : Improbable est à Impossible ce que Rare est à ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Inexistant"
+          }
+        },
+        {
+          "text": {
+            "fr": "Fréquent"
+          }
+        },
+        {
+          "text": {
+            "fr": "Commun"
+          }
+        },
+        {
+          "text": {
+            "fr": "Unique"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Improbable » est un degré affaibli d'« impossible » (peu de chances vs aucune chance) ; par le même rapport de gradation, « rare » est un degré affaibli d'« inexistant » (peu de cas vs aucun cas). Méthode : formuler la relation comme une gradation d'intensité entre les deux premiers mots, puis chercher son équivalent exact plutôt qu'un simple synonyme de « rare »."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0038",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel mot n'appartient pas au groupe ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Mitiger"
+          }
+        },
+        {
+          "text": {
+            "fr": "Tempérer"
+          }
+        },
+        {
+          "text": {
+            "fr": "Atténuer"
+          }
+        },
+        {
+          "text": {
+            "fr": "Modérer"
+          }
+        },
+        {
+          "text": {
+            "fr": "Aggraver"
+          }
+        }
+      ],
+      "correctIndex": 4,
+      "explanation": {
+        "fr": "Mitiger, tempérer, atténuer et modérer signifient tous « rendre moins fort » ; aggraver signifie au contraire « rendre plus fort ». Méthode : se méfier de « mitiger », souvent mal employé au sens d'« aggraver » dans l'usage courant — revenir au sens strict du mot avant de conclure."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0039",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quel est l'antonyme précis du mot « dissemblable » ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Identique"
+          }
+        },
+        {
+          "text": {
+            "fr": "Différent"
+          }
+        },
+        {
+          "text": {
+            "fr": "Varié"
+          }
+        },
+        {
+          "text": {
+            "fr": "Contrasté"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "« Dissemblable » signifie qui ne se ressemble pas ; son antonyme exact est « identique » (ressemblance totale), et non « différent », « varié » ou « contrasté », qui restent proches du sens de dissemblable ou n'en sont que des nuances. Méthode : ne retenir comme antonyme que le mot qui inverse totalement le sens, pas ceux qui appartiennent au même champ lexical."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.verbal.0040",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.verbal"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Complétez logiquement : « Si nul n'est censé ignorer la loi, alors l'ignorance de la loi ne saurait constituer une ___ valable. »"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Excuse"
+          }
+        },
+        {
+          "text": {
+            "fr": "Preuve"
+          }
+        },
+        {
+          "text": {
+            "fr": "Loi"
+          }
+        },
+        {
+          "text": {
+            "fr": "Sanction"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le principe juridique énoncé (« nul n'est censé ignorer la loi ») a pour conséquence logique qu'on ne peut pas se justifier en invoquant son ignorance : le mot attendu est donc « excuse ». Méthode : repérer la structure « si... alors » comme un raisonnement déductif et choisir la conséquence qui découle strictement de la prémisse, pas une notion voisine (preuve, sanction)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0021",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "On trace un pentagone régulier, puis toutes ses diagonales (segments reliant deux sommets non adjacents). Combien de diagonales sont tracées ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "5"
+          }
+        },
+        {
+          "text": {
+            "fr": "10"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "15"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Un polygone à n côtés a n(n−3)/2 diagonales ; pour n=5, cela donne 5×2/2 = 5. Méthode : utiliser la formule n(n−3)/2, qui retire les n côtés et les n cas où un sommet se relierait à lui-même parmi les n(n−1)/2 paires de sommets."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0022",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "On trace un hexagone régulier, puis toutes ses diagonales. Combien de diagonales sont tracées au total ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "9"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "12"
+          }
+        },
+        {
+          "text": {
+            "fr": "15"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Un polygone à n côtés a n(n−3)/2 diagonales ; pour n=6, cela donne 6×3/2 = 9. Méthode : appliquer la formule n(n−3)/2, en gardant à l'esprit qu'elle grandit vite avec le nombre de côtés."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0023",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quatre droites sont tracées sur une feuille, de sorte que deux droites quelconques ne soient jamais parallèles et que trois droites ne se croisent jamais au même point. Combien de points d'intersection au total ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        },
+        {
+          "text": {
+            "fr": "12"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le nombre de paires de droites parmi 4 est 4×3/2 = 6, et chaque paire (non parallèle) donne exactement un point d'intersection distinct : 6 points au total. Méthode : ramener le problème au nombre de paires d'éléments, comme pour les intersections de cercles ou les diagonales d'un polygone."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0024",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une suite de formes se répète ainsi : carré, cercle, carré, cercle, carré, ... Quelle est la forme suivante ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Cercle"
+          }
+        },
+        {
+          "text": {
+            "fr": "Carré"
+          }
+        },
+        {
+          "text": {
+            "fr": "Triangle"
+          }
+        },
+        {
+          "text": {
+            "fr": "Losange"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "La suite alterne strictement deux formes (carré, cercle) ; après un carré vient toujours un cercle. Méthode : repérer la période de répétition (ici 2) et l'appliquer à la position suivante."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0025",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une suite de figures se répète par groupes de trois : triangle, triangle, carré, triangle, triangle, carré, triangle, triangle, ... Quelle est la figure suivante ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Carré"
+          }
+        },
+        {
+          "text": {
+            "fr": "Triangle"
+          }
+        },
+        {
+          "text": {
+            "fr": "Cercle"
+          }
+        },
+        {
+          "text": {
+            "fr": "Losange"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le motif se répète toutes les 3 figures (triangle, triangle, carré) ; on vient d'afficher 2 triangles dans le nouveau cycle, donc la 3e figure du cycle est un carré. Méthode : diviser la position dans la suite par la longueur du motif (3) et regarder le reste pour savoir où l'on se trouve dans le cycle."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0026",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une suite de figures grossit régulièrement : 1 petit carré, puis une croix de 5 petits carrés, puis un contour de 9 petits carrés formant un carré 3×3 dont seul le pourtour est rempli. En suivant la même logique de croissance du pourtour, combien de petits carrés composerait le pourtour de l'étape suivante (carré 5×5) ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "16"
+          }
+        },
+        {
+          "text": {
+            "fr": "20"
+          }
+        },
+        {
+          "text": {
+            "fr": "25"
+          }
+        },
+        {
+          "text": {
+            "fr": "24"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le pourtour d'un carré n×n compte n² − (n−2)² cases ; pour n=5, cela donne 25 − 9 = 16. Méthode : ne compter que les cases du bord (total moins le carré intérieur), pas la totalité du grand carré."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0027",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une suite de motifs alterne rotation et couleur : un triangle noir pointant vers le haut, un triangle blanc pointant vers la droite, un triangle noir pointant vers le bas, un triangle blanc pointant vers la gauche, un triangle noir pointant vers le haut, ... Quel est le motif suivant ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Triangle blanc pointant vers la droite"
+          }
+        },
+        {
+          "text": {
+            "fr": "Triangle noir pointant vers le bas"
+          }
+        },
+        {
+          "text": {
+            "fr": "Triangle blanc pointant vers la gauche"
+          }
+        },
+        {
+          "text": {
+            "fr": "Triangle noir pointant vers le haut"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le motif se répète tous les 4 termes (haut noir, droite blanc, bas noir, gauche blanc) en tournant d'un quart de tour à chaque étape ; après le retour au « haut noir », le suivant est donc « droite blanc ». Méthode : séparer les deux règles qui varient ensemble (couleur qui alterne, direction qui tourne) pour ne pas les confondre."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0028",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une suite de figures suit deux règles combinées : le nombre de côtés augmente de 1 à chaque étape (triangle, carré, pentagone, ...) et la figure est grisée une étape sur deux en commençant par la première (grisée, blanche, grisée, blanche...). Quelle est la 6e figure de la suite ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Un octogone blanc"
+          }
+        },
+        {
+          "text": {
+            "fr": "Un heptagone grisé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Un octogone grisé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Un heptagone blanc"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le nombre de côtés à l'étape 6 est 3 + (6−1) = 8, donc un octogone ; le grisage alterne en commençant grisé à l'étape 1, donc l'étape 6 (paire) est blanche. Méthode : traiter séparément chaque règle qui évolue (ici le nombre de côtés et la couleur) avant de combiner les deux résultats."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0029",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un cube porte les lettres A, B, C, D, E, F sur ses 6 faces, une lettre différente par face. On sait que A est opposée à F, B est opposée à E, et C est opposée à D. Le cube est posé avec A sur le dessus et B devant soi. On le fait basculer une fois vers l'avant (la face du dessus devient la face avant). Quelle lettre se retrouve sur le dessus ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "E"
+          }
+        },
+        {
+          "text": {
+            "fr": "B"
+          }
+        },
+        {
+          "text": {
+            "fr": "F"
+          }
+        },
+        {
+          "text": {
+            "fr": "C"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Basculer le cube vers l'avant fait passer la face du dessus (A) vers l'avant, la face avant (B) vers le dessous, et la face arrière — qui est l'opposée de B, donc E — remonte sur le dessus. Méthode : suivre uniquement les faces avant/dessus/dessous à chaque bascule, en utilisant les couples de faces opposées pour déduire la face cachée."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0030",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une lettre F est dessinée sur une feuille. On applique d'abord un effet miroir qui inverse la gauche et la droite (comme une image vue par transparence), puis on fait pivoter la feuille de 180°. Par rapport au F d'origine, quel est le résultat final ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Retournée seulement de haut en bas (comme un reflet dans une flaque d'eau), sans inversion gauche-droite"
+          }
+        },
+        {
+          "text": {
+            "fr": "Inversée seulement gauche-droite, sans changement haut-bas"
+          }
+        },
+        {
+          "text": {
+            "fr": "Identique à l'originale"
+          }
+        },
+        {
+          "text": {
+            "fr": "Inversée à la fois gauche-droite et haut-bas"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Un effet miroir gauche-droite envoie chaque point (x, y) vers (−x, y) ; une rotation de 180° envoie ensuite ce point vers (x, −y). Au final, un point (x, y) se retrouve en (x, −y), ce qui correspond à un simple retournement haut-bas, sans aucune inversion gauche-droite. Méthode : décomposer chaque transformation en son effet sur les coordonnées plutôt que de visualiser tout le mouvement d'un coup ; deux transformations combinées donnent parfois un résultat plus simple qu'il n'y paraît."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0031",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 1,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien de côtés possède un hexagone ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "5"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le préfixe « hexa- » signifie six : un hexagone a donc 6 côtés (et 6 sommets). Méthode : retenir les préfixes grecs usuels (tri-3, tétra/quadri-4, penta-5, hexa-6, octo-8) pour nommer les polygones sans les compter à chaque fois."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0032",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une pièce rectangulaire mesure 4 m de long sur 3 m de large. Combien de carreaux carrés de 1 m de côté faut-il pour carreler entièrement le sol ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "12"
+          }
+        },
+        {
+          "text": {
+            "fr": "7"
+          }
+        },
+        {
+          "text": {
+            "fr": "14"
+          }
+        },
+        {
+          "text": {
+            "fr": "10"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "L'aire du rectangle est 4 × 3 = 12 m², et chaque carreau de 1 m de côté couvre 1 m² : il en faut donc 12. Méthode : calculer l'aire totale puis diviser par l'aire d'un seul carreau."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0033",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "On empile des cubes identiques pour former un escalier à 4 marches, où la marche n comporte une colonne de n cubes empilés (n = 1, 2, 3, 4). Combien de cubes au total ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "10"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        },
+        {
+          "text": {
+            "fr": "12"
+          }
+        },
+        {
+          "text": {
+            "fr": "16"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le total est la somme 1 + 2 + 3 + 4 = 10 cubes. Méthode : reconnaître une somme d'entiers consécutifs et l'additionner directement plutôt que de recompter cube par cube."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0034",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un cube de 4 cm d'arête est peint en bleu sur toutes ses faces, puis découpé en 64 petits cubes de 1 cm d'arête (4×4×4). Combien de petits cubes n'ont aucune face peinte ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "8"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "16"
+          }
+        },
+        {
+          "text": {
+            "fr": "27"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Les petits cubes non peints forment un cube intérieur de (4−2)=2 cm d'arête, soit 2×2×2 = 8 petits cubes. Méthode : le cube intérieur non peint a toujours pour arête (arête du grand cube − 2), une fois qu'on retire la couche extérieure peinte de chaque côté."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0035",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un rectangle est divisé par une seule diagonale. Combien de triangles obtient-on ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "2"
+          }
+        },
+        {
+          "text": {
+            "fr": "1"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "3"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Une diagonale relie deux sommets opposés d'un rectangle et le partage en exactement 2 triangles. Méthode : une diagonale unique dans un quadrilatère convexe le sépare toujours en 2 parties triangulaires."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0036",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une figure en forme de croix grecque (5 carrés identiques : un central et un attaché à chacun de ses 4 côtés) est pliée pour former un cube ouvert (sans un 6e carré, donc sans couvercle). Combien de faces du cube sont ainsi couvertes ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "5"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "3"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "La croix comporte 5 carrés, chacun devenant une face du cube une fois pliée ; il manque donc la 6e face pour un cube complet. Méthode : compter simplement le nombre de carrés du patron, chacun formant une face distincte après pliage, sans qu'aucun ne se superpose."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0037",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une feuille rectangulaire est pliée en deux dans le sens de la longueur, puis en deux dans le sens de la largeur. On découpe un petit cercle au centre du pli. Une fois dépliée, combien de trous circulaires la feuille comporte-t-elle ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "2"
+          }
+        },
+        {
+          "text": {
+            "fr": "1"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Les deux pliages superposent 2×2 = 4 épaisseurs de papier au centre ; découper à cet endroit traverse les 4 épaisseurs et produit donc 4 trous une fois la feuille dépliée. Méthode : multiplier le nombre d'épaisseurs créées par chaque pliage indépendant (2 puis 2), plutôt que les additionner."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0038",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Cinq cercles identiques sont disposés en ligne, chacun touchant tangentiellement le suivant sans jamais se chevaucher (aucune intersection, seulement des points de contact). Combien de points de contact au total ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "5"
+          }
+        },
+        {
+          "text": {
+            "fr": "3"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Avec 5 cercles alignés touchant chacun uniquement leur voisin immédiat, il y a une tangence entre chaque paire de cercles consécutifs, soit 4 paires consécutives pour 5 cercles : 4 points de contact. Méthode : pour n objets alignés touchant seulement leur voisin direct, le nombre de points de contact est toujours n − 1, à ne pas confondre avec le nombre de paires totales (utilisé pour des intersections croisées)."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0039",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une figure est composée d'un carré de 3 cm de côté surmonté d'un triangle équilatéral de 3 cm de côté posé sur l'un de ses côtés (comme une maison stylisée). Combien de côtés extérieurs distincts délimitent le contour total de cette figure ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "5"
+          }
+        },
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "7"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le carré a 4 côtés et le triangle 3, mais le côté commun où le triangle est collé au carré disparaît du contour extérieur (il devient une arête intérieure) : 4 + 3 − 2 (le côté partagé compté deux fois) = 5 côtés visibles au total. Méthode : additionner les côtés de chaque figure puis soustraire deux fois le côté partagé, qui n'appartient plus au contour extérieur."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.spatial.0040",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.spatial"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Combien de faces un cylindre possède-t-il, en comptant les faces planes et la surface courbe comme des faces distinctes ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "3"
+          }
+        },
+        {
+          "text": {
+            "fr": "2"
+          }
+        },
+        {
+          "text": {
+            "fr": "1"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Un cylindre a 2 faces planes circulaires (le dessus et le dessous) et 1 surface latérale courbe, soit 3 faces au total. Méthode : toujours séparer les faces planes des surfaces courbes lorsqu'on compte les faces d'un solide qui n'est pas un polyèdre pur."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0021",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Dans une suite, chaque nombre est soit multiple de 3 soit multiple de 5, jamais les deux, en alternant strictement : 3, 5, 9, 10, 12, 15, ... Quelle règle de parité suit la position 7 (le prochain terme) ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Multiple de 3"
+          }
+        },
+        {
+          "text": {
+            "fr": "Multiple de 5"
+          }
+        },
+        {
+          "text": {
+            "fr": "Multiple de 3 et 5 à la fois"
+          }
+        },
+        {
+          "text": {
+            "fr": "Aucun des deux"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "La suite alterne strictement : multiple de 3 (position impaire), multiple de 5 (position paire) ; la position 7 étant impaire, le terme doit être multiple de 3. Méthode : repérer la règle qui alterne selon la position (impaire/paire) plutôt que selon la valeur précédente."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0022",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une suite de nombres suit la règle suivante : si le nombre est pair, le suivant est ce nombre divisé par 2 ; si le nombre est impair, le suivant est ce nombre multiplié par 3 puis augmenté de 1. En partant de 6 (1er terme), quel est le 4e terme de la suite ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "5"
+          }
+        },
+        {
+          "text": {
+            "fr": "10"
+          }
+        },
+        {
+          "text": {
+            "fr": "3"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "6 (pair) donne 6/2=3 (2e terme) ; 3 (impair) donne 3×3+1=10 (3e terme) ; 10 (pair) donne 10/2=5 (4e terme). Méthode : appliquer la règle strictement étape par étape en vérifiant la parité à chaque nouveau terme, sans raccourci."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0023",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une suite de nombres suit une règle cachée : 2, 6, 12, 20, 30, ... Quel est le prochain nombre ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "42"
+          }
+        },
+        {
+          "text": {
+            "fr": "36"
+          }
+        },
+        {
+          "text": {
+            "fr": "40"
+          }
+        },
+        {
+          "text": {
+            "fr": "44"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Chaque terme est le produit de deux entiers consécutifs : 1×2=2, 2×3=6, 3×4=12, 4×5=20, 5×6=30, donc le suivant est 6×7=42. Méthode : quand les différences (4, 6, 8, 10...) augmentent elles-mêmes de façon régulière, chercher une formule du type n×(n+1) plutôt qu'une simple suite de différences."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0024",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une suite suit la règle : chaque terme est la somme des chiffres du carré de sa position (position 1, 2, 3...). Position 1 : 1²=1, somme des chiffres = 1. Position 2 : 2²=4, somme = 4. Position 3 : 3²=9, somme = 9. Position 4 : 4²=16, somme = 1+6 = 7. Quel est le terme de la position 5 ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "7"
+          }
+        },
+        {
+          "text": {
+            "fr": "10"
+          }
+        },
+        {
+          "text": {
+            "fr": "25"
+          }
+        },
+        {
+          "text": {
+            "fr": "5"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "5² = 25, et la somme de ses chiffres est 2 + 5 = 7. Méthode : appliquer la règle donnée pas à pas (élever au carré, puis additionner les chiffres du résultat) sans chercher de raccourci arithmétique qui n'existe pas ici."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0025",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Si « tous les A sont B » est vrai et que Paul n'est pas B, que peut-on conclure sur Paul ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Paul n'est pas A"
+          }
+        },
+        {
+          "text": {
+            "fr": "Paul est A"
+          }
+        },
+        {
+          "text": {
+            "fr": "Paul est B"
+          }
+        },
+        {
+          "text": {
+            "fr": "On ne peut rien conclure"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Si Paul était A, il serait forcément B (puisque tous les A sont B) ; or Paul n'est pas B, donc Paul ne peut pas être A. Méthode : c'est la contraposée d'une implication (« si A alors B » équivaut à « si non-B alors non-A »), un raisonnement toujours valide."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0026",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un code à 4 chiffres doit être strictement croissant (chaque chiffre plus grand que le précédent). Lequel de ces codes respecte la règle ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "1357"
+          }
+        },
+        {
+          "text": {
+            "fr": "1338"
+          }
+        },
+        {
+          "text": {
+            "fr": "1332"
+          }
+        },
+        {
+          "text": {
+            "fr": "1354"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Dans 1357 : 1<3<5<7, la croissance est stricte à chaque étape. Les autres codes contiennent au moins une paire de chiffres consécutifs qui ne respecte pas cette règle. Méthode : vérifier chaque paire de chiffres consécutifs un par un plutôt que de juger le code dans son ensemble."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0027",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Dans une file d'attente, Julie est juste devant Marc, et Sami est juste derrière Marc. Qui est au milieu des trois ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Marc"
+          }
+        },
+        {
+          "text": {
+            "fr": "Julie"
+          }
+        },
+        {
+          "text": {
+            "fr": "Sami"
+          }
+        },
+        {
+          "text": {
+            "fr": "Impossible à déterminer"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "L'ordre est Julie, puis Marc, puis Sami : Marc se trouve donc entre les deux autres. Méthode : traduire les relations « devant / derrière » en une seule ligne ordonnée avant de répondre."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0028",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 2,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Parmi 4 enveloppes numérotées 1 à 4, une seule contient un billet. Ce n'est ni l'enveloppe 1, ni la 3, ni la 4. Quelle enveloppe contient le billet ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "2"
+          }
+        },
+        {
+          "text": {
+            "fr": "1"
+          }
+        },
+        {
+          "text": {
+            "fr": "3"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "En éliminant successivement les enveloppes 1, 3 et 4, il ne reste que l'enveloppe 2. Méthode : éliminer une à une toutes les possibilités écartées par l'énoncé jusqu'à ce qu'il n'en reste qu'une seule."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0029",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "A, B et C ont chacun un âge différent. A est plus âgé que B. C est plus jeune que B. Qui est le plus jeune des trois ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "C"
+          }
+        },
+        {
+          "text": {
+            "fr": "A"
+          }
+        },
+        {
+          "text": {
+            "fr": "B"
+          }
+        },
+        {
+          "text": {
+            "fr": "Impossible à déterminer"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "L'ordre déduit est A > B > C (A le plus âgé, C le plus jeune). Méthode : traduire chaque comparaison en une inégalité, puis les combiner sur un seul axe ordonné."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0030",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Trois amis, Léa, Tom et Nina, ont chacun un animal différent (chat, chien, poisson). Léa n'a pas de chat. Tom n'a pas de poisson. Nina a un chien. Quel animal a Léa ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Poisson"
+          }
+        },
+        {
+          "text": {
+            "fr": "Chat"
+          }
+        },
+        {
+          "text": {
+            "fr": "Chien"
+          }
+        },
+        {
+          "text": {
+            "fr": "Impossible à déterminer"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Nina a le chien ; Léa n'a pas de chat, donc il ne lui reste que le poisson ; Tom a donc le chat par élimination. Méthode : placer d'abord la donnée la plus directe (Nina-chien), puis éliminer les possibilités restantes une à une."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0031",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Sur une île où chacun ment toujours ou dit toujours la vérité, un habitant affirme : « Je suis menteur. » Est-ce une affirmation possible ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Non, c'est impossible pour un menteur comme pour un véridique"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, s'il est menteur"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, s'il est véridique"
+          }
+        },
+        {
+          "text": {
+            "fr": "Cela dépend du moment de la journée"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "S'il disait la vérité, il serait effectivement menteur, ce qui est contradictoire avec « dire la vérité » ; s'il mentait, alors il ne serait pas menteur, ce qui contredit l'hypothèse de départ. Les deux cas produisent une contradiction. Méthode : tester successivement chaque hypothèse (véridique, menteur) et rejeter celles qui s'auto-contredisent."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0032",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Dans un tournoi à 4 équipes, chaque équipe rencontre toutes les autres exactement une fois. Combien de matchs seront joués au total ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "6"
+          }
+        },
+        {
+          "text": {
+            "fr": "4"
+          }
+        },
+        {
+          "text": {
+            "fr": "8"
+          }
+        },
+        {
+          "text": {
+            "fr": "12"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le nombre de matchs est le nombre de paires possibles parmi 4 équipes : 4×3/2 = 6. Méthode : utiliser la formule des combinaisons de paires n(n−1)/2 dès qu'il s'agit de rencontres uniques entre tous les participants."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0033",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un groupe de 5 personnes doit être réparti en paires strictes, sans qu'aucune personne ne reste seule ni ne soit dans deux paires à la fois. Est-ce possible ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Non, car 5 est impair"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, en formant 2 paires et un trinôme"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, en formant 2 paires et en laissant une personne de côté"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oui, en formant 2 paires seulement"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "5 personnes ne peuvent pas être réparties en groupes de 2 sans reste, car 5 est un nombre impair : il resterait toujours une personne seule. Méthode : vérifier la parité du nombre total avant de chercher un découpage en groupes de taille fixe."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0034",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Parmi trois suspects A, B et C, on sait qu'un seul ment. A dit : « B ment. » B dit : « C dit la vérité. » C dit : « A ment. » Qui ment ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A"
+          }
+        },
+        {
+          "text": {
+            "fr": "B"
+          }
+        },
+        {
+          "text": {
+            "fr": "C"
+          }
+        },
+        {
+          "text": {
+            "fr": "Impossible à déterminer"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Si A ment, alors B dit vrai, donc C dit vrai, donc « A ment » est vrai : tout est cohérent avec un seul menteur (A). En testant B menteur ou C menteur, on obtient à chaque fois deux menteurs ou zéro, ce qui contredit l'énoncé. Méthode : tester chaque suspect comme unique menteur et vérifier que cela reste cohérent avec les deux autres déclarations."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0035",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "A, B, C et D sont assis en ligne. A est immédiatement à gauche de B. C n'est pas à une extrémité. D est à l'extrémité droite. Quel est l'ordre de gauche à droite ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "A, B, C, D"
+          }
+        },
+        {
+          "text": {
+            "fr": "A, C, B, D"
+          }
+        },
+        {
+          "text": {
+            "fr": "C, A, B, D"
+          }
+        },
+        {
+          "text": {
+            "fr": "A, B, D, C"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "D occupe l'extrémité droite ; C, qui ne peut être à une extrémité, doit être en position 2 ou 3 ; A et B forment un bloc consécutif (A immédiatement à gauche de B). Le seul arrangement qui satisfait toutes ces contraintes est A, B, C, D. Méthode : placer d'abord les contraintes de position fixe ou d'extrémité, puis tester les blocs consécutifs restants."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0036",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Trois personnes, Alice, Bob et Chloé, font chacune une déclaration, sachant qu'une seule ment. Alice dit : « Bob ment. » Bob dit : « Chloé dit la vérité. » Chloé dit : « Alice ment. » Qui ment ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Alice"
+          }
+        },
+        {
+          "text": {
+            "fr": "Bob"
+          }
+        },
+        {
+          "text": {
+            "fr": "Chloé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Impossible à déterminer"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "En supposant Alice menteuse : « Bob ment » est faux, donc Bob dit vrai, donc Chloé dit vrai aussi, ce qui rend « Alice ment » vraie — tout est cohérent avec un seul menteur (Alice). Les deux autres hypothèses (Bob ou Chloé menteur) produisent systématiquement zéro ou deux menteurs, ce qui contredit l'énoncé. Méthode : tester chaque personne comme unique menteur et vérifier la cohérence complète de toutes les déclarations avant de conclure."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0037",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 4,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Léo arrive avant Max, qui arrive avant Nina. Oscar arrive juste après Léo. Nina n'est pas dernière ; Zoé complète le classement à 5. Quel est l'ordre complet du premier au dernier ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Léo, Oscar, Max, Nina, Zoé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Léo, Max, Oscar, Nina, Zoé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Oscar, Léo, Max, Nina, Zoé"
+          }
+        },
+        {
+          "text": {
+            "fr": "Léo, Oscar, Nina, Max, Zoé"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "L'ordre relatif Léo-Max-Nina est fixé ; Oscar s'insère juste derrière Léo ; comme Nina ne peut pas être dernière, Zoé doit arriver après elle. Le seul ordre cohérent avec toutes ces contraintes est Léo, Oscar, Max, Nina, Zoé. Méthode : fixer d'abord les contraintes d'ordre relatif, insérer ensuite les contraintes de position absolue une par une."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0038",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Cinq personnes A, B, C, D, E sont classées de la plus grande à la plus petite, sans ex-æquo. C est plus grand que A. A est plus grand que B. B est plus grand que D. D est plus grand que E. Quel est le classement complet du plus grand au plus petit ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "C, A, B, D, E"
+          }
+        },
+        {
+          "text": {
+            "fr": "A, C, B, D, E"
+          }
+        },
+        {
+          "text": {
+            "fr": "C, B, A, D, E"
+          }
+        },
+        {
+          "text": {
+            "fr": "C, A, D, B, E"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "En enchaînant toutes les inégalités données (C>A, A>B, B>D, D>E) dans le même sens, on obtient directement l'ordre total C, A, B, D, E. Méthode : convertir chaque comparaison en inégalité, puis les chaîner comme un seul ordre total lorsqu'elles se suivent sans contradiction."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0039",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 5,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Emma, Hugo et Léa ont chacun une profession différente (médecin, avocat, ingénieur) et un animal différent (chat, chien, oiseau). Indices : Emma n'est pas médecin. Le médecin a un chien. Hugo a un chat. L'ingénieur a un oiseau. Quelle est la profession d'Hugo ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "Avocat"
+          }
+        },
+        {
+          "text": {
+            "fr": "Médecin"
+          }
+        },
+        {
+          "text": {
+            "fr": "Ingénieur"
+          }
+        },
+        {
+          "text": {
+            "fr": "Impossible à déterminer"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Le médecin a un chien, or Hugo a un chat : Hugo n'est donc pas médecin. L'ingénieur a un oiseau, or Hugo a un chat : Hugo n'est donc pas ingénieur non plus. Par élimination, Hugo est avocat (Léa, seule candidate restante puisque Emma ne l'est pas, est médecin avec le chien ; Emma est alors ingénieur avec l'oiseau). Méthode : croiser chaque indice sur l'animal avec les professions pour éliminer les candidats un par un, plutôt que de chercher directement la réponse."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "efg.logic.0040",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_general_efficiency",
+      "difficulty": 3,
+      "tags": [
+        "efg",
+        "efg.logic"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Aucun nombre premier supérieur à 2 n'est pair. 17 est un nombre premier supérieur à 2. Que peut-on en conclure sur 17 ?"
+      },
+      "options": [
+        {
+          "text": {
+            "fr": "17 n'est pas pair"
+          }
+        },
+        {
+          "text": {
+            "fr": "17 est pair"
+          }
+        },
+        {
+          "text": {
+            "fr": "17 est premier et pair"
+          }
+        },
+        {
+          "text": {
+            "fr": "On ne peut rien conclure"
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "17 appartient à la catégorie « nombres premiers supérieurs à 2 », qui exclut totalement la parité ; 17 n'est donc pas pair (ce qui est vrai : 17 est impair). Méthode : appliquer directement une règle d'exclusion totale (« aucun... n'est ») à un cas particulier qui remplit la condition énoncée."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    }
+  ]
+}

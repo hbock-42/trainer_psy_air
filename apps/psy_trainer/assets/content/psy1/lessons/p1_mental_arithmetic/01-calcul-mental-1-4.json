@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.p1_mental_arithmetic.01",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_mental_arithmetic",
+  "order": 1,
+  "title": { "fr": "Calcul mental 1-4 : quatre formats de réponse, une seule arithmétique" },
+  "summary": {
+    "fr": "Réponse libre, équation, intervalle le plus étroit, tous les intervalles : la technique propre à chaque mode, avec l'estimation rapide au cœur des modes à intervalle."
+  },
+  "file": { "fr": "lessons/p1_mental_arithmetic/01-calcul-mental-1-4.fr.md" },
+  "estimatedReadMin": 10,
+  "difficulty": 2,
+  "tags": ["p1_mental_arithmetic"],
+  "practiceTags": ["p1_mental_arithmetic"],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "own text; facts from docs/content/psy1-spec.md §2.3 row 12, §4.1 row 12"
+  }
+}

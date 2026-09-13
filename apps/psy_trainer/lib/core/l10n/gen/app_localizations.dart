@@ -3641,6 +3641,102 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.'**
   String get p1CountersExampleCaption;
+
+  /// No description provided for @p1CubeRotationReferenceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cube de référence'**
+  String get p1CubeRotationReferenceLabel;
+
+  /// No description provided for @p1CubeRotationCandidateLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cube candidat'**
+  String get p1CubeRotationCandidateLabel;
+
+  /// No description provided for @p1CubeRotationQuestion.
+  ///
+  /// In fr, this message translates to:
+  /// **'Est-ce le même cube, tourné ?'**
+  String get p1CubeRotationQuestion;
+
+  /// No description provided for @p1CubeRotationSameAnswer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Même cube, tourné'**
+  String get p1CubeRotationSameAnswer;
+
+  /// No description provided for @p1CubeRotationAlteredAnswer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modifié'**
+  String get p1CubeRotationAlteredAnswer;
+
+  /// No description provided for @p1CubeRotationExplanationSame.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le cube candidat est bien le cube de référence, vu sous un autre angle.'**
+  String get p1CubeRotationExplanationSame;
+
+  /// No description provided for @p1CubeRotationExplanationAltered.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le cube candidat a été modifié (faces échangées ou face inversée) : ce n\'est pas une simple rotation.'**
+  String get p1CubeRotationExplanationAltered;
+
+  /// No description provided for @attentionSustainedTarget.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible'**
+  String get attentionSustainedTarget;
+
+  /// No description provided for @attentionSustainedNotTarget.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas la cible'**
+  String get attentionSustainedNotTarget;
+
+  /// No description provided for @attentionSustainedTargetSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible ({shortcut})'**
+  String attentionSustainedTargetSemantics(String shortcut);
+
+  /// No description provided for @attentionSustainedNotTargetSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas la cible ({shortcut})'**
+  String attentionSustainedNotTargetSemantics(String shortcut);
+
+  /// No description provided for @attentionSustainedTouchFallback.
+  ///
+  /// In fr, this message translates to:
+  /// **'Touches non représentatives : le jour J, utilisez le clavier.'**
+  String get attentionSustainedTouchFallback;
+
+  /// No description provided for @attentionSustainedRuleConjunction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible : {colour} {shape}'**
+  String attentionSustainedRuleConjunction(String colour, String shape);
+
+  /// No description provided for @attentionSustainedRuleRepeatShape.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cible : même forme que le stimulus précédent'**
+  String get attentionSustainedRuleRepeatShape;
+
+  /// No description provided for @attentionSustainedSeriesLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Série {series} / {total}'**
+  String attentionSustainedSeriesLabel(int series, int total);
+
+  /// No description provided for @attentionSustainedStimulusSemantics.
+  ///
+  /// In fr, this message translates to:
+  /// **'Stimulus {index}'**
+  String attentionSustainedStimulusSemantics(int index);
 }
 
 class _AppLocalizationsDelegate
