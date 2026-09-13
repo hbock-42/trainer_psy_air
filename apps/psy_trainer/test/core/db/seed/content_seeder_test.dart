@@ -129,7 +129,11 @@ void main() {
       expect(info?.seededAt, now);
 
       final modules = await content.modules();
-      expect(modules.map((m) => m.id), [ModuleId.psy0, ModuleId.psy1]);
+      expect(modules.map((m) => m.id), [
+        ModuleId.psy0,
+        ModuleId.psy1,
+        ModuleId.psy2,
+      ]);
 
       final families = await content.families(moduleId: ModuleId.psy0);
       expect(families, hasLength(16));
@@ -158,6 +162,20 @@ void main() {
       ]);
       expect(psy1Blueprints.first.sections, hasLength(13));
 
+      // PSY2 (US-111/US-112): no timed engine, but its two families, the
+      // interview question bank and the CRM lessons/deck seed and read back
+      // like any other content.
+      final psy2Families = await content.families(moduleId: ModuleId.psy2);
+      expect(psy2Families.map((f) => f.id).toSet(), {
+        'interview',
+        'group_exercise',
+      });
+      final interviewQuestions = await content.interviewQuestions(
+        familyId: 'interview',
+      );
+      expect(interviewQuestions, hasLength(70));
+      expect(interviewQuestions.map((q) => q.familyId).toSet(), {'interview'});
+
       final english = await content.items(familyId: 'english', shuffle: false);
       expect(english, hasLength(bankItemCount('english')));
       expect(english.map((i) => i.familyId).toSet(), {'english'});
@@ -167,8 +185,11 @@ void main() {
       expect(await content.items(familyId: 'english_speaking'), isEmpty);
 
       final lessons = await content.lessons(moduleId: ModuleId.psy0);
-      expect(lessons, hasLength(result.lessonCount));
+      // `result.lessonCount` is bundle-wide (US-111 added 4 PSY2 lessons on
+      // top of PSY0's, so this module's own count is compared instead).
       expect(lessons.length, greaterThanOrEqualTo(16));
+      final allLessons = await content.lessons();
+      expect(allLessons, hasLength(result.lessonCount));
       final nback = await content.lessons(familyId: 'memory_nback');
       expect(nback, hasLength(1));
       // Markdown bodies are inlined at seeding time (see ARCHITECTURE.md).
@@ -257,7 +278,7 @@ void main() {
       expect(info?.contentVersion, bumped);
       expect(info?.seededAt, later);
       expect(await content.families(moduleId: ModuleId.psy0), hasLength(16));
-      expect(await content.families(), hasLength(29));
+      expect(await content.families(), hasLength(31));
       expect(await content.itemById(english.single.id), isNotNull);
 
       // User data survived the re-seed.

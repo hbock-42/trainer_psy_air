@@ -58,6 +58,7 @@ part 'app_database.g.dart';
     Flashcards,
     Blueprints,
     LexicalFields,
+    InterviewQuestions,
     Sessions,
     Attempts,
     ItemStats,
@@ -79,7 +80,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase(super.executor);
 
   @override
-  int get schemaVersion => 3;
+  int get schemaVersion => 4;
 
   /// v2 (US-027): added `passages` (mirror of `ItemBank.passages`, so a
   /// running session can resolve the `Passage` an `McqItem.passageId`
@@ -93,6 +94,11 @@ class AppDatabase extends _$AppDatabase {
   /// `word_boxes` generator draws from — see
   /// `ContentRepository.lexicalFields`/`lexicalField`). Same story: a
   /// content mirror, so the upgrade only creates the table.
+  ///
+  /// v4 (US-111): added `interview_questions` (mirror of
+  /// `InterviewQuestionBank.questions`, the PSY2 interview practice bank —
+  /// see `ContentRepository.interviewQuestions`/`interviewQuestion`).
+  /// Content mirror, so the upgrade only creates the table.
 
   /// Datetimes are stored as ISO-8601 text (UTC, millisecond precision), not
   /// unix seconds: cadence-driven activities record several attempts per
@@ -110,6 +116,9 @@ class AppDatabase extends _$AppDatabase {
       }
       if (from < 3) {
         await m.createTable(lexicalFields);
+      }
+      if (from < 4) {
+        await m.createTable(interviewQuestions);
       }
     },
     beforeOpen: (details) async {

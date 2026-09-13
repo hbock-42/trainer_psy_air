@@ -128,3 +128,19 @@ class LexicalFields extends Table with AuditedTable {
   IntColumn get version => integer()();
   TextColumn get json => text().map(const JsonMapConverter())();
 }
+
+/// Mirror of the PSY2 interview questions authored under
+/// `psy2/interview/questions/*.json` (`InterviewQuestionBank.questions`,
+/// US-111): the original, per-theme interview prompts the practice screen
+/// draws from. Keyed by the question's own id (`interview.<theme>.<nnnn>`).
+@DataClassName('InterviewQuestionRow')
+@TableIndex(
+  name: 'interview_questions_family_theme',
+  columns: {#familyId, #theme},
+)
+class InterviewQuestions extends Table with AuditedTable {
+  TextColumn get familyId => text()();
+  TextColumn get theme => text()();
+  IntColumn get version => integer()();
+  TextColumn get json => text().map(const JsonMapConverter())();
+}
