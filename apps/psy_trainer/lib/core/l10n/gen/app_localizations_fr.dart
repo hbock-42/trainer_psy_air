@@ -2218,6 +2218,29 @@ class AppLocalizationsFr extends AppLocalizations {
       'Lisez chaque cadran (aiguille, échelle ou compteur à tambour) puis répondez à la question posée.';
 
   @override
+  String get p1CubeRotationReferenceLabel => 'Cube de référence';
+
+  @override
+  String get p1CubeRotationCandidateLabel => 'Cube candidat';
+
+  @override
+  String get p1CubeRotationQuestion => 'Est-ce le même cube, tourné ?';
+
+  @override
+  String get p1CubeRotationSameAnswer => 'Même cube, tourné';
+
+  @override
+  String get p1CubeRotationAlteredAnswer => 'Modifié';
+
+  @override
+  String get p1CubeRotationExplanationSame =>
+      'Le cube candidat est bien le cube de référence, vu sous un autre angle.';
+
+  @override
+  String get p1CubeRotationExplanationAltered =>
+      'Le cube candidat a été modifié (faces échangées ou face inversée) : ce n\'est pas une simple rotation.';
+
+  @override
   String get attentionSustainedTarget => 'Cible';
 
   @override
