@@ -1,0 +1,166 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/deck.schema.json",
+  "kind": "deck",
+  "id": "group_exercise.deck.crm",
+  "version": 1,
+  "moduleId": "psy2",
+  "familyId": "group_exercise",
+  "order": 1,
+  "name": { "fr": "Vocabulaire CRM", "en": "CRM vocabulary" },
+  "description": {
+    "fr": "Le vocabulaire des six comportements CRM évalués en exercice de groupe et en entretien, avec un exemple concret par carte.",
+    "en": "The vocabulary of the six CRM behaviours evaluated in the group exercise and interview, with a concrete example per card."
+  },
+  "tags": ["psy2.group_exercise", "psy2.group_exercise.crm"],
+  "cards": [
+    {
+      "id": "group_exercise.deck.crm.0001",
+      "version": 1,
+      "deckId": "group_exercise.deck.crm",
+      "front": { "fr": "CRM", "en": "CRM" },
+      "back": {
+        "fr": "Crew Resource Management : l'ensemble des comportements (communication, décision, gestion de la charge...) qui permettent à un équipage de coopérer efficacement et en sécurité.",
+        "en": "Crew Resource Management: the set of behaviours (communication, decision-making, workload management...) that let a crew cooperate effectively and safely."
+      },
+      "difficulty": 2,
+      "tags": ["psy2.group_exercise.crm"]
+    },
+    {
+      "id": "group_exercise.deck.crm.0002",
+      "version": 1,
+      "deckId": "group_exercise.deck.crm",
+      "front": { "fr": "Communication (dimension CRM)", "en": "Communication (CRM dimension)" },
+      "back": {
+        "fr": "Partager l'information clairement et vérifier qu'elle est comprise. Exemple : reformuler un point important pour confirmer que le groupe l'a bien reçu.",
+        "en": "Sharing information clearly and checking it is understood. Example: rephrasing an important point to confirm the group received it."
+      },
+      "difficulty": 2,
+      "tags": ["psy2.group_exercise.crm"]
+    },
+    {
+      "id": "group_exercise.deck.crm.0003",
+      "version": 1,
+      "deckId": "group_exercise.deck.crm",
+      "front": { "fr": "Leadership / suivisme", "en": "Leadership / followership" },
+      "back": {
+        "fr": "Prendre l'initiative quand il le faut, mais aussi soutenir l'initiative d'un autre sans l'écraser. Exemple : proposer une voie à suivre quand le groupe est bloqué, puis se ranger derrière une meilleure idée.",
+        "en": "Taking initiative when needed, but also supporting someone else's lead without dominating. Example: proposing a way forward when the group stalls, then deferring to a better idea."
+      },
+      "difficulty": 3,
+      "tags": ["psy2.group_exercise.crm"]
+    },
+    {
+      "id": "group_exercise.deck.crm.0004",
+      "version": 1,
+      "deckId": "group_exercise.deck.crm",
+      "front": { "fr": "Conscience de la situation", "en": "Situational awareness" },
+      "back": {
+        "fr": "Suivre l'état de la tâche, du temps et du groupe dans son ensemble. Exemple : remarquer que le groupe tourne en rond et le signaler.",
+        "en": "Tracking the state of the task, the time, and the group as a whole. Example: noticing the group is repeating itself and flagging it."
+      },
+      "difficulty": 3,
+      "tags": ["psy2.group_exercise.crm"]
+    },
+    {
+      "id": "group_exercise.deck.crm.0005",
+      "version": 1,
+      "deckId": "group_exercise.deck.crm",
+      "front": { "fr": "Prise de décision", "en": "Decision-making" },
+      "back": {
+        "fr": "Faire un choix raisonné, surtout avec des informations incomplètes ou sous pression. Exemple : nommer les options envisagées avant de trancher, plutôt que de sauter directement à une conclusion.",
+        "en": "Making a reasoned call, especially with incomplete information or under pressure. Example: naming the options considered before deciding, rather than jumping straight to a conclusion."
+      },
+      "difficulty": 3,
+      "tags": ["psy2.group_exercise.crm"]
+    },
+    {
+      "id": "group_exercise.deck.crm.0006",
+      "version": 1,
+      "deckId": "group_exercise.deck.crm",
+      "front": { "fr": "Gestion de la charge", "en": "Workload management" },
+      "back": {
+        "fr": "Répartir l'effort et l'attention pour que rien de critique ne soit oublié. Exemple : proposer de diviser une tâche en sous-tâches avant de s'y lancer.",
+        "en": "Distributing effort and attention so nothing critical is dropped. Example: suggesting the task be split into sub-tasks before diving in."
+      },
+      "difficulty": 3,
+      "tags": ["psy2.group_exercise.crm"]
+    },
+    {
+      "id": "group_exercise.deck.crm.0007",
+      "version": 1,
+      "deckId": "group_exercise.deck.crm",
+      "front": { "fr": "Esprit d'équipe (teamwork)", "en": "Teamwork" },
+      "back": {
+        "fr": "Le comportement coopératif général et la cohésion du groupe. Exemple : construire sur l'idée d'un autre au lieu de repartir de zéro.",
+        "en": "General cooperative behaviour and group cohesion. Example: building on someone else's idea instead of starting from scratch."
+      },
+      "difficulty": 2,
+      "tags": ["psy2.group_exercise.crm"]
+    },
+    {
+      "id": "group_exercise.deck.crm.0008",
+      "version": 1,
+      "deckId": "group_exercise.deck.crm",
+      "front": { "fr": "Gradient d'autorité", "en": "Authority gradient" },
+      "back": {
+        "fr": "L'écart de pouvoir/statut perçu entre deux personnes ; un gradient trop fort peut empêcher un subordonné de signaler une erreur.",
+        "en": "The perceived power/status gap between two people; too steep a gradient can stop a subordinate from flagging a mistake."
+      },
+      "difficulty": 3,
+      "tags": ["psy2.group_exercise.crm"]
+    },
+    {
+      "id": "group_exercise.deck.crm.0009",
+      "version": 1,
+      "deckId": "group_exercise.deck.crm",
+      "front": { "fr": "Speak up (\"prendre la parole\")", "en": "Speaking up" },
+      "back": {
+        "fr": "Le fait d'exprimer une préoccupation ou un désaccord malgré la pression sociale ou hiérarchique. Un pilier du CRM.",
+        "en": "Voicing a concern or disagreement despite social or hierarchical pressure. A CRM pillar."
+      },
+      "difficulty": 2,
+      "tags": ["psy2.group_exercise.crm"]
+    },
+    {
+      "id": "group_exercise.deck.crm.0010",
+      "version": 1,
+      "deckId": "group_exercise.deck.crm",
+      "front": { "fr": "Débrief (dans un entraînement entre pairs)", "en": "Debrief (in a peer practice session)" },
+      "back": {
+        "fr": "Le retour structuré après un tour d'exercice : un fait précis observé, dimension par dimension, sans jugement de valeur.",
+        "en": "The structured feedback after a practice round: one precise observed fact, dimension by dimension, without value judgement."
+      },
+      "difficulty": 1,
+      "tags": ["psy2.group_exercise.mock_group"]
+    },
+    {
+      "id": "group_exercise.deck.crm.0011",
+      "version": 1,
+      "deckId": "group_exercise.deck.crm",
+      "front": { "fr": "STAR (structure de réponse)", "en": "STAR (answer structure)" },
+      "back": {
+        "fr": "Situation -> Action -> Résultat (-> ce que j'en retiens). Une façon d'organiser une réponse comportementale à l'entretien, sans réciter un texte appris.",
+        "en": "Situation -> Action -> Result (-> what I take from it). A way to organise a behavioural interview answer, without reciting a memorised script."
+      },
+      "difficulty": 2,
+      "tags": ["psy2.interview"]
+    },
+    {
+      "id": "group_exercise.deck.crm.0012",
+      "version": 1,
+      "deckId": "group_exercise.deck.crm",
+      "front": { "fr": "Authenticité vs. technique", "en": "Authenticity vs. technique" },
+      "back": {
+        "fr": "La position d'Air France : chercher \"la bonne posture à adopter\" est contre-productif, car c'est la cohérence entre comportement réel et discours qui est évaluée.",
+        "en": "Air France's stated position: hunting for \"the right posture\" is counter-productive, since it is the coherence between real behaviour and discourse that gets evaluated."
+      },
+      "difficulty": 2,
+      "tags": ["psy2.group_exercise.crm"]
+    }
+  ],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "docs/content/psy2-spec.md §4.2, §7"
+  }
+}

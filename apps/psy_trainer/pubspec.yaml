@@ -198,6 +198,15 @@ flutter:
     - assets/content/psy1/p1_tangram/
     - assets/content/psy1/p1_wm_calc_back/
     - assets/content/psy1/p1_wm_reverse_span/
+    - assets/content/psy2/
+    - assets/content/psy2/group_exercise/
+    - assets/content/psy2/group_exercise/decks/
+    - assets/content/psy2/interview/
+    - assets/content/psy2/interview/questions/
+    - assets/content/psy2/lessons/
+    - assets/content/psy2/lessons/group_exercise/
+    - assets/content/psy2/lessons/interview/
+    - assets/content/psy2/lessons/selection_stage/
   # END content assets
 
   # An image asset can refer to one or more resolution-specific "variants", see

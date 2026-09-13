@@ -2,13 +2,19 @@
   "$schema": "../../../../packages/psy_content/schema/manifest.schema.json",
   "kind": "manifest",
   "schemaVersion": 2,
-  "contentVersion": 6,
+  "contentVersion": 7,
   "updatedAt": "2026-09-13",
   "modules": [
     "psy0",
-    "psy1"
+    "psy1",
+    "psy2"
   ],
   "changelog": [
+    {
+      "contentVersion": 7,
+      "date": "2026-09-13",
+      "summary": "PSY2 module (US-111/US-112): `interview` and `group_exercise` families, new `interview_questions` content kind (schema/parser/validator), 70 original interview questions across 7 themes, CRM-behaviour and mock-group lessons, a \"how PSY2 works\" overview lesson, and the `deck.crm` flashcard deck. No timed engine for PSY2 (self-assessment only, per docs/content/psy2-spec.md)."
+    },
     {
       "contentVersion": 6,
       "date": "2026-09-13",
