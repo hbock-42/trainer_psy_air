@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.selection_day.01",
+  "version": 1,
+  "moduleId": "psy1",
+  "order": 1,
+  "title": { "fr": "Comment se déroule la journée PSY1" },
+  "summary": {
+    "fr": "Une journée complète à l'ENAC Toulouse (rapporté) : horaires, matériel (joysticks, clavier, brouillon limité), notation en classes, la règle de zone rouge du test psychomoteur, et ce que l'on sait — ou pas — du questionnaire de personnalité."
+  },
+  "file": { "fr": "lessons/selection_day/01-comment-se-deroule-la-journee-psy1.fr.md" },
+  "estimatedReadMin": 9,
+  "difficulty": 1,
+  "tags": ["selection_day", "selection_day.overview"],
+  "practiceTags": [],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "own text; facts from docs/content/psy1-spec.md §1, §2.1, §2.2, §2.4"
+  }
+}

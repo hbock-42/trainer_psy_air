@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.p1_counters.01",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_counters",
+  "order": 1,
+  "title": { "fr": "Lecture de compteurs : estimer une valeur sans compter les graduations" },
+  "summary": { "fr": "Interpoler la position d'une aiguille entre deux repères, gérer les compteurs à plusieurs tours et balayer plusieurs cadrans dans un ordre fixe." },
+  "file": { "fr": "lessons/p1_counters/01-lecture-de-compteurs.fr.md" },
+  "estimatedReadMin": 9,
+  "difficulty": 2,
+  "tags": ["p1_counters"],
+  "practiceTags": ["p1_counters"],
+  "status": "published",
+  "deckIds": ["p1_counters.deck.gauge_reading"],
+  "meta": { "author": "hbock", "source": "own text; facts from docs/content/psy1-spec.md §2.3 row 7, §4.1 row 7" }
+}

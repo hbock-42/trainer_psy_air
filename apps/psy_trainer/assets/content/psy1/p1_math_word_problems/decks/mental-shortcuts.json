@@ -1,0 +1,200 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/deck.schema.json",
+  "kind": "deck",
+  "id": "p1_math_word_problems.deck.mental_shortcuts",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_math_word_problems",
+  "order": 1,
+  "name": {
+    "fr": "Raccourcis mentaux pour les mathématiques à énoncé",
+    "en": "Mental shortcuts for word-problem mathematics"
+  },
+  "description": {
+    "fr": "Conversions, réarrangements et vérifications rapides pour résoudre les énoncés de vitesse/temps/distance, carburant, proportions, fuseaux horaires et unités.",
+    "en": "Conversions, rearrangements and quick checks for speed/time/distance, fuel, proportion, time-zone and unit-conversion word problems."
+  },
+  "tags": ["p1_math_word_problems"],
+  "cards": [
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0001",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Convertir une vitesse de **km/h vers m/s**." },
+      "back": { "fr": "**Diviser par 3,6.** 108 km/h → 108/3,6 = 30 m/s. Moyen mnémotechnique : passer à une unité plus fine (le mètre au lieu du kilomètre) donne un nombre plus petit." },
+      "difficulty": 1,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0002",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Convertir une vitesse de **m/s vers km/h**." },
+      "back": { "fr": "**Multiplier par 3,6.** 25 m/s → 25 × 3,6 = 90 km/h. Sens inverse de la conversion km/h → m/s." },
+      "difficulty": 1,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0003",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "La relation vitesse/temps/distance et ses trois réarrangements." },
+      "back": { "fr": "$d = v \\times t$, donc $v = d / t$ et $t = d / v$. Toujours écrire la relation avant de substituer les valeurs, pour ne pas isoler la mauvaise inconnue sous pression." },
+      "difficulty": 1,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0004",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Convertir une durée « h min » en heures décimales, ex. 1 h 15." },
+      "back": { "fr": "**Diviser les minutes par 60** et additionner : 1 h 15 = 1 + 15/60 = 1,25 h. Piège classique : « 1 h 15 » n'est pas 1,15 h." },
+      "difficulty": 2,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0005",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Calculer une autonomie de vol à partir d'un débit de carburant et d'une quantité disponible." },
+      "back": { "fr": "**Autonomie = carburant disponible ÷ débit horaire.** Ne pas oublier de soustraire la réserve incompressible du carburant total avant de diviser." },
+      "difficulty": 2,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0006",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Calculer une consommation totale à partir d'un débit horaire et d'une durée." },
+      "back": { "fr": "**Consommation = débit horaire × durée.** Même schéma que $d = v \\times t$ : le débit joue le rôle de la vitesse, la durée reste la durée." },
+      "difficulty": 1,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0007",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "La règle de trois par produit en croix : si *a* correspond à *b*, que correspond *c* ?" },
+      "back": { "fr": "$x = (b \\times c) / a$. Raccourci : si *a* et *c* ont un rapport simple (double, moitié, dixième), appliquez directement ce rapport à *b* sans poser le produit en croix." },
+      "difficulty": 2,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0008",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Calculer rapidement 15 % d'une valeur, ex. 15 % de 240." },
+      "back": { "fr": "**10 % + 5 %** : 10 % de 240 = 24, 5 % = la moitié de 10 % = 12. Total = 24 + 12 = 36. Ce découpage marche pour tout pourcentage se ramenant à des dixièmes et des demis de dixièmes." },
+      "difficulty": 2,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0009",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Calculer une valeur après une augmentation de X %, ex. 220 après +20 %." },
+      "back": { "fr": "**Multiplier par (1 + X/100).** 220 × 1,20 = 264. Pour une baisse, multiplier par (1 − X/100)." },
+      "difficulty": 2,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0010",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Additionner ou soustraire un décalage horaire entre deux fuseaux." },
+      "back": { "fr": "**Ramener d'abord les deux heures à UTC**, faire l'opération, puis reconvertir vers le fuseau demandé. Ne jamais calculer directement d'un fuseau local à l'autre sans passer par UTC : c'est la source d'erreur de signe la plus fréquente." },
+      "difficulty": 3,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0011",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Un vol traverse la ligne de changement de date : comment traiter la date d'arrivée ?" },
+      "back": { "fr": "**Calculez d'abord l'heure d'arrivée en UTC sans vous soucier de la date**, puis convertissez vers le fuseau local d'arrivée : la date avance ou recule d'un jour selon que l'heure locale obtenue dépasse minuit ou redescend sous zéro heure. Traitez la date comme une conséquence du calcul horaire, jamais comme une donnée à deviner en premier." },
+      "difficulty": 4,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0012",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Convertir des litres en mètres cubes." },
+      "back": { "fr": "**1 m³ = 1000 L**, donc diviser par 1000 pour passer de litres à m³ (multiplier par 1000 dans l'autre sens). 2 500 L = 2,5 m³." },
+      "difficulty": 1,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0013",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Convertir un poids de kilogrammes en livres (lb)." },
+      "back": { "fr": "**1 kg ≈ 2,2 lb.** Raccourci d'estimation : doubler le nombre de kg puis retirer environ 10 % du doublé (100 kg → 200 − 20 = 180 environ, contre 220 lb exact — utile pour un ordre de grandeur rapide, affiner si l'énoncé exige la précision)." },
+      "difficulty": 3,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0014",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Convertir des milles nautiques (NM) en kilomètres." },
+      "back": { "fr": "**1 NM ≈ 1,852 km.** Raccourci d'estimation rapide : multiplier par 1,85, ou par 2 puis retirer environ 8 % pour affiner." },
+      "difficulty": 2,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0015",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Estimer rapidement 47 × 6 sans poser la multiplication exacte." },
+      "back": { "fr": "**Arrondir puis ajuster** : 50 × 6 = 300, mais 47 est 3 de moins que 50, donc retirer 3 × 6 = 18. Résultat : 300 − 18 = 282. Plus rapide que de poser 47 × 6 pour beaucoup de candidats." },
+      "difficulty": 2,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0016",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Estimer rapidement 198 ÷ 6 sans poser la division exacte." },
+      "back": { "fr": "**Arrondir vers un multiple pratique puis ajuster** : 198 est proche de 200, mais plus simple de voir 198 = 200 − 2 ; ou remarquer que 6 × 33 = 198 directement en cherchant un multiple rond proche de 200/6 ≈ 33. Confirmez avec 6 × 33 = 198." },
+      "difficulty": 3,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0017",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Comment vérifier un résultat par ordre de grandeur avant de valider ?" },
+      "back": { "fr": "**Comparer le résultat à une estimation grossière** faite avec des nombres ronds (arrondir chaque donnée à la dizaine ou centaine la plus proche). Si le résultat exact s'écarte fortement de cette estimation, c'est le signe d'une erreur de calcul ou d'unité, pas d'une simple imprécision." },
+      "difficulty": 2,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0018",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Un résultat de consommation de carburant dépasse largement l'autonomie annoncée de l'avion : que faire ?" },
+      "back": { "fr": "**Ne pas valider : c'est un signal d'alerte d'ordre de grandeur.** Un tel écart signale presque toujours une inversion entre débit et durée, ou un oubli de conversion d'unité (minutes non converties en heures). Recontrôlez la relation posée avant de recalculer." },
+      "difficulty": 3,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0019",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Un énoncé mélange des minutes et une vitesse en km/h : quel est le premier réflexe ?" },
+      "back": { "fr": "**Convertir immédiatement les minutes en heures décimales** avant d'écrire la relation $d = v \\times t$. Ne jamais substituer des minutes brutes dans une formule qui attend des heures : l'erreur se glisse alors dans le résultat par un facteur 60." },
+      "difficulty": 2,
+      "tags": ["p1_math_word_problems"]
+    },
+    {
+      "id": "p1_math_word_problems.deck.mental_shortcuts.0020",
+      "version": 1,
+      "deckId": "p1_math_word_problems.deck.mental_shortcuts",
+      "front": { "fr": "Comment repérer rapidement l'inconnue exacte demandée par un énoncé à plusieurs étapes ?" },
+      "back": { "fr": "**Relire en dernier la question posée** (souvent la toute dernière phrase de l'énoncé) avant d'écrire une relation. Beaucoup de candidats répondent à la question qu'ils avaient anticipée plutôt qu'à celle réellement posée (temps restant au lieu du temps total, par exemple)." },
+      "difficulty": 2,
+      "tags": ["p1_math_word_problems"]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/lesson.schema.json",
+  "kind": "lesson",
+  "id": "lesson.p1_cube_nets.01",
+  "version": 1,
+  "moduleId": "psy1",
+  "familyId": "p1_cube_nets",
+  "order": 1,
+  "title": { "fr": "Patrons et rotation de cubes : deux épreuves, une seule intuition spatiale" },
+  "summary": { "fr": "Dépliage de patron (alphabets latin et runique) via les opposées/voisines, et rotation-matching via l'invariant de paire de faces adjacentes, avec la stratégie face au barème négatif." },
+  "file": { "fr": "lessons/p1_cube_nets/01-patrons-et-rotation-de-cubes.fr.md" },
+  "estimatedReadMin": 11,
+  "difficulty": 2,
+  "tags": ["p1_cube_nets"],
+  "practiceTags": ["p1_cube_nets"],
+  "status": "published",
+  "meta": {
+    "author": "hbock",
+    "source": "own text; facts from docs/content/psy1-spec.md §2.3 row 8, §4.1 row 8"
+  }
+}

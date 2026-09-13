@@ -1,0 +1,1669 @@
+{
+  "$schema": "../../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "p1_math_word_problems",
+  "items": [
+    {
+      "id": "p1_math_word_problems.speed_time_distance.0001",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.speed_time_distance"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion vole à 480 km/h pendant 2 h 30. Quelle distance parcourt-il (en km) ?"
+      },
+      "expected": 1200,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Distance = vitesse × temps = 480 × 2,5 = 1200 km. Méthode : convertir les minutes en heures décimales avant de multiplier."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "km",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.speed_time_distance.0002",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.speed_time_distance"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion parcourt 900 km en 3 h. Quelle est sa vitesse moyenne (en km/h) ?"
+      },
+      "expected": 300,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Vitesse = distance ÷ temps = 900 ÷ 3 = 300 km/h. Méthode : isoler la vitesse dans la relation distance = vitesse × temps."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "km/h",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.speed_time_distance.0003",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.speed_time_distance"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion doit parcourir 750 km à une vitesse de 250 km/h. Combien de minutes durera le vol ?"
+      },
+      "expected": 180,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Temps = distance ÷ vitesse = 750 ÷ 250 = 3 h, soit 3 × 60 = 180 min. Méthode : toujours revenir en heures avant de convertir en minutes."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "min",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.speed_time_distance.0004",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.speed_time_distance"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Deux avions partent au même instant l'un vers l'autre, séparés de 840 km. L'un vole à 300 km/h, l'autre à 260 km/h. Au bout de combien de minutes vont-ils se croiser ?"
+      },
+      "expected": 90,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Vitesse de rapprochement = somme des vitesses = 300 + 260 = 560 km/h. Temps = distance ÷ vitesse de rapprochement = 840 ÷ 560 = 1,5 h = 90 min."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "min",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.speed_time_distance.0005",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.speed_time_distance"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion A vole à 400 km/h. Un avion B, 100 km devant lui et volant dans la même direction, vole à 320 km/h. Combien de minutes faut-il à A pour rattraper B ?"
+      },
+      "expected": 75,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Vitesse de rapprochement = différence des vitesses = 400 − 320 = 80 km/h (poursuite). Temps = distance ÷ vitesse de rapprochement = 100 ÷ 80 = 1,25 h = 75 min."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "min",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.speed_time_distance.0006",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.speed_time_distance"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion parcourt les 300 premiers km à 200 km/h puis les 300 km suivants à 300 km/h. Quelle est sa vitesse moyenne sur l'ensemble du trajet (en km/h, arrondie à 1 décimale) ?"
+      },
+      "expected": 240.0,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Vitesse moyenne = distance totale ÷ temps total, pas la moyenne des deux vitesses. Temps : 300/200 = 1,5 h et 300/300 = 1 h, total 2,5 h pour 600 km, soit 600 ÷ 2,5 = 240 km/h."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "km/h",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.speed_time_distance.0007",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.speed_time_distance"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un vol dure 2 h à 350 km/h puis 1 h à 260 km/h. Quelle est la vitesse moyenne sur l'ensemble du vol (en km/h, arrondie à 1 décimale) ?"
+      },
+      "expected": 320.0,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Distance totale = 350×2 + 260×1 = 700 + 260 = 960 km, pour un temps total de 3 h. Vitesse moyenne = 960 ÷ 3 = 320 km/h."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "km/h",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.speed_time_distance.0008",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.speed_time_distance"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion roule à 108 km/h sur la piste. Quelle est sa vitesse en m/s (arrondie à 1 décimale) ?"
+      },
+      "expected": 30.0,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Pour passer de km/h à m/s, diviser par 3,6 : 108 ÷ 3,6 = 30 m/s. Méthode à retenir : km/h ÷ 3,6 = m/s."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "m/s",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.speed_time_distance.0009",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.speed_time_distance"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion se déplace à 25 m/s. Quelle distance (en km) parcourt-il en 4 minutes ?"
+      },
+      "expected": 6.0,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Convertir la vitesse en km/h (×3,6) : 25 × 3,6 = 90 km/h. Puis distance = vitesse × temps = 90 × (4/60) = 6 km."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "km",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.speed_time_distance.0010",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.speed_time_distance"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion parcourt 540 km en 1 h 15 min. Quelle est sa vitesse moyenne (en km/h, arrondie à 1 décimale) ?"
+      },
+      "expected": 432.0,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Convertir 1 h 15 min en heures décimales : 1,25 h. Vitesse = distance ÷ temps = 540 ÷ 1,25 = 432 km/h."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "km/h",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.speed_time_distance.0011",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 1,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.speed_time_distance"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion vole à 200 km/h pendant 1 h. Quelle distance parcourt-il (en km) ?"
+      },
+      "expected": 200,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Distance = vitesse × temps = 200 × 1 = 200 km. Cas le plus simple de la relation distance/vitesse/temps."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "km",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.speed_time_distance.0012",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.speed_time_distance"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Deux avions décollent au même moment de deux aérodromes distants de 900 km, volant l'un vers l'autre. L'un vole 90 km/h plus vite que l'autre. Ils se croisent au bout de 1 h 30. Quelle est la vitesse du plus lent des deux avions (en km/h) ?"
+      },
+      "expected": 255,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Vitesse de rapprochement = distance ÷ temps = 900 ÷ 1,5 = 600 km/h. En notant B la vitesse du plus lent, B + (B+90) = 600, donc 2B = 510 et B = 255 km/h."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "km/h",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.speed_time_distance.0013",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 5,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.speed_time_distance"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion parcourt un aller-retour de 300 km chaque sens. À l'aller il vole à 150 km/h. Sachant que sa vitesse moyenne sur l'ensemble du trajet aller-retour est de 160 km/h, quelle est sa vitesse au retour (en km/h, arrondie à 2 décimales) ?"
+      },
+      "expected": 171.43,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Vitesse moyenne = distance totale ÷ temps total, donc temps total = 600 ÷ 160 = 3,75 h. Temps aller = 300 ÷ 150 = 2 h, donc temps retour = 1,75 h. Vitesse retour = 300 ÷ 1,75 ≈ 171,43 km/h."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "km/h",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.fuel.0001",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 1,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.fuel"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion consomme 40 L/h. Combien de litres consomme-t-il en 3 h ?"
+      },
+      "expected": 120,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Carburant consommé = consommation horaire × temps = 40 × 3 = 120 L."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "L",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.fuel.0002",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.fuel"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion a 200 L de carburant et consomme 50 L/h. Combien d'heures (arrondies à 1 décimale) peut-il voler avant la panne sèche ?"
+      },
+      "expected": 4.0,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Endurance = carburant disponible ÷ consommation horaire = 200 ÷ 50 = 4 h."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "h",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.fuel.0003",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.fuel"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion consomme 35 L/h. Combien de litres consomme-t-il en 2 h 30 (arrondi à 1 décimale) ?"
+      },
+      "expected": 87.5,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Convertir 2 h 30 en heures décimales : 2,5 h. Carburant = 35 × 2,5 = 87,5 L."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "L",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.fuel.0004",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.fuel"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion décolle avec 300 L de carburant. Il consomme 45 L/h. Après 2 h de vol, il doit dérouter et vole encore 15 minutes avant d'atterrir. Combien de litres lui reste-t-il ?"
+      },
+      "expected": 198.75,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Temps total de vol = 2 h + 15 min = 2,25 h. Carburant consommé = 45 × 2,25 = 101,25 L. Restant = 300 − 101,25 = 198,75 L."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "L",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.fuel.0005",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.fuel"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion doit emporter une réserve réglementaire de 45 minutes de vol, en plus du trajet. Sa consommation est de 60 L/h. Combien de litres de réserve doit-il emporter ?"
+      },
+      "expected": 45,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Réserve = consommation horaire × durée de réserve (en heures) = 60 × (45/60) = 60 × 0,75 = 45 L."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "L",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.fuel.0006",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.fuel"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion consomme 60 L/h. Le trajet prévu dure 2 h 40. Une réserve réglementaire de 20 % du carburant de trajet doit être ajoutée. Quel est le carburant total à emporter (en litres, arrondi à 1 décimale) ?"
+      },
+      "expected": 192.0,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Convertir 2 h 40 en heures décimales : 2,667 h. Carburant de trajet = 60 × 2,667 = 160 L. Réserve = 20 % × 160 = 32 L. Total = 160 + 32 = 192 L."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "L",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.fuel.0007",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.fuel"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un réservoir contient 100 L de carburant à une masse volumique de 0,72 kg/L, un autre réservoir contient 150 L à 0,80 kg/L. Quelle est la masse totale de carburant (en kg) ?"
+      },
+      "expected": 192,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Masse de chaque réservoir = volume × masse volumique : 100 × 0,72 = 72 kg et 150 × 0,80 = 120 kg. Masse totale = 72 + 120 = 192 kg."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "kg",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.fuel.0008",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.fuel"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion fait le plein avec 80 L à 1,85 €/L et 120 L à 1,65 €/L. Quel est le coût moyen par litre du mélange (en €/L, arrondi à 2 décimales) ?"
+      },
+      "expected": 1.73,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Coût total = 80 × 1,85 + 120 × 1,65 = 148 + 198 = 346 €, pour 200 L. Coût moyen = 346 ÷ 200 = 1,73 €/L."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "€/L",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.fuel.0009",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.fuel"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion consomme 55 L/h et a une autonomie prévue de 3 h 20. Quelle quantité totale de carburant (en litres, arrondie à 1 décimale) doit-il avoir à bord ?"
+      },
+      "expected": 183.3,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Convertir 3 h 20 en heures décimales : 3,333 h. Carburant = consommation × temps = 55 × 3,333 ≈ 183,3 L."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "L",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.fuel.0010",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.fuel"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion a 250 L de carburant, consomme 50 L/h, et effectue un vol prévu de 4 h. Combien de litres de carburant lui reste-t-il à l'arrivée ?"
+      },
+      "expected": 50,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Carburant consommé = 50 × 4 = 200 L. Restant = 250 − 200 = 50 L."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "L",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.fuel.0011",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 5,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.fuel"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion décolle avec 400 L, consomme 50 L/h. Après 3 h de vol il doit dérouter vers un aérodrome distant nécessitant encore 40 minutes de vol. La réglementation impose qu'il lui reste au moins 25 L de réserve à l'atterrissage. Quelle marge (en litres, arrondie à 2 décimales) lui reste-t-il au-delà de cette réserve requise ?"
+      },
+      "expected": 191.67,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Temps total de vol = 3 h + 40 min = 3,667 h. Carburant consommé = 50 × 3,667 ≈ 183,33 L. Restant à l'atterrissage = 400 − 183,33 = 216,67 L. Marge au-delà de la réserve = 216,67 − 25 ≈ 191,67 L."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "L",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.fuel.0012",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.fuel"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un réservoir contient 60 L de carburant à une masse volumique de 0,70 kg/L. On veut obtenir un mélange de masse volumique moyenne 0,75 kg/L en y ajoutant du carburant à 0,80 kg/L. Quel volume (en litres, arrondi à 1 décimale) de carburant à 0,80 kg/L faut-il ajouter ?"
+      },
+      "expected": 60.0,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Poser l'équation de mélange : (60×0,70 + V×0,80) ÷ (60+V) = 0,75. En développant : 42 + 0,80V = 45 + 0,75V, donc 0,05V = 3, soit V = 60 L."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "L",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.fuel.0013",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.fuel"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un vol nécessite une consommation de croisière de 65 L/h pendant 2 h 15, plus une phase de montée qui consomme 30 % de plus que le régime de croisière, pendant 15 minutes. Quelle quantité totale de carburant (en litres, arrondie à 1 décimale) est nécessaire ?"
+      },
+      "expected": 167.4,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Carburant de croisière = 65 × 2,25 = 146,25 L. Débit de montée = 65 × 1,30 = 84,5 L/h, sur 0,25 h soit 21,125 L. Total = 146,25 + 21,125 ≈ 167,4 L."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "L",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.proportions.0001",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 1,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.proportions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une recette nécessite 3 L d'additif pour 100 L de carburant. Combien de litres d'additif faut-il pour 250 L de carburant ?"
+      },
+      "expected": 7.5,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Règle de trois : additif = (3 ÷ 100) × 250 = 0,03 × 250 = 7,5 L. Méthode : garder le même rapport additif/carburant."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "L",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.proportions.0002",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.proportions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Sur une carte, 1 cm représente 25 km. Quelle distance réelle (en km) correspond à 6 cm sur la carte ?"
+      },
+      "expected": 150,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Distance réelle = échelle × longueur sur la carte = 25 × 6 = 150 km."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "km",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.proportions.0003",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.proportions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un plan est à l'échelle 1/50 000. Quelle distance réelle (en km) correspond à 8 cm sur le plan ?"
+      },
+      "expected": 4,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "8 cm réels sur le plan représentent 8 × 50 000 = 400 000 cm = 4 000 m = 4 km."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "km",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.proportions.0004",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.proportions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un moteur consomme 18 L pour parcourir 100 km. Combien de litres consommera-t-il pour parcourir 350 km ?"
+      },
+      "expected": 63,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Règle de trois : consommation = (18 ÷ 100) × 350 = 0,18 × 350 = 63 L."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "L",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.proportions.0005",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.proportions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "On doit répartir 900 kg de fret entre deux soutes selon un ratio 5:4. Quelle est la masse (en kg) placée dans la plus grande soute ?"
+      },
+      "expected": 500,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Le ratio 5:4 représente 9 parts. Une part = 900 ÷ 9 = 100 kg. La plus grande soute (5 parts) reçoit 5 × 100 = 500 kg."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "kg",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.proportions.0006",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.proportions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un budget carburant de 2 400 € est réparti entre trois vols selon le ratio 2:3:5. Quel montant (en €) est alloué au vol le plus long (ratio 5) ?"
+      },
+      "expected": 1200,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Le ratio 2:3:5 représente 10 parts. Une part = 2 400 ÷ 10 = 240 €. Le vol le plus long (5 parts) reçoit 5 × 240 = 1 200 €."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "€",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.proportions.0007",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.proportions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un instrument affiche une erreur de 4 % sur une valeur elle-même déjà affectée d'une erreur de 5 % par rapport à la valeur réelle. Quelle est l'erreur totale par rapport à la valeur réelle (en %, arrondie à 2 décimales) ?"
+      },
+      "expected": 9.2,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Les erreurs successives se combinent en multipliant les facteurs, pas en les additionnant : 1,05 × 1,04 = 1,092, soit une erreur totale de 9,2 %."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "%",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.proportions.0008",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.proportions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une maquette d'avion est réalisée à l'échelle 1:48. L'envergure réelle est de 12 m. Quelle est l'envergure de la maquette (en cm, arrondie à 1 décimale) ?"
+      },
+      "expected": 25.0,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Convertir en cm : 12 m = 1 200 cm. Envergure maquette = 1 200 ÷ 48 = 25 cm."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "cm",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.proportions.0009",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.proportions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un aérodrome enregistre une hausse de trafic de 15 % une année, suivie d'une baisse de 10 % l'année suivante. Le trafic initial était de 4 000 mouvements. Quel est le trafic final (en mouvements, arrondi à l'entier) ?"
+      },
+      "expected": 4140,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Les variations successives se composent : 4 000 × 1,15 = 4 600, puis 4 600 × 0,90 = 4 140 mouvements. Ne jamais additionner +15 % et −10 % directement."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.proportions.0010",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.proportions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une compagnie répartit ses vols entre trois hubs selon les ratios 3:4:6, pour un total de 260 vols. Combien de vols pour le hub correspondant au ratio 4 ?"
+      },
+      "expected": 80,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Le ratio 3:4:6 représente 13 parts. Une part = 260 ÷ 13 = 20 vols. Le hub au ratio 4 reçoit 4 × 20 = 80 vols."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.proportions.0011",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.proportions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Sur un plan à l'échelle 1/25 000, une piste mesure 4,8 mm. Quelle est sa longueur réelle (en mètres) ?"
+      },
+      "expected": 120,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Longueur réelle = 4,8 × 25 000 = 120 000 mm = 120 m."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "m",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.proportions.0012",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 5,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.proportions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Le carburant représente normalement 22 % de la masse totale au décollage d'un avion, pour une masse totale de 8 000 kg. Une réduction de charge fait passer la masse totale à 7 400 kg, la masse de carburant restant inchangée. Quel est le nouveau pourcentage que représente le carburant dans la masse totale (arrondi à 1 décimale) ?"
+      },
+      "expected": 23.8,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Masse de carburant = 22 % × 8 000 = 1 760 kg (elle ne change pas). Nouveau pourcentage = 1 760 ÷ 7 400 × 100 ≈ 23,8 %."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "%",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.proportions.0013",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.proportions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un billet coûte 480 €. Il subit une réduction de 15 %, puis une taxe de 8 % est ajoutée sur le prix réduit. Quel est le prix final (en €, arrondi à 2 décimales) ?"
+      },
+      "expected": 440.64,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Appliquer les taux l'un après l'autre : 480 × 0,85 = 408 € après réduction, puis 408 × 1,08 = 440,64 € après taxe."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "€",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.conversions.0001",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 1,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.conversions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Convertir 50 litres en gallons US, sachant que 1 gallon = 3,785 L (arrondi à 2 décimales)."
+      },
+      "expected": 13.21,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Diviser par la valeur d'un gallon en litres : 50 ÷ 3,785 ≈ 13,21 gallons US."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "gal",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.conversions.0002",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.conversions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion vole à une altitude de 3 000 pieds. Sachant que 1 pied = 0,3048 m, quelle est cette altitude en mètres (arrondie à l'entier) ?"
+      },
+      "expected": 914,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Multiplier par la valeur d'un pied en mètres : 3 000 × 0,3048 = 914,4 m, soit 914 m arrondi."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "m",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.conversions.0003",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.conversions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Convertir 120 kg en livres (lb), sachant que 1 kg = 2,2046 lb (arrondi à 1 décimale)."
+      },
+      "expected": 264.6,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Multiplier par le facteur donné : 120 × 2,2046 ≈ 264,6 lb."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "lb",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.conversions.0004",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.conversions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une distance de 250 NM (milles nautiques). Sachant que 1 NM = 1,852 km, quelle est cette distance en km (arrondie à l'entier) ?"
+      },
+      "expected": 463,
+      "inputFormat": "integer",
+      "explanation": {
+        "fr": "Multiplier par le facteur donné : 250 × 1,852 = 463 km."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "km",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.conversions.0005",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.conversions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un réservoir contient 80 gallons US de carburant, sachant que 1 gallon = 3,785 L. Le carburant coûte 1,90 €/L. Quel est le coût total (en €, arrondi à 2 décimales) ?"
+      },
+      "expected": 575.32,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Convertir d'abord en litres : 80 × 3,785 = 302,8 L. Puis appliquer le prix : 302,8 × 1,90 ≈ 575,32 €."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "€",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.conversions.0006",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.conversions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion doit perdre 2 286 m d'altitude. Sachant que 1 pied = 0,3048 m et qu'il descend à 1 800 pieds/minute, combien de minutes (arrondies à 1 décimale) lui faut-il ?"
+      },
+      "expected": 4.2,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Convertir la perte d'altitude en pieds : 2 286 ÷ 0,3048 = 7 500 ft. Temps = distance ÷ vitesse de descente = 7 500 ÷ 1 800 ≈ 4,2 min."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "min",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.conversions.0007",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.conversions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Le fret pèse 500 lb. Sachant que 1 kg = 2,2046 lb, quelle est sa masse en kg (arrondie à 1 décimale) ?"
+      },
+      "expected": 226.8,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Diviser par le facteur donné : 500 ÷ 2,2046 ≈ 226,8 kg."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "kg",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.conversions.0008",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.conversions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un plein coûte 340 dollars américains. Sachant que 1 USD = 0,92 EUR (taux donné), quel est le coût en euros (arrondi à 2 décimales) ?"
+      },
+      "expected": 312.8,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Multiplier par le taux donné : 340 × 0,92 = 312,80 €."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "€",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.conversions.0009",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.conversions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un réservoir de 60 gallons US est rempli, sachant que 1 gallon = 3,785 L, et que la densité du carburant est 0,80 kg/L. Quelle est la masse totale de carburant (en kg, arrondie à 1 décimale) ?"
+      },
+      "expected": 181.7,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Convertir d'abord en litres : 60 × 3,785 = 227,1 L. Puis en masse : 227,1 × 0,80 ≈ 181,7 kg."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "kg",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.conversions.0010",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.conversions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Une piste mesure 1 800 m de long, sachant que 1 NM = 1 852 m. Un avion la parcourt au roulage à 15 kt (nœuds = NM/h). Combien de minutes (arrondies à 1 décimale) faut-il pour la parcourir ?"
+      },
+      "expected": 3.9,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Convertir la longueur en NM : 1 800 ÷ 1 852 ≈ 0,972 NM. Temps = distance ÷ vitesse = 0,972 ÷ 15 h ≈ 0,0648 h, soit × 60 ≈ 3,9 min."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "min",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.conversions.0011",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.conversions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion consomme du carburant facturé 2,05 $/gallon US, sachant que 1 gallon = 3,785 L. Il a fait le plein de 450 L. Quel est le coût total (en dollars, arrondi à 2 décimales) ?"
+      },
+      "expected": 243.73,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Convertir d'abord le volume en gallons : 450 ÷ 3,785 ≈ 118,90 gallons. Puis appliquer le tarif : 118,90 × 2,05 ≈ 243,75 $."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "$",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.conversions.0012",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.conversions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un avion doit convertir son altitude de croisière de 35 000 pieds en mètres (1 pied = 0,3048 m), puis calculer le temps de descente nécessaire pour atteindre 1 500 m à une vitesse de descente de 12 m/s. Quel est ce temps de descente (en minutes, arrondi à 1 décimale) ?"
+      },
+      "expected": 12.7,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Convertir l'altitude en mètres : 35 000 × 0,3048 = 10 668 m. Distance à descendre = 10 668 − 1 500 = 9 168 m. Temps = 9 168 ÷ 12 = 764 s, soit 764 ÷ 60 ≈ 12,7 min."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "min",
+      "decimals": 1
+    },
+    {
+      "id": "p1_math_word_problems.conversions.0013",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 5,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.conversions"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un fret de 2 200 lb doit être facturé à 3,50 €/kg, sachant que 1 kg = 2,2046 lb. Quel est le coût total (en €, arrondi à 2 décimales) ?"
+      },
+      "expected": 3492.7,
+      "inputFormat": "decimal",
+      "explanation": {
+        "fr": "Convertir d'abord la masse en kg : 2 200 ÷ 2,2046 ≈ 997,91 kg. Puis appliquer le tarif : 997,91 × 3,50 ≈ 3 492,68 €."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      },
+      "unit": "€",
+      "decimals": 2
+    },
+    {
+      "id": "p1_math_word_problems.time_zones.0001",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 1,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.time_zones"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un vol décolle à 10 h 00 UTC et dure 2 h 30. Quelle est l'heure d'arrivée en UTC ?"
+      },
+      "expected": 750,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "Ajouter la durée de vol à l'heure de départ : 10 h 00 + 2 h 30 = 12 h 30 UTC."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "p1_math_word_problems.time_zones.0002",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.time_zones"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un vol décolle à 14 h 15 heure locale de Paris (UTC+1) et dure 3 h 45. Il atterrit à Londres (UTC+0). Quelle heure locale est-il à Londres à l'atterrissage ?"
+      },
+      "expected": 1020,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "Convertir l'heure de départ en UTC : 14 h 15 − 1 h = 13 h 15 UTC. Ajouter la durée : 13 h 15 + 3 h 45 = 17 h 00 UTC. Londres étant en UTC+0, il est 17 h 00 sur place."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "p1_math_word_problems.time_zones.0003",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.time_zones"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Quelle heure est-il à Los Angeles (UTC-8) quand il est 15 h 30 UTC ?"
+      },
+      "expected": 450,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "Appliquer le décalage horaire : 15 h 30 − 8 h = 7 h 30 à Los Angeles."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "p1_math_word_problems.time_zones.0004",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 2,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.time_zones"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un vol part de Tokyo (UTC+9) à 09 h 00 heure locale et dure 11 h 00. Il atterrit à Paris (UTC+1). Quelle heure locale est-il à l'arrivée ?"
+      },
+      "expected": 720,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "Convertir le départ en UTC : 09 h 00 − 9 h = 00 h 00 UTC. Ajouter la durée : 00 h 00 + 11 h 00 = 11 h 00 UTC. Paris étant en UTC+1, il est 12 h 00 sur place."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "p1_math_word_problems.time_zones.0005",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.time_zones"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un vol décolle de New York (UTC-5) à 22 h 30 heure locale et dure 7 h 00. Il atterrit à Londres (UTC+0). Quelle heure locale est-il à Londres à l'atterrissage (le jour suivant) ?"
+      },
+      "expected": 630,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "Convertir le départ en UTC : 22 h 30 + 5 h = 03 h 30 UTC (jour suivant). Ajouter la durée : 03 h 30 + 7 h 00 = 10 h 30 UTC. Londres étant en UTC+0, il est 10 h 30 le lendemain."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "p1_math_word_problems.time_zones.0006",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.time_zones"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un pilote commence son service à 06 h 00 UTC. La réglementation autorise un temps de service maximal de 13 h 00. À quelle heure UTC doit-il au plus tard terminer son service ?"
+      },
+      "expected": 1140,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "Ajouter la durée maximale de service à l'heure de début : 06 h 00 + 13 h 00 = 19 h 00 UTC."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "p1_math_word_problems.time_zones.0007",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.time_zones"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un vol Paris (UTC+1) → New York (UTC-5) décolle à 11 h 20 heure locale de Paris et dure 8 h 30. Quelle heure locale est-il à New York à l'atterrissage ?"
+      },
+      "expected": 830,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "Convertir le départ en UTC : 11 h 20 − 1 h = 10 h 20 UTC. Ajouter la durée : 10 h 20 + 8 h 30 = 18 h 50 UTC. New York étant en UTC-5, il est 18 h 50 − 5 h = 13 h 50 sur place."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "p1_math_word_problems.time_zones.0008",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.time_zones"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un équipage termine son service à 23 h 00 UTC. Le repos réglementaire minimal est de 10 h 30. À quelle heure UTC le repos se termine-t-il, sachant qu'il commence immédiatement ?"
+      },
+      "expected": 570,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "Ajouter la durée de repos à l'heure de fin de service : 23 h 00 + 10 h 30 = 33 h 30, soit 33 h 30 − 24 h = 9 h 30 le lendemain."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "p1_math_word_problems.time_zones.0009",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 3,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.time_zones"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un vol décolle d'Auckland (UTC+13) à 20 h 00 heure locale et dure 12 h 00, atterrissant à Los Angeles (UTC-8). Quelle heure locale est-il à Los Angeles à l'atterrissage ?"
+      },
+      "expected": 660,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "Convertir le départ en UTC : 20 h 00 − 13 h = 07 h 00 UTC. Ajouter la durée : 07 h 00 + 12 h 00 = 19 h 00 UTC. Los Angeles étant en UTC-8, il est 19 h 00 − 8 h = 11 h 00 sur place."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "p1_math_word_problems.time_zones.0010",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.time_zones"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un vol décolle de Sydney (UTC+11) à 23 h 30 heure locale et dure 14 h 20, atterrissant à Dubaï (UTC+4). Quelle heure locale est-il à Dubaï à l'arrivée ?"
+      },
+      "expected": 410,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "Convertir le départ en UTC : 23 h 30 − 11 h = 12 h 30 UTC. Ajouter la durée : 12 h 30 + 14 h 20 = 26 h 50, soit 02 h 50 UTC le lendemain. Dubaï étant en UTC+4, il est 02 h 50 + 4 h = 6 h 50 sur place."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "p1_math_word_problems.time_zones.0011",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.time_zones"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un vol décolle de Los Angeles (UTC-8) à 22 h 00 heure locale et dure 15 h 30, en direction de Singapour (UTC+8), en traversant la ligne de changement de date. Quelle heure locale est-il à Singapour à l'atterrissage ?"
+      },
+      "expected": 330,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "Convertir le départ en UTC : 22 h 00 + 8 h = 06 h 00 UTC le lendemain. Ajouter la durée : 06 h 00 + 15 h 30 = 21 h 30 UTC. Singapour étant en UTC+8, il est 21 h 30 + 8 h = 29 h 30, soit 5 h 30 le jour suivant sur place."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "p1_math_word_problems.time_zones.0012",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 4,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.time_zones"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un pilote débute son service à 07 h 15 heure locale à Paris (UTC+1). Il vole vers Tokyo (UTC+9), trajet de 12 h 45, puis doit respecter un repos minimal de 12 h 00 avant de reprendre le service. À quelle heure locale à Tokyo le repos réglementaire se termine-t-il au plus tôt ?"
+      },
+      "expected": 960,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "Convertir le départ en UTC : 07 h 15 − 1 h = 06 h 15 UTC. Ajouter la durée de vol : 06 h 15 + 12 h 45 = 19 h 00 UTC. Heure locale à Tokyo (UTC+9) à l'arrivée : 19 h 00 + 9 h = 28 h 00, soit 4 h 00 le lendemain. Ajouter le repos : 4 h 00 + 12 h 00 = 16 h 00."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    },
+    {
+      "id": "p1_math_word_problems.time_zones.0013",
+      "type": "numeric",
+      "version": 1,
+      "familyId": "p1_math_word_problems",
+      "difficulty": 5,
+      "tags": [
+        "p1_math_word_problems",
+        "p1_math_word_problems.time_zones"
+      ],
+      "lang": "fr",
+      "stem": {
+        "fr": "Un vol décolle de Londres (UTC+0) à 23 h 40 et dure 9 h 50, atterrissant à Dubaï (UTC+4). L'équipage doit ensuite observer un repos de 11 h 20 avant de reprendre le service. À quelle heure locale à Dubaï le service suivant peut-il au plus tôt commencer ?"
+      },
+      "expected": 50,
+      "inputFormat": "time",
+      "explanation": {
+        "fr": "Heure d'arrivée en UTC : 23 h 40 + 9 h 50 = 33 h 30, soit 9 h 30 UTC le lendemain. Heure locale à Dubaï (UTC+4) : 9 h 30 + 4 h = 13 h 30. Fin du repos : 13 h 30 + 11 h 20 = 24 h 50, soit 0 h 50 le jour suivant."
+      },
+      "meta": {
+        "author": "hbock",
+        "source": "own"
+      }
+    }
+  ]
+}

@@ -2,13 +2,18 @@
   "$schema": "../../../../packages/psy_content/schema/manifest.schema.json",
   "kind": "manifest",
   "schemaVersion": 2,
-  "contentVersion": 6,
+  "contentVersion": 7,
   "updatedAt": "2026-09-13",
   "modules": [
     "psy0",
     "psy1"
   ],
   "changelog": [
+    {
+      "contentVersion": 7,
+      "date": "2026-09-13",
+      "summary": "PSY1 content (US-103): lessons for all 13 p1_* families plus a module-level \"comment se déroule la journée PSY1\" lesson (schedule, hardware, scoring, red-zone rule); banks for p1_reading_fr (16 passages, 64 MCQ), p1_general_efficiency (160 MCQ tagged efg.numeric|verbal|spatial|logic) and p1_math_word_problems (65 numeric items); decks for p1_math_word_problems (mental-math shortcuts), p1_counters (gauge-reading) and p1_psychomotor (red-zone rule, key layout). Also: psy1_full.json gains a cube rotation-matching section (p1_cube_nets, includeRotationMatching, -0.25/wrong per spec §2.2), and P1RavenMatricesParams.optionCount default corrected 6 -> 8 to match the engine."
+    },
     {
       "contentVersion": 6,
       "date": "2026-09-13",

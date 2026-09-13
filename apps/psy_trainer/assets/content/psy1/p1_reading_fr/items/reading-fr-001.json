@@ -1,0 +1,1545 @@
+{
+  "$schema": "../../../../../../../packages/psy_content/schema/bank.schema.json",
+  "kind": "bank",
+  "familyId": "p1_reading_fr",
+  "passages": [
+    {
+      "id": "p1_reading_fr.reading.p001",
+      "title": { "fr": "Changement de porte d'embarquement — vol AS 442" },
+      "lang": "fr",
+      "body": {
+        "fr": "**De :** Exploitation au sol, aéroport de Vallonne\n**À :** Personnel d'escale Air Sud\n**Objet :** Changement de porte — vol AS 442 vers Lisbonne, ce soir\n\nLe vol AS 442, prévu au départ à 19h40, est déplacé de la porte B12 à la porte C4 en raison d'une panne de passerelle que la maintenance ne pourra pas réparer avant ce soir. Les passagers déjà enregistrés recevront un SMS, mais beaucoup ont imprimé leur carte d'embarquement chez eux, où figure encore l'ancienne porte.\n\nNous avons donc besoin de deux agents à la porte B12 dès 18h30 pour réorienter les personnes qui s'y présenteraient. La marche entre les deux jetées prenant environ douze minutes, l'embarquement débutera dix minutes plus tard que d'habitude. Le commandant de bord en a été informé et a accepté une escale légèrement raccourcie à l'arrivée pour rattraper le retard.\n\nLes passagers en fauteuil roulant doivent être conduits directement en C4 par l'équipe d'assistance dès leur passage en sûreté ; ne pas attendre l'appel d'embarquement. Pour toute question, contactez le chef d'escale au poste 2210 plutôt que de répondre à ce message.\n\nMerci de votre coopération.\n\nElise Vasseur, Chef d'escale"
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p002",
+      "title": { "fr": "Bulletin d'exploitation — Aéroport de Riel, semaine 37" },
+      "lang": "fr",
+      "body": {
+        "fr": "**Aéroport de Riel (RIE) — Bulletin d'exploitation, valable du 8 au 14 septembre**\n\n1. La piste 09/27 sera fermée chaque nuit de 23h00 à 5h30, heure locale, pour des travaux de resurfaçage. Pendant ces horaires, tout le trafic utilisera la piste 15/33, plus courte de 600 mètres ; les exploitants d'appareils lourds doivent vérifier leurs performances avant de programmer un départ de nuit.\n\n2. Le taxiway D est fermé entre les taxiways B et C jusqu'à nouvel ordre. Les appareils quittant la piste 27 seront déroutés par le taxiway E, ce qui ajoute environ quatre minutes de roulage.\n\n3. Le système d'atterrissage aux instruments de la piste 27 est en cours d'étalonnage. Un signal de plan de descente intermittent est possible entre 10h00 et 12h00 les 10 et 11 septembre ; les approches durant ces créneaux doivent être effectuées au localizer seul, avec les minimas relevés.\n\n4. Une grue de 42 mètres a été installée à 1,2 km au sud-est du seuil de piste 33. Elle est éclairée de nuit et balisée de jour.\n\n5. Le fournisseur Riel Carburants signale une limite de 8000 litres de Jet A-1 par appareil le 9 septembre en raison d'une grève des camions-citernes. Les exploitants ayant besoin de davantage doivent prévenir l'assistant en escale 24 heures à l'avance."
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p003",
+      "title": { "fr": "Consignes de sécurité passager — ARJ-90" },
+      "lang": "fr",
+      "body": {
+        "fr": "**Bienvenue à bord de l'ARJ-90. Merci de lire cette fiche avant le décollage.**\n\n**Ceintures.** Attachez votre ceinture dès que le signal est allumé et gardez-la attachée même lorsqu'il est éteint : une turbulence imprévue peut survenir à tout moment.\n\n**Issues.** Cet appareil compte quatre issues : deux portes à l'avant, une porte à l'arrière à gauche et une issue de secours sur chaque aile. Comptez les rangées entre votre siège et l'issue la plus proche — en cas de fumée, vous devrez peut-être la trouver au toucher. Les passagers assis près d'une issue de secours sur aile doivent être capables de l'ouvrir et disposés à le faire ; si ce n'est pas le cas, prévenez un membre d'équipage avant le décollage.\n\n**Oxygène.** En cas de dépressurisation, des masques tomberont au-dessus de votre siège. Tirez le masque vers vous, placez-le sur votre nez et votre bouche et respirez normalement. Mettez d'abord votre propre masque avant d'aider les autres, y compris les enfants.\n\n**Gilets de sauvetage.** Votre gilet est sous votre siège. Enfilez-le par la tête et serrez les sangles. Ne le gonflez qu'une fois sorti de l'appareil.\n\n**Appareils électroniques.** Les appareils volumineux doivent être rangés au décollage et à l'atterrissage. Fumer, y compris les cigarettes électroniques, est interdit durant tout le vol."
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p004",
+      "title": { "fr": "Horaire navette équipage — Aéroport de Vallonne / Hôtel Méridien" },
+      "lang": "fr",
+      "body": {
+        "fr": "**Navette équipage — Aéroport international de Vallonne (Terminal 2, porte 14) vers l'Hôtel Méridien**\n\n| Départ T2 | Arrivée hôtel | Jours | Remarques |\n|---|---|---|---|\n| 05h15 | 05h35 | Lun–Sam | Pas les jours fériés |\n| 07h30 | 07h50 | Tous les jours | |\n| 12h00 | 12h20 | Tous les jours | Arrêt au village cargo |\n| 16h45 | 17h10 | Tous les jours | Arrêt au village cargo et au centre de formation |\n| 21h30 | 21h50 | Tous les jours | |\n| 23h55 | 00h15 | Ven–Dim | Dernier service ; prévenir la réception de nuit en cas de retard |\n\nLa navette est gratuite pour les équipages d'Air Sud et de Riel Régional sur présentation d'une carte d'identité d'équipage valide. Les équipages des autres compagnies paient 6 euros par trajet, en espèces, au conducteur. Les places ne sont pas réservables ; quand la navette est pleine, le conducteur appelle un second véhicule, qui arrive en général sous quinze minutes. Les trajets retour depuis l'hôtel partent vingt minutes après chaque arrivée indiquée ci-dessus. Entre 00h15 et 05h15, les équipages doivent utiliser le système de bons de taxi de l'hôtel."
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p005",
+      "title": { "fr": "Ponctualité d'Air Sud, premier semestre" },
+      "lang": "fr",
+      "body": {
+        "fr": "Le tableau ci-dessous résume la ponctualité des départs d'Air Sud sur les six premiers mois de l'année. Un vol est considéré à l'heure s'il quitte la porte dans les quinze minutes suivant l'horaire prévu.\n\n| Mois | Départs à l'heure | Cause principale de retard |\n|---|---|---|\n| Janvier | 71 % | Météo hivernale |\n| Février | 78 % | Météo hivernale |\n| Mars | 84 % | Appareil entrant en retard |\n| Avril | 88 % | Appareil entrant en retard |\n| Mai | 81 % | Restrictions du contrôle aérien |\n| Juin | 74 % | Restrictions du contrôle aérien |\n\nLa ponctualité s'est améliorée régulièrement de janvier à avril, mois où elle a atteint son meilleur niveau de la période. La tendance s'est ensuite inversée : mai et juin ont été affectés par un manque de personnel dans deux grands centres de contrôle d'Europe centrale, ce qui a contraint la compagnie à retenir des appareils au sol avant leur départ. La météo, facteur dominant en hiver, n'a plus joué aucun rôle après mars. La direction souligne que le chiffre de juin, bien que décevant, reste supérieur de quatre points à celui du même mois l'an dernier, et elle attend des changements d'horaires d'été introduits en juillet qu'ils ramènent la performance au-dessus de 80 %."
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p006",
+      "title": { "fr": "Note de service — nouvelle procédure de signalement de fatigue" },
+      "lang": "fr",
+      "body": {
+        "fr": "**NOTE DE SERVICE — Direction des opérations aériennes, Air Sud**\n\n**À compter du 1er octobre : les signalements de fatigue passent par l'application CrewPortal**\n\nÀ partir du 1er octobre, les formulaires papier de signalement de fatigue ne seront plus acceptés. Les membres d'équipage qui s'estiment inaptes à opérer en raison d'une fatigue, ou qui souhaitent signaler un enchaînement de vacations qu'ils jugent dangereux, doivent soumettre un signalement via l'onglet *Sécurité* de l'application CrewPortal dans les 72 heures suivant l'événement.\n\nLes signalements sont confidentiels. Ils sont lus par le groupe de gestion des risques de fatigue, qui comprend deux représentants du personnel navigant élus, et ne sont jamais transmis aux responsables hiérarchiques avec le nom du déclarant. Des statistiques issues des signalements sont publiées chaque trimestre sur l'intranet.\n\nUn signalement de fatigue ne dispense pas, à lui seul, d'une vacation. Si vous vous estimez inapte à voler, vous devez tout de même appeler le service planning avant votre heure de prise de service afin qu'un remplaçant puisse être trouvé. Appeler après l'heure de prise de service sera traité comme un arrêt maladie tardif.\n\nLes navigants sans accès à l'application, par exemple lors d'une escale sans internet, peuvent téléphoner au service sécurité au numéro imprimé au dos de leur carte d'équipage ; le signalement sera saisi en leur nom."
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p007",
+      "title": { "fr": "Le tri des emballages repensé dans trois quartiers" },
+      "lang": "fr",
+      "body": {
+        "fr": "Depuis le mois de mars, trois quartiers de la ville testent un nouveau mode de collecte des emballages : au lieu d'un bac unique pour tous les recyclables, les habitants disposent désormais de deux bacs distincts, l'un pour le papier et le carton, l'autre pour le plastique et le métal. La municipalité explique que le tri en amont, effectué par les habitants eux-mêmes, réduit la quantité de matières mal orientées qui finissent incinérées faute d'avoir pu être séparées à l'usine de tri.\n\nLes premiers résultats, publiés après quatre mois d'expérimentation, montrent une baisse de 18 % du taux de refus à l'usine de tri dans les quartiers concernés, contre une hausse de 2 % dans le reste de la ville sur la même période. La collecte, en revanche, coûte plus cher : deux passages de camions au lieu d'un, ce qui a doublé le coût de collecte dans les zones test.\n\nLa municipalité doit décider en fin d'année si le dispositif est étendu à toute la ville ou abandonné. Les associations de quartier se disent globalement favorables, à condition que la fréquence de collecte du bac papier-carton, actuellement toutes les deux semaines, soit resserrée à une semaine en période de fêtes, quand les cartons d'emballage s'accumulent plus vite."
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p008",
+      "title": { "fr": "FAQ — programme cadet pilote, Air Sud" },
+      "lang": "fr",
+      "body": {
+        "fr": "**Foire aux questions — programme cadet pilote Air Sud**\n\n**Faut-il une expérience de vol pour candidater ?** Non. Le programme s'adresse à des personnes sans formation aéronautique préalable. Les candidats déjà titulaires d'une licence peuvent postuler, mais ne bénéficient d'aucune équivalence d'heures.\n\n**Que se passe-t-il en cas d'échec à une étape de la sélection ?** Les candidats ajournés à la première étape peuvent se représenter après douze mois. Ceux ajournés à une étape ultérieure peuvent se représenter après vingt-quatre mois, et une seule fois.\n\n**Qui finance la formation ?** Air Sud finance l'intégralité du parcours. En contrepartie, les cadets signent un engagement à rester dans la compagnie pendant six ans après leur qualification ; un départ anticipé implique de rembourser une partie du coût de formation selon un barème dégressif.\n\n**Où la formation se déroule-t-elle ?** L'école au sol se tient près de la base principale de la compagnie. La formation en vol a lieu chez un partenaire à l'étranger, où la météo permet un entraînement plus régulier. Les cadets doivent s'attendre à s'installer sur place environ quatorze mois.\n\n**Y a-t-il une exigence médicale ?** Oui. Un certificat médical de classe 1 doit être obtenu avant l'étape finale de sélection, aux frais du candidat. Nous recommandons vivement de l'obtenir tôt : chaque année, un petit nombre de candidats découvrent à ce stade une condition disqualifiante."
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p009",
+      "title": { "fr": "Formulaire de déclaration d'incident au sol — instructions" },
+      "lang": "fr",
+      "body": {
+        "fr": "**Aéroport de Vallonne — Déclaration d'incident au sol (formulaire GH-7) — comment le remplir**\n\n**Section A — Qui.** Indiquez votre nom, votre employeur et l'indicatif radio du véhicule ou de l'équipement impliqué. Si plusieurs personnes ont été témoins de l'événement, chacune doit remplir un formulaire séparé.\n\n**Section B — Quand et où.** Donnez l'heure locale à la minute près et le poste, taxiway ou route où l'événement s'est produit. Utilisez les codes de localisation imprimés sur le plan côté piste, jamais les noms informels.\n\n**Section C — Quoi.** Décrivez les faits dans l'ordre où ils se sont produits. Ne spéculez pas sur les causes et ne nommez personne ; désignez les personnes par leur fonction (« l'agent de piste », « le marshaller »).\n\n**Section D — Dommages.** Cochez *appareil*, *véhicule*, *équipement* ou *aucun*. Même un contact mineur avec un appareil doit être coché et le numéro de vol renseigné, car l'appareil ne peut pas repartir avant l'inspection d'un mécanicien.\n\n**Section E — Actions entreprises.** Indiquez qui a été informé et quand.\n\nRemettez le formulaire complété au service sécurité côté piste dans les deux heures, ou avant la fin de votre vacation si celle-ci se termine plus tôt. Les formulaires remis en retard restent acceptés mais sont signalés lors de la revue de sécurité mensuelle."
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p010",
+      "title": { "fr": "Offre d'emploi — technicien de maintenance en ligne" },
+      "lang": "fr",
+      "body": {
+        "fr": "**Riel Régional recrute : techniciens de maintenance en ligne, base de Vallonne**\n\nRiel Régional exploite une flotte de dix-huit appareils régionaux ARJ-90 depuis trois bases du nord du pays. À la suite de la livraison de quatre appareils supplémentaires au printemps prochain, nous renforçons notre équipe de maintenance en ligne à Vallonne.\n\n**Le poste.** Vous effectuerez les contrôles quotidiens et avant vol, diagnostiquerez les pannes signalées par les équipages et remettrez les appareils en service. Les vacations suivent un rythme de quatre jours travaillés, quatre jours de repos, y compris les nuits et les week-ends.\n\n**Profil recherché :** une licence de maintenance valide avec qualification ARJ-90 ou un appareil régional comparable ; au moins trois ans d'expérience en maintenance de ligne ; un anglais courant, la documentation technique étant intégralement rédigée dans cette langue ; et un permis de conduire, la base n'étant pas desservie par les transports en commun la nuit.\n\n**Nous offrons :** un salaire compétitif, une prime de mobilité pour les candidats venant de l'extérieur de la région, et une formation complète de qualification pour les techniciens licenciés sans qualification ARJ-90.\n\nLes candidatures se clôturent le 30 novembre. Les entretiens auront lieu dans les deux premières semaines de décembre et les candidats retenus devront prendre leur poste en février, afin d'être pleinement formés avant l'arrivée des nouveaux appareils."
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p011",
+      "title": { "fr": "Réponse à une réclamation passager concernant une correspondance manquée" },
+      "lang": "fr",
+      "body": {
+        "fr": "**De :** Relations clientèle, Air Sud\n**À :** M. D. Okafor\n**Objet :** Votre voyage du 3 août — référence AS/RC/88213\n\nMonsieur,\n\nJe vous remercie pour votre message concernant votre voyage de Vallonne à Montréal via Riel le 3 août. Je suis désolée que vous ayez manqué votre correspondance et que la réorganisation de votre voyage ait pris plus de temps qu'elle n'aurait dû.\n\nJe me suis penchée sur ce qui s'est passé. Votre premier vol a quitté Vallonne avec 52 minutes de retard car un changement de roue a été nécessaire après une inspection de pneu pendant l'escale technique. La correspondance à Riel n'étant que de 65 minutes, il ne restait pas assez de temps pour rejoindre la porte de départ, située dans un autre terminal.\n\nSelon la réglementation applicable, un retard causé par un problème technique découvert lors d'une inspection de routine n'est pas considéré comme une circonstance extraordinaire. Vous avez donc droit à une indemnisation forfaitaire de 600 euros, en plus des frais de repas et d'hôtel déjà remboursés. Merci de nous transmettre vos coordonnées bancaires via le lien sécurisé ci-dessous ; le paiement sera effectué sous dix jours ouvrés.\n\nEn geste commercial, j'ai également ajouté 5000 miles à votre compte fidélité.\n\nCordialement,\n\nIngrid Sorel, Relations clientèle"
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p012",
+      "title": { "fr": "Sommeil des adolescents : ce que montre une étude sur trois ans" },
+      "lang": "fr",
+      "body": {
+        "fr": "Une étude menée auprès de 1200 lycéens sur trois années scolaires consécutives a mesuré la durée de sommeil et l'usage du téléphone en soirée à l'aide d'applications de suivi installées volontairement sur les appareils des participants. Les chercheurs ont observé que les élèves qui gardaient leur téléphone allumé après 22h30 dormaient en moyenne 47 minutes de moins par nuit que ceux qui l'éteignaient, indépendamment de l'heure de coucher déclarée.\n\nUn résultat a surpris l'équipe : la simple présence du téléphone dans la chambre, même éteint, était associée à un endormissement retardé de douze minutes en moyenne, un effet que les auteurs attribuent en partie à l'anticipation d'une notification plutôt qu'à la lumière de l'écran elle-même. Les élèves ayant pris l'habitude de charger leur téléphone dans une autre pièce ne présentaient pas ce décalage.\n\nLes auteurs précisent que l'étude ne peut pas établir de lien de cause à effet strict : les adolescents qui dorment déjà mal pourraient aussi être ceux qui utilisent davantage leur téléphone pour s'occuper pendant l'insomnie. Ils recommandent malgré tout, à titre de précaution, de sortir les téléphones des chambres au moins trente minutes avant le coucher plutôt que de compter uniquement sur la volonté de ne pas les consulter."
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p013",
+      "title": { "fr": "FAQ — nouveaux horaires de la médiathèque municipale" },
+      "lang": "fr",
+      "body": {
+        "fr": "**Foire aux questions — nouveaux horaires, médiathèque municipale**\n\n**Pourquoi les horaires changent-ils ?** La médiathèque ouvrira désormais le lundi matin, jour auparavant fermé, en échange d'une fermeture le mercredi après-midi, créneau le moins fréquenté selon les statistiques de fréquentation des deux dernières années.\n\n**Les horaires du samedi changent-ils ?** Non, la médiathèque reste ouverte de 10h à 18h le samedi, sans interruption à midi contrairement aux autres jours de la semaine.\n\n**Puis-je encore rendre mes documents pendant la fermeture du mercredi après-midi ?** Oui, la boîte de retour extérieure reste accessible en permanence, y compris les jours de fermeture.\n\n**Les ateliers du mercredi après-midi pour enfants sont-ils supprimés ?** Non, ils sont déplacés au mardi après-midi, à la même heure qu'auparavant.\n\n**À partir de quand ces horaires s'appliquent-ils ?** À partir du premier lundi de septembre. Un affichage à l'entrée rappellera les nouveaux horaires pendant tout le mois suivant le changement."
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p014",
+      "title": { "fr": "La place du village retrouve son marché après deux ans de travaux" },
+      "lang": "fr",
+      "body": {
+        "fr": "Après deux ans de travaux de réfection, la place centrale du village a rouvert le mois dernier, et le marché du samedi matin, provisoirement installé sur le parking de la salle des fêtes pendant les travaux, y est revenu. Les commerçants interrogés se disent globalement satisfaits du nouvel aménagement, en particulier de l'élargissement des allées entre les étals, mais plusieurs regrettent la disparition des trois grands platanes qui offraient de l'ombre, abattus car leurs racines endommageaient les canalisations sous la place.\n\nLa mairie a remplacé les platanes par onze arbres plus jeunes d'une essence à racines moins invasives, qui ne fourniront une ombre comparable que dans une dizaine d'années. En attendant, des voiles d'ombrage amovibles ont été installées au-dessus des étals les plus exposés au soleil de midi.\n\nLa fréquentation du marché, mesurée par le nombre de tickets de stationnement délivrés à proximité, a retrouvé en un mois son niveau d'avant travaux, ce que la mairie attribue à la fidélité des habitants plutôt qu'à l'attrait du nouvel aménagement, encore jugé prématuré pour en tirer une conclusion définitive."
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p015",
+      "title": { "fr": "Bulletin météorologique aéroportuaire — Aéroport de Vallonne" },
+      "lang": "fr",
+      "body": {
+        "fr": "**Aéroport de Vallonne — bulletin météorologique, validité 06h00–18h00 locale**\n\n| Créneau | Vent | Visibilité | Plafond nuageux | Phénomène notable |\n|---|---|---|---|---|\n| 06h–09h | 240°/12 kt | > 10 km | 2500 ft, épars | Brume matinale possible avant 07h |\n| 09h–12h | 260°/15 kt, rafales 22 kt | > 10 km | 4000 ft, épars | — |\n| 12h–15h | 280°/18 kt, rafales 28 kt | 8 km | 3000 ft, fragmenté | Averses isolées probables après 13h |\n| 15h–18h | 250°/10 kt | > 10 km | 5000 ft, épars | Amélioration progressive |\n\nLe vent traversier maximal sur la piste 09/27 est attendu entre 12h et 15h, avec des rafales pouvant approcher la limite d'exploitation de certains types d'appareils légers ; les compagnies concernées sont invitées à consulter leurs propres tableaux de performance avant cette plage horaire. Les averses isolées de l'après-midi ne devraient pas réduire durablement la visibilité en dessous des minimas, mais pourraient entraîner des vents de rafale localisés autour des cellules orageuses. Une amélioration nette est attendue à partir de 15h, avec un retour à des conditions de vent plus favorables pour le reste de la journée. Ce bulletin sera révisé si les averses de l'après-midi se révèlent plus actives que prévu."
+      }
+    },
+    {
+      "id": "p1_reading_fr.reading.p016",
+      "title": { "fr": "Note de service — nouveau règlement du télétravail" },
+      "lang": "fr",
+      "body": {
+        "fr": "**NOTE DE SERVICE — Direction des ressources humaines**\n\n**Objet : révision de l'accord de télétravail, application au 1er janvier**\n\nÀ compter du 1er janvier, le nombre maximal de jours de télétravail hebdomadaire passe de trois à deux jours pour l'ensemble des services, à l'exception du service comptabilité qui conserve trois jours en raison de la nature de ses missions, validée par un accord spécifique signé l'an dernier.\n\nLes jours de télétravail doivent être posés au moins 48 heures à l'avance dans l'outil de planning, sauf circonstance exceptionnelle validée par le responsable direct. Le mercredi devient un jour de présence obligatoire pour tous les services, afin de faciliter la tenue des réunions transverses qui, jusqu'ici, souffraient d'une participation inégale selon les équipes présentes ce jour-là.\n\nLes salariés en télétravail restent tenus aux mêmes horaires de disponibilité que sur site, et doivent signaler toute indisponibilité de plus de trente minutes durant les heures de bureau. Le matériel fourni (ordinateur portable, écran additionnel) reste la propriété de l'entreprise et doit être restitué en cas de départ, y compris pendant un préavis effectué en télétravail.\n\nCette révision fait suite à l'enquête interne de satisfaction menée en juin, qui pointait une baisse de la cohésion d'équipe perçue par 61 % des répondants comme liée à l'absence de journées communes fixes."
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "p1_reading_fr.reading.0001",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p001",
+      "stem": { "fr": "Pourquoi le vol AS 442 change-t-il de porte d'embarquement ?" },
+      "options": [
+        { "text": { "fr": "Une passerelle télescopique est en panne à la porte initiale." } },
+        { "text": { "fr": "Trop de passagers se sont présentés à l'enregistrement." } },
+        { "text": { "fr": "L'appareil est arrivé en retard de Lisbonne." } },
+        { "text": { "fr": "La porte C4 est plus proche du contrôle de sûreté." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **détail** : dès la première phrase, le vol est déplacé « en raison d'une panne de passerelle que la maintenance ne pourra pas réparer avant ce soir ». Le retard de l'appareil et la proximité de la sûreté ne sont jamais évoqués dans le texte."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0002",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p001",
+      "stem": { "fr": "Que doivent faire les agents affectés à la porte B12 ?" },
+      "options": [
+        { "text": { "fr": "Envoyer un SMS avec la nouvelle porte." } },
+        { "text": { "fr": "Réimprimer les cartes d'embarquement sur place." } },
+        { "text": { "fr": "Réorienter les passagers qui s'y présentent vers la porte C4." } },
+        { "text": { "fr": "Appeler les passagers au poste 2210." } }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Question de **détail** : le texte demande « deux agents à la porte B12 dès 18h30 pour réorienter les personnes qui s'y présenteraient ». Le SMS est envoyé automatiquement par la compagnie, pas par les agents ; le poste 2210 sert aux questions internes, pas aux passagers."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0003",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p001",
+      "stem": { "fr": "Que peut-on déduire du départ du vol AS 442 ?" },
+      "options": [
+        { "text": { "fr": "Il partira avec un appareil plus petit que prévu." } },
+        { "text": { "fr": "Il sera annulé si le retard s'accroît." } },
+        { "text": { "fr": "Il partira sans doute un peu plus tard que prévu." } },
+        { "text": { "fr": "Il partira plus tôt pour compenser le changement de porte." } }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Question d'**inférence** : l'embarquement débute « dix minutes plus tard que d'habitude » et le commandant accepte une escale plus courte à l'arrivée « pour rattraper le retard » — un léger retard au départ est donc à prévoir. Rien n'évoque une annulation ni un changement d'appareil."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0004",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 4,
+      "tags": ["p1_reading_fr", "p1_reading_fr.vocab_in_context"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p001",
+      "stem": { "fr": "Dans le texte, l'expression « rattraper le retard » signifie que le commandant a accepté de :" },
+      "options": [
+        { "text": { "fr": "Voler plus vite que d'habitude pour arriver à l'heure." } },
+        { "text": { "fr": "Réduire le temps d'escale à l'arrivée pour limiter l'impact du retard." } },
+        { "text": { "fr": "Annuler l'escale prévue à l'arrivée." } },
+        { "text": { "fr": "Décoller avant l'heure prévue." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **vocabulaire en contexte** : « a accepté une escale légèrement raccourcie à l'arrivée pour rattraper le retard » — l'expression désigne le raccourcissement du temps d'escale, pas une accélération du vol lui-même ni son annulation."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0005",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 1,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p002",
+      "stem": { "fr": "Entre quelles heures la piste 09/27 est-elle fermée chaque nuit ?" },
+      "options": [
+        { "text": { "fr": "23h00 à 5h30" } },
+        { "text": { "fr": "22h00 à 6h00" } },
+        { "text": { "fr": "Toute la nuit, sans horaire précis" } },
+        { "text": { "fr": "05h30 à 23h00" } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **détail** simple : le bulletin donne « fermée chaque nuit de 23h00 à 5h30, heure locale »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0006",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p002",
+      "stem": { "fr": "Pourquoi les exploitants d'appareils lourds doivent-ils vérifier leurs performances avant un départ de nuit ?" },
+      "options": [
+        { "text": { "fr": "Parce que la piste de remplacement 15/33 est plus courte de 600 mètres." } },
+        { "text": { "fr": "Parce que le carburant est rationné la nuit." } },
+        { "text": { "fr": "Parce que la tour de contrôle est fermée la nuit." } },
+        { "text": { "fr": "Parce que le taxiway D est fermé la nuit." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **détail** : le point 1 précise que la piste 15/33 utilisée la nuit est « plus courte de 600 mètres », ce qui justifie la vérification des performances pour les appareils lourds."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0007",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p002",
+      "stem": { "fr": "Que peut-on déduire des vols utilisant l'ILS de la piste 27 entre 10h et 12h les 10 et 11 septembre ?" },
+      "options": [
+        { "text": { "fr": "Ils devront utiliser des minimas d'approche plus élevés." } },
+        { "text": { "fr": "Ils seront systématiquement déroutés vers un autre aéroport." } },
+        { "text": { "fr": "Ils devront décoller avec moins de carburant." } },
+        { "text": { "fr": "Ils seront prioritaires sur les autres vols." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question d'**inférence** : le point 3 indique que les approches devront être faites « au localizer seul, avec les minimas relevés » à cause du signal de plan de descente intermittent — ce qui implique des minimas d'approche plus exigeants, pas un déroutement."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0008",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 4,
+      "tags": ["p1_reading_fr", "p1_reading_fr.vocab_in_context"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p002",
+      "stem": { "fr": "Dans le bulletin, l'expression « minimas relevés » désigne :" },
+      "options": [
+        { "text": { "fr": "Des hauteurs de décision et visibilités d'approche plus exigeantes que la normale." } },
+        { "text": { "fr": "Le nombre minimal de vols autorisés ce jour-là." } },
+        { "text": { "fr": "La quantité minimale de carburant à embarquer." } },
+        { "text": { "fr": "Le nombre minimal d'agents requis en piste." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **vocabulaire en contexte** : associée à une approche au localizer seul, l'expression « minimas relevés » désigne des critères de hauteur/visibilité plus stricts que ceux d'une approche ILS complète."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0009",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p003",
+      "stem": { "fr": "Combien d'issues compte l'appareil ARJ-90 selon la fiche ?" },
+      "options": [
+        { "text": { "fr": "Trois" } },
+        { "text": { "fr": "Quatre" } },
+        { "text": { "fr": "Cinq" } },
+        { "text": { "fr": "Deux" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « quatre issues : deux portes à l'avant, une porte à l'arrière à gauche et une issue de secours sur chaque aile »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0010",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p003",
+      "stem": { "fr": "Que doit faire un passager assis près d'une issue sur aile s'il ne souhaite pas l'ouvrir en cas d'urgence ?" },
+      "options": [
+        { "text": { "fr": "Rien, ce n'est jamais demandé aux passagers." } },
+        { "text": { "fr": "Échanger discrètement de place sans en parler." } },
+        { "text": { "fr": "Prévenir un membre d'équipage avant le décollage." } },
+        { "text": { "fr": "Attendre l'atterrissage pour le signaler." } }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Question de **détail** : « si ce n'est pas le cas, prévenez un membre d'équipage avant le décollage »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0011",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p003",
+      "stem": { "fr": "Pourquoi la consigne demande-t-elle de compter les rangées jusqu'à l'issue la plus proche ?" },
+      "options": [
+        { "text": { "fr": "Parce qu'en cas de fumée, il faudra peut-être trouver l'issue sans y voir clairement." } },
+        { "text": { "fr": "Parce que l'équipage vérifie ce comptage au décollage." } },
+        { "text": { "fr": "Parce que le nombre de rangées détermine l'ordre d'évacuation." } },
+        { "text": { "fr": "Parce que cela permet de calculer le temps de vol restant." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question d'**inférence** : la phrase suivante précise « en cas de fumée, vous devrez peut-être la trouver au toucher » — le comptage des rangées sert donc à préparer une évacuation où la vue ne suffit plus."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0012",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.vocab_in_context"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p003",
+      "stem": { "fr": "Dans la fiche, l'expression « au toucher » signifie que le passager devra :" },
+      "options": [
+        { "text": { "fr": "Repérer l'issue en la touchant physiquement, sans voir clairement à cause de la fumée." } },
+        { "text": { "fr": "Demander à un agent de le guider par téléphone." } },
+        { "text": { "fr": "Toucher son voisin pour vérifier qu'il est réveillé." } },
+        { "text": { "fr": "Appuyer sur un bouton tactile pour ouvrir l'issue." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **vocabulaire en contexte** : associée à « en cas de fumée », l'expression décrit une localisation par le sens du toucher quand la vue est gênée, pas un dispositif tactile."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0013",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 1,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p004",
+      "stem": { "fr": "À quelle heure part la dernière navette du vendredi au dimanche ?" },
+      "options": [
+        { "text": { "fr": "21h30" } },
+        { "text": { "fr": "23h55" } },
+        { "text": { "fr": "16h45" } },
+        { "text": { "fr": "00h15" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : le tableau indique un départ à « 23h55 » les « Ven–Dim », noté « Dernier service »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0014",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p004",
+      "stem": { "fr": "Qui voyage gratuitement sur cette navette ?" },
+      "options": [
+        { "text": { "fr": "Tous les passagers de l'aéroport." } },
+        { "text": { "fr": "Les équipages d'Air Sud et de Riel Régional avec carte d'identité valide." } },
+        { "text": { "fr": "Uniquement les commandants de bord." } },
+        { "text": { "fr": "Les équipages qui paient 6 euros en espèces." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « la navette est gratuite pour les équipages d'Air Sud et de Riel Régional sur présentation d'une carte d'identité d'équipage valide »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0015",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p004",
+      "stem": { "fr": "Que peut-on déduire si la navette de 12h00 arrive déjà pleine à l'aéroport ?" },
+      "options": [
+        { "text": { "fr": "Les équipages en trop devront attendre le prochain départ à 16h45." } },
+        { "text": { "fr": "Un second véhicule sera appelé par radio, arrivant en général sous quinze minutes." } },
+        { "text": { "fr": "La navette repart aussitôt vers l'hôtel sans eux." } },
+        { "text": { "fr": "Les places restantes seront vendues aux enchères." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question d'**inférence** : « quand la navette est pleine, le conducteur appelle un second véhicule, qui arrive en général sous quinze minutes » — les équipages en surplus ne sont donc pas laissés jusqu'au service suivant."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0016",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.vocab_in_context"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p004",
+      "stem": { "fr": "Dans le texte, l'expression « bons de taxi » désigne :" },
+      "options": [
+        { "text": { "fr": "Des documents permettant aux équipages de prendre un taxi pris en charge par l'hôtel entre minuit et 5h15." } },
+        { "text": { "fr": "Des tickets de réduction pour le restaurant de l'hôtel." } },
+        { "text": { "fr": "Des autorisations de stationnement gratuit à l'aéroport." } },
+        { "text": { "fr": "Des coupons donnant droit à un supplément bagage." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **vocabulaire en contexte** : le texte précise « entre 00h15 et 05h15, les équipages doivent utiliser le système de bons de taxi de l'hôtel », soit un service de substitution à la navette absente sur ce créneau."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0017",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p005",
+      "stem": { "fr": "Quel mois a enregistré le meilleur taux de départs à l'heure ?" },
+      "options": [
+        { "text": { "fr": "Janvier" } },
+        { "text": { "fr": "Avril" } },
+        { "text": { "fr": "Mai" } },
+        { "text": { "fr": "Juin" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** sur le tableau : avril affiche 88 %, le taux le plus élevé, confirmé par le texte : « atteint son meilleur niveau de la période »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0018",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p005",
+      "stem": { "fr": "Quelle est la cause principale de retard indiquée pour mai et juin ?" },
+      "options": [
+        { "text": { "fr": "La météo hivernale" } },
+        { "text": { "fr": "Un appareil entrant en retard" } },
+        { "text": { "fr": "Des restrictions du contrôle aérien" } },
+        { "text": { "fr": "Une grève du personnel d'Air Sud" } }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Question de **détail** sur le tableau : mai et juin indiquent tous deux « Restrictions du contrôle aérien », confirmé dans le texte par le manque de personnel dans deux centres de contrôle."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0019",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 4,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p005",
+      "stem": { "fr": "Que peut-on déduire de la comparaison entre juin de cette année et juin de l'année précédente ?" },
+      "options": [
+        { "text": { "fr": "La ponctualité de juin s'est dégradée par rapport à l'an dernier." } },
+        { "text": { "fr": "La ponctualité de juin s'est améliorée par rapport à l'an dernier, malgré un résultat jugé décevant." } },
+        { "text": { "fr": "Les deux années affichent exactement le même taux en juin." } },
+        { "text": { "fr": "Aucune comparaison n'est possible avec l'année précédente." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question d'**inférence** : « le chiffre de juin, bien que décevant, reste supérieur de quatre points à celui du même mois l'an dernier » — le résultat est donc en progrès sur un an, même s'il reste jugé insatisfaisant en absolu."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0020",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 5,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p005",
+      "stem": { "fr": "D'après le texte, laquelle de ces affirmations n'est PAS mentionnée ?" },
+      "options": [
+        { "text": { "fr": "La météo a été le facteur dominant en hiver." } },
+        { "text": { "fr": "Les changements d'horaires d'été doivent améliorer la performance en juillet." } },
+        { "text": { "fr": "Le manque de personnel de contrôle aérien concerne deux centres d'Europe centrale." } },
+        { "text": { "fr": "La compagnie a modifié ses procédures de maintenance pour réduire les retards techniques." } }
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "fr": "Question de type **« non mentionné »** : les trois premières affirmations sont directement dans le texte ; aucune modification des procédures de maintenance n'est évoquée nulle part — ne pas confondre « non mentionné » avec « faux », ici l'information est simplement absente."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0021",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p006",
+      "stem": { "fr": "À partir de quelle date les formulaires papier de signalement de fatigue ne sont-ils plus acceptés ?" },
+      "options": [
+        { "text": { "fr": "1er octobre" } },
+        { "text": { "fr": "1er janvier" } },
+        { "text": { "fr": "72 heures après l'événement" } },
+        { "text": { "fr": "Fin du trimestre" } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **détail** : « à compter du 1er octobre : les signalements de fatigue passent par l'application CrewPortal »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0022",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p006",
+      "stem": { "fr": "Qui lit les signalements de fatigue selon la note ?" },
+      "options": [
+        { "text": { "fr": "Les responsables hiérarchiques directs, avec le nom du déclarant." } },
+        { "text": { "fr": "Le groupe de gestion des risques de fatigue, incluant deux représentants élus du personnel navigant." } },
+        { "text": { "fr": "Uniquement le service des ressources humaines." } },
+        { "text": { "fr": "Le commandant de bord de chaque vol concerné." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « ils sont lus par le groupe de gestion des risques de fatigue, qui comprend deux représentants du personnel navigant élus » ; le texte précise même qu'ils ne sont jamais transmis aux responsables avec le nom du déclarant."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0023",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p006",
+      "stem": { "fr": "Un navigant qui soumet un signalement de fatigue mais ne prévient pas le service planning avant sa prise de service peut s'attendre à quoi, selon le texte ?" },
+      "options": [
+        { "text": { "fr": "Une convocation disciplinaire immédiate." } },
+        { "text": { "fr": "Un traitement de son absence comme un arrêt maladie tardif si l'appel arrive après l'heure de prise de service." } },
+        { "text": { "fr": "La suppression de son accès à l'application CrewPortal." } },
+        { "text": { "fr": "Aucune conséquence, le signalement suffit à couvrir l'absence." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question d'**inférence** : le texte dit qu'un signalement « ne dispense pas, à lui seul, d'une vacation » et qu'« appeler après l'heure de prise de service sera traité comme un arrêt maladie tardif » — les deux informations combinées donnent la réponse."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0024",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 4,
+      "tags": ["p1_reading_fr", "p1_reading_fr.vocab_in_context"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p006",
+      "stem": { "fr": "Dans la note, l'expression « ne dispense pas, à lui seul, » signifie que :" },
+      "options": [
+        { "text": { "fr": "Le signalement de fatigue seul ne suffit pas à retirer automatiquement le navigant de sa vacation." } },
+        { "text": { "fr": "Le signalement de fatigue est facultatif." } },
+        { "text": { "fr": "Le signalement de fatigue remplace l'appel au service planning." } },
+        { "text": { "fr": "Le signalement de fatigue est réservé aux commandants de bord." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **vocabulaire en contexte** : la phrase est immédiatement suivie de l'obligation d'appeler le service planning, ce qui montre que le signalement à lui seul ne suffit pas à couvrir l'absence."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0025",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 1,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p007",
+      "stem": { "fr": "Combien de bacs distincts les habitants des trois quartiers tests ont-ils désormais pour les emballages recyclables ?" },
+      "options": [
+        { "text": { "fr": "Un seul" } },
+        { "text": { "fr": "Deux" } },
+        { "text": { "fr": "Trois" } },
+        { "text": { "fr": "Quatre" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « les habitants disposent désormais de deux bacs distincts, l'un pour le papier et le carton, l'autre pour le plastique et le métal »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0026",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p007",
+      "stem": { "fr": "Que montrent les premiers résultats après quatre mois d'expérimentation ?" },
+      "options": [
+        { "text": { "fr": "Une baisse de 18 % du taux de refus à l'usine de tri dans les quartiers concernés." } },
+        { "text": { "fr": "Une hausse du taux de refus dans les quartiers concernés." } },
+        { "text": { "fr": "Aucun changement mesurable." } },
+        { "text": { "fr": "Une baisse du coût de collecte." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **détail** : « une baisse de 18 % du taux de refus à l'usine de tri dans les quartiers concernés, contre une hausse de 2 % dans le reste de la ville »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0027",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p007",
+      "stem": { "fr": "Que peut-on déduire du coût de la collecte dans les quartiers test ?" },
+      "options": [
+        { "text": { "fr": "Il a baissé grâce à la réduction des refus à l'usine." } },
+        { "text": { "fr": "Il a doublé, car il faut désormais deux passages de camions au lieu d'un." } },
+        { "text": { "fr": "Il est resté strictement identique." } },
+        { "text": { "fr": "Il n'est pas mentionné dans le texte." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question d'**inférence** : « deux passages de camions au lieu d'un, ce qui a doublé le coût de collecte dans les zones test » — la conséquence financière est déduite du changement logistique décrit."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0028",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.vocab_in_context"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p007",
+      "stem": { "fr": "Dans le texte, l'expression « matières mal orientées » désigne :" },
+      "options": [
+        { "text": { "fr": "Des déchets recyclables placés dans le mauvais bac et donc mal triés." } },
+        { "text": { "fr": "Des camions de collecte suivant un mauvais itinéraire." } },
+        { "text": { "fr": "Des habitants mal informés des horaires de collecte." } },
+        { "text": { "fr": "Des emballages fabriqués dans le mauvais sens." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **vocabulaire en contexte** : l'expression suit directement l'idée du tri en amont par les habitants, elle désigne donc des déchets mal triés qui finissent incinérés faute de séparation correcte."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0029",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p008",
+      "stem": { "fr": "Un candidat déjà titulaire d'une licence de pilote bénéficie-t-il d'une équivalence d'heures ?" },
+      "options": [
+        { "text": { "fr": "Oui, systématiquement." } },
+        { "text": { "fr": "Non, aucune équivalence n'est accordée." } },
+        { "text": { "fr": "Oui, mais seulement pour la moitié des heures." } },
+        { "text": { "fr": "Cela dépend du type de licence." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « les candidats déjà titulaires d'une licence peuvent postuler, mais ne bénéficient d'aucune équivalence d'heures »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0030",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p008",
+      "stem": { "fr": "Après combien de mois un candidat ajourné à la première étape peut-il se représenter ?" },
+      "options": [
+        { "text": { "fr": "Six mois" } },
+        { "text": { "fr": "Douze mois" } },
+        { "text": { "fr": "Vingt-quatre mois" } },
+        { "text": { "fr": "Trente-six mois" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « les candidats ajournés à la première étape peuvent se représenter après douze mois »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0031",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p008",
+      "stem": { "fr": "Que peut-on déduire pour un candidat déjà ajourné une fois, vingt-quatre mois plus tôt, à une étape tardive de la sélection ?" },
+      "options": [
+        { "text": { "fr": "Il peut retenter sa chance indéfiniment tous les vingt-quatre mois." } },
+        { "text": { "fr": "Il ne peut plus se représenter, l'unique nouvelle tentative après vingt-quatre mois ayant déjà été utilisée." } },
+        { "text": { "fr": "Il doit attendre douze mois supplémentaires." } },
+        { "text": { "fr": "Il passe automatiquement à l'étape suivante." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question d'**inférence** : le texte précise que la nouvelle tentative après vingt-quatre mois n'est possible « qu'une seule fois » — un second ajournement à une étape tardive est donc définitif."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0032",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 4,
+      "tags": ["p1_reading_fr", "p1_reading_fr.vocab_in_context"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p008",
+      "stem": { "fr": "Dans le texte, l'expression « barème dégressif » appliqué au remboursement signifie que :" },
+      "options": [
+        { "text": { "fr": "Le montant à rembourser diminue progressivement selon un principe défini à l'avance." } },
+        { "text": { "fr": "Le remboursement augmente chaque année." } },
+        { "text": { "fr": "Le remboursement est fixe, quel que soit le moment du départ." } },
+        { "text": { "fr": "Le remboursement n'est jamais exigé après la première année." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **vocabulaire en contexte** : « dégressif » indique une diminution progressive, ici du montant restant à rembourser, contrairement à un barème fixe ou croissant."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0033",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 1,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p009",
+      "stem": { "fr": "Que doit faire chaque témoin s'il y en a plusieurs pour le même événement ?" },
+      "options": [
+        { "text": { "fr": "Un seul formulaire collectif suffit." } },
+        { "text": { "fr": "Chacun doit remplir un formulaire séparé." } },
+        { "text": { "fr": "Seul le témoin principal remplit un formulaire." } },
+        { "text": { "fr": "Aucun formulaire n'est requis en cas de témoins multiples." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « si plusieurs personnes ont été témoins de l'événement, chacune doit remplir un formulaire séparé »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0034",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p009",
+      "stem": { "fr": "Pourquoi la section D doit-elle être cochée même en cas de contact mineur avec un appareil ?" },
+      "options": [
+        { "text": { "fr": "Parce que l'appareil ne peut pas repartir avant l'inspection d'un mécanicien." } },
+        { "text": { "fr": "Parce que la compagnie d'assurance l'exige pour tout incident, mineur ou non." } },
+        { "text": { "fr": "Parce que cela sert uniquement aux statistiques mensuelles." } },
+        { "text": { "fr": "Parce que le passager doit être remboursé." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **détail** : « même un contact mineur avec un appareil doit être coché [...] car l'appareil ne peut pas repartir avant l'inspection d'un mécanicien »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0035",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p009",
+      "stem": { "fr": "Que peut-on déduire d'un formulaire remis après la fin de la vacation de son auteur ?" },
+      "options": [
+        { "text": { "fr": "Il est automatiquement refusé." } },
+        { "text": { "fr": "Il reste accepté mais sera signalé lors de la revue de sécurité mensuelle." } },
+        { "text": { "fr": "Il doit être contresigné par un responsable." } },
+        { "text": { "fr": "Il n'a plus aucune valeur légale." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question d'**inférence** : « les formulaires remis en retard restent acceptés mais sont signalés lors de la revue de sécurité mensuelle » — un formulaire tardif n'est donc pas rejeté, seulement noté."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0036",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 5,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p009",
+      "stem": { "fr": "Laquelle de ces informations est en contradiction directe avec les instructions du formulaire GH-7 ?" },
+      "options": [
+        { "text": { "fr": "L'indicatif radio du véhicule impliqué doit être indiqué." } },
+        { "text": { "fr": "L'heure locale doit être donnée à la minute près." } },
+        { "text": { "fr": "Nommer directement les personnes jugées responsables de l'incident." } },
+        { "text": { "fr": "Les actions entreprises et à quel moment doivent être indiquées." } }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Question sur la distinction **« faux » vs « non mentionné »** : la section C dit explicitement « ne nommez personne ; désignez les personnes par leur fonction » — nommer directement un responsable n'est pas seulement absent du texte, il le contredit."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0037",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p010",
+      "stem": { "fr": "Combien d'appareils ARJ-90 Riel Régional exploite-t-elle actuellement ?" },
+      "options": [
+        { "text": { "fr": "Quatorze" } },
+        { "text": { "fr": "Dix-huit" } },
+        { "text": { "fr": "Vingt-deux" } },
+        { "text": { "fr": "Trois" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « Riel Régional exploite une flotte de dix-huit appareils régionaux ARJ-90 »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0038",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p010",
+      "stem": { "fr": "Quel est le rythme de vacation proposé pour ce poste ?" },
+      "options": [
+        { "text": { "fr": "Cinq jours travaillés, deux jours de repos." } },
+        { "text": { "fr": "Quatre jours travaillés, quatre jours de repos, y compris nuits et week-ends." } },
+        { "text": { "fr": "Uniquement des vacations de jour, du lundi au vendredi." } },
+        { "text": { "fr": "Un rythme variable selon la saison." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « les vacations suivent un rythme de quatre jours travaillés, quatre jours de repos, y compris les nuits et les week-ends »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0039",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 4,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p010",
+      "stem": { "fr": "Pourquoi les candidats retenus doivent-ils prendre leur poste en février ?" },
+      "options": [
+        { "text": { "fr": "Pour être pleinement formés avant l'arrivée des nouveaux appareils au printemps." } },
+        { "text": { "fr": "Parce que c'est la date de fin du contrat des techniciens actuels." } },
+        { "text": { "fr": "Parce que la base ferme en janvier pour travaux." } },
+        { "text": { "fr": "Parce que les entretiens ont lieu en février." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question d'**inférence** : l'annonce relie explicitement la date de prise de poste à l'objectif d'être « pleinement formés avant l'arrivée des nouveaux appareils », prévue au printemps suivant."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0040",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 5,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p010",
+      "stem": { "fr": "Laquelle de ces informations n'est PAS mentionnée dans l'annonce ?" },
+      "options": [
+        { "text": { "fr": "L'exigence d'un anglais courant pour la documentation technique." } },
+        { "text": { "fr": "Le montant exact du salaire proposé." } },
+        { "text": { "fr": "L'exigence d'un permis de conduire." } },
+        { "text": { "fr": "La date de clôture des candidatures." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de type **« non mentionné »** : l'annonce parle d'un « salaire compétitif » sans jamais donner de montant chiffré, contrairement aux trois autres informations, toutes présentes explicitement dans le texte."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0041",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p011",
+      "stem": { "fr": "Combien de temps la correspondance de M. Okafor à Riel a-t-elle duré ?" },
+      "options": [
+        { "text": { "fr": "52 minutes" } },
+        { "text": { "fr": "65 minutes" } },
+        { "text": { "fr": "600 euros" } },
+        { "text": { "fr": "10 jours ouvrés" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « la correspondance à Riel n'étant que de 65 minutes »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0042",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p011",
+      "stem": { "fr": "Pourquoi le premier vol de M. Okafor a-t-il eu du retard ?" },
+      "options": [
+        { "text": { "fr": "Un changement de roue a été nécessaire après une inspection de pneu." } },
+        { "text": { "fr": "Une grève du personnel au sol." } },
+        { "text": { "fr": "Des conditions météorologiques défavorables." } },
+        { "text": { "fr": "Un problème de correspondance à Riel." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **détail** : « un changement de roue a été nécessaire après une inspection de pneu pendant l'escale technique »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0043",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p011",
+      "stem": { "fr": "Pourquoi la compagnie considère-t-elle que M. Okafor a droit à une indemnisation ?" },
+      "options": [
+        { "text": { "fr": "Parce que le retard est dû à un problème technique découvert lors d'une inspection de routine, non considéré comme une circonstance extraordinaire." } },
+        { "text": { "fr": "Parce que tout retard donne automatiquement droit à indemnisation." } },
+        { "text": { "fr": "Parce que le passager a demandé un geste commercial." } },
+        { "text": { "fr": "Parce que l'aéroport de Riel a facturé une pénalité à la compagnie." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question d'**inférence** : le lien de cause est explicite — « un retard causé par un problème technique découvert lors d'une inspection de routine n'est pas regardé comme une circonstance extraordinaire », ce qui ouvre droit à l'indemnisation forfaitaire."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0044",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 5,
+      "tags": ["p1_reading_fr", "p1_reading_fr.vocab_in_context"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p011",
+      "stem": { "fr": "Dans le texte, l'expression « circonstance extraordinaire » désigne un événement qui, s'il était reconnu comme tel, aurait pour conséquence de :" },
+      "options": [
+        { "text": { "fr": "Dispenser la compagnie de verser l'indemnisation forfaitaire." } },
+        { "text": { "fr": "Obliger la compagnie à doubler l'indemnisation." } },
+        { "text": { "fr": "Annuler automatiquement le vol suivant." } },
+        { "text": { "fr": "Donner droit à un remboursement du billet uniquement." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **vocabulaire en contexte** : puisque l'absence de circonstance extraordinaire ouvre droit à l'indemnisation forfaitaire de 600 euros, sa présence aurait l'effet inverse : en dispenser la compagnie."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0045",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 1,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p012",
+      "stem": { "fr": "Sur combien d'années l'étude a-t-elle été menée ?" },
+      "options": [
+        { "text": { "fr": "Un an" } },
+        { "text": { "fr": "Deux ans" } },
+        { "text": { "fr": "Trois ans" } },
+        { "text": { "fr": "Cinq ans" } }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Question de **détail** : « une étude menée [...] sur trois années scolaires consécutives »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0046",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p012",
+      "stem": { "fr": "Quelle différence de sommeil a été observée selon l'usage du téléphone après 22h30 ?" },
+      "options": [
+        { "text": { "fr": "47 minutes de sommeil en moins par nuit pour ceux qui le gardent allumé." } },
+        { "text": { "fr": "47 minutes de sommeil en plus." } },
+        { "text": { "fr": "Aucune différence significative." } },
+        { "text": { "fr": "Une différence uniquement le week-end." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **détail** : « les élèves qui gardaient leur téléphone allumé après 22h30 dormaient en moyenne 47 minutes de moins par nuit »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0047",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p012",
+      "stem": { "fr": "Pourquoi les chercheurs pensent-ils que la simple présence du téléphone dans la chambre retarde l'endormissement, même éteint ?" },
+      "options": [
+        { "text": { "fr": "À cause de la lumière résiduelle de l'écran." } },
+        { "text": { "fr": "À cause de l'anticipation d'une notification, plutôt qu'à cause de la lumière de l'écran." } },
+        { "text": { "fr": "À cause du bruit des vibrations." } },
+        { "text": { "fr": "À cause de la chaleur dégagée par l'appareil." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question d'**inférence** : « un effet que les auteurs attribuent en partie à l'anticipation d'une notification plutôt qu'à la lumière de l'écran elle-même »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0048",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 4,
+      "tags": ["p1_reading_fr", "p1_reading_fr.vocab_in_context"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p012",
+      "stem": { "fr": "Dans le texte, l'expression « lien de cause à effet strict » signifie que l'étude :" },
+      "options": [
+        { "text": { "fr": "Ne peut pas prouver que l'usage du téléphone cause directement le mauvais sommeil, seulement qu'ils sont associés." } },
+        { "text": { "fr": "Prouve avec certitude que le téléphone cause le mauvais sommeil." } },
+        { "text": { "fr": "Montre que le mauvais sommeil cause l'usage du téléphone." } },
+        { "text": { "fr": "N'a trouvé aucune association entre les deux phénomènes." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **vocabulaire en contexte** : la phrase suivante explique que « les adolescents qui dorment déjà mal pourraient aussi être ceux qui utilisent davantage leur téléphone » — l'étude établit une association, pas une causalité certaine."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0049",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 1,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p013",
+      "stem": { "fr": "Quel nouveau jour d'ouverture est ajouté le matin ?" },
+      "options": [
+        { "text": { "fr": "Mardi" } },
+        { "text": { "fr": "Lundi" } },
+        { "text": { "fr": "Mercredi" } },
+        { "text": { "fr": "Dimanche" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « la médiathèque ouvrira désormais le lundi matin, jour auparavant fermé »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0050",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p013",
+      "stem": { "fr": "Que peut-on faire pendant la fermeture du mercredi après-midi ?" },
+      "options": [
+        { "text": { "fr": "Rien, la médiathèque est totalement inaccessible." } },
+        { "text": { "fr": "Déposer des documents dans la boîte de retour extérieure." } },
+        { "text": { "fr": "Emprunter des documents à un distributeur automatique." } },
+        { "text": { "fr": "Assister aux ateliers pour enfants comme d'habitude." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « la boîte de retour extérieure reste accessible en permanence, y compris les jours de fermeture »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0051",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p013",
+      "stem": { "fr": "Pourquoi la médiathèque ferme-t-elle le mercredi après-midi plutôt qu'un autre créneau ?" },
+      "options": [
+        { "text": { "fr": "Parce que c'est le créneau le moins fréquenté selon les statistiques des deux dernières années." } },
+        { "text": { "fr": "Parce que le personnel est en formation ce jour-là." } },
+        { "text": { "fr": "Parce que les ateliers enfants y ont toujours lieu." } },
+        { "text": { "fr": "Parce que le samedi est déjà fermé." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question d'**inférence** : le texte relie explicitement les deux faits — nouvelle ouverture du lundi « en échange d'une fermeture le mercredi après-midi, créneau le moins fréquenté »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0052",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.vocab_in_context"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p013",
+      "stem": { "fr": "Dans le texte, l'expression « affichage à l'entrée » sert à :" },
+      "options": [
+        { "text": { "fr": "Rappeler les nouveaux horaires pendant le mois suivant le changement." } },
+        { "text": { "fr": "Annoncer les nouveaux livres disponibles." } },
+        { "text": { "fr": "Indiquer les places de parking disponibles." } },
+        { "text": { "fr": "Présenter le règlement intérieur complet." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **vocabulaire en contexte** : « un affichage à l'entrée rappellera les nouveaux horaires pendant tout le mois suivant le changement »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0053",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p014",
+      "stem": { "fr": "Pendant combien de temps la place centrale a-t-elle été en travaux ?" },
+      "options": [
+        { "text": { "fr": "Un an" } },
+        { "text": { "fr": "Deux ans" } },
+        { "text": { "fr": "Six mois" } },
+        { "text": { "fr": "Cinq ans" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « après deux ans de travaux de réfection, la place centrale du village a rouvert le mois dernier »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0054",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p014",
+      "stem": { "fr": "Pourquoi les trois platanes ont-ils été abattus ?" },
+      "options": [
+        { "text": { "fr": "Parce qu'ils étaient malades." } },
+        { "text": { "fr": "Parce que leurs racines endommageaient les canalisations sous la place." } },
+        { "text": { "fr": "Parce qu'ils gênaient l'installation des étals." } },
+        { "text": { "fr": "Parce qu'ils empêchaient le passage des camions de livraison." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : les platanes ont été « abattus car leurs racines endommageaient les canalisations sous la place »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0055",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 4,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p014",
+      "stem": { "fr": "Que peut-on déduire de la comparaison entre la fréquentation actuelle du marché et celle d'avant travaux ?" },
+      "options": [
+        { "text": { "fr": "La fréquentation a fortement baissé et ne s'est pas encore rétablie." } },
+        { "text": { "fr": "La fréquentation a retrouvé son niveau d'avant travaux, mais la mairie l'attribue à la fidélité des habitants plutôt qu'au nouvel aménagement." } },
+        { "text": { "fr": "La fréquentation a doublé grâce au nouvel aménagement." } },
+        { "text": { "fr": "Aucune donnée de fréquentation n'a été recueillie." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question d'**inférence** : « a retrouvé en un mois son niveau d'avant travaux, ce que la mairie attribue à la fidélité des habitants plutôt qu'à l'attrait du nouvel aménagement, encore jugé prématuré »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0056",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 5,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p014",
+      "stem": { "fr": "Laquelle de ces informations n'est PAS mentionnée dans le texte ?" },
+      "options": [
+        { "text": { "fr": "Le nombre de nouveaux arbres plantés." } },
+        { "text": { "fr": "Le prix total des travaux de réfection." } },
+        { "text": { "fr": "Le lieu provisoire du marché pendant les travaux." } },
+        { "text": { "fr": "La méthode utilisée pour mesurer la fréquentation du marché." } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de type **« non mentionné »** : le texte donne le nombre d'arbres (onze), le lieu provisoire du marché (parking de la salle des fêtes) et la méthode de mesure (tickets de stationnement), mais jamais le coût des travaux."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0057",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p015",
+      "stem": { "fr": "Quel est le vent prévu entre 12h et 15h ?" },
+      "options": [
+        { "text": { "fr": "240°/12 kt" } },
+        { "text": { "fr": "280°/18 kt, rafales 28 kt" } },
+        { "text": { "fr": "250°/10 kt" } },
+        { "text": { "fr": "260°/15 kt, rafales 22 kt" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** sur le tableau : le créneau 12h–15h indique « 280°/18 kt, rafales 28 kt »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0058",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 4,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p015",
+      "stem": { "fr": "Quel phénomène notable est attendu après 13h ?" },
+      "options": [
+        { "text": { "fr": "Brume matinale" } },
+        { "text": { "fr": "Averses isolées probables" } },
+        { "text": { "fr": "Brouillard givrant" } },
+        { "text": { "fr": "Orage généralisé" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** sur le tableau : le créneau 12h–15h note « averses isolées probables après 13h »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0059",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 4,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p015",
+      "stem": { "fr": "Pourquoi les compagnies exploitant des appareils légers sont-elles invitées à consulter leurs tableaux de performance entre 12h et 15h ?" },
+      "options": [
+        { "text": { "fr": "Parce que le vent traversier maximal sur la piste 09/27 est attendu durant ce créneau, avec des rafales proches de certaines limites d'exploitation." } },
+        { "text": { "fr": "Parce que la piste sera fermée durant ce créneau." } },
+        { "text": { "fr": "Parce que le carburant sera rationné à cette heure-là." } },
+        { "text": { "fr": "Parce que la tour de contrôle change d'équipe à ce moment." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question d'**inférence** : « le vent traversier maximal [...] est attendu entre 12h et 15h, avec des rafales pouvant approcher la limite d'exploitation de certains types d'appareils légers »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0060",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 5,
+      "tags": ["p1_reading_fr", "p1_reading_fr.vocab_in_context"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p015",
+      "stem": { "fr": "Dans le bulletin, l'expression « ce bulletin sera révisé » signifie que :" },
+      "options": [
+        { "text": { "fr": "Les prévisions données pourront être mises à jour si les averses de l'après-midi sont plus actives qu'attendu." } },
+        { "text": { "fr": "Le bulletin est définitif et ne changera plus." } },
+        { "text": { "fr": "Seule la visibilité sera revérifiée, pas le vent." } },
+        { "text": { "fr": "Le bulletin concerne uniquement la piste 15/33." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question de **vocabulaire en contexte** : la phrase est conditionnée par « si les averses de l'après-midi se révèlent plus actives que prévu », donc l'ensemble des prévisions reste sujet à révision, pas seulement la visibilité."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0061",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 2,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p016",
+      "stem": { "fr": "Combien de jours de télétravail par semaine seront autorisés pour la majorité des services à partir du 1er janvier ?" },
+      "options": [
+        { "text": { "fr": "Un jour" } },
+        { "text": { "fr": "Deux jours" } },
+        { "text": { "fr": "Trois jours" } },
+        { "text": { "fr": "Quatre jours" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « le nombre maximal de jours de télétravail hebdomadaire passe de trois à deux jours pour l'ensemble des services »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0062",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p016",
+      "stem": { "fr": "Quel service conserve trois jours de télétravail par semaine ?" },
+      "options": [
+        { "text": { "fr": "Les ressources humaines" } },
+        { "text": { "fr": "Le service comptabilité" } },
+        { "text": { "fr": "Le service commercial" } },
+        { "text": { "fr": "Aucun service n'en conserve trois" } }
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "fr": "Question de **détail** : « à l'exception du service comptabilité qui conserve trois jours en raison de la nature de ses missions »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0063",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 3,
+      "tags": ["p1_reading_fr", "p1_reading_fr.inference"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p016",
+      "stem": { "fr": "Pourquoi le mercredi devient-il un jour de présence obligatoire pour tous les services ?" },
+      "options": [
+        { "text": { "fr": "Pour faciliter les réunions transverses, qui souffraient jusqu'ici d'une participation inégale ce jour-là." } },
+        { "text": { "fr": "Parce que le mercredi est le jour de nettoyage des bureaux." } },
+        { "text": { "fr": "Parce que c'est le jour où le matériel informatique est mis à jour." } },
+        { "text": { "fr": "Parce que c'est une exigence légale nouvelle." } }
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "fr": "Question d'**inférence** : « afin de faciliter la tenue des réunions transverses qui, jusqu'ici, souffraient d'une participation inégale selon les équipes présentes ce jour-là »."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    },
+    {
+      "id": "p1_reading_fr.reading.0064",
+      "type": "mcq",
+      "version": 1,
+      "familyId": "p1_reading_fr",
+      "difficulty": 5,
+      "tags": ["p1_reading_fr", "p1_reading_fr.comprehension"],
+      "lang": "fr",
+      "passageId": "p1_reading_fr.reading.p016",
+      "stem": { "fr": "Laquelle de ces informations n'est PAS mentionnée dans la note ?" },
+      "options": [
+        { "text": { "fr": "Le délai minimal pour poser un jour de télétravail dans l'outil de planning." } },
+        { "text": { "fr": "Le pourcentage de répondants liant la baisse de cohésion d'équipe à l'absence de journées communes." } },
+        { "text": { "fr": "Le nombre exact de salariés ayant répondu à l'enquête interne." } },
+        { "text": { "fr": "L'obligation de restituer le matériel fourni en cas de départ." } }
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "fr": "Question de type **« non mentionné »** : la note donne le pourcentage (61 %) mais jamais le nombre exact de répondants à l'enquête interne, contrairement aux trois autres informations, toutes explicites dans le texte."
+      },
+      "meta": { "author": "hbock", "source": "own" }
+    }
+  ]
+}
