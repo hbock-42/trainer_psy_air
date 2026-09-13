@@ -6,8 +6,8 @@ import 'package:psy_content/psy_content.dart';
 import '../../../../core/repositories/repository_providers.dart';
 import '../domain/word_boxes_engine.dart';
 
-/// The `word_boxes` generator's [LexicalFieldSource]: unlike `english`'s
-/// `EnglishPassageCache` (which the launcher fills per session,
+/// The `word_boxes` generator's [LexicalFieldSource]: unlike the
+/// passage-bank families' `PassageCache` (which the launcher fills per session,
 /// `practice_session_builder.dart`'s `onPassagesLoaded`), this engine needs
 /// the *whole* bank at generation time -- which fields a series draws from
 /// is decided inside `WordBoxSeries.build`, so there is no per-session

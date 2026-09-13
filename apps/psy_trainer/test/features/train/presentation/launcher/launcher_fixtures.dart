@@ -43,6 +43,23 @@ TestFamily englishFamily({int order = 14}) => TestFamily(
   confidence: Confidence.reported,
 );
 
+/// The `p1_reading_fr` family: `english`'s PSY1/French counterpart, same
+/// shape as [englishFamily] so the passage-aware sampler (keyed by family
+/// id) kicks in for it too (US-116).
+TestFamily p1ReadingFrFamily({int order = 4}) => TestFamily(
+  id: 'p1_reading_fr',
+  moduleId: ModuleId.psy1,
+  version: 1,
+  order: order,
+  name: const LocalizedText(fr: 'Compréhension de lecture'),
+  description: const LocalizedText(fr: 'Ce qui est évalué.'),
+  engineType: EngineType.p1ReadingFr,
+  answerFormat: AnswerFormat.mcq,
+  defaultDurationSec: 1200,
+  defaultItemCount: 10,
+  confidence: Confidence.reported,
+);
+
 /// A generator-driven family.
 TestFamily generatorFamily({
   String id = 'memory_nback',
