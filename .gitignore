@@ -68,4 +68,4 @@ apps/psy_trainer/ios/ExportOptions.plist
 # under apps/psy_trainer/assets/content/. Never hand-edited, rebuilt in CI
 # and locally before `flutter build`/`flutter test`; the authored tree stays
 # the source of truth and the only thing `make content-check` validates.
-apps/psy_trainer/assets/content/bundles/
+apps/psy_trainer/assets/content/bundles/*.json
