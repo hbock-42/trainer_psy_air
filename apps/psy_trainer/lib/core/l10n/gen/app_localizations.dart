@@ -3258,6 +3258,42 @@ abstract class AppLocalizations {
   /// **'Cette épreuve nécessite un gamepad à deux sticks analogiques. Branchez-en un pour continuer, ou passez cette section.'**
   String get p1PsychomotorDeviceRequired;
 
+  /// No description provided for @p1PsychomotorChannelGauges.
+  ///
+  /// In fr, this message translates to:
+  /// **'Jauges'**
+  String get p1PsychomotorChannelGauges;
+
+  /// No description provided for @p1PsychomotorChannelTracking.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poursuite'**
+  String get p1PsychomotorChannelTracking;
+
+  /// No description provided for @p1PsychomotorChannelLetters.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lettres'**
+  String get p1PsychomotorChannelLetters;
+
+  /// No description provided for @p1PsychomotorChannelArithmetic.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul'**
+  String get p1PsychomotorChannelArithmetic;
+
+  /// No description provided for @p1PsychomotorSummaryTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Récapitulatif par canal'**
+  String get p1PsychomotorSummaryTitle;
+
+  /// No description provided for @p1PsychomotorSummaryZeroed.
+  ///
+  /// In fr, this message translates to:
+  /// **'Score total tombé à 0 : le canal « {channel} » est entré en zone rouge.'**
+  String p1PsychomotorSummaryZeroed(String channel);
+
   /// No description provided for @settingsSectionReminders.
   ///
   /// In fr, this message translates to:

@@ -380,6 +380,13 @@ class _P1PsychomotorViewState extends ConsumerState<_P1PsychomotorView>
     if (_showDeviceNotice) {
       return _DeviceRequiredNotice(onSkip: _skip);
     }
+    final isLastPhase = widget.phaseIndex >= widget.phaseCount - 1;
+    if (widget.render.isAnswered &&
+        !widget.render.isExam &&
+        isLastPhase &&
+        widget.render.showsFeedback) {
+      return _P1PsychomotorSummary(runState: _runState);
+    }
     final theme = AppTheme.of(context);
     return Focus(
       focusNode: _focusNode,
@@ -413,6 +420,84 @@ class _P1PsychomotorViewState extends ConsumerState<_P1PsychomotorView>
               ),
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Practice mode's end-of-run per-channel timelines (US-102 acceptance
+/// criteria): one [LineChart] per channel, from
+/// [P1PsychomotorRunState.scoreHistoryOf]/`snapshotSeconds`, with the
+/// red-zone threshold marked so the candidate can see exactly when (and
+/// whether) a channel dipped into it. Shown once, in place of the live
+/// scene, after the last phase's `Answer.raw` has been submitted and the
+/// runtime is showing feedback (exam mode never shows this — no feedback
+/// screen to attach it to).
+class _P1PsychomotorSummary extends StatelessWidget {
+  const _P1PsychomotorSummary({required this.runState});
+
+  final P1PsychomotorRunState runState;
+
+  String _labelFor(
+    BuildContext context,
+    P1PsychomotorChannel channel,
+  ) => switch (channel) {
+    P1PsychomotorChannel.gauges => context.l10n.p1PsychomotorChannelGauges,
+    P1PsychomotorChannel.tracking => context.l10n.p1PsychomotorChannelTracking,
+    P1PsychomotorChannel.letters => context.l10n.p1PsychomotorChannelLetters,
+    P1PsychomotorChannel.arithmetic =>
+      context.l10n.p1PsychomotorChannelArithmetic,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
+    final seconds = runState.snapshotSeconds;
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            context.l10n.p1PsychomotorSummaryTitle,
+            style: theme.textStyles.title,
+          ),
+          SizedBox(height: theme.spacing.sm),
+          if (runState.redZoneTrigger != null)
+            Padding(
+              padding: EdgeInsets.only(bottom: theme.spacing.sm),
+              child: Text(
+                context.l10n.p1PsychomotorSummaryZeroed(
+                  _labelFor(context, runState.redZoneTrigger!.channel),
+                ),
+                style: theme.textStyles.bodyStrong.copyWith(
+                  color: theme.colors.error,
+                ),
+              ),
+            ),
+          for (final channel in P1PsychomotorChannel.values)
+            Padding(
+              padding: EdgeInsets.only(bottom: theme.spacing.md),
+              child: LineChart(
+                semanticsLabel: _labelFor(context, channel),
+                semanticsValue: '${runState.scoreOf(channel).round()}',
+                yMin: 0,
+                yMax: 100,
+                height: 120,
+                series: [
+                  LineChartSeries(
+                    label: _labelFor(context, channel),
+                    points: [
+                      for (var i = 0; i < seconds.length; i++)
+                        LineChartPoint(
+                          seconds[i],
+                          runState.scoreHistoryOf(channel)[i],
+                        ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
         ],
       ),
     );

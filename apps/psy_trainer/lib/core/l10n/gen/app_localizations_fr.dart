@@ -2001,6 +2001,26 @@ class AppLocalizationsFr extends AppLocalizations {
       'Cette épreuve nécessite un gamepad à deux sticks analogiques. Branchez-en un pour continuer, ou passez cette section.';
 
   @override
+  String get p1PsychomotorChannelGauges => 'Jauges';
+
+  @override
+  String get p1PsychomotorChannelTracking => 'Poursuite';
+
+  @override
+  String get p1PsychomotorChannelLetters => 'Lettres';
+
+  @override
+  String get p1PsychomotorChannelArithmetic => 'Calcul';
+
+  @override
+  String get p1PsychomotorSummaryTitle => 'Récapitulatif par canal';
+
+  @override
+  String p1PsychomotorSummaryZeroed(String channel) {
+    return 'Score total tombé à 0 : le canal « $channel » est entré en zone rouge.';
+  }
+
+  @override
   String get settingsSectionReminders => 'Rappels';
 
   @override

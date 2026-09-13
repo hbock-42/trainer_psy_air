@@ -1987,6 +1987,26 @@ class AppLocalizationsEn extends AppLocalizations {
       'This activity needs a dual-analog-stick gamepad. Plug one in to continue, or skip this section.';
 
   @override
+  String get p1PsychomotorChannelGauges => 'Gauges';
+
+  @override
+  String get p1PsychomotorChannelTracking => 'Tracking';
+
+  @override
+  String get p1PsychomotorChannelLetters => 'Letters';
+
+  @override
+  String get p1PsychomotorChannelArithmetic => 'Arithmetic';
+
+  @override
+  String get p1PsychomotorSummaryTitle => 'Per-channel summary';
+
+  @override
+  String p1PsychomotorSummaryZeroed(String channel) {
+    return 'Total score dropped to 0: the \"$channel\" channel entered its red zone.';
+  }
+
+  @override
   String get settingsSectionReminders => 'Reminders';
 
   @override

@@ -1384,6 +1384,19 @@
   "p1PsychomotorExampleArithmetic": "Pavé numérique : répondez au calcul d'addition/soustraction qui apparaît toutes les 12 secondes.",
   "p1PsychomotorKeyboardFallbackBanner": "Entraînement au clavier : non représentatif de l'épreuve réelle. Branchez un gamepad dès que possible (Réglages → Manettes).",
   "p1PsychomotorDeviceRequired": "Cette épreuve nécessite un gamepad à deux sticks analogiques. Branchez-en un pour continuer, ou passez cette section.",
+  "p1PsychomotorChannelGauges": "Jauges",
+  "p1PsychomotorChannelTracking": "Poursuite",
+  "p1PsychomotorChannelLetters": "Lettres",
+  "p1PsychomotorChannelArithmetic": "Calcul",
+  "p1PsychomotorSummaryTitle": "Récapitulatif par canal",
+  "p1PsychomotorSummaryZeroed": "Score total tombé à 0 : le canal « {channel} » est entré en zone rouge.",
+  "@p1PsychomotorSummaryZeroed": {
+    "placeholders": {
+      "channel": {
+        "type": "String"
+      }
+    }
+  },
   "settingsSectionReminders": "Rappels",
   "settingsReminderLabel": "Rappel quotidien",
   "settingsReminderOn": "Rappel activé",

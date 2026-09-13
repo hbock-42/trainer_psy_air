@@ -65,6 +65,23 @@ class P1PsychomotorRunState {
 
   P1PsychomotorRedZoneTrigger? redZoneTrigger;
 
+  /// One score sample per channel roughly every second (practice mode's
+  /// end-of-run per-channel timelines, US-102 acceptance criteria): kept
+  /// here as plain `double`s (not a widget's chart-point type) so this
+  /// pure-Dart domain class stays Flutter-free — the renderer converts
+  /// them to `LineChartPoint`s.
+  final List<double> snapshotSeconds = [];
+  final Map<P1PsychomotorChannel, List<double>> _snapshotScores = {
+    for (final c in P1PsychomotorChannel.values) c: <double>[],
+  };
+  int _lastSnapshotMs = -100000;
+  static const int _snapshotIntervalMs = 1000;
+
+  /// The recorded score history of [channel], one value per
+  /// [snapshotSeconds] entry.
+  List<double> scoreHistoryOf(P1PsychomotorChannel channel) =>
+      List.unmodifiable(_snapshotScores[channel]!);
+
   // Letters.
   int letterHits = 0;
   int letterMisses = 0;
@@ -127,6 +144,14 @@ class P1PsychomotorRunState {
           channel: channel,
           atMs: nowMs,
         );
+      }
+    }
+
+    if (nowMs - _lastSnapshotMs >= _snapshotIntervalMs) {
+      _lastSnapshotMs = nowMs;
+      snapshotSeconds.add(nowMs / 1000.0);
+      for (final channel in P1PsychomotorChannel.values) {
+        _snapshotScores[channel]!.add(_score[channel]!);
       }
     }
   }
