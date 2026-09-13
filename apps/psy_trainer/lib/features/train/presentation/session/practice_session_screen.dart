@@ -9,10 +9,10 @@ import '../../../../core/l10n/l10n_extensions.dart';
 import '../../../../core/repositories/repository_providers.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
-import '../../../engines/english/presentation/english_passage_cache.dart';
 import '../../domain/mistakes/mistake_pool.dart';
 import '../../domain/mistakes/mistake_session_builder.dart';
 import '../engine/engine_ui.dart';
+import '../renderers/passage_cache.dart';
 import '../summary/session_summary_screen.dart';
 import 'reseed.dart';
 
@@ -166,7 +166,7 @@ class _PracticeSessionScreenState extends ConsumerState<PracticeSessionScreen> {
       contentRepository: ref.read(contentRepositoryProvider),
       timing: config.timing,
       title: config.title,
-      onPassagesLoaded: ref.read(englishPassageCacheProvider).addAll,
+      onPassagesLoaded: ref.read(passageCacheProvider).addAll,
     );
     if (!mounted) return;
     setState(() {

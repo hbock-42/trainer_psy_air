@@ -11,7 +11,6 @@ import '../../../engines/attention_rules/presentation/attention_rules_renderer.d
 import '../../../engines/culture_aero/domain/culture_aero_engine.dart';
 import '../../../engines/culture_aero/presentation/culture_aero_explanation.dart';
 import '../../../engines/english/domain/english_engine.dart';
-import '../../../engines/english/presentation/english_passage_cache.dart';
 import '../../../engines/logic_dominos/domain/dominos_engine.dart';
 import '../../../engines/logic_dominos/presentation/dominos_renderer.dart';
 import '../../../engines/memory_nback/domain/nback_engine.dart';
@@ -26,10 +25,12 @@ import '../../../engines/p1_counters/domain/p1_counters_engine.dart';
 import '../../../engines/p1_counters/presentation/p1_counters_renderer.dart';
 import '../../../engines/p1_cube_nets/domain/p1_cube_nets_engine.dart';
 import '../../../engines/p1_cube_nets/presentation/p1_cube_nets_renderer.dart';
+import '../../../engines/p1_general_efficiency/domain/p1_general_efficiency_engine.dart';
 import '../../../engines/p1_mental_arithmetic/domain/mental_arithmetic_engine.dart';
 import '../../../engines/p1_mental_arithmetic/presentation/mental_arithmetic_renderer.dart';
 import '../../../engines/p1_raven_matrices/domain/raven_matrices_engine.dart';
 import '../../../engines/p1_raven_matrices/presentation/raven_matrices_renderer.dart';
+import '../../../engines/p1_reading_fr/domain/p1_reading_fr_engine.dart';
 import '../../../engines/p1_tangram/domain/p1_tangram_engine.dart';
 import '../../../engines/p1_tangram/presentation/p1_tangram_renderer.dart';
 import '../../../engines/p1_wm_calc_back/domain/calc_back_engine.dart';
@@ -49,6 +50,7 @@ import '../../../engines/verbal_boxes/presentation/lexical_field_catalogue.dart'
 import '../../../engines/verbal_boxes/presentation/word_boxes_renderer.dart';
 import '../../domain/engine/engine.dart';
 import '../renderers/mcq_renderer.dart';
+import '../renderers/passage_cache.dart';
 import 'activity_renderer.dart';
 
 // Composition root of the activity engines (EPIC-03). Each engine story adds
@@ -81,6 +83,8 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const OverlayGridEngine(),
         const P1AnglesEngine(),
         const P1CubeNetsEngine(),
+        const P1GeneralEfficiencyEngine(),
+        const P1ReadingFrEngine(),
         const RavenMatricesEngine(),
         const ReverseSpanEngine(),
         const TangramEngine(),
@@ -110,9 +114,13 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         ),
         McqRenderer(
           familyId: 'english',
-          passageResolver: (id) =>
-              ref.read(englishPassageCacheProvider).get(id),
+          passageResolver: (id) => ref.read(passageCacheProvider).get(id),
         ),
+        McqRenderer(
+          familyId: 'p1_reading_fr',
+          passageResolver: (id) => ref.read(passageCacheProvider).get(id),
+        ),
+        const McqRenderer(familyId: 'p1_general_efficiency'),
         const MentalArithmeticRenderer(),
         const MultitaskRenderer(),
         const NbackRenderer(),

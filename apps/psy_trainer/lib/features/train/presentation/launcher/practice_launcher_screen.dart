@@ -9,12 +9,12 @@ import '../../../../core/repositories/repository_providers.dart';
 import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../shared/widgets/widgets.dart';
-import '../../../engines/english/presentation/english_passage_cache.dart';
 import '../../../progress/presentation/providers/progress_analytics_provider.dart';
 import '../../domain/engine/timing_policy.dart';
 import '../../domain/mistakes/mistake_pool.dart';
 import '../../domain/mistakes/mistake_session_builder.dart';
 import '../engine/engine_registry_provider.dart';
+import '../renderers/passage_cache.dart';
 import 'practice_config.dart';
 import 'practice_launcher_provider.dart';
 import 'practice_session_builder.dart';
@@ -74,7 +74,7 @@ class _LauncherBody extends ConsumerWidget {
       contentRepository: ref.read(contentRepositoryProvider),
       autoLevel: auto.level,
       autoFastThresholdMs: auto.medianResponseMs?.round(),
-      onPassagesLoaded: ref.read(englishPassageCacheProvider).addAll,
+      onPassagesLoaded: ref.read(passageCacheProvider).addAll,
     );
     if (!context.mounted) return;
     unawaited(
@@ -97,7 +97,7 @@ class _LauncherBody extends ConsumerWidget {
       contentRepository: ref.read(contentRepositoryProvider),
       timing: TimingPolicy.forPractice(family, timed: config.timed),
       title: family.name,
-      onPassagesLoaded: ref.read(englishPassageCacheProvider).addAll,
+      onPassagesLoaded: ref.read(passageCacheProvider).addAll,
     );
     if (!context.mounted) return;
     unawaited(
