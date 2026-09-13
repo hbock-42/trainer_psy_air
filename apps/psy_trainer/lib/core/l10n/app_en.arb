@@ -1471,5 +1471,39 @@
   "matrixRuleAlternationSuffix": "alternating",
   "matrixRuleXorSuffix": "= combination of the first two",
   "matrixRuleStepPlain": "+{step}",
-  "matrixRuleStepDegrees": "+{degrees}°"
+  "matrixRuleStepDegrees": "+{degrees}°",
+  "p1AnglesExampleCaption": "Among the candidate values, tap the ones matching a drawn angle (A, B...), then Confirm.",
+  "p1AnglesCandidateSemantics": "Value {index}, {value} degrees",
+  "@p1AnglesCandidateSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "mentalArithmeticAllIntervalsPrompt": "Select every interval that contains the exact value.",
+  "mentalArithmeticTrueValue": "Exact value: {value}",
+  "@mentalArithmeticTrueValue": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "mentalArithmeticIntervalSemantics": "Interval {index}, {label}",
+  "@mentalArithmeticIntervalSemantics": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "mentalArithmeticAllIntervalsExampleCaption": "Work out the exact value, then tap every interval that contains it before Confirm.",
+  "p1CountersExampleCaption": "Read each gauge (needle, scale or drum counter) then answer the question asked."
 }
