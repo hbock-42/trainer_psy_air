@@ -29,6 +29,8 @@ import '../../../engines/p1_general_efficiency/domain/p1_general_efficiency_engi
 import '../../../engines/p1_mental_arithmetic/domain/mental_arithmetic_engine.dart';
 import '../../../engines/p1_mental_arithmetic/presentation/mental_arithmetic_renderer.dart';
 import '../../../engines/p1_reading_fr/domain/p1_reading_fr_engine.dart';
+import '../../../engines/p1_tangram/domain/p1_tangram_engine.dart';
+import '../../../engines/p1_tangram/presentation/p1_tangram_renderer.dart';
 import '../../../engines/p1_wm_calc_back/domain/calc_back_engine.dart';
 import '../../../engines/p1_wm_calc_back/presentation/calc_back_renderer.dart';
 import '../../../engines/p1_wm_reverse_span/domain/reverse_span_engine.dart';
@@ -82,6 +84,7 @@ final Provider<EngineRegistry> engineRegistryProvider =
         const P1GeneralEfficiencyEngine(),
         const P1ReadingFrEngine(),
         const ReverseSpanEngine(),
+        const TangramEngine(),
         const TubesEngine(),
         const ViewpointEngine(),
         WordBoxesEngine(ref.read(lexicalFieldCatalogueProvider)),
@@ -122,6 +125,7 @@ final Provider<RendererRegistry> rendererRegistryProvider =
         const P1AnglesRenderer(),
         const P1CubeNetsRenderer(),
         const ReverseSpanRenderer(),
+        const TangramRenderer(),
         const TubesRenderer(),
         const ViewpointRenderer(),
         WordBoxesRenderer(ref.read(lexicalFieldCatalogueProvider)),
