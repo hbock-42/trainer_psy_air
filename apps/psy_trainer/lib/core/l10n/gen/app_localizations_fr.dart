@@ -1514,6 +1514,31 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get tangramTargetLabel => 'Figure cible';
+
+  @override
+  String get tangramWorkspaceLabel => 'Votre espace de travail';
+
+  @override
+  String get tangramTrayLabel => 'Pièces à glisser';
+
+  @override
+  String get tangramSolutionCaption =>
+      'Solution : emplacement de chaque pièce.';
+
+  @override
+  String get tangramResetAction => 'Réinitialiser';
+
+  @override
+  String get tangramExampleCaption =>
+      'Faites glisser les pièces sur l\'espace de travail pour reproduire la figure cible ; appuyez pour faire pivoter, double-appuyez pour retourner.';
+
+  @override
+  String tangramPieceSemantics(int number) {
+    return 'Pièce $number';
+  }
+
+  @override
   String wordBoxesBoxSemantics(int boxNumber, String label) {
     return 'Boîte $boxNumber : $label';
   }
