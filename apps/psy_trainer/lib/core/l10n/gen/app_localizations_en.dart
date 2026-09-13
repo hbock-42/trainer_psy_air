@@ -2201,4 +2201,27 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get p1CountersExampleCaption =>
       'Read each gauge (needle, scale or drum counter) then answer the question asked.';
+
+  @override
+  String get p1CubeRotationReferenceLabel => 'Reference cube';
+
+  @override
+  String get p1CubeRotationCandidateLabel => 'Candidate cube';
+
+  @override
+  String get p1CubeRotationQuestion => 'Is this the same cube, rotated?';
+
+  @override
+  String get p1CubeRotationSameAnswer => 'Same cube, rotated';
+
+  @override
+  String get p1CubeRotationAlteredAnswer => 'Altered';
+
+  @override
+  String get p1CubeRotationExplanationSame =>
+      'The candidate cube is indeed the reference cube, seen from another angle.';
+
+  @override
+  String get p1CubeRotationExplanationAltered =>
+      'The candidate cube was altered (faces swapped, or one face mirrored): this is not a plain rotation.';
 }
